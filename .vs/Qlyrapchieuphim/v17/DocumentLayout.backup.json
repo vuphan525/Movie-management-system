@@ -1,0 +1,183 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\\u0110\u1ED3 \u00E1n lttq\\Qlyrapchieuphim\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{84B5275C-DAE7-42C3-9A04-8DCFD2D4BD0E}|Qlyrapchieuphim\\Qlyrapchieuphim.csproj|c:\\\u0111\u1ED3 \u00E1n lttq\\qlyrapchieuphim\\qlyrapchieuphim\\adform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{84B5275C-DAE7-42C3-9A04-8DCFD2D4BD0E}|Qlyrapchieuphim\\Qlyrapchieuphim.csproj|solutionrelative:qlyrapchieuphim\\adform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{84B5275C-DAE7-42C3-9A04-8DCFD2D4BD0E}|Qlyrapchieuphim\\Qlyrapchieuphim.csproj|C:\\\u0110\u1ED3 \u00E1n lttq\\Qlyrapchieuphim\\qlyrapchieuphim\\qlyphim.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{84B5275C-DAE7-42C3-9A04-8DCFD2D4BD0E}|Qlyrapchieuphim\\Qlyrapchieuphim.csproj|solutionrelative:qlyrapchieuphim\\qlyphim.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{84B5275C-DAE7-42C3-9A04-8DCFD2D4BD0E}|Qlyrapchieuphim\\Qlyrapchieuphim.csproj|C:\\\u0110\u1ED3 \u00E1n lttq\\Qlyrapchieuphim\\qlyrapchieuphim\\qlysanpham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{84B5275C-DAE7-42C3-9A04-8DCFD2D4BD0E}|Qlyrapchieuphim\\Qlyrapchieuphim.csproj|solutionrelative:qlyrapchieuphim\\qlysanpham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{84B5275C-DAE7-42C3-9A04-8DCFD2D4BD0E}|Qlyrapchieuphim\\Qlyrapchieuphim.csproj|C:\\\u0110\u1ED3 \u00E1n lttq\\Qlyrapchieuphim\\qlyrapchieuphim\\voucher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{84B5275C-DAE7-42C3-9A04-8DCFD2D4BD0E}|Qlyrapchieuphim\\Qlyrapchieuphim.csproj|solutionrelative:qlyrapchieuphim\\voucher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{84B5275C-DAE7-42C3-9A04-8DCFD2D4BD0E}|Qlyrapchieuphim\\Qlyrapchieuphim.csproj|C:\\\u0110\u1ED3 \u00E1n lttq\\Qlyrapchieuphim\\qlyrapchieuphim\\suco.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{84B5275C-DAE7-42C3-9A04-8DCFD2D4BD0E}|Qlyrapchieuphim\\Qlyrapchieuphim.csproj|solutionrelative:qlyrapchieuphim\\suco.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{84B5275C-DAE7-42C3-9A04-8DCFD2D4BD0E}|Qlyrapchieuphim\\Qlyrapchieuphim.csproj|C:\\\u0110\u1ED3 \u00E1n lttq\\Qlyrapchieuphim\\qlyrapchieuphim\\qlynhansu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{84B5275C-DAE7-42C3-9A04-8DCFD2D4BD0E}|Qlyrapchieuphim\\Qlyrapchieuphim.csproj|solutionrelative:qlyrapchieuphim\\qlynhansu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{84B5275C-DAE7-42C3-9A04-8DCFD2D4BD0E}|Qlyrapchieuphim\\Qlyrapchieuphim.csproj|C:\\\u0110\u1ED3 \u00E1n lttq\\Qlyrapchieuphim\\qlyrapchieuphim\\qlykhachhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{84B5275C-DAE7-42C3-9A04-8DCFD2D4BD0E}|Qlyrapchieuphim\\Qlyrapchieuphim.csproj|solutionrelative:qlyrapchieuphim\\qlykhachhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{84B5275C-DAE7-42C3-9A04-8DCFD2D4BD0E}|Qlyrapchieuphim\\Qlyrapchieuphim.csproj|c:\\\u0111\u1ED3 \u00E1n lttq\\qlyrapchieuphim\\qlyrapchieuphim\\doanhthu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{84B5275C-DAE7-42C3-9A04-8DCFD2D4BD0E}|Qlyrapchieuphim\\Qlyrapchieuphim.csproj|solutionrelative:qlyrapchieuphim\\doanhthu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{84B5275C-DAE7-42C3-9A04-8DCFD2D4BD0E}|Qlyrapchieuphim\\Qlyrapchieuphim.csproj|c:\\\u0111\u1ED3 \u00E1n lttq\\qlyrapchieuphim\\qlyrapchieuphim\\qlysuatchieu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{84B5275C-DAE7-42C3-9A04-8DCFD2D4BD0E}|Qlyrapchieuphim\\Qlyrapchieuphim.csproj|solutionrelative:qlyrapchieuphim\\qlysuatchieu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{84B5275C-DAE7-42C3-9A04-8DCFD2D4BD0E}|Qlyrapchieuphim\\Qlyrapchieuphim.csproj|C:\\\u0110\u1ED3 \u00E1n lttq\\Qlyrapchieuphim\\qlyrapchieuphim\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{84B5275C-DAE7-42C3-9A04-8DCFD2D4BD0E}|Qlyrapchieuphim\\Qlyrapchieuphim.csproj|solutionrelative:qlyrapchieuphim\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 9,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Qlysuatchieu.cs [Design]",
+              "DocumentMoniker": "C:\\\u0110\u1ED3 \u00E1n lttq\\Qlyrapchieuphim\\Qlyrapchieuphim\\Qlysuatchieu.cs",
+              "RelativeDocumentMoniker": "Qlyrapchieuphim\\Qlysuatchieu.cs",
+              "ToolTip": "C:\\\u0110\u1ED3 \u00E1n lttq\\Qlyrapchieuphim\\Qlyrapchieuphim\\Qlysuatchieu.cs [Design]",
+              "RelativeToolTip": "Qlyrapchieuphim\\Qlysuatchieu.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-29T09:40:36.584Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Doanhthu.cs [Design]",
+              "DocumentMoniker": "C:\\\u0110\u1ED3 \u00E1n lttq\\Qlyrapchieuphim\\Qlyrapchieuphim\\Doanhthu.cs",
+              "RelativeDocumentMoniker": "Qlyrapchieuphim\\Doanhthu.cs",
+              "ToolTip": "C:\\\u0110\u1ED3 \u00E1n lttq\\Qlyrapchieuphim\\Qlyrapchieuphim\\Doanhthu.cs [Design]",
+              "RelativeToolTip": "Qlyrapchieuphim\\Doanhthu.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-29T09:21:44.513Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Qlykhachhang.cs [Design]",
+              "DocumentMoniker": "C:\\\u0110\u1ED3 \u00E1n lttq\\Qlyrapchieuphim\\Qlyrapchieuphim\\Qlykhachhang.cs",
+              "RelativeDocumentMoniker": "Qlyrapchieuphim\\Qlykhachhang.cs",
+              "ToolTip": "C:\\\u0110\u1ED3 \u00E1n lttq\\Qlyrapchieuphim\\Qlyrapchieuphim\\Qlykhachhang.cs [Design]",
+              "RelativeToolTip": "Qlyrapchieuphim\\Qlykhachhang.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-29T04:30:03.702Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Qlynhansu.cs [Design]",
+              "DocumentMoniker": "C:\\\u0110\u1ED3 \u00E1n lttq\\Qlyrapchieuphim\\Qlyrapchieuphim\\Qlynhansu.cs",
+              "RelativeDocumentMoniker": "Qlyrapchieuphim\\Qlynhansu.cs",
+              "ToolTip": "C:\\\u0110\u1ED3 \u00E1n lttq\\Qlyrapchieuphim\\Qlyrapchieuphim\\Qlynhansu.cs [Design]",
+              "RelativeToolTip": "Qlyrapchieuphim\\Qlynhansu.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-28T09:12:30.118Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Suco.cs [Design]",
+              "DocumentMoniker": "C:\\\u0110\u1ED3 \u00E1n lttq\\Qlyrapchieuphim\\Qlyrapchieuphim\\Suco.cs",
+              "RelativeDocumentMoniker": "Qlyrapchieuphim\\Suco.cs",
+              "ToolTip": "C:\\\u0110\u1ED3 \u00E1n lttq\\Qlyrapchieuphim\\Qlyrapchieuphim\\Suco.cs [Design]",
+              "RelativeToolTip": "Qlyrapchieuphim\\Suco.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-28T11:38:47.521Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Voucher.cs [Design]",
+              "DocumentMoniker": "C:\\\u0110\u1ED3 \u00E1n lttq\\Qlyrapchieuphim\\Qlyrapchieuphim\\Voucher.cs",
+              "RelativeDocumentMoniker": "Qlyrapchieuphim\\Voucher.cs",
+              "ToolTip": "C:\\\u0110\u1ED3 \u00E1n lttq\\Qlyrapchieuphim\\Qlyrapchieuphim\\Voucher.cs [Design]",
+              "RelativeToolTip": "Qlyrapchieuphim\\Voucher.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-28T10:28:48.73Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Qlysanpham.cs [Design]",
+              "DocumentMoniker": "C:\\\u0110\u1ED3 \u00E1n lttq\\Qlyrapchieuphim\\Qlyrapchieuphim\\Qlysanpham.cs",
+              "RelativeDocumentMoniker": "Qlyrapchieuphim\\Qlysanpham.cs",
+              "ToolTip": "C:\\\u0110\u1ED3 \u00E1n lttq\\Qlyrapchieuphim\\Qlyrapchieuphim\\Qlysanpham.cs [Design]",
+              "RelativeToolTip": "Qlyrapchieuphim\\Qlysanpham.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-28T09:25:07.711Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Qlyphim.cs [Design]",
+              "DocumentMoniker": "C:\\\u0110\u1ED3 \u00E1n lttq\\Qlyrapchieuphim\\Qlyrapchieuphim\\Qlyphim.cs",
+              "RelativeDocumentMoniker": "Qlyrapchieuphim\\Qlyphim.cs",
+              "ToolTip": "C:\\\u0110\u1ED3 \u00E1n lttq\\Qlyrapchieuphim\\Qlyrapchieuphim\\Qlyphim.cs [Design]",
+              "RelativeToolTip": "Qlyrapchieuphim\\Qlyphim.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-28T08:18:21.755Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Adform.cs [Design]",
+              "DocumentMoniker": "C:\\\u0110\u1ED3 \u00E1n lttq\\Qlyrapchieuphim\\Qlyrapchieuphim\\Adform.cs",
+              "RelativeDocumentMoniker": "Qlyrapchieuphim\\Adform.cs",
+              "ToolTip": "C:\\\u0110\u1ED3 \u00E1n lttq\\Qlyrapchieuphim\\Qlyrapchieuphim\\Adform.cs [Design]",
+              "RelativeToolTip": "Qlyrapchieuphim\\Adform.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-29T03:56:08.222Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Form1.cs [Design]",
+              "DocumentMoniker": "C:\\\u0110\u1ED3 \u00E1n lttq\\Qlyrapchieuphim\\Qlyrapchieuphim\\Form1.cs",
+              "RelativeDocumentMoniker": "Qlyrapchieuphim\\Form1.cs",
+              "ToolTip": "C:\\\u0110\u1ED3 \u00E1n lttq\\Qlyrapchieuphim\\Qlyrapchieuphim\\Form1.cs [Design]",
+              "RelativeToolTip": "Qlyrapchieuphim\\Form1.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-28T06:59:32.268Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
