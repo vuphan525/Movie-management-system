@@ -123,9 +123,29 @@ namespace Qlyrapchieuphim.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_find_30 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-find-30", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_food_bar_24 {
             get {
                 object obj = ResourceManager.GetObject("icons8-food-bar-24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_income_60 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-income-60", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -153,6 +173,26 @@ namespace Qlyrapchieuphim.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_movie_60 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-movie-60", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_movie_60__1_ {
+            get {
+                object obj = ResourceManager.GetObject("icons8-movie-60 (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_movie_projector_24 {
             get {
                 object obj = ResourceManager.GetObject("icons8-movie-projector-24", resourceCulture);
@@ -166,6 +206,16 @@ namespace Qlyrapchieuphim.Properties {
         internal static System.Drawing.Bitmap icons8_people_24 {
             get {
                 object obj = ResourceManager.GetObject("icons8-people-24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_staff_60 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-staff-60", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

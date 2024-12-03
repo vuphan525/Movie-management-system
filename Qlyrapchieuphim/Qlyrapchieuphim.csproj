@@ -58,6 +58,12 @@
     <Compile Include="Adform.Designer.cs">
       <DependentUpon>Adform.cs</DependentUpon>
     </Compile>
+    <Compile Include="bangdieukhien.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="bangdieukhien.Designer.cs">
+      <DependentUpon>bangdieukhien.cs</DependentUpon>
+    </Compile>
     <Compile Include="Doanhthu.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -102,6 +108,12 @@
     <Compile Include="Qlysuatchieu.Designer.cs">
       <DependentUpon>Qlysuatchieu.cs</DependentUpon>
     </Compile>
+    <Compile Include="staffForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="staffForm.Designer.cs">
+      <DependentUpon>staffForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Suco.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -116,6 +128,9 @@
     </Compile>
     <EmbeddedResource Include="Adform.resx">
       <DependentUpon>Adform.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bangdieukhien.resx">
+      <DependentUpon>bangdieukhien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Doanhthu.resx">
       <DependentUpon>Doanhthu.cs</DependentUpon>
@@ -147,6 +162,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Qlysuatchieu.resx">
       <DependentUpon>Qlysuatchieu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="staffForm.resx">
+      <DependentUpon>staffForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Suco.resx">
       <DependentUpon>Suco.cs</DependentUpon>
@@ -212,6 +230,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\bussiness-man.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-find-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-movie-60.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-movie-60 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-staff-60.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-income-60.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

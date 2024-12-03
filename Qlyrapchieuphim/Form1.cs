@@ -26,5 +26,27 @@ namespace Qlyrapchieuphim
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (DialogResult.Yes == MessageBox.Show("Bạn có chắc muốn thoát?", "Confirmation Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
+
+            {
+                Application.Exit();
+            }
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            Adform aForm = new Adform();
+            aForm.Show();
+
+            this.Hide();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

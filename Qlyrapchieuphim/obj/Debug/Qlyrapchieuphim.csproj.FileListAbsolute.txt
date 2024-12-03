@@ -19,3 +19,25 @@ C:\Đồ án lttq\Qlyrapchieuphim\Qlyrapchieuphim\obj\Debug\Qlyrapchieuphim.Adfo
 C:\Đồ án lttq\Qlyrapchieuphim\Qlyrapchieuphim\obj\Debug\Qlyrapchieuphim.Qlykhachhang.resources
 C:\Đồ án lttq\Qlyrapchieuphim\Qlyrapchieuphim\obj\Debug\Qlyrapchieuphim.Doanhthu.resources
 C:\Đồ án lttq\Qlyrapchieuphim\Qlyrapchieuphim\obj\Debug\Qlyrapchieuphim.Qlysuatchieu.resources
+C:\Users\phanv\Desktop\clone đồ án 2\Movie-management-system\Qlyrapchieuphim\bin\Debug\Qlyrapchieuphim.exe.config
+C:\Users\phanv\Desktop\clone đồ án 2\Movie-management-system\Qlyrapchieuphim\bin\Debug\Qlyrapchieuphim.exe
+C:\Users\phanv\Desktop\clone đồ án 2\Movie-management-system\Qlyrapchieuphim\bin\Debug\Qlyrapchieuphim.pdb
+C:\Users\phanv\Desktop\clone đồ án 2\Movie-management-system\Qlyrapchieuphim\bin\Debug\Guna.UI2.dll
+C:\Users\phanv\Desktop\clone đồ án 2\Movie-management-system\Qlyrapchieuphim\obj\Debug\Qlyrapchieuphim.csproj.AssemblyReference.cache
+C:\Users\phanv\Desktop\clone đồ án 2\Movie-management-system\Qlyrapchieuphim\obj\Debug\Qlyrapchieuphim.Adform.resources
+C:\Users\phanv\Desktop\clone đồ án 2\Movie-management-system\Qlyrapchieuphim\obj\Debug\Qlyrapchieuphim.Doanhthu.resources
+C:\Users\phanv\Desktop\clone đồ án 2\Movie-management-system\Qlyrapchieuphim\obj\Debug\Qlyrapchieuphim.Form1.resources
+C:\Users\phanv\Desktop\clone đồ án 2\Movie-management-system\Qlyrapchieuphim\obj\Debug\Qlyrapchieuphim.Properties.Resources.resources
+C:\Users\phanv\Desktop\clone đồ án 2\Movie-management-system\Qlyrapchieuphim\obj\Debug\Qlyrapchieuphim.Qlykhachhang.resources
+C:\Users\phanv\Desktop\clone đồ án 2\Movie-management-system\Qlyrapchieuphim\obj\Debug\Qlyrapchieuphim.Qlynhansu.resources
+C:\Users\phanv\Desktop\clone đồ án 2\Movie-management-system\Qlyrapchieuphim\obj\Debug\Qlyrapchieuphim.Qlyphim.resources
+C:\Users\phanv\Desktop\clone đồ án 2\Movie-management-system\Qlyrapchieuphim\obj\Debug\Qlyrapchieuphim.Qlysanpham.resources
+C:\Users\phanv\Desktop\clone đồ án 2\Movie-management-system\Qlyrapchieuphim\obj\Debug\Qlyrapchieuphim.Qlysuatchieu.resources
+C:\Users\phanv\Desktop\clone đồ án 2\Movie-management-system\Qlyrapchieuphim\obj\Debug\Qlyrapchieuphim.Suco.resources
+C:\Users\phanv\Desktop\clone đồ án 2\Movie-management-system\Qlyrapchieuphim\obj\Debug\Qlyrapchieuphim.Voucher.resources
+C:\Users\phanv\Desktop\clone đồ án 2\Movie-management-system\Qlyrapchieuphim\obj\Debug\Qlyrapchieuphim.csproj.GenerateResource.cache
+C:\Users\phanv\Desktop\clone đồ án 2\Movie-management-system\Qlyrapchieuphim\obj\Debug\Qlyrapchieuphim.csproj.CoreCompileInputs.cache
+C:\Users\phanv\Desktop\clone đồ án 2\Movie-management-system\Qlyrapchieuphim\obj\Debug\Qlyrapch.40D05896.Up2Date
+C:\Users\phanv\Desktop\clone đồ án 2\Movie-management-system\Qlyrapchieuphim\obj\Debug\Qlyrapchieuphim.exe
+C:\Users\phanv\Desktop\clone đồ án 2\Movie-management-system\Qlyrapchieuphim\obj\Debug\Qlyrapchieuphim.pdb
+C:\Users\phanv\Desktop\clone đồ án 2\Movie-management-system\Qlyrapchieuphim\obj\Debug\Qlyrapchieuphim.bangdieukhien.resources
