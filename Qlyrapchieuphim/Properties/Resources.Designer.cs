@@ -223,6 +223,26 @@ namespace Qlyrapchieuphim.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_ticket_24 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-ticket-24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_ticket_30 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-ticket-30", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_time_machine_24 {
             get {
                 object obj = ResourceManager.GetObject("icons8-time-machine-24", resourceCulture);

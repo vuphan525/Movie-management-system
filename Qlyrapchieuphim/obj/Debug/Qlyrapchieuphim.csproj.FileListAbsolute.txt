@@ -41,3 +41,6 @@ C:\Users\phanv\Desktop\clone đồ án 2\Movie-management-system\Qlyrapchieuphim
 C:\Users\phanv\Desktop\clone đồ án 2\Movie-management-system\Qlyrapchieuphim\obj\Debug\Qlyrapchieuphim.exe
 C:\Users\phanv\Desktop\clone đồ án 2\Movie-management-system\Qlyrapchieuphim\obj\Debug\Qlyrapchieuphim.pdb
 C:\Users\phanv\Desktop\clone đồ án 2\Movie-management-system\Qlyrapchieuphim\obj\Debug\Qlyrapchieuphim.bangdieukhien.resources
+C:\Users\phanv\Desktop\clone đồ án 2\Movie-management-system\Qlyrapchieuphim\obj\Debug\Qlyrapchieuphim.staffForm.resources
+C:\Users\phanv\Desktop\clone đồ án 2\Movie-management-system\Qlyrapchieuphim\obj\Debug\Qlyrapchieuphim.Banve.resources
+C:\Users\phanv\Desktop\clone đồ án 2\Movie-management-system\Qlyrapchieuphim\obj\Debug\Qlyrapchieuphim.Frombanve.resources

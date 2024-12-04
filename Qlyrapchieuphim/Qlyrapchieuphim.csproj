@@ -64,6 +64,12 @@
     <Compile Include="bangdieukhien.Designer.cs">
       <DependentUpon>bangdieukhien.cs</DependentUpon>
     </Compile>
+    <Compile Include="Banve.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Banve.Designer.cs">
+      <DependentUpon>Banve.cs</DependentUpon>
+    </Compile>
     <Compile Include="Doanhthu.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -75,6 +81,12 @@
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frombanve.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frombanve.Designer.cs">
+      <DependentUpon>Frombanve.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -132,11 +144,17 @@
     <EmbeddedResource Include="bangdieukhien.resx">
       <DependentUpon>bangdieukhien.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Banve.resx">
+      <DependentUpon>Banve.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Doanhthu.resx">
       <DependentUpon>Doanhthu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frombanve.resx">
+      <DependentUpon>Frombanve.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -245,6 +263,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-income-60.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-ticket-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-ticket-30.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -38,7 +38,7 @@ namespace Qlyrapchieuphim
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            Adform aForm = new Adform();
+            Frombanve aForm = new Frombanve();
             aForm.Show();
 
             this.Hide();
