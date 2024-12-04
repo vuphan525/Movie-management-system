@@ -23,7 +23,7 @@ namespace Qlyrapchieuphim
         {
             foreach (var control in this.Controls)
             {
-                if (control is Button seatButton && seatButton.Name.StartsWith("seat"))
+                if (control is Button seatButton && seatButton.Name.StartsWith("button"))
                 {
                     seatButton.BackColor = Color.White;
                     seatButton.Click += SeatClick;
@@ -33,12 +33,6 @@ namespace Qlyrapchieuphim
         private void SeatClick(object sender, EventArgs e)
         {
             Button a = (Button)sender;
-            if (sold.Contains(a))
-            {
-                MessageBox.Show("This seat is booked!", "DETAIl", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
-                return;
-
-            }
             if (selected.Contains(a))
             {
                 a.BackColor = Color.White;
@@ -46,7 +40,7 @@ namespace Qlyrapchieuphim
             }
             else
             {
-                a.BackColor = Color.MediumPurple;
+                a.BackColor = Color.Yellow;
                 selected.Add(a);
             }
         }
@@ -124,6 +118,16 @@ namespace Qlyrapchieuphim
         private void button12_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

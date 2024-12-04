@@ -32,31 +32,18 @@
             this.label3 = new System.Windows.Forms.Label();
             this.button10 = new System.Windows.Forms.Button();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.button9 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dtpThoiGian = new System.Windows.Forms.DateTimePicker();
-            this.cboFilmName = new System.Windows.Forms.ComboBox();
-            this.cboFormatFilm = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.lvLichChieu = new System.Windows.Forms.ListView();
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.banve1 = new Qlyrapchieuphim.Banve();
+            this.bangdieukhien1 = new Qlyrapchieuphim.bangdieukhien();
             this.guna2Panel3.SuspendLayout();
-            this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label2
@@ -108,6 +95,16 @@
             this.guna2Panel3.Size = new System.Drawing.Size(1108, 44);
             this.guna2Panel3.TabIndex = 3;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::Qlyrapchieuphim.Properties.Resources.office_man;
+            this.pictureBox2.Location = new System.Drawing.Point(867, 8);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(31, 25);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 7;
+            this.pictureBox2.TabStop = false;
+            // 
             // guna2Panel2
             // 
             this.guna2Panel2.Location = new System.Drawing.Point(200, 44);
@@ -132,16 +129,6 @@
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(200, 720);
             this.guna2Panel1.TabIndex = 2;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::Qlyrapchieuphim.Properties.Resources.office_man;
-            this.pictureBox2.Location = new System.Drawing.Point(867, 8);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(31, 25);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 7;
-            this.pictureBox2.TabStop = false;
             // 
             // button9
             // 
@@ -175,6 +162,7 @@
             this.button1.TabIndex = 10;
             this.button1.Text = "BÁN VÉ";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // pictureBox1
             // 
@@ -186,138 +174,23 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // label1
+            // banve1
             // 
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(248)))));
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(200, 44);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1108, 75);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "LỊCH CHIẾU PHIM";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.banve1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(248)))));
+            this.banve1.Location = new System.Drawing.Point(200, 44);
+            this.banve1.Name = "banve1";
+            this.banve1.Size = new System.Drawing.Size(1108, 676);
+            this.banve1.TabIndex = 4;
             // 
-            // groupBox1
+            // bangdieukhien1
             // 
-            this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(248)))));
-            this.groupBox1.Controls.Add(this.dtpThoiGian);
-            this.groupBox1.Controls.Add(this.cboFilmName);
-            this.groupBox1.Controls.Add(this.cboFormatFilm);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(200, 122);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(327, 598);
-            this.groupBox1.TabIndex = 5;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Chi tiết";
-            // 
-            // dtpThoiGian
-            // 
-            this.dtpThoiGian.CustomFormat = "dd/MM/yyyy";
-            this.dtpThoiGian.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpThoiGian.Location = new System.Drawing.Point(18, 76);
-            this.dtpThoiGian.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.dtpThoiGian.Name = "dtpThoiGian";
-            this.dtpThoiGian.Size = new System.Drawing.Size(289, 26);
-            this.dtpThoiGian.TabIndex = 7;
-            this.dtpThoiGian.Value = new System.DateTime(2018, 4, 15, 10, 8, 45, 0);
-            // 
-            // cboFilmName
-            // 
-            this.cboFilmName.FormattingEnabled = true;
-            this.cboFilmName.Location = new System.Drawing.Point(18, 157);
-            this.cboFilmName.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.cboFilmName.Name = "cboFilmName";
-            this.cboFilmName.Size = new System.Drawing.Size(289, 28);
-            this.cboFilmName.TabIndex = 9;
-            // 
-            // cboFormatFilm
-            // 
-            this.cboFormatFilm.FormattingEnabled = true;
-            this.cboFormatFilm.Location = new System.Drawing.Point(18, 244);
-            this.cboFormatFilm.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.cboFormatFilm.Name = "cboFormatFilm";
-            this.cboFormatFilm.Size = new System.Drawing.Size(289, 28);
-            this.cboFormatFilm.TabIndex = 6;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(18, 124);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(48, 20);
-            this.label6.TabIndex = 10;
-            this.label6.Text = "Phim:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(18, 41);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(81, 20);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "Thời Gian:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(18, 211);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(92, 20);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "Suất Chiếu:";
-            // 
-            // lvLichChieu
-            // 
-            this.lvLichChieu.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader5,
-            this.columnHeader1,
-            this.columnHeader3,
-            this.columnHeader4,
-            this.columnHeader2});
-            this.lvLichChieu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lvLichChieu.FullRowSelect = true;
-            this.lvLichChieu.HideSelection = false;
-            this.lvLichChieu.Location = new System.Drawing.Point(532, 122);
-            this.lvLichChieu.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.lvLichChieu.Name = "lvLichChieu";
-            this.lvLichChieu.Size = new System.Drawing.Size(776, 598);
-            this.lvLichChieu.TabIndex = 6;
-            this.lvLichChieu.UseCompatibleStateImageBehavior = false;
-            this.lvLichChieu.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader5
-            // 
-            this.columnHeader5.Text = "";
-            this.columnHeader5.Width = 38;
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "Tên Phòng Chiếu";
-            this.columnHeader1.Width = 167;
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "Tên Phim";
-            this.columnHeader3.Width = 213;
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "Giờ Chiếu";
-            this.columnHeader4.Width = 150;
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "Tình Trạng";
-            this.columnHeader2.Width = 163;
+            this.bangdieukhien1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(248)))));
+            this.bangdieukhien1.Location = new System.Drawing.Point(200, 44);
+            this.bangdieukhien1.Name = "bangdieukhien1";
+            this.bangdieukhien1.Size = new System.Drawing.Size(1108, 676);
+            this.bangdieukhien1.TabIndex = 5;
             // 
             // staffForm
             // 
@@ -325,9 +198,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(248)))));
             this.ClientSize = new System.Drawing.Size(1308, 720);
-            this.Controls.Add(this.lvLichChieu);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.bangdieukhien1);
+            this.Controls.Add(this.banve1);
             this.Controls.Add(this.guna2Panel3);
             this.Controls.Add(this.guna2Panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -336,11 +208,9 @@
             this.Text = "staffForm";
             this.guna2Panel3.ResumeLayout(false);
             this.guna2Panel3.PerformLayout();
-            this.guna2Panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.guna2Panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -357,19 +227,7 @@
         private System.Windows.Forms.Button button9;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DateTimePicker dtpThoiGian;
-        private System.Windows.Forms.ComboBox cboFilmName;
-        private System.Windows.Forms.ComboBox cboFormatFilm;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ListView lvLichChieu;
-        private System.Windows.Forms.ColumnHeader columnHeader5;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader3;
-        private System.Windows.Forms.ColumnHeader columnHeader4;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private Banve banve1;
+        private bangdieukhien bangdieukhien1;
     }
 }

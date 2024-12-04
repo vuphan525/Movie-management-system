@@ -55,7 +55,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.lblDiscount = new System.Windows.Forms.Label();
             this.picFilm = new System.Windows.Forms.PictureBox();
-            this.seat1 = new System.Windows.Forms.Button();
+            this.button = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
@@ -414,7 +414,7 @@
             this.panel6.Controls.Add(this.lblDiscount);
             this.panel6.Location = new System.Drawing.Point(750, 522);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(420, 200);
+            this.panel6.Size = new System.Drawing.Size(425, 200);
             this.panel6.TabIndex = 15;
             // 
             // guna2Button2
@@ -448,6 +448,7 @@
             this.guna2Button1.Size = new System.Drawing.Size(142, 36);
             this.guna2Button1.TabIndex = 48;
             this.guna2Button1.Text = "Thanh toán";
+            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
             // lblTotal
             // 
@@ -456,7 +457,7 @@
             this.lblTotal.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotal.ForeColor = System.Drawing.Color.Red;
-            this.lblTotal.Location = new System.Drawing.Point(154, 9);
+            this.lblTotal.Location = new System.Drawing.Point(159, 9);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(254, 30);
             this.lblTotal.TabIndex = 9;
@@ -479,7 +480,7 @@
             this.lblPayment.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblPayment.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPayment.ForeColor = System.Drawing.Color.Red;
-            this.lblPayment.Location = new System.Drawing.Point(154, 93);
+            this.lblPayment.Location = new System.Drawing.Point(159, 93);
             this.lblPayment.Name = "lblPayment";
             this.lblPayment.Size = new System.Drawing.Size(254, 30);
             this.lblPayment.TabIndex = 10;
@@ -512,7 +513,7 @@
             this.lblDiscount.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblDiscount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDiscount.ForeColor = System.Drawing.Color.Red;
-            this.lblDiscount.Location = new System.Drawing.Point(154, 51);
+            this.lblDiscount.Location = new System.Drawing.Point(159, 51);
             this.lblDiscount.Name = "lblDiscount";
             this.lblDiscount.Size = new System.Drawing.Size(254, 30);
             this.lblDiscount.TabIndex = 10;
@@ -528,16 +529,16 @@
             this.picFilm.TabIndex = 8;
             this.picFilm.TabStop = false;
             // 
-            // seat1
+            // button
             // 
-            this.seat1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.seat1.Location = new System.Drawing.Point(100, 99);
-            this.seat1.Name = "seat1";
-            this.seat1.Size = new System.Drawing.Size(45, 30);
-            this.seat1.TabIndex = 16;
-            this.seat1.Text = "A1";
-            this.seat1.UseVisualStyleBackColor = true;
-            this.seat1.Click += new System.EventHandler(this.seat1_Click);
+            this.button.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button.Location = new System.Drawing.Point(100, 99);
+            this.button.Name = "button";
+            this.button.Size = new System.Drawing.Size(45, 30);
+            this.button.TabIndex = 16;
+            this.button.Text = "A1";
+            this.button.UseVisualStyleBackColor = true;
+            this.button.Click += new System.EventHandler(this.seat1_Click);
             // 
             // button3
             // 
@@ -1940,6 +1941,7 @@
             this.button2.TabIndex = 282;
             this.button2.Text = "A2";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
             // Frombanve
             // 
@@ -2086,7 +2088,7 @@
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.seat1);
+            this.Controls.Add(this.button);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
@@ -2138,7 +2140,7 @@
         private Guna.UI2.WinForms.Guna2Button guna2Button2;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox1;
-        private System.Windows.Forms.Button seat1;
+        private System.Windows.Forms.Button button;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;

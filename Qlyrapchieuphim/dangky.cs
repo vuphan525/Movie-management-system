@@ -10,21 +10,11 @@ using System.Windows.Forms;
 
 namespace Qlyrapchieuphim
 {
-    public partial class Form1 : Form
+    public partial class dangky : Form
     {
-        public Form1()
+        public dangky()
         {
             InitializeComponent();
-        }
-
-        private void guna2VSeparator1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2CheckBox1_CheckedChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -36,23 +26,15 @@ namespace Qlyrapchieuphim
             }
         }
 
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            staffForm aForm = new staffForm();
-            aForm.Show();
-
-            this.Hide();
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-            dangky dk = new dangky();
-            dk.Show();
+            Form1 frm = new Form1();
+            frm.Show();
 
             this.Hide();
         }

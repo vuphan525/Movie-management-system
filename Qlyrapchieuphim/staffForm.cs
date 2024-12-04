@@ -42,5 +42,17 @@ namespace Qlyrapchieuphim
                 this.Hide();
             }
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            banve1.Hide();
+            bangdieukhien1.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            banve1.Show();
+            bangdieukhien1.Hide();
+        }
     }
 }
