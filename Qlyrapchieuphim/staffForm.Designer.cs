@@ -62,9 +62,9 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(904, 13);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(124, 16);
+            this.label3.Size = new System.Drawing.Size(140, 16);
             this.label3.TabIndex = 6;
-            this.label3.Text = "Xin chào, quản lý";
+            this.label3.Text = "Xin chào, nhân viên";
             // 
             // button10
             // 
