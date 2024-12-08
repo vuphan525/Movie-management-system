@@ -38,9 +38,16 @@ namespace Qlyrapchieuphim
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            staffForm aForm = new staffForm();
-            aForm.Show();
-
+            if (guna2TextBox4.Text == string.Empty) 
+            {
+                staffForm aForm = new staffForm();
+                aForm.Show();
+            }
+            else
+            {
+                Adform adform = new Adform();
+                adform.Show();
+            }
             this.Hide();
         }
 

@@ -6,17 +6,20 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Configuration;
 using System.Windows.Forms;
+using Microsoft.Data.SqlClient;
 
 namespace Qlyrapchieuphim
 {
     public partial class Adform : Form
     {
+        
         public Adform()
         {
             InitializeComponent();
         }
-
+        
         private void voucher1_Load(object sender, EventArgs e)
         {
 
