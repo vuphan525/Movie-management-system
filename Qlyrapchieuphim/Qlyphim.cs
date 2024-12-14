@@ -2,24 +2,42 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Configuration;
 using System.Windows.Forms;
+<<<<<<< HEAD
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
+using Microsoft.Data.SqlClient;
+=======
+
+>>>>>>> test_database
 
 namespace Qlyrapchieuphim
 {
     public partial class Qlyphim : UserControl
     {
+        string ConnString = ConfigurationManager.ConnectionStrings["ConnString"].ConnectionString;
         public Qlyphim()
         {
             InitializeComponent();
         }
-
+        private void LoadData()
+        {
+            SqlConnection conn = new SqlConnection(ConnString);
+            conn.Open();
+            string SqlQuery = "select MAPHIM, TENPHIM, THELOAI, THOILUONG, MOTA from BOPHIM";
+            SqlDataAdapter adapter = new SqlDataAdapter(SqlQuery, conn);
+            DataSet ds = new DataSet();
+            adapter.Fill(ds, "BOPHIM");
+            DataTable dt = ds.Tables["BOPHIM"];
+            dataGridView1.DataSource = dt;
+        }
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -45,6 +63,7 @@ namespace Qlyrapchieuphim
 
         }
 
+<<<<<<< HEAD
         private void guna2Button1_Click(object sender, EventArgs e)
         {
 
@@ -286,6 +305,13 @@ namespace Qlyrapchieuphim
                      check = false;
 
             }
+        }
+        private void Qlyphim_Load(object sender, EventArgs e)
+        {
+            LoadData();
+=======
+        
+>>>>>>> test_database
         }
     }
 }

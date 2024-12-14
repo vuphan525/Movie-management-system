@@ -46,9 +46,22 @@ namespace Qlyrapchieuphim
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             Adform aForm = new Adform();
             aForm.Show();
 
+=======
+            if (guna2TextBox4.Text == string.Empty) 
+            {
+                staffForm aForm = new staffForm();
+                aForm.Show();
+            }
+            else
+            {
+                Adform adform = new Adform();
+                adform.Show();
+            }
+>>>>>>> test_database
             this.Hide();
         }
 
