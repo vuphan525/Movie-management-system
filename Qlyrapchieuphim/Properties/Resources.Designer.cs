@@ -65,7 +65,7 @@ namespace Qlyrapchieuphim.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap bussiness_man {
             get {
-                object obj = ResourceManager.GetObject("bussiness-man", resourceCulture);
+                object obj = ResourceManager.GetObject("bussiness_man", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -95,7 +95,7 @@ namespace Qlyrapchieuphim.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap ezgif_4_3ebb920750 {
             get {
-                object obj = ResourceManager.GetObject("ezgif-4-3ebb920750", resourceCulture);
+                object obj = ResourceManager.GetObject("ezgif_4_3ebb920750", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -105,7 +105,7 @@ namespace Qlyrapchieuphim.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap icons8_customer_24 {
             get {
-                object obj = ResourceManager.GetObject("icons8-customer-24", resourceCulture);
+                object obj = ResourceManager.GetObject("icons8_customer_24", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -115,7 +115,7 @@ namespace Qlyrapchieuphim.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap icons8_error_24 {
             get {
-                object obj = ResourceManager.GetObject("icons8-error-24", resourceCulture);
+                object obj = ResourceManager.GetObject("icons8_error_24", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -125,7 +125,7 @@ namespace Qlyrapchieuphim.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap icons8_find_30 {
             get {
-                object obj = ResourceManager.GetObject("icons8-find-30", resourceCulture);
+                object obj = ResourceManager.GetObject("icons8_find_30", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -135,7 +135,7 @@ namespace Qlyrapchieuphim.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap icons8_food_bar_24 {
             get {
-                object obj = ResourceManager.GetObject("icons8-food-bar-24", resourceCulture);
+                object obj = ResourceManager.GetObject("icons8_food_bar_24", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -145,7 +145,7 @@ namespace Qlyrapchieuphim.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap icons8_income_60 {
             get {
-                object obj = ResourceManager.GetObject("icons8-income-60", resourceCulture);
+                object obj = ResourceManager.GetObject("icons8_income_60", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -155,7 +155,7 @@ namespace Qlyrapchieuphim.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap icons8_logout_24 {
             get {
-                object obj = ResourceManager.GetObject("icons8-logout-24", resourceCulture);
+                object obj = ResourceManager.GetObject("icons8_logout_24", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -165,7 +165,7 @@ namespace Qlyrapchieuphim.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap icons8_money_24 {
             get {
-                object obj = ResourceManager.GetObject("icons8-money-24", resourceCulture);
+                object obj = ResourceManager.GetObject("icons8_money_24", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -175,7 +175,7 @@ namespace Qlyrapchieuphim.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap icons8_movie_60 {
             get {
-                object obj = ResourceManager.GetObject("icons8-movie-60", resourceCulture);
+                object obj = ResourceManager.GetObject("icons8_movie_60", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -185,7 +185,7 @@ namespace Qlyrapchieuphim.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap icons8_movie_60__1_ {
             get {
-                object obj = ResourceManager.GetObject("icons8-movie-60 (1)", resourceCulture);
+                object obj = ResourceManager.GetObject("icons8_movie_60__1_", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -195,7 +195,7 @@ namespace Qlyrapchieuphim.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap icons8_movie_projector_24 {
             get {
-                object obj = ResourceManager.GetObject("icons8-movie-projector-24", resourceCulture);
+                object obj = ResourceManager.GetObject("icons8_movie_projector_24", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -205,7 +205,7 @@ namespace Qlyrapchieuphim.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap icons8_people_24 {
             get {
-                object obj = ResourceManager.GetObject("icons8-people-24", resourceCulture);
+                object obj = ResourceManager.GetObject("icons8_people_24", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -215,27 +215,7 @@ namespace Qlyrapchieuphim.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap icons8_staff_60 {
             get {
-                object obj = ResourceManager.GetObject("icons8-staff-60", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap icons8_ticket_24 {
-            get {
-                object obj = ResourceManager.GetObject("icons8-ticket-24", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap icons8_ticket_30 {
-            get {
-                object obj = ResourceManager.GetObject("icons8-ticket-30", resourceCulture);
+                object obj = ResourceManager.GetObject("icons8_staff_60", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -245,7 +225,7 @@ namespace Qlyrapchieuphim.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap icons8_time_machine_24 {
             get {
-                object obj = ResourceManager.GetObject("icons8-time-machine-24", resourceCulture);
+                object obj = ResourceManager.GetObject("icons8_time_machine_24", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -255,7 +235,7 @@ namespace Qlyrapchieuphim.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap icons8_voucher_24 {
             get {
-                object obj = ResourceManager.GetObject("icons8-voucher-24", resourceCulture);
+                object obj = ResourceManager.GetObject("icons8_voucher_24", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -265,7 +245,7 @@ namespace Qlyrapchieuphim.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap office_man {
             get {
-                object obj = ResourceManager.GetObject("office-man", resourceCulture);
+                object obj = ResourceManager.GetObject("office_man", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -275,7 +255,7 @@ namespace Qlyrapchieuphim.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap watch_movie {
             get {
-                object obj = ResourceManager.GetObject("watch-movie", resourceCulture);
+                object obj = ResourceManager.GetObject("watch_movie", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
