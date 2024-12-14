@@ -11,12 +11,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web.Configuration;
 using System.Windows.Forms;
-<<<<<<< HEAD
+
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using Microsoft.Data.SqlClient;
-=======
 
->>>>>>> test_database
 
 namespace Qlyrapchieuphim
 {
@@ -63,7 +61,6 @@ namespace Qlyrapchieuphim
 
         }
 
-<<<<<<< HEAD
         private void guna2Button1_Click(object sender, EventArgs e)
         {
 
@@ -114,7 +111,8 @@ namespace Qlyrapchieuphim
             dataGridView1.ClearSelection();
             guna2TextBox6.Text = "Tìm kiếm theo tên";
             guna2TextBox6.ForeColor = Color.Gray;
-            
+            LoadData();
+
         }
         private void CapNhatSTT()
         {
@@ -306,12 +304,7 @@ namespace Qlyrapchieuphim
 
             }
         }
-        private void Qlyphim_Load(object sender, EventArgs e)
-        {
-            LoadData();
-=======
         
->>>>>>> test_database
-        }
+        
     }
 }
