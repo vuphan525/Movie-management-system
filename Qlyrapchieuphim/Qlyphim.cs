@@ -14,6 +14,7 @@ using System.Windows.Forms;
 
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using Microsoft.Data.SqlClient;
+using System.IO;
 
 
 namespace Qlyrapchieuphim
@@ -21,85 +22,98 @@ namespace Qlyrapchieuphim
     public partial class Qlyphim : UserControl
     {
         string ConnString = ConfigurationManager.ConnectionStrings["ConnString"].ConnectionString;
+        string poster_url = string.Empty;
+        string projectFolder = AppDomain.CurrentDomain.BaseDirectory; // Thư mục dự án
         public Qlyphim()
         {
             InitializeComponent();
+            idphim.MaxLength = 4;
+            giaphim.Enabled = false;
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
         }
         private void LoadData()
         {
             SqlConnection conn = new SqlConnection(ConnString);
             conn.Open();
-            string SqlQuery = "select MAPHIM, TENPHIM, THELOAI, THOILUONG, MOTA from BOPHIM";
+            string SqlQuery = "select MAPHIM, TENPHIM, THELOAI, THOILUONG, MOTA, DANGCHIEU, POSTER_URL from BOPHIM";
             SqlDataAdapter adapter = new SqlDataAdapter(SqlQuery, conn);
             DataSet ds = new DataSet();
             adapter.Fill(ds, "BOPHIM");
             DataTable dt = ds.Tables["BOPHIM"];
             dataGridView1.DataSource = dt;
-        }
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
+            conn.Close();
+            
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2Button1_Click(object sender, EventArgs e)
+        
+        private void AddButton_Click(object sender, EventArgs e)
         {
 
             if (string.IsNullOrWhiteSpace(idphim.Text) ||
-               string.IsNullOrWhiteSpace(tenphim.Text) ||
-
-               string.IsNullOrWhiteSpace(thoiluong.Text) ||
-               string.IsNullOrWhiteSpace(trangthai.Text)||
+                string.IsNullOrWhiteSpace(tenphim.Text) ||
+                string.IsNullOrWhiteSpace(thoiluong.Text) ||
+                string.IsNullOrWhiteSpace(trangthai.Text) ||
                 string.IsNullOrWhiteSpace(mota.Text))
-
-
             {
-                MessageBox.Show("Vui lòng điền đầy đủ thông tin.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin.",
+                    "Thông báo",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
                 return;
             }
-            
-                if (!int.TryParse(thoiluong.Text, out int he))
-                {
-                    // Hiển thị MessageBox nếu không phải là số
-                    MessageBox.Show("Thời lượng phải được nhập dươi dạng một số nguyên!", "Lỗi nhập liệu", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
-                
-            int stt = dataGridView1.RowCount + 1;
-            dataGridView1.Rows.Add(stt.ToString("D2"), idphim.Text, tenphim.Text, theloai.Text,thoiluong.Text,trangthai.Text,mota.Text );
 
-            Updatea();
+            if (!float.TryParse(thoiluong.Text, out _))
+            {
+                // Hiển thị MessageBox nếu không phải là số
+                MessageBox.Show(
+                    "Thời lượng phải được nhập dươi dạng một số thực!",
+                    "Lỗi nhập liệu",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+                return;
+            }
+            if (mota.Text.Length > 512)
+            {
+                MessageBox.Show(
+                    "Mô tả không quá 512 ký tự!!",
+                    "Lỗi nhập liệu",
+                    MessageBoxButtons.OK, 
+                    MessageBoxIcon.Warning
+                    );
+            }
+            //poster
+            
+            string SqlQuery = "INSERT INTO BOPHIM VALUES (@MAPHIM, @TENPHIM, @THELOAI, @THOILUONG, @MOTA, @POSTER_URL, 'TRAILER_URL', @TRANGTHAI)";
+            SqlConnection conn = new SqlConnection(ConnString);
+            conn.Open();
+            SqlCommand comm = new SqlCommand(SqlQuery, conn);
+            comm.Parameters.Add("@MAPHIM", SqlDbType.Char).Value = idphim.Text;
+            comm.Parameters.Add("@TENPHIM", SqlDbType.NVarChar).Value = tenphim.Text;
+            comm.Parameters.Add("@THELOAI", SqlDbType.NVarChar).Value = theloai.Text;
+            comm.Parameters.Add("@THOILUONG", SqlDbType.Float).Value = float.Parse(thoiluong.Text);
+            comm.Parameters.Add("@MOTA", SqlDbType.NVarChar).Value = mota.Text;
+            comm.Parameters.Add("@TRANGTHAI", SqlDbType.NVarChar).Value = trangthai.Text;
+            comm.Parameters.Add("@POSTER_URL", SqlDbType.VarChar).Value = poster_url;
+            comm.ExecuteNonQuery();
+            conn.Close();
+            LoadData();
+            Update();
+            //int stt = dataGridView1.RowCount + 1;
+            //dataGridView1.Rows.Add(stt.ToString("D2"), idphim.Text, tenphim.Text, theloai.Text,thoiluong.Text,trangthai.Text,mota.Text );
+
         }
-        void Updatea()
+        void Update()
         {
             idphim.Clear();
+            idphim.Enabled = true;
             tenphim.Clear();
             theloai.SelectedIndex = 0;
             thoiluong.Clear();
             trangthai.SelectedIndex = 1;
             mota.Clear();
             dataGridView1.ClearSelection();
-
-
+            pictureBox1.Image = null;
+            poster_url = string.Empty;
         }
 
         private void Qlyphim_Load(object sender, EventArgs e)
@@ -109,22 +123,14 @@ namespace Qlyrapchieuphim
             trangthai.SelectedIndex = 1;
             dataGridView1.AutoSize = false;
             dataGridView1.ClearSelection();
-            guna2TextBox6.Text = "Tìm kiếm theo tên";
-            guna2TextBox6.ForeColor = Color.Gray;
+            SearchTextBox.Text = "Tìm kiếm theo tên";
+            SearchTextBox.ForeColor = Color.Gray;
             LoadData();
 
         }
-        private void CapNhatSTT()
-        {
-            for (int i = 0; i < dataGridView1.Rows.Count; i++)
-            {
-                dataGridView1.Rows[i].Cells[0].Value = (i + 1).ToString("D2"); // Giả sử cột STT là cột đầu tiên
-            }
-        }
+        
 
-        private void guna2Button2_Click(object sender, EventArgs e)
-
-
+        private void UpdateButton_Click(object sender, EventArgs e)
         {
             if (dataGridView1.SelectedRows.Count == 0)
             {
@@ -132,14 +138,12 @@ namespace Qlyrapchieuphim
                 return;
             }
 
-            if (string.IsNullOrWhiteSpace(idphim.Text) ||
-               string.IsNullOrWhiteSpace(tenphim.Text) ||
-
-               string.IsNullOrWhiteSpace(thoiluong.Text) ||
-               string.IsNullOrWhiteSpace(trangthai.Text) ||
+            if (
+                string.IsNullOrWhiteSpace(idphim.Text) ||
+                string.IsNullOrWhiteSpace(tenphim.Text) ||
+                string.IsNullOrWhiteSpace(thoiluong.Text) ||
+                string.IsNullOrWhiteSpace(trangthai.Text) ||
                 string.IsNullOrWhiteSpace(mota.Text))
-
-
             {
                 MessageBox.Show("Vui lòng điền đầy đủ thông tin.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -151,54 +155,120 @@ namespace Qlyrapchieuphim
                 MessageBox.Show("Thời lượng phải được nhập dươi dạng một số nguyên!", "Lỗi nhập liệu", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+            if (mota.Text.Length > 512)
+            {
+                MessageBox.Show(
+                    "Mô tả không quá 512 ký tự!!",
+                    "Lỗi nhập liệu",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning
+                    );
+            }
 
-            
-            int selectedRowIndex = dataGridView1.SelectedRows[0].Index;
-
-            // Update values in selected row
-
-            dataGridView1.Rows[selectedRowIndex].Cells[1].Value = idphim.Text;
-            dataGridView1.Rows[selectedRowIndex].Cells[2].Value = tenphim.Text;
-            dataGridView1.Rows[selectedRowIndex].Cells[3].Value = theloai.Text;
-            dataGridView1.Rows[selectedRowIndex].Cells[4].Value = thoiluong.Text;
-            dataGridView1.Rows[selectedRowIndex].Cells[5].Value = trangthai.Text;
-            dataGridView1.Rows[selectedRowIndex].Cells[6].Value = mota.Text;
-            Updatea();
+            string SqlQuery = "UPDATE BOPHIM SET " +
+                "TENPHIM =  @TENPHIM," +
+                "THELOAI = @THELOAI," +
+                "THOILUONG = @THOILUONG," +
+                "MOTA = @MOTA, " +
+                "POSTER_URL = @POSTER_URL," +
+                "TRAILER_URL = 'TRAILER_URL'," +
+                "DANGCHIEU = @TRANGTHAI " +
+                "WHERE MAPHIM = @MAPHIM";
+            SqlConnection conn = new SqlConnection(ConnString);
+            conn.Open();
+            SqlCommand comm = new SqlCommand(SqlQuery, conn);
+            comm.Parameters.Add("@MAPHIM", SqlDbType.Char).Value = idphim.Text;
+            comm.Parameters.Add("@TENPHIM", SqlDbType.NVarChar).Value = tenphim.Text;
+            comm.Parameters.Add("@THELOAI", SqlDbType.NVarChar).Value = theloai.Text;
+            comm.Parameters.Add("@THOILUONG", SqlDbType.Float).Value = float.Parse(thoiluong.Text);
+            comm.Parameters.Add("@MOTA", SqlDbType.NVarChar).Value = mota.Text;
+            comm.Parameters.Add("@TRANGTHAI", SqlDbType.NVarChar).Value = trangthai.Text;
+            comm.Parameters.Add("POSTER_URL", SqlDbType.VarChar).Value = poster_url;
+            comm.ExecuteNonQuery();
+            conn.Close();
+            LoadData();
+            Update();
 
         }
-
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
                 // Lấy thông tin của dòng được chọn
-                DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
+                DataTable dt = dataGridView1.DataSource as DataTable;
 
                 // Gán giá trị cho các TextBox
-                idphim.Text = row.Cells[1].Value.ToString();
-                tenphim.Text = row.Cells[2].Value.ToString();
-                theloai.Text = row.Cells[3].Value.ToString();
-                thoiluong.Text = row.Cells[4].Value.ToString();
-                trangthai.Text = row.Cells[5].Value.ToString();
-                mota.Text = row.Cells[6].Value.ToString();
+                idphim.Text = dt.Rows[e.RowIndex]["MAPHIM"].ToString();
+                idphim.Enabled = false;
+                tenphim.Text = dt.Rows[e.RowIndex]["TENPHIM"].ToString();
+                theloai.SelectedItem = dt.Rows[e.RowIndex]["THELOAI"].ToString();
+                thoiluong.Text = dt.Rows[e.RowIndex]["THOILUONG"].ToString();
+                trangthai.SelectedItem = dt.Rows[e.RowIndex]["DANGCHIEU"].ToString();
+                mota.Text = dt.Rows[e.RowIndex]["MOTA"].ToString();
+                string relative_poster_path = dt.Rows[e.RowIndex]["POSTER_URL"].ToString();
+                poster_url = Path.Combine(projectFolder, relative_poster_path);
+                try
+                {
+                    using (FileStream stream = new FileStream(poster_url, FileMode.Open))
+                    {
+                        pictureBox1.Image = Image.FromStream(stream);
+                    }
+                }
+                catch (Exception ex) 
+                {
+                    if (ex is FileNotFoundException)
+                    {
+                        MessageBox.Show(
+                        "Không tìm thấy file poster",
+                        "Lỗi dữ liệu!",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                    }
+                    if (ex is DirectoryNotFoundException)
+                    {
+                        MessageBox.Show(
+                        "Không tìm thấy folder poster",
+                        "Lỗi dữ liệu!",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                    }
+                }
                 check = true;
             }
-            
+
         }
 
-        private void guna2Button3_Click(object sender, EventArgs e)
+        private void DeleteButton_Click(object sender, EventArgs e)
         {
 
             if (dataGridView1.SelectedRows.Count > 0)
             {
 
-                DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xóa dòng này?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
+                DialogResult result = MessageBox.Show(
+                    "Bạn có chắc chắn muốn xóa dòng này?",
+                    "Xác nhận",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question);
+                
                 if (result == DialogResult.Yes)
                 {
-
-                    dataGridView1.Rows.RemoveAt(dataGridView1.SelectedRows[0].Index);
-                    CapNhatSTT();
+                    SqlConnection conn = new SqlConnection(ConnString);
+                    DataTable dt = dataGridView1.DataSource as DataTable;
+                    conn.Open();
+                    foreach (DataGridViewRow dr in dataGridView1.SelectedRows)
+                    {
+                        int selected = dr.Index;
+                        string temp_id = dt.Rows[selected]["MAPHIM"].ToString();
+                        string SqlQuery = "DELETE FROM BOPHIM WHERE MAPHIM = " + temp_id;
+                        SqlCommand cmd = new SqlCommand(SqlQuery, conn);
+                        cmd.ExecuteNonQuery();
+                        string fullPath = Path.Combine(projectFolder, "posters", temp_id + ".png");
+                        if (File.Exists(fullPath))
+                            File.Delete(fullPath);
+                    }
+                    conn.Close();
+                    LoadData();
+                    Update();
                 }
             }
             else
@@ -207,48 +277,41 @@ namespace Qlyrapchieuphim
             }
         }
 
-        private void guna2TextBox6_Enter(object sender, EventArgs e)
+        private void SearchTextBox_Enter(object sender, EventArgs e)
         {
-            if (guna2TextBox6.Text == "Tìm kiếm theo tên")
+            if (SearchTextBox.Text == "Tìm kiếm theo tên")
             {
-                guna2TextBox6.Text = "";
+                SearchTextBox.Text = "";
 
-                guna2TextBox6.ForeColor = Color.Black;
+                SearchTextBox.ForeColor = Color.Black;
             }
         }
 
-        private void guna2TextBox6_Leave(object sender, EventArgs e)
+        private void SearchTextBox_Leave(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(guna2TextBox6.Text))
+            if (string.IsNullOrWhiteSpace(SearchTextBox.Text))
             {
-                guna2TextBox6.Text = "Tìm kiếm theo tên";
-                guna2TextBox6.ForeColor = Color.Gray;
+                SearchTextBox.Text = "Tìm kiếm theo tên";
+                SearchTextBox.ForeColor = Color.Gray;
 
             }
         }
 
-        private void guna2TextBox6_TextChanged(object sender, EventArgs e)
+        private void SearchTextBox_TextChanged(object sender, EventArgs e)
         {
-            if (guna2TextBox6.Text != "Tìm kiếm theo tên")
+            if (SearchTextBox.Text != "Tìm kiếm theo tên")
             {
-                string tenCanTim = guna2TextBox6.Text.ToLower();
+                string tenCanTim = SearchTextBox.Text.ToLower();
                 string tenSV = " ";
-
+                DataTable dt = dataGridView1.DataSource as DataTable;
                 foreach (DataGridViewRow row in dataGridView1.Rows)
                 {
                     if (!row.IsNewRow)
                     {
-                        if (row.Cells[2].Value != null)
-                        {
-                            tenSV = row.Cells[2].Value.ToString().ToLower();
-
-                        }
-                        else
-                        {
-
-                            MessageBox.Show(" Không có dữ liệu trong bảng!");
-                        }
-
+                        int index = row.Index;
+                        tenSV = dt.Rows[index]["TENPHIM"].ToString().ToLower();
+                        CurrencyManager currencyManager = (CurrencyManager)BindingContext[dataGridView1.DataSource];
+                        currencyManager.SuspendBinding();
                         if (tenSV.Contains(tenCanTim))
                         {
                             row.Visible = true;
@@ -257,15 +320,12 @@ namespace Qlyrapchieuphim
                         {
                             row.Visible = false;
                         }
+                        currencyManager.ResumeBinding();
                     }
                 }
             }
         }
        
-        private void Qlyphim_Click(object sender, EventArgs e)
-        {
-           
-        }
         public bool check=false;
         private void Qlyphim_MouseDown(object sender, MouseEventArgs e)
         {
@@ -274,7 +334,7 @@ namespace Qlyrapchieuphim
                 if (!dataGridView1.Bounds.Contains(e.Location))
                 {
                     dataGridView1.ClearSelection();
-                    Updatea();
+                    Update();
                 }
                 check = false;
             }
@@ -287,7 +347,7 @@ namespace Qlyrapchieuphim
                 if (!dataGridView1.Bounds.Contains(e.Location))
                 {
                     dataGridView1.ClearSelection();
-                    Updatea();
+                    Update();
                 }
             }
             check = false;
@@ -297,14 +357,98 @@ namespace Qlyrapchieuphim
         {
             if (check)
             {
-                
-                    dataGridView1.ClearSelection();
-                    Updatea();
-                     check = false;
+
+                dataGridView1.ClearSelection();
+                Update();
+                check = false;
 
             }
         }
-        
-        
+
+        private void dataGridView1_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
+        {
+            var grid = sender as DataGridView;
+            var rowIdx = (e.RowIndex + 1).ToString();
+
+            var centerFormat = new StringFormat()
+            {
+                // right alignment might actually make more sense for numbers
+                Alignment = StringAlignment.Center,
+                LineAlignment = StringAlignment.Center
+            };
+
+            var headerBounds = new Rectangle(e.RowBounds.Left, e.RowBounds.Top, grid.RowHeadersWidth, e.RowBounds.Height);
+            e.Graphics.DrawString(rowIdx, this.Font, SystemBrushes.ControlText, headerBounds, centerFormat);
+        }
+
+        private void AddPosterButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Image new_poster;
+                // Tạo hộp thoại chọn file
+                using (OpenFileDialog openFileDialog = new OpenFileDialog())
+                {
+                    // Chỉ cho phép chọn file hình ảnh
+                    openFileDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp;*.gif";
+                    openFileDialog.Title = "Chọn hình ảnh";
+
+                    // Kiểm tra xem người dùng có chọn file không
+                    if (openFileDialog.ShowDialog() == DialogResult.OK)
+                    {
+                        // Lấy đường dẫn file hình ảnh
+                        string filePath = openFileDialog.FileName;
+
+                        // Hiển thị hình ảnh trong PictureBox
+                        using(FileStream stream = new FileStream(filePath, FileMode.Open))
+                        {
+                            pictureBox1.Image = Image.FromStream(stream);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Có lỗi xảy ra: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            try
+            {
+                // 1. Kiểm tra xem PictureBox có hình ảnh không
+                if (pictureBox1.Image == null)
+                {
+                    MessageBox.Show("Không có hình ảnh nào trong PictureBox.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                // 2. Tạo đường dẫn đến thư mục "New folder" trong thư mục dự án
+                
+                string newFolderPath = Path.Combine(projectFolder, "posters");
+
+                // Tạo thư mục nếu nó chưa tồn tại
+                if (!Directory.Exists(newFolderPath))
+                {
+                    Directory.CreateDirectory(newFolderPath);
+                }
+
+                // 3. Tạo tên file hình ảnh (ví dụ: image.png)
+                string fileName = idphim.Text + ".png"; // Tên file hình ảnh (bạn có thể thay đổi tên này)
+                string fullPath = Path.Combine(newFolderPath, fileName);
+                //delete if existing
+                if (File.Exists(fullPath))
+                    File.Delete(fullPath);
+                // 4. Lưu hình ảnh từ PictureBox vào thư mục
+                using (FileStream stream = new FileStream(fullPath, FileMode.Create, FileAccess.ReadWrite))
+                {
+                    pictureBox1.Image.Save(stream, System.Drawing.Imaging.ImageFormat.Png);
+                    poster_url = Path.Combine("posters", fileName);
+                }
+                
+                //MessageBox.Show("Hình ảnh đã được lưu thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Có lỗi xảy ra: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }
