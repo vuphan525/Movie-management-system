@@ -21,16 +21,19 @@ namespace Qlyrapchieuphim
 {
     public partial class Qlyphim : UserControl
     {
-        string ConnString = ConfigurationManager.ConnectionStrings["ConnString"].ConnectionString;
-        string poster_url = string.Empty;
-        string projectFolder = AppDomain.CurrentDomain.BaseDirectory; // Thư mục dự án
+        
         public Qlyphim()
         {
             InitializeComponent();
             idphim.MaxLength = 4;
+            tenphim.MaxLength = 100;
             giaphim.Enabled = false;
+            dataGridView1.ReadOnly = true;
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
         }
+        string ConnString = ConfigurationManager.ConnectionStrings["ConnString"].ConnectionString;
+        string poster_url = string.Empty;
+        string projectFolder = AppDomain.CurrentDomain.BaseDirectory; // Thư mục dự án
         private void LoadData()
         {
             SqlConnection conn = new SqlConnection(ConnString);
@@ -94,15 +97,34 @@ namespace Qlyrapchieuphim
             comm.Parameters.Add("@MOTA", SqlDbType.NVarChar).Value = mota.Text;
             comm.Parameters.Add("@TRANGTHAI", SqlDbType.NVarChar).Value = trangthai.Text;
             comm.Parameters.Add("@POSTER_URL", SqlDbType.VarChar).Value = poster_url;
-            comm.ExecuteNonQuery();
+            try
+            {
+                comm.ExecuteNonQuery();
+                LoadData();
+                Reset();
+            }
+            catch (SqlException ex)
+            {
+                switch (ex.Number)
+                {
+                    case 2627:
+                        MessageBox.Show(
+                            "ID phim không được trùng nhau!",
+                            "Lỗi nhập liệu",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Warning);
+                        break;
+                    default:
+                        throw;
+                }
+            }
             conn.Close();
-            LoadData();
-            Update();
+            
             //int stt = dataGridView1.RowCount + 1;
             //dataGridView1.Rows.Add(stt.ToString("D2"), idphim.Text, tenphim.Text, theloai.Text,thoiluong.Text,trangthai.Text,mota.Text );
 
         }
-        void Update()
+        void Reset()
         {
             idphim.Clear();
             idphim.Enabled = true;
@@ -119,14 +141,12 @@ namespace Qlyrapchieuphim
         private void Qlyphim_Load(object sender, EventArgs e)
         {
             theloai.SelectedIndex = 0;
-            
             trangthai.SelectedIndex = 1;
             dataGridView1.AutoSize = false;
-            dataGridView1.ClearSelection();
             SearchTextBox.Text = "Tìm kiếm theo tên";
             SearchTextBox.ForeColor = Color.Gray;
             LoadData();
-
+            dataGridView1.ClearSelection();
         }
         
 
@@ -187,34 +207,34 @@ namespace Qlyrapchieuphim
             comm.ExecuteNonQuery();
             conn.Close();
             LoadData();
-            Update();
+            Reset();
 
         }
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void PrintToTextBoxes(int row)
         {
-            if (e.RowIndex >= 0)
-            {
-                // Lấy thông tin của dòng được chọn
-                DataTable dt = dataGridView1.DataSource as DataTable;
+            // Lấy thông tin của dòng được chọn
+            DataTable dt = dataGridView1.DataSource as DataTable;
 
-                // Gán giá trị cho các TextBox
-                idphim.Text = dt.Rows[e.RowIndex]["MAPHIM"].ToString();
-                idphim.Enabled = false;
-                tenphim.Text = dt.Rows[e.RowIndex]["TENPHIM"].ToString();
-                theloai.SelectedItem = dt.Rows[e.RowIndex]["THELOAI"].ToString();
-                thoiluong.Text = dt.Rows[e.RowIndex]["THOILUONG"].ToString();
-                trangthai.SelectedItem = dt.Rows[e.RowIndex]["DANGCHIEU"].ToString();
-                mota.Text = dt.Rows[e.RowIndex]["MOTA"].ToString();
-                string relative_poster_path = dt.Rows[e.RowIndex]["POSTER_URL"].ToString();
-                poster_url = Path.Combine(projectFolder, relative_poster_path);
-                try
+            // Gán giá trị cho các TextBox
+            idphim.Text = dt.Rows[row]["MAPHIM"].ToString();
+            idphim.Enabled = false;
+            tenphim.Text = dt.Rows[row]["TENPHIM"].ToString();
+            theloai.SelectedItem = dt.Rows[row]["THELOAI"].ToString();
+            thoiluong.Text = dt.Rows[row]["THOILUONG"].ToString();
+            trangthai.SelectedItem = dt.Rows[row]["DANGCHIEU"].ToString();
+            mota.Text = dt.Rows[row]["MOTA"].ToString();
+            string relative_poster_path = dt.Rows[row]["POSTER_URL"].ToString();
+            poster_url = Path.Combine(projectFolder, relative_poster_path);
+            try
+            {
+                using (FileStream stream = new FileStream(poster_url, FileMode.Open))
                 {
-                    using (FileStream stream = new FileStream(poster_url, FileMode.Open))
-                    {
-                        pictureBox1.Image = Image.FromStream(stream);
-                    }
+                    pictureBox1.Image = Image.FromStream(stream);
                 }
-                catch (Exception ex) 
+            }
+            catch (Exception ex)
+            {
+                if (!string.IsNullOrEmpty(relative_poster_path))
                 {
                     if (ex is FileNotFoundException)
                     {
@@ -233,7 +253,14 @@ namespace Qlyrapchieuphim
                         MessageBoxIcon.Error);
                     }
                 }
-                check = true;
+            }
+            check = true;
+        }
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                PrintToTextBoxes(e.RowIndex);
             }
 
         }
@@ -259,8 +286,9 @@ namespace Qlyrapchieuphim
                     {
                         int selected = dr.Index;
                         string temp_id = dt.Rows[selected]["MAPHIM"].ToString();
-                        string SqlQuery = "DELETE FROM BOPHIM WHERE MAPHIM = " + temp_id;
+                        string SqlQuery = "DELETE FROM BOPHIM WHERE MAPHIM = @tempid";
                         SqlCommand cmd = new SqlCommand(SqlQuery, conn);
+                        cmd.Parameters.Add("@tempid", SqlDbType.Char).Value = temp_id;
                         cmd.ExecuteNonQuery();
                         string fullPath = Path.Combine(projectFolder, "posters", temp_id + ".png");
                         if (File.Exists(fullPath))
@@ -268,7 +296,7 @@ namespace Qlyrapchieuphim
                     }
                     conn.Close();
                     LoadData();
-                    Update();
+                    Reset();
                 }
             }
             else
@@ -334,7 +362,7 @@ namespace Qlyrapchieuphim
                 if (!dataGridView1.Bounds.Contains(e.Location))
                 {
                     dataGridView1.ClearSelection();
-                    Update();
+                    Reset();
                 }
                 check = false;
             }
@@ -347,7 +375,7 @@ namespace Qlyrapchieuphim
                 if (!dataGridView1.Bounds.Contains(e.Location))
                 {
                     dataGridView1.ClearSelection();
-                    Update();
+                    Reset();
                 }
             }
             check = false;
@@ -359,7 +387,7 @@ namespace Qlyrapchieuphim
             {
 
                 dataGridView1.ClearSelection();
-                Update();
+                Reset();
                 check = false;
 
             }
@@ -385,7 +413,6 @@ namespace Qlyrapchieuphim
         {
             try
             {
-                Image new_poster;
                 // Tạo hộp thoại chọn file
                 using (OpenFileDialog openFileDialog = new OpenFileDialog())
                 {
@@ -416,7 +443,7 @@ namespace Qlyrapchieuphim
                 // 1. Kiểm tra xem PictureBox có hình ảnh không
                 if (pictureBox1.Image == null)
                 {
-                    MessageBox.Show("Không có hình ảnh nào trong PictureBox.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    pictureBox1.Image = SystemIcons.Error.ToBitmap();
                     return;
                 }
 

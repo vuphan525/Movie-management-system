@@ -8,6 +8,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.Data.SqlClient;
+using System.Configuration;
+using System.IO;
 
 namespace Qlyrapchieuphim
 {
@@ -16,20 +19,29 @@ namespace Qlyrapchieuphim
         public Qlynhansu()
         {
             InitializeComponent();
-            
+            manv.MaxLength = 4;
+            hoten.MaxLength = 100;
+            email.MaxLength = 50;
+            dataGridView1.ReadOnly = true;
+            sodienthoai.MaxLength = 15;
+            string[] trt = new string[] { "Nghỉ việc", "Đang làm việc", "Tạm thời" };
+            trangthai.Items.AddRange(trt);
         }
-
-        private void label4_Click(object sender, EventArgs e)
+        string ConnString = ConfigurationManager.ConnectionStrings["ConnString"].ConnectionString;
+        private void LoadData()
         {
+            SqlConnection conn = new SqlConnection(ConnString);
+            conn.Open();
+            string SqlQuery = "SELECT MANHANVIEN, TENNHANVIEN, SODIENTHOAI, EMAIL, NGSINH, TRANGTHAI FROM NHANVIEN";
+            SqlDataAdapter adapter = new SqlDataAdapter(SqlQuery, conn);
+            DataSet ds = new DataSet();
+            adapter.Fill(ds, "NHANVIEN");
+            DataTable dt = ds.Tables["NHANVIEN"];
+            dataGridView1.DataSource = dt;
+            conn.Close();
 
         }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2Button1_Click(object sender, EventArgs e)
+        private void them_Click(object sender, EventArgs e)
         {
 
             if (string.IsNullOrWhiteSpace(manv.Text) ||
@@ -38,7 +50,10 @@ namespace Qlyrapchieuphim
                 string.IsNullOrWhiteSpace(email.Text) )
                 
             {
-                MessageBox.Show("Vui lòng điền đầy đủ thông tin.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin.",
+                    "Thông báo",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
                 return;
             }
             DateTime birthDate = ngaysinh.Value;
@@ -53,31 +68,54 @@ namespace Qlyrapchieuphim
                 return;
             }
 
-            int stt = dataGridView1.RowCount + 1;
-            dataGridView1.Rows.Add(stt.ToString("D2"), manv.Text, hoten.Text, sodienthoai.Text, email.Text,ngaysinh.Text,trangthai.Text);
-
-            manv.Clear();
-            hoten.Clear();
-            sodienthoai.Clear();
-            email.Clear();
-            trangthai.SelectedIndex = 1;
-            ngaysinh.Value = DateTime.Now;
-            dataGridView1.ClearSelection();
-
-
+            //SQL section
+            SqlConnection conn = new SqlConnection(ConnString);
+            conn.Open();
+            string SqlQuery = "INSERT INTO NHANVIEN VALUES (@manv, @tennv, N'Nhân viên', @sdt, @email, 'dc', 0.0, @ngsinh, @trthai)";
+            SqlCommand cmd = new SqlCommand(SqlQuery, conn);
+            cmd.Parameters.Add("@manv", SqlDbType.Char).Value = manv.Text;
+            cmd.Parameters.Add("@tennv", SqlDbType.NVarChar).Value = hoten.Text;
+            cmd.Parameters.Add("@sdt", SqlDbType.VarChar).Value = sodienthoai.Text;
+            cmd.Parameters.Add("@email", SqlDbType.VarChar).Value = email.Text;
+            cmd.Parameters.Add("@ngsinh", SqlDbType.Date).Value = ngaysinh.Value;
+            cmd.Parameters.Add("@trthai", SqlDbType.NVarChar).Value = trangthai.Text;
+            try
+            {
+                cmd.ExecuteNonQuery();
+                LoadData();
+                Reset();
+            }
+            catch (SqlException ex)
+            {
+                switch (ex.Number)
+                {
+                    case 2627:
+                        MessageBox.Show(
+                            "Mã nhân viên không được trùng nhau!",
+                            "Lỗi nhập liệu",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Warning);
+                        break;
+                    default:
+                        throw;
+                }
+            }
+            conn.Close();
+            
         }
 
         private void Qlynhansu_Load(object sender, EventArgs e)
         {
             trangthai.SelectedIndex = 1;
             dataGridView1.AutoSize = false;
-            dataGridView1.ClearSelection();
-            guna2TextBox5.Text = "Tìm kiếm theo tên";
-            guna2TextBox5.ForeColor = Color.Gray;
+            SearchTextBox.Text = "Tìm kiếm theo tên";
+            SearchTextBox.ForeColor = Color.Gray;
             ngaysinh.Value = DateTime.Now;
+            LoadData();
+            dataGridView1.ClearSelection();
         }
 
-        private void guna2Button2_Click(object sender, EventArgs e)
+        private void capnhat_Click(object sender, EventArgs e)
         {
 
             if (dataGridView1.SelectedRows.Count == 0)
@@ -107,33 +145,44 @@ namespace Qlyrapchieuphim
                 return;
             }
 
-          
 
-            // Get selected row index
-            int selectedRowIndex = dataGridView1.SelectedRows[0].Index;
 
-            // Update values in selected row
-
-            dataGridView1.Rows[selectedRowIndex].Cells[1].Value = manv.Text;
-            dataGridView1.Rows[selectedRowIndex].Cells[2].Value = hoten.Text;
-            dataGridView1.Rows[selectedRowIndex].Cells[3].Value = sodienthoai.Text;
-            dataGridView1.Rows[selectedRowIndex].Cells[4].Value = email.Text;
-            dataGridView1.Rows[selectedRowIndex].Cells[5].Value = ngaysinh.Text;
-            dataGridView1.Rows[selectedRowIndex].Cells[6].Value = trangthai.Text;
-
-            // Clear textboxes (optional)
+            SqlConnection conn = new SqlConnection(ConnString);
+            conn.Open();
+            string SqlQuery = "UPDATE NHANVIEN SET " +
+                "TENNHANVIEN = @tennv, " +
+                "CHUCVU = N'Nhân viên', " +
+                "SODIENTHOAI = @sdt, " +
+                "EMAIL = @email, " +
+                "DIACHI = 'dc', " +
+                "LUONG = 0.0, " +
+                "NGSINH = @ngsinh, " +
+                "TRANGTHAI = @trthai " +
+                "WHERE MANHANVIEN = @manv";
+            SqlCommand cmd = new SqlCommand(SqlQuery, conn);
+            cmd.Parameters.Add("@manv", SqlDbType.Char).Value = manv.Text;
+            cmd.Parameters.Add("@tennv", SqlDbType.NVarChar).Value = hoten.Text;
+            cmd.Parameters.Add("@sdt", SqlDbType.VarChar).Value = sodienthoai.Text;
+            cmd.Parameters.Add("@email", SqlDbType.VarChar).Value = email.Text;
+            cmd.Parameters.Add("@ngsinh", SqlDbType.Date).Value = ngaysinh.Value;
+            cmd.Parameters.Add("@trthai", SqlDbType.NVarChar).Value = trangthai.Text;
+            cmd.ExecuteNonQuery();
+            conn.Close();
+            LoadData();
+            Reset();
+        }
+        private void Reset()
+        {
             manv.Clear();
+            manv.Enabled = true;
             hoten.Clear();
             sodienthoai.Clear();
             email.Clear();
             trangthai.SelectedIndex = 1;
-            ngaysinh.Value=DateTime.Now;
+            ngaysinh.Value = DateTime.Now;
             dataGridView1.ClearSelection();
-
-
         }
-
-        private void guna2Button3_Click(object sender, EventArgs e)
+        private void xoa_Click(object sender, EventArgs e)
         {
             if (dataGridView1.SelectedRows.Count > 0)
             {
@@ -143,70 +192,65 @@ namespace Qlyrapchieuphim
                 if (result == DialogResult.Yes)
                 {
 
-                    dataGridView1.Rows.RemoveAt(dataGridView1.SelectedRows[0].Index);
-                    CapNhatSTT();
+                    SqlConnection conn = new SqlConnection(ConnString);
+                    DataTable dt = dataGridView1.DataSource as DataTable;
+                    conn.Open();
+                    foreach (DataGridViewRow dr in dataGridView1.SelectedRows)
+                    {
+                        int selected = dr.Index;
+                        string temp_id = dt.Rows[selected]["MANHANVIEN"].ToString();
+                        string SqlQuery = "DELETE FROM NHANVIEN WHERE MANHANVIEN = @tempid";
+                        SqlCommand cmd = new SqlCommand(SqlQuery, conn);
+                        cmd.Parameters.Add("@tempid",SqlDbType.Char).Value = temp_id;
+                        cmd.ExecuteNonQuery();
+                    }
+                    conn.Close();
+                    LoadData();
+                    Reset();
                 }
             }
             else
             {
                 MessageBox.Show("Vui lòng chọn dòng cần xóa.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            manv.Clear();
-            hoten.Clear();
-            sodienthoai.Clear();
-            email.Clear();
-            trangthai.SelectedIndex = 1;
-            ngaysinh.Value = DateTime.Now;
-            dataGridView1.ClearSelection();
+            LoadData();
+            Reset();
 
         }
-        private void CapNhatSTT()
+        private void PrintToTextBoxes(int row)
         {
-            for (int i = 0; i < dataGridView1.Rows.Count; i++)
-            {
-                dataGridView1.Rows[i].Cells[0].Value = (i + 1).ToString("D2"); // Giả sử cột STT là cột đầu tiên
-            }
+            DataTable dt = dataGridView1.DataSource as DataTable;
+            manv.Text = dt.Rows[row]["MANHANVIEN"].ToString();
+            manv.Enabled = false;
+            hoten.Text = dt.Rows[row]["TENNHANVIEN"].ToString();
+            sodienthoai.Text = dt.Rows[row]["SODIENTHOAI"].ToString();
+            email.Text = dt.Rows[row]["EMAIL"].ToString();
+            ngaysinh.Value = (DateTime)dt.Rows[row]["NGSINH"];
+            trangthai.SelectedItem = dt.Rows[row]["TRANGTHAI"].ToString();
         }
-
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
-                // Lấy thông tin của dòng được chọn
-                DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
-
-                // Gán giá trị cho các TextBox
-                manv.Text = row.Cells[1].Value.ToString();
-                hoten.Text = row.Cells[2].Value.ToString();
-                sodienthoai.Text = row.Cells[3].Value.ToString();
-                email.Text = row.Cells[4].Value.ToString();
-                ngaysinh.Text = row.Cells[5].Value.ToString();
-                trangthai.Text= row.Cells[6].Value.ToString();
+                PrintToTextBoxes((int)e.RowIndex);
             }
         }
 
-        private void guna2TextBox5_TextChanged(object sender, EventArgs e)
+        private void SearchTextBox_TextChanged(object sender, EventArgs e)
         {
-            if (guna2TextBox5.Text != "Tìm kiếm theo tên")
+            if (SearchTextBox.Text != "Tìm kiếm theo tên")
             {
-                string tenCanTim = guna2TextBox5.Text.ToLower();
+                string tenCanTim = SearchTextBox.Text.ToLower();
                 string tenSV = " ";
-
+                DataTable dt = dataGridView1.DataSource as DataTable;
                 foreach (DataGridViewRow row in dataGridView1.Rows)
                 {
                     if (!row.IsNewRow)
                     {
-                        if (row.Cells[2].Value != null)
-                        {
-                            tenSV = row.Cells[2].Value.ToString().ToLower();
-
-                        }
-                        else
-                        {
-
-                            MessageBox.Show(" Không có dữ liệu trong bảng!");
-                        }
-
+                        int index = row.Index;
+                        tenSV = dt.Rows[index]["TENNHANVIEN"].ToString().ToLower();
+                        CurrencyManager currencyManager = (CurrencyManager)BindingContext[dataGridView1.DataSource];
+                        currencyManager.SuspendBinding();
                         if (tenSV.Contains(tenCanTim))
                         {
                             row.Visible = true;
@@ -215,29 +259,47 @@ namespace Qlyrapchieuphim
                         {
                             row.Visible = false;
                         }
+                        currencyManager.ResumeBinding();
                     }
                 }
             }
         }
+        
 
         private void guna2TextBox5_Leave(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(guna2TextBox5.Text))
+            if (string.IsNullOrWhiteSpace(SearchTextBox.Text))
             {
-                guna2TextBox5.Text = "Tìm kiếm theo tên";
-                guna2TextBox5.ForeColor = Color.Gray;
+                SearchTextBox.Text = "Tìm kiếm theo tên";
+                SearchTextBox.ForeColor = Color.Gray;
 
             }
         }
 
         private void guna2TextBox5_Enter(object sender, EventArgs e)
         {
-            if (guna2TextBox5.Text == "Tìm kiếm theo tên")
+            if (SearchTextBox.Text == "Tìm kiếm theo tên")
             {
-                guna2TextBox5.Text = "";
+                SearchTextBox.Text = "";
 
-                guna2TextBox5.ForeColor = Color.Black;
+                SearchTextBox.ForeColor = Color.Black;
             }
+        }
+
+        private void dataGridView1_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
+        {
+            var grid = sender as DataGridView;
+            var rowIdx = (e.RowIndex + 1).ToString();
+
+            var centerFormat = new StringFormat()
+            {
+                // right alignment might actually make more sense for numbers
+                Alignment = StringAlignment.Center,
+                LineAlignment = StringAlignment.Center
+            };
+
+            var headerBounds = new Rectangle(e.RowBounds.Left, e.RowBounds.Top, grid.RowHeadersWidth, e.RowBounds.Height);
+            e.Graphics.DrawString(rowIdx, this.Font, SystemBrushes.ControlText, headerBounds, centerFormat);
         }
     }
 }
