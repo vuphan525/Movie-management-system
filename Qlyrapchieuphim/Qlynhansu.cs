@@ -16,6 +16,7 @@ namespace Qlyrapchieuphim
 {
     public partial class Qlynhansu : UserControl
     {
+        string ConnString = ConfigurationManager.ConnectionStrings["ConnString"].ConnectionString;
         public Qlynhansu()
         {
             InitializeComponent();
@@ -27,7 +28,7 @@ namespace Qlyrapchieuphim
             string[] trt = new string[] { "Nghỉ việc", "Đang làm việc", "Tạm thời" };
             trangthai.Items.AddRange(trt);
         }
-        string ConnString = ConfigurationManager.ConnectionStrings["ConnString"].ConnectionString;
+        
         private void LoadData()
         {
             SqlConnection conn = new SqlConnection(ConnString);
