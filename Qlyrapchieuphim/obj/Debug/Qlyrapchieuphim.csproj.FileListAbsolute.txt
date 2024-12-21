@@ -73,6 +73,108 @@ D:\GitHub projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\obj\Debug\
 D:\GitHub projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\obj\Debug\Qlyrapchieuphim.pdb
 D:\GitHub projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\bin\Debug\Azure.Core.dll
 D:\GitHub projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\bin\Debug\Azure.Identity.dll
+D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\bin\Debug\Qlyrapchieuphim.exe.config
+D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\bin\Debug\Qlyrapchieuphim.exe
+D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\bin\Debug\Qlyrapchieuphim.pdb
+D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\bin\Debug\Azure.Core.dll
+D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\bin\Debug\Azure.Identity.dll
+D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\bin\Debug\Guna.UI2.dll
+D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\bin\Debug\Microsoft.Data.SqlClient.dll
+D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\bin\Debug\Microsoft.Identity.Client.dll
+D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\bin\Debug\Microsoft.Identity.Client.Extensions.Msal.dll
+D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\bin\Debug\Microsoft.IdentityModel.Abstractions.dll
+D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\bin\Debug\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\bin\Debug\Microsoft.IdentityModel.Logging.dll
+D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\bin\Debug\Microsoft.IdentityModel.Protocols.dll
+D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\bin\Debug\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\bin\Debug\Microsoft.IdentityModel.Tokens.dll
+D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\bin\Debug\System.Buffers.dll
+D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\bin\Debug\System.ClientModel.dll
+D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\bin\Debug\System.Configuration.ConfigurationManager.dll
+D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\bin\Debug\System.IdentityModel.Tokens.Jwt.dll
+D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\bin\Debug\System.IO.FileSystem.AccessControl.dll
+D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\bin\Debug\System.Memory.Data.dll
+D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\bin\Debug\System.Memory.dll
+D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\bin\Debug\System.Numerics.Vectors.dll
+D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\bin\Debug\System.Security.AccessControl.dll
+D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\bin\Debug\System.Security.Cryptography.ProtectedData.dll
+D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\bin\Debug\System.Security.Permissions.dll
+D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\bin\Debug\System.Security.Principal.Windows.dll
+D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\bin\Debug\System.Text.Encodings.Web.dll
+D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\bin\Debug\System.Text.Json.dll
+D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\bin\Debug\System.ValueTuple.dll
+D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\bin\Debug\Azure.Core.xml
+D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\bin\Debug\Azure.Identity.xml
+D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\bin\Debug\Microsoft.Data.SqlClient.xml
+D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\bin\Debug\Microsoft.Identity.Client.xml
+D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\bin\Debug\Microsoft.Identity.Client.Extensions.Msal.xml
+D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\bin\Debug\Microsoft.IdentityModel.Abstractions.xml
+D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\bin\Debug\Microsoft.IdentityModel.JsonWebTokens.xml
+D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\bin\Debug\Microsoft.IdentityModel.Logging.xml
+D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\bin\Debug\Microsoft.IdentityModel.Protocols.xml
+D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\bin\Debug\Microsoft.IdentityModel.Protocols.OpenIdConnect.xml
+D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\bin\Debug\Microsoft.IdentityModel.Tokens.xml
+D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\bin\Debug\System.Buffers.xml
+D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\bin\Debug\System.ClientModel.xml
+D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\bin\Debug\System.Configuration.ConfigurationManager.xml
+D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\bin\Debug\System.IdentityModel.Tokens.Jwt.xml
+D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\bin\Debug\System.IO.FileSystem.AccessControl.xml
+D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\bin\Debug\System.Memory.xml
+D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\bin\Debug\System.Memory.Data.xml
+D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\bin\Debug\System.Numerics.Vectors.xml
+D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\bin\Debug\System.Security.AccessControl.xml
+D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\bin\Debug\System.Security.Cryptography.ProtectedData.xml
+D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\bin\Debug\System.Security.Permissions.xml
+D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\bin\Debug\System.Security.Principal.Windows.xml
+D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\bin\Debug\System.Text.Encodings.Web.xml
+D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\bin\Debug\System.Text.Json.xml
+D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\bin\Debug\System.Threading.Tasks.Extensions.xml
+D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\bin\Debug\System.ValueTuple.xml
+D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\bin\Debug\de\Microsoft.Data.SqlClient.resources.dll
+D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\bin\Debug\es\Microsoft.Data.SqlClient.resources.dll
+D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\bin\Debug\fr\Microsoft.Data.SqlClient.resources.dll
+D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\bin\Debug\it\Microsoft.Data.SqlClient.resources.dll
+D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\bin\Debug\ja\Microsoft.Data.SqlClient.resources.dll
+D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\bin\Debug\ko\Microsoft.Data.SqlClient.resources.dll
+D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\bin\Debug\pt-BR\Microsoft.Data.SqlClient.resources.dll
+D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\bin\Debug\ru\Microsoft.Data.SqlClient.resources.dll
+D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\bin\Debug\zh-Hans\Microsoft.Data.SqlClient.resources.dll
+D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\bin\Debug\zh-Hant\Microsoft.Data.SqlClient.resources.dll
+D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\obj\Debug\Qlyrapchieuphim.csproj.AssemblyReference.cache
+D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\obj\Debug\Qlyrapchieuphim.Adform.resources
+D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\obj\Debug\Qlyrapchieuphim.bangdieukhien.resources
+D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\obj\Debug\Qlyrapchieuphim.Banve.resources
+D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\obj\Debug\Qlyrapchieuphim.dangky.resources
+D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\obj\Debug\Qlyrapchieuphim.Doanhthu.resources
+D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\obj\Debug\Qlyrapchieuphim.Form1.resources
+D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\obj\Debug\Qlyrapchieuphim.formbanve.resources
+D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\obj\Debug\Qlyrapchieuphim.Properties.Resources.resources
+D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\obj\Debug\Qlyrapchieuphim.Qlykhachhang.resources
+D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\obj\Debug\Qlyrapchieuphim.Qlynhansu.resources
+D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\obj\Debug\Qlyrapchieuphim.Qlyphim.resources
+D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\obj\Debug\Qlyrapchieuphim.Qlysanpham.resources
+D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\obj\Debug\Qlyrapchieuphim.Qlysuatchieu.resources
+D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\obj\Debug\Qlyrapchieuphim.staffForm.resources
+D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\obj\Debug\Qlyrapchieuphim.Suco.resources
+D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\obj\Debug\Qlyrapchieuphim.Voucher.resources
+D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\obj\Debug\Qlyrapchieuphim.csproj.GenerateResource.cache
+D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\obj\Debug\Qlyrapchieuphim.csproj.CoreCompileInputs.cache
+D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\obj\Debug\Qlyrapch.40D05896.Up2Date
+D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\obj\Debug\Qlyrapchieuphim.exe
+D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\obj\Debug\Qlyrapchieuphim.pdb
+D:\GitHub projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\bin\Debug\Qlyrapchieuphim.exe.config
+D:\GitHub projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\bin\Debug\Qlyrapchieuphim.exe
+D:\GitHub projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\bin\Debug\Qlyrapchieuphim.pdb
+D:\GitHub projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\bin\Debug\Azure.Core.dll
+D:\GitHub projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\bin\Debug\Azure.Identity.dll
+D:\GitHub projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\bin\Debug\Guna.UI2.dll
 D:\GitHub projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
 D:\GitHub projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\bin\Debug\Microsoft.Data.SqlClient.dll
 D:\GitHub projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\bin\Debug\Microsoft.Identity.Client.dll
@@ -141,3 +243,25 @@ D:\GitHub projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\bin\Debug\
 D:\GitHub projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\bin\Debug\ru\Microsoft.Data.SqlClient.resources.dll
 D:\GitHub projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\bin\Debug\zh-Hans\Microsoft.Data.SqlClient.resources.dll
 D:\GitHub projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\bin\Debug\zh-Hant\Microsoft.Data.SqlClient.resources.dll
+D:\GitHub projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\obj\Debug\Qlyrapchieuphim.csproj.AssemblyReference.cache
+D:\GitHub projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\obj\Debug\Qlyrapchieuphim.Adform.resources
+D:\GitHub projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\obj\Debug\Qlyrapchieuphim.bangdieukhien.resources
+D:\GitHub projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\obj\Debug\Qlyrapchieuphim.Banve.resources
+D:\GitHub projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\obj\Debug\Qlyrapchieuphim.dangky.resources
+D:\GitHub projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\obj\Debug\Qlyrapchieuphim.Doanhthu.resources
+D:\GitHub projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\obj\Debug\Qlyrapchieuphim.Form1.resources
+D:\GitHub projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\obj\Debug\Qlyrapchieuphim.formbanve.resources
+D:\GitHub projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\obj\Debug\Qlyrapchieuphim.Properties.Resources.resources
+D:\GitHub projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\obj\Debug\Qlyrapchieuphim.Qlykhachhang.resources
+D:\GitHub projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\obj\Debug\Qlyrapchieuphim.Qlynhansu.resources
+D:\GitHub projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\obj\Debug\Qlyrapchieuphim.Qlyphim.resources
+D:\GitHub projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\obj\Debug\Qlyrapchieuphim.Qlysanpham.resources
+D:\GitHub projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\obj\Debug\Qlyrapchieuphim.staffForm.resources
+D:\GitHub projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\obj\Debug\Qlyrapchieuphim.Suco.resources
+D:\GitHub projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\obj\Debug\Qlyrapchieuphim.Voucher.resources
+D:\GitHub projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\obj\Debug\Qlyrapchieuphim.csproj.GenerateResource.cache
+D:\GitHub projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\obj\Debug\Qlyrapchieuphim.csproj.CoreCompileInputs.cache
+D:\GitHub projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\obj\Debug\Qlyrapch.40D05896.Up2Date
+D:\GitHub projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\obj\Debug\Qlyrapchieuphim.exe
+D:\GitHub projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\obj\Debug\Qlyrapchieuphim.pdb
+D:\GitHub projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\obj\Debug\Qlyrapchieuphim.Qlysuatchieu.resources
