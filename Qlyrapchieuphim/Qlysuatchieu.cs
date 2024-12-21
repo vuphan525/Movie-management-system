@@ -16,6 +16,7 @@ namespace Qlyrapchieuphim
 {
     public partial class Qlysuatchieu : UserControl
     {
+        string ConnString = ConfigurationManager.ConnectionStrings["ConnString"].ConnectionString;
         public Qlysuatchieu()
         {
             InitializeComponent();
@@ -24,7 +25,7 @@ namespace Qlyrapchieuphim
             idTextBox.MaxLength = 6;
 
         }
-        private void CheckMovie()
+        private bool CheckMovie()
         {
             int count;
             SqlConnection conn = new SqlConnection(ConnString);
@@ -55,40 +56,44 @@ namespace Qlyrapchieuphim
                 errorProvider1.SetError(tenphim, "Không có phim trong hệ thống!");
             }
             conn.Close();
-        }
-        private void CheckRoom()
-        {
-            int count;
-            SqlConnection conn = new SqlConnection(ConnString);
-            conn.Open();
-            string SqlQuery = "SELECT COUNT(*) FROM PHONGCHIEU";
-            SqlCommand countCmd = new SqlCommand(SqlQuery, conn);
-            count = (int)countCmd.ExecuteScalar();
-            
             if (count > 0)
-            {
-                phongchieu.Enabled = true;
-                errorProvider2.Clear();
-                SqlQuery = "SELECT MAPHONG FROM PHONGCHIEU";
-                string[] rooms = new string[count];
-                SqlCommand cmd = new SqlCommand(SqlQuery, conn);
-                SqlDataReader reader = cmd.ExecuteReader();
-                int i = 0;
-                while (reader.Read())
-                {
-                    rooms[i] = reader.GetString(0);
-                    i++;
-                }
-                phongchieu.DataSource = rooms;
-            }
+                return true;
             else
-            {
-                phongchieu.Enabled = false;
-                errorProvider2.SetError(phongchieu, "Không có phòng trong hệ thống!");
-            }
-            conn.Close();
+                return false;
         }
-        string ConnString = ConfigurationManager.ConnectionStrings["ConnString"].ConnectionString;
+        //private void CheckRoom()
+        //{
+        //    int count;
+        //    SqlConnection conn = new SqlConnection(ConnString);
+        //    conn.Open();
+        //    string SqlQuery = "SELECT COUNT(*) FROM PHONGCHIEU";
+        //    SqlCommand countCmd = new SqlCommand(SqlQuery, conn);
+        //    count = (int)countCmd.ExecuteScalar();
+            
+        //    if (count > 0)
+        //    {
+        //        phongchieu.Enabled = true;
+        //        errorProvider2.Clear();
+        //        SqlQuery = "SELECT MAPHONG FROM PHONGCHIEU";
+        //        string[] rooms = new string[count];
+        //        SqlCommand cmd = new SqlCommand(SqlQuery, conn);
+        //        SqlDataReader reader = cmd.ExecuteReader();
+        //        int i = 0;
+        //        while (reader.Read())
+        //        {
+        //            rooms[i] = reader.GetString(0);
+        //            i++;
+        //        }
+        //        phongchieu.DataSource = rooms;
+        //    }
+        //    else
+        //    {
+        //        phongchieu.Enabled = false;
+        //        errorProvider2.SetError(phongchieu, "Không có phòng trong hệ thống!");
+        //    }
+        //    conn.Close();
+        //}
+        
         private void LoadData()
         {
             SqlConnection conn = new SqlConnection(ConnString);
@@ -115,15 +120,25 @@ namespace Qlyrapchieuphim
                     MessageBoxIcon.Information);
                 return;
             }
-           
-            if (giochieu.Value < DateTime.Now && ngaychieu.Value < DateTime.Now.Date)
+           if (ngaychieu.Value <= DateTime.Now.Date)
             {
-                MessageBox.Show("Ngày chiếu và giờ chiếu phải lớn hơn ngày giờ hiện tại!",
+                if (giochieu.Value.TimeOfDay.StripMilliseconds() <= DateTime.Now.TimeOfDay.StripMilliseconds())
+                {
+                    MessageBox.Show("Ngày chiếu và giờ chiếu phải lớn hơn ngày giờ hiện tại!",
                     "Lỗi nhập liệu",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Warning);
-                return;
+                    return;
+                }
             }
+            //if (giochieu.Value < DateTime.Now && ngaychieu.Value < DateTime.Now.Date)
+            //{
+            //    MessageBox.Show("Ngày chiếu và giờ chiếu phải lớn hơn ngày giờ hiện tại!",
+            //        "Lỗi nhập liệu",
+            //        MessageBoxButtons.OK,
+            //        MessageBoxIcon.Warning);
+            //    return;
+            //}
             //else
             //{
             //    if (giochieu.Value < DateTime.Now)
@@ -156,28 +171,56 @@ namespace Qlyrapchieuphim
             cmd.Parameters.Add("@idphim", SqlDbType.Char).Value = mp;
             cmd.Parameters.Add("@idphong", SqlDbType.Char).Value = phongchieu.SelectedItem;
             cmd.Parameters.Add("@ngaychieu", SqlDbType.Date).Value = ngaychieu.Value.Date;
-            cmd.Parameters.Add("@tgbd",SqlDbType.Time).Value = giochieu.Value.TimeOfDay;
+            cmd.Parameters.Add("@tgbd",SqlDbType.Time).Value = giochieu.Value.TimeOfDay.StripMilliseconds();
             cmd.Parameters.Add("@id", SqlDbType.Char).Value = idTextBox.Text;
             conn.Open();
-            cmd.ExecuteNonQuery();
+            try
+            {
+                cmd.ExecuteNonQuery();
+                LoadData();
+                Updatea();
+            }
+            catch (SqlException ex)
+            {
+                switch (ex.Number)
+                {
+                    case 2627:
+                        MessageBox.Show(
+                            "Mã suất chiếu không được trùng nhau!",
+                            "Lỗi nhập liệu",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Warning);
+                        break;
+                    default:
+                        throw;
+                }
+            }
             conn.Close();
-            LoadData();
-            Updatea();
         }
 
         private void them_Click(object sender, EventArgs e)
         {
-          
 
-            if (giochieu.Value <= DateTime.Now && ngaychieu.Value <= DateTime.Now.Date)
+            if (ngaychieu.Value <= DateTime.Now.Date)
             {
-                MessageBox.Show(
-                    "Ngày chiếu và giờ chiếu phải lớn hơn ngày giờ hiện tại!",
+                if (giochieu.Value.TimeOfDay.StripMilliseconds() <= DateTime.Now.TimeOfDay.StripMilliseconds())
+                {
+                    MessageBox.Show("Ngày chiếu và giờ chiếu phải lớn hơn ngày giờ hiện tại!",
                     "Lỗi nhập liệu",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Warning);
-                return;
+                    return;
+                }
             }
+            //if (giochieu.Value <= DateTime.Now && ngaychieu.Value <= DateTime.Now.Date)
+            //{
+            //    MessageBox.Show(
+            //        "Ngày chiếu và giờ chiếu phải lớn hơn ngày giờ hiện tại!",
+            //        "Lỗi nhập liệu",
+            //        MessageBoxButtons.OK,
+            //        MessageBoxIcon.Warning);
+            //    return;
+            //}
             //else
             //{
             //    if (giochieu.Value < DateTime.Now)
@@ -215,7 +258,7 @@ namespace Qlyrapchieuphim
             string SqlQuery = "INSERT INTO SUATCHIEU VALUES (@masc, @tgbd, @ngchieu, @maphong, @maphim)";
             SqlCommand cmd = new SqlCommand(SqlQuery, conn);
             cmd.Parameters.Add("@masc", SqlDbType.Char).Value = idTextBox.Text;
-            cmd.Parameters.Add("@tgbd", SqlDbType.Time).Value = giochieu.Value.TimeOfDay;
+            cmd.Parameters.Add("@tgbd", SqlDbType.Time).Value = giochieu.Value.TimeOfDay.StripMilliseconds();
             cmd.Parameters.Add("@ngchieu", SqlDbType.Date).Value = ngaychieu.Value.Date;
             cmd.Parameters.Add("@maphong", SqlDbType.Char).Value = phongchieu.SelectedItem;
             string tp = tenphim.SelectedItem.ToString();
@@ -249,7 +292,8 @@ namespace Qlyrapchieuphim
         {
             idTextBox.Clear();
             idTextBox.Enabled = true;
-            tenphim.SelectedIndex = 0;
+            if (CheckMovie())
+                tenphim.SelectedIndex = 0;
             phongchieu.SelectedIndex = 0;
             ngaychieu.Value = DateTime.Now;
             giochieu.Value = DateTime.Now;
@@ -302,13 +346,13 @@ namespace Qlyrapchieuphim
         }
         private void Qlysuatchieu_Load(object sender, EventArgs e)
         {
-            CheckMovie();
-            CheckRoom();
+            
             dataGridView1.AutoSize = false;
             
             giochieu.Value = DateTime.Now;
             ngaychieu.Value = DateTime.Now;
-            tenphim.SelectedIndex = 0;
+            if (CheckMovie())
+                tenphim.SelectedIndex = 0;
 
             phongchieu.SelectedIndex = 0;
             timkiem.Visible = false;
@@ -335,17 +379,19 @@ namespace Qlyrapchieuphim
                 guna2Button1.Text = "Hủy tìm kiếm";
                 issearch = true;
                 DateTime a = timkiem.Value.Date;
-
+                DataTable dt = dataGridView1.DataSource as DataTable;
 
                 foreach (DataGridViewRow row in dataGridView1.Rows)
                 {
                     if (!row.IsNewRow)
                     {
-                        if (DateTime.TryParse(row.Cells[4].Value.ToString(), out DateTime dateFromRow))
+                        int index = row.Index;
+                        if (DateTime.TryParse(dt.Rows[index]["NGAYCHIEU"].ToString(), out DateTime dateFromRow))
                         {
                             // Do something with dateFromRow
                         }
-
+                        CurrencyManager currencyManager = (CurrencyManager)BindingContext[dataGridView1.DataSource];
+                        currencyManager.SuspendBinding();
                         if (dateFromRow.Date == a)
                         {
                             row.Visible = true;
@@ -354,8 +400,10 @@ namespace Qlyrapchieuphim
                         {
                             row.Visible = false;
                         }
+                        currencyManager.ResumeBinding();
                     }
                 }
+                dataGridView1.ClearSelection();
             }
             else
             {
@@ -378,17 +426,19 @@ namespace Qlyrapchieuphim
             if (issearch)
             {
                 DateTime a = timkiem.Value.Date;
-
+                DataTable dt = dataGridView1.DataSource as DataTable;
 
                 foreach (DataGridViewRow row in dataGridView1.Rows)
                 {
                     if (!row.IsNewRow)
                     {
-                        if (DateTime.TryParse(row.Cells[3].Value.ToString(), out DateTime dateFromRow))
+                        int index = row.Index;
+                        if (DateTime.TryParse(dt.Rows[index]["NGAYCHIEU"].ToString(), out DateTime dateFromRow))
                         {
                             // Do something with dateFromRow
                         }
-
+                        CurrencyManager currencyManager = (CurrencyManager)BindingContext[dataGridView1.DataSource];
+                        currencyManager.SuspendBinding();
                         if (dateFromRow.Date == a)
                         {
                             row.Visible = true;
@@ -397,6 +447,7 @@ namespace Qlyrapchieuphim
                         {
                             row.Visible = false;
                         }
+                        currencyManager.ResumeBinding();
                     }
                 }
                 dataGridView1.ClearSelection();
@@ -414,7 +465,6 @@ namespace Qlyrapchieuphim
         private void Qlysuatchieu_Paint(object sender, PaintEventArgs e)
         {
             CheckMovie();
-            CheckRoom();
             if (!tenphim.Enabled || !phongchieu.Enabled)
             {
                 them.Enabled = false;
@@ -443,6 +493,18 @@ namespace Qlyrapchieuphim
 
             var headerBounds = new Rectangle(e.RowBounds.Left, e.RowBounds.Top, grid.RowHeadersWidth, e.RowBounds.Height);
             e.Graphics.DrawString(rowIdx, this.Font, SystemBrushes.ControlText, headerBounds, centerFormat);
+        }
+
+        private void cancelButton_Click(object sender, EventArgs e)
+        {
+            Updatea();
+        }
+    }
+    public static class TimeExtensions
+    {
+        public static TimeSpan StripMilliseconds(this TimeSpan time)
+        {
+            return new TimeSpan(time.Days, time.Hours, time.Minutes, time.Seconds);
         }
     }
 }

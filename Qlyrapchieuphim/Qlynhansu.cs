@@ -166,10 +166,28 @@ namespace Qlyrapchieuphim
             cmd.Parameters.Add("@email", SqlDbType.VarChar).Value = email.Text;
             cmd.Parameters.Add("@ngsinh", SqlDbType.Date).Value = ngaysinh.Value;
             cmd.Parameters.Add("@trthai", SqlDbType.NVarChar).Value = trangthai.Text;
-            cmd.ExecuteNonQuery();
+            try
+            {
+                cmd.ExecuteNonQuery();
+                LoadData();
+                Reset();
+            }
+            catch (SqlException ex)
+            {
+                switch (ex.Number)
+                {
+                    case 2627:
+                        MessageBox.Show(
+                            "Mã nhân viên không được trùng nhau!",
+                            "Lỗi nhập liệu",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Warning);
+                        break;
+                    default:
+                        throw;
+                }
+            }
             conn.Close();
-            LoadData();
-            Reset();
         }
         private void Reset()
         {
@@ -300,6 +318,11 @@ namespace Qlyrapchieuphim
 
             var headerBounds = new Rectangle(e.RowBounds.Left, e.RowBounds.Top, grid.RowHeadersWidth, e.RowBounds.Height);
             e.Graphics.DrawString(rowIdx, this.Font, SystemBrushes.ControlText, headerBounds, centerFormat);
+        }
+
+        private void cancelButton_Click(object sender, EventArgs e)
+        {
+            Reset();
         }
     }
 }

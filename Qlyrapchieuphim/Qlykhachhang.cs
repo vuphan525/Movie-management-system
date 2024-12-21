@@ -20,15 +20,6 @@ namespace Qlyrapchieuphim
             InitializeComponent();
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void them_Click(object sender, EventArgs e)
         {
@@ -54,10 +45,7 @@ namespace Qlyrapchieuphim
 
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
+        
 
         private void Qlykhachhang_Load(object sender, EventArgs e)
         {
@@ -85,10 +73,6 @@ namespace Qlyrapchieuphim
 
         }
 
-        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void capnhat_Click(object sender, EventArgs e)
         {

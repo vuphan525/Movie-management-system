@@ -204,10 +204,28 @@ namespace Qlyrapchieuphim
             comm.Parameters.Add("@MOTA", SqlDbType.NVarChar).Value = mota.Text;
             comm.Parameters.Add("@TRANGTHAI", SqlDbType.NVarChar).Value = trangthai.Text;
             comm.Parameters.Add("POSTER_URL", SqlDbType.VarChar).Value = poster_url;
-            comm.ExecuteNonQuery();
+            try
+            {
+                comm.ExecuteNonQuery();
+                LoadData();
+                Reset();
+            }
+            catch (SqlException ex)
+            {
+                switch (ex.Number)
+                {
+                    case 2627:
+                        MessageBox.Show(
+                            "ID phim không được trùng nhau!",
+                            "Lỗi nhập liệu",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Warning);
+                        break;
+                    default:
+                        throw;
+                }
+            }
             conn.Close();
-            LoadData();
-            Reset();
 
         }
         private void PrintToTextBoxes(int row)
@@ -476,6 +494,11 @@ namespace Qlyrapchieuphim
             {
                 MessageBox.Show($"Có lỗi xảy ra: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void cancelButton_Click(object sender, EventArgs e)
+        {
+            Reset();
         }
     }
 }
