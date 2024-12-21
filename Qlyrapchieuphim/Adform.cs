@@ -45,110 +45,7 @@ namespace Qlyrapchieuphim
                 this.Hide();
             }
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            qlyphim1.Show();
-            bangdieukhien1.Hide();
-            doanhthu1.Hide();
-            qlykhachhang1.Hide();
-            qlynhansu1.Hide();
-            qlysanpham1.Hide();
-            qlysuatchieu1.Hide();
-            suco1.Hide();
-            voucher1.Hide();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            qlyphim1.Hide();
-            qlysuatchieu1.Show();
-            bangdieukhien1.Hide();
-            doanhthu1.Hide();
-            qlykhachhang1.Hide();
-            qlynhansu1.Hide();
-            qlysanpham1.Hide();
-            suco1.Hide();
-            voucher1.Hide();
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            qlyphim1.Hide();
-            qlysuatchieu1.Hide();
-            qlysanpham1.Show();
-            bangdieukhien1.Hide();
-            doanhthu1.Hide();
-            qlykhachhang1.Hide();
-            qlynhansu1.Hide();
-            suco1.Hide();
-            voucher1.Hide();
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            qlyphim1.Hide();
-            qlysuatchieu1.Hide();
-            qlysanpham1.Hide();
-            qlynhansu1.Show();
-            bangdieukhien1.Hide();
-            doanhthu1.Hide();
-            qlykhachhang1.Hide();
-            suco1.Hide();
-            voucher1.Hide();
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-            qlyphim1.Hide();
-            qlysuatchieu1.Hide();
-            qlysanpham1.Hide();
-            qlynhansu1.Hide();
-            qlykhachhang1.Show();
-            bangdieukhien1.Hide();
-            doanhthu1.Hide();
-            suco1.Hide();
-            voucher1.Hide();
-        }
-
-        private void button6_Click(object sender, EventArgs e)
-        {
-            qlyphim1.Hide();
-            qlysuatchieu1.Hide();
-            qlysanpham1.Hide();
-            qlynhansu1.Hide();
-            qlykhachhang1.Hide();
-            doanhthu1.Show();
-            bangdieukhien1.Hide();
-            suco1.Hide();
-            voucher1.Hide();
-        }
-
-        private void button7_Click(object sender, EventArgs e)
-        {
-            qlyphim1.Hide();
-            qlysuatchieu1.Hide();
-            qlysanpham1.Hide();
-            qlynhansu1.Hide();
-            qlykhachhang1.Hide();
-            doanhthu1.Hide();
-            voucher1.Show();
-            bangdieukhien1.Hide();
-            suco1.Hide();
-        }
-
-        private void button8_Click(object sender, EventArgs e)
-        {
-            qlyphim1.Hide();
-            qlysuatchieu1.Hide();
-            qlysanpham1.Hide();
-            qlynhansu1.Hide();
-            qlykhachhang1.Hide();
-            doanhthu1.Hide();
-            voucher1.Hide();
-            suco1.Show();
-            bangdieukhien1.Hide();
-        }
+     
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
@@ -161,6 +58,110 @@ namespace Qlyrapchieuphim
             voucher1.Hide();
             suco1.Hide();
             bangdieukhien1.Show();
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            qlyphim1.Show();
+            bangdieukhien1.Hide();
+            doanhthu1.Hide();
+            qlykhachhang1.Hide();
+            qlynhansu1.Hide();
+            qlysanpham1.Hide();
+            qlysuatchieu1.Hide();
+            suco1.Hide();
+            voucher1.Hide();
+        }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            qlyphim1.Hide();
+            qlysuatchieu1.Show();
+            bangdieukhien1.Hide();
+            doanhthu1.Hide();
+            qlykhachhang1.Hide();
+            qlynhansu1.Hide();
+            qlysanpham1.Hide();
+            suco1.Hide();
+            voucher1.Hide();
+        }
+
+        private void guna2Button3_Click(object sender, EventArgs e)
+        {
+            qlyphim1.Hide();
+            qlysuatchieu1.Hide();
+            qlysanpham1.Show();
+            bangdieukhien1.Hide();
+            doanhthu1.Hide();
+            qlykhachhang1.Hide();
+            qlynhansu1.Hide();
+            suco1.Hide();
+            voucher1.Hide();
+        }
+
+        private void guna2Button4_Click(object sender, EventArgs e)
+        {
+            qlyphim1.Hide();
+            qlysuatchieu1.Hide();
+            qlysanpham1.Hide();
+            qlynhansu1.Show();
+            bangdieukhien1.Hide();
+            doanhthu1.Hide();
+            qlykhachhang1.Hide();
+            suco1.Hide();
+            voucher1.Hide();
+        }
+
+        private void guna2Button5_Click(object sender, EventArgs e)
+        {
+            qlyphim1.Hide();
+            qlysuatchieu1.Hide();
+            qlysanpham1.Hide();
+            qlynhansu1.Hide();
+            qlykhachhang1.Show();
+            bangdieukhien1.Hide();
+            doanhthu1.Hide();
+            suco1.Hide();
+            voucher1.Hide();
+        }
+
+        private void guna2Button6_Click(object sender, EventArgs e)
+        {
+            qlyphim1.Hide();
+            qlysuatchieu1.Hide();
+            qlysanpham1.Hide();
+            qlynhansu1.Hide();
+            qlykhachhang1.Hide();
+            doanhthu1.Show();
+            bangdieukhien1.Hide();
+            suco1.Hide();
+            voucher1.Hide();
+        }
+
+        private void guna2Button7_Click(object sender, EventArgs e)
+        {
+            qlyphim1.Hide();
+            qlysuatchieu1.Hide();
+            qlysanpham1.Hide();
+            qlynhansu1.Hide();
+            qlykhachhang1.Hide();
+            doanhthu1.Hide();
+            voucher1.Show();
+            bangdieukhien1.Hide();
+            suco1.Hide();
+        }
+
+        private void guna2Button8_Click(object sender, EventArgs e)
+        {
+            qlyphim1.Hide();
+            qlysuatchieu1.Hide();
+            qlysanpham1.Hide();
+            qlynhansu1.Hide();
+            qlykhachhang1.Hide();
+            doanhthu1.Hide();
+            voucher1.Hide();
+            suco1.Show();
+            bangdieukhien1.Hide();
         }
     }
 }

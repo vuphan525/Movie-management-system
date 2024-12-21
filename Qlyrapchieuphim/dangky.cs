@@ -26,11 +26,6 @@ namespace Qlyrapchieuphim
             }
         }
 
-        private void guna2Button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void guna2Button1_Click(object sender, EventArgs e)
         {
             Form1 frm = new Form1();

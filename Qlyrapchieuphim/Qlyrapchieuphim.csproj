@@ -194,14 +194,19 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Frombanve.cs">
+    <Compile Include="formbanve.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Frombanve.Designer.cs">
-      <DependentUpon>Frombanve.cs</DependentUpon>
+    <Compile Include="formbanve.Designer.cs">
+      <DependentUpon>formbanve.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Qlykhachhang.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -268,19 +273,13 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Frombanve.resx">
-      <DependentUpon>Frombanve.cs</DependentUpon>
+    <EmbeddedResource Include="formbanve.resx">
+      <DependentUpon>formbanve.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="Qlykhachhang.resx">
       <DependentUpon>Qlykhachhang.cs</DependentUpon>
     </EmbeddedResource>
@@ -289,6 +288,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Qlyphim.resx">
       <DependentUpon>Qlyphim.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Qlysanpham.resx">
       <DependentUpon>Qlysanpham.cs</DependentUpon>
@@ -320,37 +320,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Screenshot 2024-08-29 213214.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bussiness-man.png" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="Resources\camera.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\office-man.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icons8-movie-projector-24.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icons8-time-machine-24.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icons8-food-bar-24.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icons8-customer-24.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icons8-people-24.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icons8-money-24.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icons8-voucher-24.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icons8-error-24.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icons8-logout-24.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\cinema.png" />
@@ -359,31 +335,52 @@
     <None Include="Resources\ezgif-4-3ebb920750.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\watch-movie.png" />
+    <None Include="Resources\icons8-customer-24.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\bussiness-man.png" />
+    <None Include="Resources\icons8-error-24.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-find-30.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\icons8-movie-60.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icons8-movie-60 %281%29.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icons8-staff-60.png" />
+    <None Include="Resources\icons8-food-bar-24.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-income-60.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\icons8-ticket-24.png" />
+    <None Include="Resources\icons8-logout-24.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\icons8-ticket-30.png" />
+    <None Include="Resources\icons8-money-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-movie-60 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-movie-60.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-staff-60.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-time-machine-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-voucher-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\office-man.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\watch-movie.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-movie-projector-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-people-24.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Data.SqlClient.SNI.5.2.0\build\net462\Microsoft.Data.SqlClient.SNI.targets" Condition="Exists('..\packages\Microsoft.Data.SqlClient.SNI.5.2.0\build\net462\Microsoft.Data.SqlClient.SNI.targets')" />

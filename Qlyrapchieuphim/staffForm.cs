@@ -17,10 +17,6 @@ namespace Qlyrapchieuphim
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void button10_Click(object sender, EventArgs e)
         {
@@ -49,7 +45,7 @@ namespace Qlyrapchieuphim
             bangdieukhien1.Show();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void guna2Button1_Click(object sender, EventArgs e)
         {
             banve1.Show();
             bangdieukhien1.Hide();

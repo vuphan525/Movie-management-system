@@ -15,6 +15,7 @@ namespace Qlyrapchieuphim
         public Form1()
         {
             InitializeComponent();
+            guna2TextBox1.UseSystemPasswordChar = true;
         }
 
         private void guna2VSeparator1_Click(object sender, EventArgs e)
@@ -24,7 +25,14 @@ namespace Qlyrapchieuphim
 
         private void guna2CheckBox1_CheckedChanged(object sender, EventArgs e)
         {
-
+            if (guna2CheckBox1.Checked == true)
+            {
+                guna2TextBox1.UseSystemPasswordChar = false;
+            }
+            else
+            {
+                guna2TextBox1.UseSystemPasswordChar = true;
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -56,12 +64,9 @@ namespace Qlyrapchieuphim
 
         }
 
-        private void label5_Click(object sender, EventArgs e)
+        private void guna2TextBox1_TextChanged(object sender, EventArgs e)
         {
-            dangky dk = new dangky();
-            dk.Show();
 
-            this.Hide();
         }
     }
 }
