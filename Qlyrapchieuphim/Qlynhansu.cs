@@ -111,7 +111,7 @@ namespace Qlyrapchieuphim
             dataGridView1.AutoSize = false;
             SearchTextBox.Text = "Tìm kiếm theo tên";
             SearchTextBox.ForeColor = Color.Gray;
-            ngaysinh.Value = DateTime.Now;
+            ngaysinh.Value = DateTime.Today.Subtract(TimeSpan.FromDays(365 * 19));
             LoadData();
             dataGridView1.ClearSelection();
         }
@@ -198,7 +198,7 @@ namespace Qlyrapchieuphim
             sodienthoai.Clear();
             email.Clear();
             trangthai.SelectedIndex = 1;
-            ngaysinh.Value = DateTime.Now;
+            ngaysinh.Value = DateTime.Today.Subtract(TimeSpan.FromDays(365 * 19));
             dataGridView1.ClearSelection();
         }
         private void xoa_Click(object sender, EventArgs e)
