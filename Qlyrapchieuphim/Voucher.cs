@@ -276,22 +276,15 @@ namespace Qlyrapchieuphim
             {
                 string tenCanTim = guna2TextBox6.Text.ToLower();
                 string tenSV = " ";
-
+                DataTable dt = dataGridView1.DataSource as DataTable;
                 foreach (DataGridViewRow row in dataGridView1.Rows)
                 {
                     if (!row.IsNewRow)
                     {
-                        if (row.Cells[1].Value != null)
-                        {
-                            tenSV = row.Cells[1].Value.ToString().ToLower();
-
-                        }
-                        else
-                        {
-
-                            MessageBox.Show(" Không có dữ liệu trong bảng!");
-                        }
-
+                        int index = row.Index;
+                        tenSV = dt.Rows[index]["MAPHATHANH"].ToString().ToLower();
+                        CurrencyManager currencyManager = (CurrencyManager)BindingContext[dataGridView1.DataSource];
+                        currencyManager.SuspendBinding();
                         if (tenSV.Contains(tenCanTim))
                         {
                             row.Visible = true;
@@ -300,6 +293,7 @@ namespace Qlyrapchieuphim
                         {
                             row.Visible = false;
                         }
+                        currencyManager.ResumeBinding();
                     }
                 }
             }
@@ -338,9 +332,11 @@ namespace Qlyrapchieuphim
         }
         private void checkDate()
         {
+            if (denngay.Value <= hieuluctu.Value)
+                denngay.Value = hieuluctu.Value;
             if (denngay.Value < DateTime.Today)
                 trangthai.SelectedIndex = 2; //hết hiệu lực
-            else if (hieuluctu.Value < DateTime.Today)
+            else if (hieuluctu.Value <= DateTime.Today)
                 trangthai.SelectedIndex = 0; //đang áp dụng
             else trangthai.SelectedIndex = 1; //chưa áp dụng
         }
