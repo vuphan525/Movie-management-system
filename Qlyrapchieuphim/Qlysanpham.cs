@@ -159,6 +159,10 @@ namespace Qlyrapchieuphim
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Error);
                     }
+                    else
+                    {
+                        pictureBox1.Image =  null;
+                    }
                 }
             }
         }

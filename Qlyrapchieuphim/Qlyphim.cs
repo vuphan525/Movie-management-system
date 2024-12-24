@@ -274,6 +274,10 @@ namespace Qlyrapchieuphim
                         MessageBoxIcon.Error);
                     }
                 }
+                else
+                {
+                    pictureBox1.Image = null;
+                }
             }
             check = true;
         }
