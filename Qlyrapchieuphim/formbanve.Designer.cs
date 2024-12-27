@@ -28,930 +28,182 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button2 = new System.Windows.Forms.Button();
-            this.button141 = new System.Windows.Forms.Button();
-            this.button127 = new System.Windows.Forms.Button();
-            this.button128 = new System.Windows.Forms.Button();
-            this.button129 = new System.Windows.Forms.Button();
-            this.button130 = new System.Windows.Forms.Button();
-            this.button131 = new System.Windows.Forms.Button();
-            this.button132 = new System.Windows.Forms.Button();
-            this.button133 = new System.Windows.Forms.Button();
-            this.button134 = new System.Windows.Forms.Button();
-            this.button135 = new System.Windows.Forms.Button();
-            this.button136 = new System.Windows.Forms.Button();
-            this.button137 = new System.Windows.Forms.Button();
-            this.button138 = new System.Windows.Forms.Button();
-            this.button139 = new System.Windows.Forms.Button();
-            this.button140 = new System.Windows.Forms.Button();
-            this.button113 = new System.Windows.Forms.Button();
-            this.button114 = new System.Windows.Forms.Button();
-            this.button115 = new System.Windows.Forms.Button();
-            this.button116 = new System.Windows.Forms.Button();
-            this.button117 = new System.Windows.Forms.Button();
-            this.button118 = new System.Windows.Forms.Button();
-            this.button119 = new System.Windows.Forms.Button();
-            this.button120 = new System.Windows.Forms.Button();
-            this.button121 = new System.Windows.Forms.Button();
-            this.button122 = new System.Windows.Forms.Button();
-            this.button123 = new System.Windows.Forms.Button();
-            this.button124 = new System.Windows.Forms.Button();
-            this.button125 = new System.Windows.Forms.Button();
-            this.button126 = new System.Windows.Forms.Button();
-            this.button99 = new System.Windows.Forms.Button();
-            this.button100 = new System.Windows.Forms.Button();
-            this.button101 = new System.Windows.Forms.Button();
-            this.button102 = new System.Windows.Forms.Button();
-            this.button103 = new System.Windows.Forms.Button();
-            this.button104 = new System.Windows.Forms.Button();
-            this.button105 = new System.Windows.Forms.Button();
-            this.button106 = new System.Windows.Forms.Button();
-            this.button107 = new System.Windows.Forms.Button();
-            this.button108 = new System.Windows.Forms.Button();
-            this.button109 = new System.Windows.Forms.Button();
-            this.button110 = new System.Windows.Forms.Button();
-            this.button111 = new System.Windows.Forms.Button();
-            this.button112 = new System.Windows.Forms.Button();
-            this.button85 = new System.Windows.Forms.Button();
-            this.button86 = new System.Windows.Forms.Button();
-            this.button87 = new System.Windows.Forms.Button();
-            this.button88 = new System.Windows.Forms.Button();
-            this.button89 = new System.Windows.Forms.Button();
-            this.button90 = new System.Windows.Forms.Button();
-            this.button91 = new System.Windows.Forms.Button();
-            this.button92 = new System.Windows.Forms.Button();
-            this.button93 = new System.Windows.Forms.Button();
-            this.button94 = new System.Windows.Forms.Button();
-            this.button95 = new System.Windows.Forms.Button();
-            this.button96 = new System.Windows.Forms.Button();
-            this.button97 = new System.Windows.Forms.Button();
-            this.button98 = new System.Windows.Forms.Button();
-            this.button71 = new System.Windows.Forms.Button();
-            this.button72 = new System.Windows.Forms.Button();
-            this.button73 = new System.Windows.Forms.Button();
-            this.button74 = new System.Windows.Forms.Button();
-            this.button75 = new System.Windows.Forms.Button();
-            this.button76 = new System.Windows.Forms.Button();
-            this.button77 = new System.Windows.Forms.Button();
-            this.button78 = new System.Windows.Forms.Button();
-            this.button79 = new System.Windows.Forms.Button();
-            this.button80 = new System.Windows.Forms.Button();
-            this.button81 = new System.Windows.Forms.Button();
-            this.button82 = new System.Windows.Forms.Button();
-            this.button83 = new System.Windows.Forms.Button();
-            this.button84 = new System.Windows.Forms.Button();
-            this.button44 = new System.Windows.Forms.Button();
-            this.button58 = new System.Windows.Forms.Button();
-            this.button59 = new System.Windows.Forms.Button();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
-            this.lblTicketPrice = new System.Windows.Forms.Label();
-            this.rdoAdult = new System.Windows.Forms.RadioButton();
-            this.rdoChild = new System.Windows.Forms.RadioButton();
-            this.button60 = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
-            this.rdoStudent = new System.Windows.Forms.RadioButton();
-            this.button61 = new System.Windows.Forms.Button();
             this.guna2ComboBox1 = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
+            this.apdung = new Guna.UI2.WinForms.Guna2Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.button62 = new System.Windows.Forms.Button();
-            this.button63 = new System.Windows.Forms.Button();
-            this.button64 = new System.Windows.Forms.Button();
-            this.button65 = new System.Windows.Forms.Button();
-            this.button66 = new System.Windows.Forms.Button();
-            this.button67 = new System.Windows.Forms.Button();
-            this.button68 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.chkCustomer = new System.Windows.Forms.CheckBox();
             this.label3 = new System.Windows.Forms.Label();
             this.grpLoaiVe = new System.Windows.Forms.GroupBox();
+            this.treem = new Guna.UI2.WinForms.Guna2TextBox();
+            this.sinhvien = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
-            this.button69 = new System.Windows.Forms.Button();
-            this.button70 = new System.Windows.Forms.Button();
-            this.button46 = new System.Windows.Forms.Button();
-            this.button47 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.button48 = new System.Windows.Forms.Button();
-            this.button49 = new System.Windows.Forms.Button();
-            this.button50 = new System.Windows.Forms.Button();
-            this.button51 = new System.Windows.Forms.Button();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            this.lblTotal = new System.Windows.Forms.Label();
+            this.thanhtoan = new Guna.UI2.WinForms.Guna2Button();
+            this.tongtien = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.lblPayment = new System.Windows.Forms.Label();
+            this.cantra = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.button45 = new System.Windows.Forms.Button();
             this.lblDiscount = new System.Windows.Forms.Label();
-            this.button52 = new System.Windows.Forms.Button();
-            this.button53 = new System.Windows.Forms.Button();
-            this.button54 = new System.Windows.Forms.Button();
-            this.button55 = new System.Windows.Forms.Button();
-            this.button56 = new System.Windows.Forms.Button();
-            this.button57 = new System.Windows.Forms.Button();
-            this.button30 = new System.Windows.Forms.Button();
-            this.button31 = new System.Windows.Forms.Button();
-            this.button32 = new System.Windows.Forms.Button();
-            this.button33 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.button34 = new System.Windows.Forms.Button();
-            this.button35 = new System.Windows.Forms.Button();
-            this.button36 = new System.Windows.Forms.Button();
-            this.button38 = new System.Windows.Forms.Button();
-            this.button39 = new System.Windows.Forms.Button();
-            this.button40 = new System.Windows.Forms.Button();
-            this.button41 = new System.Windows.Forms.Button();
-            this.button42 = new System.Windows.Forms.Button();
-            this.button43 = new System.Windows.Forms.Button();
-            this.button14 = new System.Windows.Forms.Button();
-            this.button18 = new System.Windows.Forms.Button();
-            this.button19 = new System.Windows.Forms.Button();
-            this.button20 = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
-            this.button37 = new System.Windows.Forms.Button();
-            this.button17 = new System.Windows.Forms.Button();
-            this.button21 = new System.Windows.Forms.Button();
-            this.button22 = new System.Windows.Forms.Button();
-            this.button23 = new System.Windows.Forms.Button();
-            this.button24 = new System.Windows.Forms.Button();
-            this.button25 = new System.Windows.Forms.Button();
-            this.button26 = new System.Windows.Forms.Button();
-            this.button27 = new System.Windows.Forms.Button();
-            this.button28 = new System.Windows.Forms.Button();
-            this.button29 = new System.Windows.Forms.Button();
-            this.button15 = new System.Windows.Forms.Button();
-            this.button16 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
-            this.button13 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.guna2Button28 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button5 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button6 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button7 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button8 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button9 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button10 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button11 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button12 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button13 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button15 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button14 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button16 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button17 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button18 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button19 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button20 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button21 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button22 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button23 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button24 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button25 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button26 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button27 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button29 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button30 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button31 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button32 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button33 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button34 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button35 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button36 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button37 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button38 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button39 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button40 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button41 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button42 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button43 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button44 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button45 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button46 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button47 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button48 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button49 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button50 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button51 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button52 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button53 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button54 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button55 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button56 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button57 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button58 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button59 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button60 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button61 = new Guna.UI2.WinForms.Guna2Button();
+            this.vipguna2Button62 = new Guna.UI2.WinForms.Guna2Button();
+            this.vipguna2Button63 = new Guna.UI2.WinForms.Guna2Button();
+            this.vipguna2Button64 = new Guna.UI2.WinForms.Guna2Button();
+            this.vipguna2Button65 = new Guna.UI2.WinForms.Guna2Button();
+            this.vipguna2Button66 = new Guna.UI2.WinForms.Guna2Button();
+            this.vipguna2Button67 = new Guna.UI2.WinForms.Guna2Button();
+            this.vipguna2Button68 = new Guna.UI2.WinForms.Guna2Button();
+            this.vipguna2Button69 = new Guna.UI2.WinForms.Guna2Button();
+            this.vipguna2Button70 = new Guna.UI2.WinForms.Guna2Button();
+            this.vipguna2Button71 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button72 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button73 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button74 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button75 = new Guna.UI2.WinForms.Guna2Button();
+            this.vipguna2Button76 = new Guna.UI2.WinForms.Guna2Button();
+            this.vipguna2Button77 = new Guna.UI2.WinForms.Guna2Button();
+            this.vipguna2Button78 = new Guna.UI2.WinForms.Guna2Button();
+            this.vipguna2Button79 = new Guna.UI2.WinForms.Guna2Button();
+            this.vipguna2Button80 = new Guna.UI2.WinForms.Guna2Button();
+            this.vipguna2Button81 = new Guna.UI2.WinForms.Guna2Button();
+            this.vipguna2Button82 = new Guna.UI2.WinForms.Guna2Button();
+            this.vipguna2Button83 = new Guna.UI2.WinForms.Guna2Button();
+            this.vipguna2Button84 = new Guna.UI2.WinForms.Guna2Button();
+            this.vipguna2Button85 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button86 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button87 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button88 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button89 = new Guna.UI2.WinForms.Guna2Button();
+            this.vipguna2Button90 = new Guna.UI2.WinForms.Guna2Button();
+            this.vipguna2Button91 = new Guna.UI2.WinForms.Guna2Button();
+            this.vipguna2Button92 = new Guna.UI2.WinForms.Guna2Button();
+            this.vipguna2Button93 = new Guna.UI2.WinForms.Guna2Button();
+            this.vipguna2Button94 = new Guna.UI2.WinForms.Guna2Button();
+            this.vipguna2Button95 = new Guna.UI2.WinForms.Guna2Button();
+            this.vipguna2Button96 = new Guna.UI2.WinForms.Guna2Button();
+            this.vipguna2Button97 = new Guna.UI2.WinForms.Guna2Button();
+            this.vipguna2Button98 = new Guna.UI2.WinForms.Guna2Button();
+            this.vipguna2Button99 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button100 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button101 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button102 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button103 = new Guna.UI2.WinForms.Guna2Button();
+            this.vipguna2Button104 = new Guna.UI2.WinForms.Guna2Button();
+            this.vipguna2Button105 = new Guna.UI2.WinForms.Guna2Button();
+            this.vipguna2Button106 = new Guna.UI2.WinForms.Guna2Button();
+            this.vipguna2Button107 = new Guna.UI2.WinForms.Guna2Button();
+            this.vipguna2Button108 = new Guna.UI2.WinForms.Guna2Button();
+            this.vipguna2Button109 = new Guna.UI2.WinForms.Guna2Button();
+            this.vipguna2Button110 = new Guna.UI2.WinForms.Guna2Button();
+            this.vipguna2Button111 = new Guna.UI2.WinForms.Guna2Button();
+            this.vipguna2Button112 = new Guna.UI2.WinForms.Guna2Button();
+            this.vipguna2Button113 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button114 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button115 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button116 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button117 = new Guna.UI2.WinForms.Guna2Button();
+            this.vipguna2Button118 = new Guna.UI2.WinForms.Guna2Button();
+            this.vipguna2Button119 = new Guna.UI2.WinForms.Guna2Button();
+            this.vipguna2Button120 = new Guna.UI2.WinForms.Guna2Button();
+            this.vipguna2Button121 = new Guna.UI2.WinForms.Guna2Button();
+            this.vipguna2Button122 = new Guna.UI2.WinForms.Guna2Button();
+            this.vipguna2Button123 = new Guna.UI2.WinForms.Guna2Button();
+            this.vipguna2Button124 = new Guna.UI2.WinForms.Guna2Button();
+            this.vipguna2Button125 = new Guna.UI2.WinForms.Guna2Button();
+            this.vipguna2Button126 = new Guna.UI2.WinForms.Guna2Button();
+            this.vipguna2Button127 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button128 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button129 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button134 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button130 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button131 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button132 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button133 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button135 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button136 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button137 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button138 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button139 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button140 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button141 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button142 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button143 = new Guna.UI2.WinForms.Guna2Button();
             this.picFilm = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             this.grpLoaiVe.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picFilm)).BeginInit();
             this.SuspendLayout();
-            // 
-            // button2
-            // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(151, 91);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(45, 30);
-            this.button2.TabIndex = 427;
-            this.button2.Text = "A2";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button141
-            // 
-            this.button141.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button141.Location = new System.Drawing.Point(763, 199);
-            this.button141.Name = "button141";
-            this.button141.Size = new System.Drawing.Size(45, 30);
-            this.button141.TabIndex = 426;
-            this.button141.Text = "D14";
-            this.button141.UseVisualStyleBackColor = true;
-            // 
-            // button127
-            // 
-            this.button127.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button127.Location = new System.Drawing.Point(763, 418);
-            this.button127.Name = "button127";
-            this.button127.Size = new System.Drawing.Size(45, 30);
-            this.button127.TabIndex = 425;
-            this.button127.Text = "J14";
-            this.button127.UseVisualStyleBackColor = true;
-            // 
-            // button128
-            // 
-            this.button128.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button128.Location = new System.Drawing.Point(712, 418);
-            this.button128.Name = "button128";
-            this.button128.Size = new System.Drawing.Size(45, 30);
-            this.button128.TabIndex = 424;
-            this.button128.Text = "J13";
-            this.button128.UseVisualStyleBackColor = true;
-            // 
-            // button129
-            // 
-            this.button129.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button129.Location = new System.Drawing.Point(661, 418);
-            this.button129.Name = "button129";
-            this.button129.Size = new System.Drawing.Size(45, 30);
-            this.button129.TabIndex = 423;
-            this.button129.Text = "J12";
-            this.button129.UseVisualStyleBackColor = true;
-            // 
-            // button130
-            // 
-            this.button130.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button130.Location = new System.Drawing.Point(610, 418);
-            this.button130.Name = "button130";
-            this.button130.Size = new System.Drawing.Size(45, 30);
-            this.button130.TabIndex = 422;
-            this.button130.Text = "J11";
-            this.button130.UseVisualStyleBackColor = true;
-            // 
-            // button131
-            // 
-            this.button131.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button131.Location = new System.Drawing.Point(559, 418);
-            this.button131.Name = "button131";
-            this.button131.Size = new System.Drawing.Size(45, 30);
-            this.button131.TabIndex = 421;
-            this.button131.Text = "J10";
-            this.button131.UseVisualStyleBackColor = true;
-            // 
-            // button132
-            // 
-            this.button132.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button132.Location = new System.Drawing.Point(508, 418);
-            this.button132.Name = "button132";
-            this.button132.Size = new System.Drawing.Size(45, 30);
-            this.button132.TabIndex = 420;
-            this.button132.Text = "J9";
-            this.button132.UseVisualStyleBackColor = true;
-            // 
-            // button133
-            // 
-            this.button133.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button133.Location = new System.Drawing.Point(457, 418);
-            this.button133.Name = "button133";
-            this.button133.Size = new System.Drawing.Size(45, 30);
-            this.button133.TabIndex = 419;
-            this.button133.Text = "J8";
-            this.button133.UseVisualStyleBackColor = true;
-            // 
-            // button134
-            // 
-            this.button134.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button134.Location = new System.Drawing.Point(406, 418);
-            this.button134.Name = "button134";
-            this.button134.Size = new System.Drawing.Size(45, 30);
-            this.button134.TabIndex = 418;
-            this.button134.Text = "J7";
-            this.button134.UseVisualStyleBackColor = true;
-            // 
-            // button135
-            // 
-            this.button135.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button135.Location = new System.Drawing.Point(355, 418);
-            this.button135.Name = "button135";
-            this.button135.Size = new System.Drawing.Size(45, 30);
-            this.button135.TabIndex = 417;
-            this.button135.Text = "J6";
-            this.button135.UseVisualStyleBackColor = true;
-            // 
-            // button136
-            // 
-            this.button136.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button136.Location = new System.Drawing.Point(304, 418);
-            this.button136.Name = "button136";
-            this.button136.Size = new System.Drawing.Size(45, 30);
-            this.button136.TabIndex = 416;
-            this.button136.Text = "J5";
-            this.button136.UseVisualStyleBackColor = true;
-            // 
-            // button137
-            // 
-            this.button137.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button137.Location = new System.Drawing.Point(253, 418);
-            this.button137.Name = "button137";
-            this.button137.Size = new System.Drawing.Size(45, 30);
-            this.button137.TabIndex = 415;
-            this.button137.Text = "J4";
-            this.button137.UseVisualStyleBackColor = true;
-            // 
-            // button138
-            // 
-            this.button138.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button138.Location = new System.Drawing.Point(202, 418);
-            this.button138.Name = "button138";
-            this.button138.Size = new System.Drawing.Size(45, 30);
-            this.button138.TabIndex = 414;
-            this.button138.Text = "J3";
-            this.button138.UseVisualStyleBackColor = true;
-            // 
-            // button139
-            // 
-            this.button139.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button139.Location = new System.Drawing.Point(151, 418);
-            this.button139.Name = "button139";
-            this.button139.Size = new System.Drawing.Size(45, 30);
-            this.button139.TabIndex = 413;
-            this.button139.Text = "J2";
-            this.button139.UseVisualStyleBackColor = true;
-            // 
-            // button140
-            // 
-            this.button140.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button140.Location = new System.Drawing.Point(100, 418);
-            this.button140.Name = "button140";
-            this.button140.Size = new System.Drawing.Size(45, 30);
-            this.button140.TabIndex = 412;
-            this.button140.Text = "J1";
-            this.button140.UseVisualStyleBackColor = true;
-            // 
-            // button113
-            // 
-            this.button113.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button113.Location = new System.Drawing.Point(763, 382);
-            this.button113.Name = "button113";
-            this.button113.Size = new System.Drawing.Size(45, 30);
-            this.button113.TabIndex = 411;
-            this.button113.Text = "I14";
-            this.button113.UseVisualStyleBackColor = true;
-            // 
-            // button114
-            // 
-            this.button114.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button114.Location = new System.Drawing.Point(712, 382);
-            this.button114.Name = "button114";
-            this.button114.Size = new System.Drawing.Size(45, 30);
-            this.button114.TabIndex = 410;
-            this.button114.Text = "I13";
-            this.button114.UseVisualStyleBackColor = true;
-            // 
-            // button115
-            // 
-            this.button115.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button115.Location = new System.Drawing.Point(661, 382);
-            this.button115.Name = "button115";
-            this.button115.Size = new System.Drawing.Size(45, 30);
-            this.button115.TabIndex = 409;
-            this.button115.Text = "I12";
-            this.button115.UseVisualStyleBackColor = true;
-            // 
-            // button116
-            // 
-            this.button116.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button116.Location = new System.Drawing.Point(610, 382);
-            this.button116.Name = "button116";
-            this.button116.Size = new System.Drawing.Size(45, 30);
-            this.button116.TabIndex = 408;
-            this.button116.Text = "I11";
-            this.button116.UseVisualStyleBackColor = true;
-            // 
-            // button117
-            // 
-            this.button117.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button117.Location = new System.Drawing.Point(559, 382);
-            this.button117.Name = "button117";
-            this.button117.Size = new System.Drawing.Size(45, 30);
-            this.button117.TabIndex = 407;
-            this.button117.Text = "I10";
-            this.button117.UseVisualStyleBackColor = true;
-            // 
-            // button118
-            // 
-            this.button118.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button118.Location = new System.Drawing.Point(508, 382);
-            this.button118.Name = "button118";
-            this.button118.Size = new System.Drawing.Size(45, 30);
-            this.button118.TabIndex = 406;
-            this.button118.Text = "I9";
-            this.button118.UseVisualStyleBackColor = true;
-            // 
-            // button119
-            // 
-            this.button119.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button119.Location = new System.Drawing.Point(457, 382);
-            this.button119.Name = "button119";
-            this.button119.Size = new System.Drawing.Size(45, 30);
-            this.button119.TabIndex = 405;
-            this.button119.Text = "I8";
-            this.button119.UseVisualStyleBackColor = true;
-            // 
-            // button120
-            // 
-            this.button120.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button120.Location = new System.Drawing.Point(406, 382);
-            this.button120.Name = "button120";
-            this.button120.Size = new System.Drawing.Size(45, 30);
-            this.button120.TabIndex = 404;
-            this.button120.Text = "I7";
-            this.button120.UseVisualStyleBackColor = true;
-            // 
-            // button121
-            // 
-            this.button121.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button121.Location = new System.Drawing.Point(355, 382);
-            this.button121.Name = "button121";
-            this.button121.Size = new System.Drawing.Size(45, 30);
-            this.button121.TabIndex = 403;
-            this.button121.Text = "I6";
-            this.button121.UseVisualStyleBackColor = true;
-            // 
-            // button122
-            // 
-            this.button122.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button122.Location = new System.Drawing.Point(304, 382);
-            this.button122.Name = "button122";
-            this.button122.Size = new System.Drawing.Size(45, 30);
-            this.button122.TabIndex = 402;
-            this.button122.Text = "I5";
-            this.button122.UseVisualStyleBackColor = true;
-            // 
-            // button123
-            // 
-            this.button123.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button123.Location = new System.Drawing.Point(253, 382);
-            this.button123.Name = "button123";
-            this.button123.Size = new System.Drawing.Size(45, 30);
-            this.button123.TabIndex = 401;
-            this.button123.Text = "I4";
-            this.button123.UseVisualStyleBackColor = true;
-            // 
-            // button124
-            // 
-            this.button124.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button124.Location = new System.Drawing.Point(202, 382);
-            this.button124.Name = "button124";
-            this.button124.Size = new System.Drawing.Size(45, 30);
-            this.button124.TabIndex = 400;
-            this.button124.Text = "I3";
-            this.button124.UseVisualStyleBackColor = true;
-            // 
-            // button125
-            // 
-            this.button125.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button125.Location = new System.Drawing.Point(151, 382);
-            this.button125.Name = "button125";
-            this.button125.Size = new System.Drawing.Size(45, 30);
-            this.button125.TabIndex = 399;
-            this.button125.Text = "I2";
-            this.button125.UseVisualStyleBackColor = true;
-            // 
-            // button126
-            // 
-            this.button126.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button126.Location = new System.Drawing.Point(100, 382);
-            this.button126.Name = "button126";
-            this.button126.Size = new System.Drawing.Size(45, 30);
-            this.button126.TabIndex = 398;
-            this.button126.Text = "I1";
-            this.button126.UseVisualStyleBackColor = true;
-            // 
-            // button99
-            // 
-            this.button99.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button99.Location = new System.Drawing.Point(763, 346);
-            this.button99.Name = "button99";
-            this.button99.Size = new System.Drawing.Size(45, 30);
-            this.button99.TabIndex = 397;
-            this.button99.Text = "H14";
-            this.button99.UseVisualStyleBackColor = true;
-            // 
-            // button100
-            // 
-            this.button100.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button100.Location = new System.Drawing.Point(712, 346);
-            this.button100.Name = "button100";
-            this.button100.Size = new System.Drawing.Size(45, 30);
-            this.button100.TabIndex = 396;
-            this.button100.Text = "H13";
-            this.button100.UseVisualStyleBackColor = true;
-            // 
-            // button101
-            // 
-            this.button101.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button101.Location = new System.Drawing.Point(661, 346);
-            this.button101.Name = "button101";
-            this.button101.Size = new System.Drawing.Size(45, 30);
-            this.button101.TabIndex = 395;
-            this.button101.Text = "H12";
-            this.button101.UseVisualStyleBackColor = true;
-            // 
-            // button102
-            // 
-            this.button102.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button102.Location = new System.Drawing.Point(610, 346);
-            this.button102.Name = "button102";
-            this.button102.Size = new System.Drawing.Size(45, 30);
-            this.button102.TabIndex = 394;
-            this.button102.Text = "H11";
-            this.button102.UseVisualStyleBackColor = true;
-            // 
-            // button103
-            // 
-            this.button103.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button103.Location = new System.Drawing.Point(559, 346);
-            this.button103.Name = "button103";
-            this.button103.Size = new System.Drawing.Size(45, 30);
-            this.button103.TabIndex = 393;
-            this.button103.Text = "H10";
-            this.button103.UseVisualStyleBackColor = true;
-            // 
-            // button104
-            // 
-            this.button104.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button104.Location = new System.Drawing.Point(508, 346);
-            this.button104.Name = "button104";
-            this.button104.Size = new System.Drawing.Size(45, 30);
-            this.button104.TabIndex = 392;
-            this.button104.Text = "H9";
-            this.button104.UseVisualStyleBackColor = true;
-            // 
-            // button105
-            // 
-            this.button105.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button105.Location = new System.Drawing.Point(457, 346);
-            this.button105.Name = "button105";
-            this.button105.Size = new System.Drawing.Size(45, 30);
-            this.button105.TabIndex = 391;
-            this.button105.Text = "H8";
-            this.button105.UseVisualStyleBackColor = true;
-            // 
-            // button106
-            // 
-            this.button106.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button106.Location = new System.Drawing.Point(406, 346);
-            this.button106.Name = "button106";
-            this.button106.Size = new System.Drawing.Size(45, 30);
-            this.button106.TabIndex = 390;
-            this.button106.Text = "H7";
-            this.button106.UseVisualStyleBackColor = true;
-            // 
-            // button107
-            // 
-            this.button107.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button107.Location = new System.Drawing.Point(355, 346);
-            this.button107.Name = "button107";
-            this.button107.Size = new System.Drawing.Size(45, 30);
-            this.button107.TabIndex = 389;
-            this.button107.Text = "H6";
-            this.button107.UseVisualStyleBackColor = true;
-            // 
-            // button108
-            // 
-            this.button108.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button108.Location = new System.Drawing.Point(304, 346);
-            this.button108.Name = "button108";
-            this.button108.Size = new System.Drawing.Size(45, 30);
-            this.button108.TabIndex = 388;
-            this.button108.Text = "H5";
-            this.button108.UseVisualStyleBackColor = true;
-            // 
-            // button109
-            // 
-            this.button109.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button109.Location = new System.Drawing.Point(253, 346);
-            this.button109.Name = "button109";
-            this.button109.Size = new System.Drawing.Size(45, 30);
-            this.button109.TabIndex = 387;
-            this.button109.Text = "H4";
-            this.button109.UseVisualStyleBackColor = true;
-            // 
-            // button110
-            // 
-            this.button110.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button110.Location = new System.Drawing.Point(202, 346);
-            this.button110.Name = "button110";
-            this.button110.Size = new System.Drawing.Size(45, 30);
-            this.button110.TabIndex = 386;
-            this.button110.Text = "H3";
-            this.button110.UseVisualStyleBackColor = true;
-            // 
-            // button111
-            // 
-            this.button111.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button111.Location = new System.Drawing.Point(151, 346);
-            this.button111.Name = "button111";
-            this.button111.Size = new System.Drawing.Size(45, 30);
-            this.button111.TabIndex = 385;
-            this.button111.Text = "H2";
-            this.button111.UseVisualStyleBackColor = true;
-            // 
-            // button112
-            // 
-            this.button112.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button112.Location = new System.Drawing.Point(100, 346);
-            this.button112.Name = "button112";
-            this.button112.Size = new System.Drawing.Size(45, 30);
-            this.button112.TabIndex = 384;
-            this.button112.Text = "H1";
-            this.button112.UseVisualStyleBackColor = true;
-            // 
-            // button85
-            // 
-            this.button85.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button85.Location = new System.Drawing.Point(763, 310);
-            this.button85.Name = "button85";
-            this.button85.Size = new System.Drawing.Size(45, 30);
-            this.button85.TabIndex = 383;
-            this.button85.Text = "G14";
-            this.button85.UseVisualStyleBackColor = true;
-            // 
-            // button86
-            // 
-            this.button86.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button86.Location = new System.Drawing.Point(712, 310);
-            this.button86.Name = "button86";
-            this.button86.Size = new System.Drawing.Size(45, 30);
-            this.button86.TabIndex = 382;
-            this.button86.Text = "G13";
-            this.button86.UseVisualStyleBackColor = true;
-            // 
-            // button87
-            // 
-            this.button87.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button87.Location = new System.Drawing.Point(661, 310);
-            this.button87.Name = "button87";
-            this.button87.Size = new System.Drawing.Size(45, 30);
-            this.button87.TabIndex = 381;
-            this.button87.Text = "G12";
-            this.button87.UseVisualStyleBackColor = true;
-            // 
-            // button88
-            // 
-            this.button88.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button88.Location = new System.Drawing.Point(610, 310);
-            this.button88.Name = "button88";
-            this.button88.Size = new System.Drawing.Size(45, 30);
-            this.button88.TabIndex = 380;
-            this.button88.Text = "G11";
-            this.button88.UseVisualStyleBackColor = true;
-            // 
-            // button89
-            // 
-            this.button89.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button89.Location = new System.Drawing.Point(559, 310);
-            this.button89.Name = "button89";
-            this.button89.Size = new System.Drawing.Size(45, 30);
-            this.button89.TabIndex = 379;
-            this.button89.Text = "G10";
-            this.button89.UseVisualStyleBackColor = true;
-            // 
-            // button90
-            // 
-            this.button90.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button90.Location = new System.Drawing.Point(508, 310);
-            this.button90.Name = "button90";
-            this.button90.Size = new System.Drawing.Size(45, 30);
-            this.button90.TabIndex = 378;
-            this.button90.Text = "G9";
-            this.button90.UseVisualStyleBackColor = true;
-            // 
-            // button91
-            // 
-            this.button91.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button91.Location = new System.Drawing.Point(457, 310);
-            this.button91.Name = "button91";
-            this.button91.Size = new System.Drawing.Size(45, 30);
-            this.button91.TabIndex = 377;
-            this.button91.Text = "G8";
-            this.button91.UseVisualStyleBackColor = true;
-            // 
-            // button92
-            // 
-            this.button92.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button92.Location = new System.Drawing.Point(406, 310);
-            this.button92.Name = "button92";
-            this.button92.Size = new System.Drawing.Size(45, 30);
-            this.button92.TabIndex = 376;
-            this.button92.Text = "G7";
-            this.button92.UseVisualStyleBackColor = true;
-            // 
-            // button93
-            // 
-            this.button93.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button93.Location = new System.Drawing.Point(355, 310);
-            this.button93.Name = "button93";
-            this.button93.Size = new System.Drawing.Size(45, 30);
-            this.button93.TabIndex = 375;
-            this.button93.Text = "G6";
-            this.button93.UseVisualStyleBackColor = true;
-            // 
-            // button94
-            // 
-            this.button94.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button94.Location = new System.Drawing.Point(304, 310);
-            this.button94.Name = "button94";
-            this.button94.Size = new System.Drawing.Size(45, 30);
-            this.button94.TabIndex = 374;
-            this.button94.Text = "G5";
-            this.button94.UseVisualStyleBackColor = true;
-            // 
-            // button95
-            // 
-            this.button95.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button95.Location = new System.Drawing.Point(253, 310);
-            this.button95.Name = "button95";
-            this.button95.Size = new System.Drawing.Size(45, 30);
-            this.button95.TabIndex = 373;
-            this.button95.Text = "G4";
-            this.button95.UseVisualStyleBackColor = true;
-            // 
-            // button96
-            // 
-            this.button96.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button96.Location = new System.Drawing.Point(202, 310);
-            this.button96.Name = "button96";
-            this.button96.Size = new System.Drawing.Size(45, 30);
-            this.button96.TabIndex = 372;
-            this.button96.Text = "G3";
-            this.button96.UseVisualStyleBackColor = true;
-            // 
-            // button97
-            // 
-            this.button97.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button97.Location = new System.Drawing.Point(151, 310);
-            this.button97.Name = "button97";
-            this.button97.Size = new System.Drawing.Size(45, 30);
-            this.button97.TabIndex = 371;
-            this.button97.Text = "G2";
-            this.button97.UseVisualStyleBackColor = true;
-            // 
-            // button98
-            // 
-            this.button98.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button98.Location = new System.Drawing.Point(100, 310);
-            this.button98.Name = "button98";
-            this.button98.Size = new System.Drawing.Size(45, 30);
-            this.button98.TabIndex = 370;
-            this.button98.Text = "G1";
-            this.button98.UseVisualStyleBackColor = true;
-            // 
-            // button71
-            // 
-            this.button71.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button71.Location = new System.Drawing.Point(763, 271);
-            this.button71.Name = "button71";
-            this.button71.Size = new System.Drawing.Size(45, 30);
-            this.button71.TabIndex = 369;
-            this.button71.Text = "F14";
-            this.button71.UseVisualStyleBackColor = true;
-            // 
-            // button72
-            // 
-            this.button72.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button72.Location = new System.Drawing.Point(712, 271);
-            this.button72.Name = "button72";
-            this.button72.Size = new System.Drawing.Size(45, 30);
-            this.button72.TabIndex = 368;
-            this.button72.Text = "F13";
-            this.button72.UseVisualStyleBackColor = true;
-            // 
-            // button73
-            // 
-            this.button73.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button73.Location = new System.Drawing.Point(661, 271);
-            this.button73.Name = "button73";
-            this.button73.Size = new System.Drawing.Size(45, 30);
-            this.button73.TabIndex = 367;
-            this.button73.Text = "F12";
-            this.button73.UseVisualStyleBackColor = true;
-            // 
-            // button74
-            // 
-            this.button74.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button74.Location = new System.Drawing.Point(610, 271);
-            this.button74.Name = "button74";
-            this.button74.Size = new System.Drawing.Size(45, 30);
-            this.button74.TabIndex = 366;
-            this.button74.Text = "F11";
-            this.button74.UseVisualStyleBackColor = true;
-            // 
-            // button75
-            // 
-            this.button75.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button75.Location = new System.Drawing.Point(559, 271);
-            this.button75.Name = "button75";
-            this.button75.Size = new System.Drawing.Size(45, 30);
-            this.button75.TabIndex = 365;
-            this.button75.Text = "F10";
-            this.button75.UseVisualStyleBackColor = true;
-            // 
-            // button76
-            // 
-            this.button76.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button76.Location = new System.Drawing.Point(508, 271);
-            this.button76.Name = "button76";
-            this.button76.Size = new System.Drawing.Size(45, 30);
-            this.button76.TabIndex = 364;
-            this.button76.Text = "F9";
-            this.button76.UseVisualStyleBackColor = true;
-            // 
-            // button77
-            // 
-            this.button77.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button77.Location = new System.Drawing.Point(457, 271);
-            this.button77.Name = "button77";
-            this.button77.Size = new System.Drawing.Size(45, 30);
-            this.button77.TabIndex = 363;
-            this.button77.Text = "F8";
-            this.button77.UseVisualStyleBackColor = true;
-            // 
-            // button78
-            // 
-            this.button78.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button78.Location = new System.Drawing.Point(406, 271);
-            this.button78.Name = "button78";
-            this.button78.Size = new System.Drawing.Size(45, 30);
-            this.button78.TabIndex = 362;
-            this.button78.Text = "F7";
-            this.button78.UseVisualStyleBackColor = true;
-            // 
-            // button79
-            // 
-            this.button79.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button79.Location = new System.Drawing.Point(355, 271);
-            this.button79.Name = "button79";
-            this.button79.Size = new System.Drawing.Size(45, 30);
-            this.button79.TabIndex = 361;
-            this.button79.Text = "F6";
-            this.button79.UseVisualStyleBackColor = true;
-            // 
-            // button80
-            // 
-            this.button80.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button80.Location = new System.Drawing.Point(304, 271);
-            this.button80.Name = "button80";
-            this.button80.Size = new System.Drawing.Size(45, 30);
-            this.button80.TabIndex = 360;
-            this.button80.Text = "F5";
-            this.button80.UseVisualStyleBackColor = true;
-            // 
-            // button81
-            // 
-            this.button81.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button81.Location = new System.Drawing.Point(253, 271);
-            this.button81.Name = "button81";
-            this.button81.Size = new System.Drawing.Size(45, 30);
-            this.button81.TabIndex = 359;
-            this.button81.Text = "F4";
-            this.button81.UseVisualStyleBackColor = true;
-            // 
-            // button82
-            // 
-            this.button82.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button82.Location = new System.Drawing.Point(202, 271);
-            this.button82.Name = "button82";
-            this.button82.Size = new System.Drawing.Size(45, 30);
-            this.button82.TabIndex = 358;
-            this.button82.Text = "F3";
-            this.button82.UseVisualStyleBackColor = true;
-            // 
-            // button83
-            // 
-            this.button83.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button83.Location = new System.Drawing.Point(151, 271);
-            this.button83.Name = "button83";
-            this.button83.Size = new System.Drawing.Size(45, 30);
-            this.button83.TabIndex = 357;
-            this.button83.Text = "F2";
-            this.button83.UseVisualStyleBackColor = true;
-            // 
-            // button84
-            // 
-            this.button84.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button84.Location = new System.Drawing.Point(100, 271);
-            this.button84.Name = "button84";
-            this.button84.Size = new System.Drawing.Size(45, 30);
-            this.button84.TabIndex = 356;
-            this.button84.Text = "F1";
-            this.button84.UseVisualStyleBackColor = true;
-            // 
-            // button44
-            // 
-            this.button44.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button44.Location = new System.Drawing.Point(763, 235);
-            this.button44.Name = "button44";
-            this.button44.Size = new System.Drawing.Size(45, 30);
-            this.button44.TabIndex = 355;
-            this.button44.Text = "E14";
-            this.button44.UseVisualStyleBackColor = true;
-            // 
-            // button58
-            // 
-            this.button58.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button58.Location = new System.Drawing.Point(712, 235);
-            this.button58.Name = "button58";
-            this.button58.Size = new System.Drawing.Size(45, 30);
-            this.button58.TabIndex = 354;
-            this.button58.Text = "E13";
-            this.button58.UseVisualStyleBackColor = true;
-            // 
-            // button59
-            // 
-            this.button59.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button59.Location = new System.Drawing.Point(661, 235);
-            this.button59.Name = "button59";
-            this.button59.Size = new System.Drawing.Size(45, 30);
-            this.button59.TabIndex = 353;
-            this.button59.Text = "E12";
-            this.button59.UseVisualStyleBackColor = true;
             // 
             // guna2Button2
             // 
@@ -963,86 +215,22 @@
             this.guna2Button2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(61)))), ((int)(((byte)(204)))));
             this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button2.ForeColor = System.Drawing.Color.White;
-            this.guna2Button2.Location = new System.Drawing.Point(313, 147);
+            this.guna2Button2.Location = new System.Drawing.Point(201, 181);
+            this.guna2Button2.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.Size = new System.Drawing.Size(95, 36);
+            this.guna2Button2.Size = new System.Drawing.Size(127, 44);
             this.guna2Button2.TabIndex = 49;
             this.guna2Button2.Text = "Hủy";
-            // 
-            // lblTicketPrice
-            // 
-            this.lblTicketPrice.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblTicketPrice.BackColor = System.Drawing.Color.White;
-            this.lblTicketPrice.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblTicketPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTicketPrice.ForeColor = System.Drawing.Color.Red;
-            this.lblTicketPrice.Location = new System.Drawing.Point(90, 133);
-            this.lblTicketPrice.Name = "lblTicketPrice";
-            this.lblTicketPrice.Size = new System.Drawing.Size(247, 30);
-            this.lblTicketPrice.TabIndex = 9;
-            this.lblTicketPrice.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // rdoAdult
-            // 
-            this.rdoAdult.AutoSize = true;
-            this.rdoAdult.Location = new System.Drawing.Point(28, 43);
-            this.rdoAdult.Name = "rdoAdult";
-            this.rdoAdult.Size = new System.Drawing.Size(99, 24);
-            this.rdoAdult.TabIndex = 4;
-            this.rdoAdult.TabStop = true;
-            this.rdoAdult.Text = "Người Lớn";
-            this.rdoAdult.UseVisualStyleBackColor = true;
-            // 
-            // rdoChild
-            // 
-            this.rdoChild.AutoSize = true;
-            this.rdoChild.Location = new System.Drawing.Point(28, 87);
-            this.rdoChild.Name = "rdoChild";
-            this.rdoChild.Size = new System.Drawing.Size(177, 24);
-            this.rdoChild.TabIndex = 3;
-            this.rdoChild.TabStop = true;
-            this.rdoChild.Text = "Trẻ Em (Dưới 12 tuổi)";
-            this.rdoChild.UseVisualStyleBackColor = true;
-            // 
-            // button60
-            // 
-            this.button60.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button60.Location = new System.Drawing.Point(610, 235);
-            this.button60.Name = "button60";
-            this.button60.Size = new System.Drawing.Size(45, 30);
-            this.button60.TabIndex = 352;
-            this.button60.Text = "E11";
-            this.button60.UseVisualStyleBackColor = true;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(6, 136);
+            this.label12.Location = new System.Drawing.Point(8, 56);
+            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(62, 20);
+            this.label12.Size = new System.Drawing.Size(93, 25);
             this.label12.TabIndex = 10;
-            this.label12.Text = "Giá Vé:";
-            // 
-            // rdoStudent
-            // 
-            this.rdoStudent.AutoSize = true;
-            this.rdoStudent.Location = new System.Drawing.Point(156, 43);
-            this.rdoStudent.Name = "rdoStudent";
-            this.rdoStudent.Size = new System.Drawing.Size(95, 24);
-            this.rdoStudent.TabIndex = 5;
-            this.rdoStudent.TabStop = true;
-            this.rdoStudent.Text = "Sinh Viên";
-            this.rdoStudent.UseVisualStyleBackColor = true;
-            // 
-            // button61
-            // 
-            this.button61.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button61.Location = new System.Drawing.Point(559, 235);
-            this.button61.Name = "button61";
-            this.button61.Size = new System.Drawing.Size(45, 30);
-            this.button61.TabIndex = 351;
-            this.button61.Text = "E10";
-            this.button61.UseVisualStyleBackColor = true;
+            this.label12.Text = "Sinh viên";
             // 
             // guna2ComboBox1
             // 
@@ -1056,315 +244,237 @@
             this.guna2ComboBox1.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.guna2ComboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.guna2ComboBox1.ItemHeight = 30;
-            this.guna2ComboBox1.Location = new System.Drawing.Point(115, 35);
+            this.guna2ComboBox1.Location = new System.Drawing.Point(153, 43);
+            this.guna2ComboBox1.Margin = new System.Windows.Forms.Padding(4);
             this.guna2ComboBox1.Name = "guna2ComboBox1";
-            this.guna2ComboBox1.Size = new System.Drawing.Size(271, 36);
+            this.guna2ComboBox1.Size = new System.Drawing.Size(360, 36);
             this.guna2ComboBox1.TabIndex = 53;
             // 
-            // guna2Button4
+            // apdung
             // 
-            this.guna2Button4.BorderRadius = 10;
-            this.guna2Button4.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button4.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button4.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button4.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(61)))), ((int)(((byte)(204)))));
-            this.guna2Button4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button4.ForeColor = System.Drawing.Color.White;
-            this.guna2Button4.Location = new System.Drawing.Point(244, 144);
-            this.guna2Button4.Name = "guna2Button4";
-            this.guna2Button4.Size = new System.Drawing.Size(142, 36);
-            this.guna2Button4.TabIndex = 48;
-            this.guna2Button4.Text = "Áp dụng";
+            this.apdung.BorderRadius = 10;
+            this.apdung.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.apdung.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.apdung.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.apdung.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.apdung.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(61)))), ((int)(((byte)(204)))));
+            this.apdung.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.apdung.ForeColor = System.Drawing.Color.White;
+            this.apdung.Location = new System.Drawing.Point(325, 177);
+            this.apdung.Margin = new System.Windows.Forms.Padding(4);
+            this.apdung.Name = "apdung";
+            this.apdung.Size = new System.Drawing.Size(189, 44);
+            this.apdung.TabIndex = 48;
+            this.apdung.Text = "Áp dụng";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 44);
+            this.label4.Location = new System.Drawing.Point(8, 54);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(95, 20);
+            this.label4.Size = new System.Drawing.Size(121, 25);
             this.label4.TabIndex = 10;
             this.label4.Text = "Mã voucher:";
             // 
-            // button62
-            // 
-            this.button62.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button62.Location = new System.Drawing.Point(508, 235);
-            this.button62.Name = "button62";
-            this.button62.Size = new System.Drawing.Size(45, 30);
-            this.button62.TabIndex = 350;
-            this.button62.Text = "E9";
-            this.button62.UseVisualStyleBackColor = true;
-            // 
-            // button63
-            // 
-            this.button63.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button63.Location = new System.Drawing.Point(457, 235);
-            this.button63.Name = "button63";
-            this.button63.Size = new System.Drawing.Size(45, 30);
-            this.button63.TabIndex = 349;
-            this.button63.Text = "E8";
-            this.button63.UseVisualStyleBackColor = true;
-            // 
-            // button64
-            // 
-            this.button64.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button64.Location = new System.Drawing.Point(406, 235);
-            this.button64.Name = "button64";
-            this.button64.Size = new System.Drawing.Size(45, 30);
-            this.button64.TabIndex = 348;
-            this.button64.Text = "E7";
-            this.button64.UseVisualStyleBackColor = true;
-            // 
-            // button65
-            // 
-            this.button65.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button65.Location = new System.Drawing.Point(355, 235);
-            this.button65.Name = "button65";
-            this.button65.Size = new System.Drawing.Size(45, 30);
-            this.button65.TabIndex = 347;
-            this.button65.Text = "E6";
-            this.button65.UseVisualStyleBackColor = true;
-            // 
-            // button66
-            // 
-            this.button66.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button66.Location = new System.Drawing.Point(304, 235);
-            this.button66.Name = "button66";
-            this.button66.Size = new System.Drawing.Size(45, 30);
-            this.button66.TabIndex = 346;
-            this.button66.Text = "E5";
-            this.button66.UseVisualStyleBackColor = true;
-            // 
-            // button67
-            // 
-            this.button67.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button67.Location = new System.Drawing.Point(253, 235);
-            this.button67.Name = "button67";
-            this.button67.Size = new System.Drawing.Size(45, 30);
-            this.button67.TabIndex = 345;
-            this.button67.Text = "E4";
-            this.button67.UseVisualStyleBackColor = true;
-            // 
-            // button68
-            // 
-            this.button68.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button68.Location = new System.Drawing.Point(202, 235);
-            this.button68.Name = "button68";
-            this.button68.Size = new System.Drawing.Size(45, 30);
-            this.button68.TabIndex = 344;
-            this.button68.Text = "E3";
-            this.button68.UseVisualStyleBackColor = true;
-            // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.chkCustomer);
             this.groupBox1.Controls.Add(this.guna2ComboBox1);
-            this.groupBox1.Controls.Add(this.guna2Button4);
+            this.groupBox1.Controls.Add(this.apdung);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(349, 3);
+            this.groupBox1.Location = new System.Drawing.Point(465, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(392, 198);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Size = new System.Drawing.Size(523, 244);
             this.groupBox1.TabIndex = 19;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Voucher:";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // chkCustomer
+            // 
+            this.chkCustomer.AutoSize = true;
+            this.chkCustomer.Location = new System.Drawing.Point(13, 124);
+            this.chkCustomer.Name = "chkCustomer";
+            this.chkCustomer.Size = new System.Drawing.Size(250, 29);
+            this.chkCustomer.TabIndex = 54;
+            this.chkCustomer.Text = "Khách Hàng Thành Viên";
+            this.chkCustomer.UseVisualStyleBackColor = true;
+            this.chkCustomer.Click += new System.EventHandler(this.chkCustomer_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(69, 20);
+            this.label3.Location = new System.Drawing.Point(92, 25);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(87, 20);
+            this.label3.Size = new System.Drawing.Size(107, 25);
             this.label3.TabIndex = 5;
             this.label3.Text = "Đang chọn";
             // 
             // grpLoaiVe
             // 
+            this.grpLoaiVe.Controls.Add(this.treem);
+            this.grpLoaiVe.Controls.Add(this.sinhvien);
+            this.grpLoaiVe.Controls.Add(this.label6);
             this.grpLoaiVe.Controls.Add(this.label12);
-            this.grpLoaiVe.Controls.Add(this.rdoStudent);
-            this.grpLoaiVe.Controls.Add(this.lblTicketPrice);
-            this.grpLoaiVe.Controls.Add(this.rdoAdult);
-            this.grpLoaiVe.Controls.Add(this.rdoChild);
             this.grpLoaiVe.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpLoaiVe.Location = new System.Drawing.Point(0, 2);
+            this.grpLoaiVe.Margin = new System.Windows.Forms.Padding(4);
             this.grpLoaiVe.Name = "grpLoaiVe";
-            this.grpLoaiVe.Size = new System.Drawing.Size(343, 198);
+            this.grpLoaiVe.Padding = new System.Windows.Forms.Padding(4);
+            this.grpLoaiVe.Size = new System.Drawing.Size(457, 244);
             this.grpLoaiVe.TabIndex = 18;
             this.grpLoaiVe.TabStop = false;
             this.grpLoaiVe.Text = "Loại Vé:";
+            // 
+            // treem
+            // 
+            this.treem.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.treem.DefaultText = "";
+            this.treem.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.treem.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.treem.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.treem.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.treem.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.treem.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.treem.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.treem.Location = new System.Drawing.Point(223, 116);
+            this.treem.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.treem.Name = "treem";
+            this.treem.PasswordChar = '\0';
+            this.treem.PlaceholderText = "";
+            this.treem.SelectedText = "";
+            this.treem.Size = new System.Drawing.Size(227, 40);
+            this.treem.TabIndex = 14;
+            this.treem.TextChanged += new System.EventHandler(this.treem_TextChanged);
+            this.treem.Enter += new System.EventHandler(this.treem_Enter);
+            // 
+            // sinhvien
+            // 
+            this.sinhvien.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.sinhvien.DefaultText = "";
+            this.sinhvien.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.sinhvien.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.sinhvien.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.sinhvien.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.sinhvien.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.sinhvien.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.sinhvien.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.sinhvien.Location = new System.Drawing.Point(223, 45);
+            this.sinhvien.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.sinhvien.Name = "sinhvien";
+            this.sinhvien.PasswordChar = '\0';
+            this.sinhvien.PlaceholderText = "";
+            this.sinhvien.SelectedText = "";
+            this.sinhvien.Size = new System.Drawing.Size(227, 40);
+            this.sinhvien.TabIndex = 13;
+            this.sinhvien.TextChanged += new System.EventHandler(this.sinhvien_TextChanged);
+            this.sinhvien.Enter += new System.EventHandler(this.sinhvien_Enter);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(8, 127);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(199, 25);
+            this.label6.TabIndex = 12;
+            this.label6.Text = "Trẻ em (dưới 12 tuổi):";
             // 
             // button4
             // 
             this.button4.BackColor = System.Drawing.Color.Yellow;
             this.button4.Enabled = false;
-            this.button4.Location = new System.Drawing.Point(22, 16);
+            this.button4.Location = new System.Drawing.Point(29, 20);
+            this.button4.Margin = new System.Windows.Forms.Padding(4);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(30, 30);
+            this.button4.Size = new System.Drawing.Size(40, 37);
             this.button4.TabIndex = 7;
             this.button4.UseVisualStyleBackColor = false;
-            // 
-            // button69
-            // 
-            this.button69.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button69.Location = new System.Drawing.Point(151, 235);
-            this.button69.Name = "button69";
-            this.button69.Size = new System.Drawing.Size(45, 30);
-            this.button69.TabIndex = 343;
-            this.button69.Text = "E2";
-            this.button69.UseVisualStyleBackColor = true;
-            // 
-            // button70
-            // 
-            this.button70.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button70.Location = new System.Drawing.Point(100, 235);
-            this.button70.Name = "button70";
-            this.button70.Size = new System.Drawing.Size(45, 30);
-            this.button70.TabIndex = 342;
-            this.button70.Text = "E1";
-            this.button70.UseVisualStyleBackColor = true;
-            // 
-            // button46
-            // 
-            this.button46.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button46.Location = new System.Drawing.Point(661, 199);
-            this.button46.Name = "button46";
-            this.button46.Size = new System.Drawing.Size(45, 30);
-            this.button46.TabIndex = 340;
-            this.button46.Text = "D12";
-            this.button46.UseVisualStyleBackColor = true;
-            // 
-            // button47
-            // 
-            this.button47.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button47.Location = new System.Drawing.Point(610, 199);
-            this.button47.Name = "button47";
-            this.button47.Size = new System.Drawing.Size(45, 30);
-            this.button47.TabIndex = 339;
-            this.button47.Text = "D11";
-            this.button47.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(69, 55);
+            this.label2.Location = new System.Drawing.Point(92, 68);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(65, 20);
+            this.label2.Size = new System.Drawing.Size(81, 25);
             this.label2.TabIndex = 6;
             this.label2.Text = "Đã Mua";
             // 
-            // button48
+            // thanhtoan
             // 
-            this.button48.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button48.Location = new System.Drawing.Point(559, 199);
-            this.button48.Name = "button48";
-            this.button48.Size = new System.Drawing.Size(45, 30);
-            this.button48.TabIndex = 338;
-            this.button48.Text = "D10";
-            this.button48.UseVisualStyleBackColor = true;
+            this.thanhtoan.BorderRadius = 10;
+            this.thanhtoan.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.thanhtoan.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.thanhtoan.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.thanhtoan.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.thanhtoan.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(61)))), ((int)(((byte)(204)))));
+            this.thanhtoan.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.thanhtoan.ForeColor = System.Drawing.Color.White;
+            this.thanhtoan.Location = new System.Drawing.Point(351, 181);
+            this.thanhtoan.Margin = new System.Windows.Forms.Padding(4);
+            this.thanhtoan.Name = "thanhtoan";
+            this.thanhtoan.Size = new System.Drawing.Size(189, 44);
+            this.thanhtoan.TabIndex = 48;
+            this.thanhtoan.Text = "Tiếp theo";
+            this.thanhtoan.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
-            // button49
+            // tongtien
             // 
-            this.button49.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button49.Location = new System.Drawing.Point(508, 199);
-            this.button49.Name = "button49";
-            this.button49.Size = new System.Drawing.Size(45, 30);
-            this.button49.TabIndex = 337;
-            this.button49.Text = "D9";
-            this.button49.UseVisualStyleBackColor = true;
-            // 
-            // button50
-            // 
-            this.button50.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button50.Location = new System.Drawing.Point(457, 199);
-            this.button50.Name = "button50";
-            this.button50.Size = new System.Drawing.Size(45, 30);
-            this.button50.TabIndex = 336;
-            this.button50.Text = "D8";
-            this.button50.UseVisualStyleBackColor = true;
-            // 
-            // button51
-            // 
-            this.button51.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button51.Location = new System.Drawing.Point(406, 199);
-            this.button51.Name = "button51";
-            this.button51.Size = new System.Drawing.Size(45, 30);
-            this.button51.TabIndex = 335;
-            this.button51.Text = "D7";
-            this.button51.UseVisualStyleBackColor = true;
-            // 
-            // guna2Button1
-            // 
-            this.guna2Button1.BorderRadius = 10;
-            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(61)))), ((int)(((byte)(204)))));
-            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.Location = new System.Drawing.Point(154, 147);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(142, 36);
-            this.guna2Button1.TabIndex = 48;
-            this.guna2Button1.Text = "Thanh toán";
-            // 
-            // lblTotal
-            // 
-            this.lblTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblTotal.BackColor = System.Drawing.Color.White;
-            this.lblTotal.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotal.ForeColor = System.Drawing.Color.Red;
-            this.lblTotal.Location = new System.Drawing.Point(159, 9);
-            this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(254, 30);
-            this.lblTotal.TabIndex = 9;
-            this.lblTotal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.tongtien.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.tongtien.BackColor = System.Drawing.Color.White;
+            this.tongtien.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.tongtien.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tongtien.ForeColor = System.Drawing.Color.Red;
+            this.tongtien.Location = new System.Drawing.Point(201, 11);
+            this.tongtien.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.tongtien.Name = "tongtien";
+            this.tongtien.Size = new System.Drawing.Size(339, 37);
+            this.tongtien.TabIndex = 9;
+            this.tongtien.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(5, 54);
+            this.label5.Location = new System.Drawing.Point(7, 66);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(101, 20);
+            this.label5.Size = new System.Drawing.Size(126, 25);
             this.label5.TabIndex = 8;
             this.label5.Text = "Số tiền giảm:";
             // 
-            // lblPayment
+            // cantra
             // 
-            this.lblPayment.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblPayment.BackColor = System.Drawing.Color.White;
-            this.lblPayment.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblPayment.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPayment.ForeColor = System.Drawing.Color.Red;
-            this.lblPayment.Location = new System.Drawing.Point(159, 93);
-            this.lblPayment.Name = "lblPayment";
-            this.lblPayment.Size = new System.Drawing.Size(254, 30);
-            this.lblPayment.TabIndex = 10;
-            this.lblPayment.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.cantra.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.cantra.BackColor = System.Drawing.Color.White;
+            this.cantra.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.cantra.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cantra.ForeColor = System.Drawing.Color.Red;
+            this.cantra.Location = new System.Drawing.Point(201, 114);
+            this.cantra.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.cantra.Name = "cantra";
+            this.cantra.Size = new System.Drawing.Size(339, 37);
+            this.cantra.TabIndex = 10;
+            this.cantra.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(5, 12);
+            this.label8.Location = new System.Drawing.Point(7, 15);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(83, 20);
+            this.label8.Size = new System.Drawing.Size(108, 25);
             this.label8.TabIndex = 7;
             this.label8.Text = "Tổng Tiền:";
-            // 
-            // button45
-            // 
-            this.button45.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button45.Location = new System.Drawing.Point(712, 199);
-            this.button45.Name = "button45";
-            this.button45.Size = new System.Drawing.Size(45, 30);
-            this.button45.TabIndex = 341;
-            this.button45.Text = "D13";
-            this.button45.UseVisualStyleBackColor = true;
             // 
             // lblDiscount
             // 
@@ -1373,526 +483,62 @@
             this.lblDiscount.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblDiscount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDiscount.ForeColor = System.Drawing.Color.Red;
-            this.lblDiscount.Location = new System.Drawing.Point(159, 51);
+            this.lblDiscount.Location = new System.Drawing.Point(201, 63);
+            this.lblDiscount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDiscount.Name = "lblDiscount";
-            this.lblDiscount.Size = new System.Drawing.Size(254, 30);
+            this.lblDiscount.Size = new System.Drawing.Size(339, 37);
             this.lblDiscount.TabIndex = 10;
             this.lblDiscount.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // button52
-            // 
-            this.button52.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button52.Location = new System.Drawing.Point(355, 199);
-            this.button52.Name = "button52";
-            this.button52.Size = new System.Drawing.Size(45, 30);
-            this.button52.TabIndex = 334;
-            this.button52.Text = "D6";
-            this.button52.UseVisualStyleBackColor = true;
-            // 
-            // button53
-            // 
-            this.button53.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button53.Location = new System.Drawing.Point(304, 199);
-            this.button53.Name = "button53";
-            this.button53.Size = new System.Drawing.Size(45, 30);
-            this.button53.TabIndex = 333;
-            this.button53.Text = "D5";
-            this.button53.UseVisualStyleBackColor = true;
-            // 
-            // button54
-            // 
-            this.button54.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button54.Location = new System.Drawing.Point(253, 199);
-            this.button54.Name = "button54";
-            this.button54.Size = new System.Drawing.Size(45, 30);
-            this.button54.TabIndex = 332;
-            this.button54.Text = "D4";
-            this.button54.UseVisualStyleBackColor = true;
-            // 
-            // button55
-            // 
-            this.button55.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button55.Location = new System.Drawing.Point(202, 199);
-            this.button55.Name = "button55";
-            this.button55.Size = new System.Drawing.Size(45, 30);
-            this.button55.TabIndex = 331;
-            this.button55.Text = "D3";
-            this.button55.UseVisualStyleBackColor = true;
-            // 
-            // button56
-            // 
-            this.button56.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button56.Location = new System.Drawing.Point(151, 199);
-            this.button56.Name = "button56";
-            this.button56.Size = new System.Drawing.Size(45, 30);
-            this.button56.TabIndex = 330;
-            this.button56.Text = "D2";
-            this.button56.UseVisualStyleBackColor = true;
-            // 
-            // button57
-            // 
-            this.button57.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button57.Location = new System.Drawing.Point(100, 199);
-            this.button57.Name = "button57";
-            this.button57.Size = new System.Drawing.Size(45, 30);
-            this.button57.TabIndex = 329;
-            this.button57.Text = "D1";
-            this.button57.UseVisualStyleBackColor = true;
-            // 
-            // button30
-            // 
-            this.button30.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button30.Location = new System.Drawing.Point(763, 163);
-            this.button30.Name = "button30";
-            this.button30.Size = new System.Drawing.Size(45, 30);
-            this.button30.TabIndex = 328;
-            this.button30.Text = "C14";
-            this.button30.UseVisualStyleBackColor = true;
-            // 
-            // button31
-            // 
-            this.button31.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button31.Location = new System.Drawing.Point(712, 163);
-            this.button31.Name = "button31";
-            this.button31.Size = new System.Drawing.Size(45, 30);
-            this.button31.TabIndex = 327;
-            this.button31.Text = "C13";
-            this.button31.UseVisualStyleBackColor = true;
-            // 
-            // button32
-            // 
-            this.button32.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button32.Location = new System.Drawing.Point(661, 163);
-            this.button32.Name = "button32";
-            this.button32.Size = new System.Drawing.Size(45, 30);
-            this.button32.TabIndex = 326;
-            this.button32.Text = "C12";
-            this.button32.UseVisualStyleBackColor = true;
-            // 
-            // button33
-            // 
-            this.button33.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button33.Location = new System.Drawing.Point(610, 163);
-            this.button33.Name = "button33";
-            this.button33.Size = new System.Drawing.Size(45, 30);
-            this.button33.TabIndex = 325;
-            this.button33.Text = "C11";
-            this.button33.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.Red;
             this.button1.Enabled = false;
-            this.button1.Location = new System.Drawing.Point(22, 52);
+            this.button1.Location = new System.Drawing.Point(29, 64);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(30, 30);
+            this.button1.Size = new System.Drawing.Size(40, 37);
             this.button1.TabIndex = 8;
             this.button1.UseVisualStyleBackColor = false;
-            // 
-            // button34
-            // 
-            this.button34.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button34.Location = new System.Drawing.Point(559, 163);
-            this.button34.Name = "button34";
-            this.button34.Size = new System.Drawing.Size(45, 30);
-            this.button34.TabIndex = 324;
-            this.button34.Text = "C10";
-            this.button34.UseVisualStyleBackColor = true;
-            // 
-            // button35
-            // 
-            this.button35.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button35.Location = new System.Drawing.Point(508, 163);
-            this.button35.Name = "button35";
-            this.button35.Size = new System.Drawing.Size(45, 30);
-            this.button35.TabIndex = 323;
-            this.button35.Text = "C9";
-            this.button35.UseVisualStyleBackColor = true;
-            // 
-            // button36
-            // 
-            this.button36.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button36.Location = new System.Drawing.Point(457, 163);
-            this.button36.Name = "button36";
-            this.button36.Size = new System.Drawing.Size(45, 30);
-            this.button36.TabIndex = 322;
-            this.button36.Text = "C8";
-            this.button36.UseVisualStyleBackColor = true;
-            // 
-            // button38
-            // 
-            this.button38.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button38.Location = new System.Drawing.Point(355, 163);
-            this.button38.Name = "button38";
-            this.button38.Size = new System.Drawing.Size(45, 30);
-            this.button38.TabIndex = 320;
-            this.button38.Text = "C6";
-            this.button38.UseVisualStyleBackColor = true;
-            // 
-            // button39
-            // 
-            this.button39.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button39.Location = new System.Drawing.Point(304, 163);
-            this.button39.Name = "button39";
-            this.button39.Size = new System.Drawing.Size(45, 30);
-            this.button39.TabIndex = 319;
-            this.button39.Text = "C5";
-            this.button39.UseVisualStyleBackColor = true;
-            // 
-            // button40
-            // 
-            this.button40.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button40.Location = new System.Drawing.Point(253, 163);
-            this.button40.Name = "button40";
-            this.button40.Size = new System.Drawing.Size(45, 30);
-            this.button40.TabIndex = 318;
-            this.button40.Text = "C4";
-            this.button40.UseVisualStyleBackColor = true;
-            // 
-            // button41
-            // 
-            this.button41.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button41.Location = new System.Drawing.Point(202, 163);
-            this.button41.Name = "button41";
-            this.button41.Size = new System.Drawing.Size(45, 30);
-            this.button41.TabIndex = 317;
-            this.button41.Text = "C3";
-            this.button41.UseVisualStyleBackColor = true;
-            // 
-            // button42
-            // 
-            this.button42.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button42.Location = new System.Drawing.Point(151, 163);
-            this.button42.Name = "button42";
-            this.button42.Size = new System.Drawing.Size(45, 30);
-            this.button42.TabIndex = 316;
-            this.button42.Text = "C2";
-            this.button42.UseVisualStyleBackColor = true;
-            // 
-            // button43
-            // 
-            this.button43.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button43.Location = new System.Drawing.Point(100, 163);
-            this.button43.Name = "button43";
-            this.button43.Size = new System.Drawing.Size(45, 30);
-            this.button43.TabIndex = 315;
-            this.button43.Text = "C1";
-            this.button43.UseVisualStyleBackColor = true;
-            // 
-            // button14
-            // 
-            this.button14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button14.Location = new System.Drawing.Point(763, 127);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(45, 30);
-            this.button14.TabIndex = 314;
-            this.button14.Text = "B14";
-            this.button14.UseVisualStyleBackColor = true;
-            // 
-            // button18
-            // 
-            this.button18.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button18.Location = new System.Drawing.Point(661, 127);
-            this.button18.Name = "button18";
-            this.button18.Size = new System.Drawing.Size(45, 30);
-            this.button18.TabIndex = 312;
-            this.button18.Text = "B12";
-            this.button18.UseVisualStyleBackColor = true;
-            // 
-            // button19
-            // 
-            this.button19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button19.Location = new System.Drawing.Point(610, 127);
-            this.button19.Name = "button19";
-            this.button19.Size = new System.Drawing.Size(45, 30);
-            this.button19.TabIndex = 311;
-            this.button19.Text = "B11";
-            this.button19.UseVisualStyleBackColor = true;
-            // 
-            // button20
-            // 
-            this.button20.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button20.Location = new System.Drawing.Point(559, 127);
-            this.button20.Name = "button20";
-            this.button20.Size = new System.Drawing.Size(45, 30);
-            this.button20.TabIndex = 310;
-            this.button20.Text = "B10";
-            this.button20.UseVisualStyleBackColor = true;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(5, 96);
+            this.label9.Location = new System.Drawing.Point(7, 118);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(116, 20);
+            this.label9.Size = new System.Drawing.Size(143, 25);
             this.label9.TabIndex = 8;
             this.label9.Text = "Số tiền cần trả:";
-            // 
-            // button37
-            // 
-            this.button37.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button37.Location = new System.Drawing.Point(406, 163);
-            this.button37.Name = "button37";
-            this.button37.Size = new System.Drawing.Size(45, 30);
-            this.button37.TabIndex = 321;
-            this.button37.Text = "C7";
-            this.button37.UseVisualStyleBackColor = true;
-            // 
-            // button17
-            // 
-            this.button17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button17.Location = new System.Drawing.Point(712, 127);
-            this.button17.Name = "button17";
-            this.button17.Size = new System.Drawing.Size(45, 30);
-            this.button17.TabIndex = 313;
-            this.button17.Text = "B13";
-            this.button17.UseVisualStyleBackColor = true;
-            // 
-            // button21
-            // 
-            this.button21.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button21.Location = new System.Drawing.Point(508, 127);
-            this.button21.Name = "button21";
-            this.button21.Size = new System.Drawing.Size(45, 30);
-            this.button21.TabIndex = 309;
-            this.button21.Text = "B9";
-            this.button21.UseVisualStyleBackColor = true;
-            // 
-            // button22
-            // 
-            this.button22.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button22.Location = new System.Drawing.Point(457, 127);
-            this.button22.Name = "button22";
-            this.button22.Size = new System.Drawing.Size(45, 30);
-            this.button22.TabIndex = 308;
-            this.button22.Text = "B8";
-            this.button22.UseVisualStyleBackColor = true;
-            // 
-            // button23
-            // 
-            this.button23.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button23.Location = new System.Drawing.Point(406, 127);
-            this.button23.Name = "button23";
-            this.button23.Size = new System.Drawing.Size(45, 30);
-            this.button23.TabIndex = 307;
-            this.button23.Text = "B7";
-            this.button23.UseVisualStyleBackColor = true;
-            // 
-            // button24
-            // 
-            this.button24.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button24.Location = new System.Drawing.Point(355, 127);
-            this.button24.Name = "button24";
-            this.button24.Size = new System.Drawing.Size(45, 30);
-            this.button24.TabIndex = 306;
-            this.button24.Text = "B6";
-            this.button24.UseVisualStyleBackColor = true;
-            // 
-            // button25
-            // 
-            this.button25.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button25.Location = new System.Drawing.Point(304, 127);
-            this.button25.Name = "button25";
-            this.button25.Size = new System.Drawing.Size(45, 30);
-            this.button25.TabIndex = 305;
-            this.button25.Text = "B5";
-            this.button25.UseVisualStyleBackColor = true;
-            // 
-            // button26
-            // 
-            this.button26.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button26.Location = new System.Drawing.Point(253, 127);
-            this.button26.Name = "button26";
-            this.button26.Size = new System.Drawing.Size(45, 30);
-            this.button26.TabIndex = 304;
-            this.button26.Text = "B4";
-            this.button26.UseVisualStyleBackColor = true;
-            // 
-            // button27
-            // 
-            this.button27.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button27.Location = new System.Drawing.Point(202, 127);
-            this.button27.Name = "button27";
-            this.button27.Size = new System.Drawing.Size(45, 30);
-            this.button27.TabIndex = 303;
-            this.button27.Text = "B3";
-            this.button27.UseVisualStyleBackColor = true;
-            // 
-            // button28
-            // 
-            this.button28.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button28.Location = new System.Drawing.Point(151, 127);
-            this.button28.Name = "button28";
-            this.button28.Size = new System.Drawing.Size(45, 30);
-            this.button28.TabIndex = 302;
-            this.button28.Text = "B2";
-            this.button28.UseVisualStyleBackColor = true;
-            // 
-            // button29
-            // 
-            this.button29.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button29.Location = new System.Drawing.Point(100, 127);
-            this.button29.Name = "button29";
-            this.button29.Size = new System.Drawing.Size(45, 30);
-            this.button29.TabIndex = 301;
-            this.button29.Text = "B1";
-            this.button29.UseVisualStyleBackColor = true;
-            // 
-            // button15
-            // 
-            this.button15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button15.Location = new System.Drawing.Point(763, 91);
-            this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(45, 30);
-            this.button15.TabIndex = 300;
-            this.button15.Text = "A14";
-            this.button15.UseVisualStyleBackColor = true;
-            // 
-            // button16
-            // 
-            this.button16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button16.Location = new System.Drawing.Point(712, 91);
-            this.button16.Name = "button16";
-            this.button16.Size = new System.Drawing.Size(45, 30);
-            this.button16.TabIndex = 299;
-            this.button16.Text = "A13";
-            this.button16.UseVisualStyleBackColor = true;
-            // 
-            // button11
-            // 
-            this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button11.Location = new System.Drawing.Point(661, 91);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(45, 30);
-            this.button11.TabIndex = 298;
-            this.button11.Text = "A12";
-            this.button11.UseVisualStyleBackColor = true;
-            // 
-            // button12
-            // 
-            this.button12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button12.Location = new System.Drawing.Point(610, 91);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(45, 30);
-            this.button12.TabIndex = 297;
-            this.button12.Text = "A11";
-            this.button12.UseVisualStyleBackColor = true;
-            // 
-            // button13
-            // 
-            this.button13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button13.Location = new System.Drawing.Point(559, 91);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(45, 30);
-            this.button13.TabIndex = 296;
-            this.button13.Text = "A10";
-            this.button13.UseVisualStyleBackColor = true;
-            // 
-            // button8
-            // 
-            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.Location = new System.Drawing.Point(508, 91);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(45, 30);
-            this.button8.TabIndex = 295;
-            this.button8.Text = "A9";
-            this.button8.UseVisualStyleBackColor = true;
-            // 
-            // button9
-            // 
-            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button9.Location = new System.Drawing.Point(457, 91);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(45, 30);
-            this.button9.TabIndex = 294;
-            this.button9.Text = "A8";
-            this.button9.UseVisualStyleBackColor = true;
-            // 
-            // button10
-            // 
-            this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button10.Location = new System.Drawing.Point(406, 91);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(45, 30);
-            this.button10.TabIndex = 293;
-            this.button10.Text = "A7";
-            this.button10.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(355, 91);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(45, 30);
-            this.button5.TabIndex = 292;
-            this.button5.Text = "A6";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // button6
-            // 
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.Location = new System.Drawing.Point(304, 91);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(45, 30);
-            this.button6.TabIndex = 291;
-            this.button6.Text = "A5";
-            this.button6.UseVisualStyleBackColor = true;
-            // 
-            // button7
-            // 
-            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.Location = new System.Drawing.Point(253, 91);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(45, 30);
-            this.button7.TabIndex = 290;
-            this.button7.Text = "A4";
-            this.button7.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(202, 91);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(45, 30);
-            this.button3.TabIndex = 289;
-            this.button3.Text = "A3";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button
-            // 
-            this.button.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button.Location = new System.Drawing.Point(100, 91);
-            this.button.Name = "button";
-            this.button.Size = new System.Drawing.Size(45, 30);
-            this.button.TabIndex = 288;
-            this.button.Text = "A1";
-            this.button.UseVisualStyleBackColor = true;
             // 
             // panel6
             // 
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel6.Controls.Add(this.guna2Button2);
-            this.panel6.Controls.Add(this.guna2Button1);
-            this.panel6.Controls.Add(this.lblTotal);
+            this.panel6.Controls.Add(this.thanhtoan);
+            this.panel6.Controls.Add(this.tongtien);
             this.panel6.Controls.Add(this.label5);
-            this.panel6.Controls.Add(this.lblPayment);
+            this.panel6.Controls.Add(this.cantra);
             this.panel6.Controls.Add(this.label8);
             this.panel6.Controls.Add(this.label9);
             this.panel6.Controls.Add(this.lblDiscount);
-            this.panel6.Location = new System.Drawing.Point(750, 514);
+            this.panel6.Location = new System.Drawing.Point(1000, 633);
+            this.panel6.Margin = new System.Windows.Forms.Padding(4);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(425, 200);
+            this.panel6.Size = new System.Drawing.Size(555, 246);
             this.panel6.TabIndex = 287;
+            this.panel6.Paint += new System.Windows.Forms.PaintEventHandler(this.panel6_Paint);
             // 
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Controls.Add(this.grpLoaiVe);
-            this.panel1.Location = new System.Drawing.Point(0, 514);
+            this.panel1.Location = new System.Drawing.Point(0, 633);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(750, 200);
+            this.panel1.Size = new System.Drawing.Size(999, 246);
             this.panel1.TabIndex = 286;
             // 
             // panel2
@@ -1901,9 +547,10 @@
             this.panel2.Controls.Add(this.button4);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Location = new System.Drawing.Point(935, 356);
+            this.panel2.Location = new System.Drawing.Point(1247, 438);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(211, 92);
+            this.panel2.Size = new System.Drawing.Size(281, 113);
             this.panel2.TabIndex = 285;
             // 
             // label1
@@ -1911,177 +558,3280 @@
             this.label1.BackColor = System.Drawing.SystemColors.ControlDark;
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(24, 18);
+            this.label1.Location = new System.Drawing.Point(28, 7);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(881, 48);
+            this.label1.Size = new System.Drawing.Size(1175, 48);
             this.label1.TabIndex = 283;
             this.label1.Text = "Màn Chiếu";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
+            this.flowLayoutPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.flowLayoutPanel1.Controls.Add(this.guna2Button28);
+            this.flowLayoutPanel1.Controls.Add(this.guna2Button3);
+            this.flowLayoutPanel1.Controls.Add(this.guna2Button5);
+            this.flowLayoutPanel1.Controls.Add(this.guna2Button6);
+            this.flowLayoutPanel1.Controls.Add(this.guna2Button7);
+            this.flowLayoutPanel1.Controls.Add(this.guna2Button8);
+            this.flowLayoutPanel1.Controls.Add(this.guna2Button9);
+            this.flowLayoutPanel1.Controls.Add(this.guna2Button10);
+            this.flowLayoutPanel1.Controls.Add(this.guna2Button11);
+            this.flowLayoutPanel1.Controls.Add(this.guna2Button12);
+            this.flowLayoutPanel1.Controls.Add(this.guna2Button13);
+            this.flowLayoutPanel1.Controls.Add(this.guna2Button15);
+            this.flowLayoutPanel1.Controls.Add(this.guna2Button14);
+            this.flowLayoutPanel1.Controls.Add(this.guna2Button16);
+            this.flowLayoutPanel1.Controls.Add(this.guna2Button17);
+            this.flowLayoutPanel1.Controls.Add(this.guna2Button18);
+            this.flowLayoutPanel1.Controls.Add(this.guna2Button19);
+            this.flowLayoutPanel1.Controls.Add(this.guna2Button20);
+            this.flowLayoutPanel1.Controls.Add(this.guna2Button21);
+            this.flowLayoutPanel1.Controls.Add(this.guna2Button22);
+            this.flowLayoutPanel1.Controls.Add(this.guna2Button23);
+            this.flowLayoutPanel1.Controls.Add(this.guna2Button24);
+            this.flowLayoutPanel1.Controls.Add(this.guna2Button25);
+            this.flowLayoutPanel1.Controls.Add(this.guna2Button26);
+            this.flowLayoutPanel1.Controls.Add(this.guna2Button27);
+            this.flowLayoutPanel1.Controls.Add(this.guna2Button29);
+            this.flowLayoutPanel1.Controls.Add(this.guna2Button30);
+            this.flowLayoutPanel1.Controls.Add(this.guna2Button31);
+            this.flowLayoutPanel1.Controls.Add(this.guna2Button32);
+            this.flowLayoutPanel1.Controls.Add(this.guna2Button33);
+            this.flowLayoutPanel1.Controls.Add(this.guna2Button34);
+            this.flowLayoutPanel1.Controls.Add(this.guna2Button35);
+            this.flowLayoutPanel1.Controls.Add(this.guna2Button36);
+            this.flowLayoutPanel1.Controls.Add(this.guna2Button37);
+            this.flowLayoutPanel1.Controls.Add(this.guna2Button38);
+            this.flowLayoutPanel1.Controls.Add(this.guna2Button39);
+            this.flowLayoutPanel1.Controls.Add(this.guna2Button40);
+            this.flowLayoutPanel1.Controls.Add(this.guna2Button41);
+            this.flowLayoutPanel1.Controls.Add(this.guna2Button42);
+            this.flowLayoutPanel1.Controls.Add(this.guna2Button43);
+            this.flowLayoutPanel1.Controls.Add(this.guna2Button44);
+            this.flowLayoutPanel1.Controls.Add(this.guna2Button45);
+            this.flowLayoutPanel1.Controls.Add(this.guna2Button46);
+            this.flowLayoutPanel1.Controls.Add(this.guna2Button47);
+            this.flowLayoutPanel1.Controls.Add(this.guna2Button48);
+            this.flowLayoutPanel1.Controls.Add(this.guna2Button49);
+            this.flowLayoutPanel1.Controls.Add(this.guna2Button50);
+            this.flowLayoutPanel1.Controls.Add(this.guna2Button51);
+            this.flowLayoutPanel1.Controls.Add(this.guna2Button52);
+            this.flowLayoutPanel1.Controls.Add(this.guna2Button53);
+            this.flowLayoutPanel1.Controls.Add(this.guna2Button54);
+            this.flowLayoutPanel1.Controls.Add(this.guna2Button55);
+            this.flowLayoutPanel1.Controls.Add(this.guna2Button56);
+            this.flowLayoutPanel1.Controls.Add(this.guna2Button57);
+            this.flowLayoutPanel1.Controls.Add(this.guna2Button58);
+            this.flowLayoutPanel1.Controls.Add(this.guna2Button59);
+            this.flowLayoutPanel1.Controls.Add(this.guna2Button60);
+            this.flowLayoutPanel1.Controls.Add(this.guna2Button61);
+            this.flowLayoutPanel1.Controls.Add(this.vipguna2Button62);
+            this.flowLayoutPanel1.Controls.Add(this.vipguna2Button63);
+            this.flowLayoutPanel1.Controls.Add(this.vipguna2Button64);
+            this.flowLayoutPanel1.Controls.Add(this.vipguna2Button65);
+            this.flowLayoutPanel1.Controls.Add(this.vipguna2Button66);
+            this.flowLayoutPanel1.Controls.Add(this.vipguna2Button67);
+            this.flowLayoutPanel1.Controls.Add(this.vipguna2Button68);
+            this.flowLayoutPanel1.Controls.Add(this.vipguna2Button69);
+            this.flowLayoutPanel1.Controls.Add(this.vipguna2Button70);
+            this.flowLayoutPanel1.Controls.Add(this.vipguna2Button71);
+            this.flowLayoutPanel1.Controls.Add(this.guna2Button72);
+            this.flowLayoutPanel1.Controls.Add(this.guna2Button73);
+            this.flowLayoutPanel1.Controls.Add(this.guna2Button74);
+            this.flowLayoutPanel1.Controls.Add(this.guna2Button75);
+            this.flowLayoutPanel1.Controls.Add(this.vipguna2Button76);
+            this.flowLayoutPanel1.Controls.Add(this.vipguna2Button77);
+            this.flowLayoutPanel1.Controls.Add(this.vipguna2Button78);
+            this.flowLayoutPanel1.Controls.Add(this.vipguna2Button79);
+            this.flowLayoutPanel1.Controls.Add(this.vipguna2Button80);
+            this.flowLayoutPanel1.Controls.Add(this.vipguna2Button81);
+            this.flowLayoutPanel1.Controls.Add(this.vipguna2Button82);
+            this.flowLayoutPanel1.Controls.Add(this.vipguna2Button83);
+            this.flowLayoutPanel1.Controls.Add(this.vipguna2Button84);
+            this.flowLayoutPanel1.Controls.Add(this.vipguna2Button85);
+            this.flowLayoutPanel1.Controls.Add(this.guna2Button86);
+            this.flowLayoutPanel1.Controls.Add(this.guna2Button87);
+            this.flowLayoutPanel1.Controls.Add(this.guna2Button88);
+            this.flowLayoutPanel1.Controls.Add(this.guna2Button89);
+            this.flowLayoutPanel1.Controls.Add(this.vipguna2Button90);
+            this.flowLayoutPanel1.Controls.Add(this.vipguna2Button91);
+            this.flowLayoutPanel1.Controls.Add(this.vipguna2Button92);
+            this.flowLayoutPanel1.Controls.Add(this.vipguna2Button93);
+            this.flowLayoutPanel1.Controls.Add(this.vipguna2Button94);
+            this.flowLayoutPanel1.Controls.Add(this.vipguna2Button95);
+            this.flowLayoutPanel1.Controls.Add(this.vipguna2Button96);
+            this.flowLayoutPanel1.Controls.Add(this.vipguna2Button97);
+            this.flowLayoutPanel1.Controls.Add(this.vipguna2Button98);
+            this.flowLayoutPanel1.Controls.Add(this.vipguna2Button99);
+            this.flowLayoutPanel1.Controls.Add(this.guna2Button100);
+            this.flowLayoutPanel1.Controls.Add(this.guna2Button101);
+            this.flowLayoutPanel1.Controls.Add(this.guna2Button102);
+            this.flowLayoutPanel1.Controls.Add(this.guna2Button103);
+            this.flowLayoutPanel1.Controls.Add(this.vipguna2Button104);
+            this.flowLayoutPanel1.Controls.Add(this.vipguna2Button105);
+            this.flowLayoutPanel1.Controls.Add(this.vipguna2Button106);
+            this.flowLayoutPanel1.Controls.Add(this.vipguna2Button107);
+            this.flowLayoutPanel1.Controls.Add(this.vipguna2Button108);
+            this.flowLayoutPanel1.Controls.Add(this.vipguna2Button109);
+            this.flowLayoutPanel1.Controls.Add(this.vipguna2Button110);
+            this.flowLayoutPanel1.Controls.Add(this.vipguna2Button111);
+            this.flowLayoutPanel1.Controls.Add(this.vipguna2Button112);
+            this.flowLayoutPanel1.Controls.Add(this.vipguna2Button113);
+            this.flowLayoutPanel1.Controls.Add(this.guna2Button114);
+            this.flowLayoutPanel1.Controls.Add(this.guna2Button115);
+            this.flowLayoutPanel1.Controls.Add(this.guna2Button116);
+            this.flowLayoutPanel1.Controls.Add(this.guna2Button117);
+            this.flowLayoutPanel1.Controls.Add(this.vipguna2Button118);
+            this.flowLayoutPanel1.Controls.Add(this.vipguna2Button119);
+            this.flowLayoutPanel1.Controls.Add(this.vipguna2Button120);
+            this.flowLayoutPanel1.Controls.Add(this.vipguna2Button121);
+            this.flowLayoutPanel1.Controls.Add(this.vipguna2Button122);
+            this.flowLayoutPanel1.Controls.Add(this.vipguna2Button123);
+            this.flowLayoutPanel1.Controls.Add(this.vipguna2Button124);
+            this.flowLayoutPanel1.Controls.Add(this.vipguna2Button125);
+            this.flowLayoutPanel1.Controls.Add(this.vipguna2Button126);
+            this.flowLayoutPanel1.Controls.Add(this.vipguna2Button127);
+            this.flowLayoutPanel1.Controls.Add(this.guna2Button128);
+            this.flowLayoutPanel1.Controls.Add(this.guna2Button129);
+            this.flowLayoutPanel1.Controls.Add(this.guna2Button134);
+            this.flowLayoutPanel1.Controls.Add(this.guna2Button130);
+            this.flowLayoutPanel1.Controls.Add(this.guna2Button131);
+            this.flowLayoutPanel1.Controls.Add(this.guna2Button132);
+            this.flowLayoutPanel1.Controls.Add(this.guna2Button133);
+            this.flowLayoutPanel1.Controls.Add(this.guna2Button135);
+            this.flowLayoutPanel1.Controls.Add(this.guna2Button136);
+            this.flowLayoutPanel1.Controls.Add(this.guna2Button137);
+            this.flowLayoutPanel1.Controls.Add(this.guna2Button138);
+            this.flowLayoutPanel1.Controls.Add(this.guna2Button139);
+            this.flowLayoutPanel1.Controls.Add(this.guna2Button140);
+            this.flowLayoutPanel1.Controls.Add(this.guna2Button141);
+            this.flowLayoutPanel1.Controls.Add(this.guna2Button142);
+            this.flowLayoutPanel1.Controls.Add(this.guna2Button143);
+            this.flowLayoutPanel1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(39, 70);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(51, 50, 51, 50);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1155, 558);
+            this.flowLayoutPanel1.TabIndex = 337;
+            this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint_1);
+            // 
+            // guna2Button28
+            // 
+            this.guna2Button28.Animated = true;
+            this.guna2Button28.AnimatedGIF = true;
+            this.guna2Button28.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button28.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2Button28.BorderRadius = 12;
+            this.guna2Button28.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button28.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button28.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button28.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button28.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(46)))), ((int)(((byte)(213)))));
+            this.guna2Button28.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button28.ForeColor = System.Drawing.Color.White;
+            this.guna2Button28.Location = new System.Drawing.Point(5, 5);
+            this.guna2Button28.Margin = new System.Windows.Forms.Padding(5);
+            this.guna2Button28.Name = "guna2Button28";
+            this.guna2Button28.Size = new System.Drawing.Size(71, 46);
+            this.guna2Button28.TabIndex = 324;
+            this.guna2Button28.Text = "A1";
+            this.guna2Button28.UseTransparentBackground = true;
+            // 
+            // guna2Button3
+            // 
+            this.guna2Button3.Animated = true;
+            this.guna2Button3.AnimatedGIF = true;
+            this.guna2Button3.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2Button3.BorderRadius = 12;
+            this.guna2Button3.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button3.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button3.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(46)))), ((int)(((byte)(213)))));
+            this.guna2Button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button3.ForeColor = System.Drawing.Color.White;
+            this.guna2Button3.Location = new System.Drawing.Point(86, 5);
+            this.guna2Button3.Margin = new System.Windows.Forms.Padding(5);
+            this.guna2Button3.Name = "guna2Button3";
+            this.guna2Button3.Size = new System.Drawing.Size(71, 46);
+            this.guna2Button3.TabIndex = 325;
+            this.guna2Button3.Text = "A2";
+            this.guna2Button3.UseTransparentBackground = true;
+            // 
+            // guna2Button5
+            // 
+            this.guna2Button5.Animated = true;
+            this.guna2Button5.AnimatedGIF = true;
+            this.guna2Button5.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2Button5.BorderRadius = 12;
+            this.guna2Button5.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button5.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button5.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button5.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button5.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(46)))), ((int)(((byte)(213)))));
+            this.guna2Button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button5.ForeColor = System.Drawing.Color.White;
+            this.guna2Button5.Location = new System.Drawing.Point(167, 5);
+            this.guna2Button5.Margin = new System.Windows.Forms.Padding(5);
+            this.guna2Button5.Name = "guna2Button5";
+            this.guna2Button5.Size = new System.Drawing.Size(71, 46);
+            this.guna2Button5.TabIndex = 326;
+            this.guna2Button5.Text = "A3";
+            this.guna2Button5.UseTransparentBackground = true;
+            // 
+            // guna2Button6
+            // 
+            this.guna2Button6.Animated = true;
+            this.guna2Button6.AnimatedGIF = true;
+            this.guna2Button6.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2Button6.BorderRadius = 12;
+            this.guna2Button6.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button6.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button6.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button6.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button6.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(46)))), ((int)(((byte)(213)))));
+            this.guna2Button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button6.ForeColor = System.Drawing.Color.White;
+            this.guna2Button6.Location = new System.Drawing.Point(248, 5);
+            this.guna2Button6.Margin = new System.Windows.Forms.Padding(5);
+            this.guna2Button6.Name = "guna2Button6";
+            this.guna2Button6.Size = new System.Drawing.Size(71, 46);
+            this.guna2Button6.TabIndex = 327;
+            this.guna2Button6.Text = "A4";
+            this.guna2Button6.UseTransparentBackground = true;
+            // 
+            // guna2Button7
+            // 
+            this.guna2Button7.Animated = true;
+            this.guna2Button7.AnimatedGIF = true;
+            this.guna2Button7.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2Button7.BorderRadius = 12;
+            this.guna2Button7.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button7.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button7.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button7.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button7.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(46)))), ((int)(((byte)(213)))));
+            this.guna2Button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button7.ForeColor = System.Drawing.Color.White;
+            this.guna2Button7.Location = new System.Drawing.Point(329, 5);
+            this.guna2Button7.Margin = new System.Windows.Forms.Padding(5);
+            this.guna2Button7.Name = "guna2Button7";
+            this.guna2Button7.Size = new System.Drawing.Size(71, 46);
+            this.guna2Button7.TabIndex = 328;
+            this.guna2Button7.Text = "A5";
+            this.guna2Button7.UseTransparentBackground = true;
+            // 
+            // guna2Button8
+            // 
+            this.guna2Button8.Animated = true;
+            this.guna2Button8.AnimatedGIF = true;
+            this.guna2Button8.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2Button8.BorderRadius = 12;
+            this.guna2Button8.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button8.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button8.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button8.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button8.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(46)))), ((int)(((byte)(213)))));
+            this.guna2Button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button8.ForeColor = System.Drawing.Color.White;
+            this.guna2Button8.Location = new System.Drawing.Point(410, 5);
+            this.guna2Button8.Margin = new System.Windows.Forms.Padding(5);
+            this.guna2Button8.Name = "guna2Button8";
+            this.guna2Button8.Size = new System.Drawing.Size(71, 46);
+            this.guna2Button8.TabIndex = 329;
+            this.guna2Button8.Text = "A6";
+            this.guna2Button8.UseTransparentBackground = true;
+            // 
+            // guna2Button9
+            // 
+            this.guna2Button9.Animated = true;
+            this.guna2Button9.AnimatedGIF = true;
+            this.guna2Button9.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2Button9.BorderRadius = 12;
+            this.guna2Button9.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button9.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button9.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button9.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button9.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(46)))), ((int)(((byte)(213)))));
+            this.guna2Button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button9.ForeColor = System.Drawing.Color.White;
+            this.guna2Button9.Location = new System.Drawing.Point(491, 5);
+            this.guna2Button9.Margin = new System.Windows.Forms.Padding(5);
+            this.guna2Button9.Name = "guna2Button9";
+            this.guna2Button9.Size = new System.Drawing.Size(71, 46);
+            this.guna2Button9.TabIndex = 330;
+            this.guna2Button9.Text = "A7";
+            this.guna2Button9.UseTransparentBackground = true;
+            // 
+            // guna2Button10
+            // 
+            this.guna2Button10.Animated = true;
+            this.guna2Button10.AnimatedGIF = true;
+            this.guna2Button10.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2Button10.BorderRadius = 12;
+            this.guna2Button10.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button10.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button10.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button10.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button10.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(46)))), ((int)(((byte)(213)))));
+            this.guna2Button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button10.ForeColor = System.Drawing.Color.White;
+            this.guna2Button10.Location = new System.Drawing.Point(572, 5);
+            this.guna2Button10.Margin = new System.Windows.Forms.Padding(5);
+            this.guna2Button10.Name = "guna2Button10";
+            this.guna2Button10.Size = new System.Drawing.Size(71, 46);
+            this.guna2Button10.TabIndex = 331;
+            this.guna2Button10.Text = "A8";
+            this.guna2Button10.UseTransparentBackground = true;
+            // 
+            // guna2Button11
+            // 
+            this.guna2Button11.Animated = true;
+            this.guna2Button11.AnimatedGIF = true;
+            this.guna2Button11.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2Button11.BorderRadius = 12;
+            this.guna2Button11.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button11.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button11.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button11.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button11.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(46)))), ((int)(((byte)(213)))));
+            this.guna2Button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button11.ForeColor = System.Drawing.Color.White;
+            this.guna2Button11.Location = new System.Drawing.Point(653, 5);
+            this.guna2Button11.Margin = new System.Windows.Forms.Padding(5);
+            this.guna2Button11.Name = "guna2Button11";
+            this.guna2Button11.Size = new System.Drawing.Size(71, 46);
+            this.guna2Button11.TabIndex = 332;
+            this.guna2Button11.Text = "A9";
+            this.guna2Button11.UseTransparentBackground = true;
+            // 
+            // guna2Button12
+            // 
+            this.guna2Button12.Animated = true;
+            this.guna2Button12.AnimatedGIF = true;
+            this.guna2Button12.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2Button12.BorderRadius = 12;
+            this.guna2Button12.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button12.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button12.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button12.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button12.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(46)))), ((int)(((byte)(213)))));
+            this.guna2Button12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button12.ForeColor = System.Drawing.Color.White;
+            this.guna2Button12.Location = new System.Drawing.Point(734, 5);
+            this.guna2Button12.Margin = new System.Windows.Forms.Padding(5);
+            this.guna2Button12.Name = "guna2Button12";
+            this.guna2Button12.Size = new System.Drawing.Size(71, 46);
+            this.guna2Button12.TabIndex = 333;
+            this.guna2Button12.Text = "A10";
+            this.guna2Button12.UseTransparentBackground = true;
+            // 
+            // guna2Button13
+            // 
+            this.guna2Button13.Animated = true;
+            this.guna2Button13.AnimatedGIF = true;
+            this.guna2Button13.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2Button13.BorderRadius = 12;
+            this.guna2Button13.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button13.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button13.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button13.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button13.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(46)))), ((int)(((byte)(213)))));
+            this.guna2Button13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button13.ForeColor = System.Drawing.Color.White;
+            this.guna2Button13.Location = new System.Drawing.Point(815, 5);
+            this.guna2Button13.Margin = new System.Windows.Forms.Padding(5);
+            this.guna2Button13.Name = "guna2Button13";
+            this.guna2Button13.Size = new System.Drawing.Size(71, 46);
+            this.guna2Button13.TabIndex = 334;
+            this.guna2Button13.Text = "A11";
+            this.guna2Button13.UseTransparentBackground = true;
+            // 
+            // guna2Button15
+            // 
+            this.guna2Button15.Animated = true;
+            this.guna2Button15.AnimatedGIF = true;
+            this.guna2Button15.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2Button15.BorderRadius = 12;
+            this.guna2Button15.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button15.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button15.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button15.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button15.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(46)))), ((int)(((byte)(213)))));
+            this.guna2Button15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button15.ForeColor = System.Drawing.Color.White;
+            this.guna2Button15.Location = new System.Drawing.Point(896, 5);
+            this.guna2Button15.Margin = new System.Windows.Forms.Padding(5);
+            this.guna2Button15.Name = "guna2Button15";
+            this.guna2Button15.Size = new System.Drawing.Size(71, 46);
+            this.guna2Button15.TabIndex = 336;
+            this.guna2Button15.Text = "A12";
+            this.guna2Button15.UseTransparentBackground = true;
+            // 
+            // guna2Button14
+            // 
+            this.guna2Button14.Animated = true;
+            this.guna2Button14.AnimatedGIF = true;
+            this.guna2Button14.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2Button14.BorderRadius = 12;
+            this.guna2Button14.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button14.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button14.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button14.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button14.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(46)))), ((int)(((byte)(213)))));
+            this.guna2Button14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button14.ForeColor = System.Drawing.Color.White;
+            this.guna2Button14.Location = new System.Drawing.Point(977, 5);
+            this.guna2Button14.Margin = new System.Windows.Forms.Padding(5);
+            this.guna2Button14.Name = "guna2Button14";
+            this.guna2Button14.Size = new System.Drawing.Size(71, 46);
+            this.guna2Button14.TabIndex = 335;
+            this.guna2Button14.Text = "A13";
+            this.guna2Button14.UseTransparentBackground = true;
+            // 
+            // guna2Button16
+            // 
+            this.guna2Button16.Animated = true;
+            this.guna2Button16.AnimatedGIF = true;
+            this.guna2Button16.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button16.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2Button16.BorderRadius = 12;
+            this.guna2Button16.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button16.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button16.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button16.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button16.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(46)))), ((int)(((byte)(213)))));
+            this.guna2Button16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button16.ForeColor = System.Drawing.Color.White;
+            this.guna2Button16.Location = new System.Drawing.Point(1058, 5);
+            this.guna2Button16.Margin = new System.Windows.Forms.Padding(5);
+            this.guna2Button16.Name = "guna2Button16";
+            this.guna2Button16.Size = new System.Drawing.Size(71, 46);
+            this.guna2Button16.TabIndex = 337;
+            this.guna2Button16.Text = "A14";
+            this.guna2Button16.UseTransparentBackground = true;
+            // 
+            // guna2Button17
+            // 
+            this.guna2Button17.Animated = true;
+            this.guna2Button17.AnimatedGIF = true;
+            this.guna2Button17.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button17.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2Button17.BorderRadius = 12;
+            this.guna2Button17.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button17.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button17.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button17.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button17.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(46)))), ((int)(((byte)(213)))));
+            this.guna2Button17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button17.ForeColor = System.Drawing.Color.White;
+            this.guna2Button17.Location = new System.Drawing.Point(5, 61);
+            this.guna2Button17.Margin = new System.Windows.Forms.Padding(5);
+            this.guna2Button17.Name = "guna2Button17";
+            this.guna2Button17.Size = new System.Drawing.Size(71, 46);
+            this.guna2Button17.TabIndex = 338;
+            this.guna2Button17.Text = "B1";
+            this.guna2Button17.UseTransparentBackground = true;
+            // 
+            // guna2Button18
+            // 
+            this.guna2Button18.Animated = true;
+            this.guna2Button18.AnimatedGIF = true;
+            this.guna2Button18.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button18.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2Button18.BorderRadius = 12;
+            this.guna2Button18.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button18.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button18.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button18.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button18.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(46)))), ((int)(((byte)(213)))));
+            this.guna2Button18.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button18.ForeColor = System.Drawing.Color.White;
+            this.guna2Button18.Location = new System.Drawing.Point(86, 61);
+            this.guna2Button18.Margin = new System.Windows.Forms.Padding(5);
+            this.guna2Button18.Name = "guna2Button18";
+            this.guna2Button18.Size = new System.Drawing.Size(71, 46);
+            this.guna2Button18.TabIndex = 339;
+            this.guna2Button18.Text = "B2";
+            this.guna2Button18.UseTransparentBackground = true;
+            // 
+            // guna2Button19
+            // 
+            this.guna2Button19.Animated = true;
+            this.guna2Button19.AnimatedGIF = true;
+            this.guna2Button19.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button19.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2Button19.BorderRadius = 12;
+            this.guna2Button19.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button19.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button19.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button19.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button19.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(46)))), ((int)(((byte)(213)))));
+            this.guna2Button19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button19.ForeColor = System.Drawing.Color.White;
+            this.guna2Button19.Location = new System.Drawing.Point(167, 61);
+            this.guna2Button19.Margin = new System.Windows.Forms.Padding(5);
+            this.guna2Button19.Name = "guna2Button19";
+            this.guna2Button19.Size = new System.Drawing.Size(71, 46);
+            this.guna2Button19.TabIndex = 340;
+            this.guna2Button19.Text = "B3";
+            this.guna2Button19.UseTransparentBackground = true;
+            // 
+            // guna2Button20
+            // 
+            this.guna2Button20.Animated = true;
+            this.guna2Button20.AnimatedGIF = true;
+            this.guna2Button20.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button20.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2Button20.BorderRadius = 12;
+            this.guna2Button20.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button20.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button20.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button20.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button20.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(46)))), ((int)(((byte)(213)))));
+            this.guna2Button20.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button20.ForeColor = System.Drawing.Color.White;
+            this.guna2Button20.Location = new System.Drawing.Point(248, 61);
+            this.guna2Button20.Margin = new System.Windows.Forms.Padding(5);
+            this.guna2Button20.Name = "guna2Button20";
+            this.guna2Button20.Size = new System.Drawing.Size(71, 46);
+            this.guna2Button20.TabIndex = 341;
+            this.guna2Button20.Text = "B4";
+            this.guna2Button20.UseTransparentBackground = true;
+            // 
+            // guna2Button21
+            // 
+            this.guna2Button21.Animated = true;
+            this.guna2Button21.AnimatedGIF = true;
+            this.guna2Button21.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button21.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2Button21.BorderRadius = 12;
+            this.guna2Button21.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button21.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button21.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button21.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button21.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(46)))), ((int)(((byte)(213)))));
+            this.guna2Button21.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button21.ForeColor = System.Drawing.Color.White;
+            this.guna2Button21.Location = new System.Drawing.Point(329, 61);
+            this.guna2Button21.Margin = new System.Windows.Forms.Padding(5);
+            this.guna2Button21.Name = "guna2Button21";
+            this.guna2Button21.Size = new System.Drawing.Size(71, 46);
+            this.guna2Button21.TabIndex = 342;
+            this.guna2Button21.Text = "B5";
+            this.guna2Button21.UseTransparentBackground = true;
+            // 
+            // guna2Button22
+            // 
+            this.guna2Button22.Animated = true;
+            this.guna2Button22.AnimatedGIF = true;
+            this.guna2Button22.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button22.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2Button22.BorderRadius = 12;
+            this.guna2Button22.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button22.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button22.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button22.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button22.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(46)))), ((int)(((byte)(213)))));
+            this.guna2Button22.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button22.ForeColor = System.Drawing.Color.White;
+            this.guna2Button22.Location = new System.Drawing.Point(410, 61);
+            this.guna2Button22.Margin = new System.Windows.Forms.Padding(5);
+            this.guna2Button22.Name = "guna2Button22";
+            this.guna2Button22.Size = new System.Drawing.Size(71, 46);
+            this.guna2Button22.TabIndex = 343;
+            this.guna2Button22.Text = "B6";
+            this.guna2Button22.UseTransparentBackground = true;
+            // 
+            // guna2Button23
+            // 
+            this.guna2Button23.Animated = true;
+            this.guna2Button23.AnimatedGIF = true;
+            this.guna2Button23.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button23.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2Button23.BorderRadius = 12;
+            this.guna2Button23.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button23.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button23.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button23.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button23.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(46)))), ((int)(((byte)(213)))));
+            this.guna2Button23.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button23.ForeColor = System.Drawing.Color.White;
+            this.guna2Button23.Location = new System.Drawing.Point(491, 61);
+            this.guna2Button23.Margin = new System.Windows.Forms.Padding(5);
+            this.guna2Button23.Name = "guna2Button23";
+            this.guna2Button23.Size = new System.Drawing.Size(71, 46);
+            this.guna2Button23.TabIndex = 344;
+            this.guna2Button23.Text = "B7";
+            this.guna2Button23.UseTransparentBackground = true;
+            // 
+            // guna2Button24
+            // 
+            this.guna2Button24.Animated = true;
+            this.guna2Button24.AnimatedGIF = true;
+            this.guna2Button24.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button24.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2Button24.BorderRadius = 12;
+            this.guna2Button24.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button24.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button24.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button24.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button24.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(46)))), ((int)(((byte)(213)))));
+            this.guna2Button24.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button24.ForeColor = System.Drawing.Color.White;
+            this.guna2Button24.Location = new System.Drawing.Point(572, 61);
+            this.guna2Button24.Margin = new System.Windows.Forms.Padding(5);
+            this.guna2Button24.Name = "guna2Button24";
+            this.guna2Button24.Size = new System.Drawing.Size(71, 46);
+            this.guna2Button24.TabIndex = 345;
+            this.guna2Button24.Text = "B8";
+            this.guna2Button24.UseTransparentBackground = true;
+            // 
+            // guna2Button25
+            // 
+            this.guna2Button25.Animated = true;
+            this.guna2Button25.AnimatedGIF = true;
+            this.guna2Button25.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button25.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2Button25.BorderRadius = 12;
+            this.guna2Button25.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button25.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button25.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button25.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button25.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(46)))), ((int)(((byte)(213)))));
+            this.guna2Button25.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button25.ForeColor = System.Drawing.Color.White;
+            this.guna2Button25.Location = new System.Drawing.Point(653, 61);
+            this.guna2Button25.Margin = new System.Windows.Forms.Padding(5);
+            this.guna2Button25.Name = "guna2Button25";
+            this.guna2Button25.Size = new System.Drawing.Size(71, 46);
+            this.guna2Button25.TabIndex = 346;
+            this.guna2Button25.Text = "B9";
+            this.guna2Button25.UseTransparentBackground = true;
+            // 
+            // guna2Button26
+            // 
+            this.guna2Button26.Animated = true;
+            this.guna2Button26.AnimatedGIF = true;
+            this.guna2Button26.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button26.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2Button26.BorderRadius = 12;
+            this.guna2Button26.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button26.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button26.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button26.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button26.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(46)))), ((int)(((byte)(213)))));
+            this.guna2Button26.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button26.ForeColor = System.Drawing.Color.White;
+            this.guna2Button26.Location = new System.Drawing.Point(734, 61);
+            this.guna2Button26.Margin = new System.Windows.Forms.Padding(5);
+            this.guna2Button26.Name = "guna2Button26";
+            this.guna2Button26.Size = new System.Drawing.Size(71, 46);
+            this.guna2Button26.TabIndex = 347;
+            this.guna2Button26.Text = "B10";
+            this.guna2Button26.UseTransparentBackground = true;
+            // 
+            // guna2Button27
+            // 
+            this.guna2Button27.Animated = true;
+            this.guna2Button27.AnimatedGIF = true;
+            this.guna2Button27.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button27.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2Button27.BorderRadius = 12;
+            this.guna2Button27.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button27.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button27.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button27.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button27.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(46)))), ((int)(((byte)(213)))));
+            this.guna2Button27.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button27.ForeColor = System.Drawing.Color.White;
+            this.guna2Button27.Location = new System.Drawing.Point(815, 61);
+            this.guna2Button27.Margin = new System.Windows.Forms.Padding(5);
+            this.guna2Button27.Name = "guna2Button27";
+            this.guna2Button27.Size = new System.Drawing.Size(71, 46);
+            this.guna2Button27.TabIndex = 348;
+            this.guna2Button27.Text = "B11";
+            this.guna2Button27.UseTransparentBackground = true;
+            // 
+            // guna2Button29
+            // 
+            this.guna2Button29.Animated = true;
+            this.guna2Button29.AnimatedGIF = true;
+            this.guna2Button29.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button29.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2Button29.BorderRadius = 12;
+            this.guna2Button29.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button29.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button29.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button29.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button29.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(46)))), ((int)(((byte)(213)))));
+            this.guna2Button29.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button29.ForeColor = System.Drawing.Color.White;
+            this.guna2Button29.Location = new System.Drawing.Point(896, 61);
+            this.guna2Button29.Margin = new System.Windows.Forms.Padding(5);
+            this.guna2Button29.Name = "guna2Button29";
+            this.guna2Button29.Size = new System.Drawing.Size(71, 46);
+            this.guna2Button29.TabIndex = 350;
+            this.guna2Button29.Text = "B12";
+            this.guna2Button29.UseTransparentBackground = true;
+            // 
+            // guna2Button30
+            // 
+            this.guna2Button30.Animated = true;
+            this.guna2Button30.AnimatedGIF = true;
+            this.guna2Button30.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button30.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2Button30.BorderRadius = 12;
+            this.guna2Button30.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button30.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button30.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button30.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button30.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(46)))), ((int)(((byte)(213)))));
+            this.guna2Button30.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button30.ForeColor = System.Drawing.Color.White;
+            this.guna2Button30.Location = new System.Drawing.Point(977, 61);
+            this.guna2Button30.Margin = new System.Windows.Forms.Padding(5);
+            this.guna2Button30.Name = "guna2Button30";
+            this.guna2Button30.Size = new System.Drawing.Size(71, 46);
+            this.guna2Button30.TabIndex = 349;
+            this.guna2Button30.Text = "B13";
+            this.guna2Button30.UseTransparentBackground = true;
+            // 
+            // guna2Button31
+            // 
+            this.guna2Button31.Animated = true;
+            this.guna2Button31.AnimatedGIF = true;
+            this.guna2Button31.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button31.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2Button31.BorderRadius = 12;
+            this.guna2Button31.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button31.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button31.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button31.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button31.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(46)))), ((int)(((byte)(213)))));
+            this.guna2Button31.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button31.ForeColor = System.Drawing.Color.White;
+            this.guna2Button31.Location = new System.Drawing.Point(1058, 61);
+            this.guna2Button31.Margin = new System.Windows.Forms.Padding(5);
+            this.guna2Button31.Name = "guna2Button31";
+            this.guna2Button31.Size = new System.Drawing.Size(71, 46);
+            this.guna2Button31.TabIndex = 351;
+            this.guna2Button31.Text = "B14";
+            this.guna2Button31.UseTransparentBackground = true;
+            // 
+            // guna2Button32
+            // 
+            this.guna2Button32.Animated = true;
+            this.guna2Button32.AnimatedGIF = true;
+            this.guna2Button32.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button32.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2Button32.BorderRadius = 12;
+            this.guna2Button32.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button32.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button32.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button32.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button32.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(46)))), ((int)(((byte)(213)))));
+            this.guna2Button32.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button32.ForeColor = System.Drawing.Color.White;
+            this.guna2Button32.Location = new System.Drawing.Point(5, 117);
+            this.guna2Button32.Margin = new System.Windows.Forms.Padding(5);
+            this.guna2Button32.Name = "guna2Button32";
+            this.guna2Button32.Size = new System.Drawing.Size(71, 46);
+            this.guna2Button32.TabIndex = 352;
+            this.guna2Button32.Text = "C1";
+            this.guna2Button32.UseTransparentBackground = true;
+            // 
+            // guna2Button33
+            // 
+            this.guna2Button33.Animated = true;
+            this.guna2Button33.AnimatedGIF = true;
+            this.guna2Button33.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button33.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2Button33.BorderRadius = 12;
+            this.guna2Button33.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button33.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button33.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button33.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button33.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(46)))), ((int)(((byte)(213)))));
+            this.guna2Button33.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button33.ForeColor = System.Drawing.Color.White;
+            this.guna2Button33.Location = new System.Drawing.Point(86, 117);
+            this.guna2Button33.Margin = new System.Windows.Forms.Padding(5);
+            this.guna2Button33.Name = "guna2Button33";
+            this.guna2Button33.Size = new System.Drawing.Size(71, 46);
+            this.guna2Button33.TabIndex = 353;
+            this.guna2Button33.Text = "C2";
+            this.guna2Button33.UseTransparentBackground = true;
+            // 
+            // guna2Button34
+            // 
+            this.guna2Button34.Animated = true;
+            this.guna2Button34.AnimatedGIF = true;
+            this.guna2Button34.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button34.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2Button34.BorderRadius = 12;
+            this.guna2Button34.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button34.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button34.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button34.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button34.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(46)))), ((int)(((byte)(213)))));
+            this.guna2Button34.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button34.ForeColor = System.Drawing.Color.White;
+            this.guna2Button34.Location = new System.Drawing.Point(167, 117);
+            this.guna2Button34.Margin = new System.Windows.Forms.Padding(5);
+            this.guna2Button34.Name = "guna2Button34";
+            this.guna2Button34.Size = new System.Drawing.Size(71, 46);
+            this.guna2Button34.TabIndex = 354;
+            this.guna2Button34.Text = "C3";
+            this.guna2Button34.UseTransparentBackground = true;
+            // 
+            // guna2Button35
+            // 
+            this.guna2Button35.Animated = true;
+            this.guna2Button35.AnimatedGIF = true;
+            this.guna2Button35.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button35.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2Button35.BorderRadius = 12;
+            this.guna2Button35.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button35.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button35.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button35.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button35.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(46)))), ((int)(((byte)(213)))));
+            this.guna2Button35.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button35.ForeColor = System.Drawing.Color.White;
+            this.guna2Button35.Location = new System.Drawing.Point(248, 117);
+            this.guna2Button35.Margin = new System.Windows.Forms.Padding(5);
+            this.guna2Button35.Name = "guna2Button35";
+            this.guna2Button35.Size = new System.Drawing.Size(71, 46);
+            this.guna2Button35.TabIndex = 355;
+            this.guna2Button35.Text = "C4";
+            this.guna2Button35.UseTransparentBackground = true;
+            // 
+            // guna2Button36
+            // 
+            this.guna2Button36.Animated = true;
+            this.guna2Button36.AnimatedGIF = true;
+            this.guna2Button36.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button36.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2Button36.BorderRadius = 12;
+            this.guna2Button36.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button36.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button36.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button36.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button36.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(46)))), ((int)(((byte)(213)))));
+            this.guna2Button36.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button36.ForeColor = System.Drawing.Color.White;
+            this.guna2Button36.Location = new System.Drawing.Point(329, 117);
+            this.guna2Button36.Margin = new System.Windows.Forms.Padding(5);
+            this.guna2Button36.Name = "guna2Button36";
+            this.guna2Button36.Size = new System.Drawing.Size(71, 46);
+            this.guna2Button36.TabIndex = 356;
+            this.guna2Button36.Text = "C5";
+            this.guna2Button36.UseTransparentBackground = true;
+            // 
+            // guna2Button37
+            // 
+            this.guna2Button37.Animated = true;
+            this.guna2Button37.AnimatedGIF = true;
+            this.guna2Button37.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button37.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2Button37.BorderRadius = 12;
+            this.guna2Button37.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button37.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button37.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button37.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button37.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(46)))), ((int)(((byte)(213)))));
+            this.guna2Button37.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button37.ForeColor = System.Drawing.Color.White;
+            this.guna2Button37.Location = new System.Drawing.Point(410, 117);
+            this.guna2Button37.Margin = new System.Windows.Forms.Padding(5);
+            this.guna2Button37.Name = "guna2Button37";
+            this.guna2Button37.Size = new System.Drawing.Size(71, 46);
+            this.guna2Button37.TabIndex = 357;
+            this.guna2Button37.Text = "C6";
+            this.guna2Button37.UseTransparentBackground = true;
+            // 
+            // guna2Button38
+            // 
+            this.guna2Button38.Animated = true;
+            this.guna2Button38.AnimatedGIF = true;
+            this.guna2Button38.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button38.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2Button38.BorderRadius = 12;
+            this.guna2Button38.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button38.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button38.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button38.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button38.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(46)))), ((int)(((byte)(213)))));
+            this.guna2Button38.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button38.ForeColor = System.Drawing.Color.White;
+            this.guna2Button38.Location = new System.Drawing.Point(491, 117);
+            this.guna2Button38.Margin = new System.Windows.Forms.Padding(5);
+            this.guna2Button38.Name = "guna2Button38";
+            this.guna2Button38.Size = new System.Drawing.Size(71, 46);
+            this.guna2Button38.TabIndex = 358;
+            this.guna2Button38.Text = "C7";
+            this.guna2Button38.UseTransparentBackground = true;
+            // 
+            // guna2Button39
+            // 
+            this.guna2Button39.Animated = true;
+            this.guna2Button39.AnimatedGIF = true;
+            this.guna2Button39.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button39.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2Button39.BorderRadius = 12;
+            this.guna2Button39.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button39.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button39.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button39.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button39.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(46)))), ((int)(((byte)(213)))));
+            this.guna2Button39.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button39.ForeColor = System.Drawing.Color.White;
+            this.guna2Button39.Location = new System.Drawing.Point(572, 117);
+            this.guna2Button39.Margin = new System.Windows.Forms.Padding(5);
+            this.guna2Button39.Name = "guna2Button39";
+            this.guna2Button39.Size = new System.Drawing.Size(71, 46);
+            this.guna2Button39.TabIndex = 359;
+            this.guna2Button39.Text = "C8";
+            this.guna2Button39.UseTransparentBackground = true;
+            // 
+            // guna2Button40
+            // 
+            this.guna2Button40.Animated = true;
+            this.guna2Button40.AnimatedGIF = true;
+            this.guna2Button40.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button40.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2Button40.BorderRadius = 12;
+            this.guna2Button40.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button40.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button40.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button40.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button40.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(46)))), ((int)(((byte)(213)))));
+            this.guna2Button40.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button40.ForeColor = System.Drawing.Color.White;
+            this.guna2Button40.Location = new System.Drawing.Point(653, 117);
+            this.guna2Button40.Margin = new System.Windows.Forms.Padding(5);
+            this.guna2Button40.Name = "guna2Button40";
+            this.guna2Button40.Size = new System.Drawing.Size(71, 46);
+            this.guna2Button40.TabIndex = 360;
+            this.guna2Button40.Text = "C9";
+            this.guna2Button40.UseTransparentBackground = true;
+            // 
+            // guna2Button41
+            // 
+            this.guna2Button41.Animated = true;
+            this.guna2Button41.AnimatedGIF = true;
+            this.guna2Button41.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button41.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2Button41.BorderRadius = 12;
+            this.guna2Button41.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button41.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button41.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button41.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button41.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(46)))), ((int)(((byte)(213)))));
+            this.guna2Button41.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button41.ForeColor = System.Drawing.Color.White;
+            this.guna2Button41.Location = new System.Drawing.Point(734, 117);
+            this.guna2Button41.Margin = new System.Windows.Forms.Padding(5);
+            this.guna2Button41.Name = "guna2Button41";
+            this.guna2Button41.Size = new System.Drawing.Size(71, 46);
+            this.guna2Button41.TabIndex = 361;
+            this.guna2Button41.Text = "C10";
+            this.guna2Button41.UseTransparentBackground = true;
+            // 
+            // guna2Button42
+            // 
+            this.guna2Button42.Animated = true;
+            this.guna2Button42.AnimatedGIF = true;
+            this.guna2Button42.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button42.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2Button42.BorderRadius = 12;
+            this.guna2Button42.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button42.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button42.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button42.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button42.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(46)))), ((int)(((byte)(213)))));
+            this.guna2Button42.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button42.ForeColor = System.Drawing.Color.White;
+            this.guna2Button42.Location = new System.Drawing.Point(815, 117);
+            this.guna2Button42.Margin = new System.Windows.Forms.Padding(5);
+            this.guna2Button42.Name = "guna2Button42";
+            this.guna2Button42.Size = new System.Drawing.Size(71, 46);
+            this.guna2Button42.TabIndex = 362;
+            this.guna2Button42.Text = "C11";
+            this.guna2Button42.UseTransparentBackground = true;
+            // 
+            // guna2Button43
+            // 
+            this.guna2Button43.Animated = true;
+            this.guna2Button43.AnimatedGIF = true;
+            this.guna2Button43.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button43.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2Button43.BorderRadius = 12;
+            this.guna2Button43.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button43.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button43.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button43.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button43.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(46)))), ((int)(((byte)(213)))));
+            this.guna2Button43.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button43.ForeColor = System.Drawing.Color.White;
+            this.guna2Button43.Location = new System.Drawing.Point(896, 117);
+            this.guna2Button43.Margin = new System.Windows.Forms.Padding(5);
+            this.guna2Button43.Name = "guna2Button43";
+            this.guna2Button43.Size = new System.Drawing.Size(71, 46);
+            this.guna2Button43.TabIndex = 364;
+            this.guna2Button43.Text = "C12";
+            this.guna2Button43.UseTransparentBackground = true;
+            // 
+            // guna2Button44
+            // 
+            this.guna2Button44.Animated = true;
+            this.guna2Button44.AnimatedGIF = true;
+            this.guna2Button44.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button44.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2Button44.BorderRadius = 12;
+            this.guna2Button44.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button44.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button44.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button44.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button44.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(46)))), ((int)(((byte)(213)))));
+            this.guna2Button44.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button44.ForeColor = System.Drawing.Color.White;
+            this.guna2Button44.Location = new System.Drawing.Point(977, 117);
+            this.guna2Button44.Margin = new System.Windows.Forms.Padding(5);
+            this.guna2Button44.Name = "guna2Button44";
+            this.guna2Button44.Size = new System.Drawing.Size(71, 46);
+            this.guna2Button44.TabIndex = 363;
+            this.guna2Button44.Text = "C13";
+            this.guna2Button44.UseTransparentBackground = true;
+            // 
+            // guna2Button45
+            // 
+            this.guna2Button45.Animated = true;
+            this.guna2Button45.AnimatedGIF = true;
+            this.guna2Button45.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button45.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2Button45.BorderRadius = 12;
+            this.guna2Button45.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button45.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button45.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button45.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button45.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(46)))), ((int)(((byte)(213)))));
+            this.guna2Button45.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button45.ForeColor = System.Drawing.Color.White;
+            this.guna2Button45.Location = new System.Drawing.Point(1058, 117);
+            this.guna2Button45.Margin = new System.Windows.Forms.Padding(5);
+            this.guna2Button45.Name = "guna2Button45";
+            this.guna2Button45.Size = new System.Drawing.Size(71, 46);
+            this.guna2Button45.TabIndex = 365;
+            this.guna2Button45.Text = "C14";
+            this.guna2Button45.UseTransparentBackground = true;
+            // 
+            // guna2Button46
+            // 
+            this.guna2Button46.Animated = true;
+            this.guna2Button46.AnimatedGIF = true;
+            this.guna2Button46.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button46.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2Button46.BorderRadius = 12;
+            this.guna2Button46.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button46.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button46.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button46.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button46.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(46)))), ((int)(((byte)(213)))));
+            this.guna2Button46.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button46.ForeColor = System.Drawing.Color.White;
+            this.guna2Button46.Location = new System.Drawing.Point(5, 173);
+            this.guna2Button46.Margin = new System.Windows.Forms.Padding(5);
+            this.guna2Button46.Name = "guna2Button46";
+            this.guna2Button46.Size = new System.Drawing.Size(71, 46);
+            this.guna2Button46.TabIndex = 366;
+            this.guna2Button46.Text = "D1";
+            this.guna2Button46.UseTransparentBackground = true;
+            // 
+            // guna2Button47
+            // 
+            this.guna2Button47.Animated = true;
+            this.guna2Button47.AnimatedGIF = true;
+            this.guna2Button47.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button47.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2Button47.BorderRadius = 12;
+            this.guna2Button47.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button47.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button47.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button47.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button47.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(46)))), ((int)(((byte)(213)))));
+            this.guna2Button47.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button47.ForeColor = System.Drawing.Color.White;
+            this.guna2Button47.Location = new System.Drawing.Point(86, 173);
+            this.guna2Button47.Margin = new System.Windows.Forms.Padding(5);
+            this.guna2Button47.Name = "guna2Button47";
+            this.guna2Button47.Size = new System.Drawing.Size(71, 46);
+            this.guna2Button47.TabIndex = 367;
+            this.guna2Button47.Text = "D2";
+            this.guna2Button47.UseTransparentBackground = true;
+            // 
+            // guna2Button48
+            // 
+            this.guna2Button48.Animated = true;
+            this.guna2Button48.AnimatedGIF = true;
+            this.guna2Button48.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button48.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2Button48.BorderRadius = 12;
+            this.guna2Button48.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button48.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button48.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button48.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button48.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(46)))), ((int)(((byte)(213)))));
+            this.guna2Button48.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button48.ForeColor = System.Drawing.Color.White;
+            this.guna2Button48.Location = new System.Drawing.Point(167, 173);
+            this.guna2Button48.Margin = new System.Windows.Forms.Padding(5);
+            this.guna2Button48.Name = "guna2Button48";
+            this.guna2Button48.Size = new System.Drawing.Size(71, 46);
+            this.guna2Button48.TabIndex = 368;
+            this.guna2Button48.Text = "D3";
+            this.guna2Button48.UseTransparentBackground = true;
+            // 
+            // guna2Button49
+            // 
+            this.guna2Button49.Animated = true;
+            this.guna2Button49.AnimatedGIF = true;
+            this.guna2Button49.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button49.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2Button49.BorderRadius = 12;
+            this.guna2Button49.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button49.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button49.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button49.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button49.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(46)))), ((int)(((byte)(213)))));
+            this.guna2Button49.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button49.ForeColor = System.Drawing.Color.White;
+            this.guna2Button49.Location = new System.Drawing.Point(248, 173);
+            this.guna2Button49.Margin = new System.Windows.Forms.Padding(5);
+            this.guna2Button49.Name = "guna2Button49";
+            this.guna2Button49.Size = new System.Drawing.Size(71, 46);
+            this.guna2Button49.TabIndex = 369;
+            this.guna2Button49.Text = "D4";
+            this.guna2Button49.UseTransparentBackground = true;
+            // 
+            // guna2Button50
+            // 
+            this.guna2Button50.Animated = true;
+            this.guna2Button50.AnimatedGIF = true;
+            this.guna2Button50.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button50.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2Button50.BorderRadius = 12;
+            this.guna2Button50.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button50.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button50.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button50.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button50.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(46)))), ((int)(((byte)(213)))));
+            this.guna2Button50.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button50.ForeColor = System.Drawing.Color.White;
+            this.guna2Button50.Location = new System.Drawing.Point(329, 173);
+            this.guna2Button50.Margin = new System.Windows.Forms.Padding(5);
+            this.guna2Button50.Name = "guna2Button50";
+            this.guna2Button50.Size = new System.Drawing.Size(71, 46);
+            this.guna2Button50.TabIndex = 370;
+            this.guna2Button50.Text = "D5";
+            this.guna2Button50.UseTransparentBackground = true;
+            // 
+            // guna2Button51
+            // 
+            this.guna2Button51.Animated = true;
+            this.guna2Button51.AnimatedGIF = true;
+            this.guna2Button51.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button51.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2Button51.BorderRadius = 12;
+            this.guna2Button51.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button51.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button51.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button51.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button51.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(46)))), ((int)(((byte)(213)))));
+            this.guna2Button51.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button51.ForeColor = System.Drawing.Color.White;
+            this.guna2Button51.Location = new System.Drawing.Point(410, 173);
+            this.guna2Button51.Margin = new System.Windows.Forms.Padding(5);
+            this.guna2Button51.Name = "guna2Button51";
+            this.guna2Button51.Size = new System.Drawing.Size(71, 46);
+            this.guna2Button51.TabIndex = 371;
+            this.guna2Button51.Text = "D6";
+            this.guna2Button51.UseTransparentBackground = true;
+            // 
+            // guna2Button52
+            // 
+            this.guna2Button52.Animated = true;
+            this.guna2Button52.AnimatedGIF = true;
+            this.guna2Button52.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button52.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2Button52.BorderRadius = 12;
+            this.guna2Button52.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button52.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button52.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button52.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button52.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(46)))), ((int)(((byte)(213)))));
+            this.guna2Button52.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button52.ForeColor = System.Drawing.Color.White;
+            this.guna2Button52.Location = new System.Drawing.Point(491, 173);
+            this.guna2Button52.Margin = new System.Windows.Forms.Padding(5);
+            this.guna2Button52.Name = "guna2Button52";
+            this.guna2Button52.Size = new System.Drawing.Size(71, 46);
+            this.guna2Button52.TabIndex = 372;
+            this.guna2Button52.Text = "D7";
+            this.guna2Button52.UseTransparentBackground = true;
+            // 
+            // guna2Button53
+            // 
+            this.guna2Button53.Animated = true;
+            this.guna2Button53.AnimatedGIF = true;
+            this.guna2Button53.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button53.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2Button53.BorderRadius = 12;
+            this.guna2Button53.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button53.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button53.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button53.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button53.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(46)))), ((int)(((byte)(213)))));
+            this.guna2Button53.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button53.ForeColor = System.Drawing.Color.White;
+            this.guna2Button53.Location = new System.Drawing.Point(572, 173);
+            this.guna2Button53.Margin = new System.Windows.Forms.Padding(5);
+            this.guna2Button53.Name = "guna2Button53";
+            this.guna2Button53.Size = new System.Drawing.Size(71, 46);
+            this.guna2Button53.TabIndex = 373;
+            this.guna2Button53.Text = "D8";
+            this.guna2Button53.UseTransparentBackground = true;
+            // 
+            // guna2Button54
+            // 
+            this.guna2Button54.Animated = true;
+            this.guna2Button54.AnimatedGIF = true;
+            this.guna2Button54.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button54.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2Button54.BorderRadius = 12;
+            this.guna2Button54.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button54.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button54.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button54.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button54.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(46)))), ((int)(((byte)(213)))));
+            this.guna2Button54.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button54.ForeColor = System.Drawing.Color.White;
+            this.guna2Button54.Location = new System.Drawing.Point(653, 173);
+            this.guna2Button54.Margin = new System.Windows.Forms.Padding(5);
+            this.guna2Button54.Name = "guna2Button54";
+            this.guna2Button54.Size = new System.Drawing.Size(71, 46);
+            this.guna2Button54.TabIndex = 374;
+            this.guna2Button54.Text = "D9";
+            this.guna2Button54.UseTransparentBackground = true;
+            // 
+            // guna2Button55
+            // 
+            this.guna2Button55.Animated = true;
+            this.guna2Button55.AnimatedGIF = true;
+            this.guna2Button55.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button55.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2Button55.BorderRadius = 12;
+            this.guna2Button55.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button55.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button55.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button55.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button55.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(46)))), ((int)(((byte)(213)))));
+            this.guna2Button55.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button55.ForeColor = System.Drawing.Color.White;
+            this.guna2Button55.Location = new System.Drawing.Point(734, 173);
+            this.guna2Button55.Margin = new System.Windows.Forms.Padding(5);
+            this.guna2Button55.Name = "guna2Button55";
+            this.guna2Button55.Size = new System.Drawing.Size(71, 46);
+            this.guna2Button55.TabIndex = 375;
+            this.guna2Button55.Text = "D10";
+            this.guna2Button55.UseTransparentBackground = true;
+            // 
+            // guna2Button56
+            // 
+            this.guna2Button56.Animated = true;
+            this.guna2Button56.AnimatedGIF = true;
+            this.guna2Button56.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button56.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2Button56.BorderRadius = 12;
+            this.guna2Button56.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button56.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button56.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button56.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button56.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(46)))), ((int)(((byte)(213)))));
+            this.guna2Button56.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button56.ForeColor = System.Drawing.Color.White;
+            this.guna2Button56.Location = new System.Drawing.Point(815, 173);
+            this.guna2Button56.Margin = new System.Windows.Forms.Padding(5);
+            this.guna2Button56.Name = "guna2Button56";
+            this.guna2Button56.Size = new System.Drawing.Size(71, 46);
+            this.guna2Button56.TabIndex = 376;
+            this.guna2Button56.Text = "D11";
+            this.guna2Button56.UseTransparentBackground = true;
+            // 
+            // guna2Button57
+            // 
+            this.guna2Button57.Animated = true;
+            this.guna2Button57.AnimatedGIF = true;
+            this.guna2Button57.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button57.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2Button57.BorderRadius = 12;
+            this.guna2Button57.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button57.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button57.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button57.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button57.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(46)))), ((int)(((byte)(213)))));
+            this.guna2Button57.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button57.ForeColor = System.Drawing.Color.White;
+            this.guna2Button57.Location = new System.Drawing.Point(896, 173);
+            this.guna2Button57.Margin = new System.Windows.Forms.Padding(5);
+            this.guna2Button57.Name = "guna2Button57";
+            this.guna2Button57.Size = new System.Drawing.Size(71, 46);
+            this.guna2Button57.TabIndex = 378;
+            this.guna2Button57.Text = "D12";
+            this.guna2Button57.UseTransparentBackground = true;
+            // 
+            // guna2Button58
+            // 
+            this.guna2Button58.Animated = true;
+            this.guna2Button58.AnimatedGIF = true;
+            this.guna2Button58.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button58.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2Button58.BorderRadius = 12;
+            this.guna2Button58.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button58.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button58.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button58.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button58.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(46)))), ((int)(((byte)(213)))));
+            this.guna2Button58.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button58.ForeColor = System.Drawing.Color.White;
+            this.guna2Button58.Location = new System.Drawing.Point(977, 173);
+            this.guna2Button58.Margin = new System.Windows.Forms.Padding(5);
+            this.guna2Button58.Name = "guna2Button58";
+            this.guna2Button58.Size = new System.Drawing.Size(71, 46);
+            this.guna2Button58.TabIndex = 377;
+            this.guna2Button58.Text = "D13";
+            this.guna2Button58.UseTransparentBackground = true;
+            // 
+            // guna2Button59
+            // 
+            this.guna2Button59.Animated = true;
+            this.guna2Button59.AnimatedGIF = true;
+            this.guna2Button59.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button59.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2Button59.BorderRadius = 12;
+            this.guna2Button59.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button59.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button59.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button59.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button59.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(46)))), ((int)(((byte)(213)))));
+            this.guna2Button59.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button59.ForeColor = System.Drawing.Color.White;
+            this.guna2Button59.Location = new System.Drawing.Point(1058, 173);
+            this.guna2Button59.Margin = new System.Windows.Forms.Padding(5);
+            this.guna2Button59.Name = "guna2Button59";
+            this.guna2Button59.Size = new System.Drawing.Size(71, 46);
+            this.guna2Button59.TabIndex = 379;
+            this.guna2Button59.Text = "D14";
+            this.guna2Button59.UseTransparentBackground = true;
+            // 
+            // guna2Button60
+            // 
+            this.guna2Button60.Animated = true;
+            this.guna2Button60.AnimatedGIF = true;
+            this.guna2Button60.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button60.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2Button60.BorderRadius = 12;
+            this.guna2Button60.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button60.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button60.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button60.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button60.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(46)))), ((int)(((byte)(213)))));
+            this.guna2Button60.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button60.ForeColor = System.Drawing.Color.White;
+            this.guna2Button60.Location = new System.Drawing.Point(5, 229);
+            this.guna2Button60.Margin = new System.Windows.Forms.Padding(5);
+            this.guna2Button60.Name = "guna2Button60";
+            this.guna2Button60.Size = new System.Drawing.Size(71, 46);
+            this.guna2Button60.TabIndex = 380;
+            this.guna2Button60.Text = "E1";
+            this.guna2Button60.UseTransparentBackground = true;
+            // 
+            // guna2Button61
+            // 
+            this.guna2Button61.Animated = true;
+            this.guna2Button61.AnimatedGIF = true;
+            this.guna2Button61.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button61.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2Button61.BorderRadius = 12;
+            this.guna2Button61.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button61.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button61.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button61.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button61.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(46)))), ((int)(((byte)(213)))));
+            this.guna2Button61.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button61.ForeColor = System.Drawing.Color.White;
+            this.guna2Button61.Location = new System.Drawing.Point(86, 229);
+            this.guna2Button61.Margin = new System.Windows.Forms.Padding(5);
+            this.guna2Button61.Name = "guna2Button61";
+            this.guna2Button61.Size = new System.Drawing.Size(71, 46);
+            this.guna2Button61.TabIndex = 381;
+            this.guna2Button61.Text = "E2";
+            this.guna2Button61.UseTransparentBackground = true;
+            // 
+            // vipguna2Button62
+            // 
+            this.vipguna2Button62.Animated = true;
+            this.vipguna2Button62.AnimatedGIF = true;
+            this.vipguna2Button62.BackColor = System.Drawing.Color.Transparent;
+            this.vipguna2Button62.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.vipguna2Button62.BorderRadius = 12;
+            this.vipguna2Button62.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.vipguna2Button62.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.vipguna2Button62.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.vipguna2Button62.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.vipguna2Button62.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(38)))), ((int)(((byte)(40)))));
+            this.vipguna2Button62.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vipguna2Button62.ForeColor = System.Drawing.Color.White;
+            this.vipguna2Button62.Location = new System.Drawing.Point(167, 229);
+            this.vipguna2Button62.Margin = new System.Windows.Forms.Padding(5);
+            this.vipguna2Button62.Name = "vipguna2Button62";
+            this.vipguna2Button62.Size = new System.Drawing.Size(71, 46);
+            this.vipguna2Button62.TabIndex = 382;
+            this.vipguna2Button62.Text = "E3";
+            this.vipguna2Button62.UseTransparentBackground = true;
+            // 
+            // vipguna2Button63
+            // 
+            this.vipguna2Button63.Animated = true;
+            this.vipguna2Button63.AnimatedGIF = true;
+            this.vipguna2Button63.BackColor = System.Drawing.Color.Transparent;
+            this.vipguna2Button63.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.vipguna2Button63.BorderRadius = 12;
+            this.vipguna2Button63.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.vipguna2Button63.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.vipguna2Button63.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.vipguna2Button63.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.vipguna2Button63.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(38)))), ((int)(((byte)(40)))));
+            this.vipguna2Button63.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vipguna2Button63.ForeColor = System.Drawing.Color.White;
+            this.vipguna2Button63.Location = new System.Drawing.Point(248, 229);
+            this.vipguna2Button63.Margin = new System.Windows.Forms.Padding(5);
+            this.vipguna2Button63.Name = "vipguna2Button63";
+            this.vipguna2Button63.Size = new System.Drawing.Size(71, 46);
+            this.vipguna2Button63.TabIndex = 383;
+            this.vipguna2Button63.Text = "E4";
+            this.vipguna2Button63.UseTransparentBackground = true;
+            // 
+            // vipguna2Button64
+            // 
+            this.vipguna2Button64.Animated = true;
+            this.vipguna2Button64.AnimatedGIF = true;
+            this.vipguna2Button64.BackColor = System.Drawing.Color.Transparent;
+            this.vipguna2Button64.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.vipguna2Button64.BorderRadius = 12;
+            this.vipguna2Button64.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.vipguna2Button64.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.vipguna2Button64.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.vipguna2Button64.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.vipguna2Button64.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(38)))), ((int)(((byte)(40)))));
+            this.vipguna2Button64.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vipguna2Button64.ForeColor = System.Drawing.Color.White;
+            this.vipguna2Button64.Location = new System.Drawing.Point(329, 229);
+            this.vipguna2Button64.Margin = new System.Windows.Forms.Padding(5);
+            this.vipguna2Button64.Name = "vipguna2Button64";
+            this.vipguna2Button64.Size = new System.Drawing.Size(71, 46);
+            this.vipguna2Button64.TabIndex = 384;
+            this.vipguna2Button64.Text = "E5";
+            this.vipguna2Button64.UseTransparentBackground = true;
+            // 
+            // vipguna2Button65
+            // 
+            this.vipguna2Button65.Animated = true;
+            this.vipguna2Button65.AnimatedGIF = true;
+            this.vipguna2Button65.BackColor = System.Drawing.Color.Transparent;
+            this.vipguna2Button65.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.vipguna2Button65.BorderRadius = 12;
+            this.vipguna2Button65.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.vipguna2Button65.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.vipguna2Button65.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.vipguna2Button65.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.vipguna2Button65.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(38)))), ((int)(((byte)(40)))));
+            this.vipguna2Button65.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vipguna2Button65.ForeColor = System.Drawing.Color.White;
+            this.vipguna2Button65.Location = new System.Drawing.Point(410, 229);
+            this.vipguna2Button65.Margin = new System.Windows.Forms.Padding(5);
+            this.vipguna2Button65.Name = "vipguna2Button65";
+            this.vipguna2Button65.Size = new System.Drawing.Size(71, 46);
+            this.vipguna2Button65.TabIndex = 385;
+            this.vipguna2Button65.Text = "E6";
+            this.vipguna2Button65.UseTransparentBackground = true;
+            // 
+            // vipguna2Button66
+            // 
+            this.vipguna2Button66.Animated = true;
+            this.vipguna2Button66.AnimatedGIF = true;
+            this.vipguna2Button66.BackColor = System.Drawing.Color.Transparent;
+            this.vipguna2Button66.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.vipguna2Button66.BorderRadius = 12;
+            this.vipguna2Button66.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.vipguna2Button66.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.vipguna2Button66.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.vipguna2Button66.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.vipguna2Button66.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(38)))), ((int)(((byte)(40)))));
+            this.vipguna2Button66.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vipguna2Button66.ForeColor = System.Drawing.Color.White;
+            this.vipguna2Button66.Location = new System.Drawing.Point(491, 229);
+            this.vipguna2Button66.Margin = new System.Windows.Forms.Padding(5);
+            this.vipguna2Button66.Name = "vipguna2Button66";
+            this.vipguna2Button66.Size = new System.Drawing.Size(71, 46);
+            this.vipguna2Button66.TabIndex = 386;
+            this.vipguna2Button66.Text = "E7";
+            this.vipguna2Button66.UseTransparentBackground = true;
+            // 
+            // vipguna2Button67
+            // 
+            this.vipguna2Button67.Animated = true;
+            this.vipguna2Button67.AnimatedGIF = true;
+            this.vipguna2Button67.BackColor = System.Drawing.Color.Transparent;
+            this.vipguna2Button67.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.vipguna2Button67.BorderRadius = 12;
+            this.vipguna2Button67.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.vipguna2Button67.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.vipguna2Button67.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.vipguna2Button67.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.vipguna2Button67.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(38)))), ((int)(((byte)(40)))));
+            this.vipguna2Button67.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vipguna2Button67.ForeColor = System.Drawing.Color.White;
+            this.vipguna2Button67.Location = new System.Drawing.Point(572, 229);
+            this.vipguna2Button67.Margin = new System.Windows.Forms.Padding(5);
+            this.vipguna2Button67.Name = "vipguna2Button67";
+            this.vipguna2Button67.ShadowDecoration.Depth = 10;
+            this.vipguna2Button67.ShadowDecoration.Enabled = true;
+            this.vipguna2Button67.Size = new System.Drawing.Size(71, 46);
+            this.vipguna2Button67.TabIndex = 387;
+            this.vipguna2Button67.Text = "E8";
+            this.vipguna2Button67.UseTransparentBackground = true;
+            // 
+            // vipguna2Button68
+            // 
+            this.vipguna2Button68.Animated = true;
+            this.vipguna2Button68.AnimatedGIF = true;
+            this.vipguna2Button68.BackColor = System.Drawing.Color.Transparent;
+            this.vipguna2Button68.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.vipguna2Button68.BorderRadius = 12;
+            this.vipguna2Button68.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.vipguna2Button68.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.vipguna2Button68.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.vipguna2Button68.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.vipguna2Button68.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(38)))), ((int)(((byte)(40)))));
+            this.vipguna2Button68.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vipguna2Button68.ForeColor = System.Drawing.Color.White;
+            this.vipguna2Button68.Location = new System.Drawing.Point(653, 229);
+            this.vipguna2Button68.Margin = new System.Windows.Forms.Padding(5);
+            this.vipguna2Button68.Name = "vipguna2Button68";
+            this.vipguna2Button68.Size = new System.Drawing.Size(71, 46);
+            this.vipguna2Button68.TabIndex = 388;
+            this.vipguna2Button68.Text = "E9";
+            this.vipguna2Button68.UseTransparentBackground = true;
+            this.vipguna2Button68.Click += new System.EventHandler(this.guna2Button68_Click);
+            // 
+            // vipguna2Button69
+            // 
+            this.vipguna2Button69.Animated = true;
+            this.vipguna2Button69.AnimatedGIF = true;
+            this.vipguna2Button69.BackColor = System.Drawing.Color.Transparent;
+            this.vipguna2Button69.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.vipguna2Button69.BorderRadius = 12;
+            this.vipguna2Button69.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.vipguna2Button69.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.vipguna2Button69.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.vipguna2Button69.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.vipguna2Button69.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(38)))), ((int)(((byte)(40)))));
+            this.vipguna2Button69.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vipguna2Button69.ForeColor = System.Drawing.Color.White;
+            this.vipguna2Button69.Location = new System.Drawing.Point(734, 229);
+            this.vipguna2Button69.Margin = new System.Windows.Forms.Padding(5);
+            this.vipguna2Button69.Name = "vipguna2Button69";
+            this.vipguna2Button69.Size = new System.Drawing.Size(71, 46);
+            this.vipguna2Button69.TabIndex = 389;
+            this.vipguna2Button69.Text = "E10";
+            this.vipguna2Button69.UseTransparentBackground = true;
+            // 
+            // vipguna2Button70
+            // 
+            this.vipguna2Button70.Animated = true;
+            this.vipguna2Button70.AnimatedGIF = true;
+            this.vipguna2Button70.BackColor = System.Drawing.Color.Transparent;
+            this.vipguna2Button70.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.vipguna2Button70.BorderRadius = 12;
+            this.vipguna2Button70.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.vipguna2Button70.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.vipguna2Button70.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.vipguna2Button70.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.vipguna2Button70.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(38)))), ((int)(((byte)(40)))));
+            this.vipguna2Button70.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vipguna2Button70.ForeColor = System.Drawing.Color.White;
+            this.vipguna2Button70.Location = new System.Drawing.Point(815, 229);
+            this.vipguna2Button70.Margin = new System.Windows.Forms.Padding(5);
+            this.vipguna2Button70.Name = "vipguna2Button70";
+            this.vipguna2Button70.Size = new System.Drawing.Size(71, 46);
+            this.vipguna2Button70.TabIndex = 390;
+            this.vipguna2Button70.Text = "E11";
+            this.vipguna2Button70.UseTransparentBackground = true;
+            // 
+            // vipguna2Button71
+            // 
+            this.vipguna2Button71.Animated = true;
+            this.vipguna2Button71.AnimatedGIF = true;
+            this.vipguna2Button71.BackColor = System.Drawing.Color.Transparent;
+            this.vipguna2Button71.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.vipguna2Button71.BorderRadius = 12;
+            this.vipguna2Button71.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.vipguna2Button71.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.vipguna2Button71.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.vipguna2Button71.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.vipguna2Button71.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(38)))), ((int)(((byte)(40)))));
+            this.vipguna2Button71.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vipguna2Button71.ForeColor = System.Drawing.Color.White;
+            this.vipguna2Button71.Location = new System.Drawing.Point(896, 229);
+            this.vipguna2Button71.Margin = new System.Windows.Forms.Padding(5);
+            this.vipguna2Button71.Name = "vipguna2Button71";
+            this.vipguna2Button71.Size = new System.Drawing.Size(71, 46);
+            this.vipguna2Button71.TabIndex = 392;
+            this.vipguna2Button71.Text = "E12";
+            this.vipguna2Button71.UseTransparentBackground = true;
+            // 
+            // guna2Button72
+            // 
+            this.guna2Button72.Animated = true;
+            this.guna2Button72.AnimatedGIF = true;
+            this.guna2Button72.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button72.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2Button72.BorderRadius = 12;
+            this.guna2Button72.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button72.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button72.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button72.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button72.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(46)))), ((int)(((byte)(213)))));
+            this.guna2Button72.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button72.ForeColor = System.Drawing.Color.White;
+            this.guna2Button72.Location = new System.Drawing.Point(977, 229);
+            this.guna2Button72.Margin = new System.Windows.Forms.Padding(5);
+            this.guna2Button72.Name = "guna2Button72";
+            this.guna2Button72.Size = new System.Drawing.Size(71, 46);
+            this.guna2Button72.TabIndex = 391;
+            this.guna2Button72.Text = "E13";
+            this.guna2Button72.UseTransparentBackground = true;
+            // 
+            // guna2Button73
+            // 
+            this.guna2Button73.Animated = true;
+            this.guna2Button73.AnimatedGIF = true;
+            this.guna2Button73.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button73.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2Button73.BorderRadius = 12;
+            this.guna2Button73.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button73.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button73.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button73.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button73.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(46)))), ((int)(((byte)(213)))));
+            this.guna2Button73.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button73.ForeColor = System.Drawing.Color.White;
+            this.guna2Button73.Location = new System.Drawing.Point(1058, 229);
+            this.guna2Button73.Margin = new System.Windows.Forms.Padding(5);
+            this.guna2Button73.Name = "guna2Button73";
+            this.guna2Button73.Size = new System.Drawing.Size(71, 46);
+            this.guna2Button73.TabIndex = 393;
+            this.guna2Button73.Text = "E14";
+            this.guna2Button73.UseTransparentBackground = true;
+            // 
+            // guna2Button74
+            // 
+            this.guna2Button74.Animated = true;
+            this.guna2Button74.AnimatedGIF = true;
+            this.guna2Button74.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button74.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2Button74.BorderRadius = 12;
+            this.guna2Button74.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button74.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button74.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button74.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button74.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(46)))), ((int)(((byte)(213)))));
+            this.guna2Button74.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button74.ForeColor = System.Drawing.Color.White;
+            this.guna2Button74.Location = new System.Drawing.Point(5, 285);
+            this.guna2Button74.Margin = new System.Windows.Forms.Padding(5);
+            this.guna2Button74.Name = "guna2Button74";
+            this.guna2Button74.Size = new System.Drawing.Size(71, 46);
+            this.guna2Button74.TabIndex = 394;
+            this.guna2Button74.Text = "F1";
+            this.guna2Button74.UseTransparentBackground = true;
+            // 
+            // guna2Button75
+            // 
+            this.guna2Button75.Animated = true;
+            this.guna2Button75.AnimatedGIF = true;
+            this.guna2Button75.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button75.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2Button75.BorderRadius = 12;
+            this.guna2Button75.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button75.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button75.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button75.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button75.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(46)))), ((int)(((byte)(213)))));
+            this.guna2Button75.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button75.ForeColor = System.Drawing.Color.White;
+            this.guna2Button75.Location = new System.Drawing.Point(86, 285);
+            this.guna2Button75.Margin = new System.Windows.Forms.Padding(5);
+            this.guna2Button75.Name = "guna2Button75";
+            this.guna2Button75.Size = new System.Drawing.Size(71, 46);
+            this.guna2Button75.TabIndex = 395;
+            this.guna2Button75.Text = "F2";
+            this.guna2Button75.UseTransparentBackground = true;
+            // 
+            // vipguna2Button76
+            // 
+            this.vipguna2Button76.Animated = true;
+            this.vipguna2Button76.AnimatedGIF = true;
+            this.vipguna2Button76.BackColor = System.Drawing.Color.Transparent;
+            this.vipguna2Button76.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.vipguna2Button76.BorderRadius = 12;
+            this.vipguna2Button76.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.vipguna2Button76.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.vipguna2Button76.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.vipguna2Button76.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.vipguna2Button76.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(38)))), ((int)(((byte)(40)))));
+            this.vipguna2Button76.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vipguna2Button76.ForeColor = System.Drawing.Color.White;
+            this.vipguna2Button76.Location = new System.Drawing.Point(167, 285);
+            this.vipguna2Button76.Margin = new System.Windows.Forms.Padding(5);
+            this.vipguna2Button76.Name = "vipguna2Button76";
+            this.vipguna2Button76.Size = new System.Drawing.Size(71, 46);
+            this.vipguna2Button76.TabIndex = 396;
+            this.vipguna2Button76.Text = "F3";
+            this.vipguna2Button76.UseTransparentBackground = true;
+            // 
+            // vipguna2Button77
+            // 
+            this.vipguna2Button77.Animated = true;
+            this.vipguna2Button77.AnimatedGIF = true;
+            this.vipguna2Button77.BackColor = System.Drawing.Color.Transparent;
+            this.vipguna2Button77.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.vipguna2Button77.BorderRadius = 12;
+            this.vipguna2Button77.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.vipguna2Button77.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.vipguna2Button77.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.vipguna2Button77.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.vipguna2Button77.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(38)))), ((int)(((byte)(40)))));
+            this.vipguna2Button77.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vipguna2Button77.ForeColor = System.Drawing.Color.White;
+            this.vipguna2Button77.Location = new System.Drawing.Point(248, 285);
+            this.vipguna2Button77.Margin = new System.Windows.Forms.Padding(5);
+            this.vipguna2Button77.Name = "vipguna2Button77";
+            this.vipguna2Button77.Size = new System.Drawing.Size(71, 46);
+            this.vipguna2Button77.TabIndex = 397;
+            this.vipguna2Button77.Text = "F4";
+            this.vipguna2Button77.UseTransparentBackground = true;
+            // 
+            // vipguna2Button78
+            // 
+            this.vipguna2Button78.Animated = true;
+            this.vipguna2Button78.AnimatedGIF = true;
+            this.vipguna2Button78.BackColor = System.Drawing.Color.Transparent;
+            this.vipguna2Button78.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.vipguna2Button78.BorderRadius = 12;
+            this.vipguna2Button78.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.vipguna2Button78.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.vipguna2Button78.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.vipguna2Button78.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.vipguna2Button78.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(38)))), ((int)(((byte)(40)))));
+            this.vipguna2Button78.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vipguna2Button78.ForeColor = System.Drawing.Color.White;
+            this.vipguna2Button78.Location = new System.Drawing.Point(329, 285);
+            this.vipguna2Button78.Margin = new System.Windows.Forms.Padding(5);
+            this.vipguna2Button78.Name = "vipguna2Button78";
+            this.vipguna2Button78.Size = new System.Drawing.Size(71, 46);
+            this.vipguna2Button78.TabIndex = 398;
+            this.vipguna2Button78.Text = "F5";
+            this.vipguna2Button78.UseTransparentBackground = true;
+            // 
+            // vipguna2Button79
+            // 
+            this.vipguna2Button79.Animated = true;
+            this.vipguna2Button79.AnimatedGIF = true;
+            this.vipguna2Button79.BackColor = System.Drawing.Color.Transparent;
+            this.vipguna2Button79.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.vipguna2Button79.BorderRadius = 12;
+            this.vipguna2Button79.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.vipguna2Button79.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.vipguna2Button79.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.vipguna2Button79.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.vipguna2Button79.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(38)))), ((int)(((byte)(40)))));
+            this.vipguna2Button79.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vipguna2Button79.ForeColor = System.Drawing.Color.White;
+            this.vipguna2Button79.Location = new System.Drawing.Point(410, 285);
+            this.vipguna2Button79.Margin = new System.Windows.Forms.Padding(5);
+            this.vipguna2Button79.Name = "vipguna2Button79";
+            this.vipguna2Button79.Size = new System.Drawing.Size(71, 46);
+            this.vipguna2Button79.TabIndex = 399;
+            this.vipguna2Button79.Text = "F6";
+            this.vipguna2Button79.UseTransparentBackground = true;
+            // 
+            // vipguna2Button80
+            // 
+            this.vipguna2Button80.Animated = true;
+            this.vipguna2Button80.AnimatedGIF = true;
+            this.vipguna2Button80.BackColor = System.Drawing.Color.Transparent;
+            this.vipguna2Button80.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.vipguna2Button80.BorderRadius = 12;
+            this.vipguna2Button80.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.vipguna2Button80.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.vipguna2Button80.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.vipguna2Button80.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.vipguna2Button80.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(38)))), ((int)(((byte)(40)))));
+            this.vipguna2Button80.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vipguna2Button80.ForeColor = System.Drawing.Color.White;
+            this.vipguna2Button80.Location = new System.Drawing.Point(491, 285);
+            this.vipguna2Button80.Margin = new System.Windows.Forms.Padding(5);
+            this.vipguna2Button80.Name = "vipguna2Button80";
+            this.vipguna2Button80.Size = new System.Drawing.Size(71, 46);
+            this.vipguna2Button80.TabIndex = 400;
+            this.vipguna2Button80.Text = "F7";
+            this.vipguna2Button80.UseTransparentBackground = true;
+            // 
+            // vipguna2Button81
+            // 
+            this.vipguna2Button81.Animated = true;
+            this.vipguna2Button81.AnimatedGIF = true;
+            this.vipguna2Button81.BackColor = System.Drawing.Color.Transparent;
+            this.vipguna2Button81.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.vipguna2Button81.BorderRadius = 12;
+            this.vipguna2Button81.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.vipguna2Button81.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.vipguna2Button81.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.vipguna2Button81.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.vipguna2Button81.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(38)))), ((int)(((byte)(40)))));
+            this.vipguna2Button81.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vipguna2Button81.ForeColor = System.Drawing.Color.White;
+            this.vipguna2Button81.Location = new System.Drawing.Point(572, 285);
+            this.vipguna2Button81.Margin = new System.Windows.Forms.Padding(5);
+            this.vipguna2Button81.Name = "vipguna2Button81";
+            this.vipguna2Button81.Size = new System.Drawing.Size(71, 46);
+            this.vipguna2Button81.TabIndex = 401;
+            this.vipguna2Button81.Text = "F8";
+            this.vipguna2Button81.UseTransparentBackground = true;
+            // 
+            // vipguna2Button82
+            // 
+            this.vipguna2Button82.Animated = true;
+            this.vipguna2Button82.AnimatedGIF = true;
+            this.vipguna2Button82.BackColor = System.Drawing.Color.Transparent;
+            this.vipguna2Button82.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.vipguna2Button82.BorderRadius = 12;
+            this.vipguna2Button82.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.vipguna2Button82.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.vipguna2Button82.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.vipguna2Button82.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.vipguna2Button82.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(38)))), ((int)(((byte)(40)))));
+            this.vipguna2Button82.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vipguna2Button82.ForeColor = System.Drawing.Color.White;
+            this.vipguna2Button82.Location = new System.Drawing.Point(653, 285);
+            this.vipguna2Button82.Margin = new System.Windows.Forms.Padding(5);
+            this.vipguna2Button82.Name = "vipguna2Button82";
+            this.vipguna2Button82.Size = new System.Drawing.Size(71, 46);
+            this.vipguna2Button82.TabIndex = 402;
+            this.vipguna2Button82.Text = "F9";
+            this.vipguna2Button82.UseTransparentBackground = true;
+            // 
+            // vipguna2Button83
+            // 
+            this.vipguna2Button83.Animated = true;
+            this.vipguna2Button83.AnimatedGIF = true;
+            this.vipguna2Button83.BackColor = System.Drawing.Color.Transparent;
+            this.vipguna2Button83.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.vipguna2Button83.BorderRadius = 12;
+            this.vipguna2Button83.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.vipguna2Button83.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.vipguna2Button83.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.vipguna2Button83.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.vipguna2Button83.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(38)))), ((int)(((byte)(40)))));
+            this.vipguna2Button83.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vipguna2Button83.ForeColor = System.Drawing.Color.White;
+            this.vipguna2Button83.Location = new System.Drawing.Point(734, 285);
+            this.vipguna2Button83.Margin = new System.Windows.Forms.Padding(5);
+            this.vipguna2Button83.Name = "vipguna2Button83";
+            this.vipguna2Button83.Size = new System.Drawing.Size(71, 46);
+            this.vipguna2Button83.TabIndex = 403;
+            this.vipguna2Button83.Text = "F10";
+            this.vipguna2Button83.UseTransparentBackground = true;
+            // 
+            // vipguna2Button84
+            // 
+            this.vipguna2Button84.Animated = true;
+            this.vipguna2Button84.AnimatedGIF = true;
+            this.vipguna2Button84.BackColor = System.Drawing.Color.Transparent;
+            this.vipguna2Button84.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.vipguna2Button84.BorderRadius = 12;
+            this.vipguna2Button84.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.vipguna2Button84.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.vipguna2Button84.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.vipguna2Button84.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.vipguna2Button84.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(38)))), ((int)(((byte)(40)))));
+            this.vipguna2Button84.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vipguna2Button84.ForeColor = System.Drawing.Color.White;
+            this.vipguna2Button84.Location = new System.Drawing.Point(815, 285);
+            this.vipguna2Button84.Margin = new System.Windows.Forms.Padding(5);
+            this.vipguna2Button84.Name = "vipguna2Button84";
+            this.vipguna2Button84.Size = new System.Drawing.Size(71, 46);
+            this.vipguna2Button84.TabIndex = 404;
+            this.vipguna2Button84.Text = "F11";
+            this.vipguna2Button84.UseTransparentBackground = true;
+            // 
+            // vipguna2Button85
+            // 
+            this.vipguna2Button85.Animated = true;
+            this.vipguna2Button85.AnimatedGIF = true;
+            this.vipguna2Button85.BackColor = System.Drawing.Color.Transparent;
+            this.vipguna2Button85.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.vipguna2Button85.BorderRadius = 12;
+            this.vipguna2Button85.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.vipguna2Button85.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.vipguna2Button85.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.vipguna2Button85.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.vipguna2Button85.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(38)))), ((int)(((byte)(40)))));
+            this.vipguna2Button85.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vipguna2Button85.ForeColor = System.Drawing.Color.White;
+            this.vipguna2Button85.Location = new System.Drawing.Point(896, 285);
+            this.vipguna2Button85.Margin = new System.Windows.Forms.Padding(5);
+            this.vipguna2Button85.Name = "vipguna2Button85";
+            this.vipguna2Button85.Size = new System.Drawing.Size(71, 46);
+            this.vipguna2Button85.TabIndex = 406;
+            this.vipguna2Button85.Text = "F12";
+            this.vipguna2Button85.UseTransparentBackground = true;
+            // 
+            // guna2Button86
+            // 
+            this.guna2Button86.Animated = true;
+            this.guna2Button86.AnimatedGIF = true;
+            this.guna2Button86.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button86.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2Button86.BorderRadius = 12;
+            this.guna2Button86.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button86.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button86.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button86.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button86.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(46)))), ((int)(((byte)(213)))));
+            this.guna2Button86.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button86.ForeColor = System.Drawing.Color.White;
+            this.guna2Button86.Location = new System.Drawing.Point(977, 285);
+            this.guna2Button86.Margin = new System.Windows.Forms.Padding(5);
+            this.guna2Button86.Name = "guna2Button86";
+            this.guna2Button86.Size = new System.Drawing.Size(71, 46);
+            this.guna2Button86.TabIndex = 405;
+            this.guna2Button86.Text = "F13";
+            this.guna2Button86.UseTransparentBackground = true;
+            // 
+            // guna2Button87
+            // 
+            this.guna2Button87.Animated = true;
+            this.guna2Button87.AnimatedGIF = true;
+            this.guna2Button87.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button87.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2Button87.BorderRadius = 12;
+            this.guna2Button87.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button87.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button87.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button87.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button87.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(46)))), ((int)(((byte)(213)))));
+            this.guna2Button87.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button87.ForeColor = System.Drawing.Color.White;
+            this.guna2Button87.Location = new System.Drawing.Point(1058, 285);
+            this.guna2Button87.Margin = new System.Windows.Forms.Padding(5);
+            this.guna2Button87.Name = "guna2Button87";
+            this.guna2Button87.Size = new System.Drawing.Size(71, 46);
+            this.guna2Button87.TabIndex = 407;
+            this.guna2Button87.Text = "F14";
+            this.guna2Button87.UseTransparentBackground = true;
+            // 
+            // guna2Button88
+            // 
+            this.guna2Button88.Animated = true;
+            this.guna2Button88.AnimatedGIF = true;
+            this.guna2Button88.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button88.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2Button88.BorderRadius = 12;
+            this.guna2Button88.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button88.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button88.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button88.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button88.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(46)))), ((int)(((byte)(213)))));
+            this.guna2Button88.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button88.ForeColor = System.Drawing.Color.White;
+            this.guna2Button88.Location = new System.Drawing.Point(5, 341);
+            this.guna2Button88.Margin = new System.Windows.Forms.Padding(5);
+            this.guna2Button88.Name = "guna2Button88";
+            this.guna2Button88.Size = new System.Drawing.Size(71, 46);
+            this.guna2Button88.TabIndex = 408;
+            this.guna2Button88.Text = "G1";
+            this.guna2Button88.UseTransparentBackground = true;
+            // 
+            // guna2Button89
+            // 
+            this.guna2Button89.Animated = true;
+            this.guna2Button89.AnimatedGIF = true;
+            this.guna2Button89.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button89.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2Button89.BorderRadius = 12;
+            this.guna2Button89.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button89.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button89.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button89.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button89.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(46)))), ((int)(((byte)(213)))));
+            this.guna2Button89.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button89.ForeColor = System.Drawing.Color.White;
+            this.guna2Button89.Location = new System.Drawing.Point(86, 341);
+            this.guna2Button89.Margin = new System.Windows.Forms.Padding(5);
+            this.guna2Button89.Name = "guna2Button89";
+            this.guna2Button89.Size = new System.Drawing.Size(71, 46);
+            this.guna2Button89.TabIndex = 409;
+            this.guna2Button89.Text = "G2";
+            this.guna2Button89.UseTransparentBackground = true;
+            // 
+            // vipguna2Button90
+            // 
+            this.vipguna2Button90.Animated = true;
+            this.vipguna2Button90.AnimatedGIF = true;
+            this.vipguna2Button90.BackColor = System.Drawing.Color.Transparent;
+            this.vipguna2Button90.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.vipguna2Button90.BorderRadius = 12;
+            this.vipguna2Button90.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.vipguna2Button90.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.vipguna2Button90.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.vipguna2Button90.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.vipguna2Button90.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(38)))), ((int)(((byte)(40)))));
+            this.vipguna2Button90.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vipguna2Button90.ForeColor = System.Drawing.Color.White;
+            this.vipguna2Button90.Location = new System.Drawing.Point(167, 341);
+            this.vipguna2Button90.Margin = new System.Windows.Forms.Padding(5);
+            this.vipguna2Button90.Name = "vipguna2Button90";
+            this.vipguna2Button90.Size = new System.Drawing.Size(71, 46);
+            this.vipguna2Button90.TabIndex = 410;
+            this.vipguna2Button90.Text = "G3";
+            this.vipguna2Button90.UseTransparentBackground = true;
+            // 
+            // vipguna2Button91
+            // 
+            this.vipguna2Button91.Animated = true;
+            this.vipguna2Button91.AnimatedGIF = true;
+            this.vipguna2Button91.BackColor = System.Drawing.Color.Transparent;
+            this.vipguna2Button91.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.vipguna2Button91.BorderRadius = 12;
+            this.vipguna2Button91.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.vipguna2Button91.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.vipguna2Button91.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.vipguna2Button91.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.vipguna2Button91.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(38)))), ((int)(((byte)(40)))));
+            this.vipguna2Button91.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vipguna2Button91.ForeColor = System.Drawing.Color.White;
+            this.vipguna2Button91.Location = new System.Drawing.Point(248, 341);
+            this.vipguna2Button91.Margin = new System.Windows.Forms.Padding(5);
+            this.vipguna2Button91.Name = "vipguna2Button91";
+            this.vipguna2Button91.Size = new System.Drawing.Size(71, 46);
+            this.vipguna2Button91.TabIndex = 411;
+            this.vipguna2Button91.Text = "G4";
+            this.vipguna2Button91.UseTransparentBackground = true;
+            // 
+            // vipguna2Button92
+            // 
+            this.vipguna2Button92.Animated = true;
+            this.vipguna2Button92.AnimatedGIF = true;
+            this.vipguna2Button92.BackColor = System.Drawing.Color.Transparent;
+            this.vipguna2Button92.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.vipguna2Button92.BorderRadius = 12;
+            this.vipguna2Button92.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.vipguna2Button92.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.vipguna2Button92.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.vipguna2Button92.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.vipguna2Button92.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(38)))), ((int)(((byte)(40)))));
+            this.vipguna2Button92.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vipguna2Button92.ForeColor = System.Drawing.Color.White;
+            this.vipguna2Button92.Location = new System.Drawing.Point(329, 341);
+            this.vipguna2Button92.Margin = new System.Windows.Forms.Padding(5);
+            this.vipguna2Button92.Name = "vipguna2Button92";
+            this.vipguna2Button92.Size = new System.Drawing.Size(71, 46);
+            this.vipguna2Button92.TabIndex = 412;
+            this.vipguna2Button92.Text = "G5";
+            this.vipguna2Button92.UseTransparentBackground = true;
+            // 
+            // vipguna2Button93
+            // 
+            this.vipguna2Button93.Animated = true;
+            this.vipguna2Button93.AnimatedGIF = true;
+            this.vipguna2Button93.BackColor = System.Drawing.Color.Transparent;
+            this.vipguna2Button93.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.vipguna2Button93.BorderRadius = 12;
+            this.vipguna2Button93.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.vipguna2Button93.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.vipguna2Button93.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.vipguna2Button93.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.vipguna2Button93.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(38)))), ((int)(((byte)(40)))));
+            this.vipguna2Button93.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vipguna2Button93.ForeColor = System.Drawing.Color.White;
+            this.vipguna2Button93.Location = new System.Drawing.Point(410, 341);
+            this.vipguna2Button93.Margin = new System.Windows.Forms.Padding(5);
+            this.vipguna2Button93.Name = "vipguna2Button93";
+            this.vipguna2Button93.Size = new System.Drawing.Size(71, 46);
+            this.vipguna2Button93.TabIndex = 413;
+            this.vipguna2Button93.Text = "G6";
+            this.vipguna2Button93.UseTransparentBackground = true;
+            // 
+            // vipguna2Button94
+            // 
+            this.vipguna2Button94.Animated = true;
+            this.vipguna2Button94.AnimatedGIF = true;
+            this.vipguna2Button94.BackColor = System.Drawing.Color.Transparent;
+            this.vipguna2Button94.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.vipguna2Button94.BorderRadius = 12;
+            this.vipguna2Button94.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.vipguna2Button94.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.vipguna2Button94.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.vipguna2Button94.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.vipguna2Button94.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(38)))), ((int)(((byte)(40)))));
+            this.vipguna2Button94.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vipguna2Button94.ForeColor = System.Drawing.Color.White;
+            this.vipguna2Button94.Location = new System.Drawing.Point(491, 341);
+            this.vipguna2Button94.Margin = new System.Windows.Forms.Padding(5);
+            this.vipguna2Button94.Name = "vipguna2Button94";
+            this.vipguna2Button94.Size = new System.Drawing.Size(71, 46);
+            this.vipguna2Button94.TabIndex = 414;
+            this.vipguna2Button94.Text = "G7";
+            this.vipguna2Button94.UseTransparentBackground = true;
+            // 
+            // vipguna2Button95
+            // 
+            this.vipguna2Button95.Animated = true;
+            this.vipguna2Button95.AnimatedGIF = true;
+            this.vipguna2Button95.BackColor = System.Drawing.Color.Transparent;
+            this.vipguna2Button95.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.vipguna2Button95.BorderRadius = 12;
+            this.vipguna2Button95.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.vipguna2Button95.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.vipguna2Button95.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.vipguna2Button95.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.vipguna2Button95.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(38)))), ((int)(((byte)(40)))));
+            this.vipguna2Button95.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vipguna2Button95.ForeColor = System.Drawing.Color.White;
+            this.vipguna2Button95.Location = new System.Drawing.Point(572, 341);
+            this.vipguna2Button95.Margin = new System.Windows.Forms.Padding(5);
+            this.vipguna2Button95.Name = "vipguna2Button95";
+            this.vipguna2Button95.Size = new System.Drawing.Size(71, 46);
+            this.vipguna2Button95.TabIndex = 415;
+            this.vipguna2Button95.Text = "G8";
+            this.vipguna2Button95.UseTransparentBackground = true;
+            // 
+            // vipguna2Button96
+            // 
+            this.vipguna2Button96.Animated = true;
+            this.vipguna2Button96.AnimatedGIF = true;
+            this.vipguna2Button96.BackColor = System.Drawing.Color.Transparent;
+            this.vipguna2Button96.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.vipguna2Button96.BorderRadius = 12;
+            this.vipguna2Button96.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.vipguna2Button96.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.vipguna2Button96.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.vipguna2Button96.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.vipguna2Button96.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(38)))), ((int)(((byte)(40)))));
+            this.vipguna2Button96.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vipguna2Button96.ForeColor = System.Drawing.Color.White;
+            this.vipguna2Button96.Location = new System.Drawing.Point(653, 341);
+            this.vipguna2Button96.Margin = new System.Windows.Forms.Padding(5);
+            this.vipguna2Button96.Name = "vipguna2Button96";
+            this.vipguna2Button96.Size = new System.Drawing.Size(71, 46);
+            this.vipguna2Button96.TabIndex = 416;
+            this.vipguna2Button96.Text = "G9";
+            this.vipguna2Button96.UseTransparentBackground = true;
+            // 
+            // vipguna2Button97
+            // 
+            this.vipguna2Button97.Animated = true;
+            this.vipguna2Button97.AnimatedGIF = true;
+            this.vipguna2Button97.BackColor = System.Drawing.Color.Transparent;
+            this.vipguna2Button97.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.vipguna2Button97.BorderRadius = 12;
+            this.vipguna2Button97.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.vipguna2Button97.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.vipguna2Button97.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.vipguna2Button97.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.vipguna2Button97.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(38)))), ((int)(((byte)(40)))));
+            this.vipguna2Button97.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vipguna2Button97.ForeColor = System.Drawing.Color.White;
+            this.vipguna2Button97.Location = new System.Drawing.Point(734, 341);
+            this.vipguna2Button97.Margin = new System.Windows.Forms.Padding(5);
+            this.vipguna2Button97.Name = "vipguna2Button97";
+            this.vipguna2Button97.Size = new System.Drawing.Size(71, 46);
+            this.vipguna2Button97.TabIndex = 417;
+            this.vipguna2Button97.Text = "G10";
+            this.vipguna2Button97.UseTransparentBackground = true;
+            // 
+            // vipguna2Button98
+            // 
+            this.vipguna2Button98.Animated = true;
+            this.vipguna2Button98.AnimatedGIF = true;
+            this.vipguna2Button98.BackColor = System.Drawing.Color.Transparent;
+            this.vipguna2Button98.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.vipguna2Button98.BorderRadius = 12;
+            this.vipguna2Button98.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.vipguna2Button98.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.vipguna2Button98.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.vipguna2Button98.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.vipguna2Button98.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(38)))), ((int)(((byte)(40)))));
+            this.vipguna2Button98.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vipguna2Button98.ForeColor = System.Drawing.Color.White;
+            this.vipguna2Button98.Location = new System.Drawing.Point(815, 341);
+            this.vipguna2Button98.Margin = new System.Windows.Forms.Padding(5);
+            this.vipguna2Button98.Name = "vipguna2Button98";
+            this.vipguna2Button98.Size = new System.Drawing.Size(71, 46);
+            this.vipguna2Button98.TabIndex = 418;
+            this.vipguna2Button98.Text = "G11";
+            this.vipguna2Button98.UseTransparentBackground = true;
+            // 
+            // vipguna2Button99
+            // 
+            this.vipguna2Button99.Animated = true;
+            this.vipguna2Button99.AnimatedGIF = true;
+            this.vipguna2Button99.BackColor = System.Drawing.Color.Transparent;
+            this.vipguna2Button99.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.vipguna2Button99.BorderRadius = 12;
+            this.vipguna2Button99.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.vipguna2Button99.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.vipguna2Button99.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.vipguna2Button99.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.vipguna2Button99.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(38)))), ((int)(((byte)(40)))));
+            this.vipguna2Button99.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vipguna2Button99.ForeColor = System.Drawing.Color.White;
+            this.vipguna2Button99.Location = new System.Drawing.Point(896, 341);
+            this.vipguna2Button99.Margin = new System.Windows.Forms.Padding(5);
+            this.vipguna2Button99.Name = "vipguna2Button99";
+            this.vipguna2Button99.Size = new System.Drawing.Size(71, 46);
+            this.vipguna2Button99.TabIndex = 420;
+            this.vipguna2Button99.Text = "G12";
+            this.vipguna2Button99.UseTransparentBackground = true;
+            // 
+            // guna2Button100
+            // 
+            this.guna2Button100.Animated = true;
+            this.guna2Button100.AnimatedGIF = true;
+            this.guna2Button100.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button100.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2Button100.BorderRadius = 12;
+            this.guna2Button100.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button100.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button100.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button100.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button100.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(46)))), ((int)(((byte)(213)))));
+            this.guna2Button100.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button100.ForeColor = System.Drawing.Color.White;
+            this.guna2Button100.Location = new System.Drawing.Point(977, 341);
+            this.guna2Button100.Margin = new System.Windows.Forms.Padding(5);
+            this.guna2Button100.Name = "guna2Button100";
+            this.guna2Button100.Size = new System.Drawing.Size(71, 46);
+            this.guna2Button100.TabIndex = 419;
+            this.guna2Button100.Text = "G13";
+            this.guna2Button100.UseTransparentBackground = true;
+            this.guna2Button100.Click += new System.EventHandler(this.guna2Button100_Click);
+            // 
+            // guna2Button101
+            // 
+            this.guna2Button101.Animated = true;
+            this.guna2Button101.AnimatedGIF = true;
+            this.guna2Button101.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button101.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2Button101.BorderRadius = 12;
+            this.guna2Button101.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button101.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button101.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button101.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button101.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(46)))), ((int)(((byte)(213)))));
+            this.guna2Button101.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button101.ForeColor = System.Drawing.Color.White;
+            this.guna2Button101.Location = new System.Drawing.Point(1058, 341);
+            this.guna2Button101.Margin = new System.Windows.Forms.Padding(5);
+            this.guna2Button101.Name = "guna2Button101";
+            this.guna2Button101.Size = new System.Drawing.Size(71, 46);
+            this.guna2Button101.TabIndex = 421;
+            this.guna2Button101.Text = "G14";
+            this.guna2Button101.UseTransparentBackground = true;
+            // 
+            // guna2Button102
+            // 
+            this.guna2Button102.Animated = true;
+            this.guna2Button102.AnimatedGIF = true;
+            this.guna2Button102.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button102.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2Button102.BorderRadius = 12;
+            this.guna2Button102.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button102.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button102.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button102.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button102.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(46)))), ((int)(((byte)(213)))));
+            this.guna2Button102.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button102.ForeColor = System.Drawing.Color.White;
+            this.guna2Button102.Location = new System.Drawing.Point(5, 397);
+            this.guna2Button102.Margin = new System.Windows.Forms.Padding(5);
+            this.guna2Button102.Name = "guna2Button102";
+            this.guna2Button102.Size = new System.Drawing.Size(71, 46);
+            this.guna2Button102.TabIndex = 422;
+            this.guna2Button102.Text = "H1";
+            this.guna2Button102.UseTransparentBackground = true;
+            // 
+            // guna2Button103
+            // 
+            this.guna2Button103.Animated = true;
+            this.guna2Button103.AnimatedGIF = true;
+            this.guna2Button103.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button103.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2Button103.BorderRadius = 12;
+            this.guna2Button103.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button103.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button103.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button103.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button103.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(46)))), ((int)(((byte)(213)))));
+            this.guna2Button103.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button103.ForeColor = System.Drawing.Color.White;
+            this.guna2Button103.Location = new System.Drawing.Point(86, 397);
+            this.guna2Button103.Margin = new System.Windows.Forms.Padding(5);
+            this.guna2Button103.Name = "guna2Button103";
+            this.guna2Button103.Size = new System.Drawing.Size(71, 46);
+            this.guna2Button103.TabIndex = 423;
+            this.guna2Button103.Text = "H2";
+            this.guna2Button103.UseTransparentBackground = true;
+            // 
+            // vipguna2Button104
+            // 
+            this.vipguna2Button104.Animated = true;
+            this.vipguna2Button104.AnimatedGIF = true;
+            this.vipguna2Button104.BackColor = System.Drawing.Color.Transparent;
+            this.vipguna2Button104.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.vipguna2Button104.BorderRadius = 12;
+            this.vipguna2Button104.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.vipguna2Button104.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.vipguna2Button104.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.vipguna2Button104.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.vipguna2Button104.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(38)))), ((int)(((byte)(40)))));
+            this.vipguna2Button104.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vipguna2Button104.ForeColor = System.Drawing.Color.White;
+            this.vipguna2Button104.Location = new System.Drawing.Point(167, 397);
+            this.vipguna2Button104.Margin = new System.Windows.Forms.Padding(5);
+            this.vipguna2Button104.Name = "vipguna2Button104";
+            this.vipguna2Button104.Size = new System.Drawing.Size(71, 46);
+            this.vipguna2Button104.TabIndex = 424;
+            this.vipguna2Button104.Text = "H3";
+            this.vipguna2Button104.UseTransparentBackground = true;
+            // 
+            // vipguna2Button105
+            // 
+            this.vipguna2Button105.Animated = true;
+            this.vipguna2Button105.AnimatedGIF = true;
+            this.vipguna2Button105.BackColor = System.Drawing.Color.Transparent;
+            this.vipguna2Button105.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.vipguna2Button105.BorderRadius = 12;
+            this.vipguna2Button105.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.vipguna2Button105.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.vipguna2Button105.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.vipguna2Button105.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.vipguna2Button105.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(38)))), ((int)(((byte)(40)))));
+            this.vipguna2Button105.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vipguna2Button105.ForeColor = System.Drawing.Color.White;
+            this.vipguna2Button105.Location = new System.Drawing.Point(248, 397);
+            this.vipguna2Button105.Margin = new System.Windows.Forms.Padding(5);
+            this.vipguna2Button105.Name = "vipguna2Button105";
+            this.vipguna2Button105.Size = new System.Drawing.Size(71, 46);
+            this.vipguna2Button105.TabIndex = 425;
+            this.vipguna2Button105.Text = "H4";
+            this.vipguna2Button105.UseTransparentBackground = true;
+            // 
+            // vipguna2Button106
+            // 
+            this.vipguna2Button106.Animated = true;
+            this.vipguna2Button106.AnimatedGIF = true;
+            this.vipguna2Button106.BackColor = System.Drawing.Color.Transparent;
+            this.vipguna2Button106.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.vipguna2Button106.BorderRadius = 12;
+            this.vipguna2Button106.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.vipguna2Button106.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.vipguna2Button106.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.vipguna2Button106.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.vipguna2Button106.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(38)))), ((int)(((byte)(40)))));
+            this.vipguna2Button106.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vipguna2Button106.ForeColor = System.Drawing.Color.White;
+            this.vipguna2Button106.Location = new System.Drawing.Point(329, 397);
+            this.vipguna2Button106.Margin = new System.Windows.Forms.Padding(5);
+            this.vipguna2Button106.Name = "vipguna2Button106";
+            this.vipguna2Button106.Size = new System.Drawing.Size(71, 46);
+            this.vipguna2Button106.TabIndex = 426;
+            this.vipguna2Button106.Text = "H5";
+            this.vipguna2Button106.UseTransparentBackground = true;
+            // 
+            // vipguna2Button107
+            // 
+            this.vipguna2Button107.Animated = true;
+            this.vipguna2Button107.AnimatedGIF = true;
+            this.vipguna2Button107.BackColor = System.Drawing.Color.Transparent;
+            this.vipguna2Button107.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.vipguna2Button107.BorderRadius = 12;
+            this.vipguna2Button107.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.vipguna2Button107.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.vipguna2Button107.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.vipguna2Button107.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.vipguna2Button107.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(38)))), ((int)(((byte)(40)))));
+            this.vipguna2Button107.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vipguna2Button107.ForeColor = System.Drawing.Color.White;
+            this.vipguna2Button107.Location = new System.Drawing.Point(410, 397);
+            this.vipguna2Button107.Margin = new System.Windows.Forms.Padding(5);
+            this.vipguna2Button107.Name = "vipguna2Button107";
+            this.vipguna2Button107.Size = new System.Drawing.Size(71, 46);
+            this.vipguna2Button107.TabIndex = 427;
+            this.vipguna2Button107.Text = "H6";
+            this.vipguna2Button107.UseTransparentBackground = true;
+            // 
+            // vipguna2Button108
+            // 
+            this.vipguna2Button108.Animated = true;
+            this.vipguna2Button108.AnimatedGIF = true;
+            this.vipguna2Button108.BackColor = System.Drawing.Color.Transparent;
+            this.vipguna2Button108.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.vipguna2Button108.BorderRadius = 12;
+            this.vipguna2Button108.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.vipguna2Button108.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.vipguna2Button108.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.vipguna2Button108.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.vipguna2Button108.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(38)))), ((int)(((byte)(40)))));
+            this.vipguna2Button108.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vipguna2Button108.ForeColor = System.Drawing.Color.White;
+            this.vipguna2Button108.Location = new System.Drawing.Point(491, 397);
+            this.vipguna2Button108.Margin = new System.Windows.Forms.Padding(5);
+            this.vipguna2Button108.Name = "vipguna2Button108";
+            this.vipguna2Button108.Size = new System.Drawing.Size(71, 46);
+            this.vipguna2Button108.TabIndex = 428;
+            this.vipguna2Button108.Text = "H7";
+            this.vipguna2Button108.UseTransparentBackground = true;
+            // 
+            // vipguna2Button109
+            // 
+            this.vipguna2Button109.Animated = true;
+            this.vipguna2Button109.AnimatedGIF = true;
+            this.vipguna2Button109.BackColor = System.Drawing.Color.Transparent;
+            this.vipguna2Button109.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.vipguna2Button109.BorderRadius = 12;
+            this.vipguna2Button109.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.vipguna2Button109.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.vipguna2Button109.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.vipguna2Button109.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.vipguna2Button109.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(38)))), ((int)(((byte)(40)))));
+            this.vipguna2Button109.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vipguna2Button109.ForeColor = System.Drawing.Color.White;
+            this.vipguna2Button109.Location = new System.Drawing.Point(572, 397);
+            this.vipguna2Button109.Margin = new System.Windows.Forms.Padding(5);
+            this.vipguna2Button109.Name = "vipguna2Button109";
+            this.vipguna2Button109.Size = new System.Drawing.Size(71, 46);
+            this.vipguna2Button109.TabIndex = 429;
+            this.vipguna2Button109.Text = "H8";
+            this.vipguna2Button109.UseTransparentBackground = true;
+            // 
+            // vipguna2Button110
+            // 
+            this.vipguna2Button110.Animated = true;
+            this.vipguna2Button110.AnimatedGIF = true;
+            this.vipguna2Button110.BackColor = System.Drawing.Color.Transparent;
+            this.vipguna2Button110.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.vipguna2Button110.BorderRadius = 12;
+            this.vipguna2Button110.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.vipguna2Button110.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.vipguna2Button110.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.vipguna2Button110.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.vipguna2Button110.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(38)))), ((int)(((byte)(40)))));
+            this.vipguna2Button110.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vipguna2Button110.ForeColor = System.Drawing.Color.White;
+            this.vipguna2Button110.Location = new System.Drawing.Point(653, 397);
+            this.vipguna2Button110.Margin = new System.Windows.Forms.Padding(5);
+            this.vipguna2Button110.Name = "vipguna2Button110";
+            this.vipguna2Button110.Size = new System.Drawing.Size(71, 46);
+            this.vipguna2Button110.TabIndex = 430;
+            this.vipguna2Button110.Text = "H9";
+            this.vipguna2Button110.UseTransparentBackground = true;
+            // 
+            // vipguna2Button111
+            // 
+            this.vipguna2Button111.Animated = true;
+            this.vipguna2Button111.AnimatedGIF = true;
+            this.vipguna2Button111.BackColor = System.Drawing.Color.Transparent;
+            this.vipguna2Button111.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.vipguna2Button111.BorderRadius = 12;
+            this.vipguna2Button111.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.vipguna2Button111.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.vipguna2Button111.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.vipguna2Button111.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.vipguna2Button111.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(38)))), ((int)(((byte)(40)))));
+            this.vipguna2Button111.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vipguna2Button111.ForeColor = System.Drawing.Color.White;
+            this.vipguna2Button111.Location = new System.Drawing.Point(734, 397);
+            this.vipguna2Button111.Margin = new System.Windows.Forms.Padding(5);
+            this.vipguna2Button111.Name = "vipguna2Button111";
+            this.vipguna2Button111.Size = new System.Drawing.Size(71, 46);
+            this.vipguna2Button111.TabIndex = 431;
+            this.vipguna2Button111.Text = "H10";
+            this.vipguna2Button111.UseTransparentBackground = true;
+            // 
+            // vipguna2Button112
+            // 
+            this.vipguna2Button112.Animated = true;
+            this.vipguna2Button112.AnimatedGIF = true;
+            this.vipguna2Button112.BackColor = System.Drawing.Color.Transparent;
+            this.vipguna2Button112.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.vipguna2Button112.BorderRadius = 12;
+            this.vipguna2Button112.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.vipguna2Button112.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.vipguna2Button112.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.vipguna2Button112.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.vipguna2Button112.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(38)))), ((int)(((byte)(40)))));
+            this.vipguna2Button112.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vipguna2Button112.ForeColor = System.Drawing.Color.White;
+            this.vipguna2Button112.Location = new System.Drawing.Point(815, 397);
+            this.vipguna2Button112.Margin = new System.Windows.Forms.Padding(5);
+            this.vipguna2Button112.Name = "vipguna2Button112";
+            this.vipguna2Button112.Size = new System.Drawing.Size(71, 46);
+            this.vipguna2Button112.TabIndex = 432;
+            this.vipguna2Button112.Text = "H11";
+            this.vipguna2Button112.UseTransparentBackground = true;
+            // 
+            // vipguna2Button113
+            // 
+            this.vipguna2Button113.Animated = true;
+            this.vipguna2Button113.AnimatedGIF = true;
+            this.vipguna2Button113.BackColor = System.Drawing.Color.Transparent;
+            this.vipguna2Button113.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.vipguna2Button113.BorderRadius = 12;
+            this.vipguna2Button113.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.vipguna2Button113.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.vipguna2Button113.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.vipguna2Button113.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.vipguna2Button113.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(38)))), ((int)(((byte)(40)))));
+            this.vipguna2Button113.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vipguna2Button113.ForeColor = System.Drawing.Color.White;
+            this.vipguna2Button113.Location = new System.Drawing.Point(896, 397);
+            this.vipguna2Button113.Margin = new System.Windows.Forms.Padding(5);
+            this.vipguna2Button113.Name = "vipguna2Button113";
+            this.vipguna2Button113.Size = new System.Drawing.Size(71, 46);
+            this.vipguna2Button113.TabIndex = 434;
+            this.vipguna2Button113.Text = "H12";
+            this.vipguna2Button113.UseTransparentBackground = true;
+            // 
+            // guna2Button114
+            // 
+            this.guna2Button114.Animated = true;
+            this.guna2Button114.AnimatedGIF = true;
+            this.guna2Button114.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button114.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2Button114.BorderRadius = 12;
+            this.guna2Button114.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button114.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button114.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button114.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button114.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(46)))), ((int)(((byte)(213)))));
+            this.guna2Button114.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button114.ForeColor = System.Drawing.Color.White;
+            this.guna2Button114.Location = new System.Drawing.Point(977, 397);
+            this.guna2Button114.Margin = new System.Windows.Forms.Padding(5);
+            this.guna2Button114.Name = "guna2Button114";
+            this.guna2Button114.Size = new System.Drawing.Size(71, 46);
+            this.guna2Button114.TabIndex = 433;
+            this.guna2Button114.Text = "H13";
+            this.guna2Button114.UseTransparentBackground = true;
+            // 
+            // guna2Button115
+            // 
+            this.guna2Button115.Animated = true;
+            this.guna2Button115.AnimatedGIF = true;
+            this.guna2Button115.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button115.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2Button115.BorderRadius = 12;
+            this.guna2Button115.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button115.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button115.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button115.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button115.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(46)))), ((int)(((byte)(213)))));
+            this.guna2Button115.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button115.ForeColor = System.Drawing.Color.White;
+            this.guna2Button115.Location = new System.Drawing.Point(1058, 397);
+            this.guna2Button115.Margin = new System.Windows.Forms.Padding(5);
+            this.guna2Button115.Name = "guna2Button115";
+            this.guna2Button115.Size = new System.Drawing.Size(71, 46);
+            this.guna2Button115.TabIndex = 435;
+            this.guna2Button115.Text = "H14";
+            this.guna2Button115.UseTransparentBackground = true;
+            // 
+            // guna2Button116
+            // 
+            this.guna2Button116.Animated = true;
+            this.guna2Button116.AnimatedGIF = true;
+            this.guna2Button116.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button116.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2Button116.BorderRadius = 12;
+            this.guna2Button116.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button116.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button116.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button116.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button116.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(46)))), ((int)(((byte)(213)))));
+            this.guna2Button116.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button116.ForeColor = System.Drawing.Color.White;
+            this.guna2Button116.Location = new System.Drawing.Point(5, 453);
+            this.guna2Button116.Margin = new System.Windows.Forms.Padding(5);
+            this.guna2Button116.Name = "guna2Button116";
+            this.guna2Button116.Size = new System.Drawing.Size(71, 46);
+            this.guna2Button116.TabIndex = 436;
+            this.guna2Button116.Text = "I1";
+            this.guna2Button116.UseTransparentBackground = true;
+            // 
+            // guna2Button117
+            // 
+            this.guna2Button117.Animated = true;
+            this.guna2Button117.AnimatedGIF = true;
+            this.guna2Button117.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button117.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2Button117.BorderRadius = 12;
+            this.guna2Button117.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button117.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button117.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button117.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button117.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(46)))), ((int)(((byte)(213)))));
+            this.guna2Button117.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button117.ForeColor = System.Drawing.Color.White;
+            this.guna2Button117.Location = new System.Drawing.Point(86, 453);
+            this.guna2Button117.Margin = new System.Windows.Forms.Padding(5);
+            this.guna2Button117.Name = "guna2Button117";
+            this.guna2Button117.Size = new System.Drawing.Size(71, 46);
+            this.guna2Button117.TabIndex = 437;
+            this.guna2Button117.Text = "I2";
+            this.guna2Button117.UseTransparentBackground = true;
+            // 
+            // vipguna2Button118
+            // 
+            this.vipguna2Button118.Animated = true;
+            this.vipguna2Button118.AnimatedGIF = true;
+            this.vipguna2Button118.BackColor = System.Drawing.Color.Transparent;
+            this.vipguna2Button118.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.vipguna2Button118.BorderRadius = 12;
+            this.vipguna2Button118.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.vipguna2Button118.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.vipguna2Button118.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.vipguna2Button118.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.vipguna2Button118.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(38)))), ((int)(((byte)(40)))));
+            this.vipguna2Button118.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vipguna2Button118.ForeColor = System.Drawing.Color.White;
+            this.vipguna2Button118.Location = new System.Drawing.Point(167, 453);
+            this.vipguna2Button118.Margin = new System.Windows.Forms.Padding(5);
+            this.vipguna2Button118.Name = "vipguna2Button118";
+            this.vipguna2Button118.Size = new System.Drawing.Size(71, 46);
+            this.vipguna2Button118.TabIndex = 438;
+            this.vipguna2Button118.Text = "I3";
+            this.vipguna2Button118.UseTransparentBackground = true;
+            // 
+            // vipguna2Button119
+            // 
+            this.vipguna2Button119.Animated = true;
+            this.vipguna2Button119.AnimatedGIF = true;
+            this.vipguna2Button119.BackColor = System.Drawing.Color.Transparent;
+            this.vipguna2Button119.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.vipguna2Button119.BorderRadius = 12;
+            this.vipguna2Button119.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.vipguna2Button119.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.vipguna2Button119.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.vipguna2Button119.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.vipguna2Button119.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(38)))), ((int)(((byte)(40)))));
+            this.vipguna2Button119.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vipguna2Button119.ForeColor = System.Drawing.Color.White;
+            this.vipguna2Button119.Location = new System.Drawing.Point(248, 453);
+            this.vipguna2Button119.Margin = new System.Windows.Forms.Padding(5);
+            this.vipguna2Button119.Name = "vipguna2Button119";
+            this.vipguna2Button119.Size = new System.Drawing.Size(71, 46);
+            this.vipguna2Button119.TabIndex = 439;
+            this.vipguna2Button119.Text = "I4";
+            this.vipguna2Button119.UseTransparentBackground = true;
+            // 
+            // vipguna2Button120
+            // 
+            this.vipguna2Button120.Animated = true;
+            this.vipguna2Button120.AnimatedGIF = true;
+            this.vipguna2Button120.BackColor = System.Drawing.Color.Transparent;
+            this.vipguna2Button120.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.vipguna2Button120.BorderRadius = 12;
+            this.vipguna2Button120.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.vipguna2Button120.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.vipguna2Button120.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.vipguna2Button120.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.vipguna2Button120.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(38)))), ((int)(((byte)(40)))));
+            this.vipguna2Button120.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vipguna2Button120.ForeColor = System.Drawing.Color.White;
+            this.vipguna2Button120.Location = new System.Drawing.Point(329, 453);
+            this.vipguna2Button120.Margin = new System.Windows.Forms.Padding(5);
+            this.vipguna2Button120.Name = "vipguna2Button120";
+            this.vipguna2Button120.Size = new System.Drawing.Size(71, 46);
+            this.vipguna2Button120.TabIndex = 440;
+            this.vipguna2Button120.Text = "I5";
+            this.vipguna2Button120.UseTransparentBackground = true;
+            // 
+            // vipguna2Button121
+            // 
+            this.vipguna2Button121.Animated = true;
+            this.vipguna2Button121.AnimatedGIF = true;
+            this.vipguna2Button121.BackColor = System.Drawing.Color.Transparent;
+            this.vipguna2Button121.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.vipguna2Button121.BorderRadius = 12;
+            this.vipguna2Button121.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.vipguna2Button121.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.vipguna2Button121.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.vipguna2Button121.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.vipguna2Button121.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(38)))), ((int)(((byte)(40)))));
+            this.vipguna2Button121.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vipguna2Button121.ForeColor = System.Drawing.Color.White;
+            this.vipguna2Button121.Location = new System.Drawing.Point(410, 453);
+            this.vipguna2Button121.Margin = new System.Windows.Forms.Padding(5);
+            this.vipguna2Button121.Name = "vipguna2Button121";
+            this.vipguna2Button121.Size = new System.Drawing.Size(71, 46);
+            this.vipguna2Button121.TabIndex = 441;
+            this.vipguna2Button121.Text = "I6";
+            this.vipguna2Button121.UseTransparentBackground = true;
+            // 
+            // vipguna2Button122
+            // 
+            this.vipguna2Button122.Animated = true;
+            this.vipguna2Button122.AnimatedGIF = true;
+            this.vipguna2Button122.BackColor = System.Drawing.Color.Transparent;
+            this.vipguna2Button122.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.vipguna2Button122.BorderRadius = 12;
+            this.vipguna2Button122.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.vipguna2Button122.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.vipguna2Button122.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.vipguna2Button122.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.vipguna2Button122.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(38)))), ((int)(((byte)(40)))));
+            this.vipguna2Button122.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vipguna2Button122.ForeColor = System.Drawing.Color.White;
+            this.vipguna2Button122.Location = new System.Drawing.Point(491, 453);
+            this.vipguna2Button122.Margin = new System.Windows.Forms.Padding(5);
+            this.vipguna2Button122.Name = "vipguna2Button122";
+            this.vipguna2Button122.Size = new System.Drawing.Size(71, 46);
+            this.vipguna2Button122.TabIndex = 442;
+            this.vipguna2Button122.Text = "I7";
+            this.vipguna2Button122.UseTransparentBackground = true;
+            // 
+            // vipguna2Button123
+            // 
+            this.vipguna2Button123.Animated = true;
+            this.vipguna2Button123.AnimatedGIF = true;
+            this.vipguna2Button123.BackColor = System.Drawing.Color.Transparent;
+            this.vipguna2Button123.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.vipguna2Button123.BorderRadius = 12;
+            this.vipguna2Button123.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.vipguna2Button123.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.vipguna2Button123.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.vipguna2Button123.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.vipguna2Button123.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(38)))), ((int)(((byte)(40)))));
+            this.vipguna2Button123.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vipguna2Button123.ForeColor = System.Drawing.Color.White;
+            this.vipguna2Button123.Location = new System.Drawing.Point(572, 453);
+            this.vipguna2Button123.Margin = new System.Windows.Forms.Padding(5);
+            this.vipguna2Button123.Name = "vipguna2Button123";
+            this.vipguna2Button123.Size = new System.Drawing.Size(71, 46);
+            this.vipguna2Button123.TabIndex = 443;
+            this.vipguna2Button123.Text = "I8";
+            this.vipguna2Button123.UseTransparentBackground = true;
+            // 
+            // vipguna2Button124
+            // 
+            this.vipguna2Button124.Animated = true;
+            this.vipguna2Button124.AnimatedGIF = true;
+            this.vipguna2Button124.BackColor = System.Drawing.Color.Transparent;
+            this.vipguna2Button124.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.vipguna2Button124.BorderRadius = 12;
+            this.vipguna2Button124.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.vipguna2Button124.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.vipguna2Button124.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.vipguna2Button124.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.vipguna2Button124.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(38)))), ((int)(((byte)(40)))));
+            this.vipguna2Button124.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vipguna2Button124.ForeColor = System.Drawing.Color.White;
+            this.vipguna2Button124.Location = new System.Drawing.Point(653, 453);
+            this.vipguna2Button124.Margin = new System.Windows.Forms.Padding(5);
+            this.vipguna2Button124.Name = "vipguna2Button124";
+            this.vipguna2Button124.Size = new System.Drawing.Size(71, 46);
+            this.vipguna2Button124.TabIndex = 444;
+            this.vipguna2Button124.Text = "I9";
+            this.vipguna2Button124.UseTransparentBackground = true;
+            // 
+            // vipguna2Button125
+            // 
+            this.vipguna2Button125.Animated = true;
+            this.vipguna2Button125.AnimatedGIF = true;
+            this.vipguna2Button125.BackColor = System.Drawing.Color.Transparent;
+            this.vipguna2Button125.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.vipguna2Button125.BorderRadius = 12;
+            this.vipguna2Button125.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.vipguna2Button125.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.vipguna2Button125.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.vipguna2Button125.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.vipguna2Button125.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(38)))), ((int)(((byte)(40)))));
+            this.vipguna2Button125.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vipguna2Button125.ForeColor = System.Drawing.Color.White;
+            this.vipguna2Button125.Location = new System.Drawing.Point(734, 453);
+            this.vipguna2Button125.Margin = new System.Windows.Forms.Padding(5);
+            this.vipguna2Button125.Name = "vipguna2Button125";
+            this.vipguna2Button125.Size = new System.Drawing.Size(71, 46);
+            this.vipguna2Button125.TabIndex = 445;
+            this.vipguna2Button125.Text = "I10";
+            this.vipguna2Button125.UseTransparentBackground = true;
+            // 
+            // vipguna2Button126
+            // 
+            this.vipguna2Button126.Animated = true;
+            this.vipguna2Button126.AnimatedGIF = true;
+            this.vipguna2Button126.BackColor = System.Drawing.Color.Transparent;
+            this.vipguna2Button126.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.vipguna2Button126.BorderRadius = 12;
+            this.vipguna2Button126.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.vipguna2Button126.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.vipguna2Button126.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.vipguna2Button126.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.vipguna2Button126.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(38)))), ((int)(((byte)(40)))));
+            this.vipguna2Button126.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vipguna2Button126.ForeColor = System.Drawing.Color.White;
+            this.vipguna2Button126.Location = new System.Drawing.Point(815, 453);
+            this.vipguna2Button126.Margin = new System.Windows.Forms.Padding(5);
+            this.vipguna2Button126.Name = "vipguna2Button126";
+            this.vipguna2Button126.Size = new System.Drawing.Size(71, 46);
+            this.vipguna2Button126.TabIndex = 446;
+            this.vipguna2Button126.Text = "I11";
+            this.vipguna2Button126.UseTransparentBackground = true;
+            // 
+            // vipguna2Button127
+            // 
+            this.vipguna2Button127.Animated = true;
+            this.vipguna2Button127.AnimatedGIF = true;
+            this.vipguna2Button127.BackColor = System.Drawing.Color.Transparent;
+            this.vipguna2Button127.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.vipguna2Button127.BorderRadius = 12;
+            this.vipguna2Button127.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.vipguna2Button127.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.vipguna2Button127.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.vipguna2Button127.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.vipguna2Button127.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(38)))), ((int)(((byte)(40)))));
+            this.vipguna2Button127.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vipguna2Button127.ForeColor = System.Drawing.Color.White;
+            this.vipguna2Button127.Location = new System.Drawing.Point(896, 453);
+            this.vipguna2Button127.Margin = new System.Windows.Forms.Padding(5);
+            this.vipguna2Button127.Name = "vipguna2Button127";
+            this.vipguna2Button127.Size = new System.Drawing.Size(71, 46);
+            this.vipguna2Button127.TabIndex = 448;
+            this.vipguna2Button127.Text = "I12";
+            this.vipguna2Button127.UseTransparentBackground = true;
+            // 
+            // guna2Button128
+            // 
+            this.guna2Button128.Animated = true;
+            this.guna2Button128.AnimatedGIF = true;
+            this.guna2Button128.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button128.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2Button128.BorderRadius = 12;
+            this.guna2Button128.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button128.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button128.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button128.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button128.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(46)))), ((int)(((byte)(213)))));
+            this.guna2Button128.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button128.ForeColor = System.Drawing.Color.White;
+            this.guna2Button128.Location = new System.Drawing.Point(977, 453);
+            this.guna2Button128.Margin = new System.Windows.Forms.Padding(5);
+            this.guna2Button128.Name = "guna2Button128";
+            this.guna2Button128.Size = new System.Drawing.Size(71, 46);
+            this.guna2Button128.TabIndex = 447;
+            this.guna2Button128.Text = "I13";
+            this.guna2Button128.UseTransparentBackground = true;
+            // 
+            // guna2Button129
+            // 
+            this.guna2Button129.Animated = true;
+            this.guna2Button129.AnimatedGIF = true;
+            this.guna2Button129.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button129.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2Button129.BorderRadius = 12;
+            this.guna2Button129.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button129.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button129.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button129.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button129.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(46)))), ((int)(((byte)(213)))));
+            this.guna2Button129.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button129.ForeColor = System.Drawing.Color.White;
+            this.guna2Button129.Location = new System.Drawing.Point(1058, 453);
+            this.guna2Button129.Margin = new System.Windows.Forms.Padding(5);
+            this.guna2Button129.Name = "guna2Button129";
+            this.guna2Button129.Size = new System.Drawing.Size(71, 46);
+            this.guna2Button129.TabIndex = 449;
+            this.guna2Button129.Text = "I14";
+            this.guna2Button129.UseTransparentBackground = true;
+            // 
+            // guna2Button134
+            // 
+            this.guna2Button134.Animated = true;
+            this.guna2Button134.AnimatedGIF = true;
+            this.guna2Button134.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button134.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2Button134.BorderRadius = 12;
+            this.guna2Button134.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button134.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button134.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button134.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button134.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(46)))), ((int)(((byte)(213)))));
+            this.guna2Button134.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button134.ForeColor = System.Drawing.Color.White;
+            this.guna2Button134.Location = new System.Drawing.Point(5, 509);
+            this.guna2Button134.Margin = new System.Windows.Forms.Padding(5);
+            this.guna2Button134.Name = "guna2Button134";
+            this.guna2Button134.Size = new System.Drawing.Size(71, 46);
+            this.guna2Button134.TabIndex = 454;
+            this.guna2Button134.Text = "J5";
+            this.guna2Button134.UseTransparentBackground = true;
+            // 
+            // guna2Button130
+            // 
+            this.guna2Button130.Animated = true;
+            this.guna2Button130.AnimatedGIF = true;
+            this.guna2Button130.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button130.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2Button130.BorderRadius = 12;
+            this.guna2Button130.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button130.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button130.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button130.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button130.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(46)))), ((int)(((byte)(213)))));
+            this.guna2Button130.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button130.ForeColor = System.Drawing.Color.White;
+            this.guna2Button130.Location = new System.Drawing.Point(86, 509);
+            this.guna2Button130.Margin = new System.Windows.Forms.Padding(5);
+            this.guna2Button130.Name = "guna2Button130";
+            this.guna2Button130.Size = new System.Drawing.Size(71, 46);
+            this.guna2Button130.TabIndex = 450;
+            this.guna2Button130.Text = "J1";
+            this.guna2Button130.UseTransparentBackground = true;
+            // 
+            // guna2Button131
+            // 
+            this.guna2Button131.Animated = true;
+            this.guna2Button131.AnimatedGIF = true;
+            this.guna2Button131.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button131.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2Button131.BorderRadius = 12;
+            this.guna2Button131.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button131.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button131.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button131.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button131.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(46)))), ((int)(((byte)(213)))));
+            this.guna2Button131.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button131.ForeColor = System.Drawing.Color.White;
+            this.guna2Button131.Location = new System.Drawing.Point(167, 509);
+            this.guna2Button131.Margin = new System.Windows.Forms.Padding(5);
+            this.guna2Button131.Name = "guna2Button131";
+            this.guna2Button131.Size = new System.Drawing.Size(71, 46);
+            this.guna2Button131.TabIndex = 451;
+            this.guna2Button131.Text = "J2";
+            this.guna2Button131.UseTransparentBackground = true;
+            // 
+            // guna2Button132
+            // 
+            this.guna2Button132.Animated = true;
+            this.guna2Button132.AnimatedGIF = true;
+            this.guna2Button132.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button132.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2Button132.BorderRadius = 12;
+            this.guna2Button132.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button132.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button132.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button132.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button132.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(46)))), ((int)(((byte)(213)))));
+            this.guna2Button132.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button132.ForeColor = System.Drawing.Color.White;
+            this.guna2Button132.Location = new System.Drawing.Point(248, 509);
+            this.guna2Button132.Margin = new System.Windows.Forms.Padding(5);
+            this.guna2Button132.Name = "guna2Button132";
+            this.guna2Button132.Size = new System.Drawing.Size(71, 46);
+            this.guna2Button132.TabIndex = 452;
+            this.guna2Button132.Text = "J3";
+            this.guna2Button132.UseTransparentBackground = true;
+            // 
+            // guna2Button133
+            // 
+            this.guna2Button133.Animated = true;
+            this.guna2Button133.AnimatedGIF = true;
+            this.guna2Button133.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button133.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2Button133.BorderRadius = 12;
+            this.guna2Button133.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button133.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button133.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button133.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button133.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(46)))), ((int)(((byte)(213)))));
+            this.guna2Button133.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button133.ForeColor = System.Drawing.Color.White;
+            this.guna2Button133.Location = new System.Drawing.Point(329, 509);
+            this.guna2Button133.Margin = new System.Windows.Forms.Padding(5);
+            this.guna2Button133.Name = "guna2Button133";
+            this.guna2Button133.Size = new System.Drawing.Size(71, 46);
+            this.guna2Button133.TabIndex = 453;
+            this.guna2Button133.Text = "J4";
+            this.guna2Button133.UseTransparentBackground = true;
+            // 
+            // guna2Button135
+            // 
+            this.guna2Button135.Animated = true;
+            this.guna2Button135.AnimatedGIF = true;
+            this.guna2Button135.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button135.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2Button135.BorderRadius = 12;
+            this.guna2Button135.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button135.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button135.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button135.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button135.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(46)))), ((int)(((byte)(213)))));
+            this.guna2Button135.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button135.ForeColor = System.Drawing.Color.White;
+            this.guna2Button135.Location = new System.Drawing.Point(410, 509);
+            this.guna2Button135.Margin = new System.Windows.Forms.Padding(5);
+            this.guna2Button135.Name = "guna2Button135";
+            this.guna2Button135.Size = new System.Drawing.Size(71, 46);
+            this.guna2Button135.TabIndex = 455;
+            this.guna2Button135.Text = "J6";
+            this.guna2Button135.UseTransparentBackground = true;
+            // 
+            // guna2Button136
+            // 
+            this.guna2Button136.Animated = true;
+            this.guna2Button136.AnimatedGIF = true;
+            this.guna2Button136.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button136.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2Button136.BorderRadius = 12;
+            this.guna2Button136.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button136.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button136.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button136.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button136.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(46)))), ((int)(((byte)(213)))));
+            this.guna2Button136.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button136.ForeColor = System.Drawing.Color.White;
+            this.guna2Button136.Location = new System.Drawing.Point(491, 509);
+            this.guna2Button136.Margin = new System.Windows.Forms.Padding(5);
+            this.guna2Button136.Name = "guna2Button136";
+            this.guna2Button136.Size = new System.Drawing.Size(71, 46);
+            this.guna2Button136.TabIndex = 456;
+            this.guna2Button136.Text = "J7";
+            this.guna2Button136.UseTransparentBackground = true;
+            // 
+            // guna2Button137
+            // 
+            this.guna2Button137.Animated = true;
+            this.guna2Button137.AnimatedGIF = true;
+            this.guna2Button137.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button137.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2Button137.BorderRadius = 12;
+            this.guna2Button137.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button137.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button137.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button137.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button137.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(46)))), ((int)(((byte)(213)))));
+            this.guna2Button137.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button137.ForeColor = System.Drawing.Color.White;
+            this.guna2Button137.Location = new System.Drawing.Point(572, 509);
+            this.guna2Button137.Margin = new System.Windows.Forms.Padding(5);
+            this.guna2Button137.Name = "guna2Button137";
+            this.guna2Button137.Size = new System.Drawing.Size(71, 46);
+            this.guna2Button137.TabIndex = 457;
+            this.guna2Button137.Text = "J8";
+            this.guna2Button137.UseTransparentBackground = true;
+            // 
+            // guna2Button138
+            // 
+            this.guna2Button138.Animated = true;
+            this.guna2Button138.AnimatedGIF = true;
+            this.guna2Button138.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button138.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2Button138.BorderRadius = 12;
+            this.guna2Button138.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button138.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button138.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button138.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button138.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(46)))), ((int)(((byte)(213)))));
+            this.guna2Button138.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button138.ForeColor = System.Drawing.Color.White;
+            this.guna2Button138.Location = new System.Drawing.Point(653, 509);
+            this.guna2Button138.Margin = new System.Windows.Forms.Padding(5);
+            this.guna2Button138.Name = "guna2Button138";
+            this.guna2Button138.Size = new System.Drawing.Size(71, 46);
+            this.guna2Button138.TabIndex = 458;
+            this.guna2Button138.Text = "J9";
+            this.guna2Button138.UseTransparentBackground = true;
+            // 
+            // guna2Button139
+            // 
+            this.guna2Button139.Animated = true;
+            this.guna2Button139.AnimatedGIF = true;
+            this.guna2Button139.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button139.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2Button139.BorderRadius = 12;
+            this.guna2Button139.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button139.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button139.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button139.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button139.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(46)))), ((int)(((byte)(213)))));
+            this.guna2Button139.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button139.ForeColor = System.Drawing.Color.White;
+            this.guna2Button139.Location = new System.Drawing.Point(734, 509);
+            this.guna2Button139.Margin = new System.Windows.Forms.Padding(5);
+            this.guna2Button139.Name = "guna2Button139";
+            this.guna2Button139.Size = new System.Drawing.Size(71, 46);
+            this.guna2Button139.TabIndex = 459;
+            this.guna2Button139.Text = "J10";
+            this.guna2Button139.UseTransparentBackground = true;
+            // 
+            // guna2Button140
+            // 
+            this.guna2Button140.Animated = true;
+            this.guna2Button140.AnimatedGIF = true;
+            this.guna2Button140.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button140.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2Button140.BorderRadius = 12;
+            this.guna2Button140.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button140.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button140.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button140.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button140.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(46)))), ((int)(((byte)(213)))));
+            this.guna2Button140.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button140.ForeColor = System.Drawing.Color.White;
+            this.guna2Button140.Location = new System.Drawing.Point(815, 509);
+            this.guna2Button140.Margin = new System.Windows.Forms.Padding(5);
+            this.guna2Button140.Name = "guna2Button140";
+            this.guna2Button140.Size = new System.Drawing.Size(71, 46);
+            this.guna2Button140.TabIndex = 460;
+            this.guna2Button140.Text = "J11";
+            this.guna2Button140.UseTransparentBackground = true;
+            // 
+            // guna2Button141
+            // 
+            this.guna2Button141.Animated = true;
+            this.guna2Button141.AnimatedGIF = true;
+            this.guna2Button141.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button141.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2Button141.BorderRadius = 12;
+            this.guna2Button141.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button141.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button141.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button141.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button141.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(46)))), ((int)(((byte)(213)))));
+            this.guna2Button141.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button141.ForeColor = System.Drawing.Color.White;
+            this.guna2Button141.Location = new System.Drawing.Point(896, 509);
+            this.guna2Button141.Margin = new System.Windows.Forms.Padding(5);
+            this.guna2Button141.Name = "guna2Button141";
+            this.guna2Button141.Size = new System.Drawing.Size(71, 46);
+            this.guna2Button141.TabIndex = 462;
+            this.guna2Button141.Text = "J12";
+            this.guna2Button141.UseTransparentBackground = true;
+            // 
+            // guna2Button142
+            // 
+            this.guna2Button142.Animated = true;
+            this.guna2Button142.AnimatedGIF = true;
+            this.guna2Button142.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button142.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2Button142.BorderRadius = 12;
+            this.guna2Button142.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button142.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button142.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button142.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button142.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(46)))), ((int)(((byte)(213)))));
+            this.guna2Button142.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button142.ForeColor = System.Drawing.Color.White;
+            this.guna2Button142.Location = new System.Drawing.Point(977, 509);
+            this.guna2Button142.Margin = new System.Windows.Forms.Padding(5);
+            this.guna2Button142.Name = "guna2Button142";
+            this.guna2Button142.Size = new System.Drawing.Size(71, 46);
+            this.guna2Button142.TabIndex = 461;
+            this.guna2Button142.Text = "J13";
+            this.guna2Button142.UseTransparentBackground = true;
+            // 
+            // guna2Button143
+            // 
+            this.guna2Button143.Animated = true;
+            this.guna2Button143.AnimatedGIF = true;
+            this.guna2Button143.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button143.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2Button143.BorderRadius = 12;
+            this.guna2Button143.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button143.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button143.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button143.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button143.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(46)))), ((int)(((byte)(213)))));
+            this.guna2Button143.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button143.ForeColor = System.Drawing.Color.White;
+            this.guna2Button143.Location = new System.Drawing.Point(1058, 509);
+            this.guna2Button143.Margin = new System.Windows.Forms.Padding(5);
+            this.guna2Button143.Name = "guna2Button143";
+            this.guna2Button143.Size = new System.Drawing.Size(71, 46);
+            this.guna2Button143.TabIndex = 463;
+            this.guna2Button143.Text = "J14";
+            this.guna2Button143.UseTransparentBackground = true;
+            // 
             // picFilm
             // 
             this.picFilm.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picFilm.Location = new System.Drawing.Point(935, 81);
+            this.picFilm.Location = new System.Drawing.Point(1247, 100);
+            this.picFilm.Margin = new System.Windows.Forms.Padding(4);
             this.picFilm.Name = "picFilm";
-            this.picFilm.Size = new System.Drawing.Size(211, 259);
+            this.picFilm.Size = new System.Drawing.Size(281, 318);
             this.picFilm.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picFilm.TabIndex = 284;
             this.picFilm.TabStop = false;
             // 
             // formbanve
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(248)))));
-            this.ClientSize = new System.Drawing.Size(1176, 713);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button141);
-            this.Controls.Add(this.button127);
-            this.Controls.Add(this.button128);
-            this.Controls.Add(this.button129);
-            this.Controls.Add(this.button130);
-            this.Controls.Add(this.button131);
-            this.Controls.Add(this.button132);
-            this.Controls.Add(this.button133);
-            this.Controls.Add(this.button134);
-            this.Controls.Add(this.button135);
-            this.Controls.Add(this.button136);
-            this.Controls.Add(this.button137);
-            this.Controls.Add(this.button138);
-            this.Controls.Add(this.button139);
-            this.Controls.Add(this.button140);
-            this.Controls.Add(this.button113);
-            this.Controls.Add(this.button114);
-            this.Controls.Add(this.button115);
-            this.Controls.Add(this.button116);
-            this.Controls.Add(this.button117);
-            this.Controls.Add(this.button118);
-            this.Controls.Add(this.button119);
-            this.Controls.Add(this.button120);
-            this.Controls.Add(this.button121);
-            this.Controls.Add(this.button122);
-            this.Controls.Add(this.button123);
-            this.Controls.Add(this.button124);
-            this.Controls.Add(this.button125);
-            this.Controls.Add(this.button126);
-            this.Controls.Add(this.button99);
-            this.Controls.Add(this.button100);
-            this.Controls.Add(this.button101);
-            this.Controls.Add(this.button102);
-            this.Controls.Add(this.button103);
-            this.Controls.Add(this.button104);
-            this.Controls.Add(this.button105);
-            this.Controls.Add(this.button106);
-            this.Controls.Add(this.button107);
-            this.Controls.Add(this.button108);
-            this.Controls.Add(this.button109);
-            this.Controls.Add(this.button110);
-            this.Controls.Add(this.button111);
-            this.Controls.Add(this.button112);
-            this.Controls.Add(this.button85);
-            this.Controls.Add(this.button86);
-            this.Controls.Add(this.button87);
-            this.Controls.Add(this.button88);
-            this.Controls.Add(this.button89);
-            this.Controls.Add(this.button90);
-            this.Controls.Add(this.button91);
-            this.Controls.Add(this.button92);
-            this.Controls.Add(this.button93);
-            this.Controls.Add(this.button94);
-            this.Controls.Add(this.button95);
-            this.Controls.Add(this.button96);
-            this.Controls.Add(this.button97);
-            this.Controls.Add(this.button98);
-            this.Controls.Add(this.button71);
-            this.Controls.Add(this.button72);
-            this.Controls.Add(this.button73);
-            this.Controls.Add(this.button74);
-            this.Controls.Add(this.button75);
-            this.Controls.Add(this.button76);
-            this.Controls.Add(this.button77);
-            this.Controls.Add(this.button78);
-            this.Controls.Add(this.button79);
-            this.Controls.Add(this.button80);
-            this.Controls.Add(this.button81);
-            this.Controls.Add(this.button82);
-            this.Controls.Add(this.button83);
-            this.Controls.Add(this.button84);
-            this.Controls.Add(this.button44);
-            this.Controls.Add(this.button58);
-            this.Controls.Add(this.button59);
-            this.Controls.Add(this.button60);
-            this.Controls.Add(this.button61);
-            this.Controls.Add(this.button62);
-            this.Controls.Add(this.button63);
-            this.Controls.Add(this.button64);
-            this.Controls.Add(this.button65);
-            this.Controls.Add(this.button66);
-            this.Controls.Add(this.button67);
-            this.Controls.Add(this.button68);
-            this.Controls.Add(this.button69);
-            this.Controls.Add(this.button70);
-            this.Controls.Add(this.button46);
-            this.Controls.Add(this.button47);
-            this.Controls.Add(this.button48);
-            this.Controls.Add(this.button49);
-            this.Controls.Add(this.button50);
-            this.Controls.Add(this.button51);
-            this.Controls.Add(this.button45);
-            this.Controls.Add(this.button52);
-            this.Controls.Add(this.button53);
-            this.Controls.Add(this.button54);
-            this.Controls.Add(this.button55);
-            this.Controls.Add(this.button56);
-            this.Controls.Add(this.button57);
-            this.Controls.Add(this.button30);
-            this.Controls.Add(this.button31);
-            this.Controls.Add(this.button32);
-            this.Controls.Add(this.button33);
-            this.Controls.Add(this.button34);
-            this.Controls.Add(this.button35);
-            this.Controls.Add(this.button36);
-            this.Controls.Add(this.button38);
-            this.Controls.Add(this.button39);
-            this.Controls.Add(this.button40);
-            this.Controls.Add(this.button41);
-            this.Controls.Add(this.button42);
-            this.Controls.Add(this.button43);
-            this.Controls.Add(this.button14);
-            this.Controls.Add(this.button18);
-            this.Controls.Add(this.button19);
-            this.Controls.Add(this.button20);
-            this.Controls.Add(this.button37);
-            this.Controls.Add(this.button17);
-            this.Controls.Add(this.button21);
-            this.Controls.Add(this.button22);
-            this.Controls.Add(this.button23);
-            this.Controls.Add(this.button24);
-            this.Controls.Add(this.button25);
-            this.Controls.Add(this.button26);
-            this.Controls.Add(this.button27);
-            this.Controls.Add(this.button28);
-            this.Controls.Add(this.button29);
-            this.Controls.Add(this.button15);
-            this.Controls.Add(this.button16);
-            this.Controls.Add(this.button11);
-            this.Controls.Add(this.button12);
-            this.Controls.Add(this.button13);
-            this.Controls.Add(this.button8);
-            this.Controls.Add(this.button9);
-            this.Controls.Add(this.button10);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button7);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button);
+            this.BackgroundImage = global::Qlyrapchieuphim.Properties.Resources._2149500599;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(1553, 875);
+            this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.picFilm);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "formbanve";
+            this.Padding = new System.Windows.Forms.Padding(100);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "formbanve";
+            this.Text = "  ";
             this.Load += new System.EventHandler(this.formbanve_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -2092,179 +3842,180 @@
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.flowLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picFilm)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button141;
-        private System.Windows.Forms.Button button127;
-        private System.Windows.Forms.Button button128;
-        private System.Windows.Forms.Button button129;
-        private System.Windows.Forms.Button button130;
-        private System.Windows.Forms.Button button131;
-        private System.Windows.Forms.Button button132;
-        private System.Windows.Forms.Button button133;
-        private System.Windows.Forms.Button button134;
-        private System.Windows.Forms.Button button135;
-        private System.Windows.Forms.Button button136;
-        private System.Windows.Forms.Button button137;
-        private System.Windows.Forms.Button button138;
-        private System.Windows.Forms.Button button139;
-        private System.Windows.Forms.Button button140;
-        private System.Windows.Forms.Button button113;
-        private System.Windows.Forms.Button button114;
-        private System.Windows.Forms.Button button115;
-        private System.Windows.Forms.Button button116;
-        private System.Windows.Forms.Button button117;
-        private System.Windows.Forms.Button button118;
-        private System.Windows.Forms.Button button119;
-        private System.Windows.Forms.Button button120;
-        private System.Windows.Forms.Button button121;
-        private System.Windows.Forms.Button button122;
-        private System.Windows.Forms.Button button123;
-        private System.Windows.Forms.Button button124;
-        private System.Windows.Forms.Button button125;
-        private System.Windows.Forms.Button button126;
-        private System.Windows.Forms.Button button99;
-        private System.Windows.Forms.Button button100;
-        private System.Windows.Forms.Button button101;
-        private System.Windows.Forms.Button button102;
-        private System.Windows.Forms.Button button103;
-        private System.Windows.Forms.Button button104;
-        private System.Windows.Forms.Button button105;
-        private System.Windows.Forms.Button button106;
-        private System.Windows.Forms.Button button107;
-        private System.Windows.Forms.Button button108;
-        private System.Windows.Forms.Button button109;
-        private System.Windows.Forms.Button button110;
-        private System.Windows.Forms.Button button111;
-        private System.Windows.Forms.Button button112;
-        private System.Windows.Forms.Button button85;
-        private System.Windows.Forms.Button button86;
-        private System.Windows.Forms.Button button87;
-        private System.Windows.Forms.Button button88;
-        private System.Windows.Forms.Button button89;
-        private System.Windows.Forms.Button button90;
-        private System.Windows.Forms.Button button91;
-        private System.Windows.Forms.Button button92;
-        private System.Windows.Forms.Button button93;
-        private System.Windows.Forms.Button button94;
-        private System.Windows.Forms.Button button95;
-        private System.Windows.Forms.Button button96;
-        private System.Windows.Forms.Button button97;
-        private System.Windows.Forms.Button button98;
-        private System.Windows.Forms.Button button71;
-        private System.Windows.Forms.Button button72;
-        private System.Windows.Forms.Button button73;
-        private System.Windows.Forms.Button button74;
-        private System.Windows.Forms.Button button75;
-        private System.Windows.Forms.Button button76;
-        private System.Windows.Forms.Button button77;
-        private System.Windows.Forms.Button button78;
-        private System.Windows.Forms.Button button79;
-        private System.Windows.Forms.Button button80;
-        private System.Windows.Forms.Button button81;
-        private System.Windows.Forms.Button button82;
-        private System.Windows.Forms.Button button83;
-        private System.Windows.Forms.Button button84;
-        private System.Windows.Forms.Button button44;
-        private System.Windows.Forms.Button button58;
-        private System.Windows.Forms.Button button59;
         private Guna.UI2.WinForms.Guna2Button guna2Button2;
-        private System.Windows.Forms.Label lblTicketPrice;
-        private System.Windows.Forms.RadioButton rdoAdult;
-        private System.Windows.Forms.RadioButton rdoChild;
-        private System.Windows.Forms.Button button60;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.RadioButton rdoStudent;
-        private System.Windows.Forms.Button button61;
         private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox1;
-        private Guna.UI2.WinForms.Guna2Button guna2Button4;
+        private Guna.UI2.WinForms.Guna2Button apdung;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button62;
-        private System.Windows.Forms.Button button63;
-        private System.Windows.Forms.Button button64;
-        private System.Windows.Forms.Button button65;
-        private System.Windows.Forms.Button button66;
-        private System.Windows.Forms.Button button67;
-        private System.Windows.Forms.Button button68;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox grpLoaiVe;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button69;
-        private System.Windows.Forms.Button button70;
-        private System.Windows.Forms.Button button46;
-        private System.Windows.Forms.Button button47;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button48;
-        private System.Windows.Forms.Button button49;
-        private System.Windows.Forms.Button button50;
-        private System.Windows.Forms.Button button51;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
-        private System.Windows.Forms.Label lblTotal;
+        private Guna.UI2.WinForms.Guna2Button thanhtoan;
+        private System.Windows.Forms.Label tongtien;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label lblPayment;
+        private System.Windows.Forms.Label cantra;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button button45;
         private System.Windows.Forms.Label lblDiscount;
-        private System.Windows.Forms.Button button52;
-        private System.Windows.Forms.Button button53;
-        private System.Windows.Forms.Button button54;
-        private System.Windows.Forms.Button button55;
-        private System.Windows.Forms.Button button56;
-        private System.Windows.Forms.Button button57;
-        private System.Windows.Forms.Button button30;
-        private System.Windows.Forms.Button button31;
-        private System.Windows.Forms.Button button32;
-        private System.Windows.Forms.Button button33;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button34;
-        private System.Windows.Forms.Button button35;
-        private System.Windows.Forms.Button button36;
-        private System.Windows.Forms.Button button38;
-        private System.Windows.Forms.Button button39;
-        private System.Windows.Forms.Button button40;
-        private System.Windows.Forms.Button button41;
-        private System.Windows.Forms.Button button42;
-        private System.Windows.Forms.Button button43;
-        private System.Windows.Forms.Button button14;
-        private System.Windows.Forms.Button button18;
-        private System.Windows.Forms.Button button19;
-        private System.Windows.Forms.Button button20;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Button button37;
-        private System.Windows.Forms.Button button17;
-        private System.Windows.Forms.Button button21;
-        private System.Windows.Forms.Button button22;
-        private System.Windows.Forms.Button button23;
-        private System.Windows.Forms.Button button24;
-        private System.Windows.Forms.Button button25;
-        private System.Windows.Forms.Button button26;
-        private System.Windows.Forms.Button button27;
-        private System.Windows.Forms.Button button28;
-        private System.Windows.Forms.Button button29;
-        private System.Windows.Forms.Button button15;
-        private System.Windows.Forms.Button button16;
-        private System.Windows.Forms.Button button11;
-        private System.Windows.Forms.Button button12;
-        private System.Windows.Forms.Button button13;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox picFilm;
         private System.Windows.Forms.Label label1;
+        private Guna.UI2.WinForms.Guna2Button guna2Button28;
+        private Guna.UI2.WinForms.Guna2Button guna2Button3;
+        private Guna.UI2.WinForms.Guna2Button guna2Button5;
+        private Guna.UI2.WinForms.Guna2Button guna2Button6;
+        private Guna.UI2.WinForms.Guna2Button guna2Button7;
+        private Guna.UI2.WinForms.Guna2Button guna2Button8;
+        private Guna.UI2.WinForms.Guna2Button guna2Button9;
+        private Guna.UI2.WinForms.Guna2Button guna2Button10;
+        private Guna.UI2.WinForms.Guna2Button guna2Button11;
+        private Guna.UI2.WinForms.Guna2Button guna2Button12;
+        private Guna.UI2.WinForms.Guna2Button guna2Button13;
+        private Guna.UI2.WinForms.Guna2Button guna2Button14;
+        private Guna.UI2.WinForms.Guna2Button guna2Button15;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private Guna.UI2.WinForms.Guna2Button guna2Button16;
+        private Guna.UI2.WinForms.Guna2Button guna2Button17;
+        private Guna.UI2.WinForms.Guna2Button guna2Button18;
+        private Guna.UI2.WinForms.Guna2Button guna2Button19;
+        private Guna.UI2.WinForms.Guna2Button guna2Button20;
+        private Guna.UI2.WinForms.Guna2Button guna2Button21;
+        private Guna.UI2.WinForms.Guna2Button guna2Button22;
+        private Guna.UI2.WinForms.Guna2Button guna2Button23;
+        private Guna.UI2.WinForms.Guna2Button guna2Button24;
+        private Guna.UI2.WinForms.Guna2Button guna2Button25;
+        private Guna.UI2.WinForms.Guna2Button guna2Button26;
+        private Guna.UI2.WinForms.Guna2Button guna2Button27;
+        private Guna.UI2.WinForms.Guna2Button guna2Button29;
+        private Guna.UI2.WinForms.Guna2Button guna2Button30;
+        private Guna.UI2.WinForms.Guna2Button guna2Button31;
+        private Guna.UI2.WinForms.Guna2Button guna2Button32;
+        private Guna.UI2.WinForms.Guna2Button guna2Button33;
+        private Guna.UI2.WinForms.Guna2Button guna2Button34;
+        private Guna.UI2.WinForms.Guna2Button guna2Button35;
+        private Guna.UI2.WinForms.Guna2Button guna2Button36;
+        private Guna.UI2.WinForms.Guna2Button guna2Button37;
+        private Guna.UI2.WinForms.Guna2Button guna2Button38;
+        private Guna.UI2.WinForms.Guna2Button guna2Button39;
+        private Guna.UI2.WinForms.Guna2Button guna2Button40;
+        private Guna.UI2.WinForms.Guna2Button guna2Button41;
+        private Guna.UI2.WinForms.Guna2Button guna2Button42;
+        private Guna.UI2.WinForms.Guna2Button guna2Button43;
+        private Guna.UI2.WinForms.Guna2Button guna2Button44;
+        private Guna.UI2.WinForms.Guna2Button guna2Button45;
+        private Guna.UI2.WinForms.Guna2Button guna2Button46;
+        private Guna.UI2.WinForms.Guna2Button guna2Button47;
+        private Guna.UI2.WinForms.Guna2Button guna2Button48;
+        private Guna.UI2.WinForms.Guna2Button guna2Button49;
+        private Guna.UI2.WinForms.Guna2Button guna2Button50;
+        private Guna.UI2.WinForms.Guna2Button guna2Button51;
+        private Guna.UI2.WinForms.Guna2Button guna2Button52;
+        private Guna.UI2.WinForms.Guna2Button guna2Button53;
+        private Guna.UI2.WinForms.Guna2Button guna2Button54;
+        private Guna.UI2.WinForms.Guna2Button guna2Button55;
+        private Guna.UI2.WinForms.Guna2Button guna2Button56;
+        private Guna.UI2.WinForms.Guna2Button guna2Button57;
+        private Guna.UI2.WinForms.Guna2Button guna2Button58;
+        private Guna.UI2.WinForms.Guna2Button guna2Button59;
+        private Guna.UI2.WinForms.Guna2Button guna2Button60;
+        private Guna.UI2.WinForms.Guna2Button guna2Button61;
+        private Guna.UI2.WinForms.Guna2Button vipguna2Button62;
+        private Guna.UI2.WinForms.Guna2Button vipguna2Button63;
+        private Guna.UI2.WinForms.Guna2Button vipguna2Button64;
+        private Guna.UI2.WinForms.Guna2Button vipguna2Button65;
+        private Guna.UI2.WinForms.Guna2Button vipguna2Button66;
+        private Guna.UI2.WinForms.Guna2Button vipguna2Button67;
+        private Guna.UI2.WinForms.Guna2Button vipguna2Button68;
+        private Guna.UI2.WinForms.Guna2Button vipguna2Button69;
+        private Guna.UI2.WinForms.Guna2Button vipguna2Button70;
+        private Guna.UI2.WinForms.Guna2Button vipguna2Button71;
+        private Guna.UI2.WinForms.Guna2Button guna2Button72;
+        private Guna.UI2.WinForms.Guna2Button guna2Button73;
+        private Guna.UI2.WinForms.Guna2Button guna2Button74;
+        private Guna.UI2.WinForms.Guna2Button guna2Button75;
+        private Guna.UI2.WinForms.Guna2Button vipguna2Button76;
+        private Guna.UI2.WinForms.Guna2Button vipguna2Button77;
+        private Guna.UI2.WinForms.Guna2Button vipguna2Button78;
+        private Guna.UI2.WinForms.Guna2Button vipguna2Button79;
+        private Guna.UI2.WinForms.Guna2Button vipguna2Button80;
+        private Guna.UI2.WinForms.Guna2Button vipguna2Button81;
+        private Guna.UI2.WinForms.Guna2Button vipguna2Button82;
+        private Guna.UI2.WinForms.Guna2Button vipguna2Button83;
+        private Guna.UI2.WinForms.Guna2Button vipguna2Button84;
+        private Guna.UI2.WinForms.Guna2Button vipguna2Button85;
+        private Guna.UI2.WinForms.Guna2Button guna2Button86;
+        private Guna.UI2.WinForms.Guna2Button guna2Button87;
+        private Guna.UI2.WinForms.Guna2Button guna2Button88;
+        private Guna.UI2.WinForms.Guna2Button guna2Button89;
+        private Guna.UI2.WinForms.Guna2Button vipguna2Button90;
+        private Guna.UI2.WinForms.Guna2Button vipguna2Button91;
+        private Guna.UI2.WinForms.Guna2Button vipguna2Button92;
+        private Guna.UI2.WinForms.Guna2Button vipguna2Button93;
+        private Guna.UI2.WinForms.Guna2Button vipguna2Button94;
+        private Guna.UI2.WinForms.Guna2Button vipguna2Button95;
+        private Guna.UI2.WinForms.Guna2Button vipguna2Button96;
+        private Guna.UI2.WinForms.Guna2Button vipguna2Button97;
+        private Guna.UI2.WinForms.Guna2Button vipguna2Button98;
+        private Guna.UI2.WinForms.Guna2Button vipguna2Button99;
+        private Guna.UI2.WinForms.Guna2Button guna2Button100;
+        private Guna.UI2.WinForms.Guna2Button guna2Button101;
+        private Guna.UI2.WinForms.Guna2Button guna2Button102;
+        private Guna.UI2.WinForms.Guna2Button guna2Button103;
+        private Guna.UI2.WinForms.Guna2Button vipguna2Button104;
+        private Guna.UI2.WinForms.Guna2Button vipguna2Button105;
+        private Guna.UI2.WinForms.Guna2Button vipguna2Button106;
+        private Guna.UI2.WinForms.Guna2Button vipguna2Button107;
+        private Guna.UI2.WinForms.Guna2Button vipguna2Button108;
+        private Guna.UI2.WinForms.Guna2Button vipguna2Button109;
+        private Guna.UI2.WinForms.Guna2Button vipguna2Button110;
+        private Guna.UI2.WinForms.Guna2Button vipguna2Button111;
+        private Guna.UI2.WinForms.Guna2Button vipguna2Button112;
+        private Guna.UI2.WinForms.Guna2Button vipguna2Button113;
+        private Guna.UI2.WinForms.Guna2Button guna2Button114;
+        private Guna.UI2.WinForms.Guna2Button guna2Button115;
+        private Guna.UI2.WinForms.Guna2Button guna2Button116;
+        private Guna.UI2.WinForms.Guna2Button guna2Button117;
+        private Guna.UI2.WinForms.Guna2Button vipguna2Button118;
+        private Guna.UI2.WinForms.Guna2Button vipguna2Button119;
+        private Guna.UI2.WinForms.Guna2Button vipguna2Button120;
+        private Guna.UI2.WinForms.Guna2Button vipguna2Button121;
+        private Guna.UI2.WinForms.Guna2Button vipguna2Button122;
+        private Guna.UI2.WinForms.Guna2Button vipguna2Button123;
+        private Guna.UI2.WinForms.Guna2Button vipguna2Button124;
+        private Guna.UI2.WinForms.Guna2Button vipguna2Button125;
+        private Guna.UI2.WinForms.Guna2Button vipguna2Button126;
+        private Guna.UI2.WinForms.Guna2Button vipguna2Button127;
+        private Guna.UI2.WinForms.Guna2Button guna2Button128;
+        private Guna.UI2.WinForms.Guna2Button guna2Button129;
+        private Guna.UI2.WinForms.Guna2Button guna2Button134;
+        private Guna.UI2.WinForms.Guna2Button guna2Button130;
+        private Guna.UI2.WinForms.Guna2Button guna2Button131;
+        private Guna.UI2.WinForms.Guna2Button guna2Button132;
+        private Guna.UI2.WinForms.Guna2Button guna2Button133;
+        private Guna.UI2.WinForms.Guna2Button guna2Button135;
+        private Guna.UI2.WinForms.Guna2Button guna2Button136;
+        private Guna.UI2.WinForms.Guna2Button guna2Button137;
+        private Guna.UI2.WinForms.Guna2Button guna2Button138;
+        private Guna.UI2.WinForms.Guna2Button guna2Button139;
+        private Guna.UI2.WinForms.Guna2Button guna2Button140;
+        private Guna.UI2.WinForms.Guna2Button guna2Button141;
+        private Guna.UI2.WinForms.Guna2Button guna2Button142;
+        private Guna.UI2.WinForms.Guna2Button guna2Button143;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.CheckBox chkCustomer;
+        private Guna.UI2.WinForms.Guna2TextBox treem;
+        private Guna.UI2.WinForms.Guna2TextBox sinhvien;
     }
 }

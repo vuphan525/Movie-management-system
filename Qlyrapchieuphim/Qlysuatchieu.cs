@@ -262,5 +262,25 @@ namespace Qlyrapchieuphim
             }
 
         }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void giochieu_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ngaychieu_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

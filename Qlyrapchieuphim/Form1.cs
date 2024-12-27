@@ -37,11 +37,10 @@ namespace Qlyrapchieuphim
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (DialogResult.Yes == MessageBox.Show("Bạn có chắc muốn thoát?", "Confirmation Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
+            YesNofrm yesNofrm = new YesNofrm();
+            yesNofrm.ShowDialog();
+            yesNofrm.Text = "Bạn có muốn thoát";
 
-            {
-                Application.Exit();
-            }
         }
 
         private void guna2Button1_Click(object sender, EventArgs e)
@@ -65,6 +64,11 @@ namespace Qlyrapchieuphim
         }
 
         private void guna2TextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
         {
 
         }

@@ -16,5 +16,22 @@ namespace Qlyrapchieuphim
         {
             InitializeComponent();
         }
+
+        private void lvLichChieu_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            formbanve a= new formbanve();
+            a.Show();
+           
+        }
     }
 }
