@@ -360,7 +360,6 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.guna2Button5);
             this.panel2.Controls.Add(this.dataGridView1);
             this.panel2.Controls.Add(this.guna2TextBox4);
             this.panel2.Controls.Add(this.label1);
@@ -369,23 +368,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1436, 384);
             this.panel2.TabIndex = 37;
-            // 
-            // guna2Button5
-            // 
-            this.guna2Button5.BorderRadius = 15;
-            this.guna2Button5.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button5.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button5.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button5.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button5.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(248)))));
-            this.guna2Button5.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button5.ForeColor = System.Drawing.Color.White;
-            this.guna2Button5.Image = global::Qlyrapchieuphim.Properties.Resources.icons8_find_30;
-            this.guna2Button5.Location = new System.Drawing.Point(1376, 15);
-            this.guna2Button5.Margin = new System.Windows.Forms.Padding(4);
-            this.guna2Button5.Name = "guna2Button5";
-            this.guna2Button5.Size = new System.Drawing.Size(40, 37);
-            this.guna2Button5.TabIndex = 55;
             // 
             // dataGridView1
             // 
@@ -587,7 +569,6 @@
         private Guna.UI2.WinForms.Guna2Button themanh;
         private Guna.UI2.WinForms.Guna2TextBox masp;
         private System.Windows.Forms.Panel panel2;
-        private Guna.UI2.WinForms.Guna2Button guna2Button5;
         private System.Windows.Forms.DataGridView dataGridView1;
         private Guna.UI2.WinForms.Guna2TextBox guna2TextBox4;
         private System.Windows.Forms.Label label1;
