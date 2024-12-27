@@ -34,6 +34,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.masp = new Guna.UI2.WinForms.Guna2TextBox();
             this.themanh = new Guna.UI2.WinForms.Guna2Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
             this.xoa = new Guna.UI2.WinForms.Guna2Button();
             this.giatien = new Guna.UI2.WinForms.Guna2TextBox();
@@ -51,25 +52,26 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.guna2TextBox4 = new Guna.UI2.WinForms.Guna2TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.guna2Button5 = new Guna.UI2.WinForms.Guna2Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
-            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cancelButton = new Guna.UI2.WinForms.Guna2Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.idColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.typeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.priceColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quanColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pathColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.cancelButton);
             this.panel1.Controls.Add(this.masp);
             this.panel1.Controls.Add(this.themanh);
             this.panel1.Controls.Add(this.pictureBox1);
@@ -91,7 +93,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1436, 375);
             this.panel1.TabIndex = 1;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // masp
             // 
@@ -132,6 +133,17 @@
             this.themanh.Size = new System.Drawing.Size(175, 44);
             this.themanh.TabIndex = 35;
             this.themanh.Text = "Thêm ảnh";
+            this.themanh.Click += new System.EventHandler(this.themanh_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.SystemColors.Control;
+            this.pictureBox1.Location = new System.Drawing.Point(952, 148);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(175, 146);
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
             // 
             // label7
             // 
@@ -184,6 +196,7 @@
             this.giatien.SelectedText = "";
             this.giatien.Size = new System.Drawing.Size(209, 42);
             this.giatien.TabIndex = 23;
+            this.giatien.TextChanged += new System.EventHandler(this.giatien_TextChanged);
             // 
             // capnhat
             // 
@@ -213,7 +226,6 @@
             this.label2.Size = new System.Drawing.Size(142, 20);
             this.label2.TabIndex = 2;
             this.label2.Text = "Thêm sản phẩm";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // soluong
             // 
@@ -300,7 +312,6 @@
             this.label5.Size = new System.Drawing.Size(62, 18);
             this.label5.TabIndex = 5;
             this.label5.Text = "Giá tiền:";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // loai
             // 
@@ -359,6 +370,23 @@
             this.panel2.Size = new System.Drawing.Size(1436, 384);
             this.panel2.TabIndex = 37;
             // 
+            // guna2Button5
+            // 
+            this.guna2Button5.BorderRadius = 15;
+            this.guna2Button5.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button5.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button5.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button5.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button5.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(248)))));
+            this.guna2Button5.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button5.ForeColor = System.Drawing.Color.White;
+            this.guna2Button5.Image = global::Qlyrapchieuphim.Properties.Resources.icons8_find_30;
+            this.guna2Button5.Location = new System.Drawing.Point(1376, 15);
+            this.guna2Button5.Margin = new System.Windows.Forms.Padding(4);
+            this.guna2Button5.Name = "guna2Button5";
+            this.guna2Button5.Size = new System.Drawing.Size(40, 37);
+            this.guna2Button5.TabIndex = 55;
+            // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
@@ -377,32 +405,32 @@
             this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.STT,
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5,
-            this.Column6});
+            this.idColumn,
+            this.nameColumn,
+            this.typeColumn,
+            this.priceColumn,
+            this.quanColumn,
+            this.pathColumn});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.Location = new System.Drawing.Point(20, 62);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(1396, 304);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.dataGridView1.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dataGridView1_RowPostPaint);
             // 
             // guna2TextBox4
             // 
@@ -441,81 +469,81 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Sản phẩm";
             // 
-            // guna2Button5
+            // cancelButton
             // 
-            this.guna2Button5.BorderRadius = 15;
-            this.guna2Button5.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button5.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button5.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button5.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button5.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(248)))));
-            this.guna2Button5.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button5.ForeColor = System.Drawing.Color.White;
-            this.guna2Button5.Image = global::Qlyrapchieuphim.Properties.Resources.icons8_find_30;
-            this.guna2Button5.Location = new System.Drawing.Point(1376, 15);
-            this.guna2Button5.Margin = new System.Windows.Forms.Padding(4);
-            this.guna2Button5.Name = "guna2Button5";
-            this.guna2Button5.Size = new System.Drawing.Size(40, 37);
-            this.guna2Button5.TabIndex = 55;
+            this.cancelButton.BorderRadius = 10;
+            this.cancelButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.cancelButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.cancelButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.cancelButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.cancelButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(61)))), ((int)(((byte)(204)))));
+            this.cancelButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cancelButton.ForeColor = System.Drawing.Color.White;
+            this.cancelButton.Location = new System.Drawing.Point(695, 281);
+            this.cancelButton.Margin = new System.Windows.Forms.Padding(4);
+            this.cancelButton.Name = "cancelButton";
+            this.cancelButton.Size = new System.Drawing.Size(149, 44);
+            this.cancelButton.TabIndex = 37;
+            this.cancelButton.Text = "Hủy chọn";
+            this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
             // 
-            // pictureBox1
+            // errorProvider1
             // 
-            this.pictureBox1.BackColor = System.Drawing.SystemColors.Control;
-            this.pictureBox1.Location = new System.Drawing.Point(952, 148);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(175, 146);
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
+            this.errorProvider1.ContainerControl = this;
             // 
-            // STT
+            // errorProvider2
             // 
-            this.STT.FillWeight = 52.66407F;
-            this.STT.HeaderText = "STT";
-            this.STT.MinimumWidth = 6;
-            this.STT.Name = "STT";
+            this.errorProvider2.ContainerControl = this;
             // 
-            // Column1
+            // idColumn
             // 
-            this.Column1.FillWeight = 87.77345F;
-            this.Column1.HeaderText = "Mã sản phẩm";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
+            this.idColumn.DataPropertyName = "MASP";
+            this.idColumn.HeaderText = "Mã sản phẩm";
+            this.idColumn.MinimumWidth = 6;
+            this.idColumn.Name = "idColumn";
+            this.idColumn.ReadOnly = true;
             // 
-            // Column2
+            // nameColumn
             // 
-            this.Column2.FillWeight = 114.1055F;
-            this.Column2.HeaderText = "Tên sản phẩm";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
+            this.nameColumn.DataPropertyName = "TENSP";
+            this.nameColumn.FillWeight = 130F;
+            this.nameColumn.HeaderText = "Tên sản phẩm";
+            this.nameColumn.MinimumWidth = 6;
+            this.nameColumn.Name = "nameColumn";
+            this.nameColumn.ReadOnly = true;
             // 
-            // Column3
+            // typeColumn
             // 
-            this.Column3.FillWeight = 87.77345F;
-            this.Column3.HeaderText = "Loại";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
+            this.typeColumn.DataPropertyName = "LOAI";
+            this.typeColumn.HeaderText = "Loại";
+            this.typeColumn.MinimumWidth = 6;
+            this.typeColumn.Name = "typeColumn";
+            this.typeColumn.ReadOnly = true;
             // 
-            // Column4
+            // priceColumn
             // 
-            this.Column4.FillWeight = 87.77345F;
-            this.Column4.HeaderText = "Giá tiền";
-            this.Column4.MinimumWidth = 6;
-            this.Column4.Name = "Column4";
+            this.priceColumn.DataPropertyName = "GIA";
+            this.priceColumn.HeaderText = "Giá tiền (VND)";
+            this.priceColumn.MinimumWidth = 6;
+            this.priceColumn.Name = "priceColumn";
+            this.priceColumn.ReadOnly = true;
             // 
-            // Column5
+            // quanColumn
             // 
-            this.Column5.FillWeight = 61.44142F;
-            this.Column5.HeaderText = "Số lượng";
-            this.Column5.MinimumWidth = 6;
-            this.Column5.Name = "Column5";
+            this.quanColumn.DataPropertyName = "SOLUONG";
+            this.quanColumn.FillWeight = 70F;
+            this.quanColumn.HeaderText = "Số lượng";
+            this.quanColumn.MinimumWidth = 6;
+            this.quanColumn.Name = "quanColumn";
+            this.quanColumn.ReadOnly = true;
             // 
-            // Column6
+            // pathColumn
             // 
-            this.Column6.FillWeight = 87.77345F;
-            this.Column6.HeaderText = "Ảnh";
-            this.Column6.MinimumWidth = 6;
-            this.Column6.Name = "Column6";
+            this.pathColumn.DataPropertyName = "PICTUREPATH";
+            this.pathColumn.HeaderText = "Ảnh";
+            this.pathColumn.MinimumWidth = 6;
+            this.pathColumn.Name = "pathColumn";
+            this.pathColumn.ReadOnly = true;
             // 
             // Qlysanpham
             // 
@@ -533,7 +561,8 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -562,13 +591,14 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private Guna.UI2.WinForms.Guna2TextBox guna2TextBox4;
         private System.Windows.Forms.Label label1;
-        private Guna.UI2.WinForms.Guna2AnimateWindow guna2AnimateWindow1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn STT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private Guna.UI2.WinForms.Guna2Button cancelButton;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.ErrorProvider errorProvider2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn typeColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn priceColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn quanColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pathColumn;
     }
 }

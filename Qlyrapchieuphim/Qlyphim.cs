@@ -15,6 +15,7 @@ using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using Microsoft.Data.SqlClient;
 using System.IO;
+using System.Drawing.Imaging;
 
 
 namespace Qlyrapchieuphim
@@ -96,6 +97,7 @@ namespace Qlyrapchieuphim
             comm.Parameters.Add("@THOILUONG", SqlDbType.Float).Value = float.Parse(thoiluong.Text);
             comm.Parameters.Add("@MOTA", SqlDbType.NVarChar).Value = mota.Text;
             comm.Parameters.Add("@TRANGTHAI", SqlDbType.NVarChar).Value = trangthai.Text;
+            SaveImage();
             comm.Parameters.Add("@POSTER_URL", SqlDbType.VarChar).Value = poster_url;
             try
             {
@@ -152,7 +154,7 @@ namespace Qlyrapchieuphim
 
         private void UpdateButton_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedRows.Count == 0)
+            if (string.IsNullOrEmpty(idphim.Text))
             {
                 MessageBox.Show("Vui lòng chọn một dòng để cập nhật.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
@@ -203,11 +205,30 @@ namespace Qlyrapchieuphim
             comm.Parameters.Add("@THOILUONG", SqlDbType.Float).Value = float.Parse(thoiluong.Text);
             comm.Parameters.Add("@MOTA", SqlDbType.NVarChar).Value = mota.Text;
             comm.Parameters.Add("@TRANGTHAI", SqlDbType.NVarChar).Value = trangthai.Text;
+            SaveImage();
             comm.Parameters.Add("POSTER_URL", SqlDbType.VarChar).Value = poster_url;
-            comm.ExecuteNonQuery();
+            try
+            {
+                comm.ExecuteNonQuery();
+                LoadData();
+                Reset();
+            }
+            catch (SqlException ex)
+            {
+                switch (ex.Number)
+                {
+                    case 2627:
+                        MessageBox.Show(
+                            "ID phim không được trùng nhau!",
+                            "Lỗi nhập liệu",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Warning);
+                        break;
+                    default:
+                        throw;
+                }
+            }
             conn.Close();
-            LoadData();
-            Reset();
 
         }
         private void PrintToTextBoxes(int row)
@@ -252,6 +273,10 @@ namespace Qlyrapchieuphim
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Error);
                     }
+                }
+                else
+                {
+                    pictureBox1.Image = null;
                 }
             }
             check = true;
@@ -408,7 +433,50 @@ namespace Qlyrapchieuphim
             var headerBounds = new Rectangle(e.RowBounds.Left, e.RowBounds.Top, grid.RowHeadersWidth, e.RowBounds.Height);
             e.Graphics.DrawString(rowIdx, this.Font, SystemBrushes.ControlText, headerBounds, centerFormat);
         }
+        private void SaveImage()
+        {
+            try
+            {
+                // 1. Kiểm tra xem PictureBox có hình ảnh không
+                if (pictureBox1.Image == null)
+                {
+                    pictureBox1.Image = SystemIcons.Error.ToBitmap();
+                    return;
+                }
 
+                // 2. Tạo đường dẫn đến thư mục "New folder" trong thư mục dự án
+
+                string newFolderPath = Path.Combine(projectFolder, "posters");
+
+                // Tạo thư mục nếu nó chưa tồn tại
+                if (!Directory.Exists(newFolderPath))
+                {
+                    Directory.CreateDirectory(newFolderPath);
+                }
+
+                // 3. Tạo tên file hình ảnh (ví dụ: image.png)
+                ImageFormat imageFormat = pictureBox1.Image.RawFormat;
+                string fileName = idphim.Text + "." + new ImageFormatConverter().ConvertToString(imageFormat).ToLower(); // Tên file hình ảnh (bạn có thể thay đổi tên này)
+                string fullPath = Path.Combine(newFolderPath, fileName);
+                //delete if existing
+                if (File.Exists(fullPath))
+                    File.Delete(fullPath);
+                // 4. Lưu hình ảnh từ PictureBox vào thư mục
+                using (FileStream stream = new FileStream(fullPath, FileMode.Create, FileAccess.ReadWrite))
+                {
+                    //take image format and save in that format
+                    Bitmap img = new Bitmap(pictureBox1.Image);
+                    img.Save(stream, imageFormat);
+                    poster_url = Path.Combine("posters", fileName);
+                }
+
+                //MessageBox.Show("Hình ảnh đã được lưu thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Có lỗi xảy ra: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
         private void AddPosterButton_Click(object sender, EventArgs e)
         {
             try
@@ -438,49 +506,12 @@ namespace Qlyrapchieuphim
             {
                 MessageBox.Show($"Có lỗi xảy ra: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            try
-            {
-                // 1. Kiểm tra xem PictureBox có hình ảnh không
-                if (pictureBox1.Image == null)
-                {
-                    pictureBox1.Image = SystemIcons.Error.ToBitmap();
-                    return;
-                }
-
-                // 2. Tạo đường dẫn đến thư mục "New folder" trong thư mục dự án
-                
-                string newFolderPath = Path.Combine(projectFolder, "posters");
-
-                // Tạo thư mục nếu nó chưa tồn tại
-                if (!Directory.Exists(newFolderPath))
-                {
-                    Directory.CreateDirectory(newFolderPath);
-                }
-
-                // 3. Tạo tên file hình ảnh (ví dụ: image.png)
-                string fileName = idphim.Text + ".png"; // Tên file hình ảnh (bạn có thể thay đổi tên này)
-                string fullPath = Path.Combine(newFolderPath, fileName);
-                //delete if existing
-                if (File.Exists(fullPath))
-                    File.Delete(fullPath);
-                // 4. Lưu hình ảnh từ PictureBox vào thư mục
-                using (FileStream stream = new FileStream(fullPath, FileMode.Create, FileAccess.ReadWrite))
-                {
-                    pictureBox1.Image.Save(stream, System.Drawing.Imaging.ImageFormat.Png);
-                    poster_url = Path.Combine("posters", fileName);
-                }
-                
-                //MessageBox.Show("Hình ảnh đã được lưu thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Có lỗi xảy ra: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            
         }
 
-        private void panel2_Paint(object sender, PaintEventArgs e)
+        private void cancelButton_Click(object sender, EventArgs e)
         {
-
+            Reset();
         }
     }
 }

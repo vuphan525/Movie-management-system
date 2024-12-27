@@ -16,6 +16,7 @@ namespace Qlyrapchieuphim
 {
     public partial class Qlynhansu : UserControl
     {
+        string ConnString = ConfigurationManager.ConnectionStrings["ConnString"].ConnectionString;
         public Qlynhansu()
         {
             InitializeComponent();
@@ -27,7 +28,7 @@ namespace Qlyrapchieuphim
             string[] trt = new string[] { "Nghỉ việc", "Đang làm việc", "Tạm thời" };
             trangthai.Items.AddRange(trt);
         }
-        string ConnString = ConfigurationManager.ConnectionStrings["ConnString"].ConnectionString;
+        
         private void LoadData()
         {
             SqlConnection conn = new SqlConnection(ConnString);
@@ -110,7 +111,7 @@ namespace Qlyrapchieuphim
             dataGridView1.AutoSize = false;
             SearchTextBox.Text = "Tìm kiếm theo tên";
             SearchTextBox.ForeColor = Color.Gray;
-            ngaysinh.Value = DateTime.Now;
+            ngaysinh.Value = DateTime.Today.Subtract(TimeSpan.FromDays(365 * 19));
             LoadData();
             dataGridView1.ClearSelection();
         }
@@ -118,7 +119,7 @@ namespace Qlyrapchieuphim
         private void capnhat_Click(object sender, EventArgs e)
         {
 
-            if (dataGridView1.SelectedRows.Count == 0)
+            if (string.IsNullOrEmpty(manv.Text))
             {
                 MessageBox.Show("Vui lòng chọn một dòng để cập nhật.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
@@ -166,10 +167,28 @@ namespace Qlyrapchieuphim
             cmd.Parameters.Add("@email", SqlDbType.VarChar).Value = email.Text;
             cmd.Parameters.Add("@ngsinh", SqlDbType.Date).Value = ngaysinh.Value;
             cmd.Parameters.Add("@trthai", SqlDbType.NVarChar).Value = trangthai.Text;
-            cmd.ExecuteNonQuery();
+            try
+            {
+                cmd.ExecuteNonQuery();
+                LoadData();
+                Reset();
+            }
+            catch (SqlException ex)
+            {
+                switch (ex.Number)
+                {
+                    case 2627:
+                        MessageBox.Show(
+                            "Mã nhân viên không được trùng nhau!",
+                            "Lỗi nhập liệu",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Warning);
+                        break;
+                    default:
+                        throw;
+                }
+            }
             conn.Close();
-            LoadData();
-            Reset();
         }
         private void Reset()
         {
@@ -179,7 +198,7 @@ namespace Qlyrapchieuphim
             sodienthoai.Clear();
             email.Clear();
             trangthai.SelectedIndex = 1;
-            ngaysinh.Value = DateTime.Now;
+            ngaysinh.Value = DateTime.Today.Subtract(TimeSpan.FromDays(365 * 19));
             dataGridView1.ClearSelection();
         }
         private void xoa_Click(object sender, EventArgs e)
@@ -300,6 +319,11 @@ namespace Qlyrapchieuphim
 
             var headerBounds = new Rectangle(e.RowBounds.Left, e.RowBounds.Top, grid.RowHeadersWidth, e.RowBounds.Height);
             e.Graphics.DrawString(rowIdx, this.Font, SystemBrushes.ControlText, headerBounds, centerFormat);
+        }
+
+        private void cancelButton_Click(object sender, EventArgs e)
+        {
+            Reset();
         }
     }
 }
