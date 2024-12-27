@@ -159,10 +159,10 @@ namespace Qlyrapchieuphim
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Error);
                     }
-                    else
-                    {
-                        pictureBox1.Image =  null;
-                    }
+                }
+                else
+                {
+                    pictureBox1.Image = null;
                 }
             }
         }
@@ -305,6 +305,8 @@ namespace Qlyrapchieuphim
             giatien.Clear();
             soluong.Clear();
             dataGridView1.ClearSelection();
+            pictureBox1.Image = null;
+            picture_url = string.Empty;
         }
 
         private void guna2TextBox4_TextChanged(object sender, EventArgs e)

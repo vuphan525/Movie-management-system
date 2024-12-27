@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Guna.UI2.WinForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,13 @@ namespace Qlyrapchieuphim
 {
     public partial class Sanpham : UserControl
     {
+        public Label Ten { get { return name; } }
+        public Label Gia { get { return price; } }
+        public Guna2PictureBox img { get { return image; } }
         public Sanpham()
         {
             InitializeComponent();
+            img.SizeMode= PictureBoxSizeMode.Zoom;
         }
     }
 }

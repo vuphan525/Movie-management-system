@@ -16,5 +16,18 @@ namespace Qlyrapchieuphim
         {
             InitializeComponent();
         }
+        public Label message { get { return label1; } }
+
+        private void thanhtoan_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.Yes;
+            this.Close();
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.No;
+            this.Close();
+        }
     }
 }

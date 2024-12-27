@@ -38,9 +38,13 @@ namespace Qlyrapchieuphim
         private void button1_Click(object sender, EventArgs e)
         {
             YesNofrm yesNofrm = new YesNofrm();
+            yesNofrm.message.Text = "Bạn có muốn thoát";
             yesNofrm.ShowDialog();
-            yesNofrm.Text = "Bạn có muốn thoát";
-
+            DialogResult = yesNofrm.DialogResult;
+            if (DialogResult == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
         }
 
         private void guna2Button1_Click(object sender, EventArgs e)

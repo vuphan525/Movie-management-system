@@ -30,70 +30,75 @@
         {
             this.components = new System.ComponentModel.Container();
             this.guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
+            this.price = new System.Windows.Forms.Label();
+            this.name = new System.Windows.Forms.Label();
             this.guna2ShadowForm1 = new Guna.UI2.WinForms.Guna2ShadowForm(this.components);
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.image = new Guna.UI2.WinForms.Guna2PictureBox();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.label2 = new System.Windows.Forms.Label();
             this.guna2ShadowPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.image)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2ShadowPanel1
             // 
             this.guna2ShadowPanel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ShadowPanel1.Controls.Add(this.label2);
-            this.guna2ShadowPanel1.Controls.Add(this.label1);
+            this.guna2ShadowPanel1.Controls.Add(this.price);
+            this.guna2ShadowPanel1.Controls.Add(this.name);
             this.guna2ShadowPanel1.FillColor = System.Drawing.Color.White;
-            this.guna2ShadowPanel1.Location = new System.Drawing.Point(13, 56);
+            this.guna2ShadowPanel1.Location = new System.Drawing.Point(10, 46);
+            this.guna2ShadowPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.guna2ShadowPanel1.Name = "guna2ShadowPanel1";
             this.guna2ShadowPanel1.ShadowColor = System.Drawing.Color.Black;
-            this.guna2ShadowPanel1.Size = new System.Drawing.Size(176, 132);
+            this.guna2ShadowPanel1.Size = new System.Drawing.Size(132, 107);
             this.guna2ShadowPanel1.TabIndex = 0;
             // 
-            // guna2PictureBox1
+            // price
             // 
-            this.guna2PictureBox1.BackColor = System.Drawing.Color.White;
-            this.guna2PictureBox1.Image = global::Qlyrapchieuphim.Properties.Resources.bussiness_man;
-            this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(53, 0);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(97, 81);
-            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox1.TabIndex = 1;
-            this.guna2PictureBox1.TabStop = false;
+            this.price.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.price.Location = new System.Drawing.Point(2, 75);
+            this.price.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.price.Name = "price";
+            this.price.Size = new System.Drawing.Size(124, 25);
+            this.price.TabIndex = 1;
+            this.price.Text = "200";
+            this.price.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label1
+            // name
             // 
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(3, 40);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(166, 43);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Tên SP";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.name.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.name.Location = new System.Drawing.Point(2, 32);
+            this.name.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.name.Name = "name";
+            this.name.Size = new System.Drawing.Size(124, 35);
+            this.name.TabIndex = 0;
+            this.name.Text = "Tên SP";
+            this.name.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label2
+            // image
             // 
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(3, 92);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(166, 31);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "200";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.image.BackColor = System.Drawing.Color.White;
+            this.image.Image = global::Qlyrapchieuphim.Properties.Resources.bussiness_man;
+            this.image.ImageRotate = 0F;
+            this.image.Location = new System.Drawing.Point(15, 10);
+            this.image.Margin = new System.Windows.Forms.Padding(2);
+            this.image.Name = "image";
+            this.image.Size = new System.Drawing.Size(121, 66);
+            this.image.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.image.TabIndex = 1;
+            this.image.TabStop = false;
             // 
             // Sanpham
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.guna2PictureBox1);
+            this.Controls.Add(this.image);
             this.Controls.Add(this.guna2ShadowPanel1);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Sanpham";
-            this.Size = new System.Drawing.Size(201, 196);
+            this.Size = new System.Drawing.Size(151, 159);
             this.guna2ShadowPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.image)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -102,9 +107,9 @@
 
         private Guna.UI2.WinForms.Guna2ShadowPanel guna2ShadowPanel1;
         private Guna.UI2.WinForms.Guna2ShadowForm guna2ShadowForm1;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private Guna.UI2.WinForms.Guna2PictureBox image;
+        private System.Windows.Forms.Label price;
+        private System.Windows.Forms.Label name;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }
