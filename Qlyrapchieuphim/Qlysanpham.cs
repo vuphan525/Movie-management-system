@@ -105,7 +105,7 @@ namespace Qlyrapchieuphim
                 {
                     case 2627:
                         MessageBox.Show(
-                            "ID phim không được trùng nhau!",
+                            "ID sản phẩm không được trùng nhau!",
                             "Lỗi nhập liệu",
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Warning);

@@ -7,16 +7,104 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Configuration;
+using Microsoft.Data.SqlClient;
 
 namespace Qlyrapchieuphim
 {
     public partial class Banve : UserControl
     {
+        string ConnString = ConfigurationManager.ConnectionStrings["ConnString"].ConnectionString;
         public Banve()
         {
             InitializeComponent();
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
+        private bool CheckMovie()
+        {
+            int count;
+            SqlConnection conn = new SqlConnection(ConnString);
+            conn.Open();
+            string SqlQuery = "SELECT COUNT(*) FROM BOPHIM";
+            SqlCommand countCmd = new SqlCommand(SqlQuery, conn);
+            count = (int)countCmd.ExecuteScalar();
 
+            if (count > 0)
+            {
+                tenphim.Enabled = true;
+                errorProvider1.Clear();
+                SqlQuery = "SELECT MAPHIM, TENPHIM FROM BOPHIM";
+                string[] movies = new string[count];
+                SqlCommand cmd = new SqlCommand(SqlQuery, conn);
+                SqlDataReader reader = cmd.ExecuteReader();
+                int i = 0;
+                while (reader.Read())
+                {
+                    movies[i] = reader.GetString(1) + " (ID: " + reader.GetString(0) + ")";
+                    i++;
+                }
+                tenphim.DataSource = movies;
+            }
+            else
+            {
+                tenphim.Enabled = false;
+                errorProvider1.SetError(tenphim, "Không có phim trong hệ thống!");
+            }
+            conn.Close();
+            if (count > 0)
+                return true;
+            else
+                return false;
+        }
+        private void LoadData()
+        {
+            SqlConnection conn = new SqlConnection(ConnString);
+            conn.Open();
+            string SqlQuery = "SELECT MASUATCHIEU, THOIGIANBATDAU, NGAYCHIEU, MAPHONG, sc.MAPHIM, TENPHIM " +
+                "FROM SUATCHIEU sc , BOPHIM p " +
+                "WHERE (sc.MAPHIM = p.MAPHIM)";
+            SqlDataAdapter adapter = new SqlDataAdapter(SqlQuery, conn);
+            DataSet ds = new DataSet();
+            adapter.Fill(ds, "SUATCHIEU");
+            DataTable dt = ds.Tables["SUATCHIEU"];
+            //foreach (DataGridViewRow row in dataGridView1.Rows)
+            //{
+            //    if (!row.IsNewRow)
+            //    {
+            //        if (!row.IsNewRow)
+            //        {
+            //            int index = row.Index;
+            //            DateTime d;
+            //            DateTime t;
+            //            DateTime.TryParse(dt.Rows[index]["NGAYCHIEU"].ToString(), out DateTime dateFromRow);
+            //            d = dateFromRow;
+
+            //            TimeSpan.TryParse(dt.Rows[index]["THOIGIANBATDAU"].ToString(), out TimeSpan timeFromRow);
+            //            t = new DateTime(d.Ticks + timeFromRow.Ticks);
+                        
+            //            CurrencyManager currencyManager = (CurrencyManager)BindingContext[dataGridView1.DataSource];
+            //            currencyManager.SuspendBinding();
+            //            row.Cells["stateColumn"].Value = "Đang bán vé";
+            //            if (d.Date < DateTime.Today)
+            //            {
+            //                row.Cells["stateColumn"].Value = "Đã qua giờ bán vé";
+
+            //            }
+            //            else if (d.Date == DateTime.Today)
+            //            {
+            //                if (t.TimeOfDay.StripMilliseconds() <= DateTime.Now.TimeOfDay.StripMilliseconds())
+            //                {
+            //                    row.Cells["stateColumn"].Value = "Đã qua giờ bán vé";
+            //                }
+            //            }
+            //            currencyManager.ResumeBinding();
+            //        }
+            //    }
+            //}
+            dataGridView1.DataSource = dt;
+            conn.Close();
+            
+        }
         private void lvLichChieu_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -32,6 +120,71 @@ namespace Qlyrapchieuphim
             formbanve a= new formbanve();
             a.Show();
            
+        }
+
+        private void dataGridView1_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
+        {
+            var grid = sender as DataGridView;
+            var rowIdx = (e.RowIndex + 1).ToString();
+
+            var centerFormat = new StringFormat()
+            {
+                // right alignment might actually make more sense for numbers
+                Alignment = StringAlignment.Center,
+                LineAlignment = StringAlignment.Center
+            };
+
+            var headerBounds = new Rectangle(e.RowBounds.Left, e.RowBounds.Top, grid.RowHeadersWidth, e.RowBounds.Height);
+            e.Graphics.DrawString(rowIdx, this.Font, SystemBrushes.ControlText, headerBounds, centerFormat);
+        }
+
+        private void Banve_Load(object sender, EventArgs e)
+        {
+            LoadData();
+            if (CheckMovie())
+                tenphim.SelectedIndex = 0;
+        }
+        public bool issearch = false;
+        private void date_ValueChanged(object sender, EventArgs e)
+        {
+            DateTime a = date.Value.Date;
+            DataTable dt = dataGridView1.DataSource as DataTable;
+
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                if (!row.IsNewRow)
+                {
+                    int index = row.Index;
+                    if (!DateTime.TryParse(dt.Rows[index]["NGAYCHIEU"].ToString(), out DateTime dateFromRow))
+                    {
+                        MessageBox.Show(
+                            "Không thể đọc ngày chiếu",
+                            "Lỗi dữ liệu",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Error);
+                    }
+                    CurrencyManager currencyManager = (CurrencyManager)BindingContext[dataGridView1.DataSource];
+                    currencyManager.SuspendBinding();
+                    if (dateFromRow.Date == a)
+                    {
+                        row.Visible = true;
+                    }
+                    else
+                    {
+                        row.Visible = false;
+                    }
+                    currencyManager.ResumeBinding();
+                }
+            }
+            dataGridView1.ClearSelection();
+        }
+
+        private void cancelSearch_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                row.Visible = true;
+            }
         }
     }
 }

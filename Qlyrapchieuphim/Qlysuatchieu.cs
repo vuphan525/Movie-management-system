@@ -120,11 +120,20 @@ namespace Qlyrapchieuphim
                     MessageBoxIcon.Information);
                 return;
             }
-           if (ngaychieu.Value <= DateTime.Now.Date)
+            if (ngaychieu.Value.Date < DateTime.Today)
+            {
+                MessageBox.Show("Ngày chiếu và giờ chiếu phải lớn hơn ngày giờ hiện tại!",
+                "Lỗi nhập liệu",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Warning);
+                return;
+
+            }
+            else if (ngaychieu.Value.Date == DateTime.Today)
             {
                 if (giochieu.Value.TimeOfDay.StripMilliseconds() <= DateTime.Now.TimeOfDay.StripMilliseconds())
                 {
-                    MessageBox.Show("Ngày chiếu và giờ chiếu phải lớn hơn ngày giờ hiện tại!",
+                    MessageBox.Show("Giờ chiếu phải lớn hơn ngày giờ hiện tại!",
                     "Lỗi nhập liệu",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Warning);
@@ -201,11 +210,20 @@ namespace Qlyrapchieuphim
         private void them_Click(object sender, EventArgs e)
         {
 
-            if (ngaychieu.Value <= DateTime.Now.Date)
+            if (ngaychieu.Value.Date < DateTime.Today)
+            {
+                MessageBox.Show("Ngày chiếu và giờ chiếu phải lớn hơn ngày giờ hiện tại!",
+                "Lỗi nhập liệu",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Warning);
+                return;
+
+            }
+            else if (ngaychieu.Value.Date == DateTime.Today)
             {
                 if (giochieu.Value.TimeOfDay.StripMilliseconds() <= DateTime.Now.TimeOfDay.StripMilliseconds())
                 {
-                    MessageBox.Show("Ngày chiếu và giờ chiếu phải lớn hơn ngày giờ hiện tại!",
+                    MessageBox.Show("Giờ chiếu phải lớn hơn ngày giờ hiện tại!",
                     "Lỗi nhập liệu",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Warning);
@@ -251,6 +269,7 @@ namespace Qlyrapchieuphim
                     "Lỗi nhập liệu",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Warning);
+                return;
             }
             //SQL section
             SqlConnection conn = new SqlConnection(ConnString);
