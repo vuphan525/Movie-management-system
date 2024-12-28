@@ -469,6 +469,5 @@ namespace Qlyrapchieuphim
             e.Graphics.DrawString(rowIdx, this.Font, SystemBrushes.ControlText, headerBounds, centerFormat);
         }
 
-        
     }
 }

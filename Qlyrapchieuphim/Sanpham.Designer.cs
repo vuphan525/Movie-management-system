@@ -97,6 +97,9 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Sanpham";
             this.Size = new System.Drawing.Size(151, 159);
+            this.Click += new System.EventHandler(this.Sanpham_Click);
+            this.MouseLeave += new System.EventHandler(this.Sanpham_MouseLeave);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Sanpham_MouseMove);
             this.guna2ShadowPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.image)).EndInit();
             this.ResumeLayout(false);
