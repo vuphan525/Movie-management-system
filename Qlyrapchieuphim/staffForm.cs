@@ -50,11 +50,5 @@ namespace Qlyrapchieuphim
             banve1.Show();
             bangdieukhien1.Hide();
         }
-
-        private void guna2Button2_Click(object sender, EventArgs e)
-        {
-            Bansanpham bansanpham = new Bansanpham();
-            bansanpham.Show();
-        }
     }
 }
