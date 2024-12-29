@@ -19,6 +19,8 @@ namespace Qlyrapchieuphim
         {
             InitializeComponent();
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            date.Visible = false;
+            label4.Visible = false;
         }
         private bool CheckMovie()
         {
@@ -143,48 +145,108 @@ namespace Qlyrapchieuphim
             LoadData();
             if (CheckMovie())
                 tenphim.SelectedIndex = 0;
+            date.Value = DateTime.Today;
         }
         public bool issearch = false;
-        private void date_ValueChanged(object sender, EventArgs e)
+        private void Search_Click(object sender, EventArgs e)
         {
-            DateTime a = date.Value.Date;
-            DataTable dt = dataGridView1.DataSource as DataTable;
-
-            foreach (DataGridViewRow row in dataGridView1.Rows)
+            if (!issearch)
             {
-                if (!row.IsNewRow)
+                date.Visible = true;
+                label4.Visible = true;
+                Search.Text = "Hủy tìm kiếm";
+                issearch = true;
+                DateTime a = date.Value.Date;
+                DataTable dt = dataGridView1.DataSource as DataTable;
+
+                foreach (DataGridViewRow row in dataGridView1.Rows)
                 {
-                    int index = row.Index;
-                    if (!DateTime.TryParse(dt.Rows[index]["NGAYCHIEU"].ToString(), out DateTime dateFromRow))
+                    if (!row.IsNewRow)
                     {
-                        MessageBox.Show(
-                            "Không thể đọc ngày chiếu",
-                            "Lỗi dữ liệu",
-                            MessageBoxButtons.OK,
-                            MessageBoxIcon.Error);
+                        int index = row.Index;
+                        if (!DateTime.TryParse(dt.Rows[index]["NGAYCHIEU"].ToString(), out DateTime dateFromRow))
+                        {
+                            MessageBox.Show(
+                                "Không thể đọc ngày chiếu",
+                                "Lỗi dữ liệu",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
+                        }
+                        CurrencyManager currencyManager = (CurrencyManager)BindingContext[dataGridView1.DataSource];
+                        currencyManager.SuspendBinding();
+                        if (dateFromRow.Date == a)
+                        {
+                            row.Visible = true;
+                        }
+                        else
+                        {
+                            row.Visible = false;
+                        }
+                        currencyManager.ResumeBinding();
                     }
-                    CurrencyManager currencyManager = (CurrencyManager)BindingContext[dataGridView1.DataSource];
-                    currencyManager.SuspendBinding();
-                    if (dateFromRow.Date == a)
-                    {
-                        row.Visible = true;
-                    }
-                    else
-                    {
-                        row.Visible = false;
-                    }
-                    currencyManager.ResumeBinding();
+                }
+                dataGridView1.ClearSelection();
+            }
+            else
+            {
+                Search.Text = "Tìm kiếm suất chiếu";
+                date.Visible = false;
+                label4.Visible= false;
+                issearch = false;
+                date.Value = DateTime.Today;
+                foreach (DataGridViewRow row in dataGridView1.Rows)
+                {
+                    row.Visible = true;
                 }
             }
-            dataGridView1.ClearSelection();
+        }
+        private void date_ValueChanged(object sender, EventArgs e)
+        {
+            
+            if (issearch)
+            {
+                DateTime a = date.Value.Date;
+                DataTable dt = dataGridView1.DataSource as DataTable;
+                foreach (DataGridViewRow row in dataGridView1.Rows)
+                {
+                    if (!row.IsNewRow)
+                    {
+                        int index = row.Index;
+                        if (!DateTime.TryParse(dt.Rows[index]["NGAYCHIEU"].ToString(), out DateTime dateFromRow))
+                        {
+                            MessageBox.Show(
+                                "Không thể đọc ngày chiếu",
+                                "Lỗi dữ liệu",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
+                        }
+                        CurrencyManager currencyManager = (CurrencyManager)BindingContext[dataGridView1.DataSource];
+                        currencyManager.SuspendBinding();
+                        if (dateFromRow.Date == a)
+                        {
+                            row.Visible = true;
+                        }
+                        else
+                        {
+                            row.Visible = false;
+                        }
+                        currencyManager.ResumeBinding();
+                    }
+                }
+                dataGridView1.ClearSelection();
+            }
+            else
+            {
+                foreach (DataGridViewRow row in dataGridView1.Rows)
+                {
+                    row.Visible = true;
+                }
+            }
         }
 
-        private void cancelSearch_Click(object sender, EventArgs e)
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            foreach (DataGridViewRow row in dataGridView1.Rows)
-            {
-                row.Visible = true;
-            }
+            //formbanve bv = new formbanve();
         }
     }
 }

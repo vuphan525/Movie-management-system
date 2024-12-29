@@ -17,7 +17,7 @@ namespace Qlyrapchieuphim
         public List<Guna2Button> selected = new List<Guna2Button>();
         public List<Guna2Button> vip = new List<Guna2Button>();
         public List<Guna2Button> vipcount = new List<Guna2Button>();
-
+        public string MASUATCHIEU;
         public formbanve()
         {
             InitializeComponent();
@@ -27,7 +27,17 @@ namespace Qlyrapchieuphim
            tongtien.Text = "0 VND";
             cantra.Text = "0 VND";
         }
-
+        public formbanve(string masc)
+        {
+            InitializeComponent();
+            InitializeSeats();
+            MASUATCHIEU = masc;
+            lblRoom.Text = "Phòng chiếu: " + masc;
+            sinhvien.Text = "0";
+            treem.Text = "0";
+            tongtien.Text = "0 VND";
+            cantra.Text = "0 VND";
+        }
         private void InitializeSeats()
         {
             foreach (Control control in flowLayoutPanel1.Controls)

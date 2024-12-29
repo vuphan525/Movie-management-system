@@ -30,8 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.Search = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.tenphim = new Guna.UI2.WinForms.Guna2ComboBox();
             this.date = new Guna.UI2.WinForms.Guna2DateTimePicker();
@@ -39,12 +41,11 @@
             this.label4 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.cancelSearch = new Guna.UI2.WinForms.Guna2Button();
             this.idColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NGAYCHIEU = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.movidColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.roomColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.movieColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NGAYCHIEU = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.timeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stateColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
@@ -67,7 +68,7 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(248)))));
-            this.groupBox1.Controls.Add(this.cancelSearch);
+            this.groupBox1.Controls.Add(this.Search);
             this.groupBox1.Controls.Add(this.guna2Button1);
             this.groupBox1.Controls.Add(this.tenphim);
             this.groupBox1.Controls.Add(this.date);
@@ -81,6 +82,23 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Chi tiết";
             // 
+            // Search
+            // 
+            this.Search.BorderRadius = 20;
+            this.Search.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.Search.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.Search.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.Search.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.Search.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.Search.ForeColor = System.Drawing.Color.White;
+            this.Search.Location = new System.Drawing.Point(103, 31);
+            this.Search.Margin = new System.Windows.Forms.Padding(2);
+            this.Search.Name = "Search";
+            this.Search.Size = new System.Drawing.Size(135, 37);
+            this.Search.TabIndex = 53;
+            this.Search.Text = "Tìm kiếm suất chiếu";
+            this.Search.Click += new System.EventHandler(this.Search_Click);
+            // 
             // guna2Button1
             // 
             this.guna2Button1.BorderRadius = 20;
@@ -91,7 +109,7 @@
             this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button1.ForeColor = System.Drawing.Color.White;
             this.guna2Button1.Location = new System.Drawing.Point(59, 251);
-            this.guna2Button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2Button1.Margin = new System.Windows.Forms.Padding(2);
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.Size = new System.Drawing.Size(135, 37);
             this.guna2Button1.TabIndex = 52;
@@ -157,50 +175,43 @@
             // dataGridView1
             // 
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(61)))), ((int)(((byte)(204)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idColumn,
-            this.NGAYCHIEU,
             this.movidColumn,
             this.roomColumn,
             this.movieColumn,
+            this.NGAYCHIEU,
             this.timeColumn,
             this.stateColumn});
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.Location = new System.Drawing.Point(333, 78);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(775, 598);
             this.dataGridView1.TabIndex = 13;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dataGridView1_RowPostPaint);
             // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
-            // 
-            // cancelSearch
-            // 
-            this.cancelSearch.BorderRadius = 20;
-            this.cancelSearch.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.cancelSearch.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.cancelSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.cancelSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.cancelSearch.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.cancelSearch.ForeColor = System.Drawing.Color.White;
-            this.cancelSearch.Location = new System.Drawing.Point(172, 31);
-            this.cancelSearch.Margin = new System.Windows.Forms.Padding(2);
-            this.cancelSearch.Name = "cancelSearch";
-            this.cancelSearch.Size = new System.Drawing.Size(135, 37);
-            this.cancelSearch.TabIndex = 53;
-            this.cancelSearch.Text = "Huỷ tìm kiếm";
-            this.cancelSearch.Click += new System.EventHandler(this.cancelSearch_Click);
             // 
             // idColumn
             // 
@@ -209,14 +220,6 @@
             this.idColumn.Name = "idColumn";
             this.idColumn.ReadOnly = true;
             this.idColumn.Visible = false;
-            // 
-            // NGAYCHIEU
-            // 
-            this.NGAYCHIEU.DataPropertyName = "NGAYCHIEU";
-            this.NGAYCHIEU.HeaderText = "NGAYCHIEU";
-            this.NGAYCHIEU.Name = "NGAYCHIEU";
-            this.NGAYCHIEU.ReadOnly = true;
-            this.NGAYCHIEU.Visible = false;
             // 
             // movidColumn
             // 
@@ -239,6 +242,13 @@
             this.movieColumn.HeaderText = "Tên Phim";
             this.movieColumn.Name = "movieColumn";
             this.movieColumn.ReadOnly = true;
+            // 
+            // NGAYCHIEU
+            // 
+            this.NGAYCHIEU.DataPropertyName = "NGAYCHIEU";
+            this.NGAYCHIEU.HeaderText = "Ngày Chiếu";
+            this.NGAYCHIEU.Name = "NGAYCHIEU";
+            this.NGAYCHIEU.ReadOnly = true;
             // 
             // timeColumn
             // 
@@ -282,12 +292,12 @@
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.ErrorProvider errorProvider1;
-        private Guna.UI2.WinForms.Guna2Button cancelSearch;
+        private Guna.UI2.WinForms.Guna2Button Search;
         private System.Windows.Forms.DataGridViewTextBoxColumn idColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NGAYCHIEU;
         private System.Windows.Forms.DataGridViewTextBoxColumn movidColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn roomColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn movieColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NGAYCHIEU;
         private System.Windows.Forms.DataGridViewTextBoxColumn timeColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn stateColumn;
     }

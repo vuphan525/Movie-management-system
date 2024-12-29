@@ -272,7 +272,9 @@ namespace Qlyrapchieuphim
                 return;
             }
             //SQL section
+                //add entry
             SqlConnection conn = new SqlConnection(ConnString);
+            string id = idTextBox.Text;
             conn.Open();
             string SqlQuery = "INSERT INTO SUATCHIEU VALUES (@masc, @tgbd, @ngchieu, @maphong, @maphim)";
             SqlCommand cmd = new SqlCommand(SqlQuery, conn);
@@ -305,6 +307,35 @@ namespace Qlyrapchieuphim
                         throw;
                 }
             }
+            //add table for logging seats
+            SqlQuery = "CREATE TABLE S_";
+            SqlQuery += id.Trim();
+            SqlQuery += " (" +
+                "SeatName varchar(4) PRIMARY KEY, " +
+                "CellValue bit DEFAULT 0," +
+                ") ON [PRIMARY]; " +
+                "CREATE UNIQUE NONCLUSTERED INDEX ";
+            SqlQuery += "IX_S" + id.Trim();
+            SqlQuery += " ON dbo.S_";
+            SqlQuery += id.Trim();
+            SqlQuery += " " +
+                        "(SeatName); ";
+            cmd = new SqlCommand(SqlQuery, conn);
+            cmd.ExecuteNonQuery();
+            for (char c = 'A'; c <= 'J'; c++)
+            {
+                for (int i = 1; i <= 14; i++)
+                {
+                    SqlQuery = "INSERT INTO S_";
+                    SqlQuery += id.Trim();
+                    SqlQuery += " VALUES(@seat, @bit)";
+                    cmd = new SqlCommand(SqlQuery, conn);
+                    cmd.Parameters.Add("@seat", SqlDbType.VarChar).Value = c.ToString() + i.ToString();
+                    cmd.Parameters.Add("@bit", SqlDbType.Bit).Value = false;
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            
             conn.Close();
         }
         void Updatea()
@@ -315,7 +346,7 @@ namespace Qlyrapchieuphim
                 tenphim.SelectedIndex = 0;
             phongchieu.SelectedIndex = 0;
             ngaychieu.Value = DateTime.Now;
-            giochieu.Value = DateTime.Now;
+            giochieu.Value = DateTime.Now + TimeSpan.FromHours(1);
             dataGridView1.ClearSelection();
         }
 
@@ -339,6 +370,11 @@ namespace Qlyrapchieuphim
                         string SqlQuery = "DELETE FROM SUATCHIEU WHERE MASUATCHIEU = @tempid";
                         SqlCommand cmd = new SqlCommand(SqlQuery, conn);
                         cmd.Parameters.Add("@tempid", SqlDbType.Char).Value = temp_id;
+                        cmd.ExecuteNonQuery();
+
+                        //delete seatlog from database
+                        SqlQuery = "DROP TABLE S_" + temp_id.Trim();
+                        cmd = new SqlCommand(SqlQuery, conn);
                         cmd.ExecuteNonQuery();
                     }
                     conn.Close();
@@ -368,7 +404,7 @@ namespace Qlyrapchieuphim
             
             dataGridView1.AutoSize = false;
             
-            giochieu.Value = DateTime.Now;
+            giochieu.Value = DateTime.Now + TimeSpan.FromHours(1);
             ngaychieu.Value = DateTime.Now;
             if (CheckMovie())
                 tenphim.SelectedIndex = 0;
@@ -523,7 +559,7 @@ namespace Qlyrapchieuphim
     {
         public static TimeSpan StripMilliseconds(this TimeSpan time)
         {
-            return new TimeSpan(time.Days, time.Hours, time.Minutes, time.Seconds);
+            return new TimeSpan(time.Hours, time.Minutes, time.Seconds);
         }
 
         
