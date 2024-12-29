@@ -246,7 +246,12 @@ namespace Qlyrapchieuphim
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            //formbanve bv = new formbanve();
+            DataTable dt = dataGridView1.DataSource as DataTable;
+            if (e.RowIndex >= 0)
+            {
+                formbanve bv = new formbanve(dt.Rows[e.RowIndex]["MAPHONG"].ToString());
+                bv.Show();
+            }
         }
     }
 }
