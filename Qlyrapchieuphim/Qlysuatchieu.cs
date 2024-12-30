@@ -195,7 +195,7 @@ namespace Qlyrapchieuphim
                 {
                     case 2627:
                         MessageBox.Show(
-                            "Mã suất chiếu không được trùng nhau!",
+                            "Mã suất chiếu, ngày chiếu, giờ chiếu và phòng chiếu không được trùng nhau!",
                             "Lỗi nhập liệu",
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Warning);
@@ -298,7 +298,7 @@ namespace Qlyrapchieuphim
                 {
                     case 2627:
                         MessageBox.Show(
-                            "Mã suất chiếu không được trùng nhau!",
+                            "Mã suất chiếu, ngày chiếu, giờ chiếu và phòng chiếu không được trùng nhau!",
                             "Lỗi nhập liệu",
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Warning);

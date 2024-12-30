@@ -882,14 +882,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Qlyrapchieuphim.exe" size="4060640">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Qlyrapchieuphim.exe" size="4073440">
       <assemblyIdentity name="Qlyrapchieuphim" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>o6TFFFagKY2NazY0QQPKdns+07cD39u13L4cMyzUCLY=</dsig:DigestValue>
+        <dsig:DigestValue>vMpDPsIAoQe/gXT9EkqZCru+06rQU3Gc66ySR/FLuIg=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -1127,7 +1127,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>wWTnEMW47IQTdzDdYVib/eAKj/utUa+UOhiJT2zhJh8=</dsig:DigestValue>
+      <dsig:DigestValue>edT4/6+HYbKfKPwV8sVN2NYk1dFfuJkD65Unn+kRA1s=</dsig:DigestValue>
     </hash>
   </file>
   <file name="database\QL_log.ldf" size="8388608" writeableType="applicationData">
@@ -1136,7 +1136,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>TNLN7LKhNbjsmpYrp9TvQobhBI0HdAAy825NIPTb8/Q=</dsig:DigestValue>
+      <dsig:DigestValue>IoynxL8JZefwgVO5gknNFjXoUgWJXzRF8Ny+8z1ofp8=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Microsoft.Data.SqlClient.SNI.arm64.dll" size="491952">

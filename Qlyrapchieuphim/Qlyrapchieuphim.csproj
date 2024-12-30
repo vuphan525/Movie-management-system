@@ -235,6 +235,12 @@
     <Compile Include="dangky.Designer.cs">
       <DependentUpon>dangky.cs</DependentUpon>
     </Compile>
+    <Compile Include="Datlaimk.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Datlaimk.Designer.cs">
+      <DependentUpon>Datlaimk.cs</DependentUpon>
+    </Compile>
     <Compile Include="Doanhthu.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -302,6 +308,12 @@
     <Compile Include="Qlysuatchieu.Designer.cs">
       <DependentUpon>Qlysuatchieu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Quenmk.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Quenmk.Designer.cs">
+      <DependentUpon>Quenmk.cs</DependentUpon>
+    </Compile>
     <Compile Include="Sanpham.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -354,6 +366,9 @@
     <EmbeddedResource Include="dangky.resx">
       <DependentUpon>dangky.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Datlaimk.resx">
+      <DependentUpon>Datlaimk.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Doanhthu.resx">
       <DependentUpon>Doanhthu.cs</DependentUpon>
     </EmbeddedResource>
@@ -388,6 +403,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Qlysuatchieu.resx">
       <DependentUpon>Qlysuatchieu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Quenmk.resx">
+      <DependentUpon>Quenmk.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Sanpham.resx">
       <DependentUpon>Sanpham.cs</DependentUpon>
@@ -555,6 +573,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-delete-24.png" />
+    <None Include="Resources\icons8-exit-35.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

@@ -118,17 +118,68 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="icons8_income_60" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-income-60.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8_find_30" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-find-30.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8_money_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-money-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8-delete-24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-delete-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8_error_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-error-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Image1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Image1.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8_logout_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-logout-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bussiness_man" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bussiness-man.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8_people_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-people-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="watch_movie" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\watch-movie.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="_21495005991" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\2149500599.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8_ticket_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-ticket-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ezgif_4_3ebb920750" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ezgif-4-3ebb920750.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8_food_bar_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-food-bar-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_2149500599" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\2149500599.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8_voucher_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-voucher-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8_movie_60" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-movie-60.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="camera" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\camera.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Screenshot_2024_08_29_213214" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Screenshot 2024-08-29 213214.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8_movie_60__1_" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-movie-60 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="office_man" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\office-man.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8_movie_projector_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-movie-projector-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="cinema" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cinema.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -139,64 +190,16 @@
   <data name="icons8_time_machine_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-time-machine-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ezgif_4_3ebb920750" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ezgif-4-3ebb920750.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Image1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Image1.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="bussiness_man" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bussiness-man.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="icons8_staff_60" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-staff-60.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8_money_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-money-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icons8_error_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-error-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icons8_ticket_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-ticket-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="watch_movie" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\watch-movie.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Screenshot_2024_08_29_213214" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Screenshot 2024-08-29 213214.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icons8_food_bar_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-food-bar-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icons8_income_60" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-income-60.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="office_man" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\office-man.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="camera" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\camera.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icons8_find_30" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-find-30.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="_2149500599" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\2149500599.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icons8_movie_projector_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-movie-projector-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8_movie_60" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-movie-60.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8_customer_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-customer-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8_people_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-people-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icons8_logout_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-logout-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icons8-delete-24" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-delete-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8-exit-35" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-exit-35.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

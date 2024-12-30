@@ -38,9 +38,8 @@
             this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2CheckBox1 = new Guna.UI2.WinForms.Guna2CheckBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
@@ -49,6 +48,7 @@
             // 
             // guna2VSeparator1
             // 
+            this.guna2VSeparator1.FillColor = System.Drawing.Color.Black;
             this.guna2VSeparator1.Location = new System.Drawing.Point(492, 102);
             this.guna2VSeparator1.Margin = new System.Windows.Forms.Padding(4);
             this.guna2VSeparator1.Name = "guna2VSeparator1";
@@ -59,12 +59,12 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.label1.Location = new System.Drawing.Point(600, 123);
+            this.label1.Location = new System.Drawing.Point(656, 123);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(184, 29);
+            this.label1.Size = new System.Drawing.Size(196, 29);
             this.label1.TabIndex = 3;
             this.label1.Text = "Welcome Back";
             // 
@@ -174,51 +174,41 @@
             this.guna2CheckBox1.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.guna2CheckBox1.CheckedChanged += new System.EventHandler(this.guna2CheckBox1_CheckedChanged);
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(61)))), ((int)(((byte)(204)))));
-            this.label5.Location = new System.Drawing.Point(784, 511);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(69, 20);
-            this.label5.TabIndex = 60;
-            this.label5.Text = "Đăng ký";
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.label4.Location = new System.Drawing.Point(603, 511);
+            this.label4.Location = new System.Drawing.Point(685, 514);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(152, 20);
-            this.label4.TabIndex = 59;
-            this.label4.Text = "Chưa có tài khoản?";
+            this.label4.Size = new System.Drawing.Size(131, 20);
+            this.label4.TabIndex = 62;
+            this.label4.Text = "Quên mật khẩu?";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
-            // button1
+            // guna2Button2
             // 
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(944, 14);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(28, 30);
-            this.button1.TabIndex = 61;
-            this.button1.Text = "X";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.guna2Button2.BorderRadius = 15;
+            this.guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(248)))));
+            this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button2.ForeColor = System.Drawing.Color.Black;
+            this.guna2Button2.Image = global::Qlyrapchieuphim.Properties.Resources.icons8_exit_35;
+            this.guna2Button2.Location = new System.Drawing.Point(940, 12);
+            this.guna2Button2.Name = "guna2Button2";
+            this.guna2Button2.Size = new System.Drawing.Size(35, 35);
+            this.guna2Button2.TabIndex = 63;
+            this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
             // 
             // guna2PictureBox2
             // 
             this.guna2PictureBox2.Image = global::Qlyrapchieuphim.Properties.Resources.bussiness_man;
             this.guna2PictureBox2.ImageRotate = 0F;
-            this.guna2PictureBox2.Location = new System.Drawing.Point(652, 34);
+            this.guna2PictureBox2.Location = new System.Drawing.Point(705, 31);
             this.guna2PictureBox2.Margin = new System.Windows.Forms.Padding(4);
             this.guna2PictureBox2.Name = "guna2PictureBox2";
             this.guna2PictureBox2.Size = new System.Drawing.Size(85, 73);
@@ -244,8 +234,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(248)))));
             this.ClientSize = new System.Drawing.Size(987, 576);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.guna2Button2);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.guna2CheckBox1);
             this.Controls.Add(this.guna2Button1);
@@ -283,9 +272,8 @@
         private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private Guna.UI2.WinForms.Guna2CheckBox guna2CheckBox1;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button1;
+        private Guna.UI2.WinForms.Guna2Button guna2Button2;
     }
 }
 

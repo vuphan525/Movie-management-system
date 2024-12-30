@@ -11,6 +11,8 @@ using System.Windows.Forms;
 using Microsoft.Data.SqlClient;
 using System.Configuration;
 using System.IO;
+using static System.Net.WebRequestMethods;
+using System.Net.Mail;
 
 namespace Qlyrapchieuphim
 {
@@ -25,22 +27,22 @@ namespace Qlyrapchieuphim
             email.MaxLength = 50;
             dataGridView1.ReadOnly = true;
             sodienthoai.MaxLength = 15;
+            usrnameTxtBox.MaxLength = 100;
+            passTxtBox.MaxLength = 100;
             string[] trt = new string[] { "Nghỉ việc", "Đang làm việc", "Tạm thời" };
             trangthai.Items.AddRange(trt);
         }
-        
         private void LoadData()
         {
             SqlConnection conn = new SqlConnection(ConnString);
             conn.Open();
-            string SqlQuery = "SELECT MANHANVIEN, TENNHANVIEN, SODIENTHOAI, EMAIL, NGSINH, TRANGTHAI FROM NHANVIEN";
+            string SqlQuery = "SELECT MANHANVIEN, TENNHANVIEN, SODIENTHOAI, EMAIL, NGSINH, TRANGTHAI, USERNAME, PASS, CHUCVU FROM NHANVIEN ";
             SqlDataAdapter adapter = new SqlDataAdapter(SqlQuery, conn);
             DataSet ds = new DataSet();
             adapter.Fill(ds, "NHANVIEN");
             DataTable dt = ds.Tables["NHANVIEN"];
             dataGridView1.DataSource = dt;
             conn.Close();
-
         }
         private void them_Click(object sender, EventArgs e)
         {
@@ -72,14 +74,41 @@ namespace Qlyrapchieuphim
             //SQL section
             SqlConnection conn = new SqlConnection(ConnString);
             conn.Open();
-            string SqlQuery = "INSERT INTO NHANVIEN VALUES (@manv, @tennv, N'Nhân viên', @sdt, @email, 'dc', 0.0, @ngsinh, @trthai)";
+            string SqlQuery = "INSERT INTO NHANVIEN VALUES (@manv, @tennv, @chucvu, @sdt, @email, @usrname, @pass, @ngsinh, @trthai)";
             SqlCommand cmd = new SqlCommand(SqlQuery, conn);
+            try 
+            {
+                MailAddress test_mail = new MailAddress(email.Text);
+            }
+            catch (Exception ex)
+            { 
+                if (ex is FormatException)
+                {
+                    MessageBox.Show(
+                    "Địa chỉ mail không đúng định dạng!",
+                    "Thông báo",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show(
+                    "Lỗi địa chỉ mail.",
+                    "Thông báo",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+                }
+                return;
+            }
             cmd.Parameters.Add("@manv", SqlDbType.Char).Value = manv.Text;
             cmd.Parameters.Add("@tennv", SqlDbType.NVarChar).Value = hoten.Text;
             cmd.Parameters.Add("@sdt", SqlDbType.VarChar).Value = sodienthoai.Text;
             cmd.Parameters.Add("@email", SqlDbType.VarChar).Value = email.Text;
             cmd.Parameters.Add("@ngsinh", SqlDbType.Date).Value = ngaysinh.Value;
             cmd.Parameters.Add("@trthai", SqlDbType.NVarChar).Value = trangthai.Text;
+            cmd.Parameters.Add("@usrname", SqlDbType.VarChar).Value = usrnameTxtBox.Text.Trim();
+            cmd.Parameters.Add("@pass", SqlDbType.VarChar).Value = passTxtBox.Text.Trim();
+            cmd.Parameters.Add("@chucvu", SqlDbType.NVarChar).Value = chucvu.SelectedItem;
             try
             {
                 cmd.ExecuteNonQuery();
@@ -92,7 +121,7 @@ namespace Qlyrapchieuphim
                 {
                     case 2627:
                         MessageBox.Show(
-                            "Mã nhân viên không được trùng nhau!",
+                            "Mã nhân viên và tên đăng nhập không được trùng nhau!",
                             "Lỗi nhập liệu",
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Warning);
@@ -108,6 +137,7 @@ namespace Qlyrapchieuphim
         private void Qlynhansu_Load(object sender, EventArgs e)
         {
             trangthai.SelectedIndex = 1;
+            chucvu.SelectedIndex = 0;
             dataGridView1.AutoSize = false;
             SearchTextBox.Text = "Tìm kiếm theo tên";
             SearchTextBox.ForeColor = Color.Gray;
@@ -152,11 +182,11 @@ namespace Qlyrapchieuphim
             conn.Open();
             string SqlQuery = "UPDATE NHANVIEN SET " +
                 "TENNHANVIEN = @tennv, " +
-                "CHUCVU = N'Nhân viên', " +
+                "CHUCVU = @chucvu, " +
                 "SODIENTHOAI = @sdt, " +
                 "EMAIL = @email, " +
-                "DIACHI = 'dc', " +
-                "LUONG = 0.0, " +
+                "USERNAME = @usrname, " +
+                "PASS = @pass, " +
                 "NGSINH = @ngsinh, " +
                 "TRANGTHAI = @trthai " +
                 "WHERE MANHANVIEN = @manv";
@@ -167,6 +197,9 @@ namespace Qlyrapchieuphim
             cmd.Parameters.Add("@email", SqlDbType.VarChar).Value = email.Text;
             cmd.Parameters.Add("@ngsinh", SqlDbType.Date).Value = ngaysinh.Value;
             cmd.Parameters.Add("@trthai", SqlDbType.NVarChar).Value = trangthai.Text;
+            cmd.Parameters.Add("@usrname", SqlDbType.VarChar).Value = usrnameTxtBox.Text.Trim();
+            cmd.Parameters.Add("@pass", SqlDbType.VarChar).Value = passTxtBox.Text.Trim();
+            cmd.Parameters.Add("@chucvu", SqlDbType.NVarChar).Value = chucvu.SelectedItem;
             try
             {
                 cmd.ExecuteNonQuery();
@@ -179,7 +212,7 @@ namespace Qlyrapchieuphim
                 {
                     case 2627:
                         MessageBox.Show(
-                            "Mã nhân viên không được trùng nhau!",
+                            "Mã nhân viên và tên đăng nhập không được trùng nhau!",
                             "Lỗi nhập liệu",
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Warning);
@@ -197,7 +230,10 @@ namespace Qlyrapchieuphim
             hoten.Clear();
             sodienthoai.Clear();
             email.Clear();
+            passTxtBox.Clear();
+            usrnameTxtBox.Clear();
             trangthai.SelectedIndex = 1;
+            chucvu.SelectedIndex = 0;
             ngaysinh.Value = DateTime.Today.Subtract(TimeSpan.FromDays(365 * 19));
             dataGridView1.ClearSelection();
         }
@@ -218,6 +254,15 @@ namespace Qlyrapchieuphim
                     {
                         int selected = dr.Index;
                         string temp_id = dt.Rows[selected]["MANHANVIEN"].ToString();
+                        if (temp_id == "admn")
+                        {
+                            MessageBox.Show(
+                                "Không thể xoá tài khoản ADMIN mặc định.",
+                                "Thông báo",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Information);
+                            return;
+                        }
                         string SqlQuery = "DELETE FROM NHANVIEN WHERE MANHANVIEN = @tempid";
                         SqlCommand cmd = new SqlCommand(SqlQuery, conn);
                         cmd.Parameters.Add("@tempid",SqlDbType.Char).Value = temp_id;
@@ -246,6 +291,9 @@ namespace Qlyrapchieuphim
             email.Text = dt.Rows[row]["EMAIL"].ToString();
             ngaysinh.Value = (DateTime)dt.Rows[row]["NGSINH"];
             trangthai.SelectedItem = dt.Rows[row]["TRANGTHAI"].ToString();
+            usrnameTxtBox.Text = dt.Rows[row]["USERNAME"].ToString();
+            passTxtBox.Text = dt.Rows[row]["PASS"].ToString();
+            chucvu.SelectedItem = dt.Rows[row]["CHUCVU"].ToString();
         }
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -270,7 +318,7 @@ namespace Qlyrapchieuphim
                         tenSV = dt.Rows[index]["TENNHANVIEN"].ToString().ToLower();
                         CurrencyManager currencyManager = (CurrencyManager)BindingContext[dataGridView1.DataSource];
                         currencyManager.SuspendBinding();
-                        if (tenSV.Contains(tenCanTim))
+                        if (tenSV.Contains(tenCanTim) && tenSV != "anon")
                         {
                             row.Visible = true;
                         }
