@@ -21,6 +21,7 @@ namespace Qlyrapchieuphim
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             date.Visible = false;
             label4.Visible = false;
+            dataGridView1.AllowUserToAddRows = false;
         }
         private bool CheckMovie()
         {
@@ -249,7 +250,7 @@ namespace Qlyrapchieuphim
             DataTable dt = dataGridView1.DataSource as DataTable;
             if (e.RowIndex >= 0)
             {
-                formbanve bv = new formbanve(dt.Rows[e.RowIndex]["MAPHONG"].ToString());
+                formbanve bv = new formbanve(dt.Rows[e.RowIndex]["MASUATCHIEU"].ToString());
                 bv.Show();
             }
         }

@@ -35,6 +35,7 @@ namespace Qlyrapchieuphim
         }
         private void LoadData()
         {
+            checkDate_database();
             SqlConnection conn = new SqlConnection(ConnString);
             conn.Open();
             string SqlQuery = "SELECT MAPHATHANH, MENHGIA, NGAYPHATHANH, NGAYKETTHUC, TINHTRANG, MULTIPLE FROM VOUCHER";
@@ -44,7 +45,6 @@ namespace Qlyrapchieuphim
             DataTable dt = ds.Tables["VOUCHER"];
             dataGridView1.DataSource = dt;
             conn.Close();
-
         }
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
@@ -354,6 +354,33 @@ namespace Qlyrapchieuphim
         private void Voucher_Paint(object sender, PaintEventArgs e)
         {
             checkDate();
+        }
+        private void checkDate_database()
+        {
+            SqlConnection conn = new SqlConnection(ConnString);
+            conn.Open();
+            string SqlQuery = "SELECT MAPHATHANH, NGAYPHATHANH, NGAYKETTHUC FROM VOUCHER";
+            SqlDataAdapter adapter = new SqlDataAdapter(SqlQuery, conn);
+            DataSet ds = new DataSet();
+            adapter.Fill(ds, "VOUCHER");
+            DataTable dt = ds.Tables["VOUCHER"];
+            foreach (DataRow dr in dt.Rows)
+            {
+                string state = string.Empty;
+                DateTime denngay = (DateTime)dr["NGAYKETTHUC"];
+                DateTime hieuluctu = (DateTime)dr["NGAYPHATHANH"];
+                if (denngay.Date < DateTime.Today)
+                    state = "Đã hêt hiệu lực"; //hết hiệu lực
+                else if (hieuluctu.Date <= DateTime.Today)
+                    state = "Đang áp dụng"; //đang áp dụng
+                else state = "Chưa áp dụng"; //chưa áp dụng
+                SqlQuery = "UPDATE VOUCHER SET TINHTRANG = @state WHERE MAPHATHANH = @maph";
+                SqlCommand cmd = new SqlCommand(SqlQuery, conn);
+                cmd.Parameters.Add("@state", SqlDbType.NVarChar).Value = state;
+                cmd.Parameters.Add("@maph", SqlDbType.Char).Value = dr["MAPHATHANH"].ToString();
+                cmd.ExecuteNonQuery();
+            }
+            conn.Close();
         }
     }
 }

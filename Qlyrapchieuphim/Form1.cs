@@ -97,8 +97,21 @@ namespace Qlyrapchieuphim
                         this.Hide();
                         break;
                     case 2:
-                        Adform af = new Adform();
-                        af.Show();
+                        DialogResult result = MessageBox.Show(
+                            "Vào chế độ ADMIN?",
+                            "Thông báo",
+                            MessageBoxButtons.YesNo,
+                            MessageBoxIcon.Question);
+                        if (result == DialogResult.Yes)
+                        {
+                            Adform af = new Adform();
+                            af.Show();
+                        }
+                        else
+                        {
+                            staffForm sf1 = new staffForm(manv);
+                            sf1.Show();
+                        }
                         this.Hide();
                         break;
                     default:

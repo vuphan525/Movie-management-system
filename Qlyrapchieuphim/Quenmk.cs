@@ -135,6 +135,7 @@ namespace Qlyrapchieuphim
             }
             catch (Exception ex)
             {
+                if (ex is System.FormatException)
                 MessageBox.Show(
                     "Địa chỉ mail không đúng định dạng!",
                     "Thông báo",

@@ -9,6 +9,10 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Guna.UI2.WinForms;
 using Microsoft.Identity.Client;
+using System.Configuration;
+using Microsoft.Data.SqlClient;
+using System.Web.Compilation;
+using System.IO;
 namespace Qlyrapchieuphim
 {
     public partial class formbanve : Form
@@ -18,10 +22,12 @@ namespace Qlyrapchieuphim
         public List<Guna2Button> vip = new List<Guna2Button>();
         public List<Guna2Button> vipcount = new List<Guna2Button>();
         public string MASUATCHIEU;
+        string ConnString = ConfigurationManager.ConnectionStrings["ConnString"].ConnectionString;
+        string picture_url = string.Empty;
+        string projectFolder = AppDomain.CurrentDomain.BaseDirectory; // Thư mục dự án
         public formbanve()
         {
             InitializeComponent();
-            InitializeSeats();
             sinhvien.Text = "0";
             treem.Text = "0";
            tongtien.Text = "0 VND";
@@ -30,13 +36,75 @@ namespace Qlyrapchieuphim
         public formbanve(string masc)
         {
             InitializeComponent();
-            InitializeSeats();
             MASUATCHIEU = masc;
-            lblRoom.Text = "Phòng chiếu: " + masc;
             sinhvien.Text = "0";
             treem.Text = "0";
             tongtien.Text = "0 VND";
             cantra.Text = "0 VND";
+        }
+        private void checkDate()
+        {
+            SqlConnection conn = new SqlConnection(ConnString);
+            conn.Open();
+            string SqlQuery = "SELECT MAPHATHANH, NGAYPHATHANH, NGAYKETTHUC FROM VOUCHER";
+            SqlDataAdapter adapter = new SqlDataAdapter(SqlQuery,conn);
+            DataSet ds = new DataSet();
+            adapter.Fill(ds, "VOUCHER");
+            DataTable dt = ds.Tables["VOUCHER"];
+            foreach (DataRow dr in dt.Rows)
+            {
+                string state = string.Empty;
+                DateTime denngay = (DateTime)dr["NGAYKETTHUC"];
+                DateTime hieuluctu = (DateTime)dr["NGAYPHATHANH"];
+                if (denngay.Date < DateTime.Today)
+                    state = "Đã hêt hiệu lực"; //hết hiệu lực
+                else if (hieuluctu.Date <= DateTime.Today)
+                    state = "Đang áp dụng"; //đang áp dụng
+                else state = "Chưa áp dụng"; //chưa áp dụng
+                SqlQuery = "UPDATE VOUCHER SET TINHTRANG = @state WHERE MAPHATHANH = @maph";
+                SqlCommand cmd = new SqlCommand(SqlQuery,conn);
+                cmd.Parameters.Add("@state",SqlDbType.NVarChar).Value = state;
+                cmd.Parameters.Add("@maph", SqlDbType.Char).Value = dr["MAPHATHANH"].ToString();
+                cmd.ExecuteNonQuery();
+            }
+            conn.Close();
+        }
+        private bool CheckVoucher()
+        {
+            checkDate();
+            int count;
+            SqlConnection conn = new SqlConnection(ConnString);
+            conn.Open();
+            string SqlQuery = "SELECT COUNT(*) FROM VOUCHER WHERE TINHTRANG = N'Đang áp dụng'";
+            SqlCommand countCmd = new SqlCommand(SqlQuery, conn);
+            count = (int)countCmd.ExecuteScalar();
+
+            if (count > 0)
+            {
+                voucher.Enabled = true;
+                errorProvider1.Clear();
+                SqlQuery = "SELECT MAPHATHANH FROM VOUCHER";
+                string[] vouchers = new string[count];
+                SqlCommand cmd = new SqlCommand(SqlQuery, conn);
+                SqlDataReader reader = cmd.ExecuteReader();
+                int i = 0;
+                while (reader.Read())
+                {
+                    vouchers[i] = reader.GetString(0);
+                    i++;
+                }
+                voucher.DataSource = vouchers;
+            }
+            else
+            {
+                voucher.Enabled = false;
+                errorProvider1.SetError(voucher, "Không có voucher trong hệ thống!");
+            }
+            conn.Close();
+            if (count > 0)
+                return true;
+            else
+                return false;
         }
         private void InitializeSeats()
         {
@@ -53,7 +121,8 @@ namespace Qlyrapchieuphim
                         seatButton.FillColor = Color.FromArgb(238, 38, 40); // Màu ghế VIP
                         vip.Add(seatButton);
                     }
-
+                    if (sold.Contains(seatButton))
+                        seatButton.FillColor = Color.FromArgb(0, 192, 0); //Màu ghế đã bán
                     seatButton.Click += SeatClick;
                     seatButton.ShadowDecoration.Enabled = true;
                     seatButton.ShadowDecoration.Depth = 10; // Độ sâu bóng
@@ -61,10 +130,83 @@ namespace Qlyrapchieuphim
                 }
             }
         }
+        
+        private void LoadData()
+        {
+            SqlConnection conn = new SqlConnection(ConnString);
+            conn.Open();
+            string SqlQuery;
+            SqlCommand cmd;
+            foreach (Guna2Button button in flowLayoutPanel1.Controls)
+            {
+                SqlQuery = "SELECT CellValue From S_" + MASUATCHIEU + " WHERE SeatName = @seatname";
+                cmd = new SqlCommand(SqlQuery, conn);
+                cmd.Parameters.Add("@seatname", SqlDbType.VarChar).Value = button.Text;
+                bool bought = (bool)cmd.ExecuteScalar();
+                if (bought)
+                    sold.Add(button);
+            }
+            SqlQuery = "SELECT MAPHONG FROM SUATCHIEU WHERE MASUATCHIEU = @masc";
+            cmd = new SqlCommand(SqlQuery, conn);
+            cmd.Parameters.Add("@masc", SqlDbType.VarChar).Value = MASUATCHIEU;
+            lblRoom.Text = "Phòng chiếu: " + cmd.ExecuteScalar().ToString();
+            
 
+            SqlQuery = "SELECT p.POSTER_URL " +
+                "FROM SUATCHIEU sc, BOPHIM p " +
+                "WHERE (MASUATCHIEU = @masc) AND (sc.MAPHIM = p.MAPHIM)";
+            cmd = new SqlCommand(SqlQuery, conn);
+            cmd.Parameters.Add("@masc", SqlDbType.VarChar).Value = MASUATCHIEU;
+            string relative_picture_path = cmd.ExecuteScalar().ToString();
+            picture_url = Path.Combine(projectFolder, relative_picture_path);
+            try
+            {
+                using (FileStream stream = new FileStream(picture_url, FileMode.Open))
+                {
+                    picFilm.Image = Image.FromStream(stream);
+                }
+            }
+            catch (Exception ex)
+            {
+                if (!string.IsNullOrEmpty(relative_picture_path))
+                {
+                    if (ex is FileNotFoundException)
+                    {
+                        MessageBox.Show(
+                        "Không tìm thấy file ảnh cho phim",
+                        "Lỗi dữ liệu!",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                    }
+                    if (ex is DirectoryNotFoundException)
+                    {
+                        MessageBox.Show(
+                        "Không tìm thấy folder ảnh cho phim",
+                        "Lỗi dữ liệu!",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    picFilm.Image = null;
+                }
+            }
+            conn.Close();
+            CheckVoucher();
+        }
         public void SeatClick(object sender, EventArgs e)
         {
             Guna2Button a = (Guna2Button)sender;
+            if (sold.Contains(a))
+            {
+                MessageBox.Show(
+                    "Ghế đã có người mua!",
+                    "Thông báo",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+                return;
+            }
             if (selected.Contains(a))
             {
                 if (a.Name.StartsWith("guna"))
@@ -92,7 +234,9 @@ namespace Qlyrapchieuphim
             }
         }
 
-        public int a = 0;
+        public int total = 0;
+        public int need_to_pay = 0;
+        public int discount = 0;
         private void update()
         {
             if (selected.Count > 0)
@@ -109,9 +253,12 @@ namespace Qlyrapchieuphim
                     }
 
                     int d = selected.Count - b - c;
-                    a = d * 55000 + vipcount.Count * 5000 + b * 40000 + c * 40000;
-                    tongtien.Text = a.ToString() + " VND";
-                    cantra.Text = tongtien.Text;
+                    total = d * 55000 + vipcount.Count * 5000 + b * 40000 + c * 40000;
+                    need_to_pay = total - discount;
+                    if (need_to_pay < 0)
+                        need_to_pay = 0;
+                    tongtien.Text = total.ToString() + " VND";
+                    cantra.Text = need_to_pay.ToString() + " VND";
                 }
                 catch (FormatException)
                 {
@@ -127,7 +274,8 @@ namespace Qlyrapchieuphim
 
         private void formbanve_Load(object sender, EventArgs e)
         {
-
+            LoadData();
+            InitializeSeats();
         }
 
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
@@ -145,9 +293,12 @@ namespace Qlyrapchieuphim
 
         }
 
-        private void guna2Button1_Click(object sender, EventArgs e)
+        private void guna2Button1_Click(object sender, EventArgs e) //thanh toan
         {
-
+            SqlConnection conn = new SqlConnection(ConnString);
+            conn.Open();
+            string SqlQuery;
+            SqlCommand cmd;
             foreach (Control control in flowLayoutPanel1.Controls)
             {
                 if (control is Guna2Button seatButton)
@@ -159,14 +310,20 @@ namespace Qlyrapchieuphim
                         seatButton.Enabled = false;
                         selected.Remove(seatButton);
                         vipcount.Remove(seatButton);
-
+                        SqlQuery = "UPDATE S_" + MASUATCHIEU + " SET CellValue = @bought  WHERE SeatName = @seatname";
+                        cmd = new SqlCommand(SqlQuery, conn);
+                        cmd.Parameters.Add("@seatname", SqlDbType.VarChar).Value = seatButton.Text;
+                        cmd.Parameters.Add("@bought", SqlDbType.Bit).Value = true;
+                        cmd.ExecuteNonQuery();
                     }
                 }
             }
             tongtien.Text = "0 VND";
             cantra.Text = "0 VND";
 
-            a = 0;
+            total = 0;
+            discount = 0;
+            need_to_pay = 0;
             Bansanpham bsp = new Bansanpham();
             bsp.Show();
             this.Hide();
