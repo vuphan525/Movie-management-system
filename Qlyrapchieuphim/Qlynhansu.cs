@@ -177,7 +177,30 @@ namespace Qlyrapchieuphim
             }
 
 
-
+            try
+            {
+                MailAddress test_mail = new MailAddress(email.Text);
+            }
+            catch (Exception ex)
+            {
+                if (ex is FormatException)
+                {
+                    MessageBox.Show(
+                    "Địa chỉ mail không đúng định dạng!",
+                    "Thông báo",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show(
+                    "Lỗi địa chỉ mail.",
+                    "Thông báo",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+                }
+                return;
+            }
             SqlConnection conn = new SqlConnection(ConnString);
             conn.Open();
             string SqlQuery = "UPDATE NHANVIEN SET " +

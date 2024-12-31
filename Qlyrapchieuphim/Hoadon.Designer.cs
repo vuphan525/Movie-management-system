@@ -29,6 +29,14 @@
         private void InitializeComponent()
         {
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
+            this.guna2Separator6 = new Guna.UI2.WinForms.Guna2Separator();
+            this.label26 = new System.Windows.Forms.Label();
+            this.guna2Separator5 = new Guna.UI2.WinForms.Guna2Separator();
+            this.guna2Separator4 = new Guna.UI2.WinForms.Guna2Separator();
             this.thanhtoan = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Separator2 = new Guna.UI2.WinForms.Guna2Separator();
             this.label15 = new System.Windows.Forms.Label();
@@ -66,14 +74,8 @@
             this.label24 = new System.Windows.Forms.Label();
             this.guna2Separator3 = new Guna.UI2.WinForms.Guna2Separator();
             this.label25 = new System.Windows.Forms.Label();
-            this.guna2Separator4 = new Guna.UI2.WinForms.Guna2Separator();
-            this.guna2Separator5 = new Guna.UI2.WinForms.Guna2Separator();
-            this.label26 = new System.Windows.Forms.Label();
-            this.guna2Separator6 = new Guna.UI2.WinForms.Guna2Separator();
-            this.label27 = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
-            this.label29 = new System.Windows.Forms.Label();
-            this.label30 = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
+            this.label32 = new System.Windows.Forms.Label();
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             this.SuspendLayout();
@@ -117,6 +119,82 @@
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(880, 842);
             this.guna2Panel1.TabIndex = 2;
+            // 
+            // label27
+            // 
+            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.Location = new System.Drawing.Point(468, 134);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(100, 36);
+            this.label27.TabIndex = 57;
+            this.label27.Text = "Nước ";
+            // 
+            // label28
+            // 
+            this.label28.BackColor = System.Drawing.Color.White;
+            this.label28.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label28.ForeColor = System.Drawing.Color.Black;
+            this.label28.Location = new System.Drawing.Point(574, 133);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(296, 37);
+            this.label28.TabIndex = 56;
+            this.label28.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label29
+            // 
+            this.label29.BackColor = System.Drawing.Color.White;
+            this.label29.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label29.ForeColor = System.Drawing.Color.Black;
+            this.label29.Location = new System.Drawing.Point(574, 57);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(296, 37);
+            this.label29.TabIndex = 55;
+            this.label29.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label30
+            // 
+            this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label30.Location = new System.Drawing.Point(468, 57);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(100, 37);
+            this.label30.TabIndex = 54;
+            this.label30.Text = "Đồ ăn";
+            // 
+            // guna2Separator6
+            // 
+            this.guna2Separator6.FillColor = System.Drawing.Color.Black;
+            this.guna2Separator6.Location = new System.Drawing.Point(470, 35);
+            this.guna2Separator6.Name = "guna2Separator6";
+            this.guna2Separator6.Size = new System.Drawing.Size(400, 10);
+            this.guna2Separator6.TabIndex = 53;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.Location = new System.Drawing.Point(492, 12);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(110, 25);
+            this.label26.TabIndex = 52;
+            this.label26.Text = "Sản phẩm";
+            // 
+            // guna2Separator5
+            // 
+            this.guna2Separator5.FillColor = System.Drawing.Color.Black;
+            this.guna2Separator5.Location = new System.Drawing.Point(470, 465);
+            this.guna2Separator5.Name = "guna2Separator5";
+            this.guna2Separator5.Size = new System.Drawing.Size(400, 10);
+            this.guna2Separator5.TabIndex = 51;
+            // 
+            // guna2Separator4
+            // 
+            this.guna2Separator4.FillColor = System.Drawing.Color.Black;
+            this.guna2Separator4.Location = new System.Drawing.Point(18, 465);
+            this.guna2Separator4.Name = "guna2Separator4";
+            this.guna2Separator4.Size = new System.Drawing.Size(435, 10);
+            this.guna2Separator4.TabIndex = 50;
             // 
             // thanhtoan
             // 
@@ -382,6 +460,8 @@
             // guna2Panel2
             // 
             this.guna2Panel2.BackColor = System.Drawing.Color.White;
+            this.guna2Panel2.Controls.Add(this.label31);
+            this.guna2Panel2.Controls.Add(this.label32);
             this.guna2Panel2.Controls.Add(this.label17);
             this.guna2Panel2.Controls.Add(this.label18);
             this.guna2Panel2.Controls.Add(this.label19);
@@ -499,81 +579,26 @@
             this.label25.TabIndex = 11;
             this.label25.Text = "Thông tin khách hàng";
             // 
-            // guna2Separator4
+            // label31
             // 
-            this.guna2Separator4.FillColor = System.Drawing.Color.Black;
-            this.guna2Separator4.Location = new System.Drawing.Point(18, 465);
-            this.guna2Separator4.Name = "guna2Separator4";
-            this.guna2Separator4.Size = new System.Drawing.Size(435, 10);
-            this.guna2Separator4.TabIndex = 50;
+            this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label31.Location = new System.Drawing.Point(4, 367);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(100, 36);
+            this.label31.TabIndex = 22;
+            this.label31.Text = "Điểm đã trừ";
             // 
-            // guna2Separator5
+            // label32
             // 
-            this.guna2Separator5.FillColor = System.Drawing.Color.Black;
-            this.guna2Separator5.Location = new System.Drawing.Point(470, 465);
-            this.guna2Separator5.Name = "guna2Separator5";
-            this.guna2Separator5.Size = new System.Drawing.Size(400, 10);
-            this.guna2Separator5.TabIndex = 51;
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(492, 12);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(110, 25);
-            this.label26.TabIndex = 52;
-            this.label26.Text = "Sản phẩm";
-            // 
-            // guna2Separator6
-            // 
-            this.guna2Separator6.FillColor = System.Drawing.Color.Black;
-            this.guna2Separator6.Location = new System.Drawing.Point(470, 35);
-            this.guna2Separator6.Name = "guna2Separator6";
-            this.guna2Separator6.Size = new System.Drawing.Size(400, 10);
-            this.guna2Separator6.TabIndex = 53;
-            // 
-            // label27
-            // 
-            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.Location = new System.Drawing.Point(468, 134);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(100, 36);
-            this.label27.TabIndex = 57;
-            this.label27.Text = "Nước ";
-            // 
-            // label28
-            // 
-            this.label28.BackColor = System.Drawing.Color.White;
-            this.label28.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.ForeColor = System.Drawing.Color.Black;
-            this.label28.Location = new System.Drawing.Point(574, 133);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(296, 37);
-            this.label28.TabIndex = 56;
-            this.label28.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label29
-            // 
-            this.label29.BackColor = System.Drawing.Color.White;
-            this.label29.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label29.ForeColor = System.Drawing.Color.Black;
-            this.label29.Location = new System.Drawing.Point(574, 57);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(296, 37);
-            this.label29.TabIndex = 55;
-            this.label29.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label30
-            // 
-            this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label30.Location = new System.Drawing.Point(468, 57);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(100, 37);
-            this.label30.TabIndex = 54;
-            this.label30.Text = "Đồ ăn";
+            this.label32.BackColor = System.Drawing.Color.White;
+            this.label32.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label32.ForeColor = System.Drawing.Color.Black;
+            this.label32.Location = new System.Drawing.Point(129, 366);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(303, 37);
+            this.label32.TabIndex = 21;
+            this.label32.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // Hoadon
             // 
@@ -643,5 +668,7 @@
         private Guna.UI2.WinForms.Guna2Separator guna2Separator6;
         private System.Windows.Forms.Label label26;
         private Guna.UI2.WinForms.Guna2Separator guna2Separator5;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.Label label32;
     }
 }

@@ -28,6 +28,18 @@ namespace Qlyrapchieuphim
                 c.MouseMove += Sanpham_MouseMove;
             }
         }
+        int storage = 0;
+        string type = string.Empty;
+        public string Type 
+        {
+            get { return type; } 
+            set { type = value; }
+        }
+        public int Count 
+        { 
+            get { return storage; } 
+            set {  storage = value; }
+        }
         public Label Ten { get { return name; } }
         public Label Gia { get { return price; } }
         public Guna2PictureBox img { get { return image; } }

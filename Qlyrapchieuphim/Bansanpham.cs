@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Configuration;
 using Microsoft.Data.SqlClient;
 using System.IO;
+using System.Threading;
 
 namespace Qlyrapchieuphim
 {
@@ -22,6 +23,7 @@ namespace Qlyrapchieuphim
         string ConnString = ConfigurationManager.ConnectionStrings["ConnString"].ConnectionString;
         string picture_url = string.Empty;
         string projectFolder = AppDomain.CurrentDomain.BaseDirectory; // Thư mục dự án
+        DataTable dt;
         private void LoadData()
         {
             SqlConnection conn = new SqlConnection(ConnString);
@@ -30,13 +32,17 @@ namespace Qlyrapchieuphim
             SqlDataAdapter adapter = new SqlDataAdapter(SqlQuery, conn);
             DataSet ds = new DataSet();
             adapter.Fill(ds, "SANPHAM");
-            DataTable dt = ds.Tables["SANPHAM"];
+            dt = ds.Tables["SANPHAM"];
             foreach(DataRow dr in dt.Rows)
             {
                 Sanpham newsp = new Sanpham();
                 newsp.Ten.Text = dr.Field<string>("TENSP");
                 newsp.Gia.Text = dr.Field<double>("GIA").ToString();
                 newsp.ID.Text = dr.Field<string>("MASP").ToString();
+                newsp.Type = dr.Field<string>("LOAI").ToString();
+                newsp.Count = dr.Field<int>("SOLUONG");
+                if (newsp.Count <= 0)
+                    newsp.Enabled = false;
                 
                 string relative_picture_path = dr.Field<string>("PICTUREPATH");
                 picture_url = Path.Combine(projectFolder, relative_picture_path);
@@ -99,6 +105,19 @@ namespace Qlyrapchieuphim
         {
             LoadData();
         }
+        private bool CheckInventory (string msp, int selected)
+        {
+            SqlConnection conn = new SqlConnection(ConnString);
+            string SqlQuery = "SELECT SOLUONG FROM SANPHAM WHERE MASP = @msp";
+            SqlCommand cmd = new SqlCommand(SqlQuery, conn);
+            cmd.Parameters.Add("@msp", SqlDbType.Char).Value = msp;
+            conn.Open();
+            int inv = (int)cmd.ExecuteScalar();
+            conn.Close();
+            if (selected > inv)
+                return false;
+            return true;
+        }
         private void Sp_Click (object sender, EventArgs e)
         {
             Sanpham sp = sender as Sanpham;
@@ -106,7 +125,18 @@ namespace Qlyrapchieuphim
             {
                 if (r.Cells["idColumn"].Value.ToString() == sp.ID.Text)
                 {
-                    r.Cells["numColumn"].Value = int.Parse(r.Cells["numColumn"].Value.ToString()) + 1;
+                    int num_select = int.Parse(r.Cells["numColumn"].Value.ToString()) + 1;
+                    bool still_left = CheckInventory(r.Cells["idColumn"].Value.ToString(), num_select);
+                    if (!still_left)
+                    {
+                        MessageBox.Show(
+                            "Đã chọn số sản phẩm tối đa!",
+                            "Lỗi dữ liệu!",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Error);
+                        return;
+                    }
+                    r.Cells["numColumn"].Value = num_select;
                     return;
                 }
             }

@@ -12,6 +12,7 @@ using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.Configuration;
 using Microsoft.Data.SqlClient;
+using System.Net.Mail;
 
 namespace Qlyrapchieuphim
 {
@@ -70,6 +71,30 @@ namespace Qlyrapchieuphim
                     "Lỗi nhập liệu",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Warning);
+                return;
+            }
+            try
+            {
+                MailAddress test_mail = new MailAddress(email.Text);
+            }
+            catch (Exception ex)
+            {
+                if (ex is FormatException)
+                {
+                    MessageBox.Show(
+                    "Địa chỉ mail không đúng định dạng!",
+                    "Thông báo",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show(
+                    "Lỗi địa chỉ mail.",
+                    "Thông báo",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+                }
                 return;
             }
             //SQL section
@@ -161,6 +186,30 @@ namespace Qlyrapchieuphim
                     "Lỗi nhập liệu",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Warning);
+                return;
+            }
+            try
+            {
+                MailAddress test_mail = new MailAddress(email.Text);
+            }
+            catch (Exception ex)
+            {
+                if (ex is FormatException)
+                {
+                    MessageBox.Show(
+                    "Địa chỉ mail không đúng định dạng!",
+                    "Thông báo",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show(
+                    "Lỗi địa chỉ mail.",
+                    "Thông báo",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+                }
                 return;
             }
 

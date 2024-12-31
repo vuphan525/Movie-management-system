@@ -34,6 +34,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.btnCofirm = new System.Windows.Forms.Button();
+            this.buttonCheck = new System.Windows.Forms.Button();
+            this.buttonCancel = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -67,6 +69,7 @@
             this.txtCustomerID.Name = "txtCustomerID";
             this.txtCustomerID.Size = new System.Drawing.Size(302, 30);
             this.txtCustomerID.TabIndex = 6;
+            this.txtCustomerID.TextChanged += new System.EventHandler(this.txtCustomerID_TextChanged);
             // 
             // label4
             // 
@@ -99,17 +102,48 @@
             this.btnCofirm.TabIndex = 3;
             this.btnCofirm.Text = "Xác Nhận";
             this.btnCofirm.UseVisualStyleBackColor = true;
+            this.btnCofirm.Click += new System.EventHandler(this.btnCofirm_Click);
+            // 
+            // buttonCheck
+            // 
+            this.buttonCheck.AutoSize = true;
+            this.buttonCheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCheck.Location = new System.Drawing.Point(144, 93);
+            this.buttonCheck.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.buttonCheck.Name = "buttonCheck";
+            this.buttonCheck.Size = new System.Drawing.Size(173, 35);
+            this.buttonCheck.TabIndex = 4;
+            this.buttonCheck.Text = "Kiểm tra thông tin";
+            this.buttonCheck.UseVisualStyleBackColor = true;
+            this.buttonCheck.Click += new System.EventHandler(this.buttonCheck_Click);
+            // 
+            // buttonCancel
+            // 
+            this.buttonCancel.AutoSize = true;
+            this.buttonCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCancel.Location = new System.Drawing.Point(327, 93);
+            this.buttonCancel.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.buttonCancel.Name = "buttonCancel";
+            this.buttonCancel.Size = new System.Drawing.Size(120, 35);
+            this.buttonCancel.TabIndex = 5;
+            this.buttonCancel.Text = "Hủy";
+            this.buttonCancel.UseVisualStyleBackColor = true;
+            this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
             // khachhang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(477, 132);
+            this.Controls.Add(this.buttonCancel);
+            this.Controls.Add(this.buttonCheck);
             this.Controls.Add(this.btnCofirm);
             this.Controls.Add(this.panel1);
             this.Name = "khachhang";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "khachhang";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.khachhang_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.khachhang_FormClosed);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -125,5 +159,7 @@
         private System.Windows.Forms.Label label3;
         public System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button btnCofirm;
+        private System.Windows.Forms.Button buttonCheck;
+        private System.Windows.Forms.Button buttonCancel;
     }
 }

@@ -24,6 +24,11 @@ namespace Qlyrapchieuphim
         public string MASUATCHIEU;
         string ConnString = ConfigurationManager.ConnectionStrings["ConnString"].ConnectionString;
         string picture_url = string.Empty;
+        public int total = 0;
+        public int need_to_pay = 0;
+        public int discount = 0;
+        string makh = string.Empty;
+        int cus_point = 0;
         string projectFolder = AppDomain.CurrentDomain.BaseDirectory; // Thư mục dự án
         public formbanve()
         {
@@ -32,6 +37,7 @@ namespace Qlyrapchieuphim
             treem.Text = "0";
            tongtien.Text = "0 VND";
             cantra.Text = "0 VND";
+            ToggleCusPointButton(false);
         }
         public formbanve(string masc)
         {
@@ -41,6 +47,12 @@ namespace Qlyrapchieuphim
             treem.Text = "0";
             tongtien.Text = "0 VND";
             cantra.Text = "0 VND";
+            ToggleCusPointButton(false);
+        }
+        public string CusCode
+        {
+            get { return makh; }
+            set { makh = value; }
         }
         private void checkDate()
         {
@@ -77,30 +89,22 @@ namespace Qlyrapchieuphim
             conn.Open();
             string SqlQuery = "SELECT COUNT(*) FROM VOUCHER WHERE TINHTRANG = N'Đang áp dụng'";
             SqlCommand countCmd = new SqlCommand(SqlQuery, conn);
-            count = (int)countCmd.ExecuteScalar();
+            count = (int)countCmd.ExecuteScalar() + 1;
 
-            if (count > 0)
+
+            SqlQuery = "SELECT MAPHATHANH FROM VOUCHER";
+            string[] vouchers = new string[count];
+            SqlCommand cmd = new SqlCommand(SqlQuery, conn);
+            SqlDataReader reader = cmd.ExecuteReader();
+            vouchers[0] = "NONE";
+            int i = 1;
+            while (reader.Read())
             {
-                voucher.Enabled = true;
-                errorProvider1.Clear();
-                SqlQuery = "SELECT MAPHATHANH FROM VOUCHER";
-                string[] vouchers = new string[count];
-                SqlCommand cmd = new SqlCommand(SqlQuery, conn);
-                SqlDataReader reader = cmd.ExecuteReader();
-                int i = 0;
-                while (reader.Read())
-                {
-                    vouchers[i] = reader.GetString(0);
-                    i++;
-                }
-                voucher.DataSource = vouchers;
+                vouchers[i] = reader.GetString(0);
+                i++;
             }
-            else
-            {
-                voucher.Enabled = false;
-                errorProvider1.SetError(voucher, "Không có voucher trong hệ thống!");
-            }
-            conn.Close();
+            voucher.DataSource = vouchers;
+            voucher.SelectedIndex = 0;
             if (count > 0)
                 return true;
             else
@@ -234,9 +238,7 @@ namespace Qlyrapchieuphim
             }
         }
 
-        public int total = 0;
-        public int need_to_pay = 0;
-        public int discount = 0;
+        
         private void update()
         {
             if (selected.Count > 0)
@@ -255,6 +257,8 @@ namespace Qlyrapchieuphim
                     int d = selected.Count - b - c;
                     total = d * 55000 + vipcount.Count * 5000 + b * 40000 + c * 40000;
                     need_to_pay = total - discount;
+                    if (!chkAccumulate.Checked)
+                        need_to_pay -= cus_point * 2000;
                     if (need_to_pay < 0)
                         need_to_pay = 0;
                     tongtien.Text = total.ToString() + " VND";
@@ -270,6 +274,10 @@ namespace Qlyrapchieuphim
                 tongtien.Text = "0 VND";
                 cantra.Text = "0 VND";
             }
+            int to_print = discount;
+            if (!chkAccumulate.Checked)
+                to_print += cus_point * 2000;
+            lblDiscount.Text = to_print.ToString() + " VND";
         }
 
         private void formbanve_Load(object sender, EventArgs e)
@@ -318,12 +326,13 @@ namespace Qlyrapchieuphim
                     }
                 }
             }
-            tongtien.Text = "0 VND";
-            cantra.Text = "0 VND";
+            //tongtien.Text = "0 VND";
+            //cantra.Text = "0 VND";
 
-            total = 0;
-            discount = 0;
-            need_to_pay = 0;
+            //total = 0;
+            //discount = 0;
+            //need_to_pay = 0;
+            //cus_point = 0;
             Bansanpham bsp = new Bansanpham();
             bsp.Show();
             this.Hide();
@@ -344,14 +353,49 @@ namespace Qlyrapchieuphim
         {
 
         }
-
+        private void ToggleCusPointButton(bool state)
+        {
+            chkAccumulate.Enabled = state;
+            chkAccumulate.Visible = state;
+            chkAccumulate.Checked = true;
+        }
         private void chkCustomer_Click(object sender, EventArgs e)
         {
-            if (chkCustomer.Checked == true)
+            if (!chkCustomer.Checked)
             {
                 khachhang frm = new khachhang();
-                frm.ShowDialog();
+                DialogResult res = frm.ShowDialog();
+                if (res == DialogResult.OK)
+                {
+                    chkCustomer.Checked = true;
+                    makh = frm.cus_code;
+                }
+                else
+                {
+                    chkCustomer.Checked = false;
+                    makh = string.Empty;
+                    cus_point = 0;
+                    ToggleCusPointButton(false);
+                    return;
+                }
+                //SQL
+                SqlConnection conn = new SqlConnection(ConnString);
+                string SqlQuery = "SELECT DIEMTICHLUY FROM KHACHHANG WHERE MAKHACHHANG = @mkh";
+                SqlCommand cmd = new SqlCommand(SqlQuery, conn);
+                cmd.Parameters.Add("@mkh",SqlDbType.Char).Value = makh;
+                conn.Open();
+                cus_point = (int)cmd.ExecuteScalar();
+                conn.Close();
+                ToggleCusPointButton(true);
             }
+            else
+            {
+                makh = string.Empty;
+                chkCustomer.Checked = false;
+                cus_point = 0;
+                ToggleCusPointButton(false);
+            }
+            update();
         }
 
         private void sinhvien_TextChanged(object sender, EventArgs e)
@@ -413,6 +457,42 @@ namespace Qlyrapchieuphim
             {
                 treem.Text = "";
             }
+        }
+
+        private void voucher_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if ((string)voucher.SelectedItem == "NONE")
+            {
+                discount = 0;
+                update();
+                return;
+            }
+            SqlConnection conn = new SqlConnection(ConnString);
+            string SqlQuery = "SELECT MENHGIA FROM VOUCHER WHERE MAPHATHANH = @mph";
+            SqlCommand cmd = new SqlCommand(SqlQuery, conn);
+            cmd.Parameters.Add("@mph",SqlDbType.Char).Value = voucher.SelectedItem;
+            conn.Open();
+            try
+            {
+                discount = (int)cmd.ExecuteScalar();
+            }
+            catch (Exception ex)
+            {
+                if (ex is System.NullReferenceException)
+                    discount = 0;
+            }
+            conn.Close();
+            update();
+        }
+
+        private void chkAccumulate_CheckedChanged(object sender, EventArgs e)
+        {
+            update();
+        }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
