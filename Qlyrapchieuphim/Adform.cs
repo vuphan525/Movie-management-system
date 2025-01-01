@@ -18,6 +18,8 @@ namespace Qlyrapchieuphim
         public Adform()
         {
             InitializeComponent();
+            guna2Button6.Enabled = false;
+            guna2Button6.Visible = false;
         }
         
         private void voucher1_Load(object sender, EventArgs e)

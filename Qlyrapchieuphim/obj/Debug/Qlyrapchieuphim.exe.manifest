@@ -882,14 +882,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Qlyrapchieuphim.exe" size="4091872">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Qlyrapchieuphim.exe" size="4090848">
       <assemblyIdentity name="Qlyrapchieuphim" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>QurUuYEEsYHXuMpkVNZV4cUejXneqTKfIsZmzGs0r/A=</dsig:DigestValue>
+        <dsig:DigestValue>FKD6LdB3PMOwC/33hGHMj9/UCZp9RMB/+5IF+5MPPlo=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
