@@ -34,15 +34,14 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.priceColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.numColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewImageColumn();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.thanhtoan = new Guna.UI2.WinForms.Guna2Button();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewImageColumn();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -104,7 +103,6 @@
             this.dataGridView1.ColumnHeadersHeight = 40;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
             this.idColumn,
             this.nameColumn,
             this.priceColumn,
@@ -120,7 +118,7 @@
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.Location = new System.Drawing.Point(1021, 150);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -133,16 +131,9 @@
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellValueChanged);
             // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Id";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Visible = false;
-            // 
             // idColumn
             // 
+            this.idColumn.DataPropertyName = "id";
             this.idColumn.HeaderText = "IdSanPham";
             this.idColumn.MinimumWidth = 6;
             this.idColumn.Name = "idColumn";
@@ -151,6 +142,7 @@
             // 
             // nameColumn
             // 
+            this.nameColumn.DataPropertyName = "name";
             this.nameColumn.FillWeight = 92.35294F;
             this.nameColumn.HeaderText = "Sản phẩm";
             this.nameColumn.MinimumWidth = 6;
@@ -159,6 +151,7 @@
             // 
             // priceColumn
             // 
+            this.priceColumn.DataPropertyName = "price";
             this.priceColumn.FillWeight = 92.35294F;
             this.priceColumn.HeaderText = "Giá";
             this.priceColumn.MinimumWidth = 6;
@@ -167,18 +160,28 @@
             // 
             // numColumn
             // 
+            this.numColumn.DataPropertyName = "num";
             this.numColumn.FillWeight = 92.35294F;
             this.numColumn.HeaderText = "Số lượng";
             this.numColumn.MinimumWidth = 6;
             this.numColumn.Name = "numColumn";
             this.numColumn.ReadOnly = true;
             // 
+            // Column6
+            // 
+            this.Column6.FillWeight = 30F;
+            this.Column6.HeaderText = "";
+            this.Column6.Image = global::Qlyrapchieuphim.Properties.Resources.icons8_delete_24;
+            this.Column6.MinimumWidth = 30;
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.AutoScroll = true;
             this.flowLayoutPanel1.BackColor = System.Drawing.Color.White;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(29, 43);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(5);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flowLayoutPanel1.Size = new System.Drawing.Size(965, 805);
@@ -195,11 +198,11 @@
             this.thanhtoan.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.thanhtoan.ForeColor = System.Drawing.Color.White;
             this.thanhtoan.Location = new System.Drawing.Point(1339, 804);
-            this.thanhtoan.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.thanhtoan.Margin = new System.Windows.Forms.Padding(4);
             this.thanhtoan.Name = "thanhtoan";
             this.thanhtoan.Size = new System.Drawing.Size(189, 44);
             this.thanhtoan.TabIndex = 62;
-            this.thanhtoan.Text = "Thanh toán";
+            this.thanhtoan.Text = "Xác nhận";
             this.thanhtoan.Click += new System.EventHandler(this.thanhtoan_Click);
             // 
             // dataGridViewImageColumn1
@@ -211,15 +214,6 @@
             this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
             this.dataGridViewImageColumn1.ReadOnly = true;
             this.dataGridViewImageColumn1.Width = 126;
-            // 
-            // Column6
-            // 
-            this.Column6.FillWeight = 30F;
-            this.Column6.HeaderText = "";
-            this.Column6.Image = global::Qlyrapchieuphim.Properties.Resources.icons8_delete_24;
-            this.Column6.MinimumWidth = 30;
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
             // 
             // Bansanpham
             // 
@@ -235,6 +229,7 @@
             this.Name = "Bansanpham";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bansanpham";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Bansanpham_FormClosing);
             this.Load += new System.EventHandler(this.Bansanpham_Load);
             this.Enter += new System.EventHandler(this.Bansanpham_Enter);
             this.guna2Panel1.ResumeLayout(false);
@@ -251,7 +246,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private Guna.UI2.WinForms.Guna2Button thanhtoan;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn idColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn priceColumn;

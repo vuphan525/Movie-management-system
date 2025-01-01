@@ -34,6 +34,7 @@
             this.apdung = new Guna.UI2.WinForms.Guna2Button();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.chkAccumulate = new System.Windows.Forms.CheckBox();
             this.chkCustomer = new System.Windows.Forms.CheckBox();
             this.label3 = new System.Windows.Forms.Label();
             this.grpLoaiVe = new System.Windows.Forms.GroupBox();
@@ -51,6 +52,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.spButton = new Guna.UI2.WinForms.Guna2Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
@@ -199,7 +201,6 @@
             this.guna2Button143 = new Guna.UI2.WinForms.Guna2Button();
             this.picFilm = new System.Windows.Forms.PictureBox();
             this.lblRoom = new System.Windows.Forms.Label();
-            this.chkAccumulate = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.grpLoaiVe.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -219,7 +220,7 @@
             this.guna2Button2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(61)))), ((int)(((byte)(204)))));
             this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button2.ForeColor = System.Drawing.Color.White;
-            this.guna2Button2.Location = new System.Drawing.Point(201, 181);
+            this.guna2Button2.Location = new System.Drawing.Point(15, 181);
             this.guna2Button2.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button2.Name = "guna2Button2";
             this.guna2Button2.Size = new System.Drawing.Size(127, 44);
@@ -300,6 +301,17 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Voucher:";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // chkAccumulate
+            // 
+            this.chkAccumulate.AutoSize = true;
+            this.chkAccumulate.Location = new System.Drawing.Point(325, 125);
+            this.chkAccumulate.Name = "chkAccumulate";
+            this.chkAccumulate.Size = new System.Drawing.Size(119, 29);
+            this.chkAccumulate.TabIndex = 55;
+            this.chkAccumulate.Text = "Tích điểm";
+            this.chkAccumulate.UseVisualStyleBackColor = true;
+            this.chkAccumulate.CheckedChanged += new System.EventHandler(this.chkAccumulate_CheckedChanged);
             // 
             // chkCustomer
             // 
@@ -432,7 +444,7 @@
             this.thanhtoan.Name = "thanhtoan";
             this.thanhtoan.Size = new System.Drawing.Size(189, 44);
             this.thanhtoan.TabIndex = 48;
-            this.thanhtoan.Text = "Tiếp theo";
+            this.thanhtoan.Text = "Thanh toán";
             this.thanhtoan.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
             // tongtien
@@ -501,7 +513,7 @@
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.button1.BackColor = System.Drawing.Color.DimGray;
             this.button1.Enabled = false;
             this.button1.Location = new System.Drawing.Point(29, 64);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
@@ -524,6 +536,7 @@
             // panel6
             // 
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel6.Controls.Add(this.spButton);
             this.panel6.Controls.Add(this.guna2Button2);
             this.panel6.Controls.Add(this.thanhtoan);
             this.panel6.Controls.Add(this.tongtien);
@@ -538,6 +551,24 @@
             this.panel6.Size = new System.Drawing.Size(555, 246);
             this.panel6.TabIndex = 287;
             this.panel6.Paint += new System.Windows.Forms.PaintEventHandler(this.panel6_Paint);
+            // 
+            // spButton
+            // 
+            this.spButton.BorderRadius = 10;
+            this.spButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.spButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.spButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.spButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.spButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(61)))), ((int)(((byte)(204)))));
+            this.spButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.spButton.ForeColor = System.Drawing.Color.White;
+            this.spButton.Location = new System.Drawing.Point(154, 181);
+            this.spButton.Margin = new System.Windows.Forms.Padding(4);
+            this.spButton.Name = "spButton";
+            this.spButton.Size = new System.Drawing.Size(189, 44);
+            this.spButton.TabIndex = 50;
+            this.spButton.Text = "Đồ ăn / Thức uống";
+            this.spButton.Click += new System.EventHandler(this.spButton_Click);
             // 
             // panel1
             // 
@@ -3858,17 +3889,6 @@
             this.lblRoom.TabIndex = 338;
             this.lblRoom.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // chkAccumulate
-            // 
-            this.chkAccumulate.AutoSize = true;
-            this.chkAccumulate.Location = new System.Drawing.Point(325, 125);
-            this.chkAccumulate.Name = "chkAccumulate";
-            this.chkAccumulate.Size = new System.Drawing.Size(119, 29);
-            this.chkAccumulate.TabIndex = 55;
-            this.chkAccumulate.Text = "Tích điểm";
-            this.chkAccumulate.UseVisualStyleBackColor = true;
-            this.chkAccumulate.CheckedChanged += new System.EventHandler(this.chkAccumulate_CheckedChanged);
-            // 
             // formbanve
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -4078,5 +4098,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.CheckBox chkAccumulate;
+        private Guna.UI2.WinForms.Guna2Button spButton;
     }
 }

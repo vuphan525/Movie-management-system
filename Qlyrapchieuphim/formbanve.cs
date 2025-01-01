@@ -29,6 +29,11 @@ namespace Qlyrapchieuphim
         public int discount = 0;
         string makh = string.Empty;
         int cus_point = 0;
+        int food_total = 0;
+        int drinks_total = 0;
+        int cus_discount = 0;
+        DataTable sp_list = new DataTable();
+        Bansanpham spForm = new Bansanpham();
         string projectFolder = AppDomain.CurrentDomain.BaseDirectory; // Thư mục dự án
         public formbanve()
         {
@@ -126,7 +131,7 @@ namespace Qlyrapchieuphim
                         vip.Add(seatButton);
                     }
                     if (sold.Contains(seatButton))
-                        seatButton.FillColor = Color.FromArgb(0, 192, 0); //Màu ghế đã bán
+                        seatButton.FillColor = Color.DimGray; //Màu ghế đã bán
                     seatButton.Click += SeatClick;
                     seatButton.ShadowDecoration.Enabled = true;
                     seatButton.ShadowDecoration.Depth = 10; // Độ sâu bóng
@@ -256,27 +261,27 @@ namespace Qlyrapchieuphim
 
                     int d = selected.Count - b - c;
                     total = d * 55000 + vipcount.Count * 5000 + b * 40000 + c * 40000;
-                    need_to_pay = total - discount;
-                    if (!chkAccumulate.Checked)
-                        need_to_pay -= cus_point * 2000;
-                    if (need_to_pay < 0)
-                        need_to_pay = 0;
-                    tongtien.Text = total.ToString() + " VND";
-                    cantra.Text = need_to_pay.ToString() + " VND";
+                    //need_to_pay = total - discount + food_total + drinks_total;
+                    
+                    //tongtien.Text = total.ToString() + " VND";
+                    //cantra.Text = need_to_pay.ToString() + " VND";
                 }
                 catch (FormatException)
                 {
                     MessageBox.Show("Vui lòng nhập số hợp lệ!", "Lỗi nhập liệu", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
-            else
-            {
-                tongtien.Text = "0 VND";
-                cantra.Text = "0 VND";
-            }
-            int to_print = discount;
             if (!chkAccumulate.Checked)
-                to_print += cus_point * 2000;
+                cus_discount = cus_point * 2000;
+            else
+                cus_discount = 0;
+            need_to_pay = total - discount + food_total + drinks_total - cus_discount;
+            
+            if (need_to_pay < 0)
+                need_to_pay = 0;
+            tongtien.Text = total.ToString() + " VND";
+            cantra.Text = need_to_pay.ToString() + " VND";
+            int to_print = discount + cus_discount;
             lblDiscount.Text = to_print.ToString() + " VND";
         }
 
@@ -303,6 +308,11 @@ namespace Qlyrapchieuphim
 
         private void guna2Button1_Click(object sender, EventArgs e) //thanh toan
         {
+            if (selected.Count == 0)
+            {
+                this.Close();
+                return;
+            }
             SqlConnection conn = new SqlConnection(ConnString);
             conn.Open();
             string SqlQuery;
@@ -326,6 +336,7 @@ namespace Qlyrapchieuphim
                     }
                 }
             }
+            conn.Close();
             //tongtien.Text = "0 VND";
             //cantra.Text = "0 VND";
 
@@ -333,10 +344,30 @@ namespace Qlyrapchieuphim
             //discount = 0;
             //need_to_pay = 0;
             //cus_point = 0;
-            Bansanpham bsp = new Bansanpham();
-            bsp.Show();
-            this.Hide();
+            SqlQuery = "SELECT COUNT(*) FROM HOADON";
+            cmd = new SqlCommand(SqlQuery, conn);
+            conn.Open();
+            int existing_bills = (int)cmd.ExecuteScalar();
+            conn.Close();
 
+            SqlQuery = "INSERT INTO HOADON VALUES (@mahd, @masc, @soghe, @makh, @total, @food, @drinks, @discount)";
+            cmd = new SqlCommand(SqlQuery, conn);
+            cmd.Parameters.Add("@mahd", SqlDbType.Char).Value = existing_bills.ToString("D16");
+            cmd.Parameters.Add("@masc", SqlDbType.Char).Value = MASUATCHIEU;
+            cmd.Parameters.Add("@soghe", SqlDbType.Int).Value = selected.Count;
+            cmd.Parameters.Add("@makh", SqlDbType.Char).Value = makh;
+            cmd.Parameters.Add("@total", SqlDbType.Int).Value = total;
+            cmd.Parameters.Add("@food", SqlDbType.Int).Value = food_total;
+            cmd.Parameters.Add("@drinks", SqlDbType.Int).Value = drinks_total;
+            cmd.Parameters.Add("@discount", SqlDbType.Int).Value = discount + cus_discount;
+            conn.Open ();
+            cmd.ExecuteNonQuery();
+            conn.Close ();
+            Hoadon hd = new Hoadon();
+            hd.BillCode = existing_bills.ToString("D16");
+            hd.UsedPoints = !chkAccumulate.Checked;
+            this.Close();
+            hd.Show();
         }
 
         private void panel6_Paint(object sender, PaintEventArgs e)
@@ -493,6 +524,34 @@ namespace Qlyrapchieuphim
         private void guna2Button2_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void spButton_Click(object sender, EventArgs e)
+        {
+            sp_list = spForm.List;
+            food_total = 0;
+            drinks_total = 0;
+            SqlConnection conn = new SqlConnection(ConnString);
+            string SqlQuery;
+            SqlDataAdapter adapter;
+            foreach (DataRow row in sp_list.Rows)
+            {
+                DataSet ds = new DataSet();
+                SqlQuery = "SELECT LOAI, GIA FROM SANPHAM WHERE MASP = @masp";
+                adapter = new SqlDataAdapter(SqlQuery, conn);
+                adapter.SelectCommand.Parameters.Add("@masp",SqlDbType.Char).Value = row["id"].ToString();
+                adapter.Fill(ds, "sp");
+                DataTable temp_table = ds.Tables["sp"];
+                if (temp_table.Rows[0]["LOAI"].ToString() == "Đồ ăn")
+                {
+                    food_total = int.Parse(temp_table.Rows[0]["GIA"].ToString()) * int.Parse(row["num"].ToString());
+                }
+                else
+                {
+                    drinks_total = int.Parse(temp_table.Rows[0]["GIA"].ToString()) * int.Parse(row["num"].ToString());
+                }
+            }
+            update();
         }
     }
 }

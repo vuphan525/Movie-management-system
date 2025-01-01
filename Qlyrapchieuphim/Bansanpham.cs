@@ -19,13 +19,52 @@ namespace Qlyrapchieuphim
         public Bansanpham()
         {
             InitializeComponent();
+            MakeSpList();
+            dataGridView1.AutoGenerateColumns = false;
+            dataGridView1.DataSource = sp_list;
         }
         string ConnString = ConfigurationManager.ConnectionStrings["ConnString"].ConnectionString;
         string picture_url = string.Empty;
         string projectFolder = AppDomain.CurrentDomain.BaseDirectory; // Thư mục dự án
         DataTable dt;
+        DataTable sp_list = new DataTable();
+        private void MakeSpList()
+        {
+            DataColumn column;
+            column = new DataColumn();
+            column.DataType = System.Type.GetType("System.String");
+            column.ColumnName = "id";
+            sp_list.Columns.Add(column);
+
+            column = new DataColumn();
+            column.DataType = System.Type.GetType("System.Int32");
+            column.ColumnName = "num";
+            sp_list.Columns.Add(column);
+
+            column = new DataColumn();
+            column.DataType = System.Type.GetType("System.String");
+            column.ColumnName = "name";
+            sp_list.Columns.Add(column);
+
+            column = new DataColumn();
+            column.DataType = System.Type.GetType("System.Int32");
+            column.ColumnName = "price";
+            sp_list.Columns.Add(column);
+        }
+        
+
+        int total_price = 0;
+        public int Total
+        {
+            get { return total_price; }
+        }
+        public DataTable List
+        {
+            get { return sp_list; }
+        }
         private void LoadData()
         {
+            flowLayoutPanel1.Controls.Clear();
             SqlConnection conn = new SqlConnection(ConnString);
             conn.Open();
             string SqlQuery = "SELECT MASP, TENSP, LOAI, GIA, SOLUONG, PICTUREPATH FROM SANPHAM";
@@ -91,9 +130,7 @@ namespace Qlyrapchieuphim
 
         private void thanhtoan_Click(object sender, EventArgs e)
         {
-            Hoadon hd = new Hoadon();   
-            hd.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void Bansanpham_Enter(object sender, EventArgs e)
@@ -123,10 +160,11 @@ namespace Qlyrapchieuphim
             Sanpham sp = sender as Sanpham;
             foreach (DataGridViewRow r in dataGridView1.Rows)
             {
-                if (r.Cells["idColumn"].Value.ToString() == sp.ID.Text)
+                int index = r.Index;
+                if (sp_list.Rows[index]["id"].ToString() == sp.ID.Text)
                 {
-                    int num_select = int.Parse(r.Cells["numColumn"].Value.ToString()) + 1;
-                    bool still_left = CheckInventory(r.Cells["idColumn"].Value.ToString(), num_select);
+                    int num_select = int.Parse(sp_list.Rows[index]["num"].ToString()) + 1;
+                    bool still_left = CheckInventory(sp_list.Rows[index]["id"].ToString(), num_select);
                     if (!still_left)
                     {
                         MessageBox.Show(
@@ -136,45 +174,65 @@ namespace Qlyrapchieuphim
                             MessageBoxIcon.Error);
                         return;
                     }
-                    r.Cells["numColumn"].Value = num_select;
+                    sp_list.Rows[index]["num"] = num_select;
+                    dataGridView1.DataSource = sp_list;
+                    CalculateTotal();
                     return;
                 }
             }
-            int rowID = dataGridView1.Rows.Add();
+            DataRow row = sp_list.NewRow();
             
-            DataGridViewRow row = dataGridView1.Rows[rowID];
-            row.Cells["idColumn"].Value = sp.ID.Text;
-            row.Cells["nameColumn"].Value = sp.Ten.Text;
-            row.Cells["priceColumn"].Value = sp.Gia.Text;
-            row.Cells["numColumn"].Value = 1;
+            row["id"] = sp.ID.Text;
+            row["name"] = sp.Ten.Text;
+            row["price"] = double.Parse(sp.Gia.Text);
+            row["num"] = 1;
+            sp_list.Rows.Add(row);
+            dataGridView1.DataSource = sp_list;
+            CalculateTotal();
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dataGridView1.CurrentCell.ColumnIndex.Equals(5) && e.RowIndex != -1)
+            if (dataGridView1.CurrentCell.OwningColumn.Name == "Column6" && e.RowIndex != -1)
             {
                 if (dataGridView1.CurrentCell != null && dataGridView1.CurrentCell.Value != null)
-                    dataGridView1.Rows.RemoveAt(dataGridView1.CurrentCell.RowIndex);
+                    sp_list.Rows.RemoveAt(dataGridView1.CurrentCell.RowIndex);
+                dataGridView1.DataSource = sp_list;
             }
+            CalculateTotal();
         }
-
-        private void dataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        private void CalculateTotal()
         {
             double total = 0;
-            foreach(DataGridViewRow row in dataGridView1.Rows)
+            foreach (DataGridViewRow row in dataGridView1.Rows)
             {
                 if (!row.IsNewRow)
                 {
+                    int index = row.Index;
                     int sl = 0;
                     double pr = 0;
-                    if (!(row.Cells["numColumn"].Value == null))
-                        sl = int.Parse(row.Cells["numColumn"].Value.ToString());
-                    if (!(row.Cells["priceColumn"].Value == null))
-                        pr = double.Parse(row.Cells["priceColumn"].Value.ToString());
+                    if (!(sp_list.Rows[index]["num"] == null))
+                        sl = int.Parse(sp_list.Rows[index]["num"].ToString());
+                    if (!(sp_list.Rows[index]["price"] == null))
+                        pr = double.Parse(sp_list.Rows[index]["price"].ToString());
                     total += sl * pr;
                 }
             }
-            label5.Text = (Math.Truncate(total * 100) / 100).ToString();
+            total_price = (int)(Math.Truncate(total * 100) / 100);
+            label5.Text = total_price.ToString();
+        }
+        private void dataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            CalculateTotal();
+        }
+        private void Bansanpham_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            
+        }
+
+        private void cancelButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
