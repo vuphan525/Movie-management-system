@@ -315,22 +315,16 @@ namespace Qlyrapchieuphim
             {
                 string tenCanTim = guna2TextBox4.Text.ToLower();
                 string tenSV = " ";
+                DataTable dt = dataGridView1.DataSource as DataTable;
 
                 foreach (DataGridViewRow row in dataGridView1.Rows)
                 {
                     if (!row.IsNewRow)
                     {
-                        if (row.Cells[2].Value != null)
-                        {
-                            tenSV = row.Cells[2].Value.ToString().ToLower();
-
-                        }
-                        else
-                        {
-
-                            MessageBox.Show(" Không có dữ liệu trong bảng!");
-                        }
-
+                        int index = row.Index;
+                        tenSV = dt.Rows[index]["TENSP"].ToString().ToLower();
+                        CurrencyManager currencyManager = (CurrencyManager)BindingContext[dataGridView1.DataSource];
+                        currencyManager.SuspendBinding();
                         if (tenSV.Contains(tenCanTim))
                         {
                             row.Visible = true;
@@ -339,6 +333,7 @@ namespace Qlyrapchieuphim
                         {
                             row.Visible = false;
                         }
+                        currencyManager.ResumeBinding();
                     }
                 }
             }
