@@ -310,7 +310,11 @@ namespace Qlyrapchieuphim
         {
             if (selected.Count == 0)
             {
-                this.Close();
+                MessageBox.Show(
+                    "Vẫn chưa chọn ghế",
+                    "Thông báo",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
                 return;
             }
             SqlConnection conn = new SqlConnection(ConnString);
@@ -528,6 +532,7 @@ namespace Qlyrapchieuphim
 
         private void spButton_Click(object sender, EventArgs e)
         {
+            spForm.ShowDialog();
             sp_list = spForm.List;
             food_total = 0;
             drinks_total = 0;
