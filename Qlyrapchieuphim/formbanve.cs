@@ -549,11 +549,11 @@ namespace Qlyrapchieuphim
                 DataTable temp_table = ds.Tables["sp"];
                 if (temp_table.Rows[0]["LOAI"].ToString() == "Đồ ăn")
                 {
-                    food_total = int.Parse(temp_table.Rows[0]["GIA"].ToString()) * int.Parse(row["num"].ToString());
+                    food_total += int.Parse(temp_table.Rows[0]["GIA"].ToString()) * int.Parse(row["num"].ToString());
                 }
                 else
                 {
-                    drinks_total = int.Parse(temp_table.Rows[0]["GIA"].ToString()) * int.Parse(row["num"].ToString());
+                    drinks_total += int.Parse(temp_table.Rows[0]["GIA"].ToString()) * int.Parse(row["num"].ToString());
                 }
             }
             update();
