@@ -28,7 +28,6 @@ namespace Qlyrapchieuphim
             InitializeComponent();
             idphim.MaxLength = 4;
             tenphim.MaxLength = 100;
-            giaphim.Enabled = false;
             dataGridView1.ReadOnly = true;
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
         }

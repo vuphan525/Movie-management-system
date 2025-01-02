@@ -158,7 +158,7 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(904, 13);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(124, 16);
+            this.label3.Size = new System.Drawing.Size(153, 20);
             this.label3.TabIndex = 6;
             this.label3.Text = "Xin chào, quản lý";
             // 
@@ -168,7 +168,7 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(9, 13);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(197, 16);
+            this.label2.Size = new System.Drawing.Size(242, 20);
             this.label2.TabIndex = 5;
             this.label2.Text = "Phần mềm quản lý rạp phim";
             // 
@@ -326,7 +326,7 @@
             this.guna2Button7.ForeColor = System.Drawing.Color.White;
             this.guna2Button7.Image = global::Qlyrapchieuphim.Properties.Resources.icons8_voucher_24;
             this.guna2Button7.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2Button7.Location = new System.Drawing.Point(3, 475);
+            this.guna2Button7.Location = new System.Drawing.Point(3, 420);
             this.guna2Button7.Name = "guna2Button7";
             this.guna2Button7.Size = new System.Drawing.Size(194, 36);
             this.guna2Button7.TabIndex = 26;
@@ -349,7 +349,7 @@
             this.guna2Button8.ForeColor = System.Drawing.Color.White;
             this.guna2Button8.Image = global::Qlyrapchieuphim.Properties.Resources.icons8_error_24;
             this.guna2Button8.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2Button8.Location = new System.Drawing.Point(3, 530);
+            this.guna2Button8.Location = new System.Drawing.Point(3, 475);
             this.guna2Button8.Name = "guna2Button8";
             this.guna2Button8.Size = new System.Drawing.Size(194, 36);
             this.guna2Button8.TabIndex = 27;
