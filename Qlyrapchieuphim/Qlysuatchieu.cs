@@ -30,7 +30,7 @@ namespace Qlyrapchieuphim
             int count;
             SqlConnection conn = new SqlConnection(ConnString);
             conn.Open();
-            string SqlQuery = "SELECT COUNT(*) FROM BOPHIM";
+            string SqlQuery = "SELECT COUNT(*) FROM BOPHIM WHERE DANGCHIEU = N'Đang chiếu'";
             SqlCommand countCmd = new SqlCommand(SqlQuery, conn);
             count = (int)countCmd.ExecuteScalar();
             
@@ -38,7 +38,7 @@ namespace Qlyrapchieuphim
             {
                 tenphim.Enabled = true;
                 errorProvider1.Clear();
-                SqlQuery = "SELECT MAPHIM, TENPHIM FROM BOPHIM";
+                SqlQuery = "SELECT MAPHIM, TENPHIM FROM BOPHIM WHERE DANGCHIEU = N'Đang chiếu'";
                 string[] movies = new string[count];
                 SqlCommand cmd = new SqlCommand(SqlQuery, conn);
                 SqlDataReader reader = cmd.ExecuteReader();
