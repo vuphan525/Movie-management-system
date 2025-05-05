@@ -104,11 +104,17 @@ namespace Qlyrapchieuphim
                             MessageBoxIcon.Question);
                         if (result == DialogResult.Yes)
                         {
+                            this.Hide();
+                            LoadingForm loadingForm = new LoadingForm();
+                            loadingForm.ShowDialog();
                             Adform af = new Adform();
                             af.Show();
                         }
                         else
                         {
+                            this.Hide();
+                            LoadingForm loadingForm = new LoadingForm();
+                            loadingForm.ShowDialog();
                             staffForm sf1 = new staffForm(manv);
                             sf1.Show();
                         }
