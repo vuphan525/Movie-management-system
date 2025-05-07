@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label7 = new System.Windows.Forms.Label();
             this.xoa = new Guna.UI2.WinForms.Guna2Button();
             this.capnhat = new Guna.UI2.WinForms.Guna2Button();
@@ -39,6 +39,12 @@
             this.label3 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.masucoColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.manvColummn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.condColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -53,12 +59,6 @@
             this.ngaytiepnhan = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.masucoColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.manvColummn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.condColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -68,11 +68,11 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(109, 48);
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(25, 91);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(99, 18);
+            this.label7.Size = new System.Drawing.Size(113, 20);
             this.label7.TabIndex = 33;
             this.label7.Text = "Mã nhân viên:";
             // 
@@ -86,7 +86,7 @@
             this.xoa.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(61)))), ((int)(((byte)(204)))));
             this.xoa.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.xoa.ForeColor = System.Drawing.Color.White;
-            this.xoa.Location = new System.Drawing.Point(511, 263);
+            this.xoa.Location = new System.Drawing.Point(464, 301);
             this.xoa.Margin = new System.Windows.Forms.Padding(4);
             this.xoa.Name = "xoa";
             this.xoa.Size = new System.Drawing.Size(149, 44);
@@ -104,7 +104,7 @@
             this.capnhat.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(61)))), ((int)(((byte)(204)))));
             this.capnhat.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.capnhat.ForeColor = System.Drawing.Color.White;
-            this.capnhat.Location = new System.Drawing.Point(312, 263);
+            this.capnhat.Location = new System.Drawing.Point(265, 301);
             this.capnhat.Margin = new System.Windows.Forms.Padding(4);
             this.capnhat.Name = "capnhat";
             this.capnhat.Size = new System.Drawing.Size(149, 44);
@@ -115,13 +115,13 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(36, 14);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(16, 21);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(136, 20);
+            this.label2.Size = new System.Drawing.Size(149, 25);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Báo cáo sự cố:";
+            this.label2.Text = "Báo cáo sự cố";
             // 
             // mota
             // 
@@ -137,8 +137,9 @@
             this.mota.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.mota.ForeColor = System.Drawing.Color.Black;
             this.mota.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.mota.Location = new System.Drawing.Point(1048, 71);
+            this.mota.Location = new System.Drawing.Point(984, 182);
             this.mota.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.mota.Multiline = true;
             this.mota.Name = "mota";
             this.mota.PasswordChar = '\0';
             this.mota.PlaceholderText = "";
@@ -149,11 +150,11 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(109, 140);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(50, 182);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(78, 18);
+            this.label3.Size = new System.Drawing.Size(88, 20);
             this.label3.TabIndex = 3;
             this.label3.Text = "Tên sự cố:";
             // 
@@ -173,14 +174,14 @@
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(61)))), ((int)(((byte)(204)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(61)))), ((int)(((byte)(204)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.masucoColumn,
@@ -189,14 +190,14 @@
             this.condColumn,
             this.dateColumn,
             this.descColumn});
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.Location = new System.Drawing.Point(21, 41);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
@@ -209,36 +210,82 @@
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dataGridView1_RowPostPaint);
             // 
+            // masucoColumn
+            // 
+            this.masucoColumn.DataPropertyName = "MASUCO";
+            this.masucoColumn.HeaderText = "Mã sự cố";
+            this.masucoColumn.MinimumWidth = 6;
+            this.masucoColumn.Name = "masucoColumn";
+            // 
+            // manvColummn
+            // 
+            this.manvColummn.DataPropertyName = "MANHANVIEN";
+            this.manvColummn.HeaderText = "Mã nhân viên";
+            this.manvColummn.MinimumWidth = 6;
+            this.manvColummn.Name = "manvColummn";
+            // 
+            // nameColumn
+            // 
+            this.nameColumn.DataPropertyName = "TENSUCO";
+            this.nameColumn.FillWeight = 120F;
+            this.nameColumn.HeaderText = "Tên sự cố ";
+            this.nameColumn.MinimumWidth = 6;
+            this.nameColumn.Name = "nameColumn";
+            // 
+            // condColumn
+            // 
+            this.condColumn.DataPropertyName = "TINHTRANG";
+            this.condColumn.FillWeight = 80F;
+            this.condColumn.HeaderText = "Tình trạng ";
+            this.condColumn.MinimumWidth = 6;
+            this.condColumn.Name = "condColumn";
+            // 
+            // dateColumn
+            // 
+            this.dateColumn.DataPropertyName = "NGAYBAOCAO";
+            this.dateColumn.FillWeight = 80F;
+            this.dateColumn.HeaderText = "Ngày tiép nhận ";
+            this.dateColumn.MinimumWidth = 6;
+            this.dateColumn.Name = "dateColumn";
+            // 
+            // descColumn
+            // 
+            this.descColumn.DataPropertyName = "MOTA";
+            this.descColumn.FillWeight = 180F;
+            this.descColumn.HeaderText = "Mô tả";
+            this.descColumn.MinimumWidth = 6;
+            this.descColumn.Name = "descColumn";
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(36, 17);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(16, 12);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(63, 20);
+            this.label1.Size = new System.Drawing.Size(68, 25);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Sự cố:";
+            this.label1.Text = "Sự cố";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(1059, 36);
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(980, 147);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(50, 18);
+            this.label6.Size = new System.Drawing.Size(56, 20);
             this.label6.TabIndex = 29;
             this.label6.Text = "Mô tả:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(507, 48);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(444, 91);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(77, 18);
+            this.label4.Size = new System.Drawing.Size(89, 20);
             this.label4.TabIndex = 4;
             this.label4.Text = "Tình trạng:";
             // 
@@ -252,7 +299,7 @@
             this.bcButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(61)))), ((int)(((byte)(204)))));
             this.bcButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bcButton.ForeColor = System.Drawing.Color.White;
-            this.bcButton.Location = new System.Drawing.Point(113, 263);
+            this.bcButton.Location = new System.Drawing.Point(66, 301);
             this.bcButton.Margin = new System.Windows.Forms.Padding(4);
             this.bcButton.Name = "bcButton";
             this.bcButton.Size = new System.Drawing.Size(149, 44);
@@ -276,7 +323,7 @@
             "Đã xử lý",
             "Đang xử lý",
             "Chờ tiếp nhận"});
-            this.tinhtrang.Location = new System.Drawing.Point(511, 71);
+            this.tinhtrang.Location = new System.Drawing.Point(552, 82);
             this.tinhtrang.Margin = new System.Windows.Forms.Padding(4);
             this.tinhtrang.Name = "tinhtrang";
             this.tinhtrang.Size = new System.Drawing.Size(208, 36);
@@ -296,7 +343,7 @@
             this.tensuco.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tensuco.ForeColor = System.Drawing.Color.Black;
             this.tensuco.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tensuco.Location = new System.Drawing.Point(113, 162);
+            this.tensuco.Location = new System.Drawing.Point(156, 173);
             this.tensuco.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tensuco.Name = "tensuco";
             this.tensuco.PasswordChar = '\0';
@@ -347,7 +394,7 @@
             "Đã xử lý",
             "Đang xử lý",
             "Chờ tiếp nhận"});
-            this.manv.Location = new System.Drawing.Point(113, 71);
+            this.manv.Location = new System.Drawing.Point(156, 82);
             this.manv.Margin = new System.Windows.Forms.Padding(4);
             this.manv.Name = "manv";
             this.manv.Size = new System.Drawing.Size(213, 36);
@@ -363,7 +410,7 @@
             this.cancelButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(61)))), ((int)(((byte)(204)))));
             this.cancelButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cancelButton.ForeColor = System.Drawing.Color.White;
-            this.cancelButton.Location = new System.Drawing.Point(730, 263);
+            this.cancelButton.Location = new System.Drawing.Point(683, 301);
             this.cancelButton.Margin = new System.Windows.Forms.Padding(4);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(149, 44);
@@ -385,7 +432,7 @@
             this.masuco.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.masuco.ForeColor = System.Drawing.Color.Black;
             this.masuco.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.masuco.Location = new System.Drawing.Point(511, 162);
+            this.masuco.Location = new System.Drawing.Point(552, 173);
             this.masuco.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.masuco.Name = "masuco";
             this.masuco.PasswordChar = '\0';
@@ -397,11 +444,11 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(507, 139);
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(450, 182);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(74, 18);
+            this.label8.Size = new System.Drawing.Size(83, 20);
             this.label8.TabIndex = 51;
             this.label8.Text = "Mã sự cố:";
             // 
@@ -412,7 +459,7 @@
             this.ngaytiepnhan.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(248)))));
             this.ngaytiepnhan.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.ngaytiepnhan.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.ngaytiepnhan.Location = new System.Drawing.Point(819, 68);
+            this.ngaytiepnhan.Location = new System.Drawing.Point(1135, 79);
             this.ngaytiepnhan.Margin = new System.Windows.Forms.Padding(4);
             this.ngaytiepnhan.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.ngaytiepnhan.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
@@ -424,63 +471,17 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(815, 43);
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(980, 91);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(109, 18);
+            this.label5.Size = new System.Drawing.Size(125, 20);
             this.label5.TabIndex = 35;
             this.label5.Text = "Ngày tiếp nhận:";
             // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
-            // 
-            // masucoColumn
-            // 
-            this.masucoColumn.DataPropertyName = "MASUCO";
-            this.masucoColumn.HeaderText = "Mã sự cố";
-            this.masucoColumn.MinimumWidth = 6;
-            this.masucoColumn.Name = "masucoColumn";
-            // 
-            // manvColummn
-            // 
-            this.manvColummn.DataPropertyName = "MANHANVIEN";
-            this.manvColummn.HeaderText = "Mã nhân viên";
-            this.manvColummn.MinimumWidth = 6;
-            this.manvColummn.Name = "manvColummn";
-            // 
-            // nameColumn
-            // 
-            this.nameColumn.DataPropertyName = "TENSUCO";
-            this.nameColumn.FillWeight = 120F;
-            this.nameColumn.HeaderText = "Tên sự cố ";
-            this.nameColumn.MinimumWidth = 6;
-            this.nameColumn.Name = "nameColumn";
-            // 
-            // condColumn
-            // 
-            this.condColumn.DataPropertyName = "TINHTRANG";
-            this.condColumn.FillWeight = 80F;
-            this.condColumn.HeaderText = "Tình trạng ";
-            this.condColumn.MinimumWidth = 6;
-            this.condColumn.Name = "condColumn";
-            // 
-            // dateColumn
-            // 
-            this.dateColumn.DataPropertyName = "NGAYBAOCAO";
-            this.dateColumn.FillWeight = 80F;
-            this.dateColumn.HeaderText = "Ngày tiép nhận ";
-            this.dateColumn.MinimumWidth = 6;
-            this.dateColumn.Name = "dateColumn";
-            // 
-            // descColumn
-            // 
-            this.descColumn.DataPropertyName = "MOTA";
-            this.descColumn.FillWeight = 180F;
-            this.descColumn.HeaderText = "Mô tả";
-            this.descColumn.MinimumWidth = 6;
-            this.descColumn.Name = "descColumn";
             // 
             // Suco
             // 
