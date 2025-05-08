@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label7 = new System.Windows.Forms.Label();
             this.xoa = new Guna.UI2.WinForms.Guna2Button();
             this.capnhat = new Guna.UI2.WinForms.Guna2Button();
@@ -39,12 +39,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.masucoColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.manvColummn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.condColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -59,6 +53,12 @@
             this.ngaytiepnhan = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.masucoColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.manvColummn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.condColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -83,10 +83,10 @@
             this.xoa.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.xoa.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.xoa.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.xoa.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(61)))), ((int)(((byte)(204)))));
+            this.xoa.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(13)))), ((int)(((byte)(16)))));
             this.xoa.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.xoa.ForeColor = System.Drawing.Color.White;
-            this.xoa.Location = new System.Drawing.Point(464, 301);
+            this.xoa.Location = new System.Drawing.Point(476, 301);
             this.xoa.Margin = new System.Windows.Forms.Padding(4);
             this.xoa.Name = "xoa";
             this.xoa.Size = new System.Drawing.Size(149, 44);
@@ -101,10 +101,10 @@
             this.capnhat.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.capnhat.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.capnhat.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.capnhat.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(61)))), ((int)(((byte)(204)))));
+            this.capnhat.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(133)))), ((int)(((byte)(71)))));
             this.capnhat.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.capnhat.ForeColor = System.Drawing.Color.White;
-            this.capnhat.Location = new System.Drawing.Point(265, 301);
+            this.capnhat.Location = new System.Drawing.Point(271, 301);
             this.capnhat.Margin = new System.Windows.Forms.Padding(4);
             this.capnhat.Name = "capnhat";
             this.capnhat.Size = new System.Drawing.Size(149, 44);
@@ -160,7 +160,7 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
             this.panel2.Controls.Add(this.dataGridView1);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Location = new System.Drawing.Point(21, 22);
@@ -174,14 +174,14 @@
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(61)))), ((int)(((byte)(204)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(61)))), ((int)(((byte)(204)))));
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.masucoColumn,
@@ -190,14 +190,14 @@
             this.condColumn,
             this.dateColumn,
             this.descColumn});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle14;
             this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.Location = new System.Drawing.Point(21, 41);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
@@ -209,52 +209,6 @@
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dataGridView1_RowPostPaint);
-            // 
-            // masucoColumn
-            // 
-            this.masucoColumn.DataPropertyName = "MASUCO";
-            this.masucoColumn.HeaderText = "Mã sự cố";
-            this.masucoColumn.MinimumWidth = 6;
-            this.masucoColumn.Name = "masucoColumn";
-            // 
-            // manvColummn
-            // 
-            this.manvColummn.DataPropertyName = "MANHANVIEN";
-            this.manvColummn.HeaderText = "Mã nhân viên";
-            this.manvColummn.MinimumWidth = 6;
-            this.manvColummn.Name = "manvColummn";
-            // 
-            // nameColumn
-            // 
-            this.nameColumn.DataPropertyName = "TENSUCO";
-            this.nameColumn.FillWeight = 120F;
-            this.nameColumn.HeaderText = "Tên sự cố ";
-            this.nameColumn.MinimumWidth = 6;
-            this.nameColumn.Name = "nameColumn";
-            // 
-            // condColumn
-            // 
-            this.condColumn.DataPropertyName = "TINHTRANG";
-            this.condColumn.FillWeight = 80F;
-            this.condColumn.HeaderText = "Tình trạng ";
-            this.condColumn.MinimumWidth = 6;
-            this.condColumn.Name = "condColumn";
-            // 
-            // dateColumn
-            // 
-            this.dateColumn.DataPropertyName = "NGAYBAOCAO";
-            this.dateColumn.FillWeight = 80F;
-            this.dateColumn.HeaderText = "Ngày tiép nhận ";
-            this.dateColumn.MinimumWidth = 6;
-            this.dateColumn.Name = "dateColumn";
-            // 
-            // descColumn
-            // 
-            this.descColumn.DataPropertyName = "MOTA";
-            this.descColumn.FillWeight = 180F;
-            this.descColumn.HeaderText = "Mô tả";
-            this.descColumn.MinimumWidth = 6;
-            this.descColumn.Name = "descColumn";
             // 
             // label1
             // 
@@ -296,7 +250,7 @@
             this.bcButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.bcButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.bcButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.bcButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(61)))), ((int)(((byte)(204)))));
+            this.bcButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(28)))), ((int)(((byte)(154)))));
             this.bcButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bcButton.ForeColor = System.Drawing.Color.White;
             this.bcButton.Location = new System.Drawing.Point(66, 301);
@@ -354,7 +308,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
             this.panel1.Controls.Add(this.manv);
             this.panel1.Controls.Add(this.cancelButton);
             this.panel1.Controls.Add(this.masuco);
@@ -407,10 +361,10 @@
             this.cancelButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.cancelButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.cancelButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.cancelButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(61)))), ((int)(((byte)(204)))));
+            this.cancelButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(13)))), ((int)(((byte)(129)))));
             this.cancelButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cancelButton.ForeColor = System.Drawing.Color.White;
-            this.cancelButton.Location = new System.Drawing.Point(683, 301);
+            this.cancelButton.Location = new System.Drawing.Point(681, 301);
             this.cancelButton.Margin = new System.Windows.Forms.Padding(4);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(149, 44);
@@ -483,11 +437,57 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // masucoColumn
+            // 
+            this.masucoColumn.DataPropertyName = "MASUCO";
+            this.masucoColumn.HeaderText = "Mã sự cố";
+            this.masucoColumn.MinimumWidth = 6;
+            this.masucoColumn.Name = "masucoColumn";
+            // 
+            // manvColummn
+            // 
+            this.manvColummn.DataPropertyName = "MANHANVIEN";
+            this.manvColummn.HeaderText = "Mã nhân viên";
+            this.manvColummn.MinimumWidth = 6;
+            this.manvColummn.Name = "manvColummn";
+            // 
+            // nameColumn
+            // 
+            this.nameColumn.DataPropertyName = "TENSUCO";
+            this.nameColumn.FillWeight = 120F;
+            this.nameColumn.HeaderText = "Tên sự cố ";
+            this.nameColumn.MinimumWidth = 6;
+            this.nameColumn.Name = "nameColumn";
+            // 
+            // condColumn
+            // 
+            this.condColumn.DataPropertyName = "TINHTRANG";
+            this.condColumn.FillWeight = 80F;
+            this.condColumn.HeaderText = "Tình trạng ";
+            this.condColumn.MinimumWidth = 6;
+            this.condColumn.Name = "condColumn";
+            // 
+            // dateColumn
+            // 
+            this.dateColumn.DataPropertyName = "NGAYBAOCAO";
+            this.dateColumn.FillWeight = 80F;
+            this.dateColumn.HeaderText = "Ngày tiếp nhận ";
+            this.dateColumn.MinimumWidth = 6;
+            this.dateColumn.Name = "dateColumn";
+            // 
+            // descColumn
+            // 
+            this.descColumn.DataPropertyName = "MOTA";
+            this.descColumn.FillWeight = 180F;
+            this.descColumn.HeaderText = "Mô tả";
+            this.descColumn.MinimumWidth = 6;
+            this.descColumn.Name = "descColumn";
+            // 
             // Suco
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(248)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(174)))), ((int)(((byte)(191)))));
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(4);
