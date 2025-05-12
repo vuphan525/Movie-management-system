@@ -333,9 +333,9 @@
             this.label3.Location = new System.Drawing.Point(19, 103);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(66, 20);
+            this.label3.Size = new System.Drawing.Size(132, 20);
             this.label3.TabIndex = 2;
-            this.label3.Text = "Mã KH:";
+            this.label3.Text = "Mã KH (8 ký tự):";
             // 
             // label1
             // 

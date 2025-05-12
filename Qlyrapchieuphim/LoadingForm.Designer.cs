@@ -86,7 +86,7 @@
             this.label1.ForeColor = System.Drawing.SystemColors.MenuBar;
             this.label1.Location = new System.Drawing.Point(384, 365);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(168, 46);
+            this.label1.Size = new System.Drawing.Size(165, 45);
             this.label1.TabIndex = 1;
             this.label1.Text = "Loading...";
             // 

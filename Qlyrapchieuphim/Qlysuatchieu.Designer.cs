@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.idColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -71,14 +71,14 @@
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(61)))), ((int)(((byte)(204)))));
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(61)))), ((int)(((byte)(204)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idColumn,
@@ -86,14 +86,14 @@
             this.roomColumn,
             this.dateColumn,
             this.timeColumn});
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.Location = new System.Drawing.Point(21, 69);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
@@ -265,25 +265,25 @@
             this.idTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.idTextBox.ForeColor = System.Drawing.Color.Black;
             this.idTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.idTextBox.Location = new System.Drawing.Point(1173, 73);
+            this.idTextBox.Location = new System.Drawing.Point(1196, 74);
             this.idTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.idTextBox.Name = "idTextBox";
             this.idTextBox.PasswordChar = '\0';
             this.idTextBox.PlaceholderText = "";
             this.idTextBox.SelectedText = "";
-            this.idTextBox.Size = new System.Drawing.Size(240, 38);
+            this.idTextBox.Size = new System.Drawing.Size(217, 38);
             this.idTextBox.TabIndex = 62;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(1039, 86);
+            this.label6.Location = new System.Drawing.Point(977, 86);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(114, 20);
+            this.label6.Size = new System.Drawing.Size(185, 20);
             this.label6.TabIndex = 61;
-            this.label6.Text = "Mã suất chiếu";
+            this.label6.Text = "Mã suất chiếu (6 ký tự):";
             // 
             // chinhsua
             // 
@@ -310,7 +310,7 @@
             this.giochieu.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(248)))));
             this.giochieu.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.giochieu.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.giochieu.Location = new System.Drawing.Point(751, 161);
+            this.giochieu.Location = new System.Drawing.Point(728, 161);
             this.giochieu.Margin = new System.Windows.Forms.Padding(4);
             this.giochieu.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.giochieu.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
@@ -357,7 +357,7 @@
             "5",
             "6",
             "7"});
-            this.phongchieu.Location = new System.Drawing.Point(203, 164);
+            this.phongchieu.Location = new System.Drawing.Point(180, 164);
             this.phongchieu.Margin = new System.Windows.Forms.Padding(4);
             this.phongchieu.Name = "phongchieu";
             this.phongchieu.Size = new System.Drawing.Size(220, 36);
@@ -367,7 +367,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(66, 176);
+            this.label5.Location = new System.Drawing.Point(43, 176);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(106, 20);
@@ -378,7 +378,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(631, 176);
+            this.label4.Location = new System.Drawing.Point(608, 176);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(85, 20);
@@ -392,7 +392,7 @@
             this.ngaychieu.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(248)))));
             this.ngaychieu.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.ngaychieu.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.ngaychieu.Location = new System.Drawing.Point(751, 73);
+            this.ngaychieu.Location = new System.Drawing.Point(728, 73);
             this.ngaychieu.Margin = new System.Windows.Forms.Padding(4);
             this.ngaychieu.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.ngaychieu.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
@@ -434,7 +434,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(619, 86);
+            this.label2.Location = new System.Drawing.Point(596, 86);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(97, 20);
@@ -453,7 +453,7 @@
             this.tenphim.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.tenphim.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.tenphim.ItemHeight = 30;
-            this.tenphim.Location = new System.Drawing.Point(203, 76);
+            this.tenphim.Location = new System.Drawing.Point(180, 76);
             this.tenphim.Margin = new System.Windows.Forms.Padding(4);
             this.tenphim.Name = "tenphim";
             this.tenphim.Size = new System.Drawing.Size(311, 36);
@@ -463,7 +463,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(89, 86);
+            this.label7.Location = new System.Drawing.Point(66, 86);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(83, 20);
