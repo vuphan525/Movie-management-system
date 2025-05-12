@@ -14,7 +14,7 @@ namespace Qlyrapchieuphim
 {
     public partial class Suco : UserControl
     {
-        string ConnString = ConfigurationManager.ConnectionStrings["ConnString"].ConnectionString;
+        string ConnString = Program.ConnString;
         public Suco()
         {
             InitializeComponent();

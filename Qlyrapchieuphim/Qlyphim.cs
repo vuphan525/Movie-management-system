@@ -31,7 +31,7 @@ namespace Qlyrapchieuphim
             dataGridView1.ReadOnly = true;
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
         }
-        string ConnString = ConfigurationManager.ConnectionStrings["ConnString"].ConnectionString;
+        string ConnString = Program.ConnString;
         string poster_url = string.Empty;
         string projectFolder = AppDomain.CurrentDomain.BaseDirectory; // Thư mục dự án
         private void LoadData()

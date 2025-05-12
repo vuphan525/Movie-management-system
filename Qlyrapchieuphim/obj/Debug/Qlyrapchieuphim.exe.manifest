@@ -66,14 +66,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="EnvDTE.dll" size="256040">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="EnvDTE.dll" size="256032">
       <assemblyIdentity name="EnvDTE" version="8.0.0.0" publicKeyToken="B03F5F7F11D50A3A" language="neutral" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>7qdNwiKU3ZoMZr3UU2ddTiqmLVpQj3lQNUqUO2d6/cQ=</dsig:DigestValue>
+        <dsig:DigestValue>RTuElNYmz+/eG/fieK48W3x2px3Nj+6/RNIbl4SKxwo=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -889,7 +889,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>+8zCt709aqDW5HsgitKlXb4D30X2GSKlSgGVYOGJ6UY=</dsig:DigestValue>
+        <dsig:DigestValue>G8wh+CaqmQrmZzAbOHoMxEUWoc14oHutckHtkcwZ8pk=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

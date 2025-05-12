@@ -16,7 +16,7 @@ namespace Qlyrapchieuphim
 {
     public partial class Qlysuatchieu : UserControl
     {
-        string ConnString = ConfigurationManager.ConnectionStrings["ConnString"].ConnectionString;
+        string ConnString = Program.ConnString;
         public Qlysuatchieu()
         {
             InitializeComponent();

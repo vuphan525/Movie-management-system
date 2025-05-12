@@ -15,7 +15,7 @@ namespace Qlyrapchieuphim
 {
     public partial class Voucher : UserControl
     {
-        string ConnString = ConfigurationManager.ConnectionStrings["ConnString"].ConnectionString;
+        string ConnString = Program.ConnString;
         public Voucher()
         {
             
