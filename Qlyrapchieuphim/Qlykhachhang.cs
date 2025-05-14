@@ -18,7 +18,7 @@ namespace Qlyrapchieuphim
 {
     public partial class Qlykhachhang : UserControl
     {
-        string ConnString = ConfigurationManager.ConnectionStrings["ConnString"].ConnectionString;
+        string ConnString = Program.ConnString;
         public Qlykhachhang()
         {
             InitializeComponent();

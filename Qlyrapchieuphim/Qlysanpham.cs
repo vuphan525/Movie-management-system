@@ -20,7 +20,7 @@ namespace Qlyrapchieuphim
     
     public partial class Qlysanpham : UserControl
     {
-        string ConnString = ConfigurationManager.ConnectionStrings["ConnString"].ConnectionString;
+        string ConnString = Program.ConnString;
         string picture_url = string.Empty;
         string projectFolder = AppDomain.CurrentDomain.BaseDirectory; // Thư mục dự án
         public Qlysanpham()

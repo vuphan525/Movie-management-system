@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.Data.SqlClient;
 using System.Configuration;
+using Microsoft.IdentityModel.Tokens;
 
 namespace Qlyrapchieuphim
 {
@@ -18,7 +19,7 @@ namespace Qlyrapchieuphim
         {
             InitializeComponent();
         }
-        string ConnString = ConfigurationManager.ConnectionStrings["ConnString"].ConnectionString;
+        public string ConnString = Program.ConnString;
         private void LoadMOV()
         {
             SqlConnection conn = new SqlConnection(ConnString);
