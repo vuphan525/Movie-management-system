@@ -30,11 +30,7 @@ namespace Qlyrapchieuphim
 
         private void button10_Click(object sender, EventArgs e)
         {
-            if (DialogResult.Yes == MessageBox.Show("Bạn có chắc muốn thoát?", "Confirmation Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
-
-            {
-                Application.Exit();
-            }
+            
         }
 
         private void button9_Click(object sender, EventArgs e)
@@ -166,6 +162,66 @@ namespace Qlyrapchieuphim
             voucher1.Hide();
             suco1.Show();
             bangdieukhien1.Hide();
+        }
+
+        private void guna2Button9_Click(object sender, EventArgs e)
+        {
+            //if (DialogResult.Yes == MessageBox.Show("Bạn có chắc muốn đăng xuất?", "Confirmation Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
+
+            //{
+            //    Form1 loginForm = new Form1();
+            //    loginForm.Show();
+            //    guna2Button9.Enabled = false;
+            //    this.Hide();
+            //}
+            // Đặt trạng thái Checked để giữ màu pressed
+
+            guna2Button9.Checked = true;
+
+            // Hiện message box
+            DialogResult result = MessageBox.Show("Bạn có chắc muốn đăng xuất?", "Confirmation Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            // Sau khi đóng MessageBox, reset lại trạng thái nếu cần
+            if (result == DialogResult.Yes)
+            {
+                Form1 loginForm = new Form1();
+                loginForm.Show();
+                this.Hide(); // hoặc this.Close();
+            }
+            else
+            {
+                // Nếu không đăng xuất, reset lại trạng thái của nút
+                guna2Button9.Checked = false;
+                this.ActiveControl = null; // gỡ focus
+            }
+        }
+
+        private void guna2Button9_MouseLeave(object sender, EventArgs e)
+        {
+        }
+
+        private void guna2ControlBox1_Click(object sender, EventArgs e)
+        {
+            //if (DialogResult.Yes == MessageBox.Show("Bạn có chắc muốn thoát?", "Confirmation Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
+
+            //{
+            //    Application.Exit();
+            //}
+            Application.Exit();
+        }
+
+        private void Adform_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult result = MessageBox.Show(
+                "Bạn có chắc muốn thoát?",
+                "Xác nhận",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
+
+            if (result == DialogResult.No)
+            {
+                e.Cancel = true; // hủy sự kiện đóng form
+            }
         }
     }
 }

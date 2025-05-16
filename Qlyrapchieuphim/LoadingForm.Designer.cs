@@ -36,6 +36,8 @@
             this.guna2CircleProgressBar1 = new Guna.UI2.WinForms.Guna2CircleProgressBar();
             this.label1 = new System.Windows.Forms.Label();
             this.timerLoadingForm = new System.Windows.Forms.Timer(this.components);
+            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2Elipse1
@@ -84,7 +86,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.MenuBar;
-            this.label1.Location = new System.Drawing.Point(384, 365);
+            this.label1.Location = new System.Drawing.Point(384, 373);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(165, 45);
             this.label1.TabIndex = 1;
@@ -95,6 +97,19 @@
             this.timerLoadingForm.Enabled = true;
             this.timerLoadingForm.Tick += new System.EventHandler(this.timerLoadingForm_Tick);
             // 
+            // guna2PictureBox1
+            // 
+            this.guna2PictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox1.Image = global::Qlyrapchieuphim.Properties.Resources.icons8_movie;
+            this.guna2PictureBox1.ImageRotate = 0F;
+            this.guna2PictureBox1.Location = new System.Drawing.Point(654, 362);
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.Size = new System.Drawing.Size(141, 56);
+            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox1.TabIndex = 2;
+            this.guna2PictureBox1.TabStop = false;
+            this.guna2PictureBox1.UseTransparentBackground = true;
+            // 
             // LoadingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
@@ -103,6 +118,7 @@
             this.BackgroundImage = global::Qlyrapchieuphim.Properties.Resources._21495005991;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(987, 614);
+            this.Controls.Add(this.guna2PictureBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.guna2CircleProgressBar1);
             this.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -112,6 +128,7 @@
             this.Text = "LoadingForm";
             this.Load += new System.EventHandler(this.LoadingForm_Load);
             this.Shown += new System.EventHandler(this.LoadingForm_Shown);
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -126,5 +143,6 @@
         private Guna.UI2.WinForms.Guna2CircleProgressBar guna2CircleProgressBar1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Timer timerLoadingForm;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
     }
 }

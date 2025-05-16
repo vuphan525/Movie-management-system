@@ -585,6 +585,31 @@
   <ItemGroup>
     <None Include="Resources\icons8-delete-24.png" />
     <None Include="Resources\icons8-exit-35.png" />
+    <None Include="Resources\warning_transparent.png" />
+    <None Include="Resources\movie_24dp_000000_FILL0_wght400_GRAD0_opsz24.png" />
+    <None Include="Resources\movie_24dp_000000_FILL0_wght400_GRAD0_opsz241.png" />
+    <None Include="Resources\white_movie.png" />
+    <None Include="Resources\black_email.png" />
+    <None Include="Resources\white_theatre.png" />
+    <None Include="Resources\black_theater.png" />
+    <None Include="Resources\white_food.png" />
+    <None Include="Resources\black_food.png" />
+    <None Include="Resources\black_employee.png" />
+    <None Include="Resources\white_employee.png" />
+    <None Include="Resources\white_customer.png" />
+    <None Include="Resources\black_customer.png" />
+    <None Include="Resources\white_coupon.png" />
+    <None Include="Resources\black_coupon.png" />
+    <None Include="Resources\black_warning.png" />
+    <None Include="Resources\white_warning.png" />
+    <None Include="Resources\black_logout.png" />
+    <None Include="Resources\white_log-out.png" />
+    <None Include="Resources\movie-clapper-open.png" />
+    <None Include="Resources\clapperboard.png" />
+    <None Include="Resources\black_tickets.png" />
+    <None Include="Resources\white_tickets.png" />
+    <None Include="Resources\user %283%29.png" />
+    <None Include="Resources\icons8-movie.gif" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

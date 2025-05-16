@@ -54,6 +54,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(384, 225);
             this.Controls.Add(this.thanhtoan);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Yesfrm";
             this.Text = "Yesfrm";
             this.ResumeLayout(false);
