@@ -13,6 +13,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.Configuration;
 using Microsoft.Data.SqlClient;
 using System.Net.Mail;
+using Qlyrapchieuphim.FormEdit;
 
 namespace Qlyrapchieuphim
 {
@@ -49,6 +50,16 @@ namespace Qlyrapchieuphim
             adapter.Fill(ds, "KHACHHANG");
             DataTable dt = ds.Tables["KHACHHANG"];
             dataGridView1.DataSource = dt;
+            if (!dataGridView1.Columns.Contains("Actions"))
+            {
+                DataGridViewTextBoxColumn actionCol = new DataGridViewTextBoxColumn();
+                actionCol.Name = "Actions";
+                actionCol.HeaderText = "Actions";
+                actionCol.Width = 60;
+                dataGridView1.Columns.Add(actionCol);
+            }
+
+            dataGridView1.Columns["Actions"].DisplayIndex = dataGridView1.Columns.Count - 1;
             conn.Close();
         }
         private void them_Click(object sender, EventArgs e)
@@ -140,6 +151,7 @@ namespace Qlyrapchieuphim
             dataGridView1.ClearSelection();
             guna2TextBox6.Text = "Tìm kiếm theo tên";
             guna2TextBox6.ForeColor = Color.Gray;
+            dataGridView1.RowTemplate.Height = 45;
         }
 
         private void PrintToTextBoxes(int row)
@@ -157,6 +169,33 @@ namespace Qlyrapchieuphim
             if (e.RowIndex >= 0)
             {
                 PrintToTextBoxes((int)e.RowIndex);
+            }
+
+            if (e.ColumnIndex >= 0 && dataGridView1.Columns[e.ColumnIndex].Name == "Actions" && e.RowIndex >= 0)
+            {
+                // Tính vị trí click so với ô
+                var cellRect = dataGridView1.GetCellDisplayRectangle(e.ColumnIndex, e.RowIndex, false);
+                int clickX = dataGridView1.PointToClient(Cursor.Position).X - cellRect.X;
+
+                int iconSize = 32;
+                int padding = 8;
+                int editLeft = padding;
+                int deleteLeft = editLeft + iconSize + padding;
+
+                if (clickX >= editLeft && clickX < editLeft + iconSize)
+                {
+                    // 👉 Click icon Edit
+                    using (FormSuaKhachHang popup = new FormSuaKhachHang())
+                    {
+                        popup.StartPosition = FormStartPosition.CenterParent;
+                        popup.ShowDialog(FindForm());
+                    }
+                }
+                else if (clickX >= deleteLeft && clickX < deleteLeft + iconSize)
+                {
+                    // 👉 Click icon Delete
+                    MessageBox.Show("Bạn vừa click nút xóa (tạm thời chưa có hành động).", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
         }
 
@@ -379,6 +418,32 @@ namespace Qlyrapchieuphim
                 popup.StartPosition = FormStartPosition.CenterParent;
                 popup.ShowDialog(FindForm()); 
             }
+        }
+
+        private void dataGridView1_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            if (e.ColumnIndex >= 0 && dataGridView1.Columns[e.ColumnIndex].Name == "Actions" && e.RowIndex >= 0)
+            {
+                e.PaintBackground(e.ClipBounds, true);
+                e.Handled = true;
+
+                // Tọa độ vẽ
+                int iconSize = 32;
+                int padding = 8;
+                int iconY = e.CellBounds.Y + (e.CellBounds.Height - iconSize) / 2;
+                int editX = e.CellBounds.X + padding;
+                int deleteX = editX + iconSize + padding;
+
+                // Vẽ icon Sửa
+                e.Graphics.DrawImage(Properties.Resources.icons8_edit_32, new Rectangle(editX, iconY, iconSize, iconSize));
+                // Vẽ icon Xóa
+                e.Graphics.DrawImage(Properties.Resources.icons8_delete_32, new Rectangle(deleteX, iconY, iconSize, iconSize));
+            }
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

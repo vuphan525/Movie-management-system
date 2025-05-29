@@ -261,6 +261,48 @@
     <Compile Include="formbanve.Designer.cs">
       <DependentUpon>formbanve.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormEdit\FormSuaKhachHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEdit\FormSuaKhachHang.Designer.cs">
+      <DependentUpon>FormSuaKhachHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormEdit\FormSuaNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEdit\FormSuaNhanVien.Designer.cs">
+      <DependentUpon>FormSuaNhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormEdit\FormSuaPhim.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEdit\FormSuaPhim.Designer.cs">
+      <DependentUpon>FormSuaPhim.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormEdit\FormSuaSanPham.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEdit\FormSuaSanPham.Designer.cs">
+      <DependentUpon>FormSuaSanPham.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormEdit\FormSuaSuatChieu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEdit\FormSuaSuatChieu.Designer.cs">
+      <DependentUpon>FormSuaSuatChieu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormEdit\FormSuaSuCo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEdit\FormSuaSuCo.Designer.cs">
+      <DependentUpon>FormSuaSuCo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormEdit\FormSuaVoucher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEdit\FormSuaVoucher.Designer.cs">
+      <DependentUpon>FormSuaVoucher.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormThemKhachHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -421,6 +463,27 @@
     </EmbeddedResource>
     <EmbeddedResource Include="formbanve.resx">
       <DependentUpon>formbanve.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEdit\FormSuaKhachHang.resx">
+      <DependentUpon>FormSuaKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEdit\FormSuaNhanVien.resx">
+      <DependentUpon>FormSuaNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEdit\FormSuaPhim.resx">
+      <DependentUpon>FormSuaPhim.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEdit\FormSuaSanPham.resx">
+      <DependentUpon>FormSuaSanPham.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEdit\FormSuaSuatChieu.resx">
+      <DependentUpon>FormSuaSuatChieu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEdit\FormSuaSuCo.resx">
+      <DependentUpon>FormSuaSuCo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEdit\FormSuaVoucher.resx">
+      <DependentUpon>FormSuaVoucher.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormThemKhachHang.resx">
       <DependentUpon>FormThemKhachHang.cs</DependentUpon>
@@ -641,6 +704,8 @@
     <None Include="Resources\icons8-exit-35.png" />
     <None Include="Resources\icons8-home-64.png" />
     <None Include="Resources\icons8-home-24.png" />
+    <None Include="Resources\icons8-edit-32.png" />
+    <None Include="Resources\icons8-delete-32.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

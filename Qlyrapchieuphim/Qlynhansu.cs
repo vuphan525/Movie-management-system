@@ -13,6 +13,8 @@ using System.Configuration;
 using System.IO;
 using static System.Net.WebRequestMethods;
 using System.Net.Mail;
+using Qlyrapchieuphim.FormEdit;
+
 
 namespace Qlyrapchieuphim
 {
@@ -42,6 +44,16 @@ namespace Qlyrapchieuphim
             adapter.Fill(ds, "NHANVIEN");
             DataTable dt = ds.Tables["NHANVIEN"];
             dataGridView1.DataSource = dt;
+            if (!dataGridView1.Columns.Contains("Actions"))
+            {
+                DataGridViewTextBoxColumn actionCol = new DataGridViewTextBoxColumn();
+                actionCol.Name = "Actions";
+                actionCol.HeaderText = "Actions";
+                actionCol.Width = 60;
+                dataGridView1.Columns.Add(actionCol);
+            }
+
+            dataGridView1.Columns["Actions"].DisplayIndex = dataGridView1.Columns.Count - 1;
             conn.Close();
         }
         private void them_Click(object sender, EventArgs e)
@@ -144,6 +156,7 @@ namespace Qlyrapchieuphim
             ngaysinh.Value = DateTime.Today.Subtract(TimeSpan.FromDays(365 * 19));
             LoadData();
             dataGridView1.ClearSelection();
+            dataGridView1.RowTemplate.Height = 45;
         }
 
         private void capnhat_Click(object sender, EventArgs e)
@@ -324,6 +337,33 @@ namespace Qlyrapchieuphim
             {
                 PrintToTextBoxes((int)e.RowIndex);
             }
+
+            if (e.ColumnIndex >= 0 && dataGridView1.Columns[e.ColumnIndex].Name == "Actions" && e.RowIndex >= 0)
+            {
+                // Tính vị trí click so với ô
+                var cellRect = dataGridView1.GetCellDisplayRectangle(e.ColumnIndex, e.RowIndex, false);
+                int clickX = dataGridView1.PointToClient(Cursor.Position).X - cellRect.X;
+
+                int iconSize = 32;
+                int padding = 8;
+                int editLeft = padding;
+                int deleteLeft = editLeft + iconSize + padding;
+
+                if (clickX >= editLeft && clickX < editLeft + iconSize)
+                {
+                    // 👉 Click icon Edit
+                    using (FormSuaNhanVien popup = new FormSuaNhanVien())
+                    {
+                        popup.StartPosition = FormStartPosition.CenterParent;
+                        popup.ShowDialog(FindForm());
+                    }
+                }
+                else if (clickX >= deleteLeft && clickX < deleteLeft + iconSize)
+                {
+                    // 👉 Click icon Delete
+                    MessageBox.Show("Bạn vừa click nút xóa (tạm thời chưa có hành động).", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
         }
 
         private void SearchTextBox_TextChanged(object sender, EventArgs e)
@@ -403,6 +443,32 @@ namespace Qlyrapchieuphim
             {
                 popup.StartPosition = FormStartPosition.CenterParent;
                 popup.ShowDialog(FindForm()); 
+            }
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            if (e.ColumnIndex >= 0 && dataGridView1.Columns[e.ColumnIndex].Name == "Actions" && e.RowIndex >= 0)
+            {
+                e.PaintBackground(e.ClipBounds, true);
+                e.Handled = true;
+
+                // Tọa độ vẽ
+                int iconSize = 32;
+                int padding = 8;
+                int iconY = e.CellBounds.Y + (e.CellBounds.Height - iconSize) / 2;
+                int editX = e.CellBounds.X + padding;
+                int deleteX = editX + iconSize + padding;
+
+                // Vẽ icon Sửa
+                e.Graphics.DrawImage(Properties.Resources.icons8_edit_32, new Rectangle(editX, iconY, iconSize, iconSize));
+                // Vẽ icon Xóa
+                e.Graphics.DrawImage(Properties.Resources.icons8_delete_32, new Rectangle(deleteX, iconY, iconSize, iconSize));
             }
         }
     }
