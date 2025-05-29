@@ -261,6 +261,48 @@
     <Compile Include="formbanve.Designer.cs">
       <DependentUpon>formbanve.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormThemKhachHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormThemKhachHang.Designer.cs">
+      <DependentUpon>FormThemKhachHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormThemNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormThemNhanVien.Designer.cs">
+      <DependentUpon>FormThemNhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormThemPhim.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormThemPhim.Designer.cs">
+      <DependentUpon>FormThemPhim.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormThemSanPham.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormThemSanPham.Designer.cs">
+      <DependentUpon>FormThemSanPham.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormThemSuatChieu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormThemSuatChieu.Designer.cs">
+      <DependentUpon>FormThemSuatChieu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormThemSuCo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormThemSuCo.Designer.cs">
+      <DependentUpon>FormThemSuCo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormThemVoucher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormThemVoucher.Designer.cs">
+      <DependentUpon>FormThemVoucher.cs</DependentUpon>
+    </Compile>
     <Compile Include="Hoadon.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -379,6 +421,27 @@
     </EmbeddedResource>
     <EmbeddedResource Include="formbanve.resx">
       <DependentUpon>formbanve.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormThemKhachHang.resx">
+      <DependentUpon>FormThemKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormThemNhanVien.resx">
+      <DependentUpon>FormThemNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormThemPhim.resx">
+      <DependentUpon>FormThemPhim.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormThemSanPham.resx">
+      <DependentUpon>FormThemSanPham.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormThemSuatChieu.resx">
+      <DependentUpon>FormThemSuatChieu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormThemSuCo.resx">
+      <DependentUpon>FormThemSuCo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormThemVoucher.resx">
+      <DependentUpon>FormThemVoucher.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Hoadon.resx">
       <DependentUpon>Hoadon.cs</DependentUpon>
@@ -576,6 +639,8 @@
   <ItemGroup>
     <None Include="Resources\icons8-delete-24.png" />
     <None Include="Resources\icons8-exit-35.png" />
+    <None Include="Resources\icons8-home-64.png" />
+    <None Include="Resources\icons8-home-24.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

@@ -396,5 +396,14 @@ namespace Qlyrapchieuphim
         {
             Reset();
         }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            using (FormThemNhanVien popup = new FormThemNhanVien())
+            {
+                popup.StartPosition = FormStartPosition.CenterParent;
+                popup.ShowDialog(FindForm()); 
+            }
+        }
     }
 }

@@ -464,5 +464,13 @@ namespace Qlyrapchieuphim
             e.Graphics.DrawString(rowIdx, this.Font, SystemBrushes.ControlText, headerBounds, centerFormat);
         }
 
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            using (FormThemSanPham popup = new FormThemSanPham())
+            {
+                popup.StartPosition = FormStartPosition.CenterParent;
+                popup.ShowDialog(FindForm()); 
+            }
+        }
     }
 }

@@ -554,6 +554,15 @@ namespace Qlyrapchieuphim
         {
             Updatea();
         }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            using (FormThemSuatChieu popup = new FormThemSuatChieu())
+            {
+                popup.StartPosition = FormStartPosition.CenterParent;
+                popup.ShowDialog(FindForm()); 
+            }
+        }
     }
     public static class TimeExtensions
     {

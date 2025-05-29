@@ -382,5 +382,14 @@ namespace Qlyrapchieuphim
             }
             conn.Close();
         }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            using (FormThemVoucher popup = new FormThemVoucher())
+            {
+                popup.StartPosition = FormStartPosition.CenterParent;
+                popup.ShowDialog(FindForm()); 
+            }
+        }
     }
 }

@@ -372,6 +372,13 @@ namespace Qlyrapchieuphim
 
         }
 
-        
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            using (FormThemKhachHang popup = new FormThemKhachHang())
+            {
+                popup.StartPosition = FormStartPosition.CenterParent;
+                popup.ShowDialog(FindForm()); 
+            }
+        }
     }
 }

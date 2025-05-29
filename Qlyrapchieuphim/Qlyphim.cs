@@ -25,7 +25,7 @@ namespace Qlyrapchieuphim
         
         public Qlyphim()
         {
-            InitializeComponent();
+            InitializeComponent();  
             idphim.MaxLength = 4;
             tenphim.MaxLength = 100;
             dataGridView1.ReadOnly = true;
@@ -511,6 +511,15 @@ namespace Qlyrapchieuphim
         private void cancelButton_Click(object sender, EventArgs e)
         {
             Reset();
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            using (FormThemPhim popup = new FormThemPhim())
+            {
+                popup.StartPosition = FormStartPosition.CenterParent;
+                popup.ShowDialog(FindForm()); 
+            }
         }
     }
 }

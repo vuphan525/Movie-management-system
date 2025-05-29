@@ -310,5 +310,14 @@ namespace Qlyrapchieuphim
         {
             Updatea();
         }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            using (FormThemSuCo popup = new FormThemSuCo())
+            {
+                popup.StartPosition = FormStartPosition.CenterParent;
+                popup.ShowDialog(FindForm());
+            }
+        }
     }
 }

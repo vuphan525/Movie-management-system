@@ -19,8 +19,6 @@ namespace Qlyrapchieuphim
         public Adform()
         {
             InitializeComponent();
-            guna2Button6.Enabled = false;
-            guna2Button6.Visible = false;
         }
         
         private void voucher1_Load(object sender, EventArgs e)
@@ -136,10 +134,11 @@ namespace Qlyrapchieuphim
             qlysanpham1.Hide();
             qlynhansu1.Hide();
             qlykhachhang1.Hide();
-            doanhthu1.Show();
-            bangdieukhien1.Hide();
-            suco1.Hide();
+            doanhthu1.Hide();
             voucher1.Hide();
+            suco1.Hide();
+            bangdieukhien1.ConnString = ConfigurationManager.ConnectionStrings["ConnString"].ConnectionString;
+            bangdieukhien1.Show();
         }
 
         private void guna2Button7_Click(object sender, EventArgs e)
