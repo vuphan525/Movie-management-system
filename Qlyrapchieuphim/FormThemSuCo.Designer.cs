@@ -43,6 +43,8 @@
             this.tinhtrang = new Guna.UI2.WinForms.Guna2ComboBox();
             this.tensuco = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // manv
@@ -63,7 +65,7 @@
             "Chờ tiếp nhận"});
             this.manv.Location = new System.Drawing.Point(12, 60);
             this.manv.Name = "manv";
-            this.manv.Size = new System.Drawing.Size(221, 36);
+            this.manv.Size = new System.Drawing.Size(224, 36);
             this.manv.TabIndex = 68;
             // 
             // masuco
@@ -207,7 +209,7 @@
             this.bcButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(61)))), ((int)(((byte)(204)))));
             this.bcButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bcButton.ForeColor = System.Drawing.Color.White;
-            this.bcButton.Location = new System.Drawing.Point(198, 369);
+            this.bcButton.Location = new System.Drawing.Point(193, 442);
             this.bcButton.Name = "bcButton";
             this.bcButton.Size = new System.Drawing.Size(137, 36);
             this.bcButton.TabIndex = 60;
@@ -275,12 +277,47 @@
             this.guna2Button2.TabIndex = 85;
             this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
             // 
+            // guna2TextBox1
+            // 
+            this.guna2TextBox1.BorderColor = System.Drawing.Color.Gray;
+            this.guna2TextBox1.BorderRadius = 10;
+            this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.guna2TextBox1.DefaultText = "";
+            this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2TextBox1.ForeColor = System.Drawing.Color.Black;
+            this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox1.Location = new System.Drawing.Point(12, 346);
+            this.guna2TextBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.guna2TextBox1.Name = "guna2TextBox1";
+            this.guna2TextBox1.PasswordChar = '\0';
+            this.guna2TextBox1.PlaceholderText = "";
+            this.guna2TextBox1.SelectedText = "";
+            this.guna2TextBox1.Size = new System.Drawing.Size(224, 34);
+            this.guna2TextBox1.TabIndex = 87;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(12, 327);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(99, 15);
+            this.label1.TabIndex = 86;
+            this.label1.Text = "Hướng giải quyết";
+            // 
             // FormThemSuCo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(530, 417);
+            this.ClientSize = new System.Drawing.Size(530, 490);
+            this.Controls.Add(this.guna2TextBox1);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.guna2Button2);
             this.Controls.Add(this.manv);
             this.Controls.Add(this.masuco);
@@ -323,5 +360,7 @@
         private Guna.UI2.WinForms.Guna2ComboBox tinhtrang;
         private Guna.UI2.WinForms.Guna2TextBox tensuco;
         private Guna.UI2.WinForms.Guna2Button guna2Button2;
+        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
+        private System.Windows.Forms.Label label1;
     }
 }

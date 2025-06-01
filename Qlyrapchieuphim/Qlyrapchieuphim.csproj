@@ -279,6 +279,12 @@
     <Compile Include="FormEdit\FormSuaPhim.Designer.cs">
       <DependentUpon>FormSuaPhim.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormEdit\FormSuaPhongChieu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEdit\FormSuaPhongChieu.Designer.cs">
+      <DependentUpon>FormSuaPhongChieu.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormEdit\FormSuaSanPham.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -320,6 +326,12 @@
     </Compile>
     <Compile Include="FormThemPhim.Designer.cs">
       <DependentUpon>FormThemPhim.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormThemPhongChieu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormThemPhongChieu.Designer.cs">
+      <DependentUpon>FormThemPhongChieu.cs</DependentUpon>
     </Compile>
     <Compile Include="FormThemSanPham.cs">
       <SubType>Form</SubType>
@@ -381,6 +393,12 @@
     </Compile>
     <Compile Include="Qlyphim.Designer.cs">
       <DependentUpon>Qlyphim.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QlyPhongChieu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="QlyPhongChieu.Designer.cs">
+      <DependentUpon>QlyPhongChieu.cs</DependentUpon>
     </Compile>
     <Compile Include="Qlysanpham.cs">
       <SubType>UserControl</SubType>
@@ -473,6 +491,9 @@
     <EmbeddedResource Include="FormEdit\FormSuaPhim.resx">
       <DependentUpon>FormSuaPhim.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormEdit\FormSuaPhongChieu.resx">
+      <DependentUpon>FormSuaPhongChieu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormEdit\FormSuaSanPham.resx">
       <DependentUpon>FormSuaSanPham.cs</DependentUpon>
     </EmbeddedResource>
@@ -493,6 +514,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormThemPhim.resx">
       <DependentUpon>FormThemPhim.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormThemPhongChieu.resx">
+      <DependentUpon>FormThemPhongChieu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormThemSanPham.resx">
       <DependentUpon>FormThemSanPham.cs</DependentUpon>
@@ -525,6 +549,9 @@
     <EmbeddedResource Include="Qlyphim.resx">
       <DependentUpon>Qlyphim.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QlyPhongChieu.resx">
+      <DependentUpon>QlyPhongChieu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Qlysanpham.resx">
       <DependentUpon>Qlysanpham.cs</DependentUpon>
@@ -706,6 +733,7 @@
     <None Include="Resources\icons8-home-24.png" />
     <None Include="Resources\icons8-edit-32.png" />
     <None Include="Resources\icons8-delete-32.png" />
+    <None Include="Resources\icons8-room-24.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

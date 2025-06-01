@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Adform));
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2Button9 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button6 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button8 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
@@ -45,7 +47,6 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.bangdieukhien1 = new Qlyrapchieuphim.bangdieukhien();
             this.suco1 = new Qlyrapchieuphim.Suco();
             this.voucher1 = new Qlyrapchieuphim.Voucher();
             this.doanhthu1 = new Qlyrapchieuphim.Doanhthu();
@@ -54,6 +55,8 @@
             this.qlysanpham1 = new Qlyrapchieuphim.Qlysanpham();
             this.qlysuatchieu1 = new Qlyrapchieuphim.Qlysuatchieu();
             this.qlyphim1 = new Qlyrapchieuphim.Qlyphim();
+            this.qlyPhongChieu1 = new Qlyrapchieuphim.QlyPhongChieu();
+            this.bangdieukhien1 = new Qlyrapchieuphim.bangdieukhien();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.guna2Panel3.SuspendLayout();
@@ -64,6 +67,7 @@
             // 
             this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(248)))));
             this.guna2Panel1.BorderRadius = 50;
+            this.guna2Panel1.Controls.Add(this.guna2Button9);
             this.guna2Panel1.Controls.Add(this.guna2Button6);
             this.guna2Panel1.Controls.Add(this.guna2Button8);
             this.guna2Panel1.Controls.Add(this.guna2Panel2);
@@ -85,6 +89,29 @@
             this.guna2Panel1.Size = new System.Drawing.Size(200, 720);
             this.guna2Panel1.TabIndex = 0;
             // 
+            // guna2Button9
+            // 
+            this.guna2Button9.AutoRoundedCorners = true;
+            this.guna2Button9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(61)))), ((int)(((byte)(204)))));
+            this.guna2Button9.BorderRadius = 17;
+            this.guna2Button9.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.guna2Button9.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(92)))), ((int)(((byte)(214)))));
+            this.guna2Button9.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button9.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button9.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button9.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button9.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(61)))), ((int)(((byte)(204)))));
+            this.guna2Button9.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button9.ForeColor = System.Drawing.Color.White;
+            this.guna2Button9.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button9.Image")));
+            this.guna2Button9.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.guna2Button9.Location = new System.Drawing.Point(3, 366);
+            this.guna2Button9.Name = "guna2Button9";
+            this.guna2Button9.Size = new System.Drawing.Size(194, 36);
+            this.guna2Button9.TabIndex = 28;
+            this.guna2Button9.Text = "    QUẢN LÝ PHÒNG CHIẾU";
+            this.guna2Button9.Click += new System.EventHandler(this.guna2Button9_Click);
+            // 
             // guna2Button6
             // 
             this.guna2Button6.AutoRoundedCorners = true;
@@ -99,7 +126,7 @@
             this.guna2Button6.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(61)))), ((int)(((byte)(204)))));
             this.guna2Button6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button6.ForeColor = System.Drawing.Color.White;
-            this.guna2Button6.Image = global::Qlyrapchieuphim.Properties.Resources.icons8_home_24;
+            this.guna2Button6.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button6.Image")));
             this.guna2Button6.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2Button6.Location = new System.Drawing.Point(3, 158);
             this.guna2Button6.Name = "guna2Button6";
@@ -122,9 +149,9 @@
             this.guna2Button8.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(61)))), ((int)(((byte)(204)))));
             this.guna2Button8.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button8.ForeColor = System.Drawing.Color.White;
-            this.guna2Button8.Image = global::Qlyrapchieuphim.Properties.Resources.icons8_error_24;
+            this.guna2Button8.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button8.Image")));
             this.guna2Button8.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2Button8.Location = new System.Drawing.Point(3, 529);
+            this.guna2Button8.Location = new System.Drawing.Point(3, 578);
             this.guna2Button8.Name = "guna2Button8";
             this.guna2Button8.Size = new System.Drawing.Size(194, 36);
             this.guna2Button8.TabIndex = 27;
@@ -152,9 +179,9 @@
             this.guna2Button7.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(61)))), ((int)(((byte)(204)))));
             this.guna2Button7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button7.ForeColor = System.Drawing.Color.White;
-            this.guna2Button7.Image = global::Qlyrapchieuphim.Properties.Resources.icons8_voucher_24;
+            this.guna2Button7.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button7.Image")));
             this.guna2Button7.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2Button7.Location = new System.Drawing.Point(3, 478);
+            this.guna2Button7.Location = new System.Drawing.Point(3, 527);
             this.guna2Button7.Name = "guna2Button7";
             this.guna2Button7.Size = new System.Drawing.Size(194, 36);
             this.guna2Button7.TabIndex = 26;
@@ -168,7 +195,7 @@
             this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button9.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button9.ForeColor = System.Drawing.Color.White;
-            this.button9.Image = global::Qlyrapchieuphim.Properties.Resources.icons8_logout_24;
+            this.button9.Image = ((System.Drawing.Image)(resources.GetObject("button9.Image")));
             this.button9.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button9.Location = new System.Drawing.Point(3, 672);
             this.button9.Name = "button9";
@@ -181,7 +208,7 @@
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(61)))), ((int)(((byte)(204)))));
-            this.pictureBox1.Image = global::Qlyrapchieuphim.Properties.Resources.camera;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(41, 27);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(108, 92);
@@ -204,9 +231,9 @@
             this.guna2Button5.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(61)))), ((int)(((byte)(204)))));
             this.guna2Button5.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button5.ForeColor = System.Drawing.Color.White;
-            this.guna2Button5.Image = global::Qlyrapchieuphim.Properties.Resources.icons8_people_24;
+            this.guna2Button5.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button5.Image")));
             this.guna2Button5.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2Button5.Location = new System.Drawing.Point(3, 424);
+            this.guna2Button5.Location = new System.Drawing.Point(3, 473);
             this.guna2Button5.Name = "guna2Button5";
             this.guna2Button5.Size = new System.Drawing.Size(194, 36);
             this.guna2Button5.TabIndex = 24;
@@ -227,7 +254,7 @@
             this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(61)))), ((int)(((byte)(204)))));
             this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.Image = global::Qlyrapchieuphim.Properties.Resources.icons8_movie_projector_24;
+            this.guna2Button1.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button1.Image")));
             this.guna2Button1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2Button1.Location = new System.Drawing.Point(3, 209);
             this.guna2Button1.Name = "guna2Button1";
@@ -250,9 +277,9 @@
             this.guna2Button4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(61)))), ((int)(((byte)(204)))));
             this.guna2Button4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button4.ForeColor = System.Drawing.Color.White;
-            this.guna2Button4.Image = global::Qlyrapchieuphim.Properties.Resources.icons8_customer_24;
+            this.guna2Button4.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button4.Image")));
             this.guna2Button4.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2Button4.Location = new System.Drawing.Point(3, 368);
+            this.guna2Button4.Location = new System.Drawing.Point(3, 417);
             this.guna2Button4.Name = "guna2Button4";
             this.guna2Button4.Size = new System.Drawing.Size(194, 36);
             this.guna2Button4.TabIndex = 23;
@@ -273,7 +300,7 @@
             this.guna2Button2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(61)))), ((int)(((byte)(204)))));
             this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button2.ForeColor = System.Drawing.Color.White;
-            this.guna2Button2.Image = global::Qlyrapchieuphim.Properties.Resources.icons8_time_machine_24;
+            this.guna2Button2.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button2.Image")));
             this.guna2Button2.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2Button2.Location = new System.Drawing.Point(3, 262);
             this.guna2Button2.Name = "guna2Button2";
@@ -296,7 +323,7 @@
             this.guna2Button3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(61)))), ((int)(((byte)(204)))));
             this.guna2Button3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button3.ForeColor = System.Drawing.Color.White;
-            this.guna2Button3.Image = global::Qlyrapchieuphim.Properties.Resources.icons8_food_bar_24;
+            this.guna2Button3.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button3.Image")));
             this.guna2Button3.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2Button3.Location = new System.Drawing.Point(3, 313);
             this.guna2Button3.Name = "guna2Button3";
@@ -336,7 +363,7 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::Qlyrapchieuphim.Properties.Resources.office_man;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(867, 8);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(31, 25);
@@ -364,18 +391,10 @@
             this.label2.TabIndex = 5;
             this.label2.Text = "Phần mềm quản lý rạp phim";
             // 
-            // bangdieukhien1
-            // 
-            this.bangdieukhien1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(248)))));
-            this.bangdieukhien1.Location = new System.Drawing.Point(200, 44);
-            this.bangdieukhien1.Name = "bangdieukhien1";
-            this.bangdieukhien1.Size = new System.Drawing.Size(1108, 676);
-            this.bangdieukhien1.TabIndex = 10;
-            // 
             // suco1
             // 
             this.suco1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(248)))));
-            this.suco1.Location = new System.Drawing.Point(200, 44);
+            this.suco1.Location = new System.Drawing.Point(416, 313);
             this.suco1.Name = "suco1";
             this.suco1.Size = new System.Drawing.Size(1108, 676);
             this.suco1.TabIndex = 9;
@@ -436,6 +455,22 @@
             this.qlyphim1.Size = new System.Drawing.Size(1108, 676);
             this.qlyphim1.TabIndex = 2;
             // 
+            // qlyPhongChieu1
+            // 
+            this.qlyPhongChieu1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(248)))));
+            this.qlyPhongChieu1.Location = new System.Drawing.Point(200, 44);
+            this.qlyPhongChieu1.Name = "qlyPhongChieu1";
+            this.qlyPhongChieu1.Size = new System.Drawing.Size(1108, 676);
+            this.qlyPhongChieu1.TabIndex = 11;
+            // 
+            // bangdieukhien1
+            // 
+            this.bangdieukhien1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(248)))));
+            this.bangdieukhien1.Location = new System.Drawing.Point(200, 44);
+            this.bangdieukhien1.Name = "bangdieukhien1";
+            this.bangdieukhien1.Size = new System.Drawing.Size(1108, 676);
+            this.bangdieukhien1.TabIndex = 10;
+            // 
             // Adform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -452,6 +487,7 @@
             this.Controls.Add(this.qlyphim1);
             this.Controls.Add(this.guna2Panel3);
             this.Controls.Add(this.guna2Panel1);
+            this.Controls.Add(this.qlyPhongChieu1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Adform";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -484,7 +520,6 @@
         private Doanhthu doanhthu1;
         private Voucher voucher1;
         private Suco suco1;
-        private bangdieukhien bangdieukhien1;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private Guna.UI2.WinForms.Guna2Button guna2Button2;
         private Guna.UI2.WinForms.Guna2Button guna2Button3;
@@ -493,5 +528,8 @@
         private Guna.UI2.WinForms.Guna2Button guna2Button7;
         private Guna.UI2.WinForms.Guna2Button guna2Button8;
         private Guna.UI2.WinForms.Guna2Button guna2Button6;
+        private Guna.UI2.WinForms.Guna2Button guna2Button9;
+        private QlyPhongChieu qlyPhongChieu1;
+        private bangdieukhien bangdieukhien1;
     }
 }

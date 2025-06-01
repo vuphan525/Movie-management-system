@@ -254,6 +254,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormSuaSuatChieu";
             this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FormSuaSuatChieu";
             this.Load += new System.EventHandler(this.FormSuaSuatChieu_Load);
             this.ResumeLayout(false);

@@ -60,5 +60,15 @@ namespace Qlyrapchieuphim
                 borderColor, borderWidth, ButtonBorderStyle.Solid,
                 borderColor, borderWidth, ButtonBorderStyle.Solid);
         }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2TextBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

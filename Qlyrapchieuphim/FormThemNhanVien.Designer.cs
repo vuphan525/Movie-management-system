@@ -78,7 +78,7 @@
             "ADMIN"});
             this.chucvu.Location = new System.Drawing.Point(238, 273);
             this.chucvu.Name = "chucvu";
-            this.chucvu.Size = new System.Drawing.Size(178, 36);
+            this.chucvu.Size = new System.Drawing.Size(203, 36);
             this.chucvu.TabIndex = 89;
             // 
             // label9
@@ -111,7 +111,7 @@
             this.passTxtBox.PasswordChar = '\0';
             this.passTxtBox.PlaceholderText = "";
             this.passTxtBox.SelectedText = "";
-            this.passTxtBox.Size = new System.Drawing.Size(177, 36);
+            this.passTxtBox.Size = new System.Drawing.Size(203, 36);
             this.passTxtBox.TabIndex = 87;
             // 
             // usrnameTxtBox
@@ -134,7 +134,7 @@
             this.usrnameTxtBox.PasswordChar = '\0';
             this.usrnameTxtBox.PlaceholderText = "";
             this.usrnameTxtBox.SelectedText = "";
-            this.usrnameTxtBox.Size = new System.Drawing.Size(180, 36);
+            this.usrnameTxtBox.Size = new System.Drawing.Size(203, 36);
             this.usrnameTxtBox.TabIndex = 86;
             // 
             // label10
@@ -158,7 +158,7 @@
             this.ngaysinh.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.ngaysinh.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.ngaysinh.Name = "ngaysinh";
-            this.ngaysinh.Size = new System.Drawing.Size(180, 32);
+            this.ngaysinh.Size = new System.Drawing.Size(203, 32);
             this.ngaysinh.TabIndex = 84;
             this.ngaysinh.Value = new System.DateTime(2024, 11, 29, 16, 51, 14, 647);
             // 
@@ -202,7 +202,7 @@
             this.email.PasswordChar = '\0';
             this.email.PlaceholderText = "";
             this.email.SelectedText = "";
-            this.email.Size = new System.Drawing.Size(180, 31);
+            this.email.Size = new System.Drawing.Size(205, 31);
             this.email.TabIndex = 81;
             // 
             // label6
@@ -235,7 +235,7 @@
             this.hoten.PasswordChar = '\0';
             this.hoten.PlaceholderText = "";
             this.hoten.SelectedText = "";
-            this.hoten.Size = new System.Drawing.Size(180, 31);
+            this.hoten.Size = new System.Drawing.Size(205, 31);
             this.hoten.TabIndex = 79;
             // 
             // sodienthoai
@@ -258,7 +258,7 @@
             this.sodienthoai.PasswordChar = '\0';
             this.sodienthoai.PlaceholderText = "";
             this.sodienthoai.SelectedText = "";
-            this.sodienthoai.Size = new System.Drawing.Size(180, 31);
+            this.sodienthoai.Size = new System.Drawing.Size(203, 31);
             this.sodienthoai.TabIndex = 78;
             // 
             // manv
@@ -281,7 +281,7 @@
             this.manv.PasswordChar = '\0';
             this.manv.PlaceholderText = "";
             this.manv.SelectedText = "";
-            this.manv.Size = new System.Drawing.Size(180, 31);
+            this.manv.Size = new System.Drawing.Size(203, 31);
             this.manv.TabIndex = 77;
             // 
             // them
@@ -314,7 +314,7 @@
             this.trangthai.ItemHeight = 30;
             this.trangthai.Location = new System.Drawing.Point(238, 202);
             this.trangthai.Name = "trangthai";
-            this.trangthai.Size = new System.Drawing.Size(178, 36);
+            this.trangthai.Size = new System.Drawing.Size(203, 36);
             this.trangthai.TabIndex = 75;
             // 
             // label5
@@ -368,7 +368,7 @@
             this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button2.ForeColor = System.Drawing.Color.Black;
             this.guna2Button2.Image = global::Qlyrapchieuphim.Properties.Resources.icons8_exit_35;
-            this.guna2Button2.Location = new System.Drawing.Point(396, 9);
+            this.guna2Button2.Location = new System.Drawing.Point(420, 11);
             this.guna2Button2.Margin = new System.Windows.Forms.Padding(2);
             this.guna2Button2.Name = "guna2Button2";
             this.guna2Button2.Size = new System.Drawing.Size(26, 28);
@@ -380,7 +380,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(433, 471);
+            this.ClientSize = new System.Drawing.Size(457, 471);
             this.Controls.Add(this.guna2Button2);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.chucvu);

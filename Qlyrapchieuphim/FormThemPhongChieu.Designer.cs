@@ -1,6 +1,6 @@
-﻿namespace Qlyrapchieuphim.FormEdit
+﻿namespace Qlyrapchieuphim
 {
-    partial class FormSuaKhachHang
+    partial class FormThemPhongChieu
     {
         /// <summary>
         /// Required designer variable.
@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.diemtichluy = new Guna.UI2.WinForms.Guna2TextBox();
-            this.email = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.hotenkh = new Guna.UI2.WinForms.Guna2TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.them = new Guna.UI2.WinForms.Guna2Button();
@@ -63,41 +61,8 @@
             this.diemtichluy.PasswordChar = '\0';
             this.diemtichluy.PlaceholderText = "";
             this.diemtichluy.SelectedText = "";
-            this.diemtichluy.Size = new System.Drawing.Size(317, 33);
+            this.diemtichluy.Size = new System.Drawing.Size(328, 33);
             this.diemtichluy.TabIndex = 109;
-            // 
-            // email
-            // 
-            this.email.BorderColor = System.Drawing.Color.Gray;
-            this.email.BorderRadius = 10;
-            this.email.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.email.DefaultText = "";
-            this.email.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.email.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.email.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.email.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.email.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.email.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.email.ForeColor = System.Drawing.Color.Black;
-            this.email.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.email.Location = new System.Drawing.Point(12, 336);
-            this.email.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.email.Name = "email";
-            this.email.PasswordChar = '\0';
-            this.email.PlaceholderText = "";
-            this.email.SelectedText = "";
-            this.email.Size = new System.Drawing.Size(317, 33);
-            this.email.TabIndex = 108;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(12, 317);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(42, 15);
-            this.label7.TabIndex = 107;
-            this.label7.Text = "Email:";
             // 
             // hotenkh
             // 
@@ -119,7 +84,7 @@
             this.hotenkh.PasswordChar = '\0';
             this.hotenkh.PlaceholderText = "";
             this.hotenkh.SelectedText = "";
-            this.hotenkh.Size = new System.Drawing.Size(317, 31);
+            this.hotenkh.Size = new System.Drawing.Size(328, 31);
             this.hotenkh.TabIndex = 106;
             // 
             // label6
@@ -128,9 +93,9 @@
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(12, 181);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(66, 15);
+            this.label6.Size = new System.Drawing.Size(67, 15);
             this.label6.TabIndex = 105;
-            this.label6.Text = "Họ tên KH:";
+            this.label6.Text = "Định dạng:";
             // 
             // them
             // 
@@ -142,11 +107,11 @@
             this.them.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(61)))), ((int)(((byte)(204)))));
             this.them.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.them.ForeColor = System.Drawing.Color.White;
-            this.them.Location = new System.Drawing.Point(198, 411);
+            this.them.Location = new System.Drawing.Point(209, 341);
             this.them.Name = "them";
             this.them.Size = new System.Drawing.Size(131, 36);
             this.them.TabIndex = 104;
-            this.them.Text = "Cập nhật";
+            this.them.Text = "Thêm";
             // 
             // label5
             // 
@@ -154,9 +119,9 @@
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(12, 248);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(80, 15);
+            this.label5.Size = new System.Drawing.Size(49, 15);
             this.label5.TabIndex = 103;
-            this.label5.Text = "Điểm tích lũy:";
+            this.label5.Text = "Số ghế:";
             // 
             // sdt
             // 
@@ -178,7 +143,7 @@
             this.sdt.PasswordChar = '\0';
             this.sdt.PlaceholderText = "";
             this.sdt.SelectedText = "";
-            this.sdt.Size = new System.Drawing.Size(317, 33);
+            this.sdt.Size = new System.Drawing.Size(328, 33);
             this.sdt.TabIndex = 102;
             // 
             // label4
@@ -187,9 +152,9 @@
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(12, 113);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(82, 15);
+            this.label4.Size = new System.Drawing.Size(69, 15);
             this.label4.TabIndex = 101;
-            this.label4.Text = "Số điện thoại:";
+            this.label4.Text = "Tên phòng:";
             // 
             // makh
             // 
@@ -211,7 +176,7 @@
             this.makh.PasswordChar = '\0';
             this.makh.PlaceholderText = "";
             this.makh.SelectedText = "";
-            this.makh.Size = new System.Drawing.Size(317, 31);
+            this.makh.Size = new System.Drawing.Size(328, 31);
             this.makh.TabIndex = 100;
             // 
             // label3
@@ -220,9 +185,9 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(12, 44);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(48, 15);
+            this.label3.Size = new System.Drawing.Size(66, 15);
             this.label3.TabIndex = 99;
-            this.label3.Text = "Mã KH:";
+            this.label3.Text = "Mã phòng:";
             // 
             // label1
             // 
@@ -230,9 +195,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(23, 10);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(213, 16);
+            this.label1.Size = new System.Drawing.Size(188, 16);
             this.label1.TabIndex = 98;
-            this.label1.Text = "Cập nhật thông tin khách hàng";
+            this.label1.Text = "Điền thông tin phòng chiếu";
             // 
             // guna2Button2
             // 
@@ -245,22 +210,20 @@
             this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button2.ForeColor = System.Drawing.Color.Black;
             this.guna2Button2.Image = global::Qlyrapchieuphim.Properties.Resources.icons8_exit_35;
-            this.guna2Button2.Location = new System.Drawing.Point(306, 10);
+            this.guna2Button2.Location = new System.Drawing.Point(315, 11);
             this.guna2Button2.Margin = new System.Windows.Forms.Padding(2);
             this.guna2Button2.Name = "guna2Button2";
             this.guna2Button2.Size = new System.Drawing.Size(26, 28);
             this.guna2Button2.TabIndex = 97;
             this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
             // 
-            // FormSuaKhachHang
+            // FormThemPhongChieu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(341, 459);
+            this.ClientSize = new System.Drawing.Size(352, 389);
             this.Controls.Add(this.diemtichluy);
-            this.Controls.Add(this.email);
-            this.Controls.Add(this.label7);
             this.Controls.Add(this.hotenkh);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.them);
@@ -272,11 +235,10 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.guna2Button2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "FormSuaKhachHang";
+            this.Name = "FormThemPhongChieu";
             this.ShowInTaskbar = false;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "FormSuaKhachHang";
-            this.Load += new System.EventHandler(this.FormSuaKhachHang_Load);
+            this.Text = "FormThemPhongChieu";
+            this.Load += new System.EventHandler(this.FormThemPhongChieu_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -285,8 +247,6 @@
         #endregion
 
         private Guna.UI2.WinForms.Guna2TextBox diemtichluy;
-        private Guna.UI2.WinForms.Guna2TextBox email;
-        private System.Windows.Forms.Label label7;
         private Guna.UI2.WinForms.Guna2TextBox hotenkh;
         private System.Windows.Forms.Label label6;
         private Guna.UI2.WinForms.Guna2Button them;

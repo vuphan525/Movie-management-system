@@ -9,11 +9,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Qlyrapchieuphim
+namespace Qlyrapchieuphim.FormEdit
 {
-    public partial class FormThemVoucher : Form
+    public partial class FormSuaPhongChieu : Form
     {
-        public FormThemVoucher()
+        public FormSuaPhongChieu()
         {
             InitializeComponent();
             Guna2ShadowForm shadow = new Guna2ShadowForm();
@@ -26,7 +26,7 @@ namespace Qlyrapchieuphim
             this.Close();
         }
 
-        private void FormThemVoucher_Load(object sender, EventArgs e)
+        private void FormSuaPhongChieu_Load(object sender, EventArgs e)
         {
 
         }
@@ -41,11 +41,6 @@ namespace Qlyrapchieuphim
                 borderColor, borderWidth, ButtonBorderStyle.Solid,
                 borderColor, borderWidth, ButtonBorderStyle.Solid,
                 borderColor, borderWidth, ButtonBorderStyle.Solid);
-        }
-
-        private void label11_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

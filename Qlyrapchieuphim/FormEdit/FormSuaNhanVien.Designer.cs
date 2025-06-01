@@ -111,7 +111,7 @@
             this.passTxtBox.PasswordChar = '\0';
             this.passTxtBox.PlaceholderText = "";
             this.passTxtBox.SelectedText = "";
-            this.passTxtBox.Size = new System.Drawing.Size(177, 36);
+            this.passTxtBox.Size = new System.Drawing.Size(191, 36);
             this.passTxtBox.TabIndex = 108;
             // 
             // usrnameTxtBox
@@ -134,7 +134,7 @@
             this.usrnameTxtBox.PasswordChar = '\0';
             this.usrnameTxtBox.PlaceholderText = "";
             this.usrnameTxtBox.SelectedText = "";
-            this.usrnameTxtBox.Size = new System.Drawing.Size(180, 36);
+            this.usrnameTxtBox.Size = new System.Drawing.Size(191, 36);
             this.usrnameTxtBox.TabIndex = 107;
             // 
             // label10
@@ -158,7 +158,7 @@
             this.ngaysinh.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.ngaysinh.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.ngaysinh.Name = "ngaysinh";
-            this.ngaysinh.Size = new System.Drawing.Size(180, 32);
+            this.ngaysinh.Size = new System.Drawing.Size(191, 32);
             this.ngaysinh.TabIndex = 105;
             this.ngaysinh.Value = new System.DateTime(2024, 11, 29, 16, 51, 14, 647);
             // 
@@ -258,7 +258,7 @@
             this.sodienthoai.PasswordChar = '\0';
             this.sodienthoai.PlaceholderText = "";
             this.sodienthoai.SelectedText = "";
-            this.sodienthoai.Size = new System.Drawing.Size(180, 31);
+            this.sodienthoai.Size = new System.Drawing.Size(191, 31);
             this.sodienthoai.TabIndex = 99;
             // 
             // manv
@@ -281,7 +281,7 @@
             this.manv.PasswordChar = '\0';
             this.manv.PlaceholderText = "";
             this.manv.SelectedText = "";
-            this.manv.Size = new System.Drawing.Size(180, 31);
+            this.manv.Size = new System.Drawing.Size(191, 31);
             this.manv.TabIndex = 98;
             // 
             // them
@@ -405,6 +405,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormSuaNhanVien";
             this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FormSuaNhanVien";
             this.Load += new System.EventHandler(this.FormSuaNhanVien_Load);
             this.ResumeLayout(false);
