@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.diemtichluy = new Guna.UI2.WinForms.Guna2TextBox();
-            this.hotenkh = new Guna.UI2.WinForms.Guna2TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.them = new Guna.UI2.WinForms.Guna2Button();
             this.label5 = new System.Windows.Forms.Label();
@@ -39,6 +38,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
+            this.loai = new Guna.UI2.WinForms.Guna2ComboBox();
             this.SuspendLayout();
             // 
             // diemtichluy
@@ -63,29 +63,6 @@
             this.diemtichluy.SelectedText = "";
             this.diemtichluy.Size = new System.Drawing.Size(328, 33);
             this.diemtichluy.TabIndex = 120;
-            // 
-            // hotenkh
-            // 
-            this.hotenkh.BorderColor = System.Drawing.Color.Gray;
-            this.hotenkh.BorderRadius = 10;
-            this.hotenkh.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.hotenkh.DefaultText = "";
-            this.hotenkh.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.hotenkh.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.hotenkh.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.hotenkh.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.hotenkh.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.hotenkh.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.hotenkh.ForeColor = System.Drawing.Color.Black;
-            this.hotenkh.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.hotenkh.Location = new System.Drawing.Point(12, 199);
-            this.hotenkh.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.hotenkh.Name = "hotenkh";
-            this.hotenkh.PasswordChar = '\0';
-            this.hotenkh.PlaceholderText = "";
-            this.hotenkh.SelectedText = "";
-            this.hotenkh.Size = new System.Drawing.Size(328, 31);
-            this.hotenkh.TabIndex = 119;
             // 
             // label6
             // 
@@ -217,14 +194,34 @@
             this.guna2Button2.TabIndex = 110;
             this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
             // 
+            // loai
+            // 
+            this.loai.BackColor = System.Drawing.Color.Transparent;
+            this.loai.BorderColor = System.Drawing.Color.Gray;
+            this.loai.BorderRadius = 10;
+            this.loai.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.loai.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.loai.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.loai.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.loai.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.loai.ForeColor = System.Drawing.Color.Black;
+            this.loai.ItemHeight = 30;
+            this.loai.Items.AddRange(new object[] {
+            "Imax",
+            "4k"});
+            this.loai.Location = new System.Drawing.Point(15, 208);
+            this.loai.Name = "loai";
+            this.loai.Size = new System.Drawing.Size(325, 36);
+            this.loai.TabIndex = 121;
+            // 
             // FormSuaPhongChieu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(352, 389);
+            this.Controls.Add(this.loai);
             this.Controls.Add(this.diemtichluy);
-            this.Controls.Add(this.hotenkh);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.them);
             this.Controls.Add(this.label5);
@@ -248,7 +245,6 @@
         #endregion
 
         private Guna.UI2.WinForms.Guna2TextBox diemtichluy;
-        private Guna.UI2.WinForms.Guna2TextBox hotenkh;
         private System.Windows.Forms.Label label6;
         private Guna.UI2.WinForms.Guna2Button them;
         private System.Windows.Forms.Label label5;
@@ -258,5 +254,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2Button guna2Button2;
+        private Guna.UI2.WinForms.Guna2ComboBox loai;
     }
 }

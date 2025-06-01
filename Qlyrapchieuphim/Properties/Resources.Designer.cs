@@ -123,6 +123,46 @@ namespace Qlyrapchieuphim.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap icons8_arrow_30 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-arrow-30", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap icons8_arrow_30__1_ {
+            get {
+                object obj = ResourceManager.GetObject("icons8-arrow-30 (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap icons8_arrow_30__1_1 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-arrow-30 (1)1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap icons8_arrow_301 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-arrow-301", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap icons8_customer_24 {
             get {
                 object obj = ResourceManager.GetObject("icons8_customer_24", resourceCulture);
@@ -286,6 +326,36 @@ namespace Qlyrapchieuphim.Properties {
         public static System.Drawing.Bitmap icons8_people_24 {
             get {
                 object obj = ResourceManager.GetObject("icons8_people_24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap icons8_revenue_24 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-revenue-24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap icons8_right_arrow_30 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-right-arrow-30", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap icons8_right_arrow_301 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-right-arrow-301", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

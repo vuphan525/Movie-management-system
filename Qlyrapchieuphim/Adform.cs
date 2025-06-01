@@ -50,6 +50,7 @@ namespace Qlyrapchieuphim
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
+            qlyDoanhThu1.Hide();
             qlyPhongChieu1.Hide();
             qlyphim1.Hide();
             qlysuatchieu1.Hide();
@@ -65,6 +66,7 @@ namespace Qlyrapchieuphim
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
+            qlyDoanhThu1.Hide();
             qlyPhongChieu1.Hide();
             qlyphim1.Show();
             bangdieukhien1.Hide();
@@ -79,6 +81,7 @@ namespace Qlyrapchieuphim
 
         private void guna2Button2_Click(object sender, EventArgs e)
         {
+            qlyDoanhThu1.Hide();
             qlyPhongChieu1.Hide();
             qlyphim1.Hide();
             qlysuatchieu1.Show();
@@ -93,6 +96,7 @@ namespace Qlyrapchieuphim
 
         private void guna2Button3_Click(object sender, EventArgs e)
         {
+            qlyDoanhThu1.Hide();
             qlyPhongChieu1.Hide();
             qlyphim1.Hide();
             qlysuatchieu1.Hide();
@@ -107,6 +111,7 @@ namespace Qlyrapchieuphim
 
         private void guna2Button4_Click(object sender, EventArgs e)
         {
+            qlyDoanhThu1.Hide();
             qlyPhongChieu1.Hide();
             qlyphim1.Hide();
             qlysuatchieu1.Hide();
@@ -121,6 +126,7 @@ namespace Qlyrapchieuphim
 
         private void guna2Button5_Click(object sender, EventArgs e)
         {
+            qlyDoanhThu1.Hide();
             qlyPhongChieu1.Hide();
             qlyphim1.Hide();
             qlysuatchieu1.Hide();
@@ -135,6 +141,7 @@ namespace Qlyrapchieuphim
 
         private void guna2Button6_Click(object sender, EventArgs e)
         {
+            qlyDoanhThu1.Hide();
             qlyPhongChieu1.Hide();
             qlyphim1.Hide();
             qlysuatchieu1.Hide();
@@ -150,6 +157,7 @@ namespace Qlyrapchieuphim
 
         private void guna2Button7_Click(object sender, EventArgs e)
         {
+            qlyDoanhThu1.Hide();
             qlyPhongChieu1.Hide();
             qlyphim1.Hide();
             qlysuatchieu1.Hide();
@@ -164,6 +172,7 @@ namespace Qlyrapchieuphim
 
         private void guna2Button8_Click(object sender, EventArgs e)
         {
+            qlyDoanhThu1.Hide();
             qlyPhongChieu1.Hide();
             qlyphim1.Hide();
             qlysuatchieu1.Hide();
@@ -178,7 +187,23 @@ namespace Qlyrapchieuphim
 
         private void guna2Button9_Click(object sender, EventArgs e)
         {
+            qlyDoanhThu1.Hide();
             qlyPhongChieu1.Show();
+            qlyphim1.Hide();
+            qlysuatchieu1.Hide();
+            qlysanpham1.Hide();
+            qlynhansu1.Hide();
+            qlykhachhang1.Hide();
+            doanhthu1.Hide();
+            voucher1.Hide();
+            suco1.Hide();
+            bangdieukhien1.Hide();
+        }
+
+        private void guna2Button10_Click(object sender, EventArgs e)
+        {
+            qlyDoanhThu1.Show();
+            qlyPhongChieu1.Hide();
             qlyphim1.Hide();
             qlysuatchieu1.Hide();
             qlysanpham1.Hide();
