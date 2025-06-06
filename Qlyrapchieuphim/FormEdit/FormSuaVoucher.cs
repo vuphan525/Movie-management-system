@@ -28,7 +28,8 @@ namespace Qlyrapchieuphim.FormEdit
 
         private void FormSuaVoucher_Load(object sender, EventArgs e)
         {
-
+            date_FormSuaVoucher_NgayHetHan.Format = DateTimePickerFormat.Custom;
+            date_FormSuaVoucher_NgayHetHan.CustomFormat = "dd/MM/yyyy";
         }
 
         private void FormThemPhim_Paint(object sender, PaintEventArgs e)
