@@ -28,7 +28,8 @@ namespace Qlyrapchieuphim
 
         private void FormThemNhanVien_Load(object sender, EventArgs e)
         {
-
+            date_FormThemNV_NgaySinh.Format = DateTimePickerFormat.Custom;
+            date_FormThemNV_NgaySinh.CustomFormat = "dd/MM/yyyy";
         }
 
         private void FormThemPhim_Paint(object sender, PaintEventArgs e)
