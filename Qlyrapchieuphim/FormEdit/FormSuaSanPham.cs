@@ -42,5 +42,10 @@ namespace Qlyrapchieuphim.FormEdit
                 borderColor, borderWidth, ButtonBorderStyle.Solid,
                 borderColor, borderWidth, ButtonBorderStyle.Solid);
         }
+
+        private void btn_FormSuaSanPham_CapNhat_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

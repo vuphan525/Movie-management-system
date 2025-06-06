@@ -29,340 +29,333 @@
         private void InitializeComponent()
         {
             this.label2 = new System.Windows.Forms.Label();
-            this.guna2TextBox3 = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.guna2TextBox2 = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.masp = new Guna.UI2.WinForms.Guna2TextBox();
-            this.themanh = new Guna.UI2.WinForms.Guna2Button();
-            this.label7 = new System.Windows.Forms.Label();
-            this.giatien = new Guna.UI2.WinForms.Guna2TextBox();
-            this.soluong = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.them = new Guna.UI2.WinForms.Guna2Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.loai = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.ten = new Guna.UI2.WinForms.Guna2TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lbl_FormSuaSanPham_MoTa = new Guna.UI2.WinForms.Guna2TextBox();
+            this.mota = new System.Windows.Forms.Label();
+            this.lbl_FormSuaSanPham_NhaCungCap = new Guna.UI2.WinForms.Guna2TextBox();
+            this.ncc = new System.Windows.Forms.Label();
+            this.lbl_FormSuaSanPham_SoLuong = new Guna.UI2.WinForms.Guna2TextBox();
+            this.sl = new System.Windows.Forms.Label();
+            this.lbl_FormSuaSanPham_MaSP = new Guna.UI2.WinForms.Guna2TextBox();
+            this.btn_FormSuaSanPham_ThemPoster = new Guna.UI2.WinForms.Guna2Button();
+            this.masp = new System.Windows.Forms.Label();
+            this.lbl_FormSuaSanPham_GiaTien = new Guna.UI2.WinForms.Guna2TextBox();
+            this.ten = new System.Windows.Forms.Label();
+            this.ngaynhap = new System.Windows.Forms.Label();
+            this.loai = new System.Windows.Forms.Label();
+            this.btn_FormSuaSanPham_CapNhat = new Guna.UI2.WinForms.Guna2Button();
+            this.giatien = new System.Windows.Forms.Label();
+            this.cb_FormSuaSanPham_LoaiSP = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.lbl_FormSuaSanPham_TenSP = new Guna.UI2.WinForms.Guna2TextBox();
+            this.pictureBox_FormSuaSanPham_Poster = new System.Windows.Forms.PictureBox();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.poster = new System.Windows.Forms.Label();
+            this.date_FormSuaSanPham_NgayNhap = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_FormSuaSanPham_Poster)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(25, 13);
+            this.label2.Location = new System.Drawing.Point(33, 16);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(139, 16);
+            this.label2.Size = new System.Drawing.Size(171, 20);
             this.label2.TabIndex = 87;
             this.label2.Text = "Cập nhật sản phẩm";
             // 
-            // guna2TextBox3
+            // lbl_FormSuaSanPham_MoTa
             // 
-            this.guna2TextBox3.BorderColor = System.Drawing.Color.Gray;
-            this.guna2TextBox3.BorderRadius = 10;
-            this.guna2TextBox3.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox3.DefaultText = "";
-            this.guna2TextBox3.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox3.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox3.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox3.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox3.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2TextBox3.ForeColor = System.Drawing.Color.Black;
-            this.guna2TextBox3.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox3.Location = new System.Drawing.Point(246, 117);
-            this.guna2TextBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.guna2TextBox3.Name = "guna2TextBox3";
-            this.guna2TextBox3.PasswordChar = '\0';
-            this.guna2TextBox3.PlaceholderText = "";
-            this.guna2TextBox3.SelectedText = "";
-            this.guna2TextBox3.Size = new System.Drawing.Size(204, 34);
-            this.guna2TextBox3.TabIndex = 119;
+            this.lbl_FormSuaSanPham_MoTa.BorderColor = System.Drawing.Color.Gray;
+            this.lbl_FormSuaSanPham_MoTa.BorderRadius = 10;
+            this.lbl_FormSuaSanPham_MoTa.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.lbl_FormSuaSanPham_MoTa.DefaultText = "";
+            this.lbl_FormSuaSanPham_MoTa.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.lbl_FormSuaSanPham_MoTa.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.lbl_FormSuaSanPham_MoTa.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.lbl_FormSuaSanPham_MoTa.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.lbl_FormSuaSanPham_MoTa.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.lbl_FormSuaSanPham_MoTa.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.lbl_FormSuaSanPham_MoTa.ForeColor = System.Drawing.Color.Black;
+            this.lbl_FormSuaSanPham_MoTa.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.lbl_FormSuaSanPham_MoTa.Location = new System.Drawing.Point(328, 144);
+            this.lbl_FormSuaSanPham_MoTa.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.lbl_FormSuaSanPham_MoTa.Multiline = true;
+            this.lbl_FormSuaSanPham_MoTa.Name = "lbl_FormSuaSanPham_MoTa";
+            this.lbl_FormSuaSanPham_MoTa.PasswordChar = '\0';
+            this.lbl_FormSuaSanPham_MoTa.PlaceholderText = "";
+            this.lbl_FormSuaSanPham_MoTa.SelectedText = "";
+            this.lbl_FormSuaSanPham_MoTa.Size = new System.Drawing.Size(272, 123);
+            this.lbl_FormSuaSanPham_MoTa.TabIndex = 119;
             // 
-            // label9
+            // mota
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(246, 98);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(52, 15);
-            this.label9.TabIndex = 118;
-            this.label9.Text = "Giá tiền:";
+            this.mota.AutoSize = true;
+            this.mota.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mota.Location = new System.Drawing.Point(328, 121);
+            this.mota.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.mota.Name = "mota";
+            this.mota.Size = new System.Drawing.Size(50, 18);
+            this.mota.TabIndex = 118;
+            this.mota.Text = "Mô tả:";
             // 
-            // guna2TextBox2
+            // lbl_FormSuaSanPham_NhaCungCap
             // 
-            this.guna2TextBox2.BorderColor = System.Drawing.Color.Gray;
-            this.guna2TextBox2.BorderRadius = 10;
-            this.guna2TextBox2.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox2.DefaultText = "";
-            this.guna2TextBox2.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox2.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2TextBox2.ForeColor = System.Drawing.Color.Black;
-            this.guna2TextBox2.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox2.Location = new System.Drawing.Point(7, 396);
-            this.guna2TextBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.guna2TextBox2.Name = "guna2TextBox2";
-            this.guna2TextBox2.PasswordChar = '\0';
-            this.guna2TextBox2.PlaceholderText = "";
-            this.guna2TextBox2.SelectedText = "";
-            this.guna2TextBox2.Size = new System.Drawing.Size(202, 34);
-            this.guna2TextBox2.TabIndex = 117;
+            this.lbl_FormSuaSanPham_NhaCungCap.BorderColor = System.Drawing.Color.Gray;
+            this.lbl_FormSuaSanPham_NhaCungCap.BorderRadius = 10;
+            this.lbl_FormSuaSanPham_NhaCungCap.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.lbl_FormSuaSanPham_NhaCungCap.DefaultText = "";
+            this.lbl_FormSuaSanPham_NhaCungCap.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.lbl_FormSuaSanPham_NhaCungCap.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.lbl_FormSuaSanPham_NhaCungCap.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.lbl_FormSuaSanPham_NhaCungCap.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.lbl_FormSuaSanPham_NhaCungCap.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.lbl_FormSuaSanPham_NhaCungCap.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.lbl_FormSuaSanPham_NhaCungCap.ForeColor = System.Drawing.Color.Black;
+            this.lbl_FormSuaSanPham_NhaCungCap.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.lbl_FormSuaSanPham_NhaCungCap.Location = new System.Drawing.Point(9, 487);
+            this.lbl_FormSuaSanPham_NhaCungCap.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.lbl_FormSuaSanPham_NhaCungCap.Name = "lbl_FormSuaSanPham_NhaCungCap";
+            this.lbl_FormSuaSanPham_NhaCungCap.PasswordChar = '\0';
+            this.lbl_FormSuaSanPham_NhaCungCap.PlaceholderText = "";
+            this.lbl_FormSuaSanPham_NhaCungCap.SelectedText = "";
+            this.lbl_FormSuaSanPham_NhaCungCap.Size = new System.Drawing.Size(269, 42);
+            this.lbl_FormSuaSanPham_NhaCungCap.TabIndex = 117;
             // 
-            // label8
+            // ncc
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(7, 377);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(86, 15);
-            this.label8.TabIndex = 116;
-            this.label8.Text = "Nhà cung cấp:";
+            this.ncc.AutoSize = true;
+            this.ncc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ncc.Location = new System.Drawing.Point(9, 464);
+            this.ncc.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.ncc.Name = "ncc";
+            this.ncc.Size = new System.Drawing.Size(103, 18);
+            this.ncc.TabIndex = 116;
+            this.ncc.Text = "Nhà cung cấp:";
             // 
-            // guna2TextBox1
+            // lbl_FormSuaSanPham_SoLuong
             // 
-            this.guna2TextBox1.BorderColor = System.Drawing.Color.Gray;
-            this.guna2TextBox1.BorderRadius = 10;
-            this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox1.DefaultText = "";
-            this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2TextBox1.ForeColor = System.Drawing.Color.Black;
-            this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.Location = new System.Drawing.Point(7, 328);
-            this.guna2TextBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.guna2TextBox1.Name = "guna2TextBox1";
-            this.guna2TextBox1.PasswordChar = '\0';
-            this.guna2TextBox1.PlaceholderText = "";
-            this.guna2TextBox1.SelectedText = "";
-            this.guna2TextBox1.Size = new System.Drawing.Size(202, 34);
-            this.guna2TextBox1.TabIndex = 115;
+            this.lbl_FormSuaSanPham_SoLuong.BorderColor = System.Drawing.Color.Gray;
+            this.lbl_FormSuaSanPham_SoLuong.BorderRadius = 10;
+            this.lbl_FormSuaSanPham_SoLuong.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.lbl_FormSuaSanPham_SoLuong.DefaultText = "";
+            this.lbl_FormSuaSanPham_SoLuong.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.lbl_FormSuaSanPham_SoLuong.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.lbl_FormSuaSanPham_SoLuong.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.lbl_FormSuaSanPham_SoLuong.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.lbl_FormSuaSanPham_SoLuong.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.lbl_FormSuaSanPham_SoLuong.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.lbl_FormSuaSanPham_SoLuong.ForeColor = System.Drawing.Color.Black;
+            this.lbl_FormSuaSanPham_SoLuong.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.lbl_FormSuaSanPham_SoLuong.Location = new System.Drawing.Point(9, 404);
+            this.lbl_FormSuaSanPham_SoLuong.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.lbl_FormSuaSanPham_SoLuong.Name = "lbl_FormSuaSanPham_SoLuong";
+            this.lbl_FormSuaSanPham_SoLuong.PasswordChar = '\0';
+            this.lbl_FormSuaSanPham_SoLuong.PlaceholderText = "";
+            this.lbl_FormSuaSanPham_SoLuong.SelectedText = "";
+            this.lbl_FormSuaSanPham_SoLuong.Size = new System.Drawing.Size(269, 42);
+            this.lbl_FormSuaSanPham_SoLuong.TabIndex = 115;
             // 
-            // label1
+            // sl
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(7, 309);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(41, 15);
-            this.label1.TabIndex = 114;
-            this.label1.Text = "Mô tả:";
+            this.sl.AutoSize = true;
+            this.sl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sl.Location = new System.Drawing.Point(9, 381);
+            this.sl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.sl.Name = "sl";
+            this.sl.Size = new System.Drawing.Size(71, 18);
+            this.sl.TabIndex = 114;
+            this.sl.Text = "Số lượng:";
+            // 
+            // lbl_FormSuaSanPham_MaSP
+            // 
+            this.lbl_FormSuaSanPham_MaSP.BorderColor = System.Drawing.Color.Gray;
+            this.lbl_FormSuaSanPham_MaSP.BorderRadius = 10;
+            this.lbl_FormSuaSanPham_MaSP.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.lbl_FormSuaSanPham_MaSP.DefaultText = "";
+            this.lbl_FormSuaSanPham_MaSP.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.lbl_FormSuaSanPham_MaSP.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.lbl_FormSuaSanPham_MaSP.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.lbl_FormSuaSanPham_MaSP.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.lbl_FormSuaSanPham_MaSP.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.lbl_FormSuaSanPham_MaSP.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.lbl_FormSuaSanPham_MaSP.ForeColor = System.Drawing.Color.Black;
+            this.lbl_FormSuaSanPham_MaSP.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.lbl_FormSuaSanPham_MaSP.Location = new System.Drawing.Point(9, 68);
+            this.lbl_FormSuaSanPham_MaSP.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.lbl_FormSuaSanPham_MaSP.Name = "lbl_FormSuaSanPham_MaSP";
+            this.lbl_FormSuaSanPham_MaSP.PasswordChar = '\0';
+            this.lbl_FormSuaSanPham_MaSP.PlaceholderText = "";
+            this.lbl_FormSuaSanPham_MaSP.SelectedText = "";
+            this.lbl_FormSuaSanPham_MaSP.Size = new System.Drawing.Size(269, 42);
+            this.lbl_FormSuaSanPham_MaSP.TabIndex = 113;
+            // 
+            // btn_FormSuaSanPham_ThemPoster
+            // 
+            this.btn_FormSuaSanPham_ThemPoster.BorderRadius = 10;
+            this.btn_FormSuaSanPham_ThemPoster.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_FormSuaSanPham_ThemPoster.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_FormSuaSanPham_ThemPoster.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_FormSuaSanPham_ThemPoster.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_FormSuaSanPham_ThemPoster.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(61)))), ((int)(((byte)(204)))));
+            this.btn_FormSuaSanPham_ThemPoster.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_FormSuaSanPham_ThemPoster.ForeColor = System.Drawing.Color.White;
+            this.btn_FormSuaSanPham_ThemPoster.Location = new System.Drawing.Point(392, 487);
+            this.btn_FormSuaSanPham_ThemPoster.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_FormSuaSanPham_ThemPoster.Name = "btn_FormSuaSanPham_ThemPoster";
+            this.btn_FormSuaSanPham_ThemPoster.Size = new System.Drawing.Size(150, 42);
+            this.btn_FormSuaSanPham_ThemPoster.TabIndex = 112;
+            this.btn_FormSuaSanPham_ThemPoster.Text = "Thêm ảnh";
             // 
             // masp
             // 
-            this.masp.BorderColor = System.Drawing.Color.Gray;
-            this.masp.BorderRadius = 10;
-            this.masp.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.masp.DefaultText = "";
-            this.masp.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.masp.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.masp.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.masp.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.masp.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.masp.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.masp.ForeColor = System.Drawing.Color.Black;
-            this.masp.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.masp.Location = new System.Drawing.Point(7, 55);
-            this.masp.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.masp.AutoSize = true;
+            this.masp.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.masp.Location = new System.Drawing.Point(9, 44);
+            this.masp.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.masp.Name = "masp";
-            this.masp.PasswordChar = '\0';
-            this.masp.PlaceholderText = "";
-            this.masp.SelectedText = "";
-            this.masp.Size = new System.Drawing.Size(202, 34);
-            this.masp.TabIndex = 113;
+            this.masp.Size = new System.Drawing.Size(57, 18);
+            this.masp.TabIndex = 111;
+            this.masp.Text = "Mã SP:";
             // 
-            // themanh
+            // lbl_FormSuaSanPham_GiaTien
             // 
-            this.themanh.BorderRadius = 10;
-            this.themanh.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.themanh.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.themanh.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.themanh.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.themanh.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(61)))), ((int)(((byte)(204)))));
-            this.themanh.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.themanh.ForeColor = System.Drawing.Color.White;
-            this.themanh.Location = new System.Drawing.Point(318, 344);
-            this.themanh.Name = "themanh";
-            this.themanh.Size = new System.Drawing.Size(131, 36);
-            this.themanh.TabIndex = 112;
-            this.themanh.Text = "Thêm ảnh";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(7, 36);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(47, 15);
-            this.label7.TabIndex = 111;
-            this.label7.Text = "Mã SP:";
-            // 
-            // giatien
-            // 
-            this.giatien.BorderColor = System.Drawing.Color.Gray;
-            this.giatien.BorderRadius = 10;
-            this.giatien.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.giatien.DefaultText = "";
-            this.giatien.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.giatien.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.giatien.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.giatien.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.giatien.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.giatien.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.giatien.ForeColor = System.Drawing.Color.Black;
-            this.giatien.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.giatien.Location = new System.Drawing.Point(7, 258);
-            this.giatien.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.giatien.Name = "giatien";
-            this.giatien.PasswordChar = '\0';
-            this.giatien.PlaceholderText = "";
-            this.giatien.SelectedText = "";
-            this.giatien.Size = new System.Drawing.Size(202, 34);
-            this.giatien.TabIndex = 106;
-            // 
-            // soluong
-            // 
-            this.soluong.BorderColor = System.Drawing.Color.Gray;
-            this.soluong.BorderRadius = 10;
-            this.soluong.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.soluong.DefaultText = "";
-            this.soluong.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.soluong.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.soluong.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.soluong.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.soluong.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.soluong.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.soluong.ForeColor = System.Drawing.Color.Black;
-            this.soluong.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.soluong.Location = new System.Drawing.Point(246, 55);
-            this.soluong.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.soluong.Name = "soluong";
-            this.soluong.PasswordChar = '\0';
-            this.soluong.PlaceholderText = "";
-            this.soluong.SelectedText = "";
-            this.soluong.Size = new System.Drawing.Size(203, 34);
-            this.soluong.TabIndex = 110;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(4, 98);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(31, 15);
-            this.label3.TabIndex = 102;
-            this.label3.Text = "Tên:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(243, 36);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(69, 15);
-            this.label6.TabIndex = 109;
-            this.label6.Text = "Ngày nhập:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(4, 170);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(34, 15);
-            this.label4.TabIndex = 103;
-            this.label4.Text = "Loại:";
-            // 
-            // them
-            // 
-            this.them.BorderRadius = 10;
-            this.them.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.them.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.them.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.them.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.them.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(61)))), ((int)(((byte)(204)))));
-            this.them.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.them.ForeColor = System.Drawing.Color.White;
-            this.them.Location = new System.Drawing.Point(164, 486);
-            this.them.Name = "them";
-            this.them.Size = new System.Drawing.Size(134, 36);
-            this.them.TabIndex = 108;
-            this.them.Text = "Cập nhật";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(7, 239);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(52, 15);
-            this.label5.TabIndex = 104;
-            this.label5.Text = "Giá tiền:";
-            // 
-            // loai
-            // 
-            this.loai.BackColor = System.Drawing.Color.Transparent;
-            this.loai.BorderColor = System.Drawing.Color.Gray;
-            this.loai.BorderRadius = 10;
-            this.loai.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.loai.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.loai.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.loai.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.loai.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.loai.ForeColor = System.Drawing.Color.Black;
-            this.loai.ItemHeight = 30;
-            this.loai.Items.AddRange(new object[] {
-            "Đồ ăn",
-            "Thức uống"});
-            this.loai.Location = new System.Drawing.Point(7, 188);
-            this.loai.Name = "loai";
-            this.loai.Size = new System.Drawing.Size(202, 36);
-            this.loai.TabIndex = 107;
+            this.lbl_FormSuaSanPham_GiaTien.BorderColor = System.Drawing.Color.Gray;
+            this.lbl_FormSuaSanPham_GiaTien.BorderRadius = 10;
+            this.lbl_FormSuaSanPham_GiaTien.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.lbl_FormSuaSanPham_GiaTien.DefaultText = "";
+            this.lbl_FormSuaSanPham_GiaTien.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.lbl_FormSuaSanPham_GiaTien.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.lbl_FormSuaSanPham_GiaTien.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.lbl_FormSuaSanPham_GiaTien.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.lbl_FormSuaSanPham_GiaTien.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.lbl_FormSuaSanPham_GiaTien.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.lbl_FormSuaSanPham_GiaTien.ForeColor = System.Drawing.Color.Black;
+            this.lbl_FormSuaSanPham_GiaTien.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.lbl_FormSuaSanPham_GiaTien.Location = new System.Drawing.Point(9, 318);
+            this.lbl_FormSuaSanPham_GiaTien.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.lbl_FormSuaSanPham_GiaTien.Name = "lbl_FormSuaSanPham_GiaTien";
+            this.lbl_FormSuaSanPham_GiaTien.PasswordChar = '\0';
+            this.lbl_FormSuaSanPham_GiaTien.PlaceholderText = "";
+            this.lbl_FormSuaSanPham_GiaTien.SelectedText = "";
+            this.lbl_FormSuaSanPham_GiaTien.Size = new System.Drawing.Size(269, 42);
+            this.lbl_FormSuaSanPham_GiaTien.TabIndex = 106;
             // 
             // ten
             // 
-            this.ten.BorderColor = System.Drawing.Color.Gray;
-            this.ten.BorderRadius = 10;
-            this.ten.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.ten.DefaultText = "";
-            this.ten.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.ten.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.ten.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.ten.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.ten.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.ten.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.ten.ForeColor = System.Drawing.Color.Black;
-            this.ten.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.ten.Location = new System.Drawing.Point(7, 117);
-            this.ten.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.ten.AutoSize = true;
+            this.ten.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ten.Location = new System.Drawing.Point(9, 121);
+            this.ten.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ten.Name = "ten";
-            this.ten.PasswordChar = '\0';
-            this.ten.PlaceholderText = "";
-            this.ten.SelectedText = "";
-            this.ten.Size = new System.Drawing.Size(202, 34);
-            this.ten.TabIndex = 105;
+            this.ten.Size = new System.Drawing.Size(37, 18);
+            this.ten.TabIndex = 102;
+            this.ten.Text = "Tên:";
             // 
-            // pictureBox1
+            // ngaynhap
             // 
-            this.pictureBox1.BackColor = System.Drawing.SystemColors.Control;
-            this.pictureBox1.Location = new System.Drawing.Point(246, 188);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(203, 136);
-            this.pictureBox1.TabIndex = 101;
-            this.pictureBox1.TabStop = false;
+            this.ngaynhap.AutoSize = true;
+            this.ngaynhap.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ngaynhap.Location = new System.Drawing.Point(328, 45);
+            this.ngaynhap.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.ngaynhap.Name = "ngaynhap";
+            this.ngaynhap.Size = new System.Drawing.Size(82, 18);
+            this.ngaynhap.TabIndex = 109;
+            this.ngaynhap.Text = "Ngày nhập:";
+            // 
+            // loai
+            // 
+            this.loai.AutoSize = true;
+            this.loai.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.loai.Location = new System.Drawing.Point(9, 209);
+            this.loai.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.loai.Name = "loai";
+            this.loai.Size = new System.Drawing.Size(40, 18);
+            this.loai.TabIndex = 103;
+            this.loai.Text = "Loại:";
+            // 
+            // btn_FormSuaSanPham_CapNhat
+            // 
+            this.btn_FormSuaSanPham_CapNhat.BorderRadius = 10;
+            this.btn_FormSuaSanPham_CapNhat.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_FormSuaSanPham_CapNhat.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_FormSuaSanPham_CapNhat.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_FormSuaSanPham_CapNhat.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_FormSuaSanPham_CapNhat.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(61)))), ((int)(((byte)(204)))));
+            this.btn_FormSuaSanPham_CapNhat.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_FormSuaSanPham_CapNhat.ForeColor = System.Drawing.Color.White;
+            this.btn_FormSuaSanPham_CapNhat.Location = new System.Drawing.Point(219, 598);
+            this.btn_FormSuaSanPham_CapNhat.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_FormSuaSanPham_CapNhat.Name = "btn_FormSuaSanPham_CapNhat";
+            this.btn_FormSuaSanPham_CapNhat.Size = new System.Drawing.Size(179, 44);
+            this.btn_FormSuaSanPham_CapNhat.TabIndex = 108;
+            this.btn_FormSuaSanPham_CapNhat.Text = "Cập nhật";
+            this.btn_FormSuaSanPham_CapNhat.Click += new System.EventHandler(this.btn_FormSuaSanPham_CapNhat_Click);
+            // 
+            // giatien
+            // 
+            this.giatien.AutoSize = true;
+            this.giatien.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.giatien.Location = new System.Drawing.Point(9, 295);
+            this.giatien.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.giatien.Name = "giatien";
+            this.giatien.Size = new System.Drawing.Size(62, 18);
+            this.giatien.TabIndex = 104;
+            this.giatien.Text = "Giá tiền:";
+            // 
+            // cb_FormSuaSanPham_LoaiSP
+            // 
+            this.cb_FormSuaSanPham_LoaiSP.BackColor = System.Drawing.Color.Transparent;
+            this.cb_FormSuaSanPham_LoaiSP.BorderColor = System.Drawing.Color.Gray;
+            this.cb_FormSuaSanPham_LoaiSP.BorderRadius = 10;
+            this.cb_FormSuaSanPham_LoaiSP.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cb_FormSuaSanPham_LoaiSP.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_FormSuaSanPham_LoaiSP.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cb_FormSuaSanPham_LoaiSP.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cb_FormSuaSanPham_LoaiSP.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cb_FormSuaSanPham_LoaiSP.ForeColor = System.Drawing.Color.Black;
+            this.cb_FormSuaSanPham_LoaiSP.ItemHeight = 30;
+            this.cb_FormSuaSanPham_LoaiSP.Items.AddRange(new object[] {
+            "Đồ ăn",
+            "Thức uống"});
+            this.cb_FormSuaSanPham_LoaiSP.Location = new System.Drawing.Point(9, 231);
+            this.cb_FormSuaSanPham_LoaiSP.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cb_FormSuaSanPham_LoaiSP.Name = "cb_FormSuaSanPham_LoaiSP";
+            this.cb_FormSuaSanPham_LoaiSP.Size = new System.Drawing.Size(268, 36);
+            this.cb_FormSuaSanPham_LoaiSP.TabIndex = 107;
+            // 
+            // lbl_FormSuaSanPham_TenSP
+            // 
+            this.lbl_FormSuaSanPham_TenSP.BorderColor = System.Drawing.Color.Gray;
+            this.lbl_FormSuaSanPham_TenSP.BorderRadius = 10;
+            this.lbl_FormSuaSanPham_TenSP.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.lbl_FormSuaSanPham_TenSP.DefaultText = "";
+            this.lbl_FormSuaSanPham_TenSP.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.lbl_FormSuaSanPham_TenSP.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.lbl_FormSuaSanPham_TenSP.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.lbl_FormSuaSanPham_TenSP.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.lbl_FormSuaSanPham_TenSP.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.lbl_FormSuaSanPham_TenSP.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.lbl_FormSuaSanPham_TenSP.ForeColor = System.Drawing.Color.Black;
+            this.lbl_FormSuaSanPham_TenSP.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.lbl_FormSuaSanPham_TenSP.Location = new System.Drawing.Point(9, 144);
+            this.lbl_FormSuaSanPham_TenSP.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.lbl_FormSuaSanPham_TenSP.Name = "lbl_FormSuaSanPham_TenSP";
+            this.lbl_FormSuaSanPham_TenSP.PasswordChar = '\0';
+            this.lbl_FormSuaSanPham_TenSP.PlaceholderText = "";
+            this.lbl_FormSuaSanPham_TenSP.SelectedText = "";
+            this.lbl_FormSuaSanPham_TenSP.Size = new System.Drawing.Size(269, 42);
+            this.lbl_FormSuaSanPham_TenSP.TabIndex = 105;
+            // 
+            // pictureBox_FormSuaSanPham_Poster
+            // 
+            this.pictureBox_FormSuaSanPham_Poster.BackColor = System.Drawing.SystemColors.Control;
+            this.pictureBox_FormSuaSanPham_Poster.Location = new System.Drawing.Point(328, 318);
+            this.pictureBox_FormSuaSanPham_Poster.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox_FormSuaSanPham_Poster.Name = "pictureBox_FormSuaSanPham_Poster";
+            this.pictureBox_FormSuaSanPham_Poster.Size = new System.Drawing.Size(271, 164);
+            this.pictureBox_FormSuaSanPham_Poster.TabIndex = 101;
+            this.pictureBox_FormSuaSanPham_Poster.TabStop = false;
             // 
             // guna2Button2
             // 
@@ -375,47 +368,76 @@
             this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button2.ForeColor = System.Drawing.Color.Black;
             this.guna2Button2.Image = global::Qlyrapchieuphim.Properties.Resources.icons8_exit_35;
-            this.guna2Button2.Location = new System.Drawing.Point(424, 11);
-            this.guna2Button2.Margin = new System.Windows.Forms.Padding(2);
+            this.guna2Button2.Location = new System.Drawing.Point(565, 14);
+            this.guna2Button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.Size = new System.Drawing.Size(26, 28);
+            this.guna2Button2.Size = new System.Drawing.Size(35, 34);
             this.guna2Button2.TabIndex = 100;
             this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
             // 
+            // poster
+            // 
+            this.poster.AutoSize = true;
+            this.poster.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.poster.Location = new System.Drawing.Point(328, 294);
+            this.poster.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.poster.Name = "poster";
+            this.poster.Size = new System.Drawing.Size(37, 18);
+            this.poster.TabIndex = 120;
+            this.poster.Text = "Ảnh:";
+            // 
+            // date_FormSuaSanPham_NgayNhap
+            // 
+            this.date_FormSuaSanPham_NgayNhap.BorderRadius = 15;
+            this.date_FormSuaSanPham_NgayNhap.Checked = true;
+            this.date_FormSuaSanPham_NgayNhap.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(248)))));
+            this.date_FormSuaSanPham_NgayNhap.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.date_FormSuaSanPham_NgayNhap.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.date_FormSuaSanPham_NgayNhap.Location = new System.Drawing.Point(331, 68);
+            this.date_FormSuaSanPham_NgayNhap.Margin = new System.Windows.Forms.Padding(4);
+            this.date_FormSuaSanPham_NgayNhap.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.date_FormSuaSanPham_NgayNhap.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.date_FormSuaSanPham_NgayNhap.Name = "date_FormSuaSanPham_NgayNhap";
+            this.date_FormSuaSanPham_NgayNhap.Size = new System.Drawing.Size(268, 39);
+            this.date_FormSuaSanPham_NgayNhap.TabIndex = 121;
+            this.date_FormSuaSanPham_NgayNhap.Value = new System.DateTime(2024, 11, 29, 16, 51, 14, 647);
+            // 
             // FormSuaSanPham
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(461, 534);
-            this.Controls.Add(this.guna2TextBox3);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.guna2TextBox2);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.guna2TextBox1);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(615, 657);
+            this.Controls.Add(this.date_FormSuaSanPham_NgayNhap);
+            this.Controls.Add(this.poster);
+            this.Controls.Add(this.lbl_FormSuaSanPham_MoTa);
+            this.Controls.Add(this.mota);
+            this.Controls.Add(this.lbl_FormSuaSanPham_NhaCungCap);
+            this.Controls.Add(this.ncc);
+            this.Controls.Add(this.lbl_FormSuaSanPham_SoLuong);
+            this.Controls.Add(this.sl);
+            this.Controls.Add(this.lbl_FormSuaSanPham_MaSP);
+            this.Controls.Add(this.btn_FormSuaSanPham_ThemPoster);
+            this.Controls.Add(this.pictureBox_FormSuaSanPham_Poster);
             this.Controls.Add(this.masp);
-            this.Controls.Add(this.themanh);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.giatien);
-            this.Controls.Add(this.soluong);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.them);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.loai);
+            this.Controls.Add(this.lbl_FormSuaSanPham_GiaTien);
             this.Controls.Add(this.ten);
+            this.Controls.Add(this.ngaynhap);
+            this.Controls.Add(this.loai);
+            this.Controls.Add(this.btn_FormSuaSanPham_CapNhat);
+            this.Controls.Add(this.giatien);
+            this.Controls.Add(this.cb_FormSuaSanPham_LoaiSP);
+            this.Controls.Add(this.lbl_FormSuaSanPham_TenSP);
             this.Controls.Add(this.guna2Button2);
             this.Controls.Add(this.label2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FormSuaSanPham";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FormSuaSanPham";
             this.Load += new System.EventHandler(this.FormSuaSanPham_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_FormSuaSanPham_Poster)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -425,24 +447,25 @@
 
         private Guna.UI2.WinForms.Guna2Button guna2Button2;
         private System.Windows.Forms.Label label2;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox3;
-        private System.Windows.Forms.Label label9;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox2;
-        private System.Windows.Forms.Label label8;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
-        private System.Windows.Forms.Label label1;
-        private Guna.UI2.WinForms.Guna2TextBox masp;
-        private Guna.UI2.WinForms.Guna2Button themanh;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label7;
-        private Guna.UI2.WinForms.Guna2TextBox giatien;
-        private Guna.UI2.WinForms.Guna2TextBox soluong;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label4;
-        private Guna.UI2.WinForms.Guna2Button them;
-        private System.Windows.Forms.Label label5;
-        private Guna.UI2.WinForms.Guna2ComboBox loai;
-        private Guna.UI2.WinForms.Guna2TextBox ten;
+        private Guna.UI2.WinForms.Guna2TextBox lbl_FormSuaSanPham_MoTa;
+        private System.Windows.Forms.Label mota;
+        private Guna.UI2.WinForms.Guna2TextBox lbl_FormSuaSanPham_NhaCungCap;
+        private System.Windows.Forms.Label ncc;
+        private Guna.UI2.WinForms.Guna2TextBox lbl_FormSuaSanPham_SoLuong;
+        private System.Windows.Forms.Label sl;
+        private Guna.UI2.WinForms.Guna2TextBox lbl_FormSuaSanPham_MaSP;
+        private Guna.UI2.WinForms.Guna2Button btn_FormSuaSanPham_ThemPoster;
+        private System.Windows.Forms.PictureBox pictureBox_FormSuaSanPham_Poster;
+        private System.Windows.Forms.Label masp;
+        private Guna.UI2.WinForms.Guna2TextBox lbl_FormSuaSanPham_GiaTien;
+        private System.Windows.Forms.Label ten;
+        private System.Windows.Forms.Label ngaynhap;
+        private System.Windows.Forms.Label loai;
+        private Guna.UI2.WinForms.Guna2Button btn_FormSuaSanPham_CapNhat;
+        private System.Windows.Forms.Label giatien;
+        private Guna.UI2.WinForms.Guna2ComboBox cb_FormSuaSanPham_LoaiSP;
+        private Guna.UI2.WinForms.Guna2TextBox lbl_FormSuaSanPham_TenSP;
+        private System.Windows.Forms.Label poster;
+        private Guna.UI2.WinForms.Guna2DateTimePicker date_FormSuaSanPham_NgayNhap;
     }
 }
