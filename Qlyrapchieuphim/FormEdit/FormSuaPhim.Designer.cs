@@ -77,7 +77,7 @@
             this.AddButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AddButton.ForeColor = System.Drawing.Color.White;
             this.AddButton.Location = new System.Drawing.Point(251, 782);
-            this.AddButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AddButton.Margin = new System.Windows.Forms.Padding(4);
             this.AddButton.Name = "AddButton";
             this.AddButton.Size = new System.Drawing.Size(183, 44);
             this.AddButton.TabIndex = 108;
@@ -220,6 +220,7 @@
             this.lbl_FormSuaPhim_MoTa.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.lbl_FormSuaPhim_MoTa.Location = new System.Drawing.Point(361, 162);
             this.lbl_FormSuaPhim_MoTa.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.lbl_FormSuaPhim_MoTa.Multiline = true;
             this.lbl_FormSuaPhim_MoTa.Name = "lbl_FormSuaPhim_MoTa";
             this.lbl_FormSuaPhim_MoTa.PasswordChar = '\0';
             this.lbl_FormSuaPhim_MoTa.PlaceholderText = "";
@@ -463,7 +464,7 @@
             this.Controls.Add(this.label8);
             this.Controls.Add(this.guna2Button2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormSuaPhim";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;

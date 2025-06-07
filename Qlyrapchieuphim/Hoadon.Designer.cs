@@ -28,7 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.sp_total_lbl = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.spDrinks = new System.Windows.Forms.Label();
             this.spFood = new System.Windows.Forms.Label();
@@ -76,10 +80,17 @@
             this.label24 = new System.Windows.Forms.Label();
             this.guna2Separator3 = new Guna.UI2.WinForms.Guna2Separator();
             this.label25 = new System.Windows.Forms.Label();
-            this.sp_total_lbl = new System.Windows.Forms.Label();
-            this.label34 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.colID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2Panel1
@@ -87,6 +98,11 @@
             this.guna2Panel1.BackColor = System.Drawing.Color.White;
             this.guna2Panel1.BorderColor = System.Drawing.Color.Black;
             this.guna2Panel1.BorderThickness = 1;
+            this.guna2Panel1.Controls.Add(this.label5);
+            this.guna2Panel1.Controls.Add(this.label6);
+            this.guna2Panel1.Controls.Add(this.dataGridView1);
+            this.guna2Panel1.Controls.Add(this.label3);
+            this.guna2Panel1.Controls.Add(this.label4);
             this.guna2Panel1.Controls.Add(this.sp_total_lbl);
             this.guna2Panel1.Controls.Add(this.label34);
             this.guna2Panel1.Controls.Add(this.label27);
@@ -123,6 +139,31 @@
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(880, 842);
             this.guna2Panel1.TabIndex = 2;
+            // 
+            // sp_total_lbl
+            // 
+            this.sp_total_lbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.sp_total_lbl.BackColor = System.Drawing.Color.White;
+            this.sp_total_lbl.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.sp_total_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sp_total_lbl.ForeColor = System.Drawing.Color.Red;
+            this.sp_total_lbl.Location = new System.Drawing.Point(639, 540);
+            this.sp_total_lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.sp_total_lbl.Name = "sp_total_lbl";
+            this.sp_total_lbl.Size = new System.Drawing.Size(231, 37);
+            this.sp_total_lbl.TabIndex = 59;
+            this.sp_total_lbl.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label34.Location = new System.Drawing.Point(471, 540);
+            this.label34.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(110, 25);
+            this.label34.TabIndex = 58;
+            this.label34.Text = "Sản Phẩm:";
             // 
             // label27
             // 
@@ -195,7 +236,7 @@
             // guna2Separator4
             // 
             this.guna2Separator4.FillColor = System.Drawing.Color.Black;
-            this.guna2Separator4.Location = new System.Drawing.Point(18, 407);
+            this.guna2Separator4.Location = new System.Drawing.Point(6, 647);
             this.guna2Separator4.Name = "guna2Separator4";
             this.guna2Separator4.Size = new System.Drawing.Size(435, 10);
             this.guna2Separator4.TabIndex = 50;
@@ -321,7 +362,7 @@
             // label11
             // 
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(13, 368);
+            this.label11.Location = new System.Drawing.Point(13, 529);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(100, 36);
             this.label11.TabIndex = 11;
@@ -360,7 +401,7 @@
             this.movSeatNum.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.movSeatNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.movSeatNum.ForeColor = System.Drawing.Color.Black;
-            this.movSeatNum.Location = new System.Drawing.Point(167, 367);
+            this.movSeatNum.Location = new System.Drawing.Point(167, 528);
             this.movSeatNum.Name = "movSeatNum";
             this.movSeatNum.Size = new System.Drawing.Size(274, 37);
             this.movSeatNum.TabIndex = 7;
@@ -598,30 +639,102 @@
             this.label25.TabIndex = 11;
             this.label25.Text = "Thông tin khách hàng";
             // 
-            // sp_total_lbl
+            // label3
             // 
-            this.sp_total_lbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.sp_total_lbl.BackColor = System.Drawing.Color.White;
-            this.sp_total_lbl.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.sp_total_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sp_total_lbl.ForeColor = System.Drawing.Color.Red;
-            this.sp_total_lbl.Location = new System.Drawing.Point(639, 540);
-            this.sp_total_lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.sp_total_lbl.Name = "sp_total_lbl";
-            this.sp_total_lbl.Size = new System.Drawing.Size(231, 37);
-            this.sp_total_lbl.TabIndex = 59;
-            this.sp_total_lbl.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(13, 367);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(133, 36);
+            this.label3.TabIndex = 61;
+            this.label3.Text = "Số lượng ghế";
             // 
-            // label34
+            // label4
             // 
-            this.label34.AutoSize = true;
-            this.label34.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label34.Location = new System.Drawing.Point(471, 540);
-            this.label34.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(110, 25);
-            this.label34.TabIndex = 58;
-            this.label34.Text = "Sản Phẩm:";
+            this.label4.BackColor = System.Drawing.Color.White;
+            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Black;
+            this.label4.Location = new System.Drawing.Point(167, 366);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(274, 37);
+            this.label4.TabIndex = 60;
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(61)))), ((int)(((byte)(204)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(61)))), ((int)(((byte)(204)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colID,
+            this.colTen,
+            this.colGia});
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle4;
+            this.dataGridView1.EnableHeadersVisualStyles = false;
+            this.dataGridView1.Location = new System.Drawing.Point(476, 180);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.Size = new System.Drawing.Size(394, 223);
+            this.dataGridView1.TabIndex = 62;
+            // 
+            // colID
+            // 
+            this.colID.HeaderText = "ID";
+            this.colID.MinimumWidth = 6;
+            this.colID.Name = "colID";
+            this.colID.ReadOnly = true;
+            // 
+            // colTen
+            // 
+            this.colTen.HeaderText = "Tên sản phẩm";
+            this.colTen.MinimumWidth = 6;
+            this.colTen.Name = "colTen";
+            this.colTen.ReadOnly = true;
+            // 
+            // colGia
+            // 
+            this.colGia.HeaderText = "Giá tiền";
+            this.colGia.MinimumWidth = 6;
+            this.colGia.Name = "colGia";
+            this.colGia.ReadOnly = true;
+            // 
+            // label5
+            // 
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(13, 446);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(100, 36);
+            this.label5.TabIndex = 64;
+            this.label5.Text = "Loại ghế";
+            // 
+            // label6
+            // 
+            this.label6.BackColor = System.Drawing.Color.White;
+            this.label6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Black;
+            this.label6.Location = new System.Drawing.Point(167, 445);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(274, 37);
+            this.label6.TabIndex = 63;
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // Hoadon
             // 
@@ -640,6 +753,7 @@
             this.guna2Panel1.PerformLayout();
             this.guna2Panel2.ResumeLayout(false);
             this.guna2Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -695,5 +809,13 @@
         private System.Windows.Forms.Label cusDeducted;
         private System.Windows.Forms.Label sp_total_lbl;
         private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTen;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colGia;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
     }
 }

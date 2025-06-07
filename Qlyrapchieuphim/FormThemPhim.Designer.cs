@@ -81,6 +81,7 @@
             this.lbl_FormThemPhim_MoTa.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.lbl_FormThemPhim_MoTa.Location = new System.Drawing.Point(364, 162);
             this.lbl_FormThemPhim_MoTa.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.lbl_FormThemPhim_MoTa.Multiline = true;
             this.lbl_FormThemPhim_MoTa.Name = "lbl_FormThemPhim_MoTa";
             this.lbl_FormThemPhim_MoTa.PasswordChar = '\0';
             this.lbl_FormThemPhim_MoTa.PlaceholderText = "";
@@ -151,7 +152,7 @@
             "Sắp chiếu",
             "Đã kết thúc"});
             this.cb_FormThemPhim_TinhTrang.Location = new System.Drawing.Point(21, 423);
-            this.cb_FormThemPhim_TinhTrang.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cb_FormThemPhim_TinhTrang.Margin = new System.Windows.Forms.Padding(4);
             this.cb_FormThemPhim_TinhTrang.Name = "cb_FormThemPhim_TinhTrang";
             this.cb_FormThemPhim_TinhTrang.Size = new System.Drawing.Size(312, 36);
             this.cb_FormThemPhim_TinhTrang.TabIndex = 77;
@@ -177,7 +178,7 @@
             "Phim lãng mạn",
             "Phim chính kịch"});
             this.cb_FormThemPhim_TheLoai.Location = new System.Drawing.Point(21, 245);
-            this.cb_FormThemPhim_TheLoai.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cb_FormThemPhim_TheLoai.Margin = new System.Windows.Forms.Padding(4);
             this.cb_FormThemPhim_TheLoai.Name = "cb_FormThemPhim_TheLoai";
             this.cb_FormThemPhim_TheLoai.Size = new System.Drawing.Size(312, 36);
             this.cb_FormThemPhim_TheLoai.TabIndex = 76;
@@ -216,7 +217,7 @@
             this.btn_FormThemPhim_ThemPoster.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_FormThemPhim_ThemPoster.ForeColor = System.Drawing.Color.White;
             this.btn_FormThemPhim_ThemPoster.Location = new System.Drawing.Point(454, 651);
-            this.btn_FormThemPhim_ThemPoster.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_FormThemPhim_ThemPoster.Margin = new System.Windows.Forms.Padding(4);
             this.btn_FormThemPhim_ThemPoster.Name = "btn_FormThemPhim_ThemPoster";
             this.btn_FormThemPhim_ThemPoster.Size = new System.Drawing.Size(144, 44);
             this.btn_FormThemPhim_ThemPoster.TabIndex = 74;
@@ -234,7 +235,7 @@
             this.AddButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AddButton.ForeColor = System.Drawing.Color.White;
             this.AddButton.Location = new System.Drawing.Point(251, 782);
-            this.AddButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AddButton.Margin = new System.Windows.Forms.Padding(4);
             this.AddButton.Name = "AddButton";
             this.AddButton.Size = new System.Drawing.Size(183, 44);
             this.AddButton.TabIndex = 71;
@@ -329,7 +330,7 @@
             // 
             this.pictureBox_FormThemPhim_Poster.BackColor = System.Drawing.SystemColors.Control;
             this.pictureBox_FormThemPhim_Poster.Location = new System.Drawing.Point(364, 423);
-            this.pictureBox_FormThemPhim_Poster.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox_FormThemPhim_Poster.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox_FormThemPhim_Poster.Name = "pictureBox_FormThemPhim_Poster";
             this.pictureBox_FormThemPhim_Poster.Size = new System.Drawing.Size(333, 220);
             this.pictureBox_FormThemPhim_Poster.TabIndex = 66;
@@ -468,7 +469,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormThemPhim";
