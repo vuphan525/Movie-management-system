@@ -26,7 +26,10 @@ namespace Qlyrapchieuphim
 
         private void FormThemPhim_Load(object sender, EventArgs e)
         {
-
+            date_FormThemPhim_NgayNhap.Format = DateTimePickerFormat.Custom;
+            date_FormThemPhim_NgayNhap.CustomFormat = "dd/MM/yyyy";
+            date_FormThemPhim_NgayPhatHanh.Format = DateTimePickerFormat.Custom;
+            date_FormThemPhim_NgayPhatHanh.CustomFormat = "dd/MM/yyyy";
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)

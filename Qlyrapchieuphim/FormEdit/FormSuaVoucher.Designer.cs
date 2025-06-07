@@ -86,11 +86,12 @@
             this.lbl_FormSuaVoucher_MoTa.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.lbl_FormSuaVoucher_MoTa.Location = new System.Drawing.Point(385, 234);
             this.lbl_FormSuaVoucher_MoTa.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.lbl_FormSuaVoucher_MoTa.Multiline = true;
             this.lbl_FormSuaVoucher_MoTa.Name = "lbl_FormSuaVoucher_MoTa";
             this.lbl_FormSuaVoucher_MoTa.PasswordChar = '\0';
             this.lbl_FormSuaVoucher_MoTa.PlaceholderText = "";
             this.lbl_FormSuaVoucher_MoTa.SelectedText = "";
-            this.lbl_FormSuaVoucher_MoTa.Size = new System.Drawing.Size(323, 174);
+            this.lbl_FormSuaVoucher_MoTa.Size = new System.Drawing.Size(323, 156);
             this.lbl_FormSuaVoucher_MoTa.TabIndex = 120;
             // 
             // lbl_FormSuaVoucher_DiscountPercent
@@ -203,7 +204,7 @@
             this.date_FormSuaVoucher_NgayHetHan.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.date_FormSuaVoucher_NgayHetHan.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.date_FormSuaVoucher_NgayHetHan.Location = new System.Drawing.Point(19, 318);
-            this.date_FormSuaVoucher_NgayHetHan.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.date_FormSuaVoucher_NgayHetHan.Margin = new System.Windows.Forms.Padding(4);
             this.date_FormSuaVoucher_NgayHetHan.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.date_FormSuaVoucher_NgayHetHan.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.date_FormSuaVoucher_NgayHetHan.Name = "date_FormSuaVoucher_NgayHetHan";
@@ -221,8 +222,8 @@
             this.them.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(61)))), ((int)(((byte)(204)))));
             this.them.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.them.ForeColor = System.Drawing.Color.White;
-            this.them.Location = new System.Drawing.Point(284, 612);
-            this.them.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.them.Location = new System.Drawing.Point(284, 528);
+            this.them.Margin = new System.Windows.Forms.Padding(4);
             this.them.Name = "them";
             this.them.Size = new System.Drawing.Size(149, 44);
             this.them.TabIndex = 109;
@@ -256,7 +257,7 @@
             "Chưa áp dụng",
             "Đã hêt hiệu lực"});
             this.cb_FormSuaVoucher_TrangThai.Location = new System.Drawing.Point(385, 153);
-            this.cb_FormSuaVoucher_TrangThai.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cb_FormSuaVoucher_TrangThai.Margin = new System.Windows.Forms.Padding(4);
             this.cb_FormSuaVoucher_TrangThai.Name = "cb_FormSuaVoucher_TrangThai";
             this.cb_FormSuaVoucher_TrangThai.Size = new System.Drawing.Size(323, 36);
             this.cb_FormSuaVoucher_TrangThai.TabIndex = 105;
@@ -363,7 +364,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(729, 679);
+            this.ClientSize = new System.Drawing.Size(723, 585);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.lbl_FormSuaVoucher_MoTa);
             this.Controls.Add(this.lbl_FormSuaVoucher_DiscountPercent);
@@ -384,7 +385,7 @@
             this.Controls.Add(this.guna2Button2);
             this.Controls.Add(this.label2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormSuaVoucher";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;

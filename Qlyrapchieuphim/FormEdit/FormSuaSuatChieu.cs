@@ -28,7 +28,8 @@ namespace Qlyrapchieuphim.FormEdit
 
         private void FormSuaSuatChieu_Load(object sender, EventArgs e)
         {
-
+            date_FormSuaSuatChieu_NgayChieu.Format = DateTimePickerFormat.Custom;
+            date_FormSuaSuatChieu_NgayChieu.CustomFormat = "dd/MM/yyyy";
         }
 
         private void FormThemPhim_Paint(object sender, PaintEventArgs e)
@@ -41,6 +42,16 @@ namespace Qlyrapchieuphim.FormEdit
                 borderColor, borderWidth, ButtonBorderStyle.Solid,
                 borderColor, borderWidth, ButtonBorderStyle.Solid,
                 borderColor, borderWidth, ButtonBorderStyle.Solid);
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

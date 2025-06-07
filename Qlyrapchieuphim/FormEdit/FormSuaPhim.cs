@@ -28,7 +28,10 @@ namespace Qlyrapchieuphim.FormEdit
 
         private void FormSuaPhim_Load(object sender, EventArgs e)
         {
-
+            date_FormSuaPhim_NgayNhap.Format = DateTimePickerFormat.Custom;
+            date_FormSuaPhim_NgayNhap.CustomFormat = "dd/MM/yyyy";
+            date_FormSuaPhim_NgayPhatHanh.Format = DateTimePickerFormat.Custom;
+            date_FormSuaPhim_NgayPhatHanh.CustomFormat = "dd/MM/yyyy";
         }
 
         private void FormThemPhim_Paint(object sender, PaintEventArgs e)

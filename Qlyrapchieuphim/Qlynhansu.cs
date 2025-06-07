@@ -43,7 +43,15 @@ namespace Qlyrapchieuphim
             DataSet ds = new DataSet();
             adapter.Fill(ds, "NHANVIEN");
             DataTable dt = ds.Tables["NHANVIEN"];
+            //dataGridView1.AutoGenerateColumns = true;
             dataGridView1.DataSource = dt;
+
+            // Xóa cột "Actions" nếu đã tồn tại (tránh trùng)
+            //if (dataGridView1.Columns.Contains("Actions"))
+            //{
+            //    dataGridView1.Columns.Remove("Actions");
+            //}
+
             if (!dataGridView1.Columns.Contains("Actions"))
             {
                 DataGridViewTextBoxColumn actionCol = new DataGridViewTextBoxColumn();
@@ -117,7 +125,7 @@ namespace Qlyrapchieuphim
             cmd.Parameters.Add("@sdt", SqlDbType.VarChar).Value = sodienthoai.Text;
             cmd.Parameters.Add("@email", SqlDbType.VarChar).Value = email.Text;
             cmd.Parameters.Add("@ngsinh", SqlDbType.Date).Value = ngaysinh.Value;
-            cmd.Parameters.Add("@trthai", SqlDbType.NVarChar).Value = trangthai.Text;
+            //cmd.Parameters.Add("@trthai", SqlDbType.NVarChar).Value = trangthai.Text;
             cmd.Parameters.Add("@usrname", SqlDbType.VarChar).Value = usrnameTxtBox.Text.Trim();
             cmd.Parameters.Add("@pass", SqlDbType.VarChar).Value = passTxtBox.Text.Trim();
             cmd.Parameters.Add("@chucvu", SqlDbType.NVarChar).Value = chucvu.SelectedItem;
@@ -232,7 +240,7 @@ namespace Qlyrapchieuphim
             cmd.Parameters.Add("@sdt", SqlDbType.VarChar).Value = sodienthoai.Text;
             cmd.Parameters.Add("@email", SqlDbType.VarChar).Value = email.Text;
             cmd.Parameters.Add("@ngsinh", SqlDbType.Date).Value = ngaysinh.Value;
-            cmd.Parameters.Add("@trthai", SqlDbType.NVarChar).Value = trangthai.Text;
+            //cmd.Parameters.Add("@trthai", SqlDbType.NVarChar).Value = trangthai.Text;
             cmd.Parameters.Add("@usrname", SqlDbType.VarChar).Value = usrnameTxtBox.Text.Trim();
             cmd.Parameters.Add("@pass", SqlDbType.VarChar).Value = passTxtBox.Text.Trim();
             cmd.Parameters.Add("@chucvu", SqlDbType.NVarChar).Value = chucvu.SelectedItem;

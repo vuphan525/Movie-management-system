@@ -31,15 +31,15 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.guna2Button5 = new Guna.UI2.WinForms.Guna2Button();
             this.SearchTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
-            this.guna2Button5 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTenPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDinhDang = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSoGhe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -51,10 +51,28 @@
             this.panel1.Controls.Add(this.SearchTextBox);
             this.panel1.Controls.Add(this.dataGridView1);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(14, 67);
+            this.panel1.Location = new System.Drawing.Point(19, 82);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1077, 597);
+            this.panel1.Size = new System.Drawing.Size(1436, 735);
             this.panel1.TabIndex = 1;
+            // 
+            // guna2Button5
+            // 
+            this.guna2Button5.BorderRadius = 15;
+            this.guna2Button5.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button5.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button5.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button5.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button5.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(248)))));
+            this.guna2Button5.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button5.ForeColor = System.Drawing.Color.White;
+            this.guna2Button5.Image = global::Qlyrapchieuphim.Properties.Resources.icons8_find_30;
+            this.guna2Button5.Location = new System.Drawing.Point(1375, 4);
+            this.guna2Button5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Button5.Name = "guna2Button5";
+            this.guna2Button5.Size = new System.Drawing.Size(40, 37);
+            this.guna2Button5.TabIndex = 56;
             // 
             // SearchTextBox
             // 
@@ -70,13 +88,13 @@
             this.SearchTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.SearchTextBox.ForeColor = System.Drawing.Color.Black;
             this.SearchTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.SearchTextBox.Location = new System.Drawing.Point(794, 5);
-            this.SearchTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.SearchTextBox.Location = new System.Drawing.Point(1059, 6);
+            this.SearchTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.SearchTextBox.Name = "SearchTextBox";
             this.SearchTextBox.PasswordChar = '\0';
             this.SearchTextBox.PlaceholderText = "";
             this.SearchTextBox.SelectedText = "";
-            this.SearchTextBox.Size = new System.Drawing.Size(231, 28);
+            this.SearchTextBox.Size = new System.Drawing.Size(308, 34);
             this.SearchTextBox.TabIndex = 55;
             // 
             // dataGridView1
@@ -96,10 +114,10 @@
             this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5});
+            this.colID,
+            this.colTenPhong,
+            this.colDinhDang,
+            this.colSoGhe});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -109,13 +127,14 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.EnableHeadersVisualStyles = false;
-            this.dataGridView1.Location = new System.Drawing.Point(17, 39);
+            this.dataGridView1.Location = new System.Drawing.Point(23, 48);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1044, 542);
+            this.dataGridView1.Size = new System.Drawing.Size(1392, 667);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dataGridView1_CellPainting);
@@ -124,27 +143,12 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(24, 16);
+            this.label1.Location = new System.Drawing.Point(32, 20);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(71, 16);
+            this.label1.Size = new System.Drawing.Size(88, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Các phim";
-            // 
-            // guna2Button5
-            // 
-            this.guna2Button5.BorderRadius = 15;
-            this.guna2Button5.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button5.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button5.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button5.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button5.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(248)))));
-            this.guna2Button5.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button5.ForeColor = System.Drawing.Color.White;
-            this.guna2Button5.Image = global::Qlyrapchieuphim.Properties.Resources.icons8_find_30;
-            this.guna2Button5.Location = new System.Drawing.Point(1031, 3);
-            this.guna2Button5.Name = "guna2Button5";
-            this.guna2Button5.Size = new System.Drawing.Size(30, 30);
-            this.guna2Button5.TabIndex = 56;
             // 
             // guna2Button1
             // 
@@ -156,57 +160,59 @@
             this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(61)))), ((int)(((byte)(204)))));
             this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.Location = new System.Drawing.Point(938, 15);
+            this.guna2Button1.Location = new System.Drawing.Point(1251, 18);
+            this.guna2Button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(153, 36);
+            this.guna2Button1.Size = new System.Drawing.Size(204, 44);
             this.guna2Button1.TabIndex = 66;
             this.guna2Button1.Text = "Thêm phòng chiếu";
             this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
-            // Column2
+            // colID
             // 
-            this.Column2.DataPropertyName = "MAPHIM";
-            this.Column2.HeaderText = "ID phòng";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
+            this.colID.DataPropertyName = "MAPHIM";
+            this.colID.HeaderText = "ID phòng";
+            this.colID.MinimumWidth = 6;
+            this.colID.Name = "colID";
+            this.colID.ReadOnly = true;
             // 
-            // Column3
+            // colTenPhong
             // 
-            this.Column3.DataPropertyName = "TENPHIM";
-            this.Column3.FillWeight = 120F;
-            this.Column3.HeaderText = "Tên phòng";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
+            this.colTenPhong.DataPropertyName = "TENPHIM";
+            this.colTenPhong.FillWeight = 120F;
+            this.colTenPhong.HeaderText = "Tên phòng";
+            this.colTenPhong.MinimumWidth = 6;
+            this.colTenPhong.Name = "colTenPhong";
+            this.colTenPhong.ReadOnly = true;
             // 
-            // Column4
+            // colDinhDang
             // 
-            this.Column4.DataPropertyName = "THELOAI";
-            this.Column4.FillWeight = 70F;
-            this.Column4.HeaderText = "Định dạng";
-            this.Column4.MinimumWidth = 6;
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
+            this.colDinhDang.DataPropertyName = "THELOAI";
+            this.colDinhDang.FillWeight = 70F;
+            this.colDinhDang.HeaderText = "Định dạng";
+            this.colDinhDang.MinimumWidth = 6;
+            this.colDinhDang.Name = "colDinhDang";
+            this.colDinhDang.ReadOnly = true;
             // 
-            // Column5
+            // colSoGhe
             // 
-            this.Column5.DataPropertyName = "THOILUONG";
-            this.Column5.FillWeight = 70F;
-            this.Column5.HeaderText = "Số ghế";
-            this.Column5.MinimumWidth = 6;
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
+            this.colSoGhe.DataPropertyName = "THOILUONG";
+            this.colSoGhe.FillWeight = 70F;
+            this.colSoGhe.HeaderText = "Số ghế";
+            this.colSoGhe.MinimumWidth = 6;
+            this.colSoGhe.Name = "colSoGhe";
+            this.colSoGhe.ReadOnly = true;
             // 
             // QlyPhongChieu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(248)))));
             this.Controls.Add(this.guna2Button1);
             this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "QlyPhongChieu";
-            this.Size = new System.Drawing.Size(1108, 676);
+            this.Size = new System.Drawing.Size(1477, 832);
             this.Load += new System.EventHandler(this.QlyPhongChieu_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -223,9 +229,9 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTenPhong;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colDinhDang;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colSoGhe;
     }
 }

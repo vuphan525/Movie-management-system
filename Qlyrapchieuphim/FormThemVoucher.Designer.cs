@@ -59,8 +59,8 @@
             this.them.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(61)))), ((int)(((byte)(204)))));
             this.them.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.them.ForeColor = System.Drawing.Color.White;
-            this.them.Location = new System.Drawing.Point(288, 631);
-            this.them.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.them.Location = new System.Drawing.Point(282, 523);
+            this.them.Margin = new System.Windows.Forms.Padding(4);
             this.them.Name = "them";
             this.them.Size = new System.Drawing.Size(149, 44);
             this.them.TabIndex = 62;
@@ -121,11 +121,12 @@
             this.lbl_FormThemVoucher_MoTa.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.lbl_FormThemVoucher_MoTa.Location = new System.Drawing.Point(383, 233);
             this.lbl_FormThemVoucher_MoTa.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.lbl_FormThemVoucher_MoTa.Multiline = true;
             this.lbl_FormThemVoucher_MoTa.Name = "lbl_FormThemVoucher_MoTa";
             this.lbl_FormThemVoucher_MoTa.PasswordChar = '\0';
             this.lbl_FormThemVoucher_MoTa.PlaceholderText = "";
             this.lbl_FormThemVoucher_MoTa.SelectedText = "";
-            this.lbl_FormThemVoucher_MoTa.Size = new System.Drawing.Size(323, 174);
+            this.lbl_FormThemVoucher_MoTa.Size = new System.Drawing.Size(323, 156);
             this.lbl_FormThemVoucher_MoTa.TabIndex = 136;
             // 
             // lbl_FormThemVoucher_DiscountPercent
@@ -363,7 +364,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(723, 690);
+            this.ClientSize = new System.Drawing.Size(723, 585);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.lbl_FormThemVoucher_MoTa);
             this.Controls.Add(this.lbl_FormThemVoucher_DiscountPercent);
@@ -384,7 +385,7 @@
             this.Controls.Add(this.them);
             this.Controls.Add(this.label2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormThemVoucher";
             this.ShowInTaskbar = false;
             this.Text = "FormThemVoucher";
