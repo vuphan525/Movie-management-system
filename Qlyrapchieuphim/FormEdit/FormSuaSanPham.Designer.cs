@@ -177,6 +177,7 @@
             this.lbl_FormSuaSanPham_MaSP.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.lbl_FormSuaSanPham_MaSP.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.lbl_FormSuaSanPham_MaSP.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.lbl_FormSuaSanPham_MaSP.Enabled = false;
             this.lbl_FormSuaSanPham_MaSP.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.lbl_FormSuaSanPham_MaSP.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.lbl_FormSuaSanPham_MaSP.ForeColor = System.Drawing.Color.Black;
@@ -186,6 +187,7 @@
             this.lbl_FormSuaSanPham_MaSP.Name = "lbl_FormSuaSanPham_MaSP";
             this.lbl_FormSuaSanPham_MaSP.PasswordChar = '\0';
             this.lbl_FormSuaSanPham_MaSP.PlaceholderText = "";
+            this.lbl_FormSuaSanPham_MaSP.ReadOnly = true;
             this.lbl_FormSuaSanPham_MaSP.SelectedText = "";
             this.lbl_FormSuaSanPham_MaSP.Size = new System.Drawing.Size(269, 42);
             this.lbl_FormSuaSanPham_MaSP.TabIndex = 113;
@@ -201,7 +203,7 @@
             this.btn_FormSuaSanPham_ThemPoster.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_FormSuaSanPham_ThemPoster.ForeColor = System.Drawing.Color.White;
             this.btn_FormSuaSanPham_ThemPoster.Location = new System.Drawing.Point(392, 487);
-            this.btn_FormSuaSanPham_ThemPoster.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_FormSuaSanPham_ThemPoster.Margin = new System.Windows.Forms.Padding(4);
             this.btn_FormSuaSanPham_ThemPoster.Name = "btn_FormSuaSanPham_ThemPoster";
             this.btn_FormSuaSanPham_ThemPoster.Size = new System.Drawing.Size(150, 42);
             this.btn_FormSuaSanPham_ThemPoster.TabIndex = 112;
@@ -285,7 +287,7 @@
             this.btn_FormSuaSanPham_CapNhat.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_FormSuaSanPham_CapNhat.ForeColor = System.Drawing.Color.White;
             this.btn_FormSuaSanPham_CapNhat.Location = new System.Drawing.Point(219, 598);
-            this.btn_FormSuaSanPham_CapNhat.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_FormSuaSanPham_CapNhat.Margin = new System.Windows.Forms.Padding(4);
             this.btn_FormSuaSanPham_CapNhat.Name = "btn_FormSuaSanPham_CapNhat";
             this.btn_FormSuaSanPham_CapNhat.Size = new System.Drawing.Size(179, 44);
             this.btn_FormSuaSanPham_CapNhat.TabIndex = 108;
@@ -319,7 +321,7 @@
             "Đồ ăn",
             "Thức uống"});
             this.cb_FormSuaSanPham_LoaiSP.Location = new System.Drawing.Point(9, 231);
-            this.cb_FormSuaSanPham_LoaiSP.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cb_FormSuaSanPham_LoaiSP.Margin = new System.Windows.Forms.Padding(4);
             this.cb_FormSuaSanPham_LoaiSP.Name = "cb_FormSuaSanPham_LoaiSP";
             this.cb_FormSuaSanPham_LoaiSP.Size = new System.Drawing.Size(268, 36);
             this.cb_FormSuaSanPham_LoaiSP.TabIndex = 107;
@@ -351,7 +353,7 @@
             // 
             this.pictureBox_FormSuaSanPham_Poster.BackColor = System.Drawing.SystemColors.Control;
             this.pictureBox_FormSuaSanPham_Poster.Location = new System.Drawing.Point(328, 318);
-            this.pictureBox_FormSuaSanPham_Poster.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox_FormSuaSanPham_Poster.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox_FormSuaSanPham_Poster.Name = "pictureBox_FormSuaSanPham_Poster";
             this.pictureBox_FormSuaSanPham_Poster.Size = new System.Drawing.Size(271, 164);
             this.pictureBox_FormSuaSanPham_Poster.TabIndex = 101;
@@ -431,7 +433,7 @@
             this.Controls.Add(this.guna2Button2);
             this.Controls.Add(this.label2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormSuaSanPham";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;

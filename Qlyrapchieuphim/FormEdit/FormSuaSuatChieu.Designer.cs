@@ -53,6 +53,7 @@
             this.lbl_FormSuaSuatChieu_MaSuatChieu.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.lbl_FormSuaSuatChieu_MaSuatChieu.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.lbl_FormSuaSuatChieu_MaSuatChieu.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.lbl_FormSuaSuatChieu_MaSuatChieu.Enabled = false;
             this.lbl_FormSuaSuatChieu_MaSuatChieu.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.lbl_FormSuaSuatChieu_MaSuatChieu.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.lbl_FormSuaSuatChieu_MaSuatChieu.ForeColor = System.Drawing.Color.Black;
@@ -62,6 +63,7 @@
             this.lbl_FormSuaSuatChieu_MaSuatChieu.Name = "lbl_FormSuaSuatChieu_MaSuatChieu";
             this.lbl_FormSuaSuatChieu_MaSuatChieu.PasswordChar = '\0';
             this.lbl_FormSuaSuatChieu_MaSuatChieu.PlaceholderText = "";
+            this.lbl_FormSuaSuatChieu_MaSuatChieu.ReadOnly = true;
             this.lbl_FormSuaSuatChieu_MaSuatChieu.SelectedText = "";
             this.lbl_FormSuaSuatChieu_MaSuatChieu.Size = new System.Drawing.Size(487, 44);
             this.lbl_FormSuaSuatChieu_MaSuatChieu.TabIndex = 96;
@@ -93,6 +95,7 @@
             this.date_FormSuaSuatChieu_GioChieu.Size = new System.Drawing.Size(487, 39);
             this.date_FormSuaSuatChieu_GioChieu.TabIndex = 94;
             this.date_FormSuaSuatChieu_GioChieu.Value = new System.DateTime(2024, 11, 29, 16, 51, 14, 647);
+            this.date_FormSuaSuatChieu_GioChieu.ValueChanged += new System.EventHandler(this.date_FormSuaSuatChieu_GioChieu_ValueChanged);
             // 
             // cb_FormSuaSuatChieu_PhongChieu
             // 

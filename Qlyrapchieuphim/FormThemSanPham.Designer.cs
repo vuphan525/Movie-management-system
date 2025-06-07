@@ -63,6 +63,7 @@
             this.lbl_ThemSanPham_MaSP.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.lbl_ThemSanPham_MaSP.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.lbl_ThemSanPham_MaSP.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.lbl_ThemSanPham_MaSP.Enabled = false;
             this.lbl_ThemSanPham_MaSP.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.lbl_ThemSanPham_MaSP.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.lbl_ThemSanPham_MaSP.ForeColor = System.Drawing.Color.Black;
@@ -72,6 +73,7 @@
             this.lbl_ThemSanPham_MaSP.Name = "lbl_ThemSanPham_MaSP";
             this.lbl_ThemSanPham_MaSP.PasswordChar = '\0';
             this.lbl_ThemSanPham_MaSP.PlaceholderText = "";
+            this.lbl_ThemSanPham_MaSP.ReadOnly = true;
             this.lbl_ThemSanPham_MaSP.SelectedText = "";
             this.lbl_ThemSanPham_MaSP.Size = new System.Drawing.Size(269, 42);
             this.lbl_ThemSanPham_MaSP.TabIndex = 50;
@@ -87,7 +89,7 @@
             this.btn_ThemSanPham_Poster.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_ThemSanPham_Poster.ForeColor = System.Drawing.Color.White;
             this.btn_ThemSanPham_Poster.Location = new System.Drawing.Point(398, 504);
-            this.btn_ThemSanPham_Poster.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_ThemSanPham_Poster.Margin = new System.Windows.Forms.Padding(4);
             this.btn_ThemSanPham_Poster.Name = "btn_ThemSanPham_Poster";
             this.btn_ThemSanPham_Poster.Size = new System.Drawing.Size(150, 42);
             this.btn_ThemSanPham_Poster.TabIndex = 49;
@@ -182,7 +184,7 @@
             this.them.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.them.ForeColor = System.Drawing.Color.White;
             this.them.Location = new System.Drawing.Point(207, 620);
-            this.them.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.them.Margin = new System.Windows.Forms.Padding(4);
             this.them.Name = "them";
             this.them.Size = new System.Drawing.Size(179, 44);
             this.them.TabIndex = 45;
@@ -215,7 +217,7 @@
             "Đồ ăn",
             "Thức uống"});
             this.cb_ThemSanPham_LoaiSP.Location = new System.Drawing.Point(16, 242);
-            this.cb_ThemSanPham_LoaiSP.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cb_ThemSanPham_LoaiSP.Margin = new System.Windows.Forms.Padding(4);
             this.cb_ThemSanPham_LoaiSP.Name = "cb_ThemSanPham_LoaiSP";
             this.cb_ThemSanPham_LoaiSP.Size = new System.Drawing.Size(268, 36);
             this.cb_ThemSanPham_LoaiSP.TabIndex = 44;
@@ -333,7 +335,7 @@
             // 
             this.pictureBox_ThemSanPham_Poster.BackColor = System.Drawing.SystemColors.Control;
             this.pictureBox_ThemSanPham_Poster.Location = new System.Drawing.Point(335, 329);
-            this.pictureBox_ThemSanPham_Poster.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox_ThemSanPham_Poster.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox_ThemSanPham_Poster.Name = "pictureBox_ThemSanPham_Poster";
             this.pictureBox_ThemSanPham_Poster.Size = new System.Drawing.Size(271, 167);
             this.pictureBox_ThemSanPham_Poster.TabIndex = 37;
@@ -430,7 +432,7 @@
             this.Controls.Add(this.cb_ThemSanPham_LoaiSP);
             this.Controls.Add(this.lbl_ThemSanPham_TenSP);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormThemSanPham";
             this.ShowInTaskbar = false;
             this.Text = "FormThemSanPham";

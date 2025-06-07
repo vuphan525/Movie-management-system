@@ -145,7 +145,7 @@
             this.them.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.them.ForeColor = System.Drawing.Color.White;
             this.them.Location = new System.Drawing.Point(264, 495);
-            this.them.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.them.Margin = new System.Windows.Forms.Padding(4);
             this.them.Name = "them";
             this.them.Size = new System.Drawing.Size(175, 44);
             this.them.TabIndex = 91;
@@ -206,6 +206,7 @@
             this.lbl_FormThemKH_MaKH.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.lbl_FormThemKH_MaKH.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.lbl_FormThemKH_MaKH.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.lbl_FormThemKH_MaKH.Enabled = false;
             this.lbl_FormThemKH_MaKH.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.lbl_FormThemKH_MaKH.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.lbl_FormThemKH_MaKH.ForeColor = System.Drawing.Color.Black;
@@ -215,6 +216,7 @@
             this.lbl_FormThemKH_MaKH.Name = "lbl_FormThemKH_MaKH";
             this.lbl_FormThemKH_MaKH.PasswordChar = '\0';
             this.lbl_FormThemKH_MaKH.PlaceholderText = "";
+            this.lbl_FormThemKH_MaKH.ReadOnly = true;
             this.lbl_FormThemKH_MaKH.SelectedText = "";
             this.lbl_FormThemKH_MaKH.Size = new System.Drawing.Size(423, 38);
             this.lbl_FormThemKH_MaKH.TabIndex = 87;
@@ -279,7 +281,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.guna2Button2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormThemKhachHang";
             this.ShowInTaskbar = false;
             this.Text = "FormThemKhachHang";

@@ -332,6 +332,7 @@
             this.lbl_FormSuaPhim_MovieID.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.lbl_FormSuaPhim_MovieID.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.lbl_FormSuaPhim_MovieID.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.lbl_FormSuaPhim_MovieID.Enabled = false;
             this.lbl_FormSuaPhim_MovieID.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.lbl_FormSuaPhim_MovieID.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.lbl_FormSuaPhim_MovieID.ForeColor = System.Drawing.Color.Black;
@@ -341,6 +342,7 @@
             this.lbl_FormSuaPhim_MovieID.Name = "lbl_FormSuaPhim_MovieID";
             this.lbl_FormSuaPhim_MovieID.PasswordChar = '\0';
             this.lbl_FormSuaPhim_MovieID.PlaceholderText = "";
+            this.lbl_FormSuaPhim_MovieID.ReadOnly = true;
             this.lbl_FormSuaPhim_MovieID.SelectedText = "";
             this.lbl_FormSuaPhim_MovieID.Size = new System.Drawing.Size(313, 43);
             this.lbl_FormSuaPhim_MovieID.TabIndex = 116;

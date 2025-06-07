@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.cb_FormThemSuCo_MaSuCo = new Guna.UI2.WinForms.Guna2ComboBox();
             this.lbl_FormThemSuCo_MaNhanVien = new Guna.UI2.WinForms.Guna2TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.date_FormThemSuCo_NgayTiepNhan = new Guna.UI2.WinForms.Guna2DateTimePicker();
@@ -45,29 +44,8 @@
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.lbl_FormThemSuCo_HuongGiaiQuyet = new Guna.UI2.WinForms.Guna2TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.lbl_FormThemSuCo_MaSuCo = new Guna.UI2.WinForms.Guna2TextBox();
             this.SuspendLayout();
-            // 
-            // cb_FormThemSuCo_MaSuCo
-            // 
-            this.cb_FormThemSuCo_MaSuCo.BackColor = System.Drawing.Color.Transparent;
-            this.cb_FormThemSuCo_MaSuCo.BorderColor = System.Drawing.Color.Gray;
-            this.cb_FormThemSuCo_MaSuCo.BorderRadius = 10;
-            this.cb_FormThemSuCo_MaSuCo.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cb_FormThemSuCo_MaSuCo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cb_FormThemSuCo_MaSuCo.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cb_FormThemSuCo_MaSuCo.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cb_FormThemSuCo_MaSuCo.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cb_FormThemSuCo_MaSuCo.ForeColor = System.Drawing.Color.Black;
-            this.cb_FormThemSuCo_MaSuCo.ItemHeight = 30;
-            this.cb_FormThemSuCo_MaSuCo.Items.AddRange(new object[] {
-            "Đã xử lý",
-            "Đang xử lý",
-            "Chờ tiếp nhận"});
-            this.cb_FormThemSuCo_MaSuCo.Location = new System.Drawing.Point(16, 74);
-            this.cb_FormThemSuCo_MaSuCo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.cb_FormThemSuCo_MaSuCo.Name = "cb_FormThemSuCo_MaSuCo";
-            this.cb_FormThemSuCo_MaSuCo.Size = new System.Drawing.Size(299, 36);
-            this.cb_FormThemSuCo_MaSuCo.TabIndex = 68;
             // 
             // lbl_FormThemSuCo_MaNhanVien
             // 
@@ -111,7 +89,7 @@
             this.date_FormThemSuCo_NgayTiepNhan.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.date_FormThemSuCo_NgayTiepNhan.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.date_FormThemSuCo_NgayTiepNhan.Location = new System.Drawing.Point(347, 74);
-            this.date_FormThemSuCo_NgayTiepNhan.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.date_FormThemSuCo_NgayTiepNhan.Margin = new System.Windows.Forms.Padding(4);
             this.date_FormThemSuCo_NgayTiepNhan.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.date_FormThemSuCo_NgayTiepNhan.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.date_FormThemSuCo_NgayTiepNhan.Name = "date_FormThemSuCo_NgayTiepNhan";
@@ -220,7 +198,7 @@
             this.bcButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bcButton.ForeColor = System.Drawing.Color.White;
             this.bcButton.Location = new System.Drawing.Point(257, 544);
-            this.bcButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bcButton.Margin = new System.Windows.Forms.Padding(4);
             this.bcButton.Name = "bcButton";
             this.bcButton.Size = new System.Drawing.Size(183, 44);
             this.bcButton.TabIndex = 60;
@@ -243,7 +221,7 @@
             "Đang xử lý",
             "Chờ tiếp nhận"});
             this.cb_FormThemSuCo_TinhTrang.Location = new System.Drawing.Point(16, 347);
-            this.cb_FormThemSuCo_TinhTrang.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cb_FormThemSuCo_TinhTrang.Margin = new System.Windows.Forms.Padding(4);
             this.cb_FormThemSuCo_TinhTrang.Name = "cb_FormThemSuCo_TinhTrang";
             this.cb_FormThemSuCo_TinhTrang.Size = new System.Drawing.Size(299, 36);
             this.cb_FormThemSuCo_TinhTrang.TabIndex = 59;
@@ -323,16 +301,41 @@
             this.label1.TabIndex = 86;
             this.label1.Text = "Hướng giải quyết:";
             // 
+            // lbl_FormThemSuCo_MaSuCo
+            // 
+            this.lbl_FormThemSuCo_MaSuCo.BorderColor = System.Drawing.Color.Gray;
+            this.lbl_FormThemSuCo_MaSuCo.BorderRadius = 10;
+            this.lbl_FormThemSuCo_MaSuCo.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.lbl_FormThemSuCo_MaSuCo.DefaultText = "";
+            this.lbl_FormThemSuCo_MaSuCo.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.lbl_FormThemSuCo_MaSuCo.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.lbl_FormThemSuCo_MaSuCo.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.lbl_FormThemSuCo_MaSuCo.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.lbl_FormThemSuCo_MaSuCo.Enabled = false;
+            this.lbl_FormThemSuCo_MaSuCo.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.lbl_FormThemSuCo_MaSuCo.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.lbl_FormThemSuCo_MaSuCo.ForeColor = System.Drawing.Color.Black;
+            this.lbl_FormThemSuCo_MaSuCo.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.lbl_FormThemSuCo_MaSuCo.Location = new System.Drawing.Point(16, 75);
+            this.lbl_FormThemSuCo_MaSuCo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.lbl_FormThemSuCo_MaSuCo.Name = "lbl_FormThemSuCo_MaSuCo";
+            this.lbl_FormThemSuCo_MaSuCo.PasswordChar = '\0';
+            this.lbl_FormThemSuCo_MaSuCo.PlaceholderText = "";
+            this.lbl_FormThemSuCo_MaSuCo.ReadOnly = true;
+            this.lbl_FormThemSuCo_MaSuCo.SelectedText = "";
+            this.lbl_FormThemSuCo_MaSuCo.Size = new System.Drawing.Size(299, 42);
+            this.lbl_FormThemSuCo_MaSuCo.TabIndex = 88;
+            // 
             // FormThemSuCo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(707, 603);
+            this.Controls.Add(this.lbl_FormThemSuCo_MaSuCo);
             this.Controls.Add(this.lbl_FormThemSuCo_HuongGiaiQuyet);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.guna2Button2);
-            this.Controls.Add(this.cb_FormThemSuCo_MaSuCo);
             this.Controls.Add(this.lbl_FormThemSuCo_MaNhanVien);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.date_FormThemSuCo_NgayTiepNhan);
@@ -347,7 +350,7 @@
             this.Controls.Add(this.cb_FormThemSuCo_TinhTrang);
             this.Controls.Add(this.lbl_FormThemSuCo_TenSuCo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormThemSuCo";
             this.ShowInTaskbar = false;
             this.Text = "FormThemSuCo";
@@ -358,8 +361,6 @@
         }
 
         #endregion
-
-        private Guna.UI2.WinForms.Guna2ComboBox cb_FormThemSuCo_MaSuCo;
         private Guna.UI2.WinForms.Guna2TextBox lbl_FormThemSuCo_MaNhanVien;
         private System.Windows.Forms.Label label8;
         private Guna.UI2.WinForms.Guna2DateTimePicker date_FormThemSuCo_NgayTiepNhan;
@@ -376,5 +377,6 @@
         private Guna.UI2.WinForms.Guna2Button guna2Button2;
         private Guna.UI2.WinForms.Guna2TextBox lbl_FormThemSuCo_HuongGiaiQuyet;
         private System.Windows.Forms.Label label1;
+        private Guna.UI2.WinForms.Guna2TextBox lbl_FormThemSuCo_MaSuCo;
     }
 }

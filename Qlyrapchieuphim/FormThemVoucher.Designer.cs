@@ -313,6 +313,7 @@
             this.lbl_FormThemVoucher_MaPhatHanh.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.lbl_FormThemVoucher_MaPhatHanh.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.lbl_FormThemVoucher_MaPhatHanh.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.lbl_FormThemVoucher_MaPhatHanh.Enabled = false;
             this.lbl_FormThemVoucher_MaPhatHanh.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.lbl_FormThemVoucher_MaPhatHanh.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.lbl_FormThemVoucher_MaPhatHanh.ForeColor = System.Drawing.Color.Black;
@@ -322,6 +323,7 @@
             this.lbl_FormThemVoucher_MaPhatHanh.Name = "lbl_FormThemVoucher_MaPhatHanh";
             this.lbl_FormThemVoucher_MaPhatHanh.PasswordChar = '\0';
             this.lbl_FormThemVoucher_MaPhatHanh.PlaceholderText = "";
+            this.lbl_FormThemVoucher_MaPhatHanh.ReadOnly = true;
             this.lbl_FormThemVoucher_MaPhatHanh.SelectedText = "";
             this.lbl_FormThemVoucher_MaPhatHanh.Size = new System.Drawing.Size(328, 41);
             this.lbl_FormThemVoucher_MaPhatHanh.TabIndex = 125;

@@ -76,7 +76,7 @@
             "Nhân viên",
             "ADMIN"});
             this.cb_FormThemNV_ChucVu.Location = new System.Drawing.Point(316, 252);
-            this.cb_FormThemNV_ChucVu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cb_FormThemNV_ChucVu.Margin = new System.Windows.Forms.Padding(4);
             this.cb_FormThemNV_ChucVu.Name = "cb_FormThemNV_ChucVu";
             this.cb_FormThemNV_ChucVu.Size = new System.Drawing.Size(269, 36);
             this.cb_FormThemNV_ChucVu.TabIndex = 89;
@@ -157,7 +157,7 @@
             this.date_FormThemNV_NgaySinh.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.date_FormThemNV_NgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.date_FormThemNV_NgaySinh.Location = new System.Drawing.Point(16, 249);
-            this.date_FormThemNV_NgaySinh.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.date_FormThemNV_NgaySinh.Margin = new System.Windows.Forms.Padding(4);
             this.date_FormThemNV_NgaySinh.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.date_FormThemNV_NgaySinh.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.date_FormThemNV_NgaySinh.Name = "date_FormThemNV_NgaySinh";
@@ -277,6 +277,7 @@
             this.lbl_FormThemNV_MaNV.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.lbl_FormThemNV_MaNV.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.lbl_FormThemNV_MaNV.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.lbl_FormThemNV_MaNV.Enabled = false;
             this.lbl_FormThemNV_MaNV.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.lbl_FormThemNV_MaNV.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.lbl_FormThemNV_MaNV.ForeColor = System.Drawing.Color.Black;
@@ -286,6 +287,7 @@
             this.lbl_FormThemNV_MaNV.Name = "lbl_FormThemNV_MaNV";
             this.lbl_FormThemNV_MaNV.PasswordChar = '\0';
             this.lbl_FormThemNV_MaNV.PlaceholderText = "";
+            this.lbl_FormThemNV_MaNV.ReadOnly = true;
             this.lbl_FormThemNV_MaNV.SelectedText = "";
             this.lbl_FormThemNV_MaNV.Size = new System.Drawing.Size(271, 38);
             this.lbl_FormThemNV_MaNV.TabIndex = 77;
@@ -301,7 +303,7 @@
             this.them.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.them.ForeColor = System.Drawing.Color.White;
             this.them.Location = new System.Drawing.Point(195, 521);
-            this.them.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.them.Margin = new System.Windows.Forms.Padding(4);
             this.them.Name = "them";
             this.them.Size = new System.Drawing.Size(180, 44);
             this.them.TabIndex = 76;
@@ -384,7 +386,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormThemNhanVien";
             this.ShowInTaskbar = false;
             this.Text = "FormThemNhanVien";

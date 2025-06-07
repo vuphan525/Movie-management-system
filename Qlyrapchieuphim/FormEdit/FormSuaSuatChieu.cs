@@ -53,5 +53,10 @@ namespace Qlyrapchieuphim.FormEdit
         {
 
         }
+
+        private void date_FormSuaSuatChieu_GioChieu_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

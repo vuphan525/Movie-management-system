@@ -54,7 +54,7 @@
             this.them.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.them.ForeColor = System.Drawing.Color.White;
             this.them.Location = new System.Drawing.Point(264, 506);
-            this.them.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.them.Margin = new System.Windows.Forms.Padding(4);
             this.them.Name = "them";
             this.them.Size = new System.Drawing.Size(175, 44);
             this.them.TabIndex = 104;
@@ -235,6 +235,7 @@
             this.lbl_FormSuaKH_MaKH.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.lbl_FormSuaKH_MaKH.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.lbl_FormSuaKH_MaKH.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.lbl_FormSuaKH_MaKH.Enabled = false;
             this.lbl_FormSuaKH_MaKH.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.lbl_FormSuaKH_MaKH.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.lbl_FormSuaKH_MaKH.ForeColor = System.Drawing.Color.Black;
@@ -244,6 +245,7 @@
             this.lbl_FormSuaKH_MaKH.Name = "lbl_FormSuaKH_MaKH";
             this.lbl_FormSuaKH_MaKH.PasswordChar = '\0';
             this.lbl_FormSuaKH_MaKH.PlaceholderText = "";
+            this.lbl_FormSuaKH_MaKH.ReadOnly = true;
             this.lbl_FormSuaKH_MaKH.SelectedText = "";
             this.lbl_FormSuaKH_MaKH.Size = new System.Drawing.Size(423, 38);
             this.lbl_FormSuaKH_MaKH.TabIndex = 106;
@@ -279,7 +281,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.guna2Button2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormSuaKhachHang";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;

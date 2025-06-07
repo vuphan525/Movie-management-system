@@ -33,7 +33,6 @@
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.lbl_FormSuaSuCo_HuongGiaiQuyet = new Guna.UI2.WinForms.Guna2TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.cb_FormSuaSuCo_MaSuCo = new Guna.UI2.WinForms.Guna2ComboBox();
             this.lbl_FormSuaSuCo_MaNhanVien = new Guna.UI2.WinForms.Guna2TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.date_FormSuaSuCo_NgayTiepNhan = new Guna.UI2.WinForms.Guna2DateTimePicker();
@@ -45,6 +44,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.cb_FormSuaSuCo_TinhTrang = new Guna.UI2.WinForms.Guna2ComboBox();
             this.lbl_FormSuaSuCo_TenSuCo = new Guna.UI2.WinForms.Guna2TextBox();
+            this.lbl_FormSuaSuCo_MaSuCo = new Guna.UI2.WinForms.Guna2TextBox();
             this.SuspendLayout();
             // 
             // label2
@@ -69,7 +69,7 @@
             this.bcButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bcButton.ForeColor = System.Drawing.Color.White;
             this.bcButton.Location = new System.Drawing.Point(260, 540);
-            this.bcButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bcButton.Margin = new System.Windows.Forms.Padding(4);
             this.bcButton.Name = "bcButton";
             this.bcButton.Size = new System.Drawing.Size(183, 44);
             this.bcButton.TabIndex = 91;
@@ -126,28 +126,6 @@
             this.label1.Size = new System.Drawing.Size(121, 18);
             this.label1.TabIndex = 113;
             this.label1.Text = "Hướng giải quyết:";
-            // 
-            // cb_FormSuaSuCo_MaSuCo
-            // 
-            this.cb_FormSuaSuCo_MaSuCo.BackColor = System.Drawing.Color.Transparent;
-            this.cb_FormSuaSuCo_MaSuCo.BorderColor = System.Drawing.Color.Gray;
-            this.cb_FormSuaSuCo_MaSuCo.BorderRadius = 10;
-            this.cb_FormSuaSuCo_MaSuCo.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cb_FormSuaSuCo_MaSuCo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cb_FormSuaSuCo_MaSuCo.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cb_FormSuaSuCo_MaSuCo.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cb_FormSuaSuCo_MaSuCo.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cb_FormSuaSuCo_MaSuCo.ForeColor = System.Drawing.Color.Black;
-            this.cb_FormSuaSuCo_MaSuCo.ItemHeight = 30;
-            this.cb_FormSuaSuCo_MaSuCo.Items.AddRange(new object[] {
-            "Đã xử lý",
-            "Đang xử lý",
-            "Chờ tiếp nhận"});
-            this.cb_FormSuaSuCo_MaSuCo.Location = new System.Drawing.Point(19, 73);
-            this.cb_FormSuaSuCo_MaSuCo.Margin = new System.Windows.Forms.Padding(4);
-            this.cb_FormSuaSuCo_MaSuCo.Name = "cb_FormSuaSuCo_MaSuCo";
-            this.cb_FormSuaSuCo_MaSuCo.Size = new System.Drawing.Size(299, 36);
-            this.cb_FormSuaSuCo_MaSuCo.TabIndex = 112;
             // 
             // lbl_FormSuaSuCo_MaNhanVien
             // 
@@ -323,15 +301,40 @@
             this.lbl_FormSuaSuCo_TenSuCo.Size = new System.Drawing.Size(299, 42);
             this.lbl_FormSuaSuCo_TenSuCo.TabIndex = 103;
             // 
+            // lbl_FormSuaSuCo_MaSuCo
+            // 
+            this.lbl_FormSuaSuCo_MaSuCo.BorderColor = System.Drawing.Color.Gray;
+            this.lbl_FormSuaSuCo_MaSuCo.BorderRadius = 10;
+            this.lbl_FormSuaSuCo_MaSuCo.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.lbl_FormSuaSuCo_MaSuCo.DefaultText = "";
+            this.lbl_FormSuaSuCo_MaSuCo.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.lbl_FormSuaSuCo_MaSuCo.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.lbl_FormSuaSuCo_MaSuCo.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.lbl_FormSuaSuCo_MaSuCo.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.lbl_FormSuaSuCo_MaSuCo.Enabled = false;
+            this.lbl_FormSuaSuCo_MaSuCo.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.lbl_FormSuaSuCo_MaSuCo.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.lbl_FormSuaSuCo_MaSuCo.ForeColor = System.Drawing.Color.Black;
+            this.lbl_FormSuaSuCo_MaSuCo.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.lbl_FormSuaSuCo_MaSuCo.Location = new System.Drawing.Point(19, 74);
+            this.lbl_FormSuaSuCo_MaSuCo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.lbl_FormSuaSuCo_MaSuCo.Name = "lbl_FormSuaSuCo_MaSuCo";
+            this.lbl_FormSuaSuCo_MaSuCo.PasswordChar = '\0';
+            this.lbl_FormSuaSuCo_MaSuCo.PlaceholderText = "";
+            this.lbl_FormSuaSuCo_MaSuCo.ReadOnly = true;
+            this.lbl_FormSuaSuCo_MaSuCo.SelectedText = "";
+            this.lbl_FormSuaSuCo_MaSuCo.Size = new System.Drawing.Size(299, 42);
+            this.lbl_FormSuaSuCo_MaSuCo.TabIndex = 115;
+            // 
             // FormSuaSuCo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(709, 599);
+            this.Controls.Add(this.lbl_FormSuaSuCo_MaSuCo);
             this.Controls.Add(this.lbl_FormSuaSuCo_HuongGiaiQuyet);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.cb_FormSuaSuCo_MaSuCo);
             this.Controls.Add(this.lbl_FormSuaSuCo_MaNhanVien);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.date_FormSuaSuCo_NgayTiepNhan);
@@ -347,7 +350,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.bcButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormSuaSuCo";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
@@ -365,7 +368,6 @@
         private Guna.UI2.WinForms.Guna2Button bcButton;
         private Guna.UI2.WinForms.Guna2TextBox lbl_FormSuaSuCo_HuongGiaiQuyet;
         private System.Windows.Forms.Label label1;
-        private Guna.UI2.WinForms.Guna2ComboBox cb_FormSuaSuCo_MaSuCo;
         private Guna.UI2.WinForms.Guna2TextBox lbl_FormSuaSuCo_MaNhanVien;
         private System.Windows.Forms.Label label8;
         private Guna.UI2.WinForms.Guna2DateTimePicker date_FormSuaSuCo_NgayTiepNhan;
@@ -377,5 +379,6 @@
         private System.Windows.Forms.Label label4;
         private Guna.UI2.WinForms.Guna2ComboBox cb_FormSuaSuCo_TinhTrang;
         private Guna.UI2.WinForms.Guna2TextBox lbl_FormSuaSuCo_TenSuCo;
+        private Guna.UI2.WinForms.Guna2TextBox lbl_FormSuaSuCo_MaSuCo;
     }
 }

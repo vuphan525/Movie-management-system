@@ -86,7 +86,7 @@
             this.them.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.them.ForeColor = System.Drawing.Color.White;
             this.them.Location = new System.Drawing.Point(279, 420);
-            this.them.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.them.Margin = new System.Windows.Forms.Padding(4);
             this.them.Name = "them";
             this.them.Size = new System.Drawing.Size(175, 44);
             this.them.TabIndex = 117;
@@ -147,6 +147,7 @@
             this.lbl_FormSuaPhongChieu_MaPhong.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.lbl_FormSuaPhongChieu_MaPhong.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.lbl_FormSuaPhongChieu_MaPhong.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.lbl_FormSuaPhongChieu_MaPhong.Enabled = false;
             this.lbl_FormSuaPhongChieu_MaPhong.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.lbl_FormSuaPhongChieu_MaPhong.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.lbl_FormSuaPhongChieu_MaPhong.ForeColor = System.Drawing.Color.Black;
@@ -156,6 +157,7 @@
             this.lbl_FormSuaPhongChieu_MaPhong.Name = "lbl_FormSuaPhongChieu_MaPhong";
             this.lbl_FormSuaPhongChieu_MaPhong.PasswordChar = '\0';
             this.lbl_FormSuaPhongChieu_MaPhong.PlaceholderText = "";
+            this.lbl_FormSuaPhongChieu_MaPhong.ReadOnly = true;
             this.lbl_FormSuaPhongChieu_MaPhong.SelectedText = "";
             this.lbl_FormSuaPhongChieu_MaPhong.Size = new System.Drawing.Size(437, 38);
             this.lbl_FormSuaPhongChieu_MaPhong.TabIndex = 113;
@@ -216,7 +218,7 @@
             "Imax",
             "4k"});
             this.cb_FormSuaPhongChieu_DinhDang.Location = new System.Drawing.Point(20, 256);
-            this.cb_FormSuaPhongChieu_DinhDang.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cb_FormSuaPhongChieu_DinhDang.Margin = new System.Windows.Forms.Padding(4);
             this.cb_FormSuaPhongChieu_DinhDang.Name = "cb_FormSuaPhongChieu_DinhDang";
             this.cb_FormSuaPhongChieu_DinhDang.Size = new System.Drawing.Size(433, 36);
             this.cb_FormSuaPhongChieu_DinhDang.TabIndex = 121;
@@ -239,7 +241,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.guna2Button2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormSuaPhongChieu";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
