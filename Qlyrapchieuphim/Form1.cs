@@ -19,7 +19,6 @@ namespace Qlyrapchieuphim
             InitializeComponent();
             guna2TextBox1.UseSystemPasswordChar = true;
         }
-        string ConnString = ConfigurationManager.ConnectionStrings["ConnString"].ConnectionString;
         private void guna2VSeparator1_Click(object sender, EventArgs e)
         {
 
@@ -42,11 +41,11 @@ namespace Qlyrapchieuphim
             
         }
 
-        private void guna2Button1_Click(object sender, EventArgs e)
+        private void guna2Button1_Click(object sender, EventArgs e) //login button
         {
             int login = 0; //0 - failed; 1 - staff; 2 - admin
-            SqlConnection conn = new SqlConnection(ConnString);
-            string manv = "admn";
+            SqlConnection conn = Helper.getdbConnection();
+            string manv;
             if (string.IsNullOrEmpty(guna2TextBox4.Text) || string.IsNullOrEmpty(guna2TextBox1.Text)) 
             {
                 MessageBox.Show(
@@ -56,23 +55,25 @@ namespace Qlyrapchieuphim
                     MessageBoxIcon.Information);
                 return;
             }
-            string SqlQuery = "SELECT MANHANVIEN, USERNAME, PASS, CHUCVU, TENNHANVIEN FROM NHANVIEN";
+            string SqlQuery = "SELECT UserID, Username, Password, Role FROM Users";
             SqlDataAdapter adapter = new SqlDataAdapter(SqlQuery, conn);
             DataSet ds = new DataSet();
-            adapter.Fill(ds, "NHANVIEN");
-            DataTable dt = ds.Tables["NHANVIEN"];
+            conn.Open();
+            adapter.Fill(ds, "Users");
+            DataTable dt = ds.Tables["Users"];
+            conn.Close();
             bool exists = false;
             foreach (DataRow dr in dt.Rows)
             {
-                if (dr["USERNAME"].ToString() == guna2TextBox4.Text.Trim())
+                if (dr["Username"].ToString() == guna2TextBox4.Text.Trim())
                 {
                     exists = true;
-                    manv = dr["MANHANVIEN"].ToString();
-                    if (dr["PASS"].ToString() == guna2TextBox1.Text.Trim())
+                    manv = dr["UserID"].ToString();
+                    if (dr["Password"].ToString() == guna2TextBox1.Text.Trim())
                     {
-                        if (dr["CHUCVU"].ToString() == "ADMIN")
+                        if (dr["Role"].ToString() == "admin")
                             login = 2;
-                        else
+                        else if (dr["Role"].ToString() == "staff")
                             login = 1;
                         break;
                     }
@@ -92,7 +93,7 @@ namespace Qlyrapchieuphim
                 switch (login)
                 { 
                     case 1:
-                        staffForm sf = new staffForm(manv);
+                        staffForm sf = new staffForm();
                         sf.Show();
                         this.Hide();
                         break;
@@ -109,7 +110,7 @@ namespace Qlyrapchieuphim
                         }
                         else
                         {
-                            staffForm sf1 = new staffForm(manv);
+                            staffForm sf1 = new staffForm();
                             sf1.Show();
                         }
                         this.Hide();

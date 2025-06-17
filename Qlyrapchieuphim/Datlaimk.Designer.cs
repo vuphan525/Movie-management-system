@@ -184,7 +184,7 @@
             this.guna2Button3.ForeColor = System.Drawing.Color.Black;
             this.guna2Button3.Image = global::Qlyrapchieuphim.Properties.Resources.icons8_exit_35;
             this.guna2Button3.Location = new System.Drawing.Point(705, 10);
-            this.guna2Button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2Button3.Margin = new System.Windows.Forms.Padding(2);
             this.guna2Button3.Name = "guna2Button3";
             this.guna2Button3.Size = new System.Drawing.Size(26, 28);
             this.guna2Button3.TabIndex = 78;
@@ -207,10 +207,11 @@
             this.Controls.Add(this.guna2PictureBox1);
             this.Controls.Add(this.guna2VSeparator1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Datlaimk";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Datlaimk";
+            this.Load += new System.EventHandler(this.Datlaimk_Load);
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

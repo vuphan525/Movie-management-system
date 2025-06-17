@@ -21,25 +21,26 @@ namespace Qlyrapchieuphim
     
     public partial class Qlysanpham : UserControl
     {
-        string ConnString = Program.ConnString;
+        SqlConnection conn = null;
         string picture_url = string.Empty;
         string projectFolder = AppDomain.CurrentDomain.BaseDirectory; // Thư mục dự án
         public Qlysanpham()
         {
             InitializeComponent();
-            masp.MaxLength = 4;
+            //masp.MaxLength = 4;
             ten.MaxLength = 50;
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            masp.Enabled = false;
         }
         private void LoadData()
         {
-            SqlConnection conn = new SqlConnection(ConnString);
             conn.Open();
-            string SqlQuery = "SELECT MASP, TENSP, LOAI, GIA, SOLUONG, PICTUREPATH FROM SANPHAM";
+            string SqlQuery = "SELECT ProductID, ProductName, Description, Price, ImageURL, pr.CategoryID, Quantity, ImportDate, Manufacturer, CategoryName " +
+                "FROM Products pr JOIN ProductCategories pc ON (pr.CategoryID = pc.CategoryID)";
             SqlDataAdapter adapter = new SqlDataAdapter(SqlQuery, conn);
             DataSet ds = new DataSet();
-            adapter.Fill(ds, "SANPHAM");
-            DataTable dt = ds.Tables["SANPHAM"];
+            adapter.Fill(ds, "Products");
+            DataTable dt = ds.Tables["Products"];
             dataGridView1.DataSource = dt;
             if (!dataGridView1.Columns.Contains("Actions"))
             {
@@ -54,9 +55,47 @@ namespace Qlyrapchieuphim
             conn.Close();
 
         }
+        private bool CheckCategories()
+        {
+            int count;
+            conn.Open();
+            string SqlQuery = "SELECT COUNT(*) FROM ProductCategories";
+            SqlCommand countCmd = new SqlCommand(SqlQuery, conn);
+            count = (int)countCmd.ExecuteScalar();
+
+            if (count > 0)
+            {
+                loai.Enabled = true;
+                errorProvider3.Clear();
+                SqlQuery = "SELECT CategoryID, CategoryName FROM ProductCategories";
+                string[] categories = new string[count];
+                SqlCommand cmd = new SqlCommand(SqlQuery, conn);
+                SqlDataReader reader = cmd.ExecuteReader();
+                int i = 0;
+                while (reader.Read())
+                {
+                    categories[i] = reader.GetString(1) + " (ID: " + reader.GetInt32(0).ToString() + ")";
+                    i++;
+                }
+                loai.DataSource = categories;
+            }
+            else
+            {
+                loai.Enabled = false;
+                errorProvider3.SetError(loai, "Không có loại sản phẩm nào trong hệ thống!");
+            }
+            conn.Close();
+            if (count > 0)
+                return true;
+            else
+                return false;
+        }
         private void Qlysanpham_Load(object sender, EventArgs e)
         {
+            conn = Helper.getdbConnection();
+            conn = Helper.CheckDbConnection(conn);
             LoadData();
+            CheckCategories();
             loai.SelectedIndex = 0;
             dataGridView1.AutoSize = false;
             dataGridView1.ClearSelection();
@@ -75,7 +114,7 @@ namespace Qlyrapchieuphim
         
         private void them_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(masp.Text) ||
+            if (//string.IsNullOrWhiteSpace(masp.Text) ||
                string.IsNullOrWhiteSpace(ten.Text) ||
                string.IsNullOrWhiteSpace(giatien.Text) ||
                string.IsNullOrWhiteSpace(soluong.Text))
@@ -94,22 +133,25 @@ namespace Qlyrapchieuphim
                 return;
             }
             
-            string SqlQuery = "INSERT INTO SANPHAM VALUES (@masp, @tensp, @loai, @gia, @sl, @path)";
-            SqlConnection conn = new SqlConnection(ConnString);
-            conn.Open();
+            string SqlQuery = "INSERT INTO Products OUTPUT INSERTED.ProductID VALUES (@ProductName, @Description, @Price, @ImageURL, @CategoryID, @Quantity, @ImportDate, @Manufacturer)";
+            int typeID = int.Parse(Helper.SubStringBetween(loai.SelectedItem.ToString(), " (ID: ", ")"));
+            
             SqlCommand comm = new SqlCommand(SqlQuery, conn);
-            comm.Parameters.Add("@masp", SqlDbType.Char).Value = masp.Text;
-            comm.Parameters.Add("@tensp", SqlDbType.NVarChar).Value = ten.Text;
-            comm.Parameters.Add("@loai", SqlDbType.NVarChar).Value = loai.Text;
-            comm.Parameters.Add("@gia", SqlDbType.Float).Value = gia;
-            comm.Parameters.Add("@sl", SqlDbType.Int).Value = so;
-            SaveImage();
-            comm.Parameters.Add("@path", SqlDbType.VarChar).Value = picture_url;
+            comm.Parameters.Add("@Description", SqlDbType.NVarChar).Value = "placeholder"; //GIÁ TRỊ TẠM DO CHƯA CÓ TEXTBOX, THAY THẾ GIÁ TRỊ NGAY KHI CÓ TEXTBOX
+            comm.Parameters.Add("@ProductName", SqlDbType.NVarChar).Value = ten.Text;
+            comm.Parameters.Add("@CategoryID", SqlDbType.Int).Value = typeID;
+            comm.Parameters.Add("@Price", SqlDbType.Decimal).Value = gia;
+            comm.Parameters.Add("@Quantity", SqlDbType.Int).Value = so;
+            comm.Parameters.Add("@ImportDate", SqlDbType.Date).Value = DateTime.Today - TimeSpan.FromDays(180); //GIÁ TRỊ TẠM DO CHƯA CÓ TEXTBOX, THAY THẾ GIÁ TRỊ NGAY KHI CÓ TEXTBOX
+            comm.Parameters.Add("@Manufacturer", SqlDbType.NVarChar).Value = "placeholder";//GIÁ TRỊ TẠM DO CHƯA CÓ TEXTBOX, THAY THẾ GIÁ TRỊ NGAY KHI CÓ TEXTBOX
+            comm.Parameters.Add("@ImageURL", SqlDbType.VarChar).Value = picture_url;
+            int prID;
             try
             {
-                comm.ExecuteNonQuery();
-                LoadData();
-                Updatea();
+                conn.Open();
+                prID = int.Parse(comm.ExecuteScalar().ToString());
+                conn.Close();
+                SaveImage(prID);
             }
             catch (SqlException ex)
             {
@@ -121,14 +163,23 @@ namespace Qlyrapchieuphim
                             "Lỗi nhập liệu",
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Warning);
-                        break;
+                        return;
                     default:
                         throw;
                 }
             }
+            SqlQuery = "UPDATE Products SET " +
+                "ImageURL = @ImageURL " +
+                "WHERE ProductID = @ProductID ";
+            comm = new SqlCommand(SqlQuery, conn);
+            comm.Parameters.Add("@ImageURL", SqlDbType.VarChar).Value = picture_url;
+            comm.Parameters.Add("@ProductID", SqlDbType.Int).Value = prID;
+            conn.Open();
+            comm.ExecuteNonQuery();
             conn.Close();
+            LoadData();
+            Updatea();
 
-            
         }
         private void PrintToTextBoxes(int row)
         {
@@ -136,13 +187,13 @@ namespace Qlyrapchieuphim
             DataTable dt = dataGridView1.DataSource as DataTable;
 
             // Gán giá trị cho các TextBox
-            masp.Text = dt.Rows[row]["MASP"].ToString();
+            masp.Text = dt.Rows[row]["ProductID"].ToString();
             masp.Enabled = false;
-            ten.Text = dt.Rows[row]["TENSP"].ToString();
-            loai.SelectedItem = dt.Rows[row]["LOAI"].ToString();
-            giatien.Text = dt.Rows[row]["GIA"].ToString();
-            soluong.Text = dt.Rows[row]["SOLUONG"].ToString();
-            string relative_picture_path = dt.Rows[row]["PICTUREPATH"].ToString();
+            ten.Text = dt.Rows[row]["ProductName"].ToString();
+            loai.SelectedItem = dt.Rows[row]["CategoryName"] + " (ID:" + dt.Rows[row]["CategoryID"] + ")";
+            giatien.Text = dt.Rows[row]["Price"].ToString();
+            soluong.Text = dt.Rows[row]["Quantity"].ToString();
+            string relative_picture_path = dt.Rows[row]["ImageURL"].ToString();
             picture_url = Path.Combine(projectFolder, relative_picture_path);
             try
             {
@@ -155,21 +206,29 @@ namespace Qlyrapchieuphim
             {
                 if (!string.IsNullOrEmpty(relative_picture_path))
                 {
-                    if (ex is FileNotFoundException)
+                    switch (ex.GetType().ToString())
                     {
-                        MessageBox.Show(
-                        "Không tìm thấy file ảnh.",
-                        "Lỗi dữ liệu!",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Error);
-                    }
-                    if (ex is DirectoryNotFoundException)
-                    {
-                        MessageBox.Show(
-                        "Không tìm thấy folder ảnh",
-                        "Lỗi dữ liệu!",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Error);
+                        case "FileNotFoundException":
+                            MessageBox.Show(
+                            "Không tìm thấy file ảnh với đường dẫn tương ứng.",
+                            "Lỗi dữ liệu!",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Error);
+                            break;
+                        case "DirectoryNotFoundException":
+                            MessageBox.Show(
+                            "Không tìm thấy thư mục với đường dẫn tương ứng.",
+                            "Lỗi dữ liệu!",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Error);
+                            break;
+                        default:
+                            MessageBox.Show(
+                            "Lỗi dữ liệu!",
+                            "Lỗi dữ liệu!",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Error);
+                            break ;
                     }
                 }
                 else
@@ -220,7 +279,6 @@ namespace Qlyrapchieuphim
           
             if (string.IsNullOrWhiteSpace(masp.Text) ||
                string.IsNullOrWhiteSpace(ten.Text) ||
-
                string.IsNullOrWhiteSpace(giatien.Text) ||
                string.IsNullOrWhiteSpace(soluong.Text))
 
@@ -233,7 +291,7 @@ namespace Qlyrapchieuphim
             double gia;
             if ((!int.TryParse(soluong.Text, out so)) || (!double.TryParse(giatien.Text, out gia)))
             {
-                MessageBox.Show("Giá tiền và số lượng phải được nhập dươi dạng một số!",
+                MessageBox.Show("Giá tiền và số lượng phải được nhập dưới dạng một số!",
                     "Lỗi nhập liệu",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Warning);
@@ -251,26 +309,34 @@ namespace Qlyrapchieuphim
             int selectedRowIndex = dataGridView1.SelectedRows[0].Index;
 
             // Update values in selected row
-            string SqlQuery = "UPDATE SANPHAM SET " +
-                "TENSP =  @tensp, " +
-                "LOAI = @loai, " +
-                "GIA = @gia, " +
-                "SOLUONG = @sl, " +
-                "PICTUREPATH = @path " +
-                "WHERE MASP = @masp";
-            SqlConnection conn = new SqlConnection(ConnString);
-            conn.Open();
+            string SqlQuery = "UPDATE Products SET " +
+                "ProductName =  @ProductName, " +
+                "Description = @Description, " +
+                "Price = @Price, " +
+                "ImageURL = @ImageURL, " +
+                "CategoryID = @CategoryID, " +
+                "Quantity = @Quantity, " +
+                "ImportDate = @ImportDate, " +
+                "Manufacturer = @Manufacturer " +
+                "WHERE ProductID = @ProductID";
+            int typeID = int.Parse(Helper.SubStringBetween(loai.SelectedItem.ToString(), " (ID: ", ")"));
+            
             SqlCommand comm = new SqlCommand(SqlQuery, conn);
-            comm.Parameters.Add("@masp", SqlDbType.Char).Value = masp.Text;
-            comm.Parameters.Add("@tensp", SqlDbType.NVarChar).Value = ten.Text;
-            comm.Parameters.Add("@loai", SqlDbType.NVarChar).Value = loai.Text;
-            comm.Parameters.Add("@gia", SqlDbType.Float).Value = gia;
-            comm.Parameters.Add("@sl", SqlDbType.Int).Value = so;
-            SaveImage();
-            comm.Parameters.Add("@path", SqlDbType.VarChar).Value = picture_url;
+            comm.Parameters.Add("@ProductID", SqlDbType.Int).Value = int.Parse(masp.Text);
+            comm.Parameters.Add("@Description", SqlDbType.NVarChar).Value = "placeholder"; //GIÁ TRỊ TẠM DO CHƯA CÓ TEXTBOX, THAY THẾ GIÁ TRỊ NGAY KHI CÓ TEXTBOX
+            comm.Parameters.Add("@ProductName", SqlDbType.NVarChar).Value = ten.Text;
+            comm.Parameters.Add("@CategoryID", SqlDbType.Int).Value = typeID;
+            comm.Parameters.Add("@Price", SqlDbType.Decimal).Value = gia;
+            comm.Parameters.Add("@Quantity", SqlDbType.Int).Value = so;
+            comm.Parameters.Add("@ImportDate", SqlDbType.Date).Value = DateTime.Today - TimeSpan.FromDays(180); //GIÁ TRỊ TẠM DO CHƯA CÓ TEXTBOX, THAY THẾ GIÁ TRỊ NGAY KHI CÓ TEXTBOX
+            comm.Parameters.Add("@Manufacturer", SqlDbType.NVarChar).Value = "placeholder";//GIÁ TRỊ TẠM DO CHƯA CÓ TEXTBOX, THAY THẾ GIÁ TRỊ NGAY KHI CÓ TEXTBOX
+            SaveImage(int.Parse(masp.Text));
+            comm.Parameters.Add("@ImageURL", SqlDbType.VarChar).Value = picture_url;
             try
             {
+                conn.Open();
                 comm.ExecuteNonQuery();
+                conn.Close();
                 LoadData();
                 Updatea();
             }
@@ -289,7 +355,7 @@ namespace Qlyrapchieuphim
                         throw;
                 }
             }
-            conn.Close();
+            
 
 
 
@@ -305,19 +371,17 @@ namespace Qlyrapchieuphim
 
                 if (result == DialogResult.Yes)
                 {
-
-                    SqlConnection conn = new SqlConnection(ConnString);
                     DataTable dt = dataGridView1.DataSource as DataTable;
                     conn.Open();
                     foreach (DataGridViewRow dr in dataGridView1.SelectedRows)
                     {
                         int selected = dr.Index;
-                        string temp_id = dt.Rows[selected]["MASP"].ToString();
-                        string SqlQuery = "DELETE FROM SANPHAM WHERE MASP = @tempid";
+                        string temp_id = dt.Rows[selected]["ProductID"].ToString();
+                        string SqlQuery = "DELETE FROM Products WHERE ProductID = @tempid";
                         SqlCommand cmd = new SqlCommand(SqlQuery, conn);
                         cmd.Parameters.Add("@tempid", SqlDbType.Char).Value = temp_id;
                         cmd.ExecuteNonQuery();
-                        string relative_picture_path = dt.Rows[selected]["PICTUREPATH"].ToString();
+                        string relative_picture_path = dt.Rows[selected]["ImageURL"].ToString();
                         string fullPath = Path.Combine(projectFolder, relative_picture_path);
                         if (File.Exists(fullPath))
                             File.Delete(fullPath);
@@ -337,8 +401,9 @@ namespace Qlyrapchieuphim
         }
         void Updatea()
         {
+            CheckCategories();
             masp.Clear();
-            masp.Enabled = true;
+            masp.Enabled = false;
             ten.Clear();
             loai.SelectedIndex = 0;
             giatien.Clear();
@@ -346,6 +411,7 @@ namespace Qlyrapchieuphim
             dataGridView1.ClearSelection();
             pictureBox1.Image = null;
             picture_url = string.Empty;
+            this.Refresh();
         }
 
         private void guna2TextBox4_TextChanged(object sender, EventArgs e)
@@ -361,7 +427,7 @@ namespace Qlyrapchieuphim
                     if (!row.IsNewRow)
                     {
                         int index = row.Index;
-                        tenSV = dt.Rows[index]["TENSP"].ToString().ToLower();
+                        tenSV = dt.Rows[index]["ProductName"].ToString().ToLower();
                         CurrencyManager currencyManager = (CurrencyManager)BindingContext[dataGridView1.DataSource];
                         currencyManager.SuspendBinding();
                         if (tenSV.Contains(tenCanTim))
@@ -405,12 +471,12 @@ namespace Qlyrapchieuphim
 
         private void giatien_TextChanged(object sender, EventArgs e)
         {
-            if (!int.TryParse(giatien.Text, out _) && !string.IsNullOrEmpty(giatien.Text))
+            if (!float.TryParse(giatien.Text, out _) && !string.IsNullOrEmpty(giatien.Text))
             {
-                errorProvider2.SetError(giatien, "Phải là số nguyên.");
+                errorProvider2.SetError(giatien, "Phải là số thực.");
             }
         }
-        private void SaveImage()
+        private void SaveImage(int identity)
         {
             try
             {
@@ -423,7 +489,7 @@ namespace Qlyrapchieuphim
 
                 // 2. Tạo đường dẫn đến thư mục "New folder" trong thư mục dự án
 
-                string newFolderPath = Path.Combine(projectFolder, "food&drinks");
+                string newFolderPath = Path.Combine(projectFolder, "product_images");
 
                 // Tạo thư mục nếu nó chưa tồn tại
                 if (!Directory.Exists(newFolderPath))
@@ -445,7 +511,7 @@ namespace Qlyrapchieuphim
                     //take image format and save in that format
                     Bitmap img = new Bitmap(pictureBox1.Image);
                     img.Save(stream, imageFormat);
-                    picture_url = Path.Combine("food&drinks", fileName);
+                    picture_url = Path.Combine("product_images", fileName);
                 }
 
                 //MessageBox.Show("Hình ảnh đã được lưu thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -489,18 +555,18 @@ namespace Qlyrapchieuphim
 
         private void dataGridView1_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
         {
-            var grid = sender as DataGridView;
-            var rowIdx = (e.RowIndex + 1).ToString();
+            //var grid = sender as DataGridView;
+            //var rowIdx = (e.RowIndex + 1).ToString();
 
-            var centerFormat = new StringFormat()
-            {
-                // right alignment might actually make more sense for numbers
-                Alignment = StringAlignment.Center,
-                LineAlignment = StringAlignment.Center
-            };
+            //var centerFormat = new StringFormat()
+            //{
+            //    // right alignment might actually make more sense for numbers
+            //    Alignment = StringAlignment.Center,
+            //    LineAlignment = StringAlignment.Center
+            //};
 
-            var headerBounds = new Rectangle(e.RowBounds.Left, e.RowBounds.Top, grid.RowHeadersWidth, e.RowBounds.Height);
-            e.Graphics.DrawString(rowIdx, this.Font, SystemBrushes.ControlText, headerBounds, centerFormat);
+            //var headerBounds = new Rectangle(e.RowBounds.Left, e.RowBounds.Top, grid.RowHeadersWidth, e.RowBounds.Height);
+            //e.Graphics.DrawString(rowIdx, this.Font, SystemBrushes.ControlText, headerBounds, centerFormat);
         }
 
         private void guna2Button2_Click(object sender, EventArgs e)

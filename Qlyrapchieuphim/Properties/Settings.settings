@@ -1,7 +1,12 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Qlyrapchieuphim.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="ConnString" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Server=(LocalDB)\MSSQLLocalDB;Integrated Security=true;AttachDbFileName=|DataDirectory|\database\QuanLyRapPhim.mdf;Initial Catalog=QuanLyRapPhim.mdf</Value>
+    </Setting>
+    <Setting Name="ConnString2" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Server=(LocalDB)\MSSQLLocalDB;Integrated Security=true;AttachDbFileName=</Value>
+    </Setting>
+  </Settings>
 </SettingsFile>

@@ -16,15 +16,18 @@ namespace Qlyrapchieuphim
 {
     public partial class Voucher : UserControl
     {
-        string ConnString = Program.ConnString;
+        SqlConnection conn;
         public Voucher()
         {
             
             InitializeComponent();
             trangthai.Enabled = false;
             trangthai.Visible = false;
+            checkBox1.Enabled = false;
+            checkBox1.Visible = false;
+            maphathanh.Enabled = false;
             label4.Visible = false;
-            maphathanh.MaxLength = 16;
+            //maphathanh.MaxLength = 16;
             dataGridView1.AutoSize = false;
             dataGridView1.ClearSelection();
             trangthai.SelectedIndex = 1;
@@ -37,13 +40,12 @@ namespace Qlyrapchieuphim
         private void LoadData()
         {
             checkDate_database();
-            SqlConnection conn = new SqlConnection(ConnString);
             conn.Open();
-            string SqlQuery = "SELECT MAPHATHANH, MENHGIA, NGAYPHATHANH, NGAYKETTHUC, TINHTRANG, MULTIPLE FROM VOUCHER";
+            string SqlQuery = "SELECT VoucherID, Code, Description, DescountAmount, DiscountPercent, ExpiryDate, Quantity, MinOrderValue, IsActive FROM Vouchers";
             SqlDataAdapter adapter = new SqlDataAdapter(SqlQuery, conn);
             DataSet ds = new DataSet();
-            adapter.Fill(ds, "VOUCHER");
-            DataTable dt = ds.Tables["VOUCHER"];
+            adapter.Fill(ds, "Vouchers");
+            DataTable dt = ds.Tables["Vouchers"];
             dataGridView1.DataSource = dt;
             if (!dataGridView1.Columns.Contains("Actions"))
             {
@@ -90,19 +92,22 @@ namespace Qlyrapchieuphim
                 return;
             }
             //SQL section
-            SqlConnection conn = new SqlConnection(ConnString);
-            conn.Open();
-            string SqlQuery = "INSERT INTO VOUCHER VALUES (@maph, @mg, @ngph, @ngkt, @ttr, @nhieu)";
+            
+            string SqlQuery = "INSERT INTO Vouchers VALUES (@Code, @Description, @DiscountAmount, @DiscountPercent, @ExpiryDate, @Quantity, @MinOrderValue, @IsActive)";
             SqlCommand cmd = new SqlCommand(SqlQuery, conn);
-            cmd.Parameters.Add("@maph", SqlDbType.Char).Value = maphathanh.Text;
-            cmd.Parameters.Add("@mg", SqlDbType.Int).Value = menhgia.Text;
-            cmd.Parameters.Add("@ngph", SqlDbType.Date).Value = hieuluctu.Value.Date;
-            cmd.Parameters.Add("@ngkt", SqlDbType.Date).Value = denngay.Value.Date;
-            cmd.Parameters.Add("@ttr", SqlDbType.NVarChar).Value = trangthai.SelectedItem;
-            cmd.Parameters.Add("@nhieu", SqlDbType.Bit).Value = checkBox1.Checked;
+            cmd.Parameters.Add("@Code", SqlDbType.NVarChar).Value = maphathanh.Text;
+            cmd.Parameters.Add("@Description", SqlDbType.NVarChar).Value = "PlaceHolder"; //GIÁ TRỊ TẠM DO CHƯA CÓ TEXTBOX, THAY THẾ GIÁ TRỊ NGAY KHI CÓ TEXTBOX
+            cmd.Parameters.Add("@DiscountAmount", SqlDbType.Decimal).Value = menhgia.Text;
+            cmd.Parameters.Add("@DiscountAmount", SqlDbType.Float).Value = 10; //GIÁ TRỊ TẠM DO CHƯA CÓ TEXTBOX, THAY THẾ GIÁ TRỊ NGAY KHI CÓ TEXTBOX
+            cmd.Parameters.Add("@ExpiryDate", SqlDbType.Date).Value = denngay.Value.Date;
+            cmd.Parameters.Add("@Quantity", SqlDbType.Int).Value = 100;//GIÁ TRỊ TẠM DO CHƯA CÓ TEXTBOX, THAY THẾ GIÁ TRỊ NGAY KHI CÓ TEXTBOX
+            cmd.Parameters.Add("@MinOrderValue", SqlDbType.Decimal).Value = 0;//GIÁ TRỊ TẠM DO CHƯA CÓ TEXTBOX, THAY THẾ GIÁ TRỊ NGAY KHI CÓ TEXTBOX
+            cmd.Parameters.Add("@IsActive", SqlDbType.Bit).Value = Convert.ToBoolean(trangthai.SelectedIndex);
             try
             {
+                conn.Open();
                 cmd.ExecuteNonQuery();
+                conn.Close();
                 LoadData();
                 Updatea();
             }
@@ -121,13 +126,13 @@ namespace Qlyrapchieuphim
                         throw;
                 }
             }
-            conn.Close();
+            
         }
         void Updatea()
         {
             trangthai.SelectedIndex = 1;
             maphathanh.Clear();
-            maphathanh.Enabled = true;
+            maphathanh.Enabled = false;
             menhgia.Clear();
             hieuluctu.Value = DateTime.Now;
             denngay.Value = DateTime.Now;
@@ -169,8 +174,7 @@ namespace Qlyrapchieuphim
 
             // Update values in selected row
             //SQL section
-            SqlConnection conn = new SqlConnection(ConnString);
-            conn.Open();
+            
             string SqlQuery = "UPDATE VOUCHER SET " +
                 "MENHGIA = @mg, " +
                 "NGAYPHATHANH = @ngph, " +
@@ -187,7 +191,9 @@ namespace Qlyrapchieuphim
             cmd.Parameters.Add("@nhieu", SqlDbType.Bit).Value = checkBox1.Checked;
             try
             {
+                conn.Open();
                 cmd.ExecuteNonQuery();
+                conn.Close();
                 LoadData();
                 Updatea();
             }
@@ -206,7 +212,7 @@ namespace Qlyrapchieuphim
                         throw;
                 }
             }
-            conn.Close();
+            
         }
         private void PrintToTextBoxes(int row)
         {
@@ -265,10 +271,7 @@ namespace Qlyrapchieuphim
 
                 if (result == DialogResult.Yes)
                 {
-
-                    SqlConnection conn = new SqlConnection(ConnString);
                     DataTable dt = dataGridView1.DataSource as DataTable;
-                    conn.Open();
                     foreach (DataGridViewRow dr in dataGridView1.SelectedRows)
                     {
                         int selected = dr.Index;
@@ -276,9 +279,10 @@ namespace Qlyrapchieuphim
                         string SqlQuery = "DELETE FROM VOUCHER WHERE MAPHATHANH = @tempid";
                         SqlCommand cmd = new SqlCommand(SqlQuery, conn);
                         cmd.Parameters.Add("@tempid", SqlDbType.Char).Value = temp_id;
+                        conn.Open();
                         cmd.ExecuteNonQuery();
+                        conn.Close();
                     }
-                    conn.Close();
                     LoadData();
                 }
             }
@@ -395,7 +399,6 @@ namespace Qlyrapchieuphim
         }
         private void checkDate_database()
         {
-            SqlConnection conn = new SqlConnection(ConnString);
             conn.Open();
             string SqlQuery = "SELECT MAPHATHANH, NGAYPHATHANH, NGAYKETTHUC FROM VOUCHER";
             SqlDataAdapter adapter = new SqlDataAdapter(SqlQuery, conn);
@@ -432,6 +435,8 @@ namespace Qlyrapchieuphim
 
         private void Voucher_Load(object sender, EventArgs e)
         {
+            conn = Helper.getdbConnection();
+            conn = Helper.CheckDbConnection(conn);
             dataGridView1.RowTemplate.Height = 45;
         }
 

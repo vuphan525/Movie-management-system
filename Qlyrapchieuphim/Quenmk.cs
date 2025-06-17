@@ -23,12 +23,13 @@ namespace Qlyrapchieuphim
             InitializeComponent();
         }
         int otp;
-        string manv;
+        int usrID;
         Random Random = new Random();
-        string ConnString = ConfigurationManager.ConnectionStrings["ConnString"].ConnectionString;
+        SqlConnection conn;
         private void Quenmk_Load(object sender, EventArgs e)
         {
-
+            conn = Helper.getdbConnection();
+            conn = Helper.CheckDbConnection(conn);
         }
 
         private void guna2Button3_Click(object sender, EventArgs e)
@@ -51,7 +52,7 @@ namespace Qlyrapchieuphim
             }
             if (otp.ToString() == guna2TextBox1.Text)
             {
-                Datlaimk dl = new Datlaimk(manv);
+                Datlaimk dl = new Datlaimk(usrID);
                 dl.Show();
                 this.Close();
             }
@@ -75,12 +76,11 @@ namespace Qlyrapchieuphim
                     return;
                 }
                 guna2TextBox4.Text = guna2TextBox4.Text.Trim();
-                string SqlQuery = "SELECT MANHANVIEN, EMAIL FROM NHANVIEN";
-                SqlConnection conn = new SqlConnection(ConnString);
+                string SqlQuery = "SELECT UserID, Email FROM Staffs";
                 SqlDataAdapter adapter = new SqlDataAdapter(SqlQuery, conn);
                 DataSet ds = new DataSet();
-                adapter.Fill(ds,"NHANVIEN");
-                DataTable dt = ds.Tables["NHANVIEN"];
+                adapter.Fill(ds,"Staffs");
+                DataTable dt = ds.Tables["Staffs"];
                 bool exists = false;
                 
                 otp = Random.Next(10000, 100000
@@ -89,10 +89,10 @@ namespace Qlyrapchieuphim
                 var toAddress = new MailAddress(guna2TextBox4.Text);
                 foreach (DataRow dr in dt.Rows)
                 {
-                    if (dr["EMAIL"].ToString() == guna2TextBox4.Text)
+                    if (dr["Email"].ToString() == guna2TextBox4.Text)
                     {
                         exists = true;
-                        manv = dr["MANHANVIEN"].ToString();
+                        usrID = (int)dr["UserID"];
                         break;
                     }
                 }
@@ -150,7 +150,7 @@ namespace Qlyrapchieuphim
             guna2TextBox4.Clear();
             guna2TextBox1.Clear();
             otp = new int();
-            manv = string.Empty;
+            usrID = -1;
         }
     }
 }

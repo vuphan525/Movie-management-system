@@ -14,21 +14,21 @@ namespace Qlyrapchieuphim
 {
     public partial class Datlaimk : Form
     {
-        string manv;
+        int manv;
         public Datlaimk()
         {
             InitializeComponent();
             passBox.UseSystemPasswordChar = true;
             pass_repeatBox.UseSystemPasswordChar = true;
         }
-        public Datlaimk(string mnv)
+        public Datlaimk(int mnv)
         {
             InitializeComponent();
             passBox.UseSystemPasswordChar = true;
             pass_repeatBox.UseSystemPasswordChar = true;
             manv = mnv;
         }
-        string ConnString = ConfigurationManager.ConnectionStrings["ConnString"].ConnectionString;
+        SqlConnection conn = null;
 
         private void guna2Button3_Click(object sender, EventArgs e)
         {
@@ -50,13 +50,12 @@ namespace Qlyrapchieuphim
                     MessageBoxIcon.Information);
                 return;
             }
-            SqlConnection conn = new SqlConnection(ConnString);
-            string SqlQuery = "UPDATE NHANVIEN SET " +
-                "PASS = @pass " +
-                "WHERE (MANHANVIEN = @manv)";
+            string SqlQuery = "UPDATE Users SET " +
+                "Password = @Password " +
+                "WHERE (UserID = @UserID)";
             SqlCommand cmd = new SqlCommand(SqlQuery, conn);
-            cmd.Parameters.Add("@pass",SqlDbType.VarChar).Value = passBox.Text.Trim();
-            cmd.Parameters.Add("@manv", SqlDbType.Char).Value = manv;
+            cmd.Parameters.Add("@Password",SqlDbType.NVarChar).Value = passBox.Text.Trim();
+            cmd.Parameters.Add("@UserID", SqlDbType.Int).Value = manv;
             conn.Open();
             cmd.ExecuteNonQuery();
             conn.Close();
@@ -82,6 +81,12 @@ namespace Qlyrapchieuphim
                 passBox.UseSystemPasswordChar = true;
                 pass_repeatBox.UseSystemPasswordChar = true;
             }
+        }
+
+        private void Datlaimk_Load(object sender, EventArgs e)
+        {
+            conn = Helper.getdbConnection();
+            conn = Helper.CheckDbConnection(conn);
         }
     }
 }

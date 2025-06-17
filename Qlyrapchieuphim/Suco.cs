@@ -15,7 +15,7 @@ namespace Qlyrapchieuphim
 {
     public partial class Suco : UserControl
     {
-        string ConnString = Program.ConnString;
+        SqlConnection conn;
         public Suco()
         {
             InitializeComponent();
@@ -24,15 +24,15 @@ namespace Qlyrapchieuphim
             dataGridView1.ClearSelection();
             tinhtrang.SelectedIndex = 2;
             ngaytiepnhan.Value=DateTime.Today;
-            masuco.MaxLength = 16;
+            //masuco.MaxLength = 16;
+            masuco.Enabled = false;
         }
 
-        private bool CheckNV()
+        private bool CheckUsr()
         {
             int count;
-            SqlConnection conn = new SqlConnection(ConnString);
             conn.Open();
-            string SqlQuery = "SELECT COUNT(*) FROM NHANVIEN";
+            string SqlQuery = "SELECT COUNT(*) FROM Users";
             SqlCommand countCmd = new SqlCommand(SqlQuery, conn);
             count = (int)countCmd.ExecuteScalar();
 
@@ -40,14 +40,14 @@ namespace Qlyrapchieuphim
             {
                 manv.Enabled = true;
                 errorProvider1.Clear();
-                SqlQuery = "SELECT MANHANVIEN, TENNHANVIEN FROM NHANVIEN";
+                SqlQuery = "SELECT UserID, Username FROM Users";
                 string[] employees = new string[count];
                 SqlCommand cmd = new SqlCommand(SqlQuery, conn);
                 SqlDataReader reader = cmd.ExecuteReader();
                 int i = 0;
                 while (reader.Read())
                 {
-                    employees[i] = reader.GetString(0) + ": " + reader.GetString(1);
+                    employees[i] = reader.GetString(1) + " (ID: " + reader.GetInt32(0).ToString() + ")";
                     i++;
                 }
                 manv.DataSource = employees;
@@ -55,7 +55,7 @@ namespace Qlyrapchieuphim
             else
             {
                 manv.Enabled = false;
-                errorProvider1.SetError(manv, "Không có nhân viên trong hệ thống!");
+                errorProvider1.SetError(manv, "Không có tài khoản trong hệ thống!");
             }
             conn.Close();
             if (count > 0)
@@ -65,15 +65,14 @@ namespace Qlyrapchieuphim
         }
         private void LoadData()
         {
-            SqlConnection conn = new SqlConnection(ConnString);
             conn.Open();
-            string SqlQuery = "SELECT MASUCO, TENSUCO, sc.MANHANVIEN, TENNHANVIEN, TINHTRANG, NGAYBAOCAO, MOTA " +
-                "FROM SUCO sc , NHANVIEN nv " +
-                "WHERE (sc.MANHANVIEN = nv.MANHANVIEN)";
+            string SqlQuery = "SELECT IncidentID, IncidentName, ReportedByUserID, Status, Resolution, ReportedAt, Description, usr.Username " +
+                "FROM IncidentReports ir , Users usr " +
+                "WHERE (ir.ReportedByUserID = usr.UserID)";
             SqlDataAdapter adapter = new SqlDataAdapter(SqlQuery, conn);
             DataSet ds = new DataSet();
-            adapter.Fill(ds, "SUCO");
-            DataTable dt = ds.Tables["SUCO"];
+            adapter.Fill(ds, "IncidentReports");
+            DataTable dt = ds.Tables["IncidentReports"];
             dataGridView1.DataSource = dt;
             if (!dataGridView1.Columns.Contains("Actions"))
             {
@@ -102,19 +101,19 @@ namespace Qlyrapchieuphim
                 return;
             }
             //SQL section
-            SqlConnection conn = new SqlConnection(ConnString);
             conn.Open();
-            string SqlQuery = "INSERT INTO SUCO VALUES (@masc, @tensc, @manv, @tinhtrang, @ngbc, @mota)";
+            string SqlQuery = "INSERT INTO IncidentReports VALUES (@IncidentID, @IncidentName, @ReportedByUserID, @RelatedObjectType, @RelatedObjectID, @Description, @ReportedAt, @Status, @Resolution)";
             SqlCommand cmd = new SqlCommand(SqlQuery, conn);
-            cmd.Parameters.Add("@masc", SqlDbType.Char).Value = masuco.Text;
-            cmd.Parameters.Add("@tensc", SqlDbType.NVarChar).Value = tensuco.Text;
-            string tp = manv.SelectedItem.ToString();
-            int position = tp.IndexOf(": ");
-            string mnv = tp.Substring(0, position);
-            cmd.Parameters.Add("@manv", SqlDbType.Char).Value = mnv;
-            cmd.Parameters.Add("@ngbc", SqlDbType.Date).Value = ngaytiepnhan.Value.Date;
-            cmd.Parameters.Add("@tinhtrang", SqlDbType.NVarChar).Value = tinhtrang.SelectedItem;
-            cmd.Parameters.Add("@mota", SqlDbType.NVarChar).Value = mota.Text;
+            cmd.Parameters.Add("@IncidentID", SqlDbType.Int).Value = int.Parse(masuco.Text);
+            cmd.Parameters.Add("@IncidentName", SqlDbType.NVarChar).Value = tensuco.Text;
+            int usrID = int.Parse(Helper.SubStringBetween(manv.SelectedText, " (ID: ", ")"));
+            cmd.Parameters.Add("@ReportedByUserID", SqlDbType.Int).Value = usrID;
+            cmd.Parameters.Add("@RelatedObjectType", SqlDbType.NVarChar).Value = "None";
+            cmd.Parameters.Add("@RelatedObjectID", SqlDbType.Int).Value = 0;
+            cmd.Parameters.Add("@ReportedAt", SqlDbType.Date).Value = ngaytiepnhan.Value.Date;
+            cmd.Parameters.Add("@Status", SqlDbType.NVarChar).Value = tinhtrang.SelectedItem;
+            cmd.Parameters.Add("@Description", SqlDbType.NVarChar).Value = mota.Text;
+            cmd.Parameters.Add("@Resolution", SqlDbType.NVarChar).Value = "placeholder";//GIÁ TRỊ TẠM DO CHƯA CÓ TEXTBOX, THAY THẾ GIÁ TRỊ NGAY KHI CÓ TEXTBOX
             try
             {
                 cmd.ExecuteNonQuery();
@@ -144,10 +143,10 @@ namespace Qlyrapchieuphim
         void Updatea()
         {
             masuco.Clear();
-            masuco.Enabled =true;
+            masuco.Enabled =false;
             tinhtrang.SelectedIndex = 2;
             tensuco.Clear();
-            if (CheckNV())
+            if (CheckUsr())
                 manv.SelectedIndex = 0;
             ngaytiepnhan.Value = DateTime.Today;
             mota.Clear();
@@ -180,24 +179,23 @@ namespace Qlyrapchieuphim
 
             // Update values in selected row
 
-            SqlConnection conn = new SqlConnection(ConnString);
-            string SqlQuery = "UPDATE SUCO SET " +
-                "MANHANVIEN = @manv, " +
-                "TENSUCO = @tensc, " +
-                "NGAYBAOCAO = @ngbc, " +
-                "TINHTRANG = @ttr, " +
-                "MOTA = @mota " +
-                "WHERE MASUCO = @masc";
+            string SqlQuery = "UPDATE IncidentReports SET " +
+                "IncidentName = @IncidentName, " +
+                "ReportedByUserID = @ReportedByUserID, " +
+                "ReportedAt = @ReportedAt, " +
+                "Status = @Status, " +
+                "Description = @Description," +
+                "Resolution = @Resolution " +
+                "WHERE IncidentID = @IncidentID";
             SqlCommand cmd = new SqlCommand(SqlQuery, conn);
-            string tp = manv.SelectedItem.ToString();
-            int position = tp.IndexOf(": ");
-            string mnv = tp.Substring(0, position);
-            cmd.Parameters.Add("@manv", SqlDbType.Char).Value = mnv;
-            cmd.Parameters.Add("@tensc", SqlDbType.NVarChar).Value = tensuco.Text;
-            cmd.Parameters.Add("@ngbc", SqlDbType.Date).Value = ngaytiepnhan.Value.Date;
-            cmd.Parameters.Add("@masc", SqlDbType.Char).Value = masuco.Text;
-            cmd.Parameters.Add("@ttr", SqlDbType.NVarChar).Value = tinhtrang.SelectedItem;
-            cmd.Parameters.Add("@mota", SqlDbType.NVarChar).Value = mota.Text;
+            cmd.Parameters.Add("@IncidentID", SqlDbType.Int).Value = int.Parse(masuco.Text);
+            cmd.Parameters.Add("@IncidentName", SqlDbType.NVarChar).Value = tensuco.Text;
+            int usrID = int.Parse(Helper.SubStringBetween(manv.SelectedText, " (ID: ", ")"));
+            cmd.Parameters.Add("@ReportedByUserID", SqlDbType.Int).Value = usrID;
+            cmd.Parameters.Add("@ReportedAt", SqlDbType.Date).Value = ngaytiepnhan.Value.Date;
+            cmd.Parameters.Add("@Status", SqlDbType.NVarChar).Value = tinhtrang.SelectedItem;
+            cmd.Parameters.Add("@Description", SqlDbType.NVarChar).Value = mota.Text;
+            cmd.Parameters.Add("@Resolution", SqlDbType.NVarChar).Value = "placeholder";//GIÁ TRỊ TẠM DO CHƯA CÓ TEXTBOX, THAY THẾ GIÁ TRỊ NGAY KHI CÓ TEXTBOX
             conn.Open();
             try
             {
@@ -236,14 +234,13 @@ namespace Qlyrapchieuphim
 
                 if (result == DialogResult.Yes)
                 {
-                    SqlConnection conn = new SqlConnection(ConnString);
                     DataTable dt = dataGridView1.DataSource as DataTable;
                     conn.Open();
                     foreach (DataGridViewRow dr in dataGridView1.SelectedRows)
                     {
                         int selected = dr.Index;
-                        string temp_id = dt.Rows[selected]["MASUCO"].ToString();
-                        string SqlQuery = "DELETE FROM SUCO WHERE MASUCO = @tempid";
+                        string temp_id = dt.Rows[selected]["IncidentID"].ToString();
+                        string SqlQuery = "DELETE FROM IncidentReports WHERE IncidentID = @tempid";
                         SqlCommand cmd = new SqlCommand(SqlQuery, conn);
                         cmd.Parameters.Add("@tempid", SqlDbType.Char).Value = temp_id;
                         cmd.ExecuteNonQuery();
@@ -261,14 +258,14 @@ namespace Qlyrapchieuphim
         private void PrintToTextBoxes(int row)
         {
             DataTable dt = dataGridView1.DataSource as DataTable;
-            masuco.Text = dt.Rows[row]["MASUCO"].ToString();
+            masuco.Text = dt.Rows[row]["IncidentID"].ToString();
             masuco.Enabled = false;
-            DateTime date = (DateTime)dt.Rows[row]["NGAYBAOCAO"];
+            DateTime date = (DateTime)dt.Rows[row]["ReportedAt"];
             ngaytiepnhan.Value = date;
-            manv.SelectedItem = dt.Rows[row]["MANHANVIEN"] + ": " + dt.Rows[row]["TENNHANVIEN"];
-            tinhtrang.SelectedItem = dt.Rows[row]["TINHTRANG"];
-            tensuco.Text = dt.Rows[row]["TENSUCO"].ToString();
-            mota.Text = dt.Rows[row]["MOTA"].ToString();
+            manv.SelectedItem = dt.Rows[row]["usr.Username"] + " (ID: " + dt.Rows[row]["ReportedUserID"] + ")";
+            tinhtrang.SelectedItem = dt.Rows[row]["Status"];
+            tensuco.Text = dt.Rows[row]["IncidentName"].ToString();
+            mota.Text = dt.Rows[row]["Description"].ToString();
         }
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -323,6 +320,8 @@ namespace Qlyrapchieuphim
 
         private void Suco_Load(object sender, EventArgs e)
         {
+            conn = Helper.getdbConnection();
+            conn = Helper.CheckDbConnection(conn);
             Updatea();
             LoadData();
             dataGridView1.RowTemplate.Height = 45;
@@ -330,7 +329,7 @@ namespace Qlyrapchieuphim
 
         private void Suco_Paint(object sender, PaintEventArgs e)
         {
-            CheckNV();
+            CheckUsr();
             if (!manv.Enabled)
             {
                 bcButton.Enabled = false;

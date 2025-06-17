@@ -27,23 +27,24 @@ namespace Qlyrapchieuphim
         public Qlyphim()
         {
             InitializeComponent();  
-            idphim.MaxLength = 4;
+            //idphim.MaxLength = 4;
             tenphim.MaxLength = 100;
             dataGridView1.ReadOnly = true;
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            label2.Visible = false;
+            idphim.Enabled = false;
         }
-        string ConnString = Program.ConnString;
+        SqlConnection conn = null;
         string poster_url = string.Empty;
         string projectFolder = AppDomain.CurrentDomain.BaseDirectory; // Thư mục dự án
         private void LoadData()
         {
-            SqlConnection conn = new SqlConnection(ConnString);
             conn.Open();
-            string SqlQuery = "select MAPHIM, TENPHIM, THELOAI, THOILUONG, MOTA, DANGCHIEU, POSTER_URL from BOPHIM";
+            string SqlQuery = "select MovieID, Title, Description, Duration, PosterURL, Genre, Status, ReleaseDate, ImportDate, Manufacturer from Movies";
             SqlDataAdapter adapter = new SqlDataAdapter(SqlQuery, conn);
             DataSet ds = new DataSet();
-            adapter.Fill(ds, "BOPHIM");
-            DataTable dt = ds.Tables["BOPHIM"];
+            adapter.Fill(ds, "Movies");
+            DataTable dt = ds.Tables["Movies"];
             dataGridView1.DataSource = dt;
             if (!dataGridView1.Columns.Contains("Actions"))
             {
@@ -64,7 +65,7 @@ namespace Qlyrapchieuphim
         private void AddButton_Click(object sender, EventArgs e)
         {
 
-            if (string.IsNullOrWhiteSpace(idphim.Text) ||
+            if (/*string.IsNullOrWhiteSpace(idphim.Text) ||*/
                 string.IsNullOrWhiteSpace(tenphim.Text) ||
                 string.IsNullOrWhiteSpace(thoiluong.Text) ||
                 string.IsNullOrWhiteSpace(trangthai.Text) ||
@@ -77,11 +78,11 @@ namespace Qlyrapchieuphim
                 return;
             }
 
-            if (!float.TryParse(thoiluong.Text, out _))
+            if (!int.TryParse(thoiluong.Text, out _))
             {
                 // Hiển thị MessageBox nếu không phải là số
                 MessageBox.Show(
-                    "Thời lượng phải được nhập dươi dạng một số thực!",
+                    "Thời lượng phải được nhập dươi dạng một số nguyên!",
                     "Lỗi nhập liệu",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Warning);
@@ -98,23 +99,25 @@ namespace Qlyrapchieuphim
             }
             //poster
             
-            string SqlQuery = "INSERT INTO BOPHIM VALUES (@MAPHIM, @TENPHIM, @THELOAI, @THOILUONG, @MOTA, @POSTER_URL, 'TRAILER_URL', @TRANGTHAI)";
-            SqlConnection conn = new SqlConnection(ConnString);
-            conn.Open();
+            string SqlQuery = "INSERT INTO Movies OUTPUT INSERTED.MovieID VALUES (@Title, @Description, @Duration, @PosterURL, @Genre, @Status, @ReleaseDate, @ImportDate, @Manufacturer)";
             SqlCommand comm = new SqlCommand(SqlQuery, conn);
-            comm.Parameters.Add("@MAPHIM", SqlDbType.Char).Value = idphim.Text;
-            comm.Parameters.Add("@TENPHIM", SqlDbType.NVarChar).Value = tenphim.Text;
-            comm.Parameters.Add("@THELOAI", SqlDbType.NVarChar).Value = theloai.Text;
-            comm.Parameters.Add("@THOILUONG", SqlDbType.Float).Value = float.Parse(thoiluong.Text);
-            comm.Parameters.Add("@MOTA", SqlDbType.NVarChar).Value = mota.Text;
-            comm.Parameters.Add("@TRANGTHAI", SqlDbType.NVarChar).Value = trangthai.Text;
-            SaveImage();
-            comm.Parameters.Add("@POSTER_URL", SqlDbType.VarChar).Value = poster_url;
+            //comm.Parameters.Add("@MovieID", SqlDbType.Int).Value = idphim.Text;
+            comm.Parameters.Add("@Title", SqlDbType.NVarChar).Value = tenphim.Text;
+            comm.Parameters.Add("@Genre", SqlDbType.NVarChar).Value = theloai.Text;
+            comm.Parameters.Add("@Duration", SqlDbType.Int).Value = int.Parse(thoiluong.Text);
+            comm.Parameters.Add("@Description", SqlDbType.NVarChar).Value = mota.Text;
+            comm.Parameters.Add("@Status", SqlDbType.NVarChar).Value = trangthai.Text;
+            comm.Parameters.Add("@ReleaseDate", SqlDbType.Date).Value = DateTime.Now.AddDays(-1); //GIÁ TRỊ TẠM DO CHƯA CÓ TEXTBOX, THAY THẾ GIÁ TRỊ NGAY KHI CÓ TEXTBOX
+            comm.Parameters.Add("@ImportDate", SqlDbType.Date).Value = DateTime.Now.AddDays(-2); //GIÁ TRỊ TẠM DO CHƯA CÓ TEXTBOX, THAY THẾ GIÁ TRỊ NGAY KHI CÓ TEXTBOX
+            comm.Parameters.Add("@Manufacturer", SqlDbType.NVarChar).Value = "Default Manufacturer"; //GIÁ TRỊ TẠM DO CHƯA CÓ TEXTBOX, THAY THẾ GIÁ TRỊ NGAY KHI CÓ TEXTBOX
+            comm.Parameters.Add("@PosterURL", SqlDbType.VarChar).Value = poster_url;
+            int mvID;
             try
             {
-                comm.ExecuteNonQuery();
-                LoadData();
-                Reset();
+                conn.Open();
+                mvID = int.Parse(comm.ExecuteScalar().ToString());
+                conn.Close();
+                SaveImage(mvID);
             }
             catch (SqlException ex)
             {
@@ -126,13 +129,22 @@ namespace Qlyrapchieuphim
                             "Lỗi nhập liệu",
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Warning);
-                        break;
+                        return;
                     default:
                         throw;
                 }
             }
-            conn.Close();
-            
+            SqlQuery = "UPDATE MOVIES SET " +
+                "PosterURL = @PosterURL " +
+                "WHERE MovieID = @MovieID ";
+            comm = new SqlCommand(SqlQuery, conn);
+            comm.Parameters.Add("@PosterURL", SqlDbType.VarChar).Value = poster_url;
+            comm.Parameters.Add("@MovieID", SqlDbType.Int).Value = mvID;
+            conn.Open();
+            comm.ExecuteNonQuery();
+            conn.Close( );
+            LoadData();
+            Reset();
             //int stt = dataGridView1.RowCount + 1;
             //dataGridView1.Rows.Add(stt.ToString("D2"), idphim.Text, tenphim.Text, theloai.Text,thoiluong.Text,trangthai.Text,mota.Text );
 
@@ -140,7 +152,7 @@ namespace Qlyrapchieuphim
         void Reset()
         {
             idphim.Clear();
-            idphim.Enabled = true;
+            //idphim.Enabled = true;
             tenphim.Clear();
             theloai.SelectedIndex = 0;
             thoiluong.Clear();
@@ -149,10 +161,13 @@ namespace Qlyrapchieuphim
             dataGridView1.ClearSelection();
             pictureBox1.Image = null;
             poster_url = string.Empty;
+            this.Refresh();
         }
 
         private void Qlyphim_Load(object sender, EventArgs e)
         {
+            conn = Helper.getdbConnection();
+            conn = Helper.CheckDbConnection(conn);
             theloai.SelectedIndex = 0;
             trangthai.SelectedIndex = 1;
             dataGridView1.AutoSize = false;
@@ -199,29 +214,29 @@ namespace Qlyrapchieuphim
                     );
             }
 
-            string SqlQuery = "UPDATE BOPHIM SET " +
-                "TENPHIM =  @TENPHIM," +
-                "THELOAI = @THELOAI," +
-                "THOILUONG = @THOILUONG," +
-                "MOTA = @MOTA, " +
-                "POSTER_URL = @POSTER_URL," +
-                "TRAILER_URL = 'TRAILER_URL'," +
-                "DANGCHIEU = @TRANGTHAI " +
-                "WHERE MAPHIM = @MAPHIM";
-            SqlConnection conn = new SqlConnection(ConnString);
-            conn.Open();
+            string SqlQuery = "UPDATE Movies SET " +
+                "Title =  @Title," +
+                "Genre = @Genre," +
+                "Duration = @Duration," +
+                "Description = @Description, " +
+                "PosterURL = @PosterURL," +
+                "Status = @Status " +
+                "WHERE MovieID = @MovieID";
+            
             SqlCommand comm = new SqlCommand(SqlQuery, conn);
-            comm.Parameters.Add("@MAPHIM", SqlDbType.Char).Value = idphim.Text;
-            comm.Parameters.Add("@TENPHIM", SqlDbType.NVarChar).Value = tenphim.Text;
-            comm.Parameters.Add("@THELOAI", SqlDbType.NVarChar).Value = theloai.Text;
-            comm.Parameters.Add("@THOILUONG", SqlDbType.Float).Value = float.Parse(thoiluong.Text);
-            comm.Parameters.Add("@MOTA", SqlDbType.NVarChar).Value = mota.Text;
-            comm.Parameters.Add("@TRANGTHAI", SqlDbType.NVarChar).Value = trangthai.Text;
-            SaveImage();
-            comm.Parameters.Add("POSTER_URL", SqlDbType.VarChar).Value = poster_url;
+            comm.Parameters.Add("@MovieID", SqlDbType.Int).Value = int.Parse(idphim.Text);
+            comm.Parameters.Add("@Title", SqlDbType.NVarChar).Value = tenphim.Text;
+            comm.Parameters.Add("@Genre", SqlDbType.NVarChar).Value = theloai.Text;
+            comm.Parameters.Add("@Duration", SqlDbType.Int).Value = int.Parse(thoiluong.Text);
+            comm.Parameters.Add("@Description", SqlDbType.NVarChar).Value = mota.Text;
+            comm.Parameters.Add("@Status", SqlDbType.NVarChar).Value = trangthai.Text;
+            SaveImage(int.Parse(idphim.Text));
+            comm.Parameters.Add("PosterURL", SqlDbType.VarChar).Value = poster_url;
             try
             {
+                conn.Open();
                 comm.ExecuteNonQuery();
+                conn.Close();
                 LoadData();
                 Reset();
             }
@@ -240,7 +255,7 @@ namespace Qlyrapchieuphim
                         throw;
                 }
             }
-            conn.Close();
+            
 
         }
         private void PrintToTextBoxes(int row)
@@ -249,14 +264,14 @@ namespace Qlyrapchieuphim
             DataTable dt = dataGridView1.DataSource as DataTable;
 
             // Gán giá trị cho các TextBox
-            idphim.Text = dt.Rows[row]["MAPHIM"].ToString();
+            idphim.Text = dt.Rows[row]["MovieID"].ToString();
             idphim.Enabled = false;
-            tenphim.Text = dt.Rows[row]["TENPHIM"].ToString();
-            theloai.SelectedItem = dt.Rows[row]["THELOAI"].ToString();
-            thoiluong.Text = dt.Rows[row]["THOILUONG"].ToString();
-            trangthai.SelectedItem = dt.Rows[row]["DANGCHIEU"].ToString();
-            mota.Text = dt.Rows[row]["MOTA"].ToString();
-            string relative_poster_path = dt.Rows[row]["POSTER_URL"].ToString();
+            tenphim.Text = dt.Rows[row]["Title"].ToString();
+            theloai.SelectedItem = dt.Rows[row]["Genre"].ToString();
+            thoiluong.Text = dt.Rows[row]["Duration"].ToString();
+            trangthai.SelectedItem = dt.Rows[row]["Status"].ToString();
+            mota.Text = dt.Rows[row]["Description"].ToString();
+            string relative_poster_path = dt.Rows[row]["PosterURL"].ToString();
             poster_url = Path.Combine(projectFolder, relative_poster_path);
             try
             {
@@ -269,21 +284,29 @@ namespace Qlyrapchieuphim
             {
                 if (!string.IsNullOrEmpty(relative_poster_path))
                 {
-                    if (ex is FileNotFoundException)
+                    switch (ex.GetType().ToString())
                     {
-                        MessageBox.Show(
-                        "Không tìm thấy file poster",
-                        "Lỗi dữ liệu!",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Error);
-                    }
-                    if (ex is DirectoryNotFoundException)
-                    {
-                        MessageBox.Show(
-                        "Không tìm thấy folder poster",
-                        "Lỗi dữ liệu!",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Error);
+                        case "FileNotFoundException":
+                            MessageBox.Show(
+                            "Không tìm thấy file ảnh với đường dẫn tương ứng.",
+                            "Lỗi dữ liệu!",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Error);
+                            break;
+                        case "DirectoryNotFoundException":
+                            MessageBox.Show(
+                            "Không tìm thấy thư mục với đường dẫn tương ứng.",
+                            "Lỗi dữ liệu!",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Error);
+                            break;
+                        default:
+                            MessageBox.Show(
+                            "Lỗi dữ liệu!",
+                            "Lỗi dữ liệu!",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Error);
+                            break;
                     }
                 }
                 else
@@ -342,17 +365,17 @@ namespace Qlyrapchieuphim
                 
                 if (result == DialogResult.Yes)
                 {
-                    SqlConnection conn = new SqlConnection(ConnString);
                     DataTable dt = dataGridView1.DataSource as DataTable;
                     conn.Open();
                     foreach (DataGridViewRow dr in dataGridView1.SelectedRows)
                     {
                         int selected = dr.Index;
-                        string temp_id = dt.Rows[selected]["MAPHIM"].ToString();
-                        string SqlQuery = "DELETE FROM BOPHIM WHERE MAPHIM = @tempid";
+                        string temp_id = dt.Rows[selected]["MovieID"].ToString();
+                        string SqlQuery = "DELETE FROM Movies WHERE MovieID = @tempid";
                         SqlCommand cmd = new SqlCommand(SqlQuery, conn);
                         cmd.Parameters.Add("@tempid", SqlDbType.Char).Value = temp_id;
                         cmd.ExecuteNonQuery();
+
                         string fullPath = Path.Combine(projectFolder, "posters", temp_id + ".png");
                         if (File.Exists(fullPath))
                             File.Delete(fullPath);
@@ -400,7 +423,7 @@ namespace Qlyrapchieuphim
                     if (!row.IsNewRow)
                     {
                         int index = row.Index;
-                        tenSV = dt.Rows[index]["TENPHIM"].ToString().ToLower();
+                        tenSV = dt.Rows[index]["Title"].ToString().ToLower();
                         CurrencyManager currencyManager = (CurrencyManager)BindingContext[dataGridView1.DataSource];
                         currencyManager.SuspendBinding();
                         if (tenSV.Contains(tenCanTim))
@@ -458,20 +481,20 @@ namespace Qlyrapchieuphim
 
         private void dataGridView1_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
         {
-            var grid = sender as DataGridView;
-            var rowIdx = (e.RowIndex + 1).ToString();
+            //var grid = sender as DataGridView;
+            //var rowIdx = (e.RowIndex + 1).ToString();
 
-            var centerFormat = new StringFormat()
-            {
-                // right alignment might actually make more sense for numbers
-                Alignment = StringAlignment.Center,
-                LineAlignment = StringAlignment.Center
-            };
+            //var centerFormat = new StringFormat()
+            //{
+            //    // right alignment might actually make more sense for numbers
+            //    Alignment = StringAlignment.Center,
+            //    LineAlignment = StringAlignment.Center
+            //};
 
-            var headerBounds = new Rectangle(e.RowBounds.Left, e.RowBounds.Top, grid.RowHeadersWidth, e.RowBounds.Height);
-            e.Graphics.DrawString(rowIdx, this.Font, SystemBrushes.ControlText, headerBounds, centerFormat);
+            //var headerBounds = new Rectangle(e.RowBounds.Left, e.RowBounds.Top, grid.RowHeadersWidth, e.RowBounds.Height);
+            //e.Graphics.DrawString(rowIdx, this.Font, SystemBrushes.ControlText, headerBounds, centerFormat);
         }
-        private void SaveImage()
+        private void SaveImage(int identity)
         {
             try
             {
@@ -494,7 +517,7 @@ namespace Qlyrapchieuphim
 
                 // 3. Tạo tên file hình ảnh (ví dụ: image.png)
                 ImageFormat imageFormat = pictureBox1.Image.RawFormat;
-                string fileName = idphim.Text + "." + new ImageFormatConverter().ConvertToString(imageFormat).ToLower(); // Tên file hình ảnh (bạn có thể thay đổi tên này)
+                string fileName = identity.ToString() + "." + new ImageFormatConverter().ConvertToString(imageFormat).ToLower(); // Tên file hình ảnh (bạn có thể thay đổi tên này)
                 string fullPath = Path.Combine(newFolderPath, fileName);
                 //delete if existing
                 if (File.Exists(fullPath))

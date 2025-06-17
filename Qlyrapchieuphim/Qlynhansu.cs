@@ -20,29 +20,31 @@ namespace Qlyrapchieuphim
 {
     public partial class Qlynhansu : UserControl
     {
-        string ConnString = Program.ConnString;
+        SqlConnection conn;
         public Qlynhansu()
         {
             InitializeComponent();
-            manv.MaxLength = 4;
+            //manv.MaxLength = 4;
+            trangthai.Enabled = false;
             hoten.MaxLength = 100;
             email.MaxLength = 50;
             dataGridView1.ReadOnly = true;
             sodienthoai.MaxLength = 15;
             usrnameTxtBox.MaxLength = 100;
             passTxtBox.MaxLength = 100;
-            string[] trt = new string[] { "Nghỉ việc", "Đang làm việc", "Tạm thời" };
-            trangthai.Items.AddRange(trt);
+            //string[] trt = new string[] { "Nghỉ việc", "Đang làm việc", "Tạm thời" };
+            //trangthai.Items.AddRange(trt);
+            manv.Enabled = false;
         }
         private void LoadData()
         {
-            SqlConnection conn = new SqlConnection(ConnString);
             conn.Open();
-            string SqlQuery = "SELECT MANHANVIEN, TENNHANVIEN, SODIENTHOAI, EMAIL, NGSINH, TRANGTHAI, USERNAME, PASS, CHUCVU FROM NHANVIEN ";
+            string SqlQuery = "SELECT StaffID, FullName, Phone, usr.UserID, DateOfBirth, Username, Password, Role, Email " +
+                "FROM Staffs sf LEFT JOIN Users usr ON (sf.UserID = usr.UserID)";
             SqlDataAdapter adapter = new SqlDataAdapter(SqlQuery, conn);
             DataSet ds = new DataSet();
-            adapter.Fill(ds, "NHANVIEN");
-            DataTable dt = ds.Tables["NHANVIEN"];
+            adapter.Fill(ds, "Staffs");
+            DataTable dt = ds.Tables["Staffs"];
             //dataGridView1.AutoGenerateColumns = true;
             dataGridView1.DataSource = dt;
 
@@ -67,7 +69,7 @@ namespace Qlyrapchieuphim
         private void them_Click(object sender, EventArgs e)
         {
 
-            if (string.IsNullOrWhiteSpace(manv.Text) ||
+            if (//string.IsNullOrWhiteSpace(manv.Text) ||
                 string.IsNullOrWhiteSpace(hoten.Text) ||
                 string.IsNullOrWhiteSpace(sodienthoai.Text) ||
                 string.IsNullOrWhiteSpace(email.Text) )
@@ -90,18 +92,13 @@ namespace Qlyrapchieuphim
                 MessageBox.Show("Nhân viên phải đủ 18 tuổi trở lên!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-
-            //SQL section
-            SqlConnection conn = new SqlConnection(ConnString);
-            conn.Open();
-            string SqlQuery = "INSERT INTO NHANVIEN VALUES (@manv, @tennv, @chucvu, @sdt, @email, @usrname, @pass, @ngsinh, @trthai)";
-            SqlCommand cmd = new SqlCommand(SqlQuery, conn);
-            try 
+            //Test email format
+            try
             {
                 MailAddress test_mail = new MailAddress(email.Text);
             }
             catch (Exception ex)
-            { 
+            {
                 if (ex is FormatException)
                 {
                     MessageBox.Show(
@@ -120,18 +117,54 @@ namespace Qlyrapchieuphim
                 }
                 return;
             }
-            cmd.Parameters.Add("@manv", SqlDbType.Char).Value = manv.Text;
-            cmd.Parameters.Add("@tennv", SqlDbType.NVarChar).Value = hoten.Text;
-            cmd.Parameters.Add("@sdt", SqlDbType.VarChar).Value = sodienthoai.Text;
-            cmd.Parameters.Add("@email", SqlDbType.VarChar).Value = email.Text;
-            cmd.Parameters.Add("@ngsinh", SqlDbType.Date).Value = ngaysinh.Value;
+
+            //SQL section - Users
+            string SqlQuery = "INSERT INTO Users OUTPUT INSERTED.UserID VALUES (@Username, @Password, @Role, @Email)";
+            SqlCommand cmd = new SqlCommand(SqlQuery, conn);
+            cmd.Parameters.Add("@Username", SqlDbType.NVarChar).Value = usrnameTxtBox.Text.Trim();
+            cmd.Parameters.Add("@Password", SqlDbType.NVarChar).Value = passTxtBox.Text.Trim();
+            cmd.Parameters.Add("@Role", SqlDbType.NVarChar).Value = chucvu.SelectedItem;
+            cmd.Parameters.Add("@Email", SqlDbType.VarChar).Value = email.Text;
+
+            //cmd.Parameters.Add("@manv", SqlDbType.Char).Value = manv.Text;
             //cmd.Parameters.Add("@trthai", SqlDbType.NVarChar).Value = trangthai.Text;
-            cmd.Parameters.Add("@usrname", SqlDbType.VarChar).Value = usrnameTxtBox.Text.Trim();
-            cmd.Parameters.Add("@pass", SqlDbType.VarChar).Value = passTxtBox.Text.Trim();
-            cmd.Parameters.Add("@chucvu", SqlDbType.NVarChar).Value = chucvu.SelectedItem;
+            int usrID;
+            
             try
             {
+                conn.Open();
+                usrID = int.Parse(cmd.ExecuteScalar().ToString());
+                conn.Close();
+            }
+            catch (SqlException ex)
+            {
+                switch (ex.Number)
+                {
+                    case 2627: // Unique key violation
+                        MessageBox.Show(
+                            "Mã nhân viên không được trùng nhau!",
+                            "Lỗi nhập liệu",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Warning);
+                        return;
+                    default:
+                        throw;
+                }
+            }
+
+            //SQL section - Staffs
+            SqlQuery = "INSERT INTO Staffs VALUES (@FullName, @Phone, @UserID, @DateOfBirth)";
+            cmd = new SqlCommand(SqlQuery, conn);
+            cmd.Parameters.Add("@FullName", SqlDbType.NVarChar).Value = hoten.Text;
+            cmd.Parameters.Add("@Phone", SqlDbType.VarChar).Value = sodienthoai.Text;
+            cmd.Parameters.Add("@UserID", SqlDbType.Int).Value = usrID;
+            cmd.Parameters.Add("@DateOfBirth", SqlDbType.Date).Value = ngaysinh.Value.Date;
+            
+            try
+            {
+                conn.Open();
                 cmd.ExecuteNonQuery();
+                conn.Close();
                 LoadData();
                 Reset();
             }
@@ -139,24 +172,26 @@ namespace Qlyrapchieuphim
             {
                 switch (ex.Number)
                 {
-                    case 2627:
+                    case 2627: // Unique key violation
                         MessageBox.Show(
-                            "Mã nhân viên và tên đăng nhập không được trùng nhau!",
+                            "Username không được trùng nhau!",
                             "Lỗi nhập liệu",
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Warning);
-                        break;
+                        return;
                     default:
                         throw;
                 }
             }
-            conn.Close();
             
+
         }
 
         private void Qlynhansu_Load(object sender, EventArgs e)
         {
-            trangthai.SelectedIndex = 1;
+            conn = Helper.getdbConnection();
+            conn = Helper.CheckDbConnection(conn);
+            //trangthai.SelectedIndex = 1;
             chucvu.SelectedIndex = 0;
             dataGridView1.AutoSize = false;
             SearchTextBox.Text = "Tìm kiếm theo tên";
@@ -222,31 +257,62 @@ namespace Qlyrapchieuphim
                 }
                 return;
             }
-            SqlConnection conn = new SqlConnection(ConnString);
-            conn.Open();
-            string SqlQuery = "UPDATE NHANVIEN SET " +
-                "TENNHANVIEN = @tennv, " +
-                "CHUCVU = @chucvu, " +
-                "SODIENTHOAI = @sdt, " +
-                "EMAIL = @email, " +
-                "USERNAME = @usrname, " +
-                "PASS = @pass, " +
-                "NGSINH = @ngsinh, " +
-                "TRANGTHAI = @trthai " +
-                "WHERE MANHANVIEN = @manv";
+
+            //SQL Section - Staffs
+            string SqlQuery = "UPDATE Staffs SET " +
+                "FullName = @FullName, " +
+                "Phone = @Phone, " +
+                "DateOfBirth = @DateOfBirth " +
+                "OUTPUT INSERTED.UserID " +
+                "WHERE StaffID = @StaffID";
             SqlCommand cmd = new SqlCommand(SqlQuery, conn);
-            cmd.Parameters.Add("@manv", SqlDbType.Char).Value = manv.Text;
-            cmd.Parameters.Add("@tennv", SqlDbType.NVarChar).Value = hoten.Text;
-            cmd.Parameters.Add("@sdt", SqlDbType.VarChar).Value = sodienthoai.Text;
-            cmd.Parameters.Add("@email", SqlDbType.VarChar).Value = email.Text;
-            cmd.Parameters.Add("@ngsinh", SqlDbType.Date).Value = ngaysinh.Value;
-            //cmd.Parameters.Add("@trthai", SqlDbType.NVarChar).Value = trangthai.Text;
-            cmd.Parameters.Add("@usrname", SqlDbType.VarChar).Value = usrnameTxtBox.Text.Trim();
-            cmd.Parameters.Add("@pass", SqlDbType.VarChar).Value = passTxtBox.Text.Trim();
-            cmd.Parameters.Add("@chucvu", SqlDbType.NVarChar).Value = chucvu.SelectedItem;
+            cmd.Parameters.Add("@StaffID", SqlDbType.Int).Value = int.Parse(manv.Text);
+            cmd.Parameters.Add("@FullName", SqlDbType.NVarChar).Value = hoten.Text;
+            cmd.Parameters.Add("@Phone", SqlDbType.NVarChar).Value = sodienthoai.Text;
+            cmd.Parameters.Add("@DateOfBirth", SqlDbType.Date).Value = ngaysinh.Value;
+            int usrID;
+            
             try
             {
+                conn.Open();
+                usrID = int.Parse(cmd.ExecuteScalar().ToString());
+                conn.Close();
+            }
+            catch (SqlException ex)
+            {
+                switch (ex.Number)
+                {
+                    case 2627: // Unique key violation
+                        MessageBox.Show(
+                            "Mã nhân viên không được trùng nhau!",
+                            "Lỗi nhập liệu",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Warning);
+                        return;
+                    default:
+                        throw;
+                }
+            }
+            
+            //SQL Section - Users
+            SqlQuery = "UPDATE Users SET " +
+                "Username = @Username, " +
+                "Password = @Password, " +
+                "Role = @Role, " +
+                "Email = @Email " +
+                "WHERE UserID = @UserID";
+            cmd = new SqlCommand(SqlQuery, conn);
+            cmd.Parameters.Add("@Email", SqlDbType.VarChar).Value = email.Text;
+            cmd.Parameters.Add("@Username", SqlDbType.VarChar).Value = usrnameTxtBox.Text.Trim();
+            cmd.Parameters.Add("@Password", SqlDbType.VarChar).Value = passTxtBox.Text.Trim();
+            cmd.Parameters.Add("@Role", SqlDbType.NVarChar).Value = chucvu.SelectedItem;
+            cmd.Parameters.Add("@UserID", SqlDbType.Int).Value = usrID;
+            
+            try
+            {
+                conn.Open();
                 cmd.ExecuteNonQuery();
+                conn.Close();
                 LoadData();
                 Reset();
             }
@@ -254,29 +320,29 @@ namespace Qlyrapchieuphim
             {
                 switch (ex.Number)
                 {
-                    case 2627:
+                    case 2627: // Unique key violation
                         MessageBox.Show(
-                            "Mã nhân viên và tên đăng nhập không được trùng nhau!",
+                            "Username không được trùng nhau!",
                             "Lỗi nhập liệu",
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Warning);
-                        break;
+                        return;
                     default:
                         throw;
                 }
             }
-            conn.Close();
+            
         }
         private void Reset()
         {
             manv.Clear();
-            manv.Enabled = true;
+            manv.Enabled = false;
             hoten.Clear();
             sodienthoai.Clear();
             email.Clear();
             passTxtBox.Clear();
             usrnameTxtBox.Clear();
-            trangthai.SelectedIndex = 1;
+            //trangthai.SelectedIndex = 1;
             chucvu.SelectedIndex = 0;
             ngaysinh.Value = DateTime.Today.Subtract(TimeSpan.FromDays(365 * 19));
             dataGridView1.ClearSelection();
@@ -290,27 +356,32 @@ namespace Qlyrapchieuphim
 
                 if (result == DialogResult.Yes)
                 {
-
-                    SqlConnection conn = new SqlConnection(ConnString);
                     DataTable dt = dataGridView1.DataSource as DataTable;
                     conn.Open();
                     foreach (DataGridViewRow dr in dataGridView1.SelectedRows)
                     {
                         int selected = dr.Index;
-                        string temp_id = dt.Rows[selected]["MANHANVIEN"].ToString();
-                        if (temp_id == "admn")
-                        {
-                            MessageBox.Show(
-                                "Không thể xoá tài khoản ADMIN mặc định.",
-                                "Thông báo",
-                                MessageBoxButtons.OK,
-                                MessageBoxIcon.Information);
-                            return;
-                        }
-                        string SqlQuery = "DELETE FROM NHANVIEN WHERE MANHANVIEN = @tempid";
+                        string temp_id = dt.Rows[selected]["StaffID"].ToString();
+                        //if (temp_id == "0")
+                        //{
+                        //    MessageBox.Show(
+                        //        "Không thể xoá tài khoản ADMIN mặc định.",
+                        //        "Thông báo",
+                        //        MessageBoxButtons.OK,
+                        //        MessageBoxIcon.Information);
+                        //    return;
+                        //}
+                        int usrID;
+                        string SqlQuery = "DELETE FROM Staffs OUTPUT DELETED.UserID WHERE StaffID = @tempid";
                         SqlCommand cmd = new SqlCommand(SqlQuery, conn);
                         cmd.Parameters.Add("@tempid",SqlDbType.Char).Value = temp_id;
+                        usrID = int.Parse(cmd.ExecuteScalar().ToString());
+
+                        SqlQuery = "DELETE FROM Users WHERE UserID = @usrID";
+                        cmd = new SqlCommand(SqlQuery, conn);
+                        cmd.Parameters.Add("@usrID", SqlDbType.Char).Value = usrID;
                         cmd.ExecuteNonQuery();
+
                     }
                     conn.Close();
                     LoadData();
@@ -328,16 +399,15 @@ namespace Qlyrapchieuphim
         private void PrintToTextBoxes(int row)
         {
             DataTable dt = dataGridView1.DataSource as DataTable;
-            manv.Text = dt.Rows[row]["MANHANVIEN"].ToString();
+            manv.Text = dt.Rows[row]["StaffID"].ToString();
             manv.Enabled = false;
-            hoten.Text = dt.Rows[row]["TENNHANVIEN"].ToString();
-            sodienthoai.Text = dt.Rows[row]["SODIENTHOAI"].ToString();
-            email.Text = dt.Rows[row]["EMAIL"].ToString();
-            ngaysinh.Value = (DateTime)dt.Rows[row]["NGSINH"];
-            trangthai.SelectedItem = dt.Rows[row]["TRANGTHAI"].ToString();
-            usrnameTxtBox.Text = dt.Rows[row]["USERNAME"].ToString();
-            passTxtBox.Text = dt.Rows[row]["PASS"].ToString();
-            chucvu.SelectedItem = dt.Rows[row]["CHUCVU"].ToString();
+            hoten.Text = dt.Rows[row]["FullName"].ToString();
+            sodienthoai.Text = dt.Rows[row]["Phone"].ToString();
+            email.Text = dt.Rows[row]["Email"].ToString();
+            ngaysinh.Value = (DateTime)dt.Rows[row]["DateOfBirth"];
+            usrnameTxtBox.Text = dt.Rows[row]["Username"].ToString();
+            passTxtBox.Text = dt.Rows[row]["Password"].ToString();
+            chucvu.SelectedItem = dt.Rows[row]["Role"].ToString();
         }
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -386,7 +456,7 @@ namespace Qlyrapchieuphim
                     if (!row.IsNewRow)
                     {
                         int index = row.Index;
-                        tenSV = dt.Rows[index]["TENNHANVIEN"].ToString().ToLower();
+                        tenSV = dt.Rows[index]["FullName"].ToString().ToLower();
                         CurrencyManager currencyManager = (CurrencyManager)BindingContext[dataGridView1.DataSource];
                         currencyManager.SuspendBinding();
                         if (tenSV.Contains(tenCanTim) && tenSV != "anon")
@@ -426,18 +496,19 @@ namespace Qlyrapchieuphim
 
         private void dataGridView1_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
         {
-            var grid = sender as DataGridView;
-            var rowIdx = (e.RowIndex + 1).ToString();
+            //var grid = sender as DataGridView;
+            //var rowIdx = (e.RowIndex + 1).ToString();
 
-            var centerFormat = new StringFormat()
-            {
-                // right alignment might actually make more sense for numbers
-                Alignment = StringAlignment.Center,
-                LineAlignment = StringAlignment.Center
-            };
+            //var centerFormat = new StringFormat()
+            //{
+            //    // right alignment might actually make more sense for numbers
+            //    Alignment = StringAlignment.Center,
+            //    LineAlignment = StringAlignment.Center
+            //};
 
-            var headerBounds = new Rectangle(e.RowBounds.Left, e.RowBounds.Top, grid.RowHeadersWidth, e.RowBounds.Height);
-            e.Graphics.DrawString(rowIdx, this.Font, SystemBrushes.ControlText, headerBounds, centerFormat);
+            //var headerBounds = new Rectangle(e.RowBounds.Left, e.RowBounds.Top, grid.RowHeadersWidth, e.RowBounds.Height);
+            //e.Graphics.DrawString(rowIdx, this.Font, SystemBrushes.ControlText, headerBounds, centerFormat);
+            //Helper.DrawNumbering(sender, e, this);
         }
 
         private void cancelButton_Click(object sender, EventArgs e)

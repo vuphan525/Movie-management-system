@@ -23,7 +23,7 @@ namespace Qlyrapchieuphim
             dataGridView1.AutoGenerateColumns = false;
             dataGridView1.DataSource = sp_list;
         }
-        string ConnString = ConfigurationManager.ConnectionStrings["ConnString"].ConnectionString;
+        string ConnString = Helper.getConnString();
         string picture_url = string.Empty;
         string projectFolder = AppDomain.CurrentDomain.BaseDirectory; // Thư mục dự án
         DataTable dt;

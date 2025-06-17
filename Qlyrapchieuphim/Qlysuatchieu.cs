@@ -17,21 +17,20 @@ namespace Qlyrapchieuphim
 {
     public partial class Qlysuatchieu : UserControl
     {
-        string ConnString = Program.ConnString;
+        SqlConnection conn = null;
         public Qlysuatchieu()
         {
             InitializeComponent();
 
             giochieu.ShowUpDown = true;
-            idTextBox.MaxLength = 6;
-
+            //idTextBox.MaxLength = 6;
+            idTextBox.Enabled = false;
         }
         private bool CheckMovie()
         {
             int count;
-            SqlConnection conn = new SqlConnection(ConnString);
             conn.Open();
-            string SqlQuery = "SELECT COUNT(*) FROM BOPHIM WHERE DANGCHIEU = N'Đang chiếu'";
+            string SqlQuery = "SELECT COUNT(*) FROM Movies WHERE Status = N'Đang chiếu'";
             SqlCommand countCmd = new SqlCommand(SqlQuery, conn);
             count = (int)countCmd.ExecuteScalar();
             
@@ -39,14 +38,14 @@ namespace Qlyrapchieuphim
             {
                 tenphim.Enabled = true;
                 errorProvider1.Clear();
-                SqlQuery = "SELECT MAPHIM, TENPHIM FROM BOPHIM WHERE DANGCHIEU = N'Đang chiếu'";
+                SqlQuery = "SELECT MovieID, Title FROM Movies WHERE Status = N'Đang chiếu'";
                 string[] movies = new string[count];
                 SqlCommand cmd = new SqlCommand(SqlQuery, conn);
                 SqlDataReader reader = cmd.ExecuteReader();
                 int i = 0;
                 while (reader.Read())
                 {
-                    movies[i] = reader.GetString(1) + " (ID: " + reader.GetString(0) + ")";
+                    movies[i] = reader.GetString(1) + " (ID: " + reader.GetInt32(0).ToString() + ")";
                     i++;
                 }
                 tenphim.DataSource = movies;
@@ -97,15 +96,14 @@ namespace Qlyrapchieuphim
         
         private void LoadData()
         {
-            SqlConnection conn = new SqlConnection(ConnString);
             conn.Open();
-            string SqlQuery = "SELECT MASUATCHIEU, THOIGIANBATDAU, NGAYCHIEU, MAPHONG, sc.MAPHIM, TENPHIM " +
-                "FROM SUATCHIEU sc , BOPHIM p " +
-                "WHERE (sc.MAPHIM = p.MAPHIM)";
+            string SqlQuery = "SELECT ShowtimeID, StartTime, RoomID, st.MovieID, Title " +
+                "FROM Showtimes st , Movies mv " +
+                "WHERE (st.MovieID = mv.MovieID)";
             SqlDataAdapter adapter = new SqlDataAdapter(SqlQuery, conn);
             DataSet ds = new DataSet();
-            adapter.Fill(ds, "SUATCHIEU");
-            DataTable dt = ds.Tables["SUATCHIEU"];
+            adapter.Fill(ds, "Showtime");
+            DataTable dt = ds.Tables["Showtime"];
             dataGridView1.DataSource = dt;
             if (!dataGridView1.Columns.Contains("Actions"))
             {
@@ -177,26 +175,28 @@ namespace Qlyrapchieuphim
 
             // Update values in selected row
 
-            SqlConnection conn = new SqlConnection(ConnString);
-            string SqlQuery = "UPDATE SUATCHIEU SET " +
-                "MAPHIM = @idphim, " +
-                "MAPHONG = @idphong, " +
-                "NGAYCHIEU = @ngaychieu, " +
-                "THOIGIANBATDAU = @tgbd " +
-                "WHERE MASUATCHIEU = @id";
+            string SqlQuery = "UPDATE Showtimes SET " +
+                "MovieID = @MovieID, " +
+                "RoomID = @RoomID, " +
+                "StartTime = @StartTime, " +
+                "Price = @Price " +
+                "WHERE ShowtimeID = @ShowtimeID";
             SqlCommand cmd = new SqlCommand(SqlQuery, conn);
-            string tp = tenphim.SelectedItem.ToString();
-            int position = tp.IndexOf(" (ID: ") + 6;
-            string mp = tp.Substring(position, 4);
-            cmd.Parameters.Add("@idphim", SqlDbType.Char).Value = mp;
-            cmd.Parameters.Add("@idphong", SqlDbType.Char).Value = phongchieu.SelectedItem;
-            cmd.Parameters.Add("@ngaychieu", SqlDbType.Date).Value = ngaychieu.Value.Date;
-            cmd.Parameters.Add("@tgbd",SqlDbType.Time).Value = giochieu.Value.TimeOfDay.StripMilliseconds();
-            cmd.Parameters.Add("@id", SqlDbType.Char).Value = idTextBox.Text;
-            conn.Open();
+            //string tp = tenphim.SelectedItem.ToString();
+            //int startAt = tp.IndexOf(" (ID: ") + " (ID: ".Length;
+            //int stopAt = tp.LastIndexOf(')');
+            
+            int mp = int.Parse(Helper.SubStringBetween(tenphim.SelectedItem.ToString(), " (ID: ", ")"));
+            cmd.Parameters.Add("@MovieID", SqlDbType.Int).Value = mp;
+            cmd.Parameters.Add("@RoomID", SqlDbType.Int).Value = int.Parse(phongchieu.SelectedItem.ToString());//VẪN ĐANG SỬ DỤNG CÁC SỐ CÓ SẴN, ĐIỀU CHỈNH KHI CÓ QUẢN LÝ PHÒNG CHIẾU
+            cmd.Parameters.Add("@StartTime", SqlDbType.DateTime).Value = ngaychieu.Value + giochieu.Value.TimeOfDay.StripMilliseconds();
+            cmd.Parameters.Add("@Price", SqlDbType.Decimal).Value = 65000;//GIÁ TRỊ TẠM DO CHƯA CÓ TEXTBOX, THAY THẾ GIÁ TRỊ NGAY KHI CÓ TEXTBOX
+            cmd.Parameters.Add("@ShowtimeID", SqlDbType.Int).Value = int.Parse(idTextBox.Text);
             try
             {
+                conn.Open();
                 cmd.ExecuteNonQuery();
+                conn.Close();
                 LoadData();
                 Updatea();
             }
@@ -215,7 +215,6 @@ namespace Qlyrapchieuphim
                         throw;
                 }
             }
-            conn.Close();
         }
 
         private void them_Click(object sender, EventArgs e)
@@ -273,33 +272,32 @@ namespace Qlyrapchieuphim
             //        return;
             //    }
             //}
-            if (string.IsNullOrEmpty(idTextBox.Text))
-            {
-                MessageBox.Show(
-                    "Vui lòng nhập mã suất chiếu!",
-                    "Lỗi nhập liệu",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Warning);
-                return;
-            }
+            //if (string.IsNullOrEmpty(idTextBox.Text))
+            //{
+            //    MessageBox.Show(
+            //        "Vui lòng nhập mã suất chiếu!",
+            //        "Lỗi nhập liệu",
+            //        MessageBoxButtons.OK,
+            //        MessageBoxIcon.Warning);
+            //    return;
+            //}
             //SQL section
                 //add entry
-            SqlConnection conn = new SqlConnection(ConnString);
             string id = idTextBox.Text;
-            conn.Open();
-            string SqlQuery = "INSERT INTO SUATCHIEU VALUES (@masc, @tgbd, @ngchieu, @maphong, @maphim)";
+            
+            string SqlQuery = "INSERT INTO Showtimes VALUES (@MovieID, @RoomID, @StartTime, @Price )";
             SqlCommand cmd = new SqlCommand(SqlQuery, conn);
-            cmd.Parameters.Add("@masc", SqlDbType.Char).Value = idTextBox.Text;
-            cmd.Parameters.Add("@tgbd", SqlDbType.Time).Value = giochieu.Value.TimeOfDay.StripMilliseconds();
-            cmd.Parameters.Add("@ngchieu", SqlDbType.Date).Value = ngaychieu.Value.Date;
-            cmd.Parameters.Add("@maphong", SqlDbType.Char).Value = phongchieu.SelectedItem;
-            string tp = tenphim.SelectedItem.ToString();
-            int position = tp.IndexOf(" (ID: ") + 6;
-            string mp = tp.Substring(position, 4);
-            cmd.Parameters.Add("@maphim", SqlDbType.Char).Value = mp;
+            //cmd.Parameters.Add("@ShowtimeID", SqlDbType.Char).Value = idTextBox.Text;
+            cmd.Parameters.Add("@StartTime", SqlDbType.DateTime).Value = ngaychieu.Value + giochieu.Value.TimeOfDay.StripMilliseconds();
+            cmd.Parameters.Add("@Price", SqlDbType.Decimal).Value = 65000; //GIÁ TRỊ TẠM DO CHƯA CÓ TEXTBOX, THAY THẾ GIÁ TRỊ NGAY KHI CÓ TEXTBOX
+            cmd.Parameters.Add("@RoomID", SqlDbType.Int).Value = int.Parse(phongchieu.SelectedItem.ToString()); //VẪN ĐANG SỬ DỤNG CÁC SỐ CÓ SẴN, ĐIỀU CHỈNH KHI CÓ QUẢN LÝ PHÒNG CHIẾU
+            int mp = int.Parse(Helper.SubStringBetween(tenphim.SelectedItem.ToString(), " (ID: ", ")"));
+            cmd.Parameters.Add("@MovieID", SqlDbType.Int).Value = mp;
             try
             {
+                conn.Open();
                 cmd.ExecuteNonQuery();
+                conn.Close();
                 LoadData();
                 Updatea();
             }
@@ -318,7 +316,8 @@ namespace Qlyrapchieuphim
                         throw;
                 }
             }
-            //add table for logging seats
+            //add table for logging seats -- XOÁ PHẦN NÀY KHI ĐÃ CÓ QUẢN LÝ PHÒNG CHIẾU
+
             SqlQuery = "CREATE TABLE S_";
             SqlQuery += id.Trim();
             SqlQuery += " (" +
@@ -332,6 +331,7 @@ namespace Qlyrapchieuphim
             SqlQuery += " " +
                         "(SeatName); ";
             cmd = new SqlCommand(SqlQuery, conn);
+            conn.Open();
             cmd.ExecuteNonQuery();
             for (char c = 'A'; c <= 'J'; c++)
             {
@@ -352,13 +352,14 @@ namespace Qlyrapchieuphim
         void Updatea()
         {
             idTextBox.Clear();
-            idTextBox.Enabled = true;
+            //idTextBox.Enabled = true;
             if (CheckMovie())
                 tenphim.SelectedIndex = 0;
             phongchieu.SelectedIndex = 0;
             ngaychieu.Value = DateTime.Now;
             giochieu.Value = DateTime.Now + TimeSpan.FromHours(1);
             dataGridView1.ClearSelection();
+            this.Refresh();
         }
 
         private void xoa_Click(object sender, EventArgs e)
@@ -371,17 +372,17 @@ namespace Qlyrapchieuphim
                 if (result == DialogResult.Yes)
                 {
 
-                    SqlConnection conn = new SqlConnection(ConnString);
                     DataTable dt = dataGridView1.DataSource as DataTable;
                     conn.Open();
                     foreach (DataGridViewRow dr in dataGridView1.SelectedRows)
                     {
                         int selected = dr.Index;
-                        string temp_id = dt.Rows[selected]["MASUATCHIEU"].ToString();
-                        string SqlQuery = "DELETE FROM SUATCHIEU WHERE MASUATCHIEU = @tempid";
+                        string temp_id = dt.Rows[selected]["ShowtimeID"].ToString();
+                        string SqlQuery = "DELETE FROM Showtimes WHERE ShowtimeID = @tempid";
                         SqlCommand cmd = new SqlCommand(SqlQuery, conn);
-                        cmd.Parameters.Add("@tempid", SqlDbType.Char).Value = temp_id;
+                        cmd.Parameters.Add("@tempid", SqlDbType.Int).Value = temp_id;
                         cmd.ExecuteNonQuery();
+
 
                         //delete seatlog from database
                         SqlQuery = "DROP TABLE S_" + temp_id.Trim();
@@ -401,17 +402,19 @@ namespace Qlyrapchieuphim
         private void PrintToTextBoxes(int row)
         {
             DataTable dt = dataGridView1.DataSource as DataTable;
-            idTextBox.Text = dt.Rows[row]["MASUATCHIEU"].ToString();
+            idTextBox.Text = dt.Rows[row]["ShowtimeID"].ToString();
             idTextBox.Enabled = false;
-            DateTime date = (DateTime)dt.Rows[row]["NGAYCHIEU"];
-            ngaychieu.Value = date;
-            TimeSpan time = (TimeSpan)dt.Rows[row]["THOIGIANBATDAU"];
+            DateTime date = (DateTime)dt.Rows[row]["StartTime"];
+            ngaychieu.Value = date.Date;
+            TimeSpan time = date.TimeOfDay;
             giochieu.Value = new DateTime(time.Ticks + date.Ticks);
-            tenphim.SelectedItem = dt.Rows[row]["TENPHIM"] + " (ID: " + dt.Rows[row]["MAPHIM"] + ")";
-            phongchieu.SelectedItem = dt.Rows[row]["MAPHONG"];
+            tenphim.SelectedItem = dt.Rows[row]["Title"] + " (ID: " + dt.Rows[row]["MovieID"] + ")";
+            phongchieu.SelectedItem = dt.Rows[row]["RoomID"];
         }
         private void Qlysuatchieu_Load(object sender, EventArgs e)
         {
+            conn = Helper.getdbConnection();
+            conn = Helper.CheckDbConnection(conn);
             dataGridView1.RowTemplate.Height = 45;
             dataGridView1.AutoSize = false;
             
@@ -479,7 +482,7 @@ namespace Qlyrapchieuphim
                     if (!row.IsNewRow)
                     {
                         int index = row.Index;
-                        if (DateTime.TryParse(dt.Rows[index]["NGAYCHIEU"].ToString(), out DateTime dateFromRow))
+                        if (DateTime.TryParse(dt.Rows[index]["StartTime"].ToString(), out DateTime dateFromRow))
                         {
                             // Do something with dateFromRow
                         }
@@ -526,7 +529,7 @@ namespace Qlyrapchieuphim
                     if (!row.IsNewRow)
                     {
                         int index = row.Index;
-                        if (DateTime.TryParse(dt.Rows[index]["NGAYCHIEU"].ToString(), out DateTime dateFromRow))
+                        if (DateTime.TryParse(dt.Rows[index]["StartTime"].ToString(), out DateTime dateFromRow))
                         {
                             // Do something with dateFromRow
                         }
@@ -574,18 +577,18 @@ namespace Qlyrapchieuphim
 
         private void dataGridView1_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
         {
-            var grid = sender as DataGridView;
-            var rowIdx = (e.RowIndex + 1).ToString();
+            //var grid = sender as DataGridView;
+            //var rowIdx = (e.RowIndex + 1).ToString();
 
-            var centerFormat = new StringFormat()
-            {
-                // right alignment might actually make more sense for numbers
-                Alignment = StringAlignment.Center,
-                LineAlignment = StringAlignment.Center
-            };
+            //var centerFormat = new StringFormat()
+            //{
+            //    // right alignment might actually make more sense for numbers
+            //    Alignment = StringAlignment.Center,
+            //    LineAlignment = StringAlignment.Center
+            //};
 
-            var headerBounds = new Rectangle(e.RowBounds.Left, e.RowBounds.Top, grid.RowHeadersWidth, e.RowBounds.Height);
-            e.Graphics.DrawString(rowIdx, this.Font, SystemBrushes.ControlText, headerBounds, centerFormat);
+            //var headerBounds = new Rectangle(e.RowBounds.Left, e.RowBounds.Top, grid.RowHeadersWidth, e.RowBounds.Height);
+            //e.Graphics.DrawString(rowIdx, this.Font, SystemBrushes.ControlText, headerBounds, centerFormat);
         }
 
         private void cancelButton_Click(object sender, EventArgs e)

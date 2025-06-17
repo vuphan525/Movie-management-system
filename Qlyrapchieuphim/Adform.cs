@@ -60,7 +60,6 @@ namespace Qlyrapchieuphim
             doanhthu1.Hide();
             voucher1.Hide();
             suco1.Hide();
-            bangdieukhien1.ConnString = ConfigurationManager.ConnectionStrings["ConnString"].ConnectionString;
             bangdieukhien1.Show();
         }
 
@@ -151,7 +150,6 @@ namespace Qlyrapchieuphim
             doanhthu1.Hide();
             voucher1.Hide();
             suco1.Hide();
-            bangdieukhien1.ConnString = ConfigurationManager.ConnectionStrings["ConnString"].ConnectionString;
             bangdieukhien1.Show();
         }
 

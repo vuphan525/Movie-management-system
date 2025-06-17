@@ -14,7 +14,7 @@ namespace Qlyrapchieuphim
 {
     public partial class Banve : UserControl
     {
-        string ConnString = Program.ConnString;
+        SqlConnection conn = null;
         public Banve()
         {
             InitializeComponent();
@@ -26,9 +26,8 @@ namespace Qlyrapchieuphim
         private bool CheckMovie()
         {
             int count;
-            SqlConnection conn = new SqlConnection(ConnString);
             conn.Open();
-            string SqlQuery = "SELECT COUNT(*) FROM BOPHIM";
+            string SqlQuery = "SELECT COUNT(*) FROM Movies WHERE Status = N'Đang chiếu'";
             SqlCommand countCmd = new SqlCommand(SqlQuery, conn);
             count = (int)countCmd.ExecuteScalar();
 
@@ -36,7 +35,7 @@ namespace Qlyrapchieuphim
             {
                 tenphim.Enabled = true;
                 errorProvider1.Clear();
-                SqlQuery = "SELECT MAPHIM, TENPHIM FROM BOPHIM";
+                SqlQuery = "SELECT MovieID, Title FROM Movies WHERE Status = N'Đang chiếu'";
                 string[] movies = new string[count];
                 SqlCommand cmd = new SqlCommand(SqlQuery, conn);
                 SqlDataReader reader = cmd.ExecuteReader();
@@ -61,15 +60,13 @@ namespace Qlyrapchieuphim
         }
         private void LoadData()
         {
-            SqlConnection conn = new SqlConnection(ConnString);
             conn.Open();
-            string SqlQuery = "SELECT MASUATCHIEU, THOIGIANBATDAU, NGAYCHIEU, MAPHONG, sc.MAPHIM, TENPHIM " +
-                "FROM SUATCHIEU sc , BOPHIM p " +
-                "WHERE (sc.MAPHIM = p.MAPHIM)";
+            string SqlQuery = "SELECT ShowtimeID, StartTime, RoomID, st.MovieID, Title " +
+                "FROM Showtimes st JOIN Movies mv ON (st.MovieID = mv.MovieID)";
             SqlDataAdapter adapter = new SqlDataAdapter(SqlQuery, conn);
             DataSet ds = new DataSet();
-            adapter.Fill(ds, "SUATCHIEU");
-            DataTable dt = ds.Tables["SUATCHIEU"];
+            adapter.Fill(ds, "Showtimes");
+            DataTable dt = ds.Tables["Showtimes"];
             //foreach (DataGridViewRow row in dataGridView1.Rows)
             //{
             //    if (!row.IsNewRow)
@@ -143,6 +140,8 @@ namespace Qlyrapchieuphim
 
         private void Banve_Load(object sender, EventArgs e)
         {
+            conn = Helper.getdbConnection();
+            conn = Helper.CheckDbConnection(conn);
             LoadData();
             if (CheckMovie())
                 tenphim.SelectedIndex = 0;
@@ -165,7 +164,7 @@ namespace Qlyrapchieuphim
                     if (!row.IsNewRow)
                     {
                         int index = row.Index;
-                        if (!DateTime.TryParse(dt.Rows[index]["NGAYCHIEU"].ToString(), out DateTime dateFromRow))
+                        if (!DateTime.TryParse(dt.Rows[index]["StartTime"].ToString(), out DateTime dateFromRow))
                         {
                             MessageBox.Show(
                                 "Không thể đọc ngày chiếu",
@@ -213,7 +212,7 @@ namespace Qlyrapchieuphim
                     if (!row.IsNewRow)
                     {
                         int index = row.Index;
-                        if (!DateTime.TryParse(dt.Rows[index]["NGAYCHIEU"].ToString(), out DateTime dateFromRow))
+                        if (!DateTime.TryParse(dt.Rows[index]["StartTime"].ToString(), out DateTime dateFromRow))
                         {
                             MessageBox.Show(
                                 "Không thể đọc ngày chiếu",
@@ -250,7 +249,7 @@ namespace Qlyrapchieuphim
             DataTable dt = dataGridView1.DataSource as DataTable;
             if (e.RowIndex >= 0)
             {
-                formbanve bv = new formbanve(dt.Rows[e.RowIndex]["MASUATCHIEU"].ToString());
+                formbanve bv = new formbanve(dt.Rows[e.RowIndex]["ShowtimeID"].ToString());
                 bv.Show();
             }
         }

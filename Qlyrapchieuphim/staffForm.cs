@@ -20,19 +20,10 @@ namespace Qlyrapchieuphim
         {
             InitializeComponent();
         }
-        public staffForm(string mnv)
+        public staffForm(string usrid)
         {
             InitializeComponent();
-            manv = mnv;
-            SqlConnection conn = new SqlConnection(ConnString);
-            string SqlQuery = "SELECT TENNHANVIEN FROM NHANVIEN " +
-                "WHERE MANHANVIEN = @manv";
-            SqlCommand cmd = new SqlCommand(SqlQuery, conn);
-            cmd.Parameters.Add("@manv", SqlDbType.Char).Value = manv;
-            conn.Open();
-            tennv = cmd.ExecuteScalar().ToString();
-            conn.Close();
-            label3.Text = "Xin chào, " + tennv + " (" + manv + ")";
+            manv = usrid;
         }
 
         private void button10_Click(object sender, EventArgs e)
@@ -60,6 +51,23 @@ namespace Qlyrapchieuphim
         {
             banve1.Hide();
             bangdieukhien1.Show();
+        }
+
+        private void staffForm_Load(object sender, EventArgs e)
+        {
+            if (manv != null)
+            {
+                SqlConnection conn = new SqlConnection(ConnString);
+                string SqlQuery = "SELECT FullName FROM Staffs " +
+                    "WHERE UserID = @UserID";
+                SqlCommand cmd = new SqlCommand(SqlQuery, conn);
+                cmd.Parameters.Add("@UserID", SqlDbType.Char).Value = manv;
+                conn.Open();
+                tennv = cmd.ExecuteScalar().ToString();
+                if (tennv == null) return;
+                conn.Close();
+                label3.Text = "Xin chào, " + tennv + " (" + manv + ")";
+            }
         }
 
         private void guna2Button1_Click(object sender, EventArgs e)
