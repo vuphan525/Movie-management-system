@@ -42,5 +42,19 @@ namespace Qlyrapchieuphim
                 borderColor, borderWidth, ButtonBorderStyle.Solid,
                 borderColor, borderWidth, ButtonBorderStyle.Solid);
         }
+
+        private void btn_Refresh_Click(object sender, EventArgs e)
+        {
+            lbl_FormThemKH_DiemTichLuy.Clear();
+            lbl_FormThemKH_Email.Clear();
+            lbl_FormThemKH_HoTen.Clear();
+            lbl_FormThemKH_SDT.Clear();
+            lbl_FormThemKH_MaKH.Clear();
+        }
+
+        private void them_Click(object sender, EventArgs e)
+        {
+            //ToDo: Xử lý thêm thông tin khách hàng
+        }
     }
 }

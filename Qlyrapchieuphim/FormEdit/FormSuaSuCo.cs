@@ -30,6 +30,7 @@ namespace Qlyrapchieuphim.FormEdit
         {
             date_FormSuaSuCo_NgayTiepNhan.Format = DateTimePickerFormat.Custom;
             date_FormSuaSuCo_NgayTiepNhan.CustomFormat = "dd/MM/yyyy";
+            //ToDo: Load id của nhân viên đang đăng nhập vào hệ thống để cho vào lbl_FormSuaSuCo_MaNhanVien
         }
 
         private void FormThemPhim_Paint(object sender, PaintEventArgs e)
@@ -42,6 +43,21 @@ namespace Qlyrapchieuphim.FormEdit
                 borderColor, borderWidth, ButtonBorderStyle.Solid,
                 borderColor, borderWidth, ButtonBorderStyle.Solid,
                 borderColor, borderWidth, ButtonBorderStyle.Solid);
+        }
+
+        private void btn_Refresh_Click(object sender, EventArgs e)
+        {
+            lbl_FormSuaSuCo_MaSuCo.Clear();
+            lbl_FormSuaSuCo_TenSuCo.Clear();
+            cb_FormSuaSuCo_TinhTrang.SelectedIndex = -1;
+            lbl_FormSuaSuCo_HuongGiaiQuyet.Clear();
+            date_FormSuaSuCo_NgayTiepNhan.Value = DateTime.Now;
+            lbl_FormSuaSuCo_MoTa.Clear();
+        }
+
+        private void bcButton_Click(object sender, EventArgs e)
+        {
+            //ToDo: Xử lý sửa sự cố
         }
     }
 }

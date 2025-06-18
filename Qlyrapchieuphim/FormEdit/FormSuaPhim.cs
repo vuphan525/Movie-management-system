@@ -45,5 +45,29 @@ namespace Qlyrapchieuphim.FormEdit
                 borderColor, borderWidth, ButtonBorderStyle.Solid,
                 borderColor, borderWidth, ButtonBorderStyle.Solid);
         }
+
+        private void btn_Refresh_Click(object sender, EventArgs e)
+        {
+            lbl_FormSuaPhim_MovieID.Clear();
+            lbl_FormSuaPhim_TenPhim.Clear();
+            cb_FormSuaPhim_TheLoai.SelectedIndex = -1;
+            lbl_FormSuaPhim_ThoiLuong.Clear();
+            cb_FormSuaPhim_TinhTrang.SelectedIndex = -1;
+            date_FormSuaPhim_NgayNhap.Value = DateTime.Now;
+            date_FormSuaPhim_NgayPhatHanh.Value = DateTime.Now;
+            lbl_FormSuaPhim_NhaPhatHanh.Clear();
+            lbl_FormSuaPhim_MoTa.Clear();
+            pictureBox_FormSuaPhim_Poster.Image = null; // Assuming guna2PictureBox1 is the picture box for the poster
+        }
+
+        private void AddButton_Click(object sender, EventArgs e)
+        {
+            //ToDo: Xử lý sửa phim
+        }
+
+        private void btn_FormSuaPhim_ThemPoster_Click(object sender, EventArgs e)
+        {
+            //ToDo: Xử lý thêm poster
+        }
     }
 }

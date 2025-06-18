@@ -42,5 +42,18 @@ namespace Qlyrapchieuphim.FormEdit
                 borderColor, borderWidth, ButtonBorderStyle.Solid,
                 borderColor, borderWidth, ButtonBorderStyle.Solid);
         }
+
+        private void btn_Refresh_Click(object sender, EventArgs e)
+        {
+            lbl_FormSuaPhongChieu_MaPhong.Clear();
+            lbl_FormSuaPhongChieu_TenPhong.Clear();
+            lbl_FormSuaPhongChieu_SoGhe.Clear();
+            cb_FormSuaPhongChieu_DinhDang.SelectedIndex = -1;
+        }
+
+        private void them_Click(object sender, EventArgs e)
+        {
+            //ToDo: Xử lý sửa phòng chiếu
+        }
     }
 }

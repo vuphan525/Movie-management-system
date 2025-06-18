@@ -41,6 +41,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.lbl_FormSuaKH_MaKH = new Guna.UI2.WinForms.Guna2TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.btn_Refresh = new Guna.UI2.WinForms.Guna2Button();
             this.SuspendLayout();
             // 
             // them
@@ -59,6 +60,7 @@
             this.them.Size = new System.Drawing.Size(175, 44);
             this.them.TabIndex = 104;
             this.them.Text = "Cập nhật";
+            this.them.Click += new System.EventHandler(this.them_Click);
             // 
             // label1
             // 
@@ -261,12 +263,31 @@
             this.label3.TabIndex = 105;
             this.label3.Text = "Mã KH:";
             // 
+            // btn_Refresh
+            // 
+            this.btn_Refresh.BorderRadius = 10;
+            this.btn_Refresh.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_Refresh.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_Refresh.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_Refresh.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_Refresh.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(61)))), ((int)(((byte)(204)))));
+            this.btn_Refresh.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Refresh.ForeColor = System.Drawing.Color.White;
+            this.btn_Refresh.Location = new System.Drawing.Point(16, 506);
+            this.btn_Refresh.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_Refresh.Name = "btn_Refresh";
+            this.btn_Refresh.Size = new System.Drawing.Size(175, 44);
+            this.btn_Refresh.TabIndex = 115;
+            this.btn_Refresh.Text = "Làm mới";
+            this.btn_Refresh.Click += new System.EventHandler(this.btn_Refresh_Click);
+            // 
             // FormSuaKhachHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(455, 565);
+            this.Controls.Add(this.btn_Refresh);
             this.Controls.Add(this.lbl_FormSuaKH_Email);
             this.Controls.Add(this.lbl_FormSuaKH_DiemTichLuy);
             this.Controls.Add(this.label7);
@@ -306,5 +327,6 @@
         private System.Windows.Forms.Label label4;
         private Guna.UI2.WinForms.Guna2TextBox lbl_FormSuaKH_MaKH;
         private System.Windows.Forms.Label label3;
+        private Guna.UI2.WinForms.Guna2Button btn_Refresh;
     }
 }

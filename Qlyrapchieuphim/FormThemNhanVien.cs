@@ -43,5 +43,22 @@ namespace Qlyrapchieuphim
                 borderColor, borderWidth, ButtonBorderStyle.Solid,
                 borderColor, borderWidth, ButtonBorderStyle.Solid);
         }
+
+        private void btn_Refresh_Click(object sender, EventArgs e)
+        {
+            lbl_FormThemNV_Email.Clear();
+            lbl_FormThemNV_HoTen.Clear();
+            lbl_FormThemNV_SDT.Clear();
+            date_FormThemNV_NgaySinh.Value = DateTime.Now;
+            lbl_FormThemNV_MaNV.Clear();
+            cb_FormThemNV_ChucVu.SelectedIndex = -1;
+            lbl_FormThemNV_Username.Clear();
+            lbl_FormThemNV_Password.Clear();
+        }
+
+        private void them_Click(object sender, EventArgs e)
+        {
+            //Todo: Xử lý thêm nhân viên vào database
+        }
     }
 }

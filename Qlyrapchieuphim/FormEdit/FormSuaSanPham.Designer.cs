@@ -50,6 +50,7 @@
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.poster = new System.Windows.Forms.Label();
             this.date_FormSuaSanPham_NgayNhap = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.btn_Refresh = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_FormSuaSanPham_Poster)).BeginInit();
             this.SuspendLayout();
             // 
@@ -208,6 +209,7 @@
             this.btn_FormSuaSanPham_ThemPoster.Size = new System.Drawing.Size(150, 42);
             this.btn_FormSuaSanPham_ThemPoster.TabIndex = 112;
             this.btn_FormSuaSanPham_ThemPoster.Text = "Thêm ảnh";
+            this.btn_FormSuaSanPham_ThemPoster.Click += new System.EventHandler(this.btn_FormSuaSanPham_ThemPoster_Click);
             // 
             // masp
             // 
@@ -286,7 +288,7 @@
             this.btn_FormSuaSanPham_CapNhat.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(61)))), ((int)(((byte)(204)))));
             this.btn_FormSuaSanPham_CapNhat.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_FormSuaSanPham_CapNhat.ForeColor = System.Drawing.Color.White;
-            this.btn_FormSuaSanPham_CapNhat.Location = new System.Drawing.Point(219, 598);
+            this.btn_FormSuaSanPham_CapNhat.Location = new System.Drawing.Point(420, 600);
             this.btn_FormSuaSanPham_CapNhat.Margin = new System.Windows.Forms.Padding(4);
             this.btn_FormSuaSanPham_CapNhat.Name = "btn_FormSuaSanPham_CapNhat";
             this.btn_FormSuaSanPham_CapNhat.Size = new System.Drawing.Size(179, 44);
@@ -404,12 +406,31 @@
             this.date_FormSuaSanPham_NgayNhap.TabIndex = 121;
             this.date_FormSuaSanPham_NgayNhap.Value = new System.DateTime(2024, 11, 29, 16, 51, 14, 647);
             // 
+            // btn_Refresh
+            // 
+            this.btn_Refresh.BorderRadius = 10;
+            this.btn_Refresh.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_Refresh.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_Refresh.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_Refresh.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_Refresh.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(61)))), ((int)(((byte)(204)))));
+            this.btn_Refresh.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Refresh.ForeColor = System.Drawing.Color.White;
+            this.btn_Refresh.Location = new System.Drawing.Point(199, 600);
+            this.btn_Refresh.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_Refresh.Name = "btn_Refresh";
+            this.btn_Refresh.Size = new System.Drawing.Size(179, 44);
+            this.btn_Refresh.TabIndex = 122;
+            this.btn_Refresh.Text = "Làm mới";
+            this.btn_Refresh.Click += new System.EventHandler(this.btn_Refresh_Click);
+            // 
             // FormSuaSanPham
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(615, 657);
+            this.Controls.Add(this.btn_Refresh);
             this.Controls.Add(this.date_FormSuaSanPham_NgayNhap);
             this.Controls.Add(this.poster);
             this.Controls.Add(this.lbl_FormSuaSanPham_MoTa);
@@ -469,5 +490,6 @@
         private Guna.UI2.WinForms.Guna2TextBox lbl_FormSuaSanPham_TenSP;
         private System.Windows.Forms.Label poster;
         private Guna.UI2.WinForms.Guna2DateTimePicker date_FormSuaSanPham_NgayNhap;
+        private Guna.UI2.WinForms.Guna2Button btn_Refresh;
     }
 }

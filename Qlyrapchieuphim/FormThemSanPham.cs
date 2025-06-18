@@ -43,5 +43,28 @@ namespace Qlyrapchieuphim
                 borderColor, borderWidth, ButtonBorderStyle.Solid,
                 borderColor, borderWidth, ButtonBorderStyle.Solid);
         }
+
+        private void btn_Refresh_Click(object sender, EventArgs e)
+        {
+            lbl_ThemSanPham_MaSP.Clear();
+            lbl_ThemSanPham_TenSP.Clear();
+            cb_ThemSanPham_LoaiSP.SelectedIndex = -1;
+            lbl_ThemSanPham_GiaTien.Clear();
+            lbl_ThemSanPham_SoLuong.Clear();
+            lbl_ThemSanPham_NhaCungCap.Clear();
+            date_ThemSanPham_NgayNhap.Value = DateTime.Now;
+            lbl_ThemSanPham_MoTa.Clear();
+            pictureBox_ThemSanPham_Poster.Image = null;
+        }
+
+        private void them_Click(object sender, EventArgs e)
+        {
+            //ToDo: Xử lý thêm sản phẩm
+        }
+
+        private void btn_ThemSanPham_Poster_Click(object sender, EventArgs e)
+        {
+            //ToDo: Xử lý chọn hình ảnh cho sản phẩm
+        }
     }
 }
