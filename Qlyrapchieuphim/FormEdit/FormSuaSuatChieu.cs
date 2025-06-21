@@ -59,9 +59,22 @@ namespace Qlyrapchieuphim.FormEdit
 
         }
 
+
         private void cb_FormSuaSuatChieu_PhongChieu_SelectedIndexChanged(object sender, EventArgs e)
         {
+        }
+        private void btn_Refresh_Click(object sender, EventArgs e)
+        {
+            lbl_FormSuaSuatChieu_MaSuatChieu.Clear();
+            cb_FormSuaSuatChieu_PhongChieu.SelectedIndex = -1;
+            cb_FormSuaSuatChieu_TenPhim.SelectedIndex = -1;
+            date_FormSuaSuatChieu_NgayChieu.Value = DateTime.Now;
+            date_FormSuaSuatChieu_GioChieu.Value = DateTime.Now;
+        }
 
+        private void them_Click(object sender, EventArgs e)
+        {
+            //ToDo: Xử lý sửa suất chiếu vào CSDL
         }
     }
 }

@@ -53,6 +53,7 @@ namespace Qlyrapchieuphim.FormEdit
                 borderColor, borderWidth, ButtonBorderStyle.Solid,
                 borderColor, borderWidth, ButtonBorderStyle.Solid);
         }
+
         private void LoadDataById()
         {
             conn = Helper.getdbConnection();
@@ -99,8 +100,23 @@ namespace Qlyrapchieuphim.FormEdit
             return phone.All(char.IsDigit);
         }
 
+
+        private void btn_Refresh_Click(object sender, EventArgs e)
+        {
+            lbl_FormSuaNV_Email.Clear();
+            lbl_FormSuaNV_HoTen.Clear();
+            lbl_FormSuaNV_SDT.Clear();
+            date_FormSuaNV_NgaySinh.Value = DateTime.Now;
+            lbl_FormSuaNV_MaNV.Clear();
+            cb_FormSuaNV_ChucVu.SelectedIndex = -1;
+            lbl_FormSuaNV_Username.Clear();
+            lbl_FormSuaNV_Password.Clear();
+
+        }
+
         private void them_Click(object sender, EventArgs e)
         {
+
            
             if (
                    string.IsNullOrWhiteSpace(lbl_FormSuaNV_HoTen.Text) ||
@@ -237,6 +253,14 @@ namespace Qlyrapchieuphim.FormEdit
                         throw;
                 }
             }
+
+            //ToDo: Xử lý sửa nhân viên trong database
+
+        }
+
+        private void FormSuaNhanVien_Load_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

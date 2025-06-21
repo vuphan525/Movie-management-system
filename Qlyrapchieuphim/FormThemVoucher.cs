@@ -48,5 +48,50 @@ namespace Qlyrapchieuphim
         {
 
         }
+
+        private void btn_Refresh_Click(object sender, EventArgs e)
+        {
+            lbl_FormThemVoucher_MaPhatHanh.Clear();
+            lbl_FormThemVoucher_DiscountAmount.Clear();
+            lbl_FormThemVoucher_DiscountPercent.Clear();
+            date_FormThemVoucher_NgayHetHan.Value = DateTime.Now;
+            lbl_FormThemVoucher_SoLuong.Clear();
+            lbl_FormThemVoucher_HoaDonToiThieu.Clear();
+            cb_FormThemVoucher_TrangThai.SelectedIndex = -1;
+            lbl_FormThemVoucher_MoTa.Clear();
+        }
+
+        private void them_Click(object sender, EventArgs e)
+        {
+            //ToDo: Xử lý thêm voucher
+        }
+
+        private void lbl_FormThemVoucher_DiscountPercent_TextChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(lbl_FormThemVoucher_DiscountPercent.Text))
+            {
+                lbl_FormThemVoucher_DiscountAmount.ReadOnly = true;
+                lbl_FormThemVoucher_DiscountAmount.Enabled = false;
+            }
+            else
+            {
+                lbl_FormThemVoucher_DiscountAmount.ReadOnly = false;
+                lbl_FormThemVoucher_DiscountAmount.Enabled = true;
+            }
+        }
+
+        private void lbl_FormThemVoucher_DiscountAmount_TextChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(lbl_FormThemVoucher_DiscountAmount.Text))
+            {
+                lbl_FormThemVoucher_DiscountPercent.ReadOnly = true;
+                lbl_FormThemVoucher_DiscountPercent.Enabled = false;
+            }
+            else
+            {
+                lbl_FormThemVoucher_DiscountPercent.ReadOnly = false;
+                lbl_FormThemVoucher_DiscountPercent.Enabled = true;
+            }
+        }
     }
 }

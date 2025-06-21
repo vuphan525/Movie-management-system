@@ -230,6 +230,7 @@ namespace Qlyrapchieuphim
                     string customerId = dt.Rows[e.RowIndex]["CustomerID"].ToString();
                     using (FormSuaKhachHang popup = new FormSuaKhachHang(customerId))
                     {
+                        //Todo: Lấy dữ liệu từ hàng này trong datagridview để truyền qua formSửa
                         popup.StartPosition = FormStartPosition.CenterParent;
                         if (popup.ShowDialog(FindForm()) == DialogResult.OK)
                         {

@@ -436,7 +436,11 @@ namespace Qlyrapchieuphim
                     using (FormSuaNhanVien popup = new FormSuaNhanVien(Id))
                     {
 
+
                         
+
+
+                        //Todo: Lấy dữ liệu từ hàng này trong datagridview để truyền qua formSửa
 
                         popup.StartPosition = FormStartPosition.CenterParent;
                         ;

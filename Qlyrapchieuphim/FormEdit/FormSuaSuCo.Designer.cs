@@ -45,6 +45,7 @@
             this.cb_FormSuaSuCo_TinhTrang = new Guna.UI2.WinForms.Guna2ComboBox();
             this.lbl_FormSuaSuCo_TenSuCo = new Guna.UI2.WinForms.Guna2TextBox();
             this.lbl_FormSuaSuCo_MaSuCo = new Guna.UI2.WinForms.Guna2TextBox();
+            this.btn_Refresh = new Guna.UI2.WinForms.Guna2Button();
             this.SuspendLayout();
             // 
             // label2
@@ -68,12 +69,13 @@
             this.bcButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(61)))), ((int)(((byte)(204)))));
             this.bcButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bcButton.ForeColor = System.Drawing.Color.White;
-            this.bcButton.Location = new System.Drawing.Point(260, 540);
+            this.bcButton.Location = new System.Drawing.Point(507, 531);
             this.bcButton.Margin = new System.Windows.Forms.Padding(4);
             this.bcButton.Name = "bcButton";
             this.bcButton.Size = new System.Drawing.Size(183, 44);
             this.bcButton.TabIndex = 91;
             this.bcButton.Text = "Cập nhật";
+            this.bcButton.Click += new System.EventHandler(this.bcButton_Click);
             // 
             // guna2Button2
             // 
@@ -137,6 +139,7 @@
             this.lbl_FormSuaSuCo_MaNhanVien.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.lbl_FormSuaSuCo_MaNhanVien.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.lbl_FormSuaSuCo_MaNhanVien.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.lbl_FormSuaSuCo_MaNhanVien.Enabled = false;
             this.lbl_FormSuaSuCo_MaNhanVien.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.lbl_FormSuaSuCo_MaNhanVien.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.lbl_FormSuaSuCo_MaNhanVien.ForeColor = System.Drawing.Color.Black;
@@ -146,6 +149,7 @@
             this.lbl_FormSuaSuCo_MaNhanVien.Name = "lbl_FormSuaSuCo_MaNhanVien";
             this.lbl_FormSuaSuCo_MaNhanVien.PasswordChar = '\0';
             this.lbl_FormSuaSuCo_MaNhanVien.PlaceholderText = "";
+            this.lbl_FormSuaSuCo_MaNhanVien.ReadOnly = true;
             this.lbl_FormSuaSuCo_MaNhanVien.SelectedText = "";
             this.lbl_FormSuaSuCo_MaNhanVien.Size = new System.Drawing.Size(299, 42);
             this.lbl_FormSuaSuCo_MaNhanVien.TabIndex = 111;
@@ -326,12 +330,31 @@
             this.lbl_FormSuaSuCo_MaSuCo.Size = new System.Drawing.Size(299, 42);
             this.lbl_FormSuaSuCo_MaSuCo.TabIndex = 115;
             // 
+            // btn_Refresh
+            // 
+            this.btn_Refresh.BorderRadius = 10;
+            this.btn_Refresh.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_Refresh.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_Refresh.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_Refresh.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_Refresh.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(61)))), ((int)(((byte)(204)))));
+            this.btn_Refresh.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Refresh.ForeColor = System.Drawing.Color.White;
+            this.btn_Refresh.Location = new System.Drawing.Point(272, 531);
+            this.btn_Refresh.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_Refresh.Name = "btn_Refresh";
+            this.btn_Refresh.Size = new System.Drawing.Size(183, 44);
+            this.btn_Refresh.TabIndex = 116;
+            this.btn_Refresh.Text = "Làm mới";
+            this.btn_Refresh.Click += new System.EventHandler(this.btn_Refresh_Click);
+            // 
             // FormSuaSuCo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(709, 599);
+            this.Controls.Add(this.btn_Refresh);
             this.Controls.Add(this.lbl_FormSuaSuCo_MaSuCo);
             this.Controls.Add(this.lbl_FormSuaSuCo_HuongGiaiQuyet);
             this.Controls.Add(this.label1);
@@ -380,5 +403,6 @@
         private Guna.UI2.WinForms.Guna2ComboBox cb_FormSuaSuCo_TinhTrang;
         private Guna.UI2.WinForms.Guna2TextBox lbl_FormSuaSuCo_TenSuCo;
         private Guna.UI2.WinForms.Guna2TextBox lbl_FormSuaSuCo_MaSuCo;
+        private Guna.UI2.WinForms.Guna2Button btn_Refresh;
     }
 }

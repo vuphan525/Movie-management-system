@@ -47,6 +47,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.btn_Refresh = new Guna.UI2.WinForms.Guna2Button();
             this.SuspendLayout();
             // 
             // them
@@ -59,12 +60,13 @@
             this.them.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(61)))), ((int)(((byte)(204)))));
             this.them.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.them.ForeColor = System.Drawing.Color.White;
-            this.them.Location = new System.Drawing.Point(282, 523);
+            this.them.Location = new System.Drawing.Point(538, 528);
             this.them.Margin = new System.Windows.Forms.Padding(4);
             this.them.Name = "them";
-            this.them.Size = new System.Drawing.Size(149, 44);
+            this.them.Size = new System.Drawing.Size(168, 44);
             this.them.TabIndex = 62;
             this.them.Text = "Thêm";
+            this.them.Click += new System.EventHandler(this.them_Click);
             // 
             // label2
             // 
@@ -151,6 +153,7 @@
             this.lbl_FormThemVoucher_DiscountPercent.SelectedText = "";
             this.lbl_FormThemVoucher_DiscountPercent.Size = new System.Drawing.Size(328, 41);
             this.lbl_FormThemVoucher_DiscountPercent.TabIndex = 135;
+            this.lbl_FormThemVoucher_DiscountPercent.TextChanged += new System.EventHandler(this.lbl_FormThemVoucher_DiscountPercent_TextChanged);
             // 
             // label10
             // 
@@ -302,6 +305,7 @@
             this.lbl_FormThemVoucher_DiscountAmount.SelectedText = "";
             this.lbl_FormThemVoucher_DiscountAmount.Size = new System.Drawing.Size(328, 41);
             this.lbl_FormThemVoucher_DiscountAmount.TabIndex = 126;
+            this.lbl_FormThemVoucher_DiscountAmount.TextChanged += new System.EventHandler(this.lbl_FormThemVoucher_DiscountAmount_TextChanged);
             // 
             // lbl_FormThemVoucher_MaPhatHanh
             // 
@@ -361,12 +365,31 @@
             this.label7.TabIndex = 122;
             this.label7.Text = "Mã phát hành:";
             // 
+            // btn_Refresh
+            // 
+            this.btn_Refresh.BorderRadius = 10;
+            this.btn_Refresh.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_Refresh.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_Refresh.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_Refresh.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_Refresh.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(61)))), ((int)(((byte)(204)))));
+            this.btn_Refresh.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Refresh.ForeColor = System.Drawing.Color.White;
+            this.btn_Refresh.Location = new System.Drawing.Point(339, 528);
+            this.btn_Refresh.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_Refresh.Name = "btn_Refresh";
+            this.btn_Refresh.Size = new System.Drawing.Size(168, 44);
+            this.btn_Refresh.TabIndex = 138;
+            this.btn_Refresh.Text = "Làm mới";
+            this.btn_Refresh.Click += new System.EventHandler(this.btn_Refresh_Click);
+            // 
             // FormThemVoucher
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(723, 585);
+            this.Controls.Add(this.btn_Refresh);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.lbl_FormThemVoucher_MoTa);
             this.Controls.Add(this.lbl_FormThemVoucher_DiscountPercent);
@@ -417,5 +440,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label7;
+        private Guna.UI2.WinForms.Guna2Button btn_Refresh;
     }
 }

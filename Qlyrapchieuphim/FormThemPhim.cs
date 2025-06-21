@@ -45,6 +45,7 @@ namespace Qlyrapchieuphim
 
         private void AddButton_Click(object sender, EventArgs e)
         {
+
             if (/*string.IsNullOrWhiteSpace(idphim.Text) ||*/
                string.IsNullOrWhiteSpace(lbl_FormThemPhim_TenPhim.Text) ||
                string.IsNullOrWhiteSpace(lbl_FormThemPhim_NhaPhatHanh.Text) ||
@@ -127,10 +128,14 @@ namespace Qlyrapchieuphim
             conn.Close();
             this.DialogResult = DialogResult.OK;
             this.Close();
+
+            //ToDo: Xử lý thêm phim 
+
         }
 
         private void AddPosterButton_Click(object sender, EventArgs e)
         {
+
             try
             {
                 // Tạo hộp thoại chọn file
@@ -158,6 +163,7 @@ namespace Qlyrapchieuphim
             {
                 MessageBox.Show($"Có lỗi xảy ra: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
         }
         private void SaveImage(int identity)
         {
@@ -230,6 +236,7 @@ namespace Qlyrapchieuphim
 
         }
 
+
         private void lbl_FormThemPhim_MoTa_TextChanged(object sender, EventArgs e)
         {
 
@@ -247,6 +254,21 @@ namespace Qlyrapchieuphim
 
         private void date_FormThemPhim_NgayNhap_ValueChanged(object sender, EventArgs e)
         {
+        }
+
+
+        private void btn_Refresh_Click(object sender, EventArgs e)
+        {
+            lbl_FormThemPhim_MovieID.Clear();
+            lbl_FormThemPhim_TenPhim.Clear();
+            cb_FormThemPhim_TheLoai.SelectedIndex = -1;
+            lbl_FormThemPhim_ThoiLuong.Clear();
+            cb_FormThemPhim_TinhTrang.SelectedIndex = -1;
+            date_FormThemPhim_NgayNhap.Value = DateTime.Now;
+            date_FormThemPhim_NgayPhatHanh.Value = DateTime.Now;
+            lbl_FormThemPhim_NhaPhatHanh.Clear();
+            lbl_FormThemPhim_MoTa.Clear();
+            pictureBox_FormThemPhim_Poster.Image = null; // Assuming guna2PictureBox1 is the picture box for the poster
 
         }
     }

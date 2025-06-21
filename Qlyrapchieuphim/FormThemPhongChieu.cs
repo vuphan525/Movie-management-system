@@ -43,9 +43,16 @@ namespace Qlyrapchieuphim
                 borderColor, borderWidth, ButtonBorderStyle.Solid);
         }
 
-        private void them_Click(object sender, EventArgs e)
-        {
 
+      
+        private void btn_Refresh_Click(object sender, EventArgs e)
+        {
+            lbl_FormThemPhongChieu_MaPhong.Clear();
+            lbl_FormThemPhongChieu_TenPhong.Clear();
+            lbl_FormThemPhongChieu_SoGhe.Clear();
+            cb_FormThemPhongChieu_DinhDang.SelectedIndex = -1;
         }
+
+        
     }
 }

@@ -42,5 +42,19 @@ namespace Qlyrapchieuphim
                 borderColor, borderWidth, ButtonBorderStyle.Solid,
                 borderColor, borderWidth, ButtonBorderStyle.Solid);
         }
+
+        private void btn_Refresh_Click(object sender, EventArgs e)
+        {
+            lbl_FormThemSuatChieu_MaSuatChieu.Clear();
+            cb_FormThemSuatChieu_PhongChieu.SelectedIndex = -1;
+            cb_FormThemSuatChieu_TenPhim.SelectedIndex = -1;
+            date_FormThemSuatChieu_NgayChieu.Value = DateTime.Now;
+            date_FormThemSuatChieu_GioChieu.Value = DateTime.Now;
+        }
+
+        private void them_Click(object sender, EventArgs e)
+        {
+            //ToDo: Xử lý thêm suất chiếu vào CSDL
+        }
     }
 }

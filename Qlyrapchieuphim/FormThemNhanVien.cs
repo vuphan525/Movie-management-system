@@ -45,6 +45,7 @@ namespace Qlyrapchieuphim
                 borderColor, borderWidth, ButtonBorderStyle.Solid);
         }
 
+
         private void them_Click(object sender, EventArgs e)
         {
             if (//string.IsNullOrWhiteSpace(manv.Text) ||
@@ -137,7 +138,7 @@ namespace Qlyrapchieuphim
             cmd.Parameters.Add("@FullName", SqlDbType.NVarChar).Value = lbl_FormThemNV_HoTen.Text;
             cmd.Parameters.Add("@Phone", SqlDbType.VarChar).Value = lbl_FormThemNV_SDT.Text;
             cmd.Parameters.Add("@UserID", SqlDbType.Int).Value = usrID;
-            cmd.Parameters.Add("@DateOfBirth", SqlDbType.Date).Value =date_FormThemNV_NgaySinh.Value.Date;
+            cmd.Parameters.Add("@DateOfBirth", SqlDbType.Date).Value = date_FormThemNV_NgaySinh.Value.Date;
 
             try
             {
@@ -165,5 +166,19 @@ namespace Qlyrapchieuphim
                 }
             }
         }
+
+        private void btn_Refresh_Click(object sender, EventArgs e)
+        {
+            lbl_FormThemNV_Email.Clear();
+            lbl_FormThemNV_HoTen.Clear();
+            lbl_FormThemNV_SDT.Clear();
+            date_FormThemNV_NgaySinh.Value = DateTime.Now;
+            lbl_FormThemNV_MaNV.Clear();
+            cb_FormThemNV_ChucVu.SelectedIndex = -1;
+            lbl_FormThemNV_Username.Clear();
+            lbl_FormThemNV_Password.Clear();
+        }
+
+       
     }
 }

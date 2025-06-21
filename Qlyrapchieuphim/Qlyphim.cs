@@ -266,6 +266,7 @@ namespace Qlyrapchieuphim
                     // 👉 Click icon Edit
                     using (FormSuaPhim popup = new FormSuaPhim(movieId)) // truyền ID vào constructor
                     {
+                        //Todo: Lấy dữ liệu từ hàng này trong datagridview để truyền qua formSửa
                         popup.StartPosition = FormStartPosition.CenterParent;
                     ;
                         if (popup.ShowDialog(FindForm()) == DialogResult.OK)

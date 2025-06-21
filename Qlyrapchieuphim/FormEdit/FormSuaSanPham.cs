@@ -46,7 +46,25 @@ namespace Qlyrapchieuphim.FormEdit
 
         private void btn_FormSuaSanPham_CapNhat_Click(object sender, EventArgs e)
         {
+            lbl_FormSuaSanPham_MaSP.Clear();
+            lbl_FormSuaSanPham_TenSP.Clear();
+            cb_FormSuaSanPham_LoaiSP.SelectedIndex = -1;
+            lbl_FormSuaSanPham_GiaTien.Clear();
+            lbl_FormSuaSanPham_SoLuong.Clear();
+            lbl_FormSuaSanPham_NhaCungCap.Clear();
+            date_FormSuaSanPham_NgayNhap.Value = DateTime.Now;
+            lbl_FormSuaSanPham_MoTa.Clear();
+            pictureBox_FormSuaSanPham_Poster.Image = null;
+        }
 
+        private void btn_Refresh_Click(object sender, EventArgs e)
+        {
+            //ToDo: Xử lý cập nhật sản phẩm
+        }
+
+        private void btn_FormSuaSanPham_ThemPoster_Click(object sender, EventArgs e)
+        {
+            //ToDo: Xử lý thêm poster cho sản phẩm
         }
     }
 }

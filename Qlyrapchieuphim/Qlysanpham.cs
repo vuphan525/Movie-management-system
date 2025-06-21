@@ -261,6 +261,7 @@ namespace Qlyrapchieuphim
                     // 👉 Click icon Edit
                     using (FormSuaSanPham popup = new FormSuaSanPham())
                     {
+                        //Todo: Lấy dữ liệu từ hàng này trong datagridview để truyền qua formSửa
                         popup.StartPosition = FormStartPosition.CenterParent;
                         popup.ShowDialog(FindForm());
                     }

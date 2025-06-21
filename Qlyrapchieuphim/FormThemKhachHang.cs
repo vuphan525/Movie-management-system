@@ -43,6 +43,7 @@ namespace Qlyrapchieuphim
                 borderColor, borderWidth, ButtonBorderStyle.Solid,
                 borderColor, borderWidth, ButtonBorderStyle.Solid);
         }
+
         SqlConnection conn = null;
         private void them_Click(object sender, EventArgs e)
         {
@@ -150,5 +151,16 @@ namespace Qlyrapchieuphim
                 else throw;
             }
         }
+
+        private void btn_Refresh_Click(object sender, EventArgs e)
+        {
+            lbl_FormThemKH_DiemTichLuy.Clear();
+            lbl_FormThemKH_Email.Clear();
+            lbl_FormThemKH_HoTen.Clear();
+            lbl_FormThemKH_SDT.Clear();
+            lbl_FormThemKH_MaKH.Clear();
+        }
+
+        
     }
 }

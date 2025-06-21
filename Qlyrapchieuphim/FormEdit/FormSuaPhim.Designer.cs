@@ -52,6 +52,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.date_FormSuaPhim_NgayNhap = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.btn_Refresh = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_FormSuaPhim_Poster)).BeginInit();
             this.SuspendLayout();
             // 
@@ -76,7 +77,7 @@
             this.AddButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(61)))), ((int)(((byte)(204)))));
             this.AddButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AddButton.ForeColor = System.Drawing.Color.White;
-            this.AddButton.Location = new System.Drawing.Point(251, 782);
+            this.AddButton.Location = new System.Drawing.Point(511, 778);
             this.AddButton.Margin = new System.Windows.Forms.Padding(4);
             this.AddButton.Name = "AddButton";
             this.AddButton.Size = new System.Drawing.Size(183, 44);
@@ -438,12 +439,31 @@
             this.date_FormSuaPhim_NgayNhap.TabIndex = 130;
             this.date_FormSuaPhim_NgayNhap.Value = new System.DateTime(2024, 11, 29, 16, 51, 14, 647);
             // 
+            // btn_Refresh
+            // 
+            this.btn_Refresh.BorderRadius = 10;
+            this.btn_Refresh.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_Refresh.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_Refresh.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_Refresh.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_Refresh.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(61)))), ((int)(((byte)(204)))));
+            this.btn_Refresh.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Refresh.ForeColor = System.Drawing.Color.White;
+            this.btn_Refresh.Location = new System.Drawing.Point(285, 778);
+            this.btn_Refresh.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_Refresh.Name = "btn_Refresh";
+            this.btn_Refresh.Size = new System.Drawing.Size(183, 44);
+            this.btn_Refresh.TabIndex = 131;
+            this.btn_Refresh.Text = "Làm mới";
+            this.btn_Refresh.Click += new System.EventHandler(this.btn_Refresh_Click);
+            // 
             // FormSuaPhim
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(713, 845);
+            this.Controls.Add(this.btn_Refresh);
             this.Controls.Add(this.date_FormSuaPhim_NgayNhap);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.date_FormSuaPhim_NgayPhatHanh);
@@ -507,5 +527,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private Guna.UI2.WinForms.Guna2DateTimePicker date_FormSuaPhim_NgayNhap;
+        private Guna.UI2.WinForms.Guna2Button btn_Refresh;
     }
 }
