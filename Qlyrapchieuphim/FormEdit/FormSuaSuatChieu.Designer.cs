@@ -122,6 +122,7 @@
             this.cb_FormSuaSuatChieu_PhongChieu.Name = "cb_FormSuaSuatChieu_PhongChieu";
             this.cb_FormSuaSuatChieu_PhongChieu.Size = new System.Drawing.Size(485, 36);
             this.cb_FormSuaSuatChieu_PhongChieu.TabIndex = 93;
+            this.cb_FormSuaSuatChieu_PhongChieu.SelectedIndexChanged += new System.EventHandler(this.cb_FormSuaSuatChieu_PhongChieu_SelectedIndexChanged);
             // 
             // label5
             // 

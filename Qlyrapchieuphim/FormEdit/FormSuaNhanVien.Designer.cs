@@ -308,6 +308,7 @@
             this.them.Size = new System.Drawing.Size(180, 44);
             this.them.TabIndex = 97;
             this.them.Text = "Cập nhật";
+            this.them.Click += new System.EventHandler(this.them_Click);
             // 
             // label4
             // 

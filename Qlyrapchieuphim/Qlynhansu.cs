@@ -409,6 +409,7 @@ namespace Qlyrapchieuphim
             passTxtBox.Text = dt.Rows[row]["Password"].ToString();
             chucvu.SelectedItem = dt.Rows[row]["Role"].ToString();
         }
+    
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
@@ -429,20 +430,81 @@ namespace Qlyrapchieuphim
 
                 if (clickX >= editLeft && clickX < editLeft + iconSize)
                 {
+                    DataTable dt = dataGridView1.DataSource as DataTable;
+                    string Id = dt.Rows[e.RowIndex]["StaffID"].ToString();
                     // 👉 Click icon Edit
-                    using (FormSuaNhanVien popup = new FormSuaNhanVien())
+                    using (FormSuaNhanVien popup = new FormSuaNhanVien(Id))
                     {
+
+                        
+
                         popup.StartPosition = FormStartPosition.CenterParent;
-                        popup.ShowDialog(FindForm());
+                        ;
+                        if (popup.ShowDialog(FindForm()) == DialogResult.OK)
+                        {
+                            LoadData(); // Chỉ gọi nếu form kia trả về OK
+                        }
                     }
                 }
                 else if (clickX >= deleteLeft && clickX < deleteLeft + iconSize)
                 {
-                    // 👉 Click icon Delete
-                    MessageBox.Show("Bạn vừa click nút xóa (tạm thời chưa có hành động).", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xóa dòng này?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                    if (result == DialogResult.Yes)
+                    {
+                        try
+                        {
+                            DataTable dt = dataGridView1.DataSource as DataTable;
+                            string staffId = dt.Rows[e.RowIndex]["StaffID"].ToString();
+                            int userId = -1;
+
+                            // Lệnh 1: Lấy UserID từ bảng Staffs và xoá Staff
+                            using (SqlCommand cmd1 = new SqlCommand("DELETE FROM Staffs OUTPUT DELETED.UserID WHERE StaffID = @staffId", conn))
+                            {
+                                cmd1.Parameters.AddWithValue("@staffId", staffId);
+
+                                bool wasClosed = conn.State == ConnectionState.Closed;
+                                if (wasClosed) conn.Open();
+
+                                object resultUserId = cmd1.ExecuteScalar();
+
+                                if (wasClosed) conn.Close(); // Đóng nếu chính hàm này đã mở
+                                if (resultUserId == null)
+                                {
+                                    MessageBox.Show("Không thể xoá nhân viên. Có thể mã không tồn tại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    return;
+                                }
+
+                                userId = Convert.ToInt32(resultUserId);
+                            }
+
+                            // Lệnh 2: Xoá User theo UserID
+                            using (SqlCommand cmd2 = new SqlCommand("DELETE FROM Users WHERE UserID = @userId", conn))
+                            {
+                                cmd2.Parameters.AddWithValue("@userId", userId);
+
+                                bool wasClosed = conn.State == ConnectionState.Closed;
+                                if (wasClosed) conn.Open();
+
+                                cmd2.ExecuteNonQuery();
+
+                                if (wasClosed) conn.Close();
+                            }
+
+                            MessageBox.Show("Xóa thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            LoadData(); // Cập nhật lại danh sách
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Lỗi khi xoá: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
                 }
+
+
             }
         }
+        
 
         private void SearchTextBox_TextChanged(object sender, EventArgs e)
         {
@@ -521,7 +583,11 @@ namespace Qlyrapchieuphim
             using (FormThemNhanVien popup = new FormThemNhanVien())
             {
                 popup.StartPosition = FormStartPosition.CenterParent;
-                popup.ShowDialog(FindForm()); 
+                
+                if (popup.ShowDialog(FindForm()) == DialogResult.OK)
+                {
+                    LoadData(); // Chỉ gọi nếu form kia trả về OK
+                }
             }
         }
 

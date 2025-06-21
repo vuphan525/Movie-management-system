@@ -53,9 +53,10 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(234, 186);
+            this.label11.Location = new System.Drawing.Point(312, 229);
+            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(53, 15);
+            this.label11.Size = new System.Drawing.Size(66, 18);
             this.label11.TabIndex = 90;
             this.label11.Text = "Chức vụ:";
             // 
@@ -74,18 +75,20 @@
             this.cb_FormThemNV_ChucVu.Items.AddRange(new object[] {
             "staff",
             "admin"});
-            this.cb_FormThemNV_ChucVu.Location = new System.Drawing.Point(237, 205);
+            this.cb_FormThemNV_ChucVu.Location = new System.Drawing.Point(316, 252);
+            this.cb_FormThemNV_ChucVu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cb_FormThemNV_ChucVu.Name = "cb_FormThemNV_ChucVu";
-            this.cb_FormThemNV_ChucVu.Size = new System.Drawing.Size(203, 36);
+            this.cb_FormThemNV_ChucVu.Size = new System.Drawing.Size(269, 36);
             this.cb_FormThemNV_ChucVu.TabIndex = 89;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(12, 319);
+            this.label9.Location = new System.Drawing.Point(16, 393);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(61, 15);
+            this.label9.Size = new System.Drawing.Size(73, 18);
             this.label9.TabIndex = 88;
             this.label9.Text = "Mật khẩu:";
             // 
@@ -103,13 +106,13 @@
             this.lbl_FormThemNV_Password.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.lbl_FormThemNV_Password.ForeColor = System.Drawing.Color.Black;
             this.lbl_FormThemNV_Password.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.lbl_FormThemNV_Password.Location = new System.Drawing.Point(12, 338);
-            this.lbl_FormThemNV_Password.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.lbl_FormThemNV_Password.Location = new System.Drawing.Point(16, 416);
+            this.lbl_FormThemNV_Password.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.lbl_FormThemNV_Password.Name = "lbl_FormThemNV_Password";
             this.lbl_FormThemNV_Password.PasswordChar = '\0';
             this.lbl_FormThemNV_Password.PlaceholderText = "";
             this.lbl_FormThemNV_Password.SelectedText = "";
-            this.lbl_FormThemNV_Password.Size = new System.Drawing.Size(203, 36);
+            this.lbl_FormThemNV_Password.Size = new System.Drawing.Size(271, 44);
             this.lbl_FormThemNV_Password.TabIndex = 87;
             // 
             // lbl_FormThemNV_Username
@@ -126,22 +129,23 @@
             this.lbl_FormThemNV_Username.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.lbl_FormThemNV_Username.ForeColor = System.Drawing.Color.Black;
             this.lbl_FormThemNV_Username.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.lbl_FormThemNV_Username.Location = new System.Drawing.Point(12, 273);
-            this.lbl_FormThemNV_Username.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.lbl_FormThemNV_Username.Location = new System.Drawing.Point(16, 336);
+            this.lbl_FormThemNV_Username.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.lbl_FormThemNV_Username.Name = "lbl_FormThemNV_Username";
             this.lbl_FormThemNV_Username.PasswordChar = '\0';
             this.lbl_FormThemNV_Username.PlaceholderText = "";
             this.lbl_FormThemNV_Username.SelectedText = "";
-            this.lbl_FormThemNV_Username.Size = new System.Drawing.Size(203, 36);
+            this.lbl_FormThemNV_Username.Size = new System.Drawing.Size(271, 44);
             this.lbl_FormThemNV_Username.TabIndex = 86;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(12, 254);
+            this.label10.Location = new System.Drawing.Point(16, 313);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(93, 15);
+            this.label10.Size = new System.Drawing.Size(109, 18);
             this.label10.TabIndex = 85;
             this.label10.Text = "Tên đăng nhập:";
             // 
@@ -152,11 +156,12 @@
             this.date_FormThemNV_NgaySinh.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(248)))));
             this.date_FormThemNV_NgaySinh.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.date_FormThemNV_NgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.date_FormThemNV_NgaySinh.Location = new System.Drawing.Point(12, 202);
+            this.date_FormThemNV_NgaySinh.Location = new System.Drawing.Point(16, 249);
+            this.date_FormThemNV_NgaySinh.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.date_FormThemNV_NgaySinh.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.date_FormThemNV_NgaySinh.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.date_FormThemNV_NgaySinh.Name = "date_FormThemNV_NgaySinh";
-            this.date_FormThemNV_NgaySinh.Size = new System.Drawing.Size(203, 32);
+            this.date_FormThemNV_NgaySinh.Size = new System.Drawing.Size(271, 39);
             this.date_FormThemNV_NgaySinh.TabIndex = 84;
             this.date_FormThemNV_NgaySinh.Value = new System.DateTime(2024, 11, 29, 16, 51, 14, 647);
             // 
@@ -164,9 +169,10 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(12, 179);
+            this.label8.Location = new System.Drawing.Point(16, 220);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(64, 15);
+            this.label8.Size = new System.Drawing.Size(77, 18);
             this.label8.TabIndex = 83;
             this.label8.Text = "Ngày sinh:";
             // 
@@ -174,9 +180,10 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(235, 110);
+            this.label7.Location = new System.Drawing.Point(313, 135);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(42, 15);
+            this.label7.Size = new System.Drawing.Size(49, 18);
             this.label7.TabIndex = 82;
             this.label7.Text = "Email:";
             // 
@@ -194,22 +201,23 @@
             this.lbl_FormThemNV_Email.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.lbl_FormThemNV_Email.ForeColor = System.Drawing.Color.Black;
             this.lbl_FormThemNV_Email.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.lbl_FormThemNV_Email.Location = new System.Drawing.Point(238, 129);
-            this.lbl_FormThemNV_Email.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.lbl_FormThemNV_Email.Location = new System.Drawing.Point(317, 159);
+            this.lbl_FormThemNV_Email.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.lbl_FormThemNV_Email.Name = "lbl_FormThemNV_Email";
             this.lbl_FormThemNV_Email.PasswordChar = '\0';
             this.lbl_FormThemNV_Email.PlaceholderText = "";
             this.lbl_FormThemNV_Email.SelectedText = "";
-            this.lbl_FormThemNV_Email.Size = new System.Drawing.Size(205, 31);
+            this.lbl_FormThemNV_Email.Size = new System.Drawing.Size(273, 38);
             this.lbl_FormThemNV_Email.TabIndex = 81;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(235, 40);
+            this.label6.Location = new System.Drawing.Point(313, 49);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(82, 15);
+            this.label6.Size = new System.Drawing.Size(98, 18);
             this.label6.TabIndex = 80;
             this.label6.Text = "Số điện thoại:";
             // 
@@ -227,13 +235,13 @@
             this.lbl_FormThemNV_SDT.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.lbl_FormThemNV_SDT.ForeColor = System.Drawing.Color.Black;
             this.lbl_FormThemNV_SDT.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.lbl_FormThemNV_SDT.Location = new System.Drawing.Point(238, 59);
-            this.lbl_FormThemNV_SDT.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.lbl_FormThemNV_SDT.Location = new System.Drawing.Point(317, 73);
+            this.lbl_FormThemNV_SDT.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.lbl_FormThemNV_SDT.Name = "lbl_FormThemNV_SDT";
             this.lbl_FormThemNV_SDT.PasswordChar = '\0';
             this.lbl_FormThemNV_SDT.PlaceholderText = "";
             this.lbl_FormThemNV_SDT.SelectedText = "";
-            this.lbl_FormThemNV_SDT.Size = new System.Drawing.Size(205, 31);
+            this.lbl_FormThemNV_SDT.Size = new System.Drawing.Size(273, 38);
             this.lbl_FormThemNV_SDT.TabIndex = 79;
             // 
             // lbl_FormThemNV_HoTen
@@ -250,13 +258,13 @@
             this.lbl_FormThemNV_HoTen.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.lbl_FormThemNV_HoTen.ForeColor = System.Drawing.Color.Black;
             this.lbl_FormThemNV_HoTen.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.lbl_FormThemNV_HoTen.Location = new System.Drawing.Point(12, 129);
-            this.lbl_FormThemNV_HoTen.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.lbl_FormThemNV_HoTen.Location = new System.Drawing.Point(16, 159);
+            this.lbl_FormThemNV_HoTen.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.lbl_FormThemNV_HoTen.Name = "lbl_FormThemNV_HoTen";
             this.lbl_FormThemNV_HoTen.PasswordChar = '\0';
             this.lbl_FormThemNV_HoTen.PlaceholderText = "";
             this.lbl_FormThemNV_HoTen.SelectedText = "";
-            this.lbl_FormThemNV_HoTen.Size = new System.Drawing.Size(203, 31);
+            this.lbl_FormThemNV_HoTen.Size = new System.Drawing.Size(271, 38);
             this.lbl_FormThemNV_HoTen.TabIndex = 78;
             // 
             // lbl_FormThemNV_MaNV
@@ -274,14 +282,14 @@
             this.lbl_FormThemNV_MaNV.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.lbl_FormThemNV_MaNV.ForeColor = System.Drawing.Color.Black;
             this.lbl_FormThemNV_MaNV.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.lbl_FormThemNV_MaNV.Location = new System.Drawing.Point(12, 59);
-            this.lbl_FormThemNV_MaNV.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.lbl_FormThemNV_MaNV.Location = new System.Drawing.Point(16, 73);
+            this.lbl_FormThemNV_MaNV.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.lbl_FormThemNV_MaNV.Name = "lbl_FormThemNV_MaNV";
             this.lbl_FormThemNV_MaNV.PasswordChar = '\0';
             this.lbl_FormThemNV_MaNV.PlaceholderText = "";
             this.lbl_FormThemNV_MaNV.ReadOnly = true;
             this.lbl_FormThemNV_MaNV.SelectedText = "";
-            this.lbl_FormThemNV_MaNV.Size = new System.Drawing.Size(203, 31);
+            this.lbl_FormThemNV_MaNV.Size = new System.Drawing.Size(271, 38);
             this.lbl_FormThemNV_MaNV.TabIndex = 77;
             // 
             // them
@@ -294,19 +302,22 @@
             this.them.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(61)))), ((int)(((byte)(204)))));
             this.them.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.them.ForeColor = System.Drawing.Color.White;
-            this.them.Location = new System.Drawing.Point(146, 423);
+            this.them.Location = new System.Drawing.Point(195, 521);
+            this.them.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.them.Name = "them";
-            this.them.Size = new System.Drawing.Size(135, 36);
+            this.them.Size = new System.Drawing.Size(180, 44);
             this.them.TabIndex = 76;
             this.them.Text = "Thêm";
+            this.them.Click += new System.EventHandler(this.them_Click);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(12, 110);
+            this.label4.Location = new System.Drawing.Point(16, 135);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(46, 15);
+            this.label4.Size = new System.Drawing.Size(56, 18);
             this.label4.TabIndex = 73;
             this.label4.Text = "Họ tên:";
             // 
@@ -314,9 +325,10 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(12, 40);
+            this.label3.Location = new System.Drawing.Point(16, 49);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(47, 15);
+            this.label3.Size = new System.Drawing.Size(57, 18);
             this.label3.TabIndex = 72;
             this.label3.Text = "Mã NV:";
             // 
@@ -324,9 +336,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(22, 9);
+            this.label1.Location = new System.Drawing.Point(29, 11);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(116, 16);
+            this.label1.Size = new System.Drawing.Size(141, 20);
             this.label1.TabIndex = 71;
             this.label1.Text = "Thêm nhân viên";
             // 
@@ -341,19 +354,19 @@
             this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button2.ForeColor = System.Drawing.Color.Black;
             this.guna2Button2.Image = global::Qlyrapchieuphim.Properties.Resources.icons8_exit_35;
-            this.guna2Button2.Location = new System.Drawing.Point(420, 11);
-            this.guna2Button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2Button2.Location = new System.Drawing.Point(560, 14);
+            this.guna2Button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.Size = new System.Drawing.Size(26, 28);
+            this.guna2Button2.Size = new System.Drawing.Size(35, 34);
             this.guna2Button2.TabIndex = 91;
             this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
             // 
             // FormThemNhanVien
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(457, 471);
+            this.ClientSize = new System.Drawing.Size(609, 580);
             this.Controls.Add(this.guna2Button2);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.cb_FormThemNV_ChucVu);
@@ -374,6 +387,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FormThemNhanVien";
             this.ShowInTaskbar = false;
             this.Text = "FormThemNhanVien";

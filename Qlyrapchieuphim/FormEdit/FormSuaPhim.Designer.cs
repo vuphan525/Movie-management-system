@@ -82,6 +82,7 @@
             this.AddButton.Size = new System.Drawing.Size(183, 44);
             this.AddButton.TabIndex = 108;
             this.AddButton.Text = "Cập nhật";
+            this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
             // 
             // guna2Button2
             // 
@@ -204,6 +205,7 @@
             this.pictureBox_FormSuaPhim_Poster.Size = new System.Drawing.Size(333, 215);
             this.pictureBox_FormSuaPhim_Poster.TabIndex = 110;
             this.pictureBox_FormSuaPhim_Poster.TabStop = false;
+            this.pictureBox_FormSuaPhim_Poster.Click += new System.EventHandler(this.pictureBox_FormSuaPhim_Poster_Click);
             // 
             // lbl_FormSuaPhim_MoTa
             // 
@@ -363,6 +365,7 @@
             this.btn_FormSuaPhim_ThemPoster.Size = new System.Drawing.Size(144, 44);
             this.btn_FormSuaPhim_ThemPoster.TabIndex = 115;
             this.btn_FormSuaPhim_ThemPoster.Text = "Thêm poster";
+            this.btn_FormSuaPhim_ThemPoster.Click += new System.EventHandler(this.btn_FormSuaPhim_ThemPoster_Click);
             // 
             // label7
             // 

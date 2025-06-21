@@ -226,17 +226,56 @@ namespace Qlyrapchieuphim
 
                 if (clickX >= editLeft && clickX < editLeft + iconSize)
                 {
-                    // 👉 Click icon Edit
-                    using (FormSuaKhachHang popup = new FormSuaKhachHang())
+                    DataTable dt = dataGridView1.DataSource as DataTable;
+                    string customerId = dt.Rows[e.RowIndex]["CustomerID"].ToString();
+                    using (FormSuaKhachHang popup = new FormSuaKhachHang(customerId))
                     {
                         popup.StartPosition = FormStartPosition.CenterParent;
-                        popup.ShowDialog(FindForm());
+                        if (popup.ShowDialog(FindForm()) == DialogResult.OK)
+                        {
+                            LoadData(); // Chỉ gọi nếu form kia trả về OK
+                        }
                     }
                 }
                 else if (clickX >= deleteLeft && clickX < deleteLeft + iconSize)
                 {
                     // 👉 Click icon Delete
-                    MessageBox.Show("Bạn vừa click nút xóa (tạm thời chưa có hành động).", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
+                    DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xóa khách hàng này không?", "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                    if (result == DialogResult.Yes)
+                    {
+                        DataTable dt = dataGridView1.DataSource as DataTable;
+                        string customerId = dt.Rows[e.RowIndex]["CustomerID"].ToString();
+
+                        try
+                        {
+                            if (conn.State != ConnectionState.Open)
+                                conn.Open();
+
+                            string deleteQuery = "DELETE FROM Customers WHERE CustomerID = @CustomerID";
+                            using (SqlCommand cmd = new SqlCommand(deleteQuery, conn))
+                            {
+                                cmd.Parameters.AddWithValue("@CustomerID", customerId);
+                                int rowsAffected = cmd.ExecuteNonQuery();
+
+                                if (rowsAffected > 0)
+                                {
+                                    MessageBox.Show("Xóa khách hàng thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    LoadData(); // Cập nhật lại DataGridView sau khi xóa
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Không tìm thấy khách hàng để xóa.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                }
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Lỗi khi xóa khách hàng: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
                 }
             }
         }
@@ -496,7 +535,10 @@ namespace Qlyrapchieuphim
             using (FormThemKhachHang popup = new FormThemKhachHang())
             {
                 popup.StartPosition = FormStartPosition.CenterParent;
-                popup.ShowDialog(FindForm()); 
+                if (popup.ShowDialog(FindForm()) == DialogResult.OK)
+                {
+                    LoadData(); // Chỉ gọi nếu form kia trả về OK
+                }
             }
         }
 

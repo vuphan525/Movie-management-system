@@ -1,4 +1,6 @@
 ﻿using Guna.UI2.WinForms;
+using Microsoft.Data.SqlClient;
+using Qlyrapchieuphim.FormEdit;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -6,17 +8,15 @@ using System.Configuration;
 using System.Data;
 using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
+using System.Drawing.Imaging;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web.Configuration;
+using System.Windows.Controls.Primitives;
 using System.Windows.Forms;
-
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
-using Microsoft.Data.SqlClient;
-using System.IO;
-using System.Drawing.Imaging;
-using Qlyrapchieuphim.FormEdit;
 
 
 namespace Qlyrapchieuphim
@@ -181,80 +181,6 @@ namespace Qlyrapchieuphim
 
         private void UpdateButton_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(idphim.Text))
-            {
-                MessageBox.Show("Vui lòng chọn một dòng để cập nhật.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
-
-            if (
-                string.IsNullOrWhiteSpace(idphim.Text) ||
-                string.IsNullOrWhiteSpace(tenphim.Text) ||
-                string.IsNullOrWhiteSpace(thoiluong.Text) ||
-                string.IsNullOrWhiteSpace(trangthai.Text) ||
-                string.IsNullOrWhiteSpace(mota.Text))
-            {
-                MessageBox.Show("Vui lòng điền đầy đủ thông tin.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            if (!int.TryParse(thoiluong.Text, out int he))
-            {
-                // Hiển thị MessageBox nếu không phải là số
-                MessageBox.Show("Thời lượng phải được nhập dươi dạng một số nguyên!", "Lỗi nhập liệu", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-            if (mota.Text.Length > 512)
-            {
-                MessageBox.Show(
-                    "Mô tả không quá 512 ký tự!!",
-                    "Lỗi nhập liệu",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Warning
-                    );
-            }
-
-            string SqlQuery = "UPDATE Movies SET " +
-                "Title =  @Title," +
-                "Genre = @Genre," +
-                "Duration = @Duration," +
-                "Description = @Description, " +
-                "PosterURL = @PosterURL," +
-                "Status = @Status " +
-                "WHERE MovieID = @MovieID";
-            
-            SqlCommand comm = new SqlCommand(SqlQuery, conn);
-            comm.Parameters.Add("@MovieID", SqlDbType.Int).Value = int.Parse(idphim.Text);
-            comm.Parameters.Add("@Title", SqlDbType.NVarChar).Value = tenphim.Text;
-            comm.Parameters.Add("@Genre", SqlDbType.NVarChar).Value = theloai.Text;
-            comm.Parameters.Add("@Duration", SqlDbType.Int).Value = int.Parse(thoiluong.Text);
-            comm.Parameters.Add("@Description", SqlDbType.NVarChar).Value = mota.Text;
-            comm.Parameters.Add("@Status", SqlDbType.NVarChar).Value = trangthai.Text;
-            SaveImage(int.Parse(idphim.Text));
-            comm.Parameters.Add("PosterURL", SqlDbType.VarChar).Value = poster_url;
-            try
-            {
-                conn.Open();
-                comm.ExecuteNonQuery();
-                conn.Close();
-                LoadData();
-                Reset();
-            }
-            catch (SqlException ex)
-            {
-                switch (ex.Number)
-                {
-                    case 2627:
-                        MessageBox.Show(
-                            "ID phim không được trùng nhau!",
-                            "Lỗi nhập liệu",
-                            MessageBoxButtons.OK,
-                            MessageBoxIcon.Warning);
-                        break;
-                    default:
-                        throw;
-                }
-            }
             
 
         }
@@ -318,14 +244,11 @@ namespace Qlyrapchieuphim
         }
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0)
-            {
-                PrintToTextBoxes(e.RowIndex);
-            }
+            if (e.RowIndex < 0 || e.ColumnIndex < 0) return;
 
-            if (e.ColumnIndex >= 0 && dataGridView1.Columns[e.ColumnIndex].Name == "Actions" && e.RowIndex >= 0)
+            if (dataGridView1.Columns[e.ColumnIndex].Name == "Actions")
             {
-                // Tính vị trí click so với ô
+                // Tính vị trí click trong ô
                 var cellRect = dataGridView1.GetCellDisplayRectangle(e.ColumnIndex, e.RowIndex, false);
                 int clickX = dataGridView1.PointToClient(Cursor.Position).X - cellRect.X;
 
@@ -334,22 +257,56 @@ namespace Qlyrapchieuphim
                 int editLeft = padding;
                 int deleteLeft = editLeft + iconSize + padding;
 
+                // Lấy ID phim từ dòng đang click
+                DataTable dt = dataGridView1.DataSource as DataTable;
+                string movieId = dt.Rows[e.RowIndex]["MovieID"].ToString();
+
                 if (clickX >= editLeft && clickX < editLeft + iconSize)
                 {
                     // 👉 Click icon Edit
-                    using (FormSuaPhim popup = new FormSuaPhim())
+                    using (FormSuaPhim popup = new FormSuaPhim(movieId)) // truyền ID vào constructor
                     {
                         popup.StartPosition = FormStartPosition.CenterParent;
-                        popup.ShowDialog(FindForm());
+                    ;
+                        if (popup.ShowDialog(FindForm()) == DialogResult.OK)
+                        {
+                            LoadData(); // Chỉ gọi nếu form kia trả về OK
+                        }
+
                     }
+
                 }
                 else if (clickX >= deleteLeft && clickX < deleteLeft + iconSize)
                 {
                     // 👉 Click icon Delete
-                    MessageBox.Show("Bạn vừa click nút xóa (tạm thời chưa có hành động).", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    DialogResult result = MessageBox.Show(
+                        "Bạn có chắc chắn muốn xóa dòng này?",
+                        "Xác nhận",
+                        MessageBoxButtons.YesNo,
+                        MessageBoxIcon.Question);
+
+                    if (result == DialogResult.Yes)
+                    {
+                        conn.Open();
+
+                        string SqlQuery = "DELETE FROM Movies WHERE MovieID = @tempid";
+                        SqlCommand cmd = new SqlCommand(SqlQuery, conn);
+                        cmd.Parameters.Add("@tempid", SqlDbType.Char).Value = movieId;
+                        cmd.ExecuteNonQuery();
+
+                        // Xóa file ảnh nếu có
+                        string fullPath = Path.Combine(projectFolder, "posters", movieId + ".png");
+                        if (File.Exists(fullPath))
+                            File.Delete(fullPath);
+
+                        conn.Close();
+                        LoadData();
+                        Reset();
+                    }
                 }
             }
         }
+
 
         private void DeleteButton_Click(object sender, EventArgs e)
         {
@@ -498,46 +455,54 @@ namespace Qlyrapchieuphim
         {
             try
             {
-                // 1. Kiểm tra xem PictureBox có hình ảnh không
                 if (pictureBox1.Image == null)
                 {
                     pictureBox1.Image = SystemIcons.Error.ToBitmap();
                     return;
                 }
 
-                // 2. Tạo đường dẫn đến thư mục "New folder" trong thư mục dự án
-
                 string newFolderPath = Path.Combine(projectFolder, "posters");
 
-                // Tạo thư mục nếu nó chưa tồn tại
                 if (!Directory.Exists(newFolderPath))
                 {
                     Directory.CreateDirectory(newFolderPath);
                 }
 
-                // 3. Tạo tên file hình ảnh (ví dụ: image.png)
                 ImageFormat imageFormat = pictureBox1.Image.RawFormat;
-                string fileName = identity.ToString() + "." + new ImageFormatConverter().ConvertToString(imageFormat).ToLower(); // Tên file hình ảnh (bạn có thể thay đổi tên này)
+                string fileName = identity.ToString() + "." + new ImageFormatConverter().ConvertToString(imageFormat).ToLower();
                 string fullPath = Path.Combine(newFolderPath, fileName);
-                //delete if existing
+
+                // 🔥 FIX: Giải phóng hình ảnh đang giữ file trước khi xóa
                 if (File.Exists(fullPath))
-                    File.Delete(fullPath);
-                // 4. Lưu hình ảnh từ PictureBox vào thư mục
-                using (FileStream stream = new FileStream(fullPath, FileMode.Create, FileAccess.ReadWrite))
                 {
-                    //take image format and save in that format
-                    Bitmap img = new Bitmap(pictureBox1.Image);
-                    img.Save(stream, imageFormat);
-                    poster_url = Path.Combine("posters", fileName);
+                    if (pictureBox1.Image != null)
+                    {
+                        pictureBox1.Image.Dispose();
+                        pictureBox1.Image = null;
+                        GC.Collect();
+                        GC.WaitForPendingFinalizers();
+                    }
+
+                    File.Delete(fullPath);
                 }
 
-                //MessageBox.Show("Hình ảnh đã được lưu thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                // ✅ Tạo và lưu hình ảnh mới
+                using (FileStream stream = new FileStream(fullPath, FileMode.Create, FileAccess.Write))
+                {
+                    using (Bitmap img = new Bitmap(pictureBox1.Image))
+                    {
+                        img.Save(stream, imageFormat);
+                    }
+                }
+
+                poster_url = Path.Combine("posters", fileName);
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Có lỗi xảy ra: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
         private void AddPosterButton_Click(object sender, EventArgs e)
         {
             try
@@ -580,8 +545,13 @@ namespace Qlyrapchieuphim
             using (FormThemPhim popup = new FormThemPhim())
             {
                 popup.StartPosition = FormStartPosition.CenterParent;
-                popup.ShowDialog(FindForm()); 
+                
+                if (popup.ShowDialog(FindForm()) == DialogResult.OK)
+                {
+                    LoadData(); // Chỉ gọi nếu form kia trả về OK
+                }
             }
+           
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

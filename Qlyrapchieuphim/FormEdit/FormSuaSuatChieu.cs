@@ -58,5 +58,10 @@ namespace Qlyrapchieuphim.FormEdit
         {
 
         }
+
+        private void cb_FormSuaSuatChieu_PhongChieu_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

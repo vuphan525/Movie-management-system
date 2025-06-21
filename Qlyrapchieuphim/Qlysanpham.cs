@@ -574,7 +574,10 @@ namespace Qlyrapchieuphim
             using (FormThemSanPham popup = new FormThemSanPham())
             {
                 popup.StartPosition = FormStartPosition.CenterParent;
-                popup.ShowDialog(FindForm()); 
+                if (popup.ShowDialog(FindForm()) == DialogResult.OK)
+                {
+                    LoadData(); // Chỉ gọi nếu form kia trả về OK
+                }
             }
         }
 

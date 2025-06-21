@@ -42,5 +42,10 @@ namespace Qlyrapchieuphim
                 borderColor, borderWidth, ButtonBorderStyle.Solid,
                 borderColor, borderWidth, ButtonBorderStyle.Solid);
         }
+
+        private void them_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

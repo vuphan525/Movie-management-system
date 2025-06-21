@@ -88,6 +88,7 @@
             this.lbl_FormThemPhim_MoTa.SelectedText = "";
             this.lbl_FormThemPhim_MoTa.Size = new System.Drawing.Size(333, 165);
             this.lbl_FormThemPhim_MoTa.TabIndex = 80;
+            this.lbl_FormThemPhim_MoTa.TextChanged += new System.EventHandler(this.lbl_FormThemPhim_MoTa_TextChanged);
             // 
             // lbl_FormThemPhim_ThoiLuong
             // 
@@ -182,6 +183,7 @@
             this.cb_FormThemPhim_TheLoai.Name = "cb_FormThemPhim_TheLoai";
             this.cb_FormThemPhim_TheLoai.Size = new System.Drawing.Size(312, 36);
             this.cb_FormThemPhim_TheLoai.TabIndex = 76;
+            this.cb_FormThemPhim_TheLoai.SelectedIndexChanged += new System.EventHandler(this.cb_FormThemPhim_TheLoai_SelectedIndexChanged);
             // 
             // lbl_FormThemPhim_MovieID
             // 
@@ -207,6 +209,7 @@
             this.lbl_FormThemPhim_MovieID.SelectedText = "";
             this.lbl_FormThemPhim_MovieID.Size = new System.Drawing.Size(313, 43);
             this.lbl_FormThemPhim_MovieID.TabIndex = 75;
+            this.lbl_FormThemPhim_MovieID.TextChanged += new System.EventHandler(this.lbl_FormThemPhim_MovieID_TextChanged);
             // 
             // btn_FormThemPhim_ThemPoster
             // 
@@ -439,6 +442,7 @@
             this.date_FormThemPhim_NgayNhap.Size = new System.Drawing.Size(312, 39);
             this.date_FormThemPhim_NgayNhap.TabIndex = 109;
             this.date_FormThemPhim_NgayNhap.Value = new System.DateTime(2024, 11, 29, 16, 51, 14, 647);
+            this.date_FormThemPhim_NgayNhap.ValueChanged += new System.EventHandler(this.date_FormThemPhim_NgayNhap_ValueChanged);
             // 
             // FormThemPhim
             // 
