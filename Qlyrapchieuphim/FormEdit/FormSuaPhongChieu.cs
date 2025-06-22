@@ -20,6 +20,12 @@ namespace Qlyrapchieuphim.FormEdit
             shadow.TargetForm = this;
             this.Paint += FormThemPhim_Paint;
         }
+        public string id = null;
+        public FormSuaPhongChieu(string id)
+        {
+            InitializeComponent();
+            this.id = id;
+        }
 
         private void guna2Button2_Click(object sender, EventArgs e)
         {
@@ -53,7 +59,42 @@ namespace Qlyrapchieuphim.FormEdit
 
         private void them_Click(object sender, EventArgs e)
         {
-            //ToDo: Xử lý sửa phòng chiếu
+            if (string.IsNullOrWhiteSpace(lbl_FormSuaPhongChieu_TenPhong.Text) ||
+        string.IsNullOrWhiteSpace(lbl_FormSuaPhongChieu_SoGhe.Text) ||
+        cb_FormSuaPhongChieu_DinhDang.SelectedIndex == -1)
+            {
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Kiểm tra số ghế có phải là số nguyên dương không
+            if (!int.TryParse(lbl_FormSuaPhongChieu_SoGhe.Text.Trim(), out int soGhe) || soGhe <= 0)
+            {
+                MessageBox.Show("Số ghế phải là một số nguyên dương.", "Lỗi nhập liệu", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Lấy dữ liệu sau khi đã kiểm tra
+            string tenPhong = lbl_FormSuaPhongChieu_TenPhong.Text.Trim();
+            string dinhDang = cb_FormSuaPhongChieu_DinhDang.SelectedItem.ToString();
+
+            // TODO: Thêm logic lưu vào CSDL ở đây nếu cần
+            // Ví dụ (giả sử có SqlConnection conn):
+            /*
+            string sql = "INSERT INTO PhongChieu (TenPhong, SoGhe, DinhDang) VALUES (@TenPhong, @SoGhe, @DinhDang)";
+            using (SqlCommand cmd = new SqlCommand(sql, conn))
+            {
+                cmd.Parameters.AddWithValue("@TenPhong", tenPhong);
+                cmd.Parameters.AddWithValue("@SoGhe", soGhe);
+                cmd.Parameters.AddWithValue("@DinhDang", dinhDang);
+
+                conn.Open();
+                cmd.ExecuteNonQuery();
+                conn.Close();
+            }
+            */
+
+            MessageBox.Show("Thêm phòng chiếu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

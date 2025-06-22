@@ -33,7 +33,6 @@
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.lbl_FormSuaSuCo_HuongGiaiQuyet = new Guna.UI2.WinForms.Guna2TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.lbl_FormSuaSuCo_MaNhanVien = new Guna.UI2.WinForms.Guna2TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.date_FormSuaSuCo_NgayTiepNhan = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
@@ -46,6 +45,7 @@
             this.lbl_FormSuaSuCo_TenSuCo = new Guna.UI2.WinForms.Guna2TextBox();
             this.lbl_FormSuaSuCo_MaSuCo = new Guna.UI2.WinForms.Guna2TextBox();
             this.btn_Refresh = new Guna.UI2.WinForms.Guna2Button();
+            this.manv = new Guna.UI2.WinForms.Guna2ComboBox();
             this.SuspendLayout();
             // 
             // label2
@@ -128,31 +128,6 @@
             this.label1.Size = new System.Drawing.Size(121, 18);
             this.label1.TabIndex = 113;
             this.label1.Text = "Hướng giải quyết:";
-            // 
-            // lbl_FormSuaSuCo_MaNhanVien
-            // 
-            this.lbl_FormSuaSuCo_MaNhanVien.BorderColor = System.Drawing.Color.Gray;
-            this.lbl_FormSuaSuCo_MaNhanVien.BorderRadius = 10;
-            this.lbl_FormSuaSuCo_MaNhanVien.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.lbl_FormSuaSuCo_MaNhanVien.DefaultText = "";
-            this.lbl_FormSuaSuCo_MaNhanVien.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.lbl_FormSuaSuCo_MaNhanVien.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.lbl_FormSuaSuCo_MaNhanVien.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.lbl_FormSuaSuCo_MaNhanVien.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.lbl_FormSuaSuCo_MaNhanVien.Enabled = false;
-            this.lbl_FormSuaSuCo_MaNhanVien.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.lbl_FormSuaSuCo_MaNhanVien.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lbl_FormSuaSuCo_MaNhanVien.ForeColor = System.Drawing.Color.Black;
-            this.lbl_FormSuaSuCo_MaNhanVien.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.lbl_FormSuaSuCo_MaNhanVien.Location = new System.Drawing.Point(19, 256);
-            this.lbl_FormSuaSuCo_MaNhanVien.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.lbl_FormSuaSuCo_MaNhanVien.Name = "lbl_FormSuaSuCo_MaNhanVien";
-            this.lbl_FormSuaSuCo_MaNhanVien.PasswordChar = '\0';
-            this.lbl_FormSuaSuCo_MaNhanVien.PlaceholderText = "";
-            this.lbl_FormSuaSuCo_MaNhanVien.ReadOnly = true;
-            this.lbl_FormSuaSuCo_MaNhanVien.SelectedText = "";
-            this.lbl_FormSuaSuCo_MaNhanVien.Size = new System.Drawing.Size(299, 42);
-            this.lbl_FormSuaSuCo_MaNhanVien.TabIndex = 111;
             // 
             // label8
             // 
@@ -348,17 +323,39 @@
             this.btn_Refresh.Text = "Làm mới";
             this.btn_Refresh.Click += new System.EventHandler(this.btn_Refresh_Click);
             // 
+            // manv
+            // 
+            this.manv.BackColor = System.Drawing.Color.Transparent;
+            this.manv.BorderColor = System.Drawing.Color.Gray;
+            this.manv.BorderRadius = 10;
+            this.manv.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.manv.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.manv.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.manv.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.manv.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.manv.ForeColor = System.Drawing.Color.Black;
+            this.manv.ItemHeight = 30;
+            this.manv.Items.AddRange(new object[] {
+            "Đã xử lý",
+            "Đang xử lý",
+            "Chờ tiếp nhận"});
+            this.manv.Location = new System.Drawing.Point(19, 270);
+            this.manv.Margin = new System.Windows.Forms.Padding(4);
+            this.manv.Name = "manv";
+            this.manv.Size = new System.Drawing.Size(299, 36);
+            this.manv.TabIndex = 117;
+            // 
             // FormSuaSuCo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(709, 599);
+            this.Controls.Add(this.manv);
             this.Controls.Add(this.btn_Refresh);
             this.Controls.Add(this.lbl_FormSuaSuCo_MaSuCo);
             this.Controls.Add(this.lbl_FormSuaSuCo_HuongGiaiQuyet);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.lbl_FormSuaSuCo_MaNhanVien);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.date_FormSuaSuCo_NgayTiepNhan);
             this.Controls.Add(this.label5);
@@ -391,7 +388,6 @@
         private Guna.UI2.WinForms.Guna2Button bcButton;
         private Guna.UI2.WinForms.Guna2TextBox lbl_FormSuaSuCo_HuongGiaiQuyet;
         private System.Windows.Forms.Label label1;
-        private Guna.UI2.WinForms.Guna2TextBox lbl_FormSuaSuCo_MaNhanVien;
         private System.Windows.Forms.Label label8;
         private Guna.UI2.WinForms.Guna2DateTimePicker date_FormSuaSuCo_NgayTiepNhan;
         private System.Windows.Forms.Label label5;
@@ -404,5 +400,6 @@
         private Guna.UI2.WinForms.Guna2TextBox lbl_FormSuaSuCo_TenSuCo;
         private Guna.UI2.WinForms.Guna2TextBox lbl_FormSuaSuCo_MaSuCo;
         private Guna.UI2.WinForms.Guna2Button btn_Refresh;
+        private Guna.UI2.WinForms.Guna2ComboBox manv;
     }
 }

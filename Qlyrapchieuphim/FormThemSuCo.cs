@@ -8,17 +8,57 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using Microsoft.Data.SqlClient;
 namespace Qlyrapchieuphim
 {
     public partial class FormThemSuCo : Form
     {
+
+
+        SqlConnection conn;
         public FormThemSuCo()
         {
             InitializeComponent();
             Guna2ShadowForm shadow = new Guna2ShadowForm();
             shadow.TargetForm = this;
             this.Paint += FormThemPhim_Paint;
+            conn = Helper.getdbConnection();
+            conn = Helper.CheckDbConnection(conn);
+        }
+        private bool CheckUsr()
+        {
+            int count;
+            conn.Open();
+            string SqlQuery = "SELECT COUNT(*) FROM Users";
+            SqlCommand countCmd = new SqlCommand(SqlQuery, conn);
+            count = (int)countCmd.ExecuteScalar();
+
+            if (count > 0)
+            {
+                manv.Enabled = true;
+               
+                SqlQuery = "SELECT UserID, Username FROM Users";
+                string[] employees = new string[count];
+                SqlCommand cmd = new SqlCommand(SqlQuery, conn);
+                SqlDataReader reader = cmd.ExecuteReader();
+                int i = 0;
+                while (reader.Read())
+                {
+                    employees[i] = reader.GetString(1) + " (ID: " + reader.GetInt32(0).ToString() + ")";
+                    i++;
+                }
+                manv.DataSource = employees;
+            }
+            else
+            {
+                manv.Enabled = false;
+                
+            }
+            conn.Close();
+            if (count > 0)
+                return true;
+            else
+                return false;
         }
 
         private void guna2Button2_Click(object sender, EventArgs e)
@@ -30,8 +70,10 @@ namespace Qlyrapchieuphim
         {
             date_FormThemSuCo_NgayTiepNhan.Format = DateTimePickerFormat.Custom;
             date_FormThemSuCo_NgayTiepNhan.CustomFormat = "dd/MM/yyyy";
-            //ToDo: Load id của nhân viên đang đăng nhập vào hệ thống để cho vào lbl_FormThemSuCo_MaNhanVien
-        }
+            if (CheckUsr()) // <- GỌI Ở ĐÂY
+                manv.SelectedIndex = 0;
+
+           }
 
         private void FormThemPhim_Paint(object sender, PaintEventArgs e)
         {
@@ -53,11 +95,63 @@ namespace Qlyrapchieuphim
             lbl_FormThemSuCo_HuongGiaiQuyet.Clear();
             date_FormThemSuCo_NgayTiepNhan.Value = DateTime.Now;
             lbl_FormThemSuCo_MoTa.Clear();
+            if (CheckUsr()) // <- GỌI Ở ĐÂY
+                manv.SelectedIndex = 0;
         }
 
         private void bcButton_Click(object sender, EventArgs e)
-        {
-            //ToDo: Xử lý thêm sự cố
+        { if (manv.SelectedItem == null ||
+                string.IsNullOrWhiteSpace(lbl_FormThemSuCo_TenSuCo.Text) ||
+                string.IsNullOrWhiteSpace(lbl_FormThemSuCo_MoTa.Text) 
+               )
+            {
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin.",
+                    "Thông báo",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+                return;
+            }
+            //SQL section
+            conn.Open();
+            string SqlQuery = "INSERT INTO IncidentReports VALUES (@IncidentID, @IncidentName, @ReportedByUserID, @RelatedObjectType, @RelatedObjectID, @Description, @ReportedAt, @Status, @Resolution)";
+            SqlCommand cmd = new SqlCommand(SqlQuery, conn);
+            cmd.Parameters.Add("@IncidentID", SqlDbType.Int).Value = int.Parse(lbl_FormThemSuCo_MaSuCo.Text);
+            cmd.Parameters.Add("@IncidentName", SqlDbType.NVarChar).Value = lbl_FormThemSuCo_TenSuCo.Text;
+            int usrID = int.Parse(Helper.SubStringBetween(manv.SelectedText, " (ID: ", ")"));
+            cmd.Parameters.Add("@ReportedByUserID", SqlDbType.Int).Value = usrID;
+            cmd.Parameters.Add("@RelatedObjectType", SqlDbType.NVarChar).Value = "None";
+            cmd.Parameters.Add("@RelatedObjectID", SqlDbType.Int).Value = 0;
+            cmd.Parameters.Add("@ReportedAt", SqlDbType.Date).Value = date_FormThemSuCo_NgayTiepNhan.Value.Date;
+            cmd.Parameters.Add("@Status", SqlDbType.NVarChar).Value =cb_FormThemSuCo_TinhTrang.SelectedItem;
+            cmd.Parameters.Add("@Description", SqlDbType.NVarChar).Value = lbl_FormThemSuCo_MoTa.Text;
+            cmd.Parameters.Add("@Resolution", SqlDbType.NVarChar).Value = "placeholder";//GIÁ TRỊ TẠM DO CHƯA CÓ TEXTBOX, THAY THẾ GIÁ TRỊ NGAY KHI CÓ TEXTBOX
+            try
+            {
+                cmd.ExecuteNonQuery();
+               
+            }
+            catch (SqlException ex)
+            {
+                switch (ex.Number)
+                {
+                    case 2627:
+                        MessageBox.Show(
+                            "Mã suất chiếu không được trùng nhau!",
+                            "Lỗi nhập liệu",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Warning);
+                        break;
+                    default:
+                        throw;
+                }
+            }
+           
+
+            conn.Close();
+            this.Close();
+           
+            this.DialogResult = DialogResult.OK;
+
         }
     }
 }

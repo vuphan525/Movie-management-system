@@ -44,7 +44,8 @@ namespace Qlyrapchieuphim
         }
         private void LoadData()
         {
-            conn.Open();
+            if (conn.State != ConnectionState.Open)
+                conn.Open();
             string SqlQuery = "SELECT CustomerID, FullName, Phone, LoyaltyPoints, cs.UserID, Email  " +
                 "FROM Customers cs JOIN Users usr ON (cs.UserID = usr.UserID)";
             SqlDataAdapter adapter = new SqlDataAdapter(SqlQuery, conn);
@@ -126,7 +127,8 @@ namespace Qlyrapchieuphim
             
             try
             {
-                conn.Open();
+                if (conn.State != ConnectionState.Open)
+                    conn.Open();
                 usrID = int.Parse(cmd.ExecuteScalar().ToString());
                 conn.Close();
                 
@@ -158,7 +160,8 @@ namespace Qlyrapchieuphim
             
             try
             {
-                conn.Open();
+                if (conn.State != ConnectionState.Open)
+                    conn.Open();
                 cmd.ExecuteNonQuery();
                 conn.Close();
                 LoadData();
@@ -196,22 +199,10 @@ namespace Qlyrapchieuphim
             dataGridView1.RowTemplate.Height = 45;
         }
 
-        private void PrintToTextBoxes(int row)
-        {
-            DataTable dt = dataGridView1.DataSource as DataTable;
-            makh.Text = dt.Rows[row]["CustomerID"].ToString();
-            makh.Enabled = false;
-            hotenkh.Text = dt.Rows[row]["FullName"].ToString();
-            sdt.Text = dt.Rows[row]["Phone"].ToString();
-            email.Text = dt.Rows[row]["Email"].ToString();
-            diemtichluy.Text = dt.Rows[row]["LoyaltyPoints"].ToString();
-        }
+        
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0)
-            {
-                PrintToTextBoxes((int)e.RowIndex);
-            }
+           
 
             if (e.ColumnIndex >= 0 && dataGridView1.Columns[e.ColumnIndex].Name == "Actions" && e.RowIndex >= 0)
             {

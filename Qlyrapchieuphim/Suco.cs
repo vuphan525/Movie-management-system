@@ -287,12 +287,18 @@ namespace Qlyrapchieuphim
 
                 if (clickX >= editLeft && clickX < editLeft + iconSize)
                 {
+                    string id;
+                    DataTable dt = dataGridView1.DataSource as DataTable;
+                    id = dt.Rows[e.RowIndex]["IncidentID"].ToString();
+
                     // 👉 Click icon Edit
-                    using (FormSuaSuCo popup = new FormSuaSuCo())
+                    using (FormSuaSuCo popup = new FormSuaSuCo(id))
                     {
-                        //Todo: Lấy dữ liệu từ hàng này trong datagridview để truyền qua formSửa
                         popup.StartPosition = FormStartPosition.CenterParent;
-                        popup.ShowDialog(FindForm());
+                        if (popup.ShowDialog(FindForm()) == DialogResult.OK)
+                        {
+                            LoadData(); // Chỉ gọi nếu form kia trả về OK
+                        }
                     }
                 }
                 else if (clickX >= deleteLeft && clickX < deleteLeft + iconSize)
@@ -355,7 +361,10 @@ namespace Qlyrapchieuphim
             using (FormThemSuCo popup = new FormThemSuCo())
             {
                 popup.StartPosition = FormStartPosition.CenterParent;
-                popup.ShowDialog(FindForm());
+                if (popup.ShowDialog(FindForm()) == DialogResult.OK)
+                {
+                    LoadData(); // Chỉ gọi nếu form kia trả về OK
+                }
             }
         }
 

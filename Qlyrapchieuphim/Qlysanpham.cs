@@ -258,19 +258,76 @@ namespace Qlyrapchieuphim
 
                 if (clickX >= editLeft && clickX < editLeft + iconSize)
                 {
+                    DataTable dt = dataGridView1.DataSource as DataTable;
+
+                    // Gán giá trị cho các TextBox
+
+                    String id = dt.Rows[e.RowIndex]["ProductID"].ToString();
+                   
                     // 👉 Click icon Edit
-                    using (FormSuaSanPham popup = new FormSuaSanPham())
+                    using (FormSuaSanPham popup = new FormSuaSanPham(id))
                     {
-                        //Todo: Lấy dữ liệu từ hàng này trong datagridview để truyền qua formSửa
                         popup.StartPosition = FormStartPosition.CenterParent;
-                        popup.ShowDialog(FindForm());
+                        
+                        if (popup.ShowDialog(FindForm()) == DialogResult.OK)
+                        {
+                            LoadData(); // Chỉ gọi nếu form kia trả về OK
+                        }
+
                     }
                 }
                 else if (clickX >= deleteLeft && clickX < deleteLeft + iconSize)
                 {
-                    // 👉 Click icon Delete
-                    MessageBox.Show("Bạn vừa click nút xóa (tạm thời chưa có hành động).", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    DataTable dt = dataGridView1.DataSource as DataTable;
+                    int productId = Convert.ToInt32(dt.Rows[e.RowIndex]["ProductID"]);
+
+                    DialogResult result = MessageBox.Show(
+                        $"Bạn có chắc chắn muốn xóa sản phẩm có ID {productId} không?",
+                        "Xác nhận xóa",
+                        MessageBoxButtons.YesNo,
+                        MessageBoxIcon.Warning);
+
+                    if (result == DialogResult.Yes)
+                    {
+                        string deleteQuery = "DELETE FROM Products WHERE ProductID = @ProductID";
+
+                        using (SqlCommand cmd = new SqlCommand(deleteQuery, conn))
+                        {
+                            cmd.Parameters.AddWithValue("@ProductID", productId);
+
+                            try
+                            {
+                                conn.Open();
+                                int rowsAffected = cmd.ExecuteNonQuery();
+                                conn.Close();
+
+                                if (rowsAffected > 0)
+                                {
+                                    MessageBox.Show("Xóa sản phẩm thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                                    // Optional: Xóa file ảnh nếu tồn tại
+                                    string imagePath = Path.Combine(projectFolder, dt.Rows[e.RowIndex]["ImageURL"].ToString());
+                                    if (File.Exists(imagePath))
+                                    {
+                                        File.Delete(imagePath);
+                                    }
+
+                                    LoadData(); // Cập nhật lại danh sách
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Không tìm thấy sản phẩm để xóa.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                }
+                            }
+                            catch (Exception ex)
+                            {
+                                conn.Close();
+                                MessageBox.Show("Lỗi khi xóa sản phẩm: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
+                    }
                 }
+
             }
         }
 
@@ -575,10 +632,12 @@ namespace Qlyrapchieuphim
             using (FormThemSanPham popup = new FormThemSanPham())
             {
                 popup.StartPosition = FormStartPosition.CenterParent;
+                
                 if (popup.ShowDialog(FindForm()) == DialogResult.OK)
                 {
                     LoadData(); // Chỉ gọi nếu form kia trả về OK
                 }
+
             }
         }
 
@@ -601,6 +660,11 @@ namespace Qlyrapchieuphim
                 // Vẽ icon Xóa
                 e.Graphics.DrawImage(Properties.Resources.icons8_delete_32, new Rectangle(deleteX, iconY, iconSize, iconSize));
             }
+        }
+
+        private void loai_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

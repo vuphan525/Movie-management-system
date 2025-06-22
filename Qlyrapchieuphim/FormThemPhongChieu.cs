@@ -53,6 +53,44 @@ namespace Qlyrapchieuphim
             cb_FormThemPhongChieu_DinhDang.SelectedIndex = -1;
         }
 
-        
+        private void them_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(lbl_FormThemPhongChieu_TenPhong.Text) ||
+        string.IsNullOrWhiteSpace(lbl_FormThemPhongChieu_SoGhe.Text) ||
+        cb_FormThemPhongChieu_DinhDang.SelectedIndex == -1)
+            {
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Kiểm tra số ghế có phải là số nguyên dương không
+            if (!int.TryParse(lbl_FormThemPhongChieu_SoGhe.Text.Trim(), out int soGhe) || soGhe <= 0)
+            {
+                MessageBox.Show("Số ghế phải là một số nguyên dương.", "Lỗi nhập liệu", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Lấy dữ liệu sau khi đã kiểm tra
+            string tenPhong = lbl_FormThemPhongChieu_TenPhong.Text.Trim();
+            string dinhDang = cb_FormThemPhongChieu_DinhDang.SelectedItem.ToString();
+
+            // TODO: Thêm logic lưu vào CSDL ở đây nếu cần
+            // Ví dụ (giả sử có SqlConnection conn):
+            /*
+            string sql = "INSERT INTO PhongChieu (TenPhong, SoGhe, DinhDang) VALUES (@TenPhong, @SoGhe, @DinhDang)";
+            using (SqlCommand cmd = new SqlCommand(sql, conn))
+            {
+                cmd.Parameters.AddWithValue("@TenPhong", tenPhong);
+                cmd.Parameters.AddWithValue("@SoGhe", soGhe);
+                cmd.Parameters.AddWithValue("@DinhDang", dinhDang);
+
+                conn.Open();
+                cmd.ExecuteNonQuery();
+                conn.Close();
+            }
+            */
+
+            MessageBox.Show("Thêm phòng chiếu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
     }
 }

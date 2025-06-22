@@ -240,49 +240,7 @@ namespace Qlyrapchieuphim
                     return;
                 }
             }
-            //if (giochieu.Value <= DateTime.Now && ngaychieu.Value <= DateTime.Now.Date)
-            //{
-            //    MessageBox.Show(
-            //        "Ngày chiếu và giờ chiếu phải lớn hơn ngày giờ hiện tại!",
-            //        "Lỗi nhập liệu",
-            //        MessageBoxButtons.OK,
-            //        MessageBoxIcon.Warning);
-            //    return;
-            //}
-            //else
-            //{
-            //    if (giochieu.Value < DateTime.Now)
-            //    {
-            //        // Hiển thị MessageBox nếu không phải là số
-            //        MessageBox.Show(
-            //            "Giờ chiếu phải lớn hơn hoặc bằng giờ hiện tại!",
-            //            "Lỗi nhập liệu",
-            //            MessageBoxButtons.OK,
-            //            MessageBoxIcon.Warning);
-            //        return;
-            //    }
-            //    if (ngaychieu.Value < DateTime.Now.Date)
-            //    {
-            //        // Hiển thị MessageBox nếu không phải là số
-            //        MessageBox.Show(
-            //            "Ngày chiếu phải lớn hơn hoặc bằng ngày hiện tại!",
-            //            "Lỗi nhập liệu",
-            //            MessageBoxButtons.OK,
-            //            MessageBoxIcon.Warning);
-            //        return;
-            //    }
-            //}
-            //if (string.IsNullOrEmpty(idTextBox.Text))
-            //{
-            //    MessageBox.Show(
-            //        "Vui lòng nhập mã suất chiếu!",
-            //        "Lỗi nhập liệu",
-            //        MessageBoxButtons.OK,
-            //        MessageBoxIcon.Warning);
-            //    return;
-            //}
-            //SQL section
-                //add entry
+            
             string id = idTextBox.Text;
             
             string SqlQuery = "INSERT INTO Showtimes VALUES (@MovieID, @RoomID, @StartTime, @Price )";
@@ -450,12 +408,20 @@ namespace Qlyrapchieuphim
 
                 if (clickX >= editLeft && clickX < editLeft + iconSize)
                 {
-                    // 👉 Click icon Edit
-                    using (FormSuaSuatChieu popup = new FormSuaSuatChieu())
+
+                    DataTable dt = dataGridView1.DataSource as DataTable;
+                    string id = dt.Rows[e.RowIndex]["ShowtimeID"].ToString();
+
+                    using (FormSuaSuatChieu popup = new FormSuaSuatChieu(id))
                     {
+                        
+
                         //Todo: Lấy dữ liệu từ hàng này trong datagridview để truyền qua formSửa
                         popup.StartPosition = FormStartPosition.CenterParent;
-                        popup.ShowDialog(FindForm());
+                        if (popup.ShowDialog(FindForm()) == DialogResult.OK)
+                        {
+                            LoadData(); // Chỉ gọi nếu form kia trả về OK
+                        }
                     }
                 }
                 else if (clickX >= deleteLeft && clickX < deleteLeft + iconSize)
@@ -602,7 +568,10 @@ namespace Qlyrapchieuphim
             using (FormThemSuatChieu popup = new FormThemSuatChieu())
             {
                 popup.StartPosition = FormStartPosition.CenterParent;
-                popup.ShowDialog(FindForm()); 
+                if (popup.ShowDialog(FindForm()) == DialogResult.OK)
+                {
+                    LoadData(); // Chỉ gọi nếu form kia trả về OK
+                }
             }
         }
 

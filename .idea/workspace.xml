@@ -4,7 +4,21 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="abd20054-1707-482c-8ee4-6902c06f2da3" name="Changes" comment="" />
+    <list default="true" id="abd20054-1707-482c-8ee4-6902c06f2da3" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Qlyrapchieuphim/FormEdit/FormSuaPhim.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Qlyrapchieuphim/FormEdit/FormSuaPhim.Designer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Qlyrapchieuphim/FormEdit/FormSuaPhim.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Qlyrapchieuphim/FormEdit/FormSuaPhim.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Qlyrapchieuphim/FormEdit/FormSuaSuCo.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Qlyrapchieuphim/FormEdit/FormSuaSuCo.Designer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Qlyrapchieuphim/FormEdit/FormSuaSuCo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Qlyrapchieuphim/FormEdit/FormSuaSuCo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Qlyrapchieuphim/FormEdit/FormSuaSuatChieu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Qlyrapchieuphim/FormEdit/FormSuaSuatChieu.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Qlyrapchieuphim/FormThemPhongChieu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Qlyrapchieuphim/FormThemPhongChieu.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Qlyrapchieuphim/FormThemSuCo.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Qlyrapchieuphim/FormThemSuCo.Designer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Qlyrapchieuphim/FormThemSuCo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Qlyrapchieuphim/FormThemSuCo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Qlyrapchieuphim/FormThemSuatChieu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Qlyrapchieuphim/FormThemSuatChieu.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Qlyrapchieuphim/Qlyphim.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Qlyrapchieuphim/Qlyphim.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Qlyrapchieuphim/Qlysuatchieu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Qlyrapchieuphim/Qlysuatchieu.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Qlyrapchieuphim/Suco.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Qlyrapchieuphim/Suco.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,10 +27,13 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 8
-}]]></component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 8
+}</component>
   <component name="ProjectId" id="2yfb8YhGn0w3j578qUZZ3zq8Shc" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -26,9 +43,12 @@
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.readMode.enableVisualFormatting": "true",
     "cf.first.check.clang-format": "false",
-    "cidr.known.project.marker": "true"
+    "cidr.known.project.marker": "true",
+    "git-widget-placeholder": "tung__test",
+    "kotlin-language-version-configured": "true"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />

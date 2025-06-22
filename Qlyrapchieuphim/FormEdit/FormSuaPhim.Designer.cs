@@ -206,7 +206,6 @@
             this.pictureBox_FormSuaPhim_Poster.Size = new System.Drawing.Size(333, 215);
             this.pictureBox_FormSuaPhim_Poster.TabIndex = 110;
             this.pictureBox_FormSuaPhim_Poster.TabStop = false;
-            this.pictureBox_FormSuaPhim_Poster.Click += new System.EventHandler(this.pictureBox_FormSuaPhim_Poster_Click);
             // 
             // lbl_FormSuaPhim_MoTa
             // 
