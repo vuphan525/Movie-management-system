@@ -38,7 +38,8 @@ namespace Qlyrapchieuphim
         }
         private void LoadData()
         {
-            conn.Open();
+            if (conn.State != ConnectionState.Open)
+                conn.Open();
             string SqlQuery = "SELECT StaffID, FullName, Phone, usr.UserID, DateOfBirth, Username, Password, Role, Email " +
                 "FROM Staffs sf LEFT JOIN Users usr ON (sf.UserID = usr.UserID)";
             SqlDataAdapter adapter = new SqlDataAdapter(SqlQuery, conn);
@@ -65,6 +66,7 @@ namespace Qlyrapchieuphim
 
             dataGridView1.Columns["Actions"].DisplayIndex = dataGridView1.Columns.Count - 1;
             conn.Close();
+            this.Refresh();
         }
         private void them_Click(object sender, EventArgs e)
         {
@@ -132,7 +134,8 @@ namespace Qlyrapchieuphim
             
             try
             {
-                conn.Open();
+                if (conn.State != ConnectionState.Open)
+                    conn.Open();
                 usrID = int.Parse(cmd.ExecuteScalar().ToString());
                 conn.Close();
             }
@@ -162,7 +165,8 @@ namespace Qlyrapchieuphim
             
             try
             {
-                conn.Open();
+                if (conn.State != ConnectionState.Open)
+                    conn.Open();
                 cmd.ExecuteNonQuery();
                 conn.Close();
                 LoadData();
@@ -274,7 +278,8 @@ namespace Qlyrapchieuphim
             
             try
             {
-                conn.Open();
+                if (conn.State != ConnectionState.Open)
+                    conn.Open();
                 usrID = int.Parse(cmd.ExecuteScalar().ToString());
                 conn.Close();
             }
@@ -310,7 +315,8 @@ namespace Qlyrapchieuphim
             
             try
             {
-                conn.Open();
+                if (conn.State != ConnectionState.Open)
+                    conn.Open();
                 cmd.ExecuteNonQuery();
                 conn.Close();
                 LoadData();
@@ -346,6 +352,7 @@ namespace Qlyrapchieuphim
             chucvu.SelectedIndex = 0;
             ngaysinh.Value = DateTime.Today.Subtract(TimeSpan.FromDays(365 * 19));
             dataGridView1.ClearSelection();
+            this.Refresh();
         }
         private void xoa_Click(object sender, EventArgs e)
         {
@@ -357,7 +364,8 @@ namespace Qlyrapchieuphim
                 if (result == DialogResult.Yes)
                 {
                     DataTable dt = dataGridView1.DataSource as DataTable;
-                    conn.Open();
+                    if (conn.State != ConnectionState.Open)
+                        conn.Open();
                     foreach (DataGridViewRow dr in dataGridView1.SelectedRows)
                     {
                         int selected = dr.Index;

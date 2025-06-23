@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using Microsoft.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -20,7 +21,7 @@ namespace Qlyrapchieuphim
             shadow.TargetForm = this;
             this.Paint += FormThemPhim_Paint;
         }
-
+        private SqlConnection conn = null;
         private void guna2Button2_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -28,7 +29,8 @@ namespace Qlyrapchieuphim
 
         private void FormThemPhongChieu_Load(object sender, EventArgs e)
         {
-
+            conn = Helper.getdbConnection();
+            conn = Helper.CheckDbConnection(conn);
         }
 
         private void FormThemPhim_Paint(object sender, PaintEventArgs e)
@@ -76,8 +78,8 @@ namespace Qlyrapchieuphim
 
             // TODO: Thêm logic lưu vào CSDL ở đây nếu cần
             // Ví dụ (giả sử có SqlConnection conn):
-            /*
-            string sql = "INSERT INTO PhongChieu (TenPhong, SoGhe, DinhDang) VALUES (@TenPhong, @SoGhe, @DinhDang)";
+            
+            string sql = "INSERT INTO Rooms (RoomName, SeatCount, RoomType) VALUES (@TenPhong, @SoGhe, @DinhDang)";
             using (SqlCommand cmd = new SqlCommand(sql, conn))
             {
                 cmd.Parameters.AddWithValue("@TenPhong", tenPhong);
@@ -88,9 +90,11 @@ namespace Qlyrapchieuphim
                 cmd.ExecuteNonQuery();
                 conn.Close();
             }
-            */
+            
 
             MessageBox.Show("Thêm phòng chiếu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            this.DialogResult = DialogResult.OK;
+            this.Close();
         }
     }
 }

@@ -34,7 +34,8 @@ namespace Qlyrapchieuphim
         }
         private void LoadData()
         {
-            conn.Open();
+            if (conn.State != ConnectionState.Open)
+                conn.Open();
             string SqlQuery = "SELECT ProductID, ProductName, Description, Price, ImageURL, pr.CategoryID, Quantity, ImportDate, Manufacturer, CategoryName " +
                 "FROM Products pr JOIN ProductCategories pc ON (pr.CategoryID = pc.CategoryID)";
             SqlDataAdapter adapter = new SqlDataAdapter(SqlQuery, conn);
@@ -53,12 +54,13 @@ namespace Qlyrapchieuphim
 
             dataGridView1.Columns["Actions"].DisplayIndex = dataGridView1.Columns.Count - 1;
             conn.Close();
-
+            this.Refresh();
         }
         private bool CheckCategories()
         {
             int count;
-            conn.Open();
+            if (conn.State != ConnectionState.Open)
+                conn.Open();
             string SqlQuery = "SELECT COUNT(*) FROM ProductCategories";
             SqlCommand countCmd = new SqlCommand(SqlQuery, conn);
             count = (int)countCmd.ExecuteScalar();
@@ -148,7 +150,8 @@ namespace Qlyrapchieuphim
             int prID;
             try
             {
-                conn.Open();
+                if (conn.State != ConnectionState.Open)
+                    conn.Open();
                 prID = int.Parse(comm.ExecuteScalar().ToString());
                 conn.Close();
                 SaveImage(prID);
@@ -174,7 +177,8 @@ namespace Qlyrapchieuphim
             comm = new SqlCommand(SqlQuery, conn);
             comm.Parameters.Add("@ImageURL", SqlDbType.VarChar).Value = picture_url;
             comm.Parameters.Add("@ProductID", SqlDbType.Int).Value = prID;
-            conn.Open();
+            if (conn.State != ConnectionState.Open)
+                conn.Open();
             comm.ExecuteNonQuery();
             conn.Close();
             LoadData();
@@ -297,7 +301,8 @@ namespace Qlyrapchieuphim
 
                             try
                             {
-                                conn.Open();
+                                if (conn.State != ConnectionState.Open)
+                                    conn.Open();
                                 int rowsAffected = cmd.ExecuteNonQuery();
                                 conn.Close();
 
@@ -392,7 +397,8 @@ namespace Qlyrapchieuphim
             comm.Parameters.Add("@ImageURL", SqlDbType.VarChar).Value = picture_url;
             try
             {
-                conn.Open();
+                if (conn.State != ConnectionState.Open)
+                    conn.Open();
                 comm.ExecuteNonQuery();
                 conn.Close();
                 LoadData();
@@ -430,7 +436,8 @@ namespace Qlyrapchieuphim
                 if (result == DialogResult.Yes)
                 {
                     DataTable dt = dataGridView1.DataSource as DataTable;
-                    conn.Open();
+                    if (conn.State != ConnectionState.Open)
+                        conn.Open();
                     foreach (DataGridViewRow dr in dataGridView1.SelectedRows)
                     {
                         int selected = dr.Index;

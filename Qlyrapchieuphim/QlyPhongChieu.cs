@@ -2,12 +2,15 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using Microsoft.Data.SqlClient;
 using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls.Primitives;
 using System.Windows.Forms;
+
 
 namespace Qlyrapchieuphim
 {
@@ -17,9 +20,17 @@ namespace Qlyrapchieuphim
         {
             InitializeComponent();
         }
-
+        private SqlConnection conn = null;
         private void LoadData()
         {
+            if (conn.State != ConnectionState.Open)
+                conn.Open();
+            string SqlQuery = "SELECT RoomID, RoomName, SeatCount, RoomType FROM Rooms";
+            SqlDataAdapter adapter = new SqlDataAdapter(SqlQuery, conn);
+            DataSet ds = new DataSet();
+            adapter.Fill(ds, "Rooms");
+            DataTable dt = ds.Tables["Rooms"];
+            dataGridView1.DataSource = dt;
             if (!dataGridView1.Columns.Contains("Actions"))
             {
                 DataGridViewTextBoxColumn actionCol = new DataGridViewTextBoxColumn();
@@ -38,13 +49,19 @@ namespace Qlyrapchieuphim
             using (FormThemPhongChieu popup = new FormThemPhongChieu())
             {
                 popup.StartPosition = FormStartPosition.CenterParent;
-                popup.ShowDialog(FindForm());
+                if (popup.ShowDialog(FindForm()) == DialogResult.OK)
+                {
+                    LoadData();
+                }
             }
+            
         }
 
         private void QlyPhongChieu_Load(object sender, EventArgs e)
         {
+            conn = Helper.getdbConnection();
             dataGridView1.RowTemplate.Height = 45;
+            LoadData();
         }
 
         private void dataGridView1_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
@@ -81,20 +98,46 @@ namespace Qlyrapchieuphim
                 int editLeft = padding;
                 int deleteLeft = editLeft + iconSize + padding;
 
+                // Lấy ID phòng từ dòng đang click
+                DataTable dt = dataGridView1.DataSource as DataTable;
+                string roomId = dt.Rows[e.RowIndex]["RoomID"].ToString();
+
                 if (clickX >= editLeft && clickX < editLeft + iconSize)
                 {
                     // 👉 Click icon Edit
-                    using (FormSuaPhongChieu popup = new FormSuaPhongChieu())
+                    using (FormSuaPhongChieu popup = new FormSuaPhongChieu(roomId))
                     {
                         //Todo: Lấy dữ liệu từ hàng này trong datagridview để truyền qua formSửa
                         popup.StartPosition = FormStartPosition.CenterParent;
-                        popup.ShowDialog(FindForm());
+                        if (popup.ShowDialog(FindForm()) == DialogResult.OK)
+                        {
+                            LoadData(); // Chỉ gọi nếu form kia trả về OK
+                        }
                     }
                 }
                 else if (clickX >= deleteLeft && clickX < deleteLeft + iconSize)
                 {
                     // 👉 Click icon Delete
-                    MessageBox.Show("Bạn vừa click nút xóa (tạm thời chưa có hành động).", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    DialogResult result = MessageBox.Show(
+                        "Bạn có chắc chắn muốn xóa dòng này?",
+                        "Xác nhận",
+                        MessageBoxButtons.YesNo,
+                        MessageBoxIcon.Question);
+
+                    if (result == DialogResult.Yes)
+                    {
+                        if (conn.State != ConnectionState.Open)
+                            conn.Open();
+
+                        string SqlQuery = "DELETE FROM Rooms WHERE RoomID = @tempid";
+                        SqlCommand cmd = new SqlCommand(SqlQuery, conn);
+                        cmd.Parameters.Add("@tempid", SqlDbType.Char).Value = roomId;
+                        cmd.ExecuteNonQuery();
+
+                        conn.Close();
+                        LoadData();
+                        this.Refresh();
+                    }
                 }
             }
         }

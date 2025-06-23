@@ -66,7 +66,7 @@ namespace Qlyrapchieuphim
         private void LoadData()
         {
             conn.Open();
-            string SqlQuery = "SELECT IncidentID, IncidentName, ReportedByUserID, Status, Resolution, ReportedAt, Description, usr.Username " +
+            string SqlQuery = "SELECT IncidentID, IncidentName, ReportedByUserID, Status, Resolution, ReportedAt, Description, Username " +
                 "FROM IncidentReports ir , Users usr " +
                 "WHERE (ir.ReportedByUserID = usr.UserID)";
             SqlDataAdapter adapter = new SqlDataAdapter(SqlQuery, conn);
@@ -85,14 +85,14 @@ namespace Qlyrapchieuphim
 
             dataGridView1.Columns["Actions"].DisplayIndex = dataGridView1.Columns.Count - 1;
             conn.Close();
-
+            this.Refresh();
         }
         private void guna2Button1_Click(object sender, EventArgs e) //bcButton
         {
             if (manv.SelectedItem == null ||
                 string.IsNullOrWhiteSpace(tensuco.Text) ||
-                string.IsNullOrWhiteSpace(mota.Text) ||
-                string.IsNullOrEmpty(masuco.Text))
+                string.IsNullOrWhiteSpace(mota.Text) /*||
+                string.IsNullOrEmpty(masuco.Text)*/)
             {
                 MessageBox.Show("Vui lòng điền đầy đủ thông tin.",
                     "Thông báo",
@@ -101,12 +101,10 @@ namespace Qlyrapchieuphim
                 return;
             }
             //SQL section
-            conn.Open();
-            string SqlQuery = "INSERT INTO IncidentReports VALUES (@IncidentID, @IncidentName, @ReportedByUserID, @RelatedObjectType, @RelatedObjectID, @Description, @ReportedAt, @Status, @Resolution)";
+            string SqlQuery = "INSERT INTO IncidentReports VALUES (@IncidentName, @ReportedByUserID, @RelatedObjectType, @RelatedObjectID, @Description, @ReportedAt, @Status, @Resolution)";
             SqlCommand cmd = new SqlCommand(SqlQuery, conn);
-            cmd.Parameters.Add("@IncidentID", SqlDbType.Int).Value = int.Parse(masuco.Text);
             cmd.Parameters.Add("@IncidentName", SqlDbType.NVarChar).Value = tensuco.Text;
-            int usrID = int.Parse(Helper.SubStringBetween(manv.SelectedText, " (ID: ", ")"));
+            int usrID = int.Parse(Helper.SubStringBetween(manv.SelectedItem.ToString(), " (ID: ", ")"));
             cmd.Parameters.Add("@ReportedByUserID", SqlDbType.Int).Value = usrID;
             cmd.Parameters.Add("@RelatedObjectType", SqlDbType.NVarChar).Value = "None";
             cmd.Parameters.Add("@RelatedObjectID", SqlDbType.Int).Value = 0;
@@ -116,7 +114,9 @@ namespace Qlyrapchieuphim
             cmd.Parameters.Add("@Resolution", SqlDbType.NVarChar).Value = "placeholder";//GIÁ TRỊ TẠM DO CHƯA CÓ TEXTBOX, THAY THẾ GIÁ TRỊ NGAY KHI CÓ TEXTBOX
             try
             {
+                conn.Open();
                 cmd.ExecuteNonQuery();
+                conn.Close();
                 LoadData();
                 Updatea();
             }
@@ -135,8 +135,6 @@ namespace Qlyrapchieuphim
                         throw;
                 }
             }
-            conn.Close();
-
             Updatea();
 
         }
@@ -166,8 +164,8 @@ namespace Qlyrapchieuphim
 
             if (manv.SelectedItem == null ||
                 string.IsNullOrWhiteSpace(tensuco.Text) ||
-                string.IsNullOrWhiteSpace(mota.Text) ||
-                string.IsNullOrEmpty(masuco.Text))
+                string.IsNullOrWhiteSpace(mota.Text) /*||
+                string.IsNullOrEmpty(masuco.Text)*/)
             {
                 MessageBox.Show("Vui lòng điền đầy đủ thông tin.",
                     "Thông báo",
@@ -190,16 +188,17 @@ namespace Qlyrapchieuphim
             SqlCommand cmd = new SqlCommand(SqlQuery, conn);
             cmd.Parameters.Add("@IncidentID", SqlDbType.Int).Value = int.Parse(masuco.Text);
             cmd.Parameters.Add("@IncidentName", SqlDbType.NVarChar).Value = tensuco.Text;
-            int usrID = int.Parse(Helper.SubStringBetween(manv.SelectedText, " (ID: ", ")"));
+            int usrID = int.Parse(Helper.SubStringBetween(manv.SelectedItem.ToString(), " (ID: ", ")"));
             cmd.Parameters.Add("@ReportedByUserID", SqlDbType.Int).Value = usrID;
             cmd.Parameters.Add("@ReportedAt", SqlDbType.Date).Value = ngaytiepnhan.Value.Date;
             cmd.Parameters.Add("@Status", SqlDbType.NVarChar).Value = tinhtrang.SelectedItem;
             cmd.Parameters.Add("@Description", SqlDbType.NVarChar).Value = mota.Text;
             cmd.Parameters.Add("@Resolution", SqlDbType.NVarChar).Value = "placeholder";//GIÁ TRỊ TẠM DO CHƯA CÓ TEXTBOX, THAY THẾ GIÁ TRỊ NGAY KHI CÓ TEXTBOX
-            conn.Open();
             try
             {
+                conn.Open();
                 cmd.ExecuteNonQuery();
+                conn.Close();
                 LoadData();
                 Updatea();
             }
@@ -218,7 +217,6 @@ namespace Qlyrapchieuphim
                         throw;
                 }
             }
-            conn.Close();
         }
 
         private void xoa_Click(object sender, EventArgs e)
@@ -262,7 +260,7 @@ namespace Qlyrapchieuphim
             masuco.Enabled = false;
             DateTime date = (DateTime)dt.Rows[row]["ReportedAt"];
             ngaytiepnhan.Value = date;
-            manv.SelectedItem = dt.Rows[row]["usr.Username"] + " (ID: " + dt.Rows[row]["ReportedUserID"] + ")";
+            manv.SelectedItem = dt.Rows[row]["Username"] + " (ID: " + dt.Rows[row]["ReportedByUserID"] + ")";
             tinhtrang.SelectedItem = dt.Rows[row]["Status"];
             tensuco.Text = dt.Rows[row]["IncidentName"].ToString();
             mota.Text = dt.Rows[row]["Description"].ToString();
@@ -311,18 +309,7 @@ namespace Qlyrapchieuphim
 
         private void dataGridView1_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
         {
-            var grid = sender as DataGridView;
-            var rowIdx = (e.RowIndex + 1).ToString();
-
-            var centerFormat = new StringFormat()
-            {
-                // right alignment might actually make more sense for numbers
-                Alignment = StringAlignment.Center,
-                LineAlignment = StringAlignment.Center
-            };
-
-            var headerBounds = new Rectangle(e.RowBounds.Left, e.RowBounds.Top, grid.RowHeadersWidth, e.RowBounds.Height);
-            e.Graphics.DrawString(rowIdx, this.Font, SystemBrushes.ControlText, headerBounds, centerFormat);
+            //Helper.DrawNumbering(sender, e, this);
         }
 
         private void Suco_Load(object sender, EventArgs e)

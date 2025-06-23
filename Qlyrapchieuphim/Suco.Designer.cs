@@ -199,6 +199,7 @@
             this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.Location = new System.Drawing.Point(16, 33);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -458,7 +459,7 @@
             // 
             // colMaNV
             // 
-            this.colMaNV.DataPropertyName = "usr.Username";
+            this.colMaNV.DataPropertyName = "Username";
             this.colMaNV.FillWeight = 120F;
             this.colMaNV.HeaderText = "User báo cáo";
             this.colMaNV.MinimumWidth = 6;

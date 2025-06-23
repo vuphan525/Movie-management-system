@@ -46,7 +46,7 @@ namespace Qlyrapchieuphim
         {
             string projectDirectory = Environment.CurrentDirectory;
             string newConnstring = Properties.Settings.Default.ConnString2 + projectDirectory + "\\Qlyrapchieuphim\\database\\QuanLyRapPhim.mdf";
-            return new SqlConnection(newConnstring);
+            return CheckDbConnection(new SqlConnection(newConnstring));
         }
         public static SqlConnection CheckDbConnection(SqlConnection conn)
         {

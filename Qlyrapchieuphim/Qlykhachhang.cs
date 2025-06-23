@@ -64,6 +64,7 @@ namespace Qlyrapchieuphim
 
             dataGridView1.Columns["Actions"].DisplayIndex = dataGridView1.Columns.Count - 1;
             conn.Close();
+            this.Refresh();
         }
         private void them_Click(object sender, EventArgs e)
         {

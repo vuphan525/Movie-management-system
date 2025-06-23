@@ -25,11 +25,11 @@ namespace Qlyrapchieuphim.FormEdit
         }
         private string movieId;
 
-public FormSuaPhim(string id)
-{
-    InitializeComponent();
-    movieId = id;
-}
+        public FormSuaPhim(string id)
+        {
+            InitializeComponent();
+            movieId = id;
+        }
 
         private void guna2Button2_Click(object sender, EventArgs e)
         {

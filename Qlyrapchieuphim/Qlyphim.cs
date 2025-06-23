@@ -39,7 +39,8 @@ namespace Qlyrapchieuphim
         string projectFolder = AppDomain.CurrentDomain.BaseDirectory; // Thư mục dự án
         private void LoadData()
         {
-            conn.Open();
+            if (conn.State != ConnectionState.Open)
+                conn.Open();
             string SqlQuery = "select MovieID, Title, Description, Duration, PosterURL, Genre, Status, ReleaseDate, ImportDate, Manufacturer from Movies";
             SqlDataAdapter adapter = new SqlDataAdapter(SqlQuery, conn);
             DataSet ds = new DataSet();
@@ -58,7 +59,8 @@ namespace Qlyrapchieuphim
             dataGridView1.Columns["Actions"].DisplayIndex = dataGridView1.Columns.Count - 1;
 
             conn.Close();
-            
+            this.Refresh();
+            dataGridView1.ClearSelection();
         }
 
         
@@ -206,7 +208,8 @@ namespace Qlyrapchieuphim
 
                     if (result == DialogResult.Yes)
                     {
-                        conn.Open();
+                        if (conn.State != ConnectionState.Open)
+                            conn.Open();
 
                         string SqlQuery = "DELETE FROM Movies WHERE MovieID = @tempid";
                         SqlCommand cmd = new SqlCommand(SqlQuery, conn);
@@ -242,7 +245,8 @@ namespace Qlyrapchieuphim
                 if (result == DialogResult.Yes)
                 {
                     DataTable dt = dataGridView1.DataSource as DataTable;
-                    conn.Open();
+                    if (conn.State != ConnectionState.Open)
+                        conn.Open();
                     foreach (DataGridViewRow dr in dataGridView1.SelectedRows)
                     {
                         int selected = dr.Index;

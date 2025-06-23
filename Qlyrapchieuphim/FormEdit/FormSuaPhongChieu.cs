@@ -2,12 +2,14 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using Microsoft.Data.SqlClient;
 using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.IdentityModel.Tokens;
 
 namespace Qlyrapchieuphim.FormEdit
 {
@@ -19,8 +21,10 @@ namespace Qlyrapchieuphim.FormEdit
             Guna2ShadowForm shadow = new Guna2ShadowForm();
             shadow.TargetForm = this;
             this.Paint += FormThemPhim_Paint;
+            lbl_FormSuaPhongChieu_MaPhong.Enabled = false;
         }
         public string id = null;
+        public SqlConnection conn = null;
         public FormSuaPhongChieu(string id)
         {
             InitializeComponent();
@@ -29,12 +33,14 @@ namespace Qlyrapchieuphim.FormEdit
 
         private void guna2Button2_Click(object sender, EventArgs e)
         {
+            this.DialogResult = DialogResult.Cancel;
             this.Close();
         }
 
         private void FormSuaPhongChieu_Load(object sender, EventArgs e)
         {
-
+            conn = Helper.getdbConnection();
+            LoadRoomData(id);
         }
 
         private void FormThemPhim_Paint(object sender, PaintEventArgs e)
@@ -57,7 +63,7 @@ namespace Qlyrapchieuphim.FormEdit
             cb_FormSuaPhongChieu_DinhDang.SelectedIndex = -1;
         }
 
-        private void them_Click(object sender, EventArgs e)
+        private void CapNhat_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(lbl_FormSuaPhongChieu_TenPhong.Text) ||
         string.IsNullOrWhiteSpace(lbl_FormSuaPhongChieu_SoGhe.Text) ||
@@ -79,22 +85,50 @@ namespace Qlyrapchieuphim.FormEdit
             string dinhDang = cb_FormSuaPhongChieu_DinhDang.SelectedItem.ToString();
 
             // TODO: Thêm logic lưu vào CSDL ở đây nếu cần
-            // Ví dụ (giả sử có SqlConnection conn):
-            /*
-            string sql = "INSERT INTO PhongChieu (TenPhong, SoGhe, DinhDang) VALUES (@TenPhong, @SoGhe, @DinhDang)";
+            
+            string sql = "UPDATE Rooms SET " +
+                "RoomName = @TenPhong, " +
+                "SeatCount = @SoGhe, " +
+                "RoomType = @DinhDang " +
+                "WHERE RoomID = @RoomID";
             using (SqlCommand cmd = new SqlCommand(sql, conn))
             {
                 cmd.Parameters.AddWithValue("@TenPhong", tenPhong);
                 cmd.Parameters.AddWithValue("@SoGhe", soGhe);
                 cmd.Parameters.AddWithValue("@DinhDang", dinhDang);
+                cmd.Parameters.AddWithValue("@RoomID", int.Parse(id));
 
                 conn.Open();
                 cmd.ExecuteNonQuery();
                 conn.Close();
+                this.DialogResult = DialogResult.OK;
+                this.Close();
             }
-            */
-
-            MessageBox.Show("Thêm phòng chiếu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Cập nhật thông tin phòng chiếu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+        private void LoadRoomData(string roomId)
+        {
+            if (roomId.IsNullOrEmpty())
+                return;
+            using (SqlConnection conn = Helper.getdbConnection())
+            {
+                conn.Open();
+                string query = "SELECT * FROM Rooms WHERE RoomID = @RoomID";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.Add("@RoomID", SqlDbType.Int).Value = int.Parse(roomId);
+
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        lbl_FormSuaPhongChieu_MaPhong.Text = reader["RoomID"].ToString();
+                        lbl_FormSuaPhongChieu_TenPhong.Text = reader["RoomName"].ToString();
+                        cb_FormSuaPhongChieu_DinhDang.SelectedItem = reader["RoomType"].ToString();
+                        lbl_FormSuaPhongChieu_SoGhe.Text = reader["SeatCount"].ToString();
+                    }
+                }
+            }
+        }
+
     }
 }

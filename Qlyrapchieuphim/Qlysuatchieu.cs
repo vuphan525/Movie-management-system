@@ -29,7 +29,8 @@ namespace Qlyrapchieuphim
         private bool CheckMovie()
         {
             int count;
-            conn.Open();
+            if (conn.State != ConnectionState.Open)
+                conn.Open();
             string SqlQuery = "SELECT COUNT(*) FROM Movies WHERE Status = N'Đang chiếu'";
             SqlCommand countCmd = new SqlCommand(SqlQuery, conn);
             count = (int)countCmd.ExecuteScalar();
@@ -61,45 +62,50 @@ namespace Qlyrapchieuphim
             else
                 return false;
         }
-        //private void CheckRoom()
-        //{
-        //    int count;
-        //    SqlConnection conn = new SqlConnection(ConnString);
-        //    conn.Open();
-        //    string SqlQuery = "SELECT COUNT(*) FROM PHONGCHIEU";
-        //    SqlCommand countCmd = new SqlCommand(SqlQuery, conn);
-        //    count = (int)countCmd.ExecuteScalar();
-            
-        //    if (count > 0)
-        //    {
-        //        phongchieu.Enabled = true;
-        //        errorProvider2.Clear();
-        //        SqlQuery = "SELECT MAPHONG FROM PHONGCHIEU";
-        //        string[] rooms = new string[count];
-        //        SqlCommand cmd = new SqlCommand(SqlQuery, conn);
-        //        SqlDataReader reader = cmd.ExecuteReader();
-        //        int i = 0;
-        //        while (reader.Read())
-        //        {
-        //            rooms[i] = reader.GetString(0);
-        //            i++;
-        //        }
-        //        phongchieu.DataSource = rooms;
-        //    }
-        //    else
-        //    {
-        //        phongchieu.Enabled = false;
-        //        errorProvider2.SetError(phongchieu, "Không có phòng trong hệ thống!");
-        //    }
-        //    conn.Close();
-        //}
-        
+        private bool CheckRoom()
+        {
+            int count;
+            if (conn.State != ConnectionState.Open)
+                conn.Open();
+            string SqlQuery = "SELECT COUNT(*) FROM Rooms";
+            SqlCommand countCmd = new SqlCommand(SqlQuery, conn);
+            count = (int)countCmd.ExecuteScalar();
+
+            if (count > 0)
+            {
+                phongchieu.Enabled = true;
+                errorProvider2.Clear();
+                SqlQuery = "SELECT RoomID, RoomName FROM Rooms";
+                string[] rooms = new string[count];
+                SqlCommand cmd = new SqlCommand(SqlQuery, conn);
+                SqlDataReader reader = cmd.ExecuteReader();
+                int i = 0;
+                while (reader.Read())
+                {
+                    rooms[i] = reader.GetString(1) + " (ID: " + reader.GetInt32(0).ToString() + ")";
+                    i++;
+                }
+                phongchieu.DataSource = rooms;
+            }
+            else
+            {
+                phongchieu.Enabled = false;
+                errorProvider2.SetError(phongchieu, "Không có phòng trong hệ thống!");
+            }
+            conn.Close();
+            if (count > 0)
+                return true;
+            else
+                return false;
+        }
+
         private void LoadData()
         {
-            conn.Open();
-            string SqlQuery = "SELECT ShowtimeID, StartTime, RoomID, st.MovieID, Title " +
-                "FROM Showtimes st , Movies mv " +
-                "WHERE (st.MovieID = mv.MovieID)";
+            if (conn.State != ConnectionState.Open)
+                conn.Open();
+            string SqlQuery = "SELECT ShowtimeID, StartTime, st.RoomID, st.MovieID, Title, RoomName " +
+                "FROM Showtimes st JOIN Movies mv ON (st.MovieID = mv.MovieID) " +
+                "JOIN Rooms rm ON (rm.RoomID = st.RoomID)";
             SqlDataAdapter adapter = new SqlDataAdapter(SqlQuery, conn);
             DataSet ds = new DataSet();
             adapter.Fill(ds, "Showtime");
@@ -116,7 +122,7 @@ namespace Qlyrapchieuphim
 
             dataGridView1.Columns["Actions"].DisplayIndex = dataGridView1.Columns.Count - 1;
             conn.Close();
-
+            this.Refresh();
         }
 
         private void guna2Button1_Click(object sender, EventArgs e) //updateButton
@@ -188,13 +194,15 @@ namespace Qlyrapchieuphim
             
             int mp = int.Parse(Helper.SubStringBetween(tenphim.SelectedItem.ToString(), " (ID: ", ")"));
             cmd.Parameters.Add("@MovieID", SqlDbType.Int).Value = mp;
-            cmd.Parameters.Add("@RoomID", SqlDbType.Int).Value = int.Parse(phongchieu.SelectedItem.ToString());//VẪN ĐANG SỬ DỤNG CÁC SỐ CÓ SẴN, ĐIỀU CHỈNH KHI CÓ QUẢN LÝ PHÒNG CHIẾU
+            int roomID = int.Parse(Helper.SubStringBetween(phongchieu.SelectedItem.ToString(), " (ID: ", ")"));
+            cmd.Parameters.Add("@RoomID", SqlDbType.Int).Value = roomID;
             cmd.Parameters.Add("@StartTime", SqlDbType.DateTime).Value = ngaychieu.Value + giochieu.Value.TimeOfDay.StripMilliseconds();
             cmd.Parameters.Add("@Price", SqlDbType.Decimal).Value = 65000;//GIÁ TRỊ TẠM DO CHƯA CÓ TEXTBOX, THAY THẾ GIÁ TRỊ NGAY KHI CÓ TEXTBOX
             cmd.Parameters.Add("@ShowtimeID", SqlDbType.Int).Value = int.Parse(idTextBox.Text);
             try
             {
-                conn.Open();
+                if (conn.State != ConnectionState.Open)
+                    conn.Open();
                 cmd.ExecuteNonQuery();
                 conn.Close();
                 LoadData();
@@ -248,12 +256,14 @@ namespace Qlyrapchieuphim
             //cmd.Parameters.Add("@ShowtimeID", SqlDbType.Char).Value = idTextBox.Text;
             cmd.Parameters.Add("@StartTime", SqlDbType.DateTime).Value = ngaychieu.Value + giochieu.Value.TimeOfDay.StripMilliseconds();
             cmd.Parameters.Add("@Price", SqlDbType.Decimal).Value = 65000; //GIÁ TRỊ TẠM DO CHƯA CÓ TEXTBOX, THAY THẾ GIÁ TRỊ NGAY KHI CÓ TEXTBOX
-            cmd.Parameters.Add("@RoomID", SqlDbType.Int).Value = int.Parse(phongchieu.SelectedItem.ToString()); //VẪN ĐANG SỬ DỤNG CÁC SỐ CÓ SẴN, ĐIỀU CHỈNH KHI CÓ QUẢN LÝ PHÒNG CHIẾU
-            int mp = int.Parse(Helper.SubStringBetween(tenphim.SelectedItem.ToString(), " (ID: ", ")"));
-            cmd.Parameters.Add("@MovieID", SqlDbType.Int).Value = mp;
+            int roomID = int.Parse(Helper.SubStringBetween(phongchieu.SelectedItem.ToString(), " (ID: ", ")"));
+            cmd.Parameters.Add("@RoomID", SqlDbType.Int).Value = roomID;
+            int movieID = int.Parse(Helper.SubStringBetween(tenphim.SelectedItem.ToString(), " (ID: ", ")"));
+            cmd.Parameters.Add("@MovieID", SqlDbType.Int).Value = movieID;
             try
             {
-                conn.Open();
+                if (conn.State != ConnectionState.Open)
+                    conn.Open();
                 cmd.ExecuteNonQuery();
                 conn.Close();
                 LoadData();
@@ -289,7 +299,8 @@ namespace Qlyrapchieuphim
             SqlQuery += " " +
                         "(SeatName); ";
             cmd = new SqlCommand(SqlQuery, conn);
-            conn.Open();
+            if (conn.State != ConnectionState.Open)
+                conn.Open();
             cmd.ExecuteNonQuery();
             for (char c = 'A'; c <= 'J'; c++)
             {
@@ -313,7 +324,8 @@ namespace Qlyrapchieuphim
             //idTextBox.Enabled = true;
             if (CheckMovie())
                 tenphim.SelectedIndex = 0;
-            phongchieu.SelectedIndex = 0;
+            if (CheckRoom())
+                phongchieu.SelectedIndex = 0;
             ngaychieu.Value = DateTime.Now;
             giochieu.Value = DateTime.Now + TimeSpan.FromHours(1);
             dataGridView1.ClearSelection();
@@ -331,7 +343,8 @@ namespace Qlyrapchieuphim
                 {
 
                     DataTable dt = dataGridView1.DataSource as DataTable;
-                    conn.Open();
+                    if (conn.State != ConnectionState.Open)
+                        conn.Open();
                     foreach (DataGridViewRow dr in dataGridView1.SelectedRows)
                     {
                         int selected = dr.Index;
@@ -367,7 +380,7 @@ namespace Qlyrapchieuphim
             TimeSpan time = date.TimeOfDay;
             giochieu.Value = new DateTime(time.Ticks + date.Ticks);
             tenphim.SelectedItem = dt.Rows[row]["Title"] + " (ID: " + dt.Rows[row]["MovieID"] + ")";
-            phongchieu.SelectedItem = dt.Rows[row]["RoomID"];
+            phongchieu.SelectedItem = dt.Rows[row]["RoomName"] + " (ID: " + dt.Rows[row]["RoomID"] + ")";
         }
         private void Qlysuatchieu_Load(object sender, EventArgs e)
         {
@@ -380,8 +393,8 @@ namespace Qlyrapchieuphim
             ngaychieu.Value = DateTime.Now;
             if (CheckMovie())
                 tenphim.SelectedIndex = 0;
-
-            phongchieu.SelectedIndex = 0;
+            if (CheckRoom())
+                phongchieu.SelectedIndex = 0;
             timkiem.Visible = false;
             timkiem.Value = DateTime.Now;
             LoadData();
@@ -528,6 +541,7 @@ namespace Qlyrapchieuphim
         private void Qlysuatchieu_Paint(object sender, PaintEventArgs e)
         {
             CheckMovie();
+            CheckRoom();
             if (!tenphim.Enabled || !phongchieu.Enabled)
             {
                 them.Enabled = false;
