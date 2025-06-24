@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.Data.SqlClient;
 
 namespace Qlyrapchieuphim
 {
@@ -20,7 +21,7 @@ namespace Qlyrapchieuphim
             shadow.TargetForm = this;
             this.Paint += FormThemPhim_Paint;
         }
-
+        SqlConnection conn;
         private void guna2Button2_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -63,7 +64,66 @@ namespace Qlyrapchieuphim
 
         private void them_Click(object sender, EventArgs e)
         {
-            //ToDo: Xử lý thêm voucher
+            if (string.IsNullOrWhiteSpace(lbl_FormThemVoucher_MaPhatHanh.Text) ||
+                           string.IsNullOrWhiteSpace(lbl_FormThemVoucher_DiscountAmount.Text))
+
+
+            {
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            double mgia;
+            if (!double.TryParse(lbl_FormThemVoucher_DiscountAmount.Text, out mgia))
+            {
+
+                MessageBox.Show(
+                    "Mệnh giá phải được nhập dươi dạng một số!",
+                    "Lỗi nhập liệu",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+                return;
+            }
+            if (date_FormThemVoucher_NgayHetHan.Value.Date < DateTime.Now.Date)
+            {
+                MessageBox.Show("Ngày hết hạn Voucher phải lớn hơn hoặc bằng ngày hiện tại!", "Lỗi nhập liệu", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            //SQL section
+
+            string SqlQuery = "INSERT INTO Vouchers VALUES (@Code, @Description, @DiscountAmount, @DiscountPercent, @ExpiryDate, @Quantity, @MinOrderValue, @IsActive)";
+            SqlCommand cmd = new SqlCommand(SqlQuery, conn);
+            cmd.Parameters.Add("@Code", SqlDbType.NVarChar).Value = lbl_FormThemVoucher_MaPhatHanh.Text;
+            cmd.Parameters.Add("@Description", SqlDbType.NVarChar).Value =lbl_FormThemVoucher_MoTa; //GIÁ TRỊ TẠM DO CHƯA CÓ TEXTBOX, THAY THẾ GIÁ TRỊ NGAY KHI CÓ TEXTBOX
+            cmd.Parameters.Add("@DiscountAmount", SqlDbType.Decimal).Value = lbl_FormThemVoucher_DiscountAmount.Text;
+            cmd.Parameters.Add("@DiscountAmount", SqlDbType.Float).Value = 10; //GIÁ TRỊ TẠM DO CHƯA CÓ TEXTBOX, THAY THẾ GIÁ TRỊ NGAY KHI CÓ TEXTBOX
+            cmd.Parameters.Add("@ExpiryDate", SqlDbType.Date).Value = date_FormThemVoucher_NgayHetHan.Value.Date;
+            cmd.Parameters.Add("@Quantity", SqlDbType.Int).Value = lbl_FormThemVoucher_SoLuong;//GIÁ TRỊ TẠM DO CHƯA CÓ TEXTBOX, THAY THẾ GIÁ TRỊ NGAY KHI CÓ TEXTBOX
+            cmd.Parameters.Add("@MinOrderValue", SqlDbType.Decimal).Value = 0;//GIÁ TRỊ TẠM DO CHƯA CÓ TEXTBOX, THAY THẾ GIÁ TRỊ NGAY KHI CÓ TEXTBOX
+            cmd.Parameters.Add("@IsActive", SqlDbType.Bit).Value = Convert.ToBoolean(cb_FormThemVoucher_TrangThai.SelectedIndex);
+            try
+            {
+                conn.Open();
+                cmd.ExecuteNonQuery();
+                conn.Close();
+                this.Close();
+                this.DialogResult = DialogResult.OK;
+            }
+            catch (SqlException ex)
+            {
+                switch (ex.Number)
+                {
+                    case 2627:
+                        MessageBox.Show(
+                            "Mã suất chiếu không được trùng nhau!",
+                            "Lỗi nhập liệu",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Warning);
+                        break;
+                    default:
+                        throw;
+                }
+            }
         }
 
         private void lbl_FormThemVoucher_DiscountPercent_TextChanged(object sender, EventArgs e)

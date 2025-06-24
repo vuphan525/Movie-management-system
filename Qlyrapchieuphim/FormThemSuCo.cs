@@ -100,10 +100,11 @@ namespace Qlyrapchieuphim
         }
 
         private void bcButton_Click(object sender, EventArgs e)
-        { if (manv.SelectedItem == null ||
+        {
+            if (manv.SelectedItem == null ||
                 string.IsNullOrWhiteSpace(lbl_FormThemSuCo_TenSuCo.Text) ||
                 string.IsNullOrWhiteSpace(lbl_FormThemSuCo_MoTa.Text) 
-               )
+              )
             {
                 MessageBox.Show("Vui lòng điền đầy đủ thông tin.",
                     "Thông báo",
@@ -112,23 +113,28 @@ namespace Qlyrapchieuphim
                 return;
             }
             //SQL section
-            conn.Open();
-            string SqlQuery = "INSERT INTO IncidentReports VALUES (@IncidentID, @IncidentName, @ReportedByUserID, @RelatedObjectType, @RelatedObjectID, @Description, @ReportedAt, @Status, @Resolution)";
+            string SqlQuery = "INSERT INTO IncidentReports VALUES (@IncidentName, @ReportedByUserID, @RelatedObjectType, @RelatedObjectID, @Description, @ReportedAt, @Status, @Resolution)";
             SqlCommand cmd = new SqlCommand(SqlQuery, conn);
-            cmd.Parameters.Add("@IncidentID", SqlDbType.Int).Value = int.Parse(lbl_FormThemSuCo_MaSuCo.Text);
             cmd.Parameters.Add("@IncidentName", SqlDbType.NVarChar).Value = lbl_FormThemSuCo_TenSuCo.Text;
-            int usrID = int.Parse(Helper.SubStringBetween(manv.SelectedText, " (ID: ", ")"));
+            int usrID = int.Parse(Helper.SubStringBetween(manv.SelectedItem.ToString(), " (ID: ", ")"));
             cmd.Parameters.Add("@ReportedByUserID", SqlDbType.Int).Value = usrID;
             cmd.Parameters.Add("@RelatedObjectType", SqlDbType.NVarChar).Value = "None";
             cmd.Parameters.Add("@RelatedObjectID", SqlDbType.Int).Value = 0;
             cmd.Parameters.Add("@ReportedAt", SqlDbType.Date).Value = date_FormThemSuCo_NgayTiepNhan.Value.Date;
-            cmd.Parameters.Add("@Status", SqlDbType.NVarChar).Value =cb_FormThemSuCo_TinhTrang.SelectedItem;
+            cmd.Parameters.Add("@Status", SqlDbType.NVarChar).Value = cb_FormThemSuCo_TinhTrang.SelectedItem;
             cmd.Parameters.Add("@Description", SqlDbType.NVarChar).Value = lbl_FormThemSuCo_MoTa.Text;
-            cmd.Parameters.Add("@Resolution", SqlDbType.NVarChar).Value = "placeholder";//GIÁ TRỊ TẠM DO CHƯA CÓ TEXTBOX, THAY THẾ GIÁ TRỊ NGAY KHI CÓ TEXTBOX
+            cmd.Parameters.Add("@Resolution", SqlDbType.NVarChar).Value = lbl_FormThemSuCo_HuongGiaiQuyet.Text;//GIÁ TRỊ TẠM DO CHƯA CÓ TEXTBOX, THAY THẾ GIÁ TRỊ NGAY KHI CÓ TEXTBOX
             try
             {
+                conn.Open();
                 cmd.ExecuteNonQuery();
-               
+                conn.Close();
+               this.Close();
+                MessageBox.Show("Thêm sự cố thành công!",
+                    "Thông báo",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+                this.DialogResult = DialogResult.OK; 
             }
             catch (SqlException ex)
             {
@@ -145,13 +151,6 @@ namespace Qlyrapchieuphim
                         throw;
                 }
             }
-           
-
-            conn.Close();
-            this.Close();
-           
-            this.DialogResult = DialogResult.OK;
-
         }
     }
 }

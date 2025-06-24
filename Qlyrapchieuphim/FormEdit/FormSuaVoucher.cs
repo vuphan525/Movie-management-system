@@ -58,7 +58,7 @@ namespace Qlyrapchieuphim.FormEdit
 
         private void them_Click(object sender, EventArgs e)
         {
-            //ToDo: Xử lý sửa voucher
+            
         }
 
         private void lbl_FormSuaVoucher_DiscountAmount_TextChanged(object sender, EventArgs e)
