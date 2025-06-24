@@ -301,8 +301,37 @@ namespace Qlyrapchieuphim
                 }
                 else if (clickX >= deleteLeft && clickX < deleteLeft + iconSize)
                 {
-                    // 👉 Click icon Delete
-                    MessageBox.Show("Bạn vừa click nút xóa (tạm thời chưa có hành động).", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    DialogResult result = MessageBox.Show(
+         "Bạn có chắc chắn muốn xóa dòng này?",
+         "Xác nhận",
+         MessageBoxButtons.YesNo,
+         MessageBoxIcon.Question);
+
+                    if (result == DialogResult.Yes)
+                    {
+                        try
+                        {
+                            DataTable dt = dataGridView1.DataSource as DataTable;
+                            string temp_id = dt.Rows[e.RowIndex]["IncidentID"].ToString();
+                            string SqlQuery = "DELETE FROM IncidentReports WHERE IncidentID = @tempid";
+
+                            using (SqlCommand cmd = new SqlCommand(SqlQuery, conn))
+                            {
+                                cmd.Parameters.Add("@tempid", SqlDbType.Int).Value = int.Parse(temp_id);
+                                conn.Open();
+                                cmd.ExecuteNonQuery();
+                                conn.Close();
+                            }
+
+                            LoadData();
+                            Updatea();
+                        }
+                        catch (Exception ex)
+                        {
+                            conn.Close(); // đảm bảo đóng kết nối nếu có lỗi
+                            MessageBox.Show("Xảy ra lỗi khi xóa: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    } 
                 }
             }
         }

@@ -427,7 +427,7 @@ namespace Qlyrapchieuphim
 
                     using (FormSuaSuatChieu popup = new FormSuaSuatChieu(id))
                     {
-                        
+
 
                         //Todo: Lấy dữ liệu từ hàng này trong datagridview để truyền qua formSửa
                         popup.StartPosition = FormStartPosition.CenterParent;
@@ -440,7 +440,45 @@ namespace Qlyrapchieuphim
                 else if (clickX >= deleteLeft && clickX < deleteLeft + iconSize)
                 {
                     // 👉 Click icon Delete
-                    MessageBox.Show("Bạn vừa click nút xóa (tạm thời chưa có hành động).", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    DataTable dt = dataGridView1.DataSource as DataTable;
+                    string temp_id = dt.Rows[e.RowIndex]["ShowtimeID"].ToString();
+
+                    DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xóa suất chiếu này?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                    if (result == DialogResult.Yes)
+                    {
+                        try
+                        {
+                            if (conn.State != ConnectionState.Open)
+                                conn.Open();
+
+                            // Xóa suất chiếu
+                            string deleteQuery = "DELETE FROM Showtimes WHERE ShowtimeID = @tempid";
+                            SqlCommand cmd = new SqlCommand(deleteQuery, conn);
+                            cmd.Parameters.Add("@tempid", SqlDbType.Int).Value = temp_id;
+                            cmd.ExecuteNonQuery();
+
+                            // Xoá bảng chỗ ngồi tương ứng (nếu có)
+                            string dropTableQuery = "IF OBJECT_ID('dbo.S_" + temp_id.Trim() + "', 'U') IS NOT NULL DROP TABLE S_" + temp_id.Trim();
+                            cmd = new SqlCommand(dropTableQuery, conn);
+                            cmd.ExecuteNonQuery();
+
+                            MessageBox.Show("Đã xóa suất chiếu và dữ liệu ghế!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Lỗi khi xóa: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        finally
+                        {
+                            if (conn.State == ConnectionState.Open)
+                                conn.Close();
+
+                            LoadData();
+                            Updatea();
+                        }
+                    }
+
                 }
             }
         }

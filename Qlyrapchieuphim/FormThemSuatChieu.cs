@@ -20,6 +20,9 @@ namespace Qlyrapchieuphim
             Guna2ShadowForm shadow = new Guna2ShadowForm();
             shadow.TargetForm = this;
             this.Paint += FormThemPhim_Paint;
+            this.Load += FormThemSuatChieu_Load;
+
+
         }
 
         private void guna2Button2_Click(object sender, EventArgs e)
@@ -29,9 +32,122 @@ namespace Qlyrapchieuphim
 
         private void FormThemSuatChieu_Load(object sender, EventArgs e)
         {
+            conn = Helper.getdbConnection();
+            conn = Helper.CheckDbConnection(conn);
             date_FormThemSuatChieu_NgayChieu.Format = DateTimePickerFormat.Custom;
             date_FormThemSuatChieu_NgayChieu.CustomFormat = "dd/MM/yyyy";
+            if (CheckMovie())
+                cb_FormThemSuatChieu_TenPhim.SelectedIndex = 0;
+            if (CheckRoom())
+                cb_FormThemSuatChieu_PhongChieu.SelectedIndex = 0;
+            date_FormThemSuatChieu_NgayChieu.Value = DateTime.Now;
+            date_FormThemSuatChieu_GioChieu.Value = DateTime.Now + TimeSpan.FromHours(1);
         }
+
+        private bool CheckRoom()
+        {
+            int count;
+            if (conn.State != ConnectionState.Open)
+                conn.Open();
+            string SqlQuery = "SELECT COUNT(*) FROM Rooms";
+            SqlCommand countCmd = new SqlCommand(SqlQuery, conn);
+            count = (int)countCmd.ExecuteScalar();
+
+            if (count > 0)
+            {
+                cb_FormThemSuatChieu_PhongChieu.Enabled = true;
+                
+                SqlQuery = "SELECT RoomID, RoomName FROM Rooms";
+                string[] rooms = new string[count];
+                SqlCommand cmd = new SqlCommand(SqlQuery, conn);
+                SqlDataReader reader = cmd.ExecuteReader();
+                int i = 0;
+                while (reader.Read())
+                {
+                    rooms[i] = reader.GetString(1) + " (ID: " + reader.GetInt32(0).ToString() + ")";
+                    i++;
+                }
+                cb_FormThemSuatChieu_PhongChieu.DataSource = rooms;
+            }
+            else
+            {
+                cb_FormThemSuatChieu_PhongChieu.Enabled = false;
+                
+            }
+            conn.Close();
+            if (count > 0)
+                return true;
+            else
+                return false;
+        }
+
+        private bool CheckMovie()
+        {
+            int count = 0;
+
+            try
+            {
+                if (conn == null)
+                {
+                    conn = Helper.getdbConnection();
+                    conn = Helper.CheckDbConnection(conn);
+                }
+
+                if (conn.State != ConnectionState.Open)
+                    conn.Open();
+
+                string countQuery = "SELECT COUNT(*) FROM Movies WHERE Status = N'Đang chiếu'";
+                using (SqlCommand countCmd = new SqlCommand(countQuery, conn))
+                {
+                    count = (int)countCmd.ExecuteScalar();
+                }
+
+                if (cb_FormThemSuatChieu_TenPhim == null)
+                {
+                    MessageBox.Show("ComboBox 'cb_FormThemSuatChieu_TenPhim' chưa được khởi tạo.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
+
+                if (count > 0)
+                {
+                    cb_FormThemSuatChieu_TenPhim.Enabled = true;
+
+                    string movieQuery = "SELECT MovieID, Title FROM Movies WHERE Status = N'Đang chiếu'";
+                    using (SqlCommand cmd = new SqlCommand(movieQuery, conn))
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        List<string> movies = new List<string>();
+
+                        while (reader.Read())
+                        {
+                            string title = reader.IsDBNull(1) ? "Không rõ tiêu đề" : reader.GetString(1);
+                            int id = reader.IsDBNull(0) ? -1 : reader.GetInt32(0);
+                            movies.Add($"{title} (ID: {id})");
+                        }
+
+                        cb_FormThemSuatChieu_TenPhim.DataSource = movies;
+                    }
+                }
+                else
+                {
+                    cb_FormThemSuatChieu_TenPhim.Enabled = false;
+                    cb_FormThemSuatChieu_TenPhim.DataSource = null;
+                }
+
+                return count > 0;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi kiểm tra phim đang chiếu: " + ex.Message);
+                return false;
+            }
+            finally
+            {
+                if (conn.State == ConnectionState.Open)
+                    conn.Close();
+            }
+        }
+
         private void FormThemPhim_Paint(object sender, PaintEventArgs e)
         {
             int borderWidth = 2;
@@ -92,7 +208,8 @@ namespace Qlyrapchieuphim
             //cmd.Parameters.Add("@ShowtimeID", SqlDbType.Char).Value = idTextBox.Text;
             cmd.Parameters.Add("@StartTime", SqlDbType.DateTime).Value = date_FormThemSuatChieu_NgayChieu.Value +date_FormThemSuatChieu_GioChieu.Value.TimeOfDay.StripMilliseconds();
             cmd.Parameters.Add("@Price", SqlDbType.Decimal).Value = 65000; //GIÁ TRỊ TẠM DO CHƯA CÓ TEXTBOX, THAY THẾ GIÁ TRỊ NGAY KHI CÓ TEXTBOX
-            cmd.Parameters.Add("@RoomID", SqlDbType.Int).Value = int.Parse(cb_FormThemSuatChieu_PhongChieu.SelectedItem.ToString()); //VẪN ĐANG SỬ DỤNG CÁC SỐ CÓ SẴN, ĐIỀU CHỈNH KHI CÓ QUẢN LÝ PHÒNG CHIẾU
+            int pc = int.Parse(Helper.SubStringBetween(cb_FormThemSuatChieu_PhongChieu.SelectedItem.ToString(), " (ID: ", ")"));
+            cmd.Parameters.Add("@RoomID", SqlDbType.Int).Value = pc; //VẪN ĐANG SỬ DỤNG CÁC SỐ CÓ SẴN, ĐIỀU CHỈNH KHI CÓ QUẢN LÝ PHÒNG CHIẾU
             int mp = int.Parse(Helper.SubStringBetween(cb_FormThemSuatChieu_TenPhim.SelectedItem.ToString(), " (ID: ", ")"));
             cmd.Parameters.Add("@MovieID", SqlDbType.Int).Value = mp;
             try
@@ -120,36 +237,7 @@ namespace Qlyrapchieuphim
             }
             //add table for logging seats -- XOÁ PHẦN NÀY KHI ĐÃ CÓ QUẢN LÝ PHÒNG CHIẾU
 
-            SqlQuery = "CREATE TABLE S_";
-            SqlQuery += id.Trim();
-            SqlQuery += " (" +
-                "SeatName varchar(4) PRIMARY KEY, " +
-                "CellValue bit DEFAULT 0," +
-                ") ON [PRIMARY]; " +
-                "CREATE UNIQUE NONCLUSTERED INDEX ";
-            SqlQuery += "IX_S" + id.Trim();
-            SqlQuery += " ON dbo.S_";
-            SqlQuery += id.Trim();
-            SqlQuery += " " +
-                        "(SeatName); ";
-            cmd = new SqlCommand(SqlQuery, conn);
-            conn.Open();
-            cmd.ExecuteNonQuery();
-            for (char c = 'A'; c <= 'J'; c++)
-            {
-                for (int i = 1; i <= 14; i++)
-                {
-                    SqlQuery = "INSERT INTO S_";
-                    SqlQuery += id.Trim();
-                    SqlQuery += " VALUES(@seat, @bit)";
-                    cmd = new SqlCommand(SqlQuery, conn);
-                    cmd.Parameters.Add("@seat", SqlDbType.VarChar).Value = c.ToString() + i.ToString();
-                    cmd.Parameters.Add("@bit", SqlDbType.Bit).Value = false;
-                    cmd.ExecuteNonQuery();
-                }
-            }
 
-            conn.Close();
         }
     }
 }

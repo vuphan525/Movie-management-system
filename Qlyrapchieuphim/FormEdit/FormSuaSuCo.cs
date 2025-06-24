@@ -174,7 +174,7 @@ namespace Qlyrapchieuphim.FormEdit
             SqlCommand cmd = new SqlCommand(SqlQuery, conn);
             cmd.Parameters.Add("@IncidentID", SqlDbType.Int).Value = int.Parse(lbl_FormSuaSuCo_MaSuCo.Text);
             cmd.Parameters.Add("@IncidentName", SqlDbType.NVarChar).Value = lbl_FormSuaSuCo_TenSuCo.Text;
-            int usrID = int.Parse(Helper.SubStringBetween(manv.SelectedText, " (ID: ", ")"));
+            int usrID = int.Parse(Helper.SubStringBetween(manv.SelectedItem.ToString(), " (ID: ", ")"));
             cmd.Parameters.Add("@ReportedByUserID", SqlDbType.Int).Value = usrID;
             cmd.Parameters.Add("@ReportedAt", SqlDbType.Date).Value = date_FormSuaSuCo_NgayTiepNhan.Value.Date;
             cmd.Parameters.Add("@Status", SqlDbType.NVarChar).Value = cb_FormSuaSuCo_TinhTrang.SelectedItem;

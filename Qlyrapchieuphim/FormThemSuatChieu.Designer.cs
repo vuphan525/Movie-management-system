@@ -108,14 +108,6 @@
             this.cb_FormThemSuatChieu_PhongChieu.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cb_FormThemSuatChieu_PhongChieu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cb_FormThemSuatChieu_PhongChieu.ItemHeight = 30;
-            this.cb_FormThemSuatChieu_PhongChieu.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7"});
             this.cb_FormThemSuatChieu_PhongChieu.Location = new System.Drawing.Point(19, 253);
             this.cb_FormThemSuatChieu_PhongChieu.Margin = new System.Windows.Forms.Padding(4);
             this.cb_FormThemSuatChieu_PhongChieu.Name = "cb_FormThemSuatChieu_PhongChieu";
