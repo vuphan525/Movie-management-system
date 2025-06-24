@@ -52,10 +52,9 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(36, 10);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(27, 8);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(142, 20);
+            this.label2.Size = new System.Drawing.Size(113, 16);
             this.label2.TabIndex = 86;
             this.label2.Text = "Cập nhật sự cố:";
             // 
@@ -69,10 +68,9 @@
             this.bcButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(61)))), ((int)(((byte)(204)))));
             this.bcButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bcButton.ForeColor = System.Drawing.Color.White;
-            this.bcButton.Location = new System.Drawing.Point(507, 531);
-            this.bcButton.Margin = new System.Windows.Forms.Padding(4);
+            this.bcButton.Location = new System.Drawing.Point(380, 431);
             this.bcButton.Name = "bcButton";
-            this.bcButton.Size = new System.Drawing.Size(183, 44);
+            this.bcButton.Size = new System.Drawing.Size(137, 36);
             this.bcButton.TabIndex = 91;
             this.bcButton.Text = "Cập nhật";
             this.bcButton.Click += new System.EventHandler(this.bcButton_Click);
@@ -88,10 +86,10 @@
             this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button2.ForeColor = System.Drawing.Color.Black;
             this.guna2Button2.Image = global::Qlyrapchieuphim.Properties.Resources.icons8_exit_35;
-            this.guna2Button2.Location = new System.Drawing.Point(660, 10);
-            this.guna2Button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.guna2Button2.Location = new System.Drawing.Point(495, 8);
+            this.guna2Button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.Size = new System.Drawing.Size(35, 34);
+            this.guna2Button2.Size = new System.Drawing.Size(26, 28);
             this.guna2Button2.TabIndex = 100;
             this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
             // 
@@ -109,23 +107,22 @@
             this.lbl_FormSuaSuCo_HuongGiaiQuyet.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.lbl_FormSuaSuCo_HuongGiaiQuyet.ForeColor = System.Drawing.Color.Black;
             this.lbl_FormSuaSuCo_HuongGiaiQuyet.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.lbl_FormSuaSuCo_HuongGiaiQuyet.Location = new System.Drawing.Point(19, 425);
-            this.lbl_FormSuaSuCo_HuongGiaiQuyet.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.lbl_FormSuaSuCo_HuongGiaiQuyet.Location = new System.Drawing.Point(14, 345);
+            this.lbl_FormSuaSuCo_HuongGiaiQuyet.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.lbl_FormSuaSuCo_HuongGiaiQuyet.Name = "lbl_FormSuaSuCo_HuongGiaiQuyet";
             this.lbl_FormSuaSuCo_HuongGiaiQuyet.PasswordChar = '\0';
             this.lbl_FormSuaSuCo_HuongGiaiQuyet.PlaceholderText = "";
             this.lbl_FormSuaSuCo_HuongGiaiQuyet.SelectedText = "";
-            this.lbl_FormSuaSuCo_HuongGiaiQuyet.Size = new System.Drawing.Size(299, 42);
+            this.lbl_FormSuaSuCo_HuongGiaiQuyet.Size = new System.Drawing.Size(224, 34);
             this.lbl_FormSuaSuCo_HuongGiaiQuyet.TabIndex = 114;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(19, 401);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(14, 326);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(121, 18);
+            this.label1.Size = new System.Drawing.Size(102, 15);
             this.label1.TabIndex = 113;
             this.label1.Text = "Hướng giải quyết:";
             // 
@@ -133,10 +130,9 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(19, 233);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Location = new System.Drawing.Point(14, 189);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(157, 18);
+            this.label8.Size = new System.Drawing.Size(131, 15);
             this.label8.TabIndex = 110;
             this.label8.Text = "Mã nhân viên báo cáo:";
             // 
@@ -147,12 +143,11 @@
             this.date_FormSuaSuCo_NgayTiepNhan.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(248)))));
             this.date_FormSuaSuCo_NgayTiepNhan.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.date_FormSuaSuCo_NgayTiepNhan.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.date_FormSuaSuCo_NgayTiepNhan.Location = new System.Drawing.Point(350, 73);
-            this.date_FormSuaSuCo_NgayTiepNhan.Margin = new System.Windows.Forms.Padding(4);
+            this.date_FormSuaSuCo_NgayTiepNhan.Location = new System.Drawing.Point(262, 59);
             this.date_FormSuaSuCo_NgayTiepNhan.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.date_FormSuaSuCo_NgayTiepNhan.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.date_FormSuaSuCo_NgayTiepNhan.Name = "date_FormSuaSuCo_NgayTiepNhan";
-            this.date_FormSuaSuCo_NgayTiepNhan.Size = new System.Drawing.Size(340, 39);
+            this.date_FormSuaSuCo_NgayTiepNhan.Size = new System.Drawing.Size(255, 32);
             this.date_FormSuaSuCo_NgayTiepNhan.TabIndex = 109;
             this.date_FormSuaSuCo_NgayTiepNhan.Value = new System.DateTime(2024, 11, 29, 16, 51, 14, 647);
             // 
@@ -160,10 +155,9 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(346, 51);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(260, 41);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(109, 18);
+            this.label5.Size = new System.Drawing.Size(92, 15);
             this.label5.TabIndex = 108;
             this.label5.Text = "Ngày tiếp nhận:";
             // 
@@ -171,10 +165,9 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(19, 51);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Location = new System.Drawing.Point(14, 41);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(74, 18);
+            this.label7.Size = new System.Drawing.Size(60, 15);
             this.label7.TabIndex = 107;
             this.label7.Text = "Mã sự cố:";
             // 
@@ -192,24 +185,23 @@
             this.lbl_FormSuaSuCo_MoTa.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.lbl_FormSuaSuCo_MoTa.ForeColor = System.Drawing.Color.Black;
             this.lbl_FormSuaSuCo_MoTa.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.lbl_FormSuaSuCo_MoTa.Location = new System.Drawing.Point(350, 164);
-            this.lbl_FormSuaSuCo_MoTa.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.lbl_FormSuaSuCo_MoTa.Location = new System.Drawing.Point(262, 133);
+            this.lbl_FormSuaSuCo_MoTa.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.lbl_FormSuaSuCo_MoTa.Multiline = true;
             this.lbl_FormSuaSuCo_MoTa.Name = "lbl_FormSuaSuCo_MoTa";
             this.lbl_FormSuaSuCo_MoTa.PasswordChar = '\0';
             this.lbl_FormSuaSuCo_MoTa.PlaceholderText = "";
             this.lbl_FormSuaSuCo_MoTa.SelectedText = "";
-            this.lbl_FormSuaSuCo_MoTa.Size = new System.Drawing.Size(340, 178);
+            this.lbl_FormSuaSuCo_MoTa.Size = new System.Drawing.Size(255, 145);
             this.lbl_FormSuaSuCo_MoTa.TabIndex = 106;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(19, 141);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(14, 115);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(78, 18);
+            this.label3.Size = new System.Drawing.Size(63, 15);
             this.label3.TabIndex = 101;
             this.label3.Text = "Tên sự cố:";
             // 
@@ -217,10 +209,9 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(346, 141);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Location = new System.Drawing.Point(260, 115);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(50, 18);
+            this.label6.Size = new System.Drawing.Size(41, 15);
             this.label6.TabIndex = 105;
             this.label6.Text = "Mô tả:";
             // 
@@ -228,10 +219,9 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(19, 324);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(14, 263);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(77, 18);
+            this.label4.Size = new System.Drawing.Size(65, 15);
             this.label4.TabIndex = 102;
             this.label4.Text = "Tình trạng:";
             // 
@@ -248,13 +238,12 @@
             this.cb_FormSuaSuCo_TinhTrang.ForeColor = System.Drawing.Color.Black;
             this.cb_FormSuaSuCo_TinhTrang.ItemHeight = 30;
             this.cb_FormSuaSuCo_TinhTrang.Items.AddRange(new object[] {
-            "Đã xử lý",
-            "Đang xử lý",
-            "Chờ tiếp nhận"});
-            this.cb_FormSuaSuCo_TinhTrang.Location = new System.Drawing.Point(19, 346);
-            this.cb_FormSuaSuCo_TinhTrang.Margin = new System.Windows.Forms.Padding(4);
+            "Pending",
+            "Resolved",
+            "Rejected"});
+            this.cb_FormSuaSuCo_TinhTrang.Location = new System.Drawing.Point(14, 281);
             this.cb_FormSuaSuCo_TinhTrang.Name = "cb_FormSuaSuCo_TinhTrang";
-            this.cb_FormSuaSuCo_TinhTrang.Size = new System.Drawing.Size(299, 36);
+            this.cb_FormSuaSuCo_TinhTrang.Size = new System.Drawing.Size(225, 36);
             this.cb_FormSuaSuCo_TinhTrang.TabIndex = 104;
             // 
             // lbl_FormSuaSuCo_TenSuCo
@@ -271,13 +260,13 @@
             this.lbl_FormSuaSuCo_TenSuCo.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.lbl_FormSuaSuCo_TenSuCo.ForeColor = System.Drawing.Color.Black;
             this.lbl_FormSuaSuCo_TenSuCo.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.lbl_FormSuaSuCo_TenSuCo.Location = new System.Drawing.Point(19, 164);
-            this.lbl_FormSuaSuCo_TenSuCo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.lbl_FormSuaSuCo_TenSuCo.Location = new System.Drawing.Point(14, 133);
+            this.lbl_FormSuaSuCo_TenSuCo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.lbl_FormSuaSuCo_TenSuCo.Name = "lbl_FormSuaSuCo_TenSuCo";
             this.lbl_FormSuaSuCo_TenSuCo.PasswordChar = '\0';
             this.lbl_FormSuaSuCo_TenSuCo.PlaceholderText = "";
             this.lbl_FormSuaSuCo_TenSuCo.SelectedText = "";
-            this.lbl_FormSuaSuCo_TenSuCo.Size = new System.Drawing.Size(299, 42);
+            this.lbl_FormSuaSuCo_TenSuCo.Size = new System.Drawing.Size(224, 34);
             this.lbl_FormSuaSuCo_TenSuCo.TabIndex = 103;
             // 
             // lbl_FormSuaSuCo_MaSuCo
@@ -295,14 +284,14 @@
             this.lbl_FormSuaSuCo_MaSuCo.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.lbl_FormSuaSuCo_MaSuCo.ForeColor = System.Drawing.Color.Black;
             this.lbl_FormSuaSuCo_MaSuCo.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.lbl_FormSuaSuCo_MaSuCo.Location = new System.Drawing.Point(19, 74);
-            this.lbl_FormSuaSuCo_MaSuCo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.lbl_FormSuaSuCo_MaSuCo.Location = new System.Drawing.Point(14, 60);
+            this.lbl_FormSuaSuCo_MaSuCo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.lbl_FormSuaSuCo_MaSuCo.Name = "lbl_FormSuaSuCo_MaSuCo";
             this.lbl_FormSuaSuCo_MaSuCo.PasswordChar = '\0';
             this.lbl_FormSuaSuCo_MaSuCo.PlaceholderText = "";
             this.lbl_FormSuaSuCo_MaSuCo.ReadOnly = true;
             this.lbl_FormSuaSuCo_MaSuCo.SelectedText = "";
-            this.lbl_FormSuaSuCo_MaSuCo.Size = new System.Drawing.Size(299, 42);
+            this.lbl_FormSuaSuCo_MaSuCo.Size = new System.Drawing.Size(224, 34);
             this.lbl_FormSuaSuCo_MaSuCo.TabIndex = 115;
             // 
             // btn_Refresh
@@ -315,10 +304,9 @@
             this.btn_Refresh.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(61)))), ((int)(((byte)(204)))));
             this.btn_Refresh.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Refresh.ForeColor = System.Drawing.Color.White;
-            this.btn_Refresh.Location = new System.Drawing.Point(272, 531);
-            this.btn_Refresh.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_Refresh.Location = new System.Drawing.Point(204, 431);
             this.btn_Refresh.Name = "btn_Refresh";
-            this.btn_Refresh.Size = new System.Drawing.Size(183, 44);
+            this.btn_Refresh.Size = new System.Drawing.Size(137, 36);
             this.btn_Refresh.TabIndex = 116;
             this.btn_Refresh.Text = "Làm mới";
             this.btn_Refresh.Click += new System.EventHandler(this.btn_Refresh_Click);
@@ -339,18 +327,17 @@
             "Đã xử lý",
             "Đang xử lý",
             "Chờ tiếp nhận"});
-            this.manv.Location = new System.Drawing.Point(19, 270);
-            this.manv.Margin = new System.Windows.Forms.Padding(4);
+            this.manv.Location = new System.Drawing.Point(14, 219);
             this.manv.Name = "manv";
-            this.manv.Size = new System.Drawing.Size(299, 36);
+            this.manv.Size = new System.Drawing.Size(225, 36);
             this.manv.TabIndex = 117;
             // 
             // FormSuaSuCo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(709, 599);
+            this.ClientSize = new System.Drawing.Size(532, 487);
             this.Controls.Add(this.manv);
             this.Controls.Add(this.btn_Refresh);
             this.Controls.Add(this.lbl_FormSuaSuCo_MaSuCo);
@@ -370,7 +357,6 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.bcButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormSuaSuCo";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;

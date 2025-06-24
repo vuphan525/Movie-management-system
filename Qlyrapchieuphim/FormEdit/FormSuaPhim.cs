@@ -22,10 +22,11 @@ namespace Qlyrapchieuphim.FormEdit
             Guna2ShadowForm shadow = new Guna2ShadowForm();
             shadow.TargetForm = this;
             this.Paint += FormThemPhim_Paint;
+            pictureBox_FormSuaPhim_Poster.SizeMode = PictureBoxSizeMode.Zoom;
         }
         private string movieId;
 
-        public FormSuaPhim(string id)
+        public FormSuaPhim(string id) : this()
         {
             InitializeComponent();
             movieId = id;

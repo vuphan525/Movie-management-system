@@ -29,6 +29,7 @@ namespace Qlyrapchieuphim.FormEdit
             conn = Helper.getdbConnection();
             conn = Helper.CheckDbConnection(conn);
             this.id = id;
+            pictureBox_FormSuaSanPham_Poster.SizeMode = PictureBoxSizeMode.Zoom;
         }
 
         private void guna2Button2_Click(object sender, EventArgs e)

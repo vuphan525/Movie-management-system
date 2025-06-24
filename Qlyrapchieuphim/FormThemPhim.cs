@@ -24,7 +24,7 @@ namespace Qlyrapchieuphim
             Guna2ShadowForm shadow = new Guna2ShadowForm();
             shadow.TargetForm = this;
             this.Paint += FormThemPhim_Paint;
-
+            pictureBox_FormThemPhim_Poster.SizeMode = PictureBoxSizeMode.Zoom;
         }
         SqlConnection conn = null;
 

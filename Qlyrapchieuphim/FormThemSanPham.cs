@@ -23,6 +23,7 @@ namespace Qlyrapchieuphim
             this.Paint += FormThemPhim_Paint;
             conn = Helper.getdbConnection();
             conn = Helper.CheckDbConnection(conn);
+            pictureBox_ThemSanPham_Poster.SizeMode = PictureBoxSizeMode.Zoom;
         }
 
         private void guna2Button2_Click(object sender, EventArgs e)
