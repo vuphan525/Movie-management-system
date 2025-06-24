@@ -284,37 +284,37 @@ namespace Qlyrapchieuphim
                         throw;
                 }
             }
-            //add table for logging seats -- XOÁ PHẦN NÀY KHI ĐÃ CÓ QUẢN LÝ PHÒNG CHIẾU
+            //add table for logging seats 
 
-            SqlQuery = "CREATE TABLE S_";
-            SqlQuery += id.Trim();
-            SqlQuery += " (" +
-                "SeatName varchar(4) PRIMARY KEY, " +
-                "CellValue bit DEFAULT 0," +
-                ") ON [PRIMARY]; " +
-                "CREATE UNIQUE NONCLUSTERED INDEX ";
-            SqlQuery += "IX_S" + id.Trim();
-            SqlQuery += " ON dbo.S_";
-            SqlQuery += id.Trim();
-            SqlQuery += " " +
-                        "(SeatName); ";
-            cmd = new SqlCommand(SqlQuery, conn);
-            if (conn.State != ConnectionState.Open)
-                conn.Open();
-            cmd.ExecuteNonQuery();
-            for (char c = 'A'; c <= 'J'; c++)
-            {
-                for (int i = 1; i <= 14; i++)
-                {
-                    SqlQuery = "INSERT INTO S_";
-                    SqlQuery += id.Trim();
-                    SqlQuery += " VALUES(@seat, @bit)";
-                    cmd = new SqlCommand(SqlQuery, conn);
-                    cmd.Parameters.Add("@seat", SqlDbType.VarChar).Value = c.ToString() + i.ToString();
-                    cmd.Parameters.Add("@bit", SqlDbType.Bit).Value = false;
-                    cmd.ExecuteNonQuery();
-                }
-            }
+            //SqlQuery = "CREATE TABLE S_";
+            //SqlQuery += id.Trim();
+            //SqlQuery += " (" +
+            //    "SeatName varchar(4) PRIMARY KEY, " +
+            //    "CellValue bit DEFAULT 0," +
+            //    ") ON [PRIMARY]; " +
+            //    "CREATE UNIQUE NONCLUSTERED INDEX ";
+            //SqlQuery += "IX_S" + id.Trim();
+            //SqlQuery += " ON dbo.S_";
+            //SqlQuery += id.Trim();
+            //SqlQuery += " " +
+            //            "(SeatName); ";
+            //cmd = new SqlCommand(SqlQuery, conn);
+            //if (conn.State != ConnectionState.Open)
+            //    conn.Open();
+            //cmd.ExecuteNonQuery();
+            //for (char c = 'A'; c <= 'J'; c++)
+            //{
+            //    for (int i = 1; i <= 14; i++)
+            //    {
+            //        SqlQuery = "INSERT INTO S_";
+            //        SqlQuery += id.Trim();
+            //        SqlQuery += " VALUES(@seat, @bit)";
+            //        cmd = new SqlCommand(SqlQuery, conn);
+            //        cmd.Parameters.Add("@seat", SqlDbType.VarChar).Value = c.ToString() + i.ToString();
+            //        cmd.Parameters.Add("@bit", SqlDbType.Bit).Value = false;
+            //        cmd.ExecuteNonQuery();
+            //    }
+            //}
             
             conn.Close();
         }
