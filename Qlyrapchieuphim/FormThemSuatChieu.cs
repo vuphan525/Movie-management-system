@@ -33,7 +33,6 @@ namespace Qlyrapchieuphim
         private void FormThemSuatChieu_Load(object sender, EventArgs e)
         {
             conn = Helper.getdbConnection();
-            conn = Helper.CheckDbConnection(conn);
             date_FormThemSuatChieu_NgayChieu.Format = DateTimePickerFormat.Custom;
             date_FormThemSuatChieu_NgayChieu.CustomFormat = "dd/MM/yyyy";
             if (CheckMovie())
@@ -87,11 +86,6 @@ namespace Qlyrapchieuphim
 
             try
             {
-                if (conn == null)
-                {
-                    conn = Helper.getdbConnection();
-                    conn = Helper.CheckDbConnection(conn);
-                }
 
                 if (conn.State != ConnectionState.Open)
                     conn.Open();

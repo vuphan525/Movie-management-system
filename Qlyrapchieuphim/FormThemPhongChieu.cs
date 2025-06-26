@@ -46,7 +46,7 @@ namespace Qlyrapchieuphim
         }
 
 
-      
+
         private void btn_Refresh_Click(object sender, EventArgs e)
         {
             lbl_FormThemPhongChieu_MaPhong.Clear();
@@ -75,17 +75,48 @@ namespace Qlyrapchieuphim
             // Lấy dữ liệu sau khi đã kiểm tra
             string tenPhong = lbl_FormThemPhongChieu_TenPhong.Text.Trim();
             string dinhDang = cb_FormThemPhongChieu_DinhDang.SelectedItem.ToString();
+            int roomID;
 
             // TODO: Thêm logic lưu vào CSDL ở đây nếu cần
             // Ví dụ (giả sử có SqlConnection conn):
-            
-            string sql = "INSERT INTO Rooms (RoomName, SeatCount, RoomType) VALUES (@TenPhong, @SoGhe, @DinhDang)";
-            using (SqlCommand cmd = new SqlCommand(sql, conn))
+
+            string SqlQuery = "INSERT INTO Rooms (RoomName, SeatCount, RoomType) OUTPUT Inserted.RoomID VALUES (@TenPhong, @SoGhe, @DinhDang)";
+            using (SqlCommand cmd = new SqlCommand(SqlQuery, conn))
             {
                 cmd.Parameters.AddWithValue("@TenPhong", tenPhong);
                 cmd.Parameters.AddWithValue("@SoGhe", soGhe);
                 cmd.Parameters.AddWithValue("@DinhDang", dinhDang);
 
+                conn.Open();
+                roomID = (int)cmd.ExecuteScalar();
+                conn.Close();
+            }
+
+            //Thêm các ghế vào bảng Seats
+            using (SqlCommand cmd = conn.CreateCommand())
+            {
+                SqlQuery = "INSERT INTO Seats (RoomID, SeatNumber, SeatType) VALUES ";
+                for (char c = 'A'; c <= 'J'; c++)
+                {
+                    for (int i = 1; i <= 14; i++)
+                    {
+                        string SeatType;
+                        string SeatNumber = c.ToString() + i.ToString();
+
+                        if ((3 <= i && i <= 12) && ('E' <= c && c <= 'I'))
+                            SeatType = "VIP";
+                        else
+                            SeatType = "Standard";
+                        SqlQuery += "(@RoomID"+ SeatNumber+ ", @SeatNumber" + SeatNumber + ", @SeatType" + SeatNumber + ")";
+                        if (i != 14 || c != 'J')
+                            SqlQuery += ", ";
+                        cmd.Parameters.Add("@RoomID" + SeatNumber, SqlDbType.Int).Value = roomID;
+                        cmd.Parameters.Add("@SeatNumber" + SeatNumber, SqlDbType.NVarChar).Value = SeatNumber;
+                        cmd.Parameters.Add("@SeatType" + SeatNumber, SqlDbType.NVarChar).Value = SeatType;
+                    }
+                }
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = SqlQuery;
                 conn.Open();
                 cmd.ExecuteNonQuery();
                 conn.Close();

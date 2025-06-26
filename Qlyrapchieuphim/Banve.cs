@@ -26,37 +26,43 @@ namespace Qlyrapchieuphim
         private bool CheckMovie()
         {
             int count;
-            conn.Open();
-            string SqlQuery = "SELECT COUNT(*) FROM Movies WHERE Status = N'Đang chiếu'";
-            SqlCommand countCmd = new SqlCommand(SqlQuery, conn);
-            count = (int)countCmd.ExecuteScalar();
+            try
+            {
+                if (conn.State != ConnectionState.Open)
+                    conn.Open();
+                string SqlQuery = "SELECT COUNT(*) FROM Movies WHERE Status = N'Đang chiếu'";
+                SqlCommand countCmd = new SqlCommand(SqlQuery, conn);
+                count = (int)countCmd.ExecuteScalar();
 
-            if (count > 0)
-            {
-                tenphim.Enabled = true;
-                errorProvider1.Clear();
-                SqlQuery = "SELECT MovieID, Title FROM Movies WHERE Status = N'Đang chiếu'";
-                string[] movies = new string[count];
-                SqlCommand cmd = new SqlCommand(SqlQuery, conn);
-                SqlDataReader reader = cmd.ExecuteReader();
-                int i = 0;
-                while (reader.Read())
+                if (count > 0)
                 {
-                    movies[i] = reader.GetString(1) + " (ID: " + reader.GetString(0) + ")";
-                    i++;
+                    tenphim.Enabled = true;
+                    errorProvider1.Clear();
+                    SqlQuery = "SELECT MovieID, Title FROM Movies WHERE Status = N'Đang chiếu'";
+                    string[] movies = new string[count];
+                    SqlCommand cmd = new SqlCommand(SqlQuery, conn);
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    int i = 0;
+                    while (reader.Read())
+                    {
+                        movies[i] = reader.GetString(1) + " (ID: " + reader.GetInt32(0) + ")";
+                        i++;
+                    }
+                    tenphim.DataSource = movies;
                 }
-                tenphim.DataSource = movies;
+                else
+                {
+                    tenphim.Enabled = false;
+                    errorProvider1.SetError(tenphim, "Không có phim trong hệ thống!");
+                }
+                conn.Close();
+                return count > 0;
             }
-            else
+            catch (Exception ex)
             {
-                tenphim.Enabled = false;
-                errorProvider1.SetError(tenphim, "Không có phim trong hệ thống!");
-            }
-            conn.Close();
-            if (count > 0)
-                return true;
-            else
+                MessageBox.Show("Lỗi khi kiểm tra phim đang chiếu: " + ex.Message);
                 return false;
+            }
         }
         private void LoadData()
         {
@@ -81,7 +87,7 @@ namespace Qlyrapchieuphim
 
             //            TimeSpan.TryParse(dt.Rows[index]["THOIGIANBATDAU"].ToString(), out TimeSpan timeFromRow);
             //            t = new DateTime(d.Ticks + timeFromRow.Ticks);
-                        
+
             //            CurrencyManager currencyManager = (CurrencyManager)BindingContext[dataGridView1.DataSource];
             //            currencyManager.SuspendBinding();
             //            row.Cells["stateColumn"].Value = "Đang bán vé";
@@ -103,7 +109,7 @@ namespace Qlyrapchieuphim
             //}
             dataGridView1.DataSource = dt;
             conn.Close();
-            
+
         }
         private void lvLichChieu_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -117,9 +123,9 @@ namespace Qlyrapchieuphim
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            formbanve a= new formbanve();
+            formbanve a = new formbanve();
             a.Show();
-           
+
         }
 
         private void dataGridView1_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
@@ -191,7 +197,7 @@ namespace Qlyrapchieuphim
             {
                 Search.Text = "Tìm kiếm suất chiếu";
                 date.Visible = false;
-                label4.Visible= false;
+                label4.Visible = false;
                 issearch = false;
                 date.Value = DateTime.Today;
                 foreach (DataGridViewRow row in dataGridView1.Rows)
@@ -202,7 +208,7 @@ namespace Qlyrapchieuphim
         }
         private void date_ValueChanged(object sender, EventArgs e)
         {
-            
+
             if (issearch)
             {
                 DateTime a = date.Value.Date;
