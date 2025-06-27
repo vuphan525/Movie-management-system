@@ -128,15 +128,20 @@ namespace Qlyrapchieuphim
                     {
                         if (conn.State != ConnectionState.Open)
                             conn.Open();
-
-                        string SqlQuery = "DELETE FROM Rooms WHERE RoomID = @tempid";
+                        //Xoá các ghế trong phòng
+                        string SqlQuery = "DELETE FROM Seats WHERE RoomID = @tempid";
                         SqlCommand cmd = new SqlCommand(SqlQuery, conn);
                         cmd.Parameters.Add("@tempid", SqlDbType.Char).Value = roomId;
                         cmd.ExecuteNonQuery();
-
+                        //Xoá phòng
+                        SqlQuery = "DELETE FROM Rooms WHERE RoomID = @tempid";
+                        cmd.CommandText = SqlQuery;
+                        cmd.ExecuteNonQuery();
                         conn.Close();
                         LoadData();
                         this.Refresh();
+
+                        
                     }
                 }
             }
