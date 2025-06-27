@@ -20,6 +20,8 @@ namespace Qlyrapchieuphim
             Guna2ShadowForm shadow = new Guna2ShadowForm();
             shadow.TargetForm = this;
             this.Paint += FormThemPhim_Paint;
+            lbl_FormThemPhongChieu_SoGhe.ReadOnly = true;
+            lbl_FormThemPhongChieu_SoGhe.Text = 140.ToString();
         }
         private SqlConnection conn = null;
         private void guna2Button2_Click(object sender, EventArgs e)
