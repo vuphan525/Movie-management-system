@@ -41,10 +41,8 @@
             this.them = new Guna.UI2.WinForms.Guna2Button();
             this.label6 = new System.Windows.Forms.Label();
             this.cb_FormSuaVoucher_TrangThai = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.lbl_FormSuaVoucher_DiscountAmount = new Guna.UI2.WinForms.Guna2TextBox();
             this.lbl_FormSuaVoucher_MaPhatHanh = new Guna.UI2.WinForms.Guna2TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.btn_Refresh = new Guna.UI2.WinForms.Guna2Button();
@@ -54,9 +52,10 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(23, 8);
+            this.label2.Location = new System.Drawing.Point(31, 10);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(127, 16);
+            this.label2.Size = new System.Drawing.Size(156, 20);
             this.label2.TabIndex = 86;
             this.label2.Text = "Cập nhật voucher";
             // 
@@ -64,9 +63,10 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(287, 171);
+            this.label11.Location = new System.Drawing.Point(383, 210);
+            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(41, 15);
+            this.label11.Size = new System.Drawing.Size(50, 18);
             this.label11.TabIndex = 121;
             this.label11.Text = "Mô tả:";
             // 
@@ -83,14 +83,14 @@
             this.lbl_FormSuaVoucher_MoTa.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.lbl_FormSuaVoucher_MoTa.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.lbl_FormSuaVoucher_MoTa.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.lbl_FormSuaVoucher_MoTa.Location = new System.Drawing.Point(289, 190);
-            this.lbl_FormSuaVoucher_MoTa.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.lbl_FormSuaVoucher_MoTa.Location = new System.Drawing.Point(385, 234);
+            this.lbl_FormSuaVoucher_MoTa.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.lbl_FormSuaVoucher_MoTa.Multiline = true;
             this.lbl_FormSuaVoucher_MoTa.Name = "lbl_FormSuaVoucher_MoTa";
             this.lbl_FormSuaVoucher_MoTa.PasswordChar = '\0';
             this.lbl_FormSuaVoucher_MoTa.PlaceholderText = "";
             this.lbl_FormSuaVoucher_MoTa.SelectedText = "";
-            this.lbl_FormSuaVoucher_MoTa.Size = new System.Drawing.Size(242, 127);
+            this.lbl_FormSuaVoucher_MoTa.Size = new System.Drawing.Size(323, 156);
             this.lbl_FormSuaVoucher_MoTa.TabIndex = 120;
             // 
             // lbl_FormSuaVoucher_DiscountPercent
@@ -107,13 +107,13 @@
             this.lbl_FormSuaVoucher_DiscountPercent.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.lbl_FormSuaVoucher_DiscountPercent.ForeColor = System.Drawing.Color.Black;
             this.lbl_FormSuaVoucher_DiscountPercent.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.lbl_FormSuaVoucher_DiscountPercent.Location = new System.Drawing.Point(14, 190);
-            this.lbl_FormSuaVoucher_DiscountPercent.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.lbl_FormSuaVoucher_DiscountPercent.Location = new System.Drawing.Point(19, 149);
+            this.lbl_FormSuaVoucher_DiscountPercent.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.lbl_FormSuaVoucher_DiscountPercent.Name = "lbl_FormSuaVoucher_DiscountPercent";
             this.lbl_FormSuaVoucher_DiscountPercent.PasswordChar = '\0';
             this.lbl_FormSuaVoucher_DiscountPercent.PlaceholderText = "";
             this.lbl_FormSuaVoucher_DiscountPercent.SelectedText = "";
-            this.lbl_FormSuaVoucher_DiscountPercent.Size = new System.Drawing.Size(246, 33);
+            this.lbl_FormSuaVoucher_DiscountPercent.Size = new System.Drawing.Size(328, 41);
             this.lbl_FormSuaVoucher_DiscountPercent.TabIndex = 119;
             this.lbl_FormSuaVoucher_DiscountPercent.TextChanged += new System.EventHandler(this.lbl_FormSuaVoucher_DiscountPercent_TextChanged);
             // 
@@ -121,9 +121,10 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(14, 171);
+            this.label10.Location = new System.Drawing.Point(19, 125);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(84, 15);
+            this.label10.Size = new System.Drawing.Size(100, 18);
             this.label10.TabIndex = 118;
             this.label10.Text = "Mức giảm(%):";
             // 
@@ -141,22 +142,23 @@
             this.lbl_FormSuaVoucher_HoaDonToiThieu.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.lbl_FormSuaVoucher_HoaDonToiThieu.ForeColor = System.Drawing.Color.Black;
             this.lbl_FormSuaVoucher_HoaDonToiThieu.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.lbl_FormSuaVoucher_HoaDonToiThieu.Location = new System.Drawing.Point(289, 54);
-            this.lbl_FormSuaVoucher_HoaDonToiThieu.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.lbl_FormSuaVoucher_HoaDonToiThieu.Location = new System.Drawing.Point(385, 66);
+            this.lbl_FormSuaVoucher_HoaDonToiThieu.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.lbl_FormSuaVoucher_HoaDonToiThieu.Name = "lbl_FormSuaVoucher_HoaDonToiThieu";
             this.lbl_FormSuaVoucher_HoaDonToiThieu.PasswordChar = '\0';
             this.lbl_FormSuaVoucher_HoaDonToiThieu.PlaceholderText = "";
             this.lbl_FormSuaVoucher_HoaDonToiThieu.SelectedText = "";
-            this.lbl_FormSuaVoucher_HoaDonToiThieu.Size = new System.Drawing.Size(242, 33);
+            this.lbl_FormSuaVoucher_HoaDonToiThieu.Size = new System.Drawing.Size(323, 41);
             this.lbl_FormSuaVoucher_HoaDonToiThieu.TabIndex = 117;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(289, 34);
+            this.label9.Location = new System.Drawing.Point(385, 42);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(103, 15);
+            this.label9.Size = new System.Drawing.Size(124, 18);
             this.label9.TabIndex = 116;
             this.label9.Text = "Hóa đơn tối thiểu:";
             // 
@@ -174,22 +176,23 @@
             this.lbl_FormSuaVoucher_SoLuong.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.lbl_FormSuaVoucher_SoLuong.ForeColor = System.Drawing.Color.Black;
             this.lbl_FormSuaVoucher_SoLuong.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.lbl_FormSuaVoucher_SoLuong.Location = new System.Drawing.Point(14, 322);
-            this.lbl_FormSuaVoucher_SoLuong.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.lbl_FormSuaVoucher_SoLuong.Location = new System.Drawing.Point(19, 311);
+            this.lbl_FormSuaVoucher_SoLuong.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.lbl_FormSuaVoucher_SoLuong.Name = "lbl_FormSuaVoucher_SoLuong";
             this.lbl_FormSuaVoucher_SoLuong.PasswordChar = '\0';
             this.lbl_FormSuaVoucher_SoLuong.PlaceholderText = "";
             this.lbl_FormSuaVoucher_SoLuong.SelectedText = "";
-            this.lbl_FormSuaVoucher_SoLuong.Size = new System.Drawing.Size(246, 33);
+            this.lbl_FormSuaVoucher_SoLuong.Size = new System.Drawing.Size(328, 41);
             this.lbl_FormSuaVoucher_SoLuong.TabIndex = 115;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(14, 302);
+            this.label8.Location = new System.Drawing.Point(19, 287);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(59, 15);
+            this.label8.Size = new System.Drawing.Size(71, 18);
             this.label8.TabIndex = 114;
             this.label8.Text = "Số lượng:";
             // 
@@ -200,11 +203,12 @@
             this.date_FormSuaVoucher_NgayHetHan.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(248)))));
             this.date_FormSuaVoucher_NgayHetHan.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.date_FormSuaVoucher_NgayHetHan.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.date_FormSuaVoucher_NgayHetHan.Location = new System.Drawing.Point(14, 258);
+            this.date_FormSuaVoucher_NgayHetHan.Location = new System.Drawing.Point(19, 233);
+            this.date_FormSuaVoucher_NgayHetHan.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.date_FormSuaVoucher_NgayHetHan.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.date_FormSuaVoucher_NgayHetHan.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.date_FormSuaVoucher_NgayHetHan.Name = "date_FormSuaVoucher_NgayHetHan";
-            this.date_FormSuaVoucher_NgayHetHan.Size = new System.Drawing.Size(246, 32);
+            this.date_FormSuaVoucher_NgayHetHan.Size = new System.Drawing.Size(328, 39);
             this.date_FormSuaVoucher_NgayHetHan.TabIndex = 111;
             this.date_FormSuaVoucher_NgayHetHan.Value = new System.DateTime(2024, 11, 29, 16, 51, 14, 647);
             // 
@@ -218,9 +222,10 @@
             this.them.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(61)))), ((int)(((byte)(204)))));
             this.them.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.them.ForeColor = System.Drawing.Color.White;
-            this.them.Location = new System.Drawing.Point(405, 429);
+            this.them.Location = new System.Drawing.Point(540, 528);
+            this.them.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.them.Name = "them";
-            this.them.Size = new System.Drawing.Size(126, 36);
+            this.them.Size = new System.Drawing.Size(168, 44);
             this.them.TabIndex = 109;
             this.them.Text = "Cập nhật";
             this.them.Click += new System.EventHandler(this.them_Click);
@@ -229,9 +234,10 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(14, 240);
+            this.label6.Location = new System.Drawing.Point(19, 210);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(82, 15);
+            this.label6.Size = new System.Drawing.Size(98, 18);
             this.label6.TabIndex = 108;
             this.label6.Text = "Ngày hết hạn:";
             // 
@@ -250,34 +256,11 @@
             this.cb_FormSuaVoucher_TrangThai.Items.AddRange(new object[] {
             "NOT ACTIVE",
             "ACTIVE"});
-            this.cb_FormSuaVoucher_TrangThai.Location = new System.Drawing.Point(289, 124);
+            this.cb_FormSuaVoucher_TrangThai.Location = new System.Drawing.Point(385, 153);
+            this.cb_FormSuaVoucher_TrangThai.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cb_FormSuaVoucher_TrangThai.Name = "cb_FormSuaVoucher_TrangThai";
-            this.cb_FormSuaVoucher_TrangThai.Size = new System.Drawing.Size(243, 36);
+            this.cb_FormSuaVoucher_TrangThai.Size = new System.Drawing.Size(323, 36);
             this.cb_FormSuaVoucher_TrangThai.TabIndex = 105;
-            // 
-            // lbl_FormSuaVoucher_DiscountAmount
-            // 
-            this.lbl_FormSuaVoucher_DiscountAmount.BorderColor = System.Drawing.Color.Gray;
-            this.lbl_FormSuaVoucher_DiscountAmount.BorderRadius = 10;
-            this.lbl_FormSuaVoucher_DiscountAmount.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.lbl_FormSuaVoucher_DiscountAmount.DefaultText = "";
-            this.lbl_FormSuaVoucher_DiscountAmount.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.lbl_FormSuaVoucher_DiscountAmount.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.lbl_FormSuaVoucher_DiscountAmount.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.lbl_FormSuaVoucher_DiscountAmount.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.lbl_FormSuaVoucher_DiscountAmount.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.lbl_FormSuaVoucher_DiscountAmount.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lbl_FormSuaVoucher_DiscountAmount.ForeColor = System.Drawing.Color.Black;
-            this.lbl_FormSuaVoucher_DiscountAmount.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.lbl_FormSuaVoucher_DiscountAmount.Location = new System.Drawing.Point(14, 124);
-            this.lbl_FormSuaVoucher_DiscountAmount.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.lbl_FormSuaVoucher_DiscountAmount.Name = "lbl_FormSuaVoucher_DiscountAmount";
-            this.lbl_FormSuaVoucher_DiscountAmount.PasswordChar = '\0';
-            this.lbl_FormSuaVoucher_DiscountAmount.PlaceholderText = "";
-            this.lbl_FormSuaVoucher_DiscountAmount.SelectedText = "";
-            this.lbl_FormSuaVoucher_DiscountAmount.Size = new System.Drawing.Size(246, 33);
-            this.lbl_FormSuaVoucher_DiscountAmount.TabIndex = 104;
-            this.lbl_FormSuaVoucher_DiscountAmount.TextChanged += new System.EventHandler(this.lbl_FormSuaVoucher_DiscountAmount_TextChanged);
             // 
             // lbl_FormSuaVoucher_MaPhatHanh
             // 
@@ -294,43 +277,35 @@
             this.lbl_FormSuaVoucher_MaPhatHanh.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.lbl_FormSuaVoucher_MaPhatHanh.ForeColor = System.Drawing.Color.Black;
             this.lbl_FormSuaVoucher_MaPhatHanh.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.lbl_FormSuaVoucher_MaPhatHanh.Location = new System.Drawing.Point(14, 54);
-            this.lbl_FormSuaVoucher_MaPhatHanh.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.lbl_FormSuaVoucher_MaPhatHanh.Location = new System.Drawing.Point(19, 66);
+            this.lbl_FormSuaVoucher_MaPhatHanh.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.lbl_FormSuaVoucher_MaPhatHanh.Name = "lbl_FormSuaVoucher_MaPhatHanh";
             this.lbl_FormSuaVoucher_MaPhatHanh.PasswordChar = '\0';
             this.lbl_FormSuaVoucher_MaPhatHanh.PlaceholderText = "";
             this.lbl_FormSuaVoucher_MaPhatHanh.ReadOnly = true;
             this.lbl_FormSuaVoucher_MaPhatHanh.SelectedText = "";
-            this.lbl_FormSuaVoucher_MaPhatHanh.Size = new System.Drawing.Size(246, 33);
+            this.lbl_FormSuaVoucher_MaPhatHanh.Size = new System.Drawing.Size(328, 41);
             this.lbl_FormSuaVoucher_MaPhatHanh.TabIndex = 103;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(289, 106);
+            this.label4.Location = new System.Drawing.Point(385, 130);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(65, 15);
+            this.label4.Size = new System.Drawing.Size(77, 18);
             this.label4.TabIndex = 102;
             this.label4.Text = "Trạng thái:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(14, 105);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(98, 15);
-            this.label3.TabIndex = 101;
-            this.label3.Text = "Mệnh giá (VND):";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(14, 35);
+            this.label7.Location = new System.Drawing.Point(19, 43);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(86, 15);
+            this.label7.Size = new System.Drawing.Size(101, 18);
             this.label7.TabIndex = 100;
             this.label7.Text = "Mã phát hành:";
             // 
@@ -345,10 +320,10 @@
             this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button2.ForeColor = System.Drawing.Color.Black;
             this.guna2Button2.Image = global::Qlyrapchieuphim.Properties.Resources.icons8_exit_35;
-            this.guna2Button2.Location = new System.Drawing.Point(510, 11);
-            this.guna2Button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2Button2.Location = new System.Drawing.Point(680, 14);
+            this.guna2Button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.Size = new System.Drawing.Size(26, 28);
+            this.guna2Button2.Size = new System.Drawing.Size(35, 34);
             this.guna2Button2.TabIndex = 99;
             this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
             // 
@@ -362,19 +337,20 @@
             this.btn_Refresh.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(61)))), ((int)(((byte)(204)))));
             this.btn_Refresh.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Refresh.ForeColor = System.Drawing.Color.White;
-            this.btn_Refresh.Location = new System.Drawing.Point(256, 429);
+            this.btn_Refresh.Location = new System.Drawing.Point(341, 528);
+            this.btn_Refresh.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_Refresh.Name = "btn_Refresh";
-            this.btn_Refresh.Size = new System.Drawing.Size(126, 36);
+            this.btn_Refresh.Size = new System.Drawing.Size(168, 44);
             this.btn_Refresh.TabIndex = 122;
             this.btn_Refresh.Text = "Làm mới";
             this.btn_Refresh.Click += new System.EventHandler(this.btn_Refresh_Click);
             // 
             // FormSuaVoucher
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(542, 475);
+            this.ClientSize = new System.Drawing.Size(723, 585);
             this.Controls.Add(this.btn_Refresh);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.lbl_FormSuaVoucher_MoTa);
@@ -388,14 +364,13 @@
             this.Controls.Add(this.them);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.cb_FormSuaVoucher_TrangThai);
-            this.Controls.Add(this.lbl_FormSuaVoucher_DiscountAmount);
             this.Controls.Add(this.lbl_FormSuaVoucher_MaPhatHanh);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.guna2Button2);
             this.Controls.Add(this.label2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FormSuaVoucher";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
@@ -422,10 +397,8 @@
         private Guna.UI2.WinForms.Guna2Button them;
         private System.Windows.Forms.Label label6;
         private Guna.UI2.WinForms.Guna2ComboBox cb_FormSuaVoucher_TrangThai;
-        private Guna.UI2.WinForms.Guna2TextBox lbl_FormSuaVoucher_DiscountAmount;
         private Guna.UI2.WinForms.Guna2TextBox lbl_FormSuaVoucher_MaPhatHanh;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label7;
         private Guna.UI2.WinForms.Guna2Button btn_Refresh;
     }

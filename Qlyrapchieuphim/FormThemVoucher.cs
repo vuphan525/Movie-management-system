@@ -53,7 +53,7 @@ namespace Qlyrapchieuphim
         private void btn_Refresh_Click(object sender, EventArgs e)
         {
             lbl_FormThemVoucher_MaPhatHanh.Clear();
-            lbl_FormThemVoucher_DiscountAmount.Clear();
+            
             lbl_FormThemVoucher_DiscountPercent.Clear();
             date_FormThemVoucher_NgayHetHan.Value = DateTime.Now;
             lbl_FormThemVoucher_SoLuong.Clear();
@@ -64,25 +64,9 @@ namespace Qlyrapchieuphim
 
         private void them_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(lbl_FormThemVoucher_MaPhatHanh.Text) ||
-                           string.IsNullOrWhiteSpace(lbl_FormThemVoucher_DiscountAmount.Text))
-
-
-            {
-                MessageBox.Show("Vui lòng điền đầy đủ thông tin.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
+           
             double mgia;
-            if (!double.TryParse(lbl_FormThemVoucher_DiscountAmount.Text, out mgia))
-            {
-
-                MessageBox.Show(
-                    "Mệnh giá phải được nhập dươi dạng một số!",
-                    "Lỗi nhập liệu",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Warning);
-                return;
-            }
+            
             if (date_FormThemVoucher_NgayHetHan.Value.Date < DateTime.Now.Date)
             {
                 MessageBox.Show("Ngày hết hạn Voucher phải lớn hơn hoặc bằng ngày hiện tại!", "Lỗi nhập liệu", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -94,12 +78,12 @@ namespace Qlyrapchieuphim
             string SqlQuery = "INSERT INTO Vouchers VALUES (@Code, @Description, @DiscountAmount, @DiscountPercent, @ExpiryDate, @Quantity, @MinOrderValue, @IsActive)";
             SqlCommand cmd = new SqlCommand(SqlQuery, conn);
             cmd.Parameters.Add("@Code", SqlDbType.NVarChar).Value = lbl_FormThemVoucher_MaPhatHanh.Text;
-            cmd.Parameters.Add("@Description", SqlDbType.NVarChar).Value =lbl_FormThemVoucher_MoTa; //GIÁ TRỊ TẠM DO CHƯA CÓ TEXTBOX, THAY THẾ GIÁ TRỊ NGAY KHI CÓ TEXTBOX
-            cmd.Parameters.Add("@DiscountAmount", SqlDbType.Decimal).Value = lbl_FormThemVoucher_DiscountAmount.Text;
+            cmd.Parameters.Add("@Description", SqlDbType.NVarChar).Value =lbl_FormThemVoucher_MoTa.Text; //GIÁ TRỊ TẠM DO CHƯA CÓ TEXTBOX, THAY THẾ GIÁ TRỊ NGAY KHI CÓ TEXTBOX
+            cmd.Parameters.Add("@DiscountAmount", SqlDbType.Decimal).Value = 0;
             cmd.Parameters.Add("@DiscountAmount", SqlDbType.Float).Value = 10; //GIÁ TRỊ TẠM DO CHƯA CÓ TEXTBOX, THAY THẾ GIÁ TRỊ NGAY KHI CÓ TEXTBOX
             cmd.Parameters.Add("@ExpiryDate", SqlDbType.Date).Value = date_FormThemVoucher_NgayHetHan.Value.Date;
-            cmd.Parameters.Add("@Quantity", SqlDbType.Int).Value = lbl_FormThemVoucher_SoLuong;//GIÁ TRỊ TẠM DO CHƯA CÓ TEXTBOX, THAY THẾ GIÁ TRỊ NGAY KHI CÓ TEXTBOX
-            cmd.Parameters.Add("@MinOrderValue", SqlDbType.Decimal).Value = 0;//GIÁ TRỊ TẠM DO CHƯA CÓ TEXTBOX, THAY THẾ GIÁ TRỊ NGAY KHI CÓ TEXTBOX
+            cmd.Parameters.Add("@Quantity", SqlDbType.Int).Value = lbl_FormThemVoucher_SoLuong.Text;//GIÁ TRỊ TẠM DO CHƯA CÓ TEXTBOX, THAY THẾ GIÁ TRỊ NGAY KHI CÓ TEXTBOX
+            cmd.Parameters.Add("@MinOrderValue", SqlDbType.Decimal).Value = int.Parse(lbl_FormThemVoucher_HoaDonToiThieu.Text);//GIÁ TRỊ TẠM DO CHƯA CÓ TEXTBOX, THAY THẾ GIÁ TRỊ NGAY KHI CÓ TEXTBOX
             cmd.Parameters.Add("@IsActive", SqlDbType.Bit).Value = Convert.ToBoolean(cb_FormThemVoucher_TrangThai.SelectedIndex);
             try
             {
@@ -128,30 +112,17 @@ namespace Qlyrapchieuphim
 
         private void lbl_FormThemVoucher_DiscountPercent_TextChanged(object sender, EventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(lbl_FormThemVoucher_DiscountPercent.Text))
-            {
-                lbl_FormThemVoucher_DiscountAmount.ReadOnly = true;
-                lbl_FormThemVoucher_DiscountAmount.Enabled = false;
-            }
-            else
-            {
-                lbl_FormThemVoucher_DiscountAmount.ReadOnly = false;
-                lbl_FormThemVoucher_DiscountAmount.Enabled = true;
-            }
+            
         }
 
         private void lbl_FormThemVoucher_DiscountAmount_TextChanged(object sender, EventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(lbl_FormThemVoucher_DiscountAmount.Text))
-            {
-                lbl_FormThemVoucher_DiscountPercent.ReadOnly = true;
-                lbl_FormThemVoucher_DiscountPercent.Enabled = false;
-            }
-            else
-            {
-                lbl_FormThemVoucher_DiscountPercent.ReadOnly = false;
-                lbl_FormThemVoucher_DiscountPercent.Enabled = true;
-            }
+            
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

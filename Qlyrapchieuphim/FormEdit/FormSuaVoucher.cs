@@ -47,7 +47,7 @@ namespace Qlyrapchieuphim.FormEdit
         private void btn_Refresh_Click(object sender, EventArgs e)
         {
             lbl_FormSuaVoucher_MaPhatHanh.Clear();
-            lbl_FormSuaVoucher_DiscountAmount.Clear();
+           
             lbl_FormSuaVoucher_DiscountPercent.Clear();
             date_FormSuaVoucher_NgayHetHan.Value = DateTime.Now;
             lbl_FormSuaVoucher_SoLuong.Clear();
@@ -63,30 +63,11 @@ namespace Qlyrapchieuphim.FormEdit
 
         private void lbl_FormSuaVoucher_DiscountAmount_TextChanged(object sender, EventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(lbl_FormSuaVoucher_DiscountAmount.Text))
-            {
-                lbl_FormSuaVoucher_DiscountPercent.ReadOnly = true;
-                lbl_FormSuaVoucher_DiscountPercent.Enabled = false;
-            }
-            else
-            {
-                lbl_FormSuaVoucher_DiscountPercent.ReadOnly = false;
-                lbl_FormSuaVoucher_DiscountPercent.Enabled = true;
-            }
         }
 
         private void lbl_FormSuaVoucher_DiscountPercent_TextChanged(object sender, EventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(lbl_FormSuaVoucher_DiscountPercent.Text))
-            {
-                lbl_FormSuaVoucher_DiscountAmount.ReadOnly = true;
-                lbl_FormSuaVoucher_DiscountAmount.Enabled = false;
-            }
-            else
-            {
-                lbl_FormSuaVoucher_DiscountAmount.ReadOnly = false;
-                lbl_FormSuaVoucher_DiscountAmount.Enabled = true;
-            }
+           
         }
     }
 }

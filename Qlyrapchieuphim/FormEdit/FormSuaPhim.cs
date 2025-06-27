@@ -24,22 +24,25 @@ namespace Qlyrapchieuphim.FormEdit
             this.Paint += FormThemPhim_Paint;
             pictureBox_FormSuaPhim_Poster.SizeMode = PictureBoxSizeMode.Zoom;
         }
+
         private string movieId;
 
-        public FormSuaPhim(string id) : this()
+        public FormSuaPhim(string id)
         {
             InitializeComponent();
             movieId = id;
+            LoadMovieData(movieId);
         }
 
         private void guna2Button2_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-        SqlConnection conn = null;
 
+        SqlConnection conn = null;
         string poster_url = string.Empty;
         string projectFolder = AppDomain.CurrentDomain.BaseDirectory;
+
         private void FormSuaPhim_Load(object sender, EventArgs e)
         {
             date_FormSuaPhim_NgayNhap.Format = DateTimePickerFormat.Custom;
@@ -61,6 +64,7 @@ namespace Qlyrapchieuphim.FormEdit
                 borderColor, borderWidth, ButtonBorderStyle.Solid,
                 borderColor, borderWidth, ButtonBorderStyle.Solid);
         }
+
         private void AddButton_Click(object sender, EventArgs e)
         {
             if (
@@ -111,7 +115,7 @@ namespace Qlyrapchieuphim.FormEdit
             comm.Parameters.Add("@ImportDate", SqlDbType.Date).Value = date_FormSuaPhim_NgayNhap.Value;
             comm.Parameters.Add("@Manufacturer", SqlDbType.NVarChar).Value = lbl_FormSuaPhim_NhaPhatHanh.Text;
 
-            SaveImage(int.Parse(movieId)); // lưu hình và cập nhật biến poster_url
+            SaveImage(int.Parse(movieId));
             comm.Parameters.Add("@PosterURL", SqlDbType.VarChar).Value = poster_url;
             comm.Parameters.Add("@MovieID", SqlDbType.Int).Value = int.Parse(movieId);
 
@@ -135,13 +139,13 @@ namespace Qlyrapchieuphim.FormEdit
                 }
             }
         }
+
         private void SaveImage(int identity)
         {
             try
             {
                 if (pictureBox_FormSuaPhim_Poster.Image == null)
                 {
-                    pictureBox_FormSuaPhim_Poster.Image = SystemIcons.Error.ToBitmap();
                     return;
                 }
 
@@ -151,53 +155,37 @@ namespace Qlyrapchieuphim.FormEdit
                     Directory.CreateDirectory(newFolderPath);
                 }
 
-                ImageFormat imageFormat = pictureBox_FormSuaPhim_Poster.Image.RawFormat;
-                string fileExtension = new ImageFormatConverter().ConvertToString(imageFormat)?.ToLower() ?? "png";
-                string fileName = identity.ToString() + "." + fileExtension;
+                string fileName = identity.ToString() + ".png";
                 string fullPath = Path.Combine(newFolderPath, fileName);
 
-                // ❗ So sánh với ảnh cũ (nếu tồn tại)
+                byte[] newImageBytes;
+                using (MemoryStream ms = new MemoryStream())
+                {
+                    pictureBox_FormSuaPhim_Poster.Image.Save(ms, ImageFormat.Png);
+                    newImageBytes = ms.ToArray();
+                }
+
                 if (File.Exists(fullPath))
                 {
-                    using (MemoryStream currentStream = new MemoryStream())
-                    using (Image currentImage = new Bitmap(pictureBox_FormSuaPhim_Poster.Image))
+                    byte[] existingBytes = File.ReadAllBytes(fullPath);
+                    if (existingBytes.SequenceEqual(newImageBytes))
                     {
-                        currentImage.Save(currentStream, ImageFormat.Png); // dùng PNG để chuẩn hoá
-                        byte[] currentBytes = currentStream.ToArray();
-
-                        using (FileStream oldStream = new FileStream(fullPath, FileMode.Open, FileAccess.Read))
-                        using (MemoryStream oldMemStream = new MemoryStream())
-                        {
-                            oldStream.CopyTo(oldMemStream);
-                            byte[] oldBytes = oldMemStream.ToArray();
-
-                            // So sánh byte[]
-                            if (currentBytes.SequenceEqual(oldBytes))
-                            {
-                                poster_url = Path.Combine("posters", fileName); // Gán lại đường dẫn dù không ghi đè
-                                return; // Ảnh giống -> Không cần ghi đè
-                            }
-                        }
+                        poster_url = Path.Combine("posters", fileName);
+                        return;
                     }
                 }
 
-                // ❗ Nếu khác: Save mới (ghi đè ảnh)
-                using (Bitmap img = new Bitmap(pictureBox_FormSuaPhim_Poster.Image))
-                {
-                    using (FileStream stream = new FileStream(fullPath, FileMode.Create, FileAccess.Write))
-                    {
-                        img.Save(stream, imageFormat);
-                    }
-                }
+                GC.Collect();
+                GC.WaitForPendingFinalizers();
 
+                File.WriteAllBytes(fullPath, newImageBytes);
                 poster_url = Path.Combine("posters", fileName);
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Có lỗi xảy ra: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Có lỗi xảy ra khi lưu ảnh: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
 
         private void LoadMovieData(string movieId)
         {
@@ -226,12 +214,14 @@ namespace Qlyrapchieuphim.FormEdit
 
                         lbl_FormSuaPhim_NhaPhatHanh.Text = reader["Manufacturer"].ToString();
 
-                        // Load PosterURL nếu cần
                         poster_url = reader["PosterURL"].ToString();
                         string imagePath = Path.Combine(projectFolder, "posters", movieId + ".png");
                         if (File.Exists(imagePath))
                         {
-                            pictureBox_FormSuaPhim_Poster.Image = Image.FromFile(imagePath); // hoặc tên PictureBox của bạn
+                            using (var img = new Bitmap(imagePath))
+                            {
+                                pictureBox_FormSuaPhim_Poster.Image = new Bitmap(img);
+                            }
                         }
                     }
                 }
@@ -251,38 +241,31 @@ namespace Qlyrapchieuphim.FormEdit
                     {
                         string filePath = openFileDialog.FileName;
 
-                        // Giải phóng ảnh cũ nếu có
                         if (pictureBox_FormSuaPhim_Poster.Image != null)
                         {
                             pictureBox_FormSuaPhim_Poster.Image.Dispose();
                             pictureBox_FormSuaPhim_Poster.Image = null;
                         }
 
-                        // Đọc ảnh vào RAM trước khi gán vào PictureBox để tránh bị lock file
-                        using (FileStream fs = new FileStream(filePath, FileMode.Open, FileAccess.Read))
-                        using (MemoryStream ms = new MemoryStream())
+                        using (var original = new Bitmap(filePath))
                         {
-                            fs.CopyTo(ms);
-                            ms.Position = 0; // quay về đầu stream
-
-                            pictureBox_FormSuaPhim_Poster.Image = Image.FromStream(ms);
+                            pictureBox_FormSuaPhim_Poster.Image = new Bitmap(original);
                         }
                     }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Có lỗi xảy ra: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Có lỗi xảy ra khi chọn ảnh: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void btn_Refresh_Click(object sender, EventArgs e)
         {
-          
             lbl_FormSuaPhim_TenPhim.Clear();
             cb_FormSuaPhim_TheLoai.SelectedIndex = -1;
             lbl_FormSuaPhim_ThoiLuong.Clear();
-           cb_FormSuaPhim_TinhTrang.SelectedIndex = -1;
+            cb_FormSuaPhim_TinhTrang.SelectedIndex = -1;
             date_FormSuaPhim_NgayNhap.Value = DateTime.Now;
             date_FormSuaPhim_NgayPhatHanh.Value = DateTime.Now;
             lbl_FormSuaPhim_NhaPhatHanh.Clear();

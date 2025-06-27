@@ -4,21 +4,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="abd20054-1707-482c-8ee4-6902c06f2da3" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Qlyrapchieuphim/FormEdit/FormSuaPhim.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Qlyrapchieuphim/FormEdit/FormSuaPhim.Designer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Qlyrapchieuphim/FormEdit/FormSuaPhim.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Qlyrapchieuphim/FormEdit/FormSuaPhim.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Qlyrapchieuphim/FormEdit/FormSuaSuCo.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Qlyrapchieuphim/FormEdit/FormSuaSuCo.Designer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Qlyrapchieuphim/FormEdit/FormSuaSuCo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Qlyrapchieuphim/FormEdit/FormSuaSuCo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Qlyrapchieuphim/FormEdit/FormSuaSuatChieu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Qlyrapchieuphim/FormEdit/FormSuaSuatChieu.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Qlyrapchieuphim/FormThemPhongChieu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Qlyrapchieuphim/FormThemPhongChieu.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Qlyrapchieuphim/FormThemSuCo.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Qlyrapchieuphim/FormThemSuCo.Designer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Qlyrapchieuphim/FormThemSuCo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Qlyrapchieuphim/FormThemSuCo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Qlyrapchieuphim/FormThemSuatChieu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Qlyrapchieuphim/FormThemSuatChieu.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Qlyrapchieuphim/Qlyphim.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Qlyrapchieuphim/Qlyphim.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Qlyrapchieuphim/Qlysuatchieu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Qlyrapchieuphim/Qlysuatchieu.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Qlyrapchieuphim/Suco.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Qlyrapchieuphim/Suco.cs" afterDir="false" />
-    </list>
+    <list default="true" id="abd20054-1707-482c-8ee4-6902c06f2da3" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -39,18 +25,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.cidr.known.project.marker": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.readMode.enableVisualFormatting": "true",
-    "cf.first.check.clang-format": "false",
-    "cidr.known.project.marker": "true",
-    "git-widget-placeholder": "tung__test",
-    "kotlin-language-version-configured": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
+    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;tung__test&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
