@@ -22,8 +22,8 @@ namespace Qlyrapchieuphim
         }
         string ConnString = ConfigurationManager.ConnectionStrings["ConnString"].ConnectionString;
         bool cus_exists = false;
-        string customer_code = string.Empty;
-        public string cus_code
+        int customer_code = -1;
+        public int cus_code
         {
             get { return customer_code; }
             set { customer_code = value; }
@@ -65,9 +65,9 @@ namespace Qlyrapchieuphim
                 return;
             }
             SqlConnection conn = new SqlConnection(ConnString);
-            string SqlQuery = "SELECT COUNT(*) FROM KHACHHANG WHERE SODIENTHOAI = @sdt";
+            string SqlQuery = "SELECT COUNT(*) FROM Customers WHERE Phone = @sdt";
             SqlCommand cmd = new SqlCommand(SqlQuery, conn);
-            cmd.Parameters.Add("@sdt", SqlDbType.VarChar).Value = txtCustomerID.Text;
+            cmd.Parameters.Add("@sdt", SqlDbType.NVarChar).Value = txtCustomerID.Text;
             conn.Open();
             int count = (int)cmd.ExecuteScalar();
             conn.Close();
@@ -82,16 +82,16 @@ namespace Qlyrapchieuphim
                 return;
             }
             cus_exists = true;
-            SqlQuery = "SELECT MAKHACHHANG, TENKHACHHANG FROM KHACHHANG WHERE SODIENTHOAI = @sdt";
+            SqlQuery = "SELECT CustomerID, FullName FROM Customers WHERE Phone = @sdt";
             SqlDataAdapter adapter = new SqlDataAdapter(SqlQuery, conn);
             adapter.SelectCommand.Parameters.Add("@sdt", SqlDbType.VarChar).Value = txtCustomerID.Text;
             DataSet ds = new DataSet();
             conn.Open();
-            adapter.Fill(ds, "KHACHHANG");
+            adapter.Fill(ds, "Customers");
             conn.Close();
-            DataTable dt = ds.Tables["KHACHHANG"];
-            textBox1.Text = dt.Rows[0]["TENKHACHHANG"].ToString();
-            cus_code = dt.Rows[0]["MAKHACHHANG"].ToString();
+            DataTable dt = ds.Tables["Customers"];
+            textBox1.Text = dt.Rows[0]["FullName"].ToString();
+            cus_code = (int)dt.Rows[0]["CustomerID"];
             btnCofirm.Enabled = true;
         }
 
@@ -105,7 +105,7 @@ namespace Qlyrapchieuphim
         {
             btnCofirm.Enabled = false;
             textBox1.Clear();
-            customer_code = string.Empty;
+            customer_code = -1;
             cus_exists = false;
         }
     }

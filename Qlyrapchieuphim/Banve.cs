@@ -15,6 +15,12 @@ namespace Qlyrapchieuphim
     public partial class Banve : UserControl
     {
         SqlConnection conn = null;
+        private int userID = -1;
+        public int UserID
+        {
+            get { return userID; }
+            set { userID = value; }
+        }
         public Banve()
         {
             InitializeComponent();
@@ -118,13 +124,6 @@ namespace Qlyrapchieuphim
 
         private void label1_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void guna2Button1_Click(object sender, EventArgs e)
-        {
-            formbanve a = new formbanve();
-            a.Show();
 
         }
 
@@ -255,7 +254,8 @@ namespace Qlyrapchieuphim
             DataTable dt = dataGridView1.DataSource as DataTable;
             if (e.RowIndex >= 0)
             {
-                formbanve bv = new formbanve(dt.Rows[e.RowIndex]["ShowtimeID"].ToString());
+                formbanve bv = new formbanve((int)dt.Rows[e.RowIndex]["ShowtimeID"]);
+                bv.UserId = userID;
                 bv.Show();
             }
         }

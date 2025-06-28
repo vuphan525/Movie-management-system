@@ -13,6 +13,7 @@ using System.Configuration;
 using Microsoft.Data.SqlClient;
 using System.Web.Compilation;
 using System.IO;
+using Microsoft.IdentityModel.Tokens;
 namespace Qlyrapchieuphim
 {
     public partial class formbanve : Form
@@ -21,13 +22,14 @@ namespace Qlyrapchieuphim
         public List<Guna2Button> selected = new List<Guna2Button>();
         public List<Guna2Button> vip = new List<Guna2Button>();
         public List<Guna2Button> vipcount = new List<Guna2Button>();
-        public string MASUATCHIEU;
+        public int ShowtimeID;
         SqlConnection conn = null;
         string picture_url = string.Empty;
         public int total = 0;
         public int need_to_pay = 0;
         public int discount = 0;
-        string makh = string.Empty;
+        private int CustomerID = -1;
+        private int UserID = -1;
         int cus_point = 0;
         int food_total = 0;
         int drinks_total = 0;
@@ -35,29 +37,67 @@ namespace Qlyrapchieuphim
         DataTable sp_list = new DataTable();
         Bansanpham spForm = new Bansanpham();
         string projectFolder = AppDomain.CurrentDomain.BaseDirectory; // Thư mục dự án
-        public formbanve()
+        //public formbanve()
+        //{
+        //    InitializeComponent();
+        //    sinhvien.Text = "0";
+        //    treem.Text = "0";
+        //    tongtien.Text = "0 VND";
+        //    cantra.Text = "0 VND";
+        //    ToggleCusPointButton(false);
+        //}
+        public formbanve(int showtimeID)
         {
             InitializeComponent();
+            ShowtimeID = showtimeID;
             sinhvien.Text = "0";
             treem.Text = "0";
             tongtien.Text = "0 VND";
             cantra.Text = "0 VND";
             ToggleCusPointButton(false);
         }
-        public formbanve(string masc)
+        public int CustomerId
         {
-            InitializeComponent();
-            MASUATCHIEU = masc;
-            sinhvien.Text = "0";
-            treem.Text = "0";
-            tongtien.Text = "0 VND";
-            cantra.Text = "0 VND";
-            ToggleCusPointButton(false);
+            get { return CustomerID; }
+            set { CustomerID = value; }
         }
-        public string CusCode
+        public int UserId
         {
-            get { return makh; }
-            set { makh = value; }
+            get { return UserID; }
+            set { UserID = value; }
+        }
+        private bool isStaff()
+        {
+            string role = getUserRole();
+            if ( role == "customer" || role.IsNullOrEmpty())
+                return false;
+            else
+                return true;
+        }
+        private string getUserRole()
+        {
+            string role = null;
+            if (UserID != -1)
+            {
+                string SqlQuery = "SELECT Role FROM Users WHERE UserID = @UserID";
+                using (SqlCommand cmd = new SqlCommand(SqlQuery, conn))
+                {
+                    cmd.Parameters.Add("@UserID", SqlDbType.Int).Value = UserID;
+                    if (conn.State != ConnectionState.Open)
+                        conn.Open();
+                    role = cmd.ExecuteScalar().ToString();
+                    conn.Close();
+                }
+                return role;
+            }
+            return null;
+        }
+        private Nullable<int> getStaffID()
+        {
+            Nullable<int> val = null;
+            if (!isStaff())
+                return val;
+            return UserID;
         }
         private void checkDate() //Kiểm tra hạn dùng của các voucher
         {
@@ -107,6 +147,7 @@ namespace Qlyrapchieuphim
                 vouchers[i] = reader.GetString(0);
                 i++;
             }
+            reader.Close();
             voucher.DataSource = vouchers;
             voucher.SelectedIndex = 0;
             if (count > 0)
@@ -141,31 +182,50 @@ namespace Qlyrapchieuphim
 
         private void LoadData()
         {
-            if (conn.State == ConnectionState.Closed)
-                conn.Open();
             string SqlQuery;
             SqlCommand cmd;
-            foreach (Guna2Button button in flowLayoutPanel1.Controls)
+            //Lấy dữ liệu xem các ghế nào đã được book
+            SqlQuery = "SELECT DISTINCT st.SeatNumber " +
+                "FROM BookingDetails bdt JOIN Bookings bk ON (bdt.BookingID = bk.BookingID) " +
+                "JOIN Seats st ON (bdt.SeatID = st.SeatID) " +
+                "WHERE ShowtimeID = @ShowtimeID ";
+            DataTable dt = new DataTable();
+            using (SqlDataAdapter adapter = new SqlDataAdapter(SqlQuery, conn))
             {
-                SqlQuery = "SELECT CellValue From S_" + MASUATCHIEU + " WHERE SeatName = @seatname";
-                cmd = new SqlCommand(SqlQuery, conn);
-                cmd.Parameters.Add("@seatname", SqlDbType.VarChar).Value = button.Text;
-                bool bought = (bool)cmd.ExecuteScalar();
-                if (bought)
+                adapter.SelectCommand.Parameters.Add("@ShowtimeID", SqlDbType.Int).Value = ShowtimeID;
+                if (conn.State == ConnectionState.Closed)
+                    conn.Open();
+                adapter.Fill(dt);
+                conn.Close();
+            }
+            foreach (Guna2Button button in flowLayoutPanel1.Controls) 
+            {
+                bool isBought = dt.AsEnumerable().Any(row => button.Text == row.Field<String>("SeatNumber"));
+                if (isBought)
                     sold.Add(button);
             }
-            SqlQuery = "SELECT MAPHONG FROM SUATCHIEU WHERE MASUATCHIEU = @masc";
+
+
+            SqlQuery = "SELECT RoomName " +
+                "FROM Showtimes sht JOIN Rooms rms ON (rms.RoomID = sht.RoomID) " +
+                "WHERE ShowtimeID = @masc";
             cmd = new SqlCommand(SqlQuery, conn);
-            cmd.Parameters.Add("@masc", SqlDbType.VarChar).Value = MASUATCHIEU;
+            cmd.Parameters.Add("@masc", SqlDbType.Int).Value = ShowtimeID;
+            if (conn.State == ConnectionState.Closed)
+                conn.Open();
             lblRoom.Text = "Phòng chiếu: " + cmd.ExecuteScalar().ToString();
+            conn.Close();
 
 
-            SqlQuery = "SELECT p.POSTER_URL " +
-                "FROM SUATCHIEU sc, BOPHIM p " +
-                "WHERE (MASUATCHIEU = @masc) AND (sc.MAPHIM = p.MAPHIM)";
+            SqlQuery = "SELECT mv.PosterURL " +
+                "FROM Showtimes sht JOIN Movies mv ON (sht.MovieID = Movies.MovieID) " +
+                "WHERE (ShowtimeID = @masc)";
             cmd = new SqlCommand(SqlQuery, conn);
-            cmd.Parameters.Add("@masc", SqlDbType.VarChar).Value = MASUATCHIEU;
+            cmd.Parameters.Add("@masc", SqlDbType.Int).Value = ShowtimeID;
+            if (conn.State == ConnectionState.Closed)
+                conn.Open();
             string relative_picture_path = cmd.ExecuteScalar().ToString();
+            conn.Close();
             picture_url = Path.Combine(projectFolder, relative_picture_path);
             try
             {
@@ -200,7 +260,6 @@ namespace Qlyrapchieuphim
                     picFilm.Image = null;
                 }
             }
-            conn.Close();
             CheckVoucher();
         }
         public void SeatClick(object sender, EventArgs e)
@@ -289,6 +348,7 @@ namespace Qlyrapchieuphim
             conn = Helper.getdbConnection();
             LoadData();
             InitializeSeats();
+            update();
         }
 
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
@@ -330,7 +390,7 @@ namespace Qlyrapchieuphim
                         seatButton.Enabled = false;
                         selected.Remove(seatButton);
                         vipcount.Remove(seatButton);
-                        SqlQuery = "UPDATE S_" + MASUATCHIEU + " SET CellValue = @bought  WHERE SeatName = @seatname";
+                        SqlQuery = "UPDATE S_" + ShowtimeID + " SET CellValue = @bought  WHERE SeatName = @seatname";
                         cmd = new SqlCommand(SqlQuery, conn);
                         cmd.Parameters.Add("@seatname", SqlDbType.VarChar).Value = seatButton.Text;
                         cmd.Parameters.Add("@bought", SqlDbType.Bit).Value = true;
@@ -349,19 +409,24 @@ namespace Qlyrapchieuphim
             //discount = 0;
             //need_to_pay = 0;
             //cus_point = 0;
-            SqlQuery = "SELECT COUNT(*) FROM HOADON";
-            cmd = new SqlCommand(SqlQuery, conn);
-            conn.Open();
-            int existing_bills = (int)cmd.ExecuteScalar();
-            conn.Close();
 
-            SqlQuery = "INSERT INTO HOADON VALUES (@mahd, @masc, @soghe, @makh, @total, @food, @drinks, @discount)";
+            //Bookings
+            SqlQuery = "INSERT INTO Bookings OUTPUT INSERTED.BookingID VALUES (@ShowtimeID, @CustomerID, @StaffID, @PlacedByUserID, @TotalPrice, @CreatedAt, @VoucherID)";
             cmd = new SqlCommand(SqlQuery, conn);
-            cmd.Parameters.Add("@mahd", SqlDbType.Char).Value = existing_bills.ToString("D16");
-            cmd.Parameters.Add("@masc", SqlDbType.Char).Value = MASUATCHIEU;
+            cmd.Parameters.Add("@ShowtimeID", SqlDbType.Int).Value = ShowtimeID;
+            int cusID = CustomerID;
+            if (cusID == -1)
+                cusID = 1; //khách hàng mặc định - không đăng ký
+            cmd.Parameters.Add("@CustomerID", SqlDbType.Int).Value = cusID;
+            cmd.Parameters.Add("@StaffID", SqlDbType.Int).Value = getStaffID();
+            int plcdID = UserID;
+            if (plcdID == -1)
+                plcdID = 1;
+            cmd.Parameters.Add("@PlacedByUserID", SqlDbType.Int).Value = plcdID;
+            cmd.Parameters.Add("@TotalPrice", SqlDbType.Int).Value = total;
+            cmd.Parameters.Add("@CreatedAt", SqlDbType.DateTime).Value = DateTime.Now;
+
             cmd.Parameters.Add("@soghe", SqlDbType.Int).Value = selected.Count;
-            cmd.Parameters.Add("@makh", SqlDbType.Char).Value = makh;
-            cmd.Parameters.Add("@total", SqlDbType.Int).Value = total;
             cmd.Parameters.Add("@food", SqlDbType.Int).Value = food_total;
             cmd.Parameters.Add("@drinks", SqlDbType.Int).Value = drinks_total;
             cmd.Parameters.Add("@discount", SqlDbType.Int).Value = discount + cus_discount;
@@ -405,12 +470,12 @@ namespace Qlyrapchieuphim
                 if (res == DialogResult.OK)
                 {
                     chkCustomer.Checked = true;
-                    makh = frm.cus_code;
+                    CustomerID = frm.cus_code;
                 }
                 else
                 {
                     chkCustomer.Checked = false;
-                    makh = string.Empty;
+                    CustomerID = -1;
                     cus_point = 0;
                     ToggleCusPointButton(false);
                     return;
@@ -418,7 +483,7 @@ namespace Qlyrapchieuphim
                 //SQL
                 string SqlQuery = "SELECT DIEMTICHLUY FROM KHACHHANG WHERE MAKHACHHANG = @mkh";
                 SqlCommand cmd = new SqlCommand(SqlQuery, conn);
-                cmd.Parameters.Add("@mkh", SqlDbType.Char).Value = makh;
+                cmd.Parameters.Add("@mkh", SqlDbType.Char).Value = CustomerID;
                 if (conn.State == ConnectionState.Closed)
                     conn.Open();
                 cus_point = (int)cmd.ExecuteScalar();
@@ -427,7 +492,7 @@ namespace Qlyrapchieuphim
             }
             else
             {
-                makh = string.Empty;
+                CustomerID = -1;
                 chkCustomer.Checked = false;
                 cus_point = 0;
                 ToggleCusPointButton(false);

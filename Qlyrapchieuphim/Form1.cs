@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Configuration;
 using Microsoft.Data.SqlClient;
+using System.Windows.Markup.Localizer;
 
 namespace Qlyrapchieuphim
 {
@@ -45,7 +46,7 @@ namespace Qlyrapchieuphim
         {
             int login = 0; //0 - failed; 1 - staff; 2 - admin
             SqlConnection conn = Helper.getdbConnection();
-            string manv;
+            int userID = -1;
             if (string.IsNullOrEmpty(guna2TextBox4.Text) || string.IsNullOrEmpty(guna2TextBox1.Text)) 
             {
                 MessageBox.Show(
@@ -68,13 +69,21 @@ namespace Qlyrapchieuphim
                 if (dr["Username"].ToString() == guna2TextBox4.Text.Trim())
                 {
                     exists = true;
-                    manv = dr["UserID"].ToString();
+                    userID = (int)dr["UserID"];
                     if (dr["Password"].ToString() == guna2TextBox1.Text.Trim())
                     {
-                        if (dr["Role"].ToString() == "admin")
-                            login = 2;
-                        else if (dr["Role"].ToString() == "staff")
-                            login = 1;
+                        switch (dr["Role"].ToString())
+                        {
+                            case "admin":
+                                login = 2;
+                                break;
+                            case "staff":
+                                login = 1;
+                                break;
+                            default:
+                                login = 1;// user khách hàng
+                                break;
+                        }
                         break;
                     }
                 }
@@ -93,7 +102,7 @@ namespace Qlyrapchieuphim
                 switch (login)
                 { 
                     case 1:
-                        staffForm sf = new staffForm();
+                        staffForm sf = new staffForm(userID);
                         sf.Show();
                         this.Hide();
                         break;
