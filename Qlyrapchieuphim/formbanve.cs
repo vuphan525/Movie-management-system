@@ -22,7 +22,7 @@ namespace Qlyrapchieuphim
         public List<Guna2Button> vip = new List<Guna2Button>();
         public List<Guna2Button> vipcount = new List<Guna2Button>();
         public string MASUATCHIEU;
-        string ConnString = ConfigurationManager.ConnectionStrings["ConnString"].ConnectionString;
+        SqlConnection conn = null;
         string picture_url = string.Empty;
         public int total = 0;
         public int need_to_pay = 0;
@@ -40,7 +40,7 @@ namespace Qlyrapchieuphim
             InitializeComponent();
             sinhvien.Text = "0";
             treem.Text = "0";
-           tongtien.Text = "0 VND";
+            tongtien.Text = "0 VND";
             cantra.Text = "0 VND";
             ToggleCusPointButton(false);
         }
@@ -59,29 +59,28 @@ namespace Qlyrapchieuphim
             get { return makh; }
             set { makh = value; }
         }
-        private void checkDate()
+        private void checkDate() //Kiểm tra hạn dùng của các voucher
         {
-            SqlConnection conn = new SqlConnection(ConnString);
-            conn.Open();
-            string SqlQuery = "SELECT MAPHATHANH, NGAYPHATHANH, NGAYKETTHUC FROM VOUCHER";
-            SqlDataAdapter adapter = new SqlDataAdapter(SqlQuery,conn);
+            if (conn.State == ConnectionState.Closed)
+                conn.Open();
+            string SqlQuery = "SELECT VoucherId, ExpiryDate FROM Vouchers";
+            SqlDataAdapter adapter = new SqlDataAdapter(SqlQuery, conn);
             DataSet ds = new DataSet();
-            adapter.Fill(ds, "VOUCHER");
-            DataTable dt = ds.Tables["VOUCHER"];
+            adapter.Fill(ds, "Vouchers");
+            DataTable dt = ds.Tables["Vouchers"];
             foreach (DataRow dr in dt.Rows)
             {
-                string state = string.Empty;
-                DateTime denngay = (DateTime)dr["NGAYKETTHUC"];
-                DateTime hieuluctu = (DateTime)dr["NGAYPHATHANH"];
+                bool isActive;
+                DateTime denngay = (DateTime)dr["ExpiryDate"];
+                denngay = denngay.Date;
                 if (denngay.Date < DateTime.Today)
-                    state = "Đã hêt hiệu lực"; //hết hiệu lực
-                else if (hieuluctu.Date <= DateTime.Today)
-                    state = "Đang áp dụng"; //đang áp dụng
-                else state = "Chưa áp dụng"; //chưa áp dụng
-                SqlQuery = "UPDATE VOUCHER SET TINHTRANG = @state WHERE MAPHATHANH = @maph";
-                SqlCommand cmd = new SqlCommand(SqlQuery,conn);
-                cmd.Parameters.Add("@state",SqlDbType.NVarChar).Value = state;
-                cmd.Parameters.Add("@maph", SqlDbType.Char).Value = dr["MAPHATHANH"].ToString();
+                    isActive = false; //hết hiệu lực
+                else
+                    isActive = true; //đang áp dụng
+                SqlQuery = "UPDATE Vouchers SET IsActive = @state WHERE VoucherID = @maph";
+                SqlCommand cmd = new SqlCommand(SqlQuery, conn);
+                cmd.Parameters.Add("@state", SqlDbType.Bit).Value = isActive;
+                cmd.Parameters.Add("@maph", SqlDbType.Int).Value = dr["VoucherID"];
                 cmd.ExecuteNonQuery();
             }
             conn.Close();
@@ -90,14 +89,14 @@ namespace Qlyrapchieuphim
         {
             checkDate();
             int count;
-            SqlConnection conn = new SqlConnection(ConnString);
-            conn.Open();
-            string SqlQuery = "SELECT COUNT(*) FROM VOUCHER WHERE TINHTRANG = N'Đang áp dụng'";
+            if (conn.State == ConnectionState.Closed)
+                conn.Open();
+            string SqlQuery = "SELECT COUNT(*) FROM Vouchers WHERE IsActive = 1";
             SqlCommand countCmd = new SqlCommand(SqlQuery, conn);
             count = (int)countCmd.ExecuteScalar() + 1;
 
 
-            SqlQuery = "SELECT MAPHATHANH FROM VOUCHER";
+            SqlQuery = "SELECT Code FROM Vouchers";
             string[] vouchers = new string[count];
             SqlCommand cmd = new SqlCommand(SqlQuery, conn);
             SqlDataReader reader = cmd.ExecuteReader();
@@ -139,11 +138,11 @@ namespace Qlyrapchieuphim
                 }
             }
         }
-        
+
         private void LoadData()
         {
-            SqlConnection conn = new SqlConnection(ConnString);
-            conn.Open();
+            if (conn.State == ConnectionState.Closed)
+                conn.Open();
             string SqlQuery;
             SqlCommand cmd;
             foreach (Guna2Button button in flowLayoutPanel1.Controls)
@@ -159,7 +158,7 @@ namespace Qlyrapchieuphim
             cmd = new SqlCommand(SqlQuery, conn);
             cmd.Parameters.Add("@masc", SqlDbType.VarChar).Value = MASUATCHIEU;
             lblRoom.Text = "Phòng chiếu: " + cmd.ExecuteScalar().ToString();
-            
+
 
             SqlQuery = "SELECT p.POSTER_URL " +
                 "FROM SUATCHIEU sc, BOPHIM p " +
@@ -243,7 +242,7 @@ namespace Qlyrapchieuphim
             }
         }
 
-        
+
         private void update()
         {
             if (selected.Count > 0)
@@ -262,7 +261,7 @@ namespace Qlyrapchieuphim
                     int d = selected.Count - b - c;
                     total = d * 55000 + vipcount.Count * 5000 + b * 40000 + c * 40000;
                     //need_to_pay = total - discount + food_total + drinks_total;
-                    
+
                     //tongtien.Text = total.ToString() + " VND";
                     //cantra.Text = need_to_pay.ToString() + " VND";
                 }
@@ -276,7 +275,7 @@ namespace Qlyrapchieuphim
             else
                 cus_discount = 0;
             need_to_pay = total - discount + food_total + drinks_total - cus_discount;
-            
+
             if (need_to_pay < 0)
                 need_to_pay = 0;
             tongtien.Text = total.ToString() + " VND";
@@ -287,6 +286,7 @@ namespace Qlyrapchieuphim
 
         private void formbanve_Load(object sender, EventArgs e)
         {
+            conn = Helper.getdbConnection();
             LoadData();
             InitializeSeats();
         }
@@ -317,8 +317,6 @@ namespace Qlyrapchieuphim
                     MessageBoxIcon.Information);
                 return;
             }
-            SqlConnection conn = new SqlConnection(ConnString);
-            conn.Open();
             string SqlQuery;
             SqlCommand cmd;
             foreach (Control control in flowLayoutPanel1.Controls)
@@ -336,11 +334,14 @@ namespace Qlyrapchieuphim
                         cmd = new SqlCommand(SqlQuery, conn);
                         cmd.Parameters.Add("@seatname", SqlDbType.VarChar).Value = seatButton.Text;
                         cmd.Parameters.Add("@bought", SqlDbType.Bit).Value = true;
+                        if (conn.State == ConnectionState.Closed)
+                            conn.Open();
                         cmd.ExecuteNonQuery();
+                        conn.Close();
                     }
                 }
             }
-            conn.Close();
+            
             //tongtien.Text = "0 VND";
             //cantra.Text = "0 VND";
 
@@ -364,9 +365,10 @@ namespace Qlyrapchieuphim
             cmd.Parameters.Add("@food", SqlDbType.Int).Value = food_total;
             cmd.Parameters.Add("@drinks", SqlDbType.Int).Value = drinks_total;
             cmd.Parameters.Add("@discount", SqlDbType.Int).Value = discount + cus_discount;
-            conn.Open ();
+            if (conn.State == ConnectionState.Closed)
+                conn.Open();
             cmd.ExecuteNonQuery();
-            conn.Close ();
+            conn.Close();
             Hoadon hd = new Hoadon();
             hd.BillCode = existing_bills.ToString("D16");
             hd.UsedPoints = !chkAccumulate.Checked;
@@ -414,11 +416,11 @@ namespace Qlyrapchieuphim
                     return;
                 }
                 //SQL
-                SqlConnection conn = new SqlConnection(ConnString);
                 string SqlQuery = "SELECT DIEMTICHLUY FROM KHACHHANG WHERE MAKHACHHANG = @mkh";
                 SqlCommand cmd = new SqlCommand(SqlQuery, conn);
-                cmd.Parameters.Add("@mkh",SqlDbType.Char).Value = makh;
-                conn.Open();
+                cmd.Parameters.Add("@mkh", SqlDbType.Char).Value = makh;
+                if (conn.State == ConnectionState.Closed)
+                    conn.Open();
                 cus_point = (int)cmd.ExecuteScalar();
                 conn.Close();
                 ToggleCusPointButton(true);
@@ -480,7 +482,7 @@ namespace Qlyrapchieuphim
         }
         private void sinhvien_Enter(object sender, EventArgs e)
         {
-            if(sinhvien.Text == "0")
+            if (sinhvien.Text == "0")
             {
                 sinhvien.Text = "";
             }
@@ -502,11 +504,11 @@ namespace Qlyrapchieuphim
                 update();
                 return;
             }
-            SqlConnection conn = new SqlConnection(ConnString);
             string SqlQuery = "SELECT MENHGIA FROM VOUCHER WHERE MAPHATHANH = @mph";
             SqlCommand cmd = new SqlCommand(SqlQuery, conn);
-            cmd.Parameters.Add("@mph",SqlDbType.Char).Value = voucher.SelectedItem;
-            conn.Open();
+            cmd.Parameters.Add("@mph", SqlDbType.Char).Value = voucher.SelectedItem;
+            if (conn.State == ConnectionState.Closed)
+                conn.Open();
             try
             {
                 discount = (int)cmd.ExecuteScalar();
@@ -536,7 +538,6 @@ namespace Qlyrapchieuphim
             sp_list = spForm.List;
             food_total = 0;
             drinks_total = 0;
-            SqlConnection conn = new SqlConnection(ConnString);
             string SqlQuery;
             SqlDataAdapter adapter;
             foreach (DataRow row in sp_list.Rows)
@@ -544,7 +545,7 @@ namespace Qlyrapchieuphim
                 DataSet ds = new DataSet();
                 SqlQuery = "SELECT LOAI, GIA FROM SANPHAM WHERE MASP = @masp";
                 adapter = new SqlDataAdapter(SqlQuery, conn);
-                adapter.SelectCommand.Parameters.Add("@masp",SqlDbType.Char).Value = row["id"].ToString();
+                adapter.SelectCommand.Parameters.Add("@masp", SqlDbType.Char).Value = row["id"].ToString();
                 adapter.Fill(ds, "sp");
                 DataTable temp_table = ds.Tables["sp"];
                 if (temp_table.Rows[0]["LOAI"].ToString() == "Đồ ăn")

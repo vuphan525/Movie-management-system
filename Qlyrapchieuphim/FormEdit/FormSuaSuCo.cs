@@ -106,7 +106,6 @@ namespace Qlyrapchieuphim.FormEdit
         private void LoadThongTinSuCo()
         {
             conn = Helper.getdbConnection();
-            conn = Helper.CheckDbConnection(conn);
 
             string query = "SELECT IncidentName, ReportedByUserID, ReportedAt, Status, Description, Resolution " +
                            "FROM IncidentReports WHERE IncidentID = @id";

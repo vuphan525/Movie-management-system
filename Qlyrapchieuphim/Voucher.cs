@@ -19,7 +19,7 @@ namespace Qlyrapchieuphim
         SqlConnection conn;
         public Voucher()
         {
-            
+
             InitializeComponent();
             trangthai.Enabled = false;
             trangthai.Visible = false;
@@ -32,6 +32,7 @@ namespace Qlyrapchieuphim
             dataGridView1.ClearSelection();
             trangthai.SelectedIndex = 1;
             hieuluctu.Value = DateTime.Today;
+            hieuluctu.Enabled = false;
             denngay.Value = DateTime.Today;
             guna2TextBox6.Text = "Tìm kiếm theo mã voucher";
             guna2TextBox6.ForeColor = Color.Gray;
@@ -41,7 +42,7 @@ namespace Qlyrapchieuphim
         {
             checkDate_database();
             conn.Open();
-            string SqlQuery = "SELECT VoucherID, Code, Description, DescountAmount, DiscountPercent, ExpiryDate, Quantity, MinOrderValue, IsActive FROM Vouchers";
+            string SqlQuery = "SELECT VoucherID, Code, Description, DiscountPercent, ExpiryDate, Quantity, MinOrderValue, IsActive FROM Vouchers";
             SqlDataAdapter adapter = new SqlDataAdapter(SqlQuery, conn);
             DataSet ds = new DataSet();
             adapter.Fill(ds, "Vouchers");
@@ -93,15 +94,15 @@ namespace Qlyrapchieuphim
                 return;
             }
             //SQL section
-            
+
             string SqlQuery = "INSERT INTO Vouchers VALUES (@Code, @Description, @DiscountAmount, @DiscountPercent, @ExpiryDate, @Quantity, @MinOrderValue, @IsActive)";
             SqlCommand cmd = new SqlCommand(SqlQuery, conn);
             cmd.Parameters.Add("@Code", SqlDbType.NVarChar).Value = maphathanh.Text;
             cmd.Parameters.Add("@Description", SqlDbType.NVarChar).Value = "PlaceHolder"; //GIÁ TRỊ TẠM DO CHƯA CÓ TEXTBOX, THAY THẾ GIÁ TRỊ NGAY KHI CÓ TEXTBOX
-            cmd.Parameters.Add("@DiscountAmount", SqlDbType.Decimal).Value = menhgia.Text;
-            cmd.Parameters.Add("@DiscountAmount", SqlDbType.Float).Value = 10; //GIÁ TRỊ TẠM DO CHƯA CÓ TEXTBOX, THAY THẾ GIÁ TRỊ NGAY KHI CÓ TEXTBOX
+            cmd.Parameters.Add("@DiscountAmount", SqlDbType.Decimal).Value = 0; //Không còn sử dụng mệnh giá cứng
+            cmd.Parameters.Add("@DiscountPercent", SqlDbType.Float).Value = double.Parse(menhgia.Text); //Sử dụng giá trị ô mệnh giá như phần trăm (10 = 10%)
             cmd.Parameters.Add("@ExpiryDate", SqlDbType.Date).Value = denngay.Value.Date;
-            cmd.Parameters.Add("@Quantity", SqlDbType.Int).Value = 100;//GIÁ TRỊ TẠM DO CHƯA CÓ TEXTBOX, THAY THẾ GIÁ TRỊ NGAY KHI CÓ TEXTBOX
+            cmd.Parameters.Add("@Quantity", SqlDbType.Int).Value = 0;//GIÁ TRỊ TẠM DO CHƯA CÓ TEXTBOX, THAY THẾ GIÁ TRỊ NGAY KHI CÓ TEXTBOX
             cmd.Parameters.Add("@MinOrderValue", SqlDbType.Decimal).Value = 0;//GIÁ TRỊ TẠM DO CHƯA CÓ TEXTBOX, THAY THẾ GIÁ TRỊ NGAY KHI CÓ TEXTBOX
             cmd.Parameters.Add("@IsActive", SqlDbType.Bit).Value = Convert.ToBoolean(trangthai.SelectedIndex);
             try
@@ -127,7 +128,7 @@ namespace Qlyrapchieuphim
                         throw;
                 }
             }
-            
+
         }
         void Updatea()
         {
@@ -135,7 +136,7 @@ namespace Qlyrapchieuphim
             maphathanh.Clear();
             maphathanh.Enabled = false;
             menhgia.Clear();
-            hieuluctu.Value = DateTime.Now;
+            hieuluctu.Value = DateTime.Today;
             denngay.Value = DateTime.Now;
             dataGridView1.ClearSelection();
             checkBox1.Checked = false;
@@ -175,59 +176,59 @@ namespace Qlyrapchieuphim
             }
 
             // Update values in selected row
-            //SQL section
-            
-            string SqlQuery = "UPDATE VOUCHER SET " +
-                "MENHGIA = @mg, " +
-                "NGAYPHATHANH = @ngph, " +
-                "NGAYKETTHUC = @ngkt, " +
-                "TINHTRANG = @ttr, " +
-                "MULTIPLE = @nhieu " +
-                "WHERE MAPHATHANH = @maph";
-            SqlCommand cmd = new SqlCommand(SqlQuery, conn);
-            cmd.Parameters.Add("@maph", SqlDbType.Char).Value = maphathanh.Text;
-            cmd.Parameters.Add("@mg", SqlDbType.Int).Value = menhgia.Text;
-            cmd.Parameters.Add("@ngph", SqlDbType.Date).Value = hieuluctu.Value.Date;
-            cmd.Parameters.Add("@ngkt", SqlDbType.Date).Value = denngay.Value.Date;
-            cmd.Parameters.Add("@ttr", SqlDbType.NVarChar).Value = trangthai.SelectedItem;
-            cmd.Parameters.Add("@nhieu", SqlDbType.Bit).Value = checkBox1.Checked;
-            try
-            {
-                conn.Open();
-                cmd.ExecuteNonQuery();
-                conn.Close();
-                LoadData();
-                Updatea();
-            }
-            catch (SqlException ex)
-            {
-                switch (ex.Number)
-                {
-                    case 2627:
-                        MessageBox.Show(
-                            "Mã suất chiếu không được trùng nhau!",
-                            "Lỗi nhập liệu",
-                            MessageBoxButtons.OK,
-                            MessageBoxIcon.Warning);
-                        break;
-                    default:
-                        throw;
-                }
-            }
-            
+            //SQL section -> Moved to new form
+
+            //string SqlQuery = "UPDATE VOUCHER SET " +
+            //    "MENHGIA = @mg, " +
+            //    "NGAYPHATHANH = @ngph, " +
+            //    "NGAYKETTHUC = @ngkt, " +
+            //    "TINHTRANG = @ttr, " +
+            //    "MULTIPLE = @nhieu " +
+            //    "WHERE MAPHATHANH = @maph";
+            //SqlCommand cmd = new SqlCommand(SqlQuery, conn);
+            //cmd.Parameters.Add("@maph", SqlDbType.Char).Value = maphathanh.Text;
+            //cmd.Parameters.Add("@mg", SqlDbType.Int).Value = menhgia.Text;
+            //cmd.Parameters.Add("@ngph", SqlDbType.Date).Value = hieuluctu.Value.Date;
+            //cmd.Parameters.Add("@ngkt", SqlDbType.Date).Value = denngay.Value.Date;
+            //cmd.Parameters.Add("@ttr", SqlDbType.NVarChar).Value = trangthai.SelectedItem;
+            //cmd.Parameters.Add("@nhieu", SqlDbType.Bit).Value = checkBox1.Checked;
+            //try
+            //{
+            //    conn.Open();
+            //    cmd.ExecuteNonQuery();
+            //    conn.Close();
+            //    LoadData();
+            //    Updatea();
+            //}
+            //catch (SqlException ex)
+            //{
+            //    switch (ex.Number)
+            //    {
+            //        case 2627:
+            //            MessageBox.Show(
+            //                "Mã suất chiếu không được trùng nhau!",
+            //                "Lỗi nhập liệu",
+            //                MessageBoxButtons.OK,
+            //                MessageBoxIcon.Warning);
+            //            break;
+            //        default:
+            //            throw;
+            //    }
+            //}
+
         }
         private void PrintToTextBoxes(int row)
         {
-            DataTable dt = dataGridView1.DataSource as DataTable;
-            maphathanh.Text = dt.Rows[row]["MAPHATHANH"].ToString();
-            maphathanh.Enabled = false;
-            DateTime start = (DateTime)dt.Rows[row]["NGAYPHATHANH"];
-            DateTime end = (DateTime)dt.Rows[row]["NGAYKETTHUC"];
-            hieuluctu.Value = start;
-            denngay.Value = end;
-            menhgia.Text = dt.Rows[row]["MENHGIA"].ToString();
-            trangthai.SelectedItem = dt.Rows[row]["TINHTRANG"];
-            checkBox1.Checked = (bool)dt.Rows[row]["MULTIPLE"];
+            //DataTable dt = dataGridView1.DataSource as DataTable;
+            //maphathanh.Text = dt.Rows[row]["MAPHATHANH"].ToString();
+            //maphathanh.Enabled = false;
+            //DateTime start = (DateTime)dt.Rows[row]["NGAYPHATHANH"];
+            //DateTime end = (DateTime)dt.Rows[row]["NGAYKETTHUC"];
+            //hieuluctu.Value = start;
+            //denngay.Value = end;
+            //menhgia.Text = dt.Rows[row]["MENHGIA"].ToString();
+            //trangthai.SelectedItem = dt.Rows[row]["TINHTRANG"];
+            //checkBox1.Checked = (bool)dt.Rows[row]["MULTIPLE"];
         }
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -247,20 +248,45 @@ namespace Qlyrapchieuphim
                 int editLeft = padding;
                 int deleteLeft = editLeft + iconSize + padding;
 
+                // Lấy ID voucher từ dòng đang click
+                DataTable dt = dataGridView1.DataSource as DataTable;
+                int voucherID = (int)dt.Rows[e.RowIndex]["VoucherID"];
                 if (clickX >= editLeft && clickX < editLeft + iconSize)
                 {
                     // 👉 Click icon Edit
-                    using (FormSuaVoucher popup = new FormSuaVoucher())
+                    using (FormSuaVoucher popup = new FormSuaVoucher(voucherID))
                     {
                         //Todo: Lấy dữ liệu từ hàng này trong datagridview để truyền qua formSửa
                         popup.StartPosition = FormStartPosition.CenterParent;
-                        popup.ShowDialog(FindForm());
+                        if (popup.ShowDialog(FindForm()) == DialogResult.OK)
+                        {
+                            LoadData();
+                            this.Refresh();
+                        }
                     }
                 }
                 else if (clickX >= deleteLeft && clickX < deleteLeft + iconSize)
                 {
                     // 👉 Click icon Delete
-                    MessageBox.Show("Bạn vừa click nút xóa (tạm thời chưa có hành động).", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    DialogResult result = MessageBox.Show(
+                        "Bạn có chắc chắn muốn xóa dòng này?",
+                        "Xác nhận",
+                        MessageBoxButtons.YesNo,
+                        MessageBoxIcon.Question);
+
+                    if (result == DialogResult.Yes)
+                    {
+                        string temp_id = dt.Rows[voucherID]["VoucherID"].ToString();
+                        string SqlQuery = "DELETE FROM Vouchers WHERE VoucherID = @tempid";
+                        SqlCommand cmd = new SqlCommand(SqlQuery, conn);
+                        cmd.Parameters.Add("@tempid", SqlDbType.Char).Value = temp_id;
+                        if (conn.State != ConnectionState.Open)
+                            conn.Open();
+                        cmd.ExecuteNonQuery();
+                        conn.Close();
+                        LoadData();
+                        this.Refresh();
+                    }
                 }
             }
         }
@@ -278,10 +304,10 @@ namespace Qlyrapchieuphim
                     foreach (DataGridViewRow dr in dataGridView1.SelectedRows)
                     {
                         int selected = dr.Index;
-                        string temp_id = dt.Rows[selected]["MAPHATHANH"].ToString();
-                        string SqlQuery = "DELETE FROM VOUCHER WHERE MAPHATHANH = @tempid";
+                        string temp_id = dt.Rows[selected]["VoucherID"].ToString();
+                        string SqlQuery = "DELETE FROM Vouchers WHERE VoucherID = @tempid";
                         SqlCommand cmd = new SqlCommand(SqlQuery, conn);
-                        cmd.Parameters.Add("@tempid", SqlDbType.Char).Value = temp_id;
+                        cmd.Parameters.Add("@tempid", SqlDbType.Int).Value = temp_id;
                         conn.Open();
                         cmd.ExecuteNonQuery();
                         conn.Close();
@@ -328,7 +354,7 @@ namespace Qlyrapchieuphim
                     if (!row.IsNewRow)
                     {
                         int index = row.Index;
-                        tenSV = dt.Rows[index]["MAPHATHANH"].ToString().ToLower();
+                        tenSV = dt.Rows[index]["Code"].ToString().ToLower();
                         CurrencyManager currencyManager = (CurrencyManager)BindingContext[dataGridView1.DataSource];
                         currencyManager.SuspendBinding();
                         if (tenSV.Contains(tenCanTim))
@@ -400,28 +426,28 @@ namespace Qlyrapchieuphim
         {
             checkDate();
         }
-        private void checkDate_database()
+        private void checkDate_database()//Kiểm tra hạn dùng của các voucher
         {
-            conn.Open();
-            string SqlQuery = "SELECT MAPHATHANH, NGAYPHATHANH, NGAYKETTHUC FROM VOUCHER";
+            if (conn.State == ConnectionState.Closed)
+                conn.Open();
+            string SqlQuery = "SELECT VoucherId, ExpiryDate FROM Vouchers";
             SqlDataAdapter adapter = new SqlDataAdapter(SqlQuery, conn);
             DataSet ds = new DataSet();
-            adapter.Fill(ds, "VOUCHER");
-            DataTable dt = ds.Tables["VOUCHER"];
+            adapter.Fill(ds, "Vouchers");
+            DataTable dt = ds.Tables["Vouchers"];
             foreach (DataRow dr in dt.Rows)
             {
-                string state = string.Empty;
-                DateTime denngay = (DateTime)dr["NGAYKETTHUC"];
-                DateTime hieuluctu = (DateTime)dr["NGAYPHATHANH"];
+                bool isActive;
+                DateTime denngay = (DateTime)dr["ExpiryDate"];
+                denngay = denngay.Date;
                 if (denngay.Date < DateTime.Today)
-                    state = "Đã hêt hiệu lực"; //hết hiệu lực
-                else if (hieuluctu.Date <= DateTime.Today)
-                    state = "Đang áp dụng"; //đang áp dụng
-                else state = "Chưa áp dụng"; //chưa áp dụng
-                SqlQuery = "UPDATE VOUCHER SET TINHTRANG = @state WHERE MAPHATHANH = @maph";
+                    isActive = false; //hết hiệu lực
+                else
+                    isActive = true; //đang áp dụng
+                SqlQuery = "UPDATE Vouchers SET IsActive = @state WHERE VoucherID = @maph";
                 SqlCommand cmd = new SqlCommand(SqlQuery, conn);
-                cmd.Parameters.Add("@state", SqlDbType.NVarChar).Value = state;
-                cmd.Parameters.Add("@maph", SqlDbType.Char).Value = dr["MAPHATHANH"].ToString();
+                cmd.Parameters.Add("@state", SqlDbType.Bit).Value = isActive;
+                cmd.Parameters.Add("@maph", SqlDbType.Int).Value = dr["VoucherID"];
                 cmd.ExecuteNonQuery();
             }
             conn.Close();
@@ -432,7 +458,11 @@ namespace Qlyrapchieuphim
             using (FormThemVoucher popup = new FormThemVoucher())
             {
                 popup.StartPosition = FormStartPosition.CenterParent;
-                popup.ShowDialog(FindForm()); 
+                if (popup.ShowDialog(FindForm()) == DialogResult.OK)
+                {
+                    LoadData();
+                    this.Refresh();
+                }
             }
         }
 
