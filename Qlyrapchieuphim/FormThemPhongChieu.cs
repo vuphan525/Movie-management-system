@@ -55,6 +55,7 @@ namespace Qlyrapchieuphim
             lbl_FormThemPhongChieu_TenPhong.Clear();
             lbl_FormThemPhongChieu_SoGhe.Clear();
             cb_FormThemPhongChieu_DinhDang.SelectedIndex = -1;
+            this.Refresh();
         }
 
         private void them_Click(object sender, EventArgs e)

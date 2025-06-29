@@ -63,6 +63,7 @@ namespace Qlyrapchieuphim
             date_ThemSanPham_NgayNhap.Value = DateTime.Now;
             lbl_ThemSanPham_MoTa.Clear();
             pictureBox_ThemSanPham_Poster.Image = null;
+            this.Refresh();
         }
         string id;
         private void them_Click(object sender, EventArgs e)

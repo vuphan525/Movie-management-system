@@ -39,7 +39,7 @@ namespace Qlyrapchieuphim
                 cb_FormThemSuatChieu_TenPhim.SelectedIndex = 0;
             if (CheckRoom())
                 cb_FormThemSuatChieu_PhongChieu.SelectedIndex = 0;
-            date_FormThemSuatChieu_NgayChieu.Value = DateTime.Now;
+            date_FormThemSuatChieu_NgayChieu.Value = DateTime.Now + TimeSpan.FromDays(1); ;
             date_FormThemSuatChieu_GioChieu.Value = DateTime.Now + TimeSpan.FromHours(1);
         }
 
@@ -158,11 +158,7 @@ namespace Qlyrapchieuphim
         string projectFolder = AppDomain.CurrentDomain.BaseDirectory;
         private void btn_Refresh_Click(object sender, EventArgs e)
         {
-            lbl_FormThemSuatChieu_MaSuatChieu.Clear();
-            cb_FormThemSuatChieu_PhongChieu.SelectedIndex = -1;
-            cb_FormThemSuatChieu_TenPhim.SelectedIndex = -1;
-            date_FormThemSuatChieu_NgayChieu.Value = DateTime.Now;
-            date_FormThemSuatChieu_GioChieu.Value = DateTime.Now;
+            this.Refresh();
         }
          
         private void them_Click(object sender, EventArgs e)

@@ -61,6 +61,7 @@ namespace Qlyrapchieuphim.FormEdit
             lbl_FormSuaPhongChieu_TenPhong.Clear();
             lbl_FormSuaPhongChieu_SoGhe.Clear();
             cb_FormSuaPhongChieu_DinhDang.SelectedIndex = -1;
+            this.Refresh();
         }
 
         private void CapNhat_Click(object sender, EventArgs e)

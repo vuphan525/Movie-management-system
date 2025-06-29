@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Configuration;
 using Microsoft.Data.SqlClient;
+using System.Windows.Navigation;
 
 namespace Qlyrapchieuphim
 {
@@ -18,23 +19,29 @@ namespace Qlyrapchieuphim
         {
             InitializeComponent();
         }
-        string ConnString = ConfigurationManager.ConnectionStrings["ConnString"].ConnectionString;
-        string makh = string.Empty;
+        SqlConnection conn = null;
+        int makh = -1;
         bool used_points = false;
-        string masc = string.Empty;
-        int food_total;
-        int drinks_total;
+        int masc = -1;
+        int food_total = 0;
+        int drinks_total = 0;
         int total;
         int discount;
-        string billCode = string.Empty;
-        public string BillCode
+        private int loyalty_points_before;
+        private int billCode = -1;
+        public int BillCode
         {
             get { return billCode; }
             set { billCode = value; }
         }
+        public int LoyaltyPointsBefore
+        {
+            get { return loyalty_points_before; }
+            set { loyalty_points_before = value; }
+        }
         private void LoadBill()
         {
-            if (string.IsNullOrEmpty(billCode))
+            if (billCode == -1)
             {
                 MessageBox.Show(
                     "NO BILL CODE",
@@ -43,36 +50,101 @@ namespace Qlyrapchieuphim
                     MessageBoxIcon.Error);
                 this.Close();
             }
-            SqlConnection conn = new SqlConnection(ConnString);
-            string SqlQuery = "SELECT MASUATCHIEU, SOGHE, MAKHACHHANG, TONGTIENVE, FOODTOTAL, " +
-                "DRINKSTOTAL, DISCOUNT FROM  HOADON " +
-                "WHERE MAHD = @mahd";
+            //Main Booking
+            string SqlQuery = "SELECT ShowtimeID, CustomerID, TotalPrice, VoucherID FROM  Bookings " +
+                "WHERE BookingID = @BookingID";
             SqlDataAdapter adapter = new SqlDataAdapter(SqlQuery, conn);
-            adapter.SelectCommand.Parameters.Add("@mahd",SqlDbType.Char).Value = billCode;
-            DataSet ds = new DataSet();
-            conn.Open();
-            adapter.Fill(ds, "BILL");
+            adapter.SelectCommand.Parameters.Add("@BookingID", SqlDbType.Int).Value = billCode;
+            DataSet mainDataSet = new DataSet();
+            if (conn.State != ConnectionState.Open)
+                conn.Open();
+            adapter.Fill(mainDataSet, "Bookings");
             conn.Close();
-            DataTable dt = ds.Tables["BILL"];
-            masc = dt.Rows[0]["MASUATCHIEU"].ToString();
-            movSeatNum.Text = dt.Rows[0]["SOGHE"].ToString();
-            makh = dt.Rows[0]["MAKHACHHANG"].ToString();
-
-            food_total = int.Parse(dt.Rows[0]["FOODTOTAL"].ToString());
-            spFood.Text = food_total.ToString() + " VND";
-            drinks_total = int.Parse(dt.Rows[0]["DRINKSTOTAL"].ToString());
-            spDrinks.Text = drinks_total.ToString() + " VND";
-
-            total = int.Parse(dt.Rows[0]["TONGTIENVE"].ToString());
+            DataTable MainDataTable = mainDataSet.Tables["Bookings"];
+            masc = (int)MainDataTable.Rows[0]["ShowtimeID"];
+            makh = (int)MainDataTable.Rows[0]["CustomerID"];
+            total = Convert.ToInt32((decimal)MainDataTable.Rows[0]["TotalPrice"]);
             tongtien.Text = total.ToString() + " VND";
+
+
+            //BookingDetails
+            SqlQuery = "SELECT Count(bds.SeatID) AS NumberOfSeats, SeatType " +
+                "FROM Seats sts JOIN BookingDetails bds ON (sts.SeatID = bds.SeatID) " +
+                "WHERE bds.BookingID = @BookingID " +
+                "GROUP BY SeatType";
+            adapter = new SqlDataAdapter(SqlQuery, conn);
+            adapter.SelectCommand.Parameters.Add("@BookingID", SqlDbType.Int).Value = billCode;
+            DataTable bookingDetails = new DataTable();
+            if (conn.State != ConnectionState.Open)
+                conn.Open();
+            adapter.Fill(bookingDetails);
+            conn.Close();
+            foreach (DataRow row in bookingDetails.Rows)
+            {
+                if (row["SeatType"].ToString() == "Standard")
+                    lbl_NormalSeatNum.Text = row["NumberOfSeats"].ToString();
+                if (row["SeatType"].ToString() == "VIP")
+                    lbl_VIPSeatNum.Text = row["NumberOfSeats"].ToString();
+            }
+
+
+            //BookingProducts
+            SqlQuery = "SELECT bprd.ProductID, prd.ProductName, prd.Price, bprd.Quantity, prd.CategoryID " +
+                "FROM Products prd JOIN BookingProducts bprd ON (prd.ProductID = bprd.ProductID) " +
+                "WHERE BookingID = @BookingID";
+            adapter = new SqlDataAdapter(SqlQuery, conn);
+            adapter.SelectCommand.Parameters.Add("@BookingID", SqlDbType.Int).Value = billCode;
+            DataTable bookingProducts = new DataTable();
+            if (conn.State != ConnectionState.Open)
+                conn.Open();
+            adapter.Fill(bookingProducts);
+            conn.Close();
+            dataGridView1.DataSource = bookingProducts;
+            foreach (DataRow row in bookingProducts.Rows)
+            {
+                if ((int)row["CategoryID"] == 1) //Đồ ăn
+                    food_total += Convert.ToInt32((decimal)row["Price"] * (int)row["Quantity"]);
+
+                if ((int)row["CategoryID"] == 2) //Thức uống
+                    drinks_total = Convert.ToInt32((decimal)row["Price"] * (int)row["Quantity"]);
+            }
+            spFood.Text = food_total.ToString() + " VND";
+            spDrinks.Text = drinks_total.ToString() + " VND";
             sp_total_lbl.Text = (food_total + drinks_total).ToString() + " VND";
 
-            discount = int.Parse(dt.Rows[0]["DISCOUNT"].ToString());
-            lblDiscount.Text = discount.ToString() + " VND";
 
-            cantra.Text = (total - discount + food_total + drinks_total).ToString() + " VND";
+            int need_to_pay = total + food_total + drinks_total;
+            //Hadling Discounts
+            float voucherDiscountPercent = getVoucherDiscountPercent((MainDataTable.Rows[0]["VoucherID"] == DBNull.Value) ? -1 : (int)MainDataTable.Rows[0]["VoucherID"]);
+            discount = (int)(need_to_pay * voucherDiscountPercent);
+            if (UsedPoints)
+                discount += loyalty_points_before * 2000;
+
+            lblDiscount.Text = discount.ToString() + " VND";
+            need_to_pay -= discount;
+
+            cantra.Text = need_to_pay.ToString() + " VND";
             LoadMovie();
             LoadCus();
+        }
+        private float getVoucherDiscountPercent(float voucherId)
+        {
+            float result = 0;
+            if (voucherId == -1)
+                return result;
+
+            using (SqlCommand cmd = conn.CreateCommand())
+            {
+                string Sqlquery = "SELECT DiscountPercent FROM Vouchers WHERE VoucherID = @VoucherID";
+                cmd.Parameters.Add("@VoucherID", SqlDbType.Int).Value = voucherId;
+                cmd.CommandText = Sqlquery;
+                cmd.CommandType = CommandType.Text;
+                if (conn.State == ConnectionState.Closed)
+                    conn.Open();
+                result = float.Parse(cmd.ExecuteScalar().ToString());
+                conn.Close();
+            }
+            return result;
         }
         //public string CusCode
         //{
@@ -111,28 +183,28 @@ namespace Qlyrapchieuphim
         //}
         private void LoadMovie()
         {
-            if (string.IsNullOrEmpty(masc))
+            if (masc == -1)
                 return;
-            SqlConnection conn = new SqlConnection(ConnString);
-            string SqlQuery = "select TENPHIM, THOIGIANBATDAU, NGAYCHIEU  " +
-                "from BOPHIM f, SUATCHIEU sc " +
-                "WHERE (f.MAPHIM = sc.MAPHIM) AND (sc.MASUATCHIEU = @masc) ";
+            string SqlQuery = "SELECT Title, StartTime " +
+                "FROM Movies mv JOIN Showtimes st ON (mv.MovieID = st.MovieID)" +
+                "WHERE (st.ShowtimeID = @masc) ";
             SqlDataAdapter adapter = new SqlDataAdapter(SqlQuery, conn);
-            adapter.SelectCommand.Parameters.Add("@masc", SqlDbType.Char).Value = masc;
+            adapter.SelectCommand.Parameters.Add("@masc", SqlDbType.Int).Value = masc;
             DataSet ds = new DataSet();
-            conn.Open();
-            adapter.Fill(ds, "BOPHIM");
+            if (conn.State != ConnectionState.Open)
+                conn.Open();
+            adapter.Fill(ds, "Movies");
             conn.Close();
-            DataTable dt = ds.Tables["BOPHIM"];
-            movName.Text = dt.Rows[0]["TENPHIM"].ToString();
-            DateTime date = (DateTime)dt.Rows[0]["NGAYCHIEU"];
-            movDate.Text = date.ToString("dd/MM/yyyy");
-            TimeSpan time = (TimeSpan)dt.Rows[0]["THOIGIANBATDAU"];
+            DataTable dt = ds.Tables["Movies"];
+            movName.Text = dt.Rows[0]["Title"].ToString();
+            DateTime date = (DateTime)dt.Rows[0]["StartTime"];
+            movDate.Text = date.Date.ToString("dd/MM/yyyy");
+            TimeSpan time = date.TimeOfDay;
             movTime.Text = new DateTime(time.Ticks + date.Ticks).ToString("HH:mm:ss");
         }
         private void LoadCus()
         {
-            if (string.IsNullOrEmpty(makh))
+            if (makh == -1 || makh == 1)
             {
                 cusName.Text = "N/A";
                 cusPhone.Text = "N/A";
@@ -141,17 +213,19 @@ namespace Qlyrapchieuphim
                 cusDeducted.Text = "N/A";
                 return;
             }
-                
-            SqlConnection conn = new SqlConnection(ConnString);
-            conn.Open();
-            string SqlQuery = "SELECT TENKHACHHANG, SODIENTHOAI, EMAIL, DIEMTICHLUY FROM KHACHHANG " +
-                "WHERE MAKHACHHANG = @makh";
+            
+            string SqlQuery = "SELECT FullName, Phone, Email, LoyaltyPoints " +
+                "FROM Customers cs JOIN Users usr ON (usr.UserID = cs.UserID) " +
+                "WHERE CustomerID = @CustomerID";
             SqlDataAdapter adapter = new SqlDataAdapter(SqlQuery, conn);
-            adapter.SelectCommand.Parameters.Add("@makh", SqlDbType.Char).Value = makh;
+            adapter.SelectCommand.Parameters.Add("@CustomerID", SqlDbType.Int).Value = makh;
             DataSet ds = new DataSet();
-            adapter.Fill(ds, "KHACHHANG");
-            DataTable dt = ds.Tables["KHACHHANG"];
-            if (dt.Rows.Count <=0)
+            if (conn.State != ConnectionState.Open)
+                conn.Open();
+            adapter.Fill(ds, "Customers");
+            conn.Close();
+            DataTable dt = ds.Tables["Customers"];
+            if (dt.Rows.Count <= 0)
             {
                 cusName.Text = "N/A";
                 cusPhone.Text = "N/A";
@@ -160,33 +234,16 @@ namespace Qlyrapchieuphim
                 cusDeducted.Text = "N/A";
                 return;
             }
-            cusName.Text = dt.Rows[0]["TENKHACHHANG"].ToString();
-            cusPhone.Text = dt.Rows[0]["SODIENTHOAI"].ToString();
-            cusEmail.Text = dt.Rows[0]["EMAIL"].ToString();
-            int temp_dtl = (int)dt.Rows[0]["DIEMTICHLUY"];
-            cusPoints.Text = dt.Rows[0]["DIEMTICHLUY"].ToString();
-            SqlQuery = "UPDATE KHACHHANG SET " +
-                    "DIEMTICHLUY = @dtl " +
-                    "WHERE MAKHACHHANG = @makh";
-            SqlCommand cmd = new SqlCommand(SqlQuery, conn);
-            cmd.Parameters.Add("@makh", SqlDbType.Char).Value = makh;
-            if (UsedPoints)
-            {
-                temp_dtl = 0;
-                cmd.Parameters.Add("@dtl", SqlDbType.Int).Value = temp_dtl;
-                cusDeducted.Text = temp_dtl.ToString();
-            }
-            else
-            {
-                temp_dtl++;
-                cmd.Parameters.Add("@dtl", SqlDbType.Int).Value = temp_dtl;
-                cusDeducted.Text = temp_dtl.ToString();
-            }
-            cmd.ExecuteNonQuery();
-            conn.Close();
+            cusName.Text = dt.Rows[0]["FullName"].ToString();
+            cusPhone.Text = dt.Rows[0]["Phone"].ToString();
+            cusEmail.Text = dt.Rows[0]["Email"].ToString();
+            cusPoints.Text = loyalty_points_before.ToString();
+            cusDeducted.Text = dt.Rows[0]["LoyaltyPoints"].ToString();
+            
         }
         private void Hoadon_Load(object sender, EventArgs e)
         {
+            conn = Helper.getdbConnection();
             LoadBill();
         }
     }

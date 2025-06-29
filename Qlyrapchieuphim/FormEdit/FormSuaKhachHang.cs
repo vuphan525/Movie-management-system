@@ -101,7 +101,7 @@ namespace Qlyrapchieuphim.FormEdit
             lbl_FormSuaKH_HoTen.Clear();
             lbl_FormSuaKH_SDT.Clear();
             lbl_FormSuaKH_MaKH.Clear();
-
+            this.Refresh();
         }
 
         private void them_Click(object sender, EventArgs e)

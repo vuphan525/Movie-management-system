@@ -1,4 +1,5 @@
 ﻿using Microsoft.Data.SqlClient;
+using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -6,6 +7,7 @@ using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -16,7 +18,7 @@ namespace Qlyrapchieuphim
     public partial class staffForm : Form
     {
         int manv = -1;
-        string tennv;
+        string tennv = string.Empty;
         private bool isStaff = true;
         SqlConnection conn = null;
         public staffForm()
@@ -103,8 +105,18 @@ namespace Qlyrapchieuphim
             SqlCommand cmd = new SqlCommand(SqlQuery, conn);
             cmd.Parameters.Add("@UserID", SqlDbType.Char).Value = manv;
             conn.Open();
-            tennv = cmd.ExecuteScalar().ToString();
-            if (tennv == null) return;
+            try
+            {
+                tennv = cmd.ExecuteScalar()?.ToString();
+            }
+            catch (NullReferenceException)
+            {
+                if (conn.State != ConnectionState.Closed)
+                    conn.Close();
+                return;
+            }
+            if (tennv.IsNullOrEmpty())
+                return;
             conn.Close();
             label3.Text = "Xin chào, " + tennv + " (" + manv + ")";
         }

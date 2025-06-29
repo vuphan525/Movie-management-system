@@ -95,8 +95,7 @@ namespace Qlyrapchieuphim
             lbl_FormThemSuCo_HuongGiaiQuyet.Clear();
             date_FormThemSuCo_NgayTiepNhan.Value = DateTime.Now;
             lbl_FormThemSuCo_MoTa.Clear();
-            if (CheckUsr()) // <- GỌI Ở ĐÂY
-                manv.SelectedIndex = 0;
+            this.Refresh();
         }
 
         private void bcButton_Click(object sender, EventArgs e)

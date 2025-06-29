@@ -20,7 +20,7 @@ namespace Qlyrapchieuphim
             InitializeComponent();
             btnCofirm.Enabled = false;
         }
-        string ConnString = ConfigurationManager.ConnectionStrings["ConnString"].ConnectionString;
+        SqlConnection conn = null;
         bool cus_exists = false;
         int customer_code = -1;
         public int cus_code
@@ -44,12 +44,12 @@ namespace Qlyrapchieuphim
 
         private void khachhang_FormClosing(object sender, FormClosingEventArgs e)
         {
-            
+
         }
 
         private void khachhang_FormClosed(object sender, FormClosedEventArgs e)
         {
-            
+
         }
 
         private void buttonCheck_Click(object sender, EventArgs e)
@@ -64,11 +64,11 @@ namespace Qlyrapchieuphim
                     MessageBoxIcon.Information);
                 return;
             }
-            SqlConnection conn = new SqlConnection(ConnString);
             string SqlQuery = "SELECT COUNT(*) FROM Customers WHERE Phone = @sdt";
             SqlCommand cmd = new SqlCommand(SqlQuery, conn);
             cmd.Parameters.Add("@sdt", SqlDbType.NVarChar).Value = txtCustomerID.Text;
-            conn.Open();
+            if (conn.State != ConnectionState.Open)
+                conn.Open();
             int count = (int)cmd.ExecuteScalar();
             conn.Close();
 
@@ -86,7 +86,8 @@ namespace Qlyrapchieuphim
             SqlDataAdapter adapter = new SqlDataAdapter(SqlQuery, conn);
             adapter.SelectCommand.Parameters.Add("@sdt", SqlDbType.VarChar).Value = txtCustomerID.Text;
             DataSet ds = new DataSet();
-            conn.Open();
+            if (conn.State != ConnectionState.Open)
+                conn.Open();
             adapter.Fill(ds, "Customers");
             conn.Close();
             DataTable dt = ds.Tables["Customers"];
@@ -107,6 +108,11 @@ namespace Qlyrapchieuphim
             textBox1.Clear();
             customer_code = -1;
             cus_exists = false;
+        }
+
+        private void khachhang_Load(object sender, EventArgs e)
+        {
+            conn = Helper.getdbConnection();
         }
     }
 }

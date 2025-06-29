@@ -271,6 +271,7 @@ namespace Qlyrapchieuphim.FormEdit
             lbl_FormSuaPhim_NhaPhatHanh.Clear();
             lbl_FormSuaPhim_MoTa.Clear();
             pictureBox_FormSuaPhim_Poster.Image = null;
+            this.Refresh();
         }
     }
 }

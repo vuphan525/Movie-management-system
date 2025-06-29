@@ -31,6 +31,7 @@ namespace Qlyrapchieuphim
         {
             date_FormThemNV_NgaySinh.Format = DateTimePickerFormat.Custom;
             date_FormThemNV_NgaySinh.CustomFormat = "dd/MM/yyyy";
+            date_FormThemNV_NgaySinh.Value = DateTime.Today.AddYears(-19);
         }
 
         private void FormThemPhim_Paint(object sender, PaintEventArgs e)
@@ -172,11 +173,12 @@ namespace Qlyrapchieuphim
             lbl_FormThemNV_Email.Clear();
             lbl_FormThemNV_HoTen.Clear();
             lbl_FormThemNV_SDT.Clear();
-            date_FormThemNV_NgaySinh.Value = DateTime.Now;
+            date_FormThemNV_NgaySinh.Value = DateTime.Today.AddYears(-19);
             lbl_FormThemNV_MaNV.Clear();
-            cb_FormThemNV_ChucVu.SelectedIndex = -1;
+            cb_FormThemNV_ChucVu.SelectedIndex = 0;
             lbl_FormThemNV_Username.Clear();
             lbl_FormThemNV_Password.Clear();
+            this.Refresh();
         }
 
        

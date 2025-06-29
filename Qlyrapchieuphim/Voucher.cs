@@ -469,8 +469,7 @@ namespace Qlyrapchieuphim
         private void Voucher_Load(object sender, EventArgs e)
         {
             conn = Helper.getdbConnection();
-            conn = Helper.CheckDbConnection(conn);
-            dataGridView1.RowTemplate.Height = 45;
+            LoadData();
         }
 
         private void dataGridView1_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)

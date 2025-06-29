@@ -65,8 +65,9 @@ namespace Qlyrapchieuphim.FormEdit
             date_FormSuaSuCo_NgayTiepNhan.Value = DateTime.Now;
             lbl_FormSuaSuCo_MoTa.Clear();
 
-            if (CheckUsr()) // <- GỌI Ở ĐÂY
-                manv.SelectedIndex = 0;
+            //if (CheckUsr()) // <- GỌI Ở ĐÂY
+            //    manv.SelectedIndex = 0;
+            this.Refresh();
         }
         private bool CheckUsr()
         {

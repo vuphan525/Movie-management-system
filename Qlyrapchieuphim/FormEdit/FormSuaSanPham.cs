@@ -303,6 +303,7 @@ namespace Qlyrapchieuphim.FormEdit
             date_FormSuaSanPham_NgayNhap.Value = DateTime.Now;
             lbl_FormSuaSanPham_MoTa.Clear();
             pictureBox_FormSuaSanPham_Poster.Image = null;
+            this.Refresh();
         }
 
         private void btn_FormSuaSanPham_ThemPoster_Click(object sender, EventArgs e)

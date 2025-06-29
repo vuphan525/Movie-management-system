@@ -58,6 +58,7 @@ namespace Qlyrapchieuphim
             lbl_FormThemVoucher_HoaDonToiThieu.Clear();
             cb_FormThemVoucher_TrangThai.SelectedIndex = -1;
             lbl_FormThemVoucher_MoTa.Clear();
+            this.Refresh();
         }
 
         private void them_Click(object sender, EventArgs e)

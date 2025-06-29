@@ -25,14 +25,14 @@ namespace Qlyrapchieuphim
         }
         SqlConnection conn = null;
         string picture_url = string.Empty;
-        string projectFolder = AppDomain.CurrentDomain.BaseDirectory; // Thư mục dự án
+        readonly string projectFolder = AppDomain.CurrentDomain.BaseDirectory; // Thư mục dự án
         DataTable dt;
         DataTable sp_list = new DataTable();
         private void MakeSpList()
         {
             DataColumn column;
             column = new DataColumn();
-            column.DataType = System.Type.GetType("System.String");
+            column.DataType = System.Type.GetType("System.Int32");
             column.ColumnName = "id";
             sp_list.Columns.Add(column);
 
@@ -67,7 +67,7 @@ namespace Qlyrapchieuphim
             flowLayoutPanel1.Controls.Clear();
             if (conn.State != ConnectionState.Open)
                 conn.Open();
-            string SqlQuery = "SELECT ProductID, ProductName, Description, Price, ImageURL, prcCategoryName" +
+            string SqlQuery = "SELECT ProductID, ProductName, Description, Price, ImageURL, prc.CategoryName, Quantity " +
                 "FROM Products prs JOIN ProductCategories prc ON (prs.CategoryID = prc.CategoryID)";
             SqlDataAdapter adapter = new SqlDataAdapter(SqlQuery, conn);
             DataSet ds = new DataSet();
@@ -76,15 +76,15 @@ namespace Qlyrapchieuphim
             foreach (DataRow dr in dt.Rows)
             {
                 Sanpham newsp = new Sanpham();
-                newsp.Ten.Text = dr.Field<string>("TENSP");
-                newsp.Gia.Text = dr.Field<double>("GIA").ToString();
-                newsp.ID.Text = dr.Field<string>("MASP").ToString();
-                newsp.Type = dr.Field<string>("LOAI").ToString();
-                newsp.Count = dr.Field<int>("SOLUONG");
+                newsp.Ten.Text = dr.Field<string>("ProductName");
+                newsp.Gia.Text = dr.Field<decimal>("Price").ToString();
+                newsp.ID.Text = dr.Field<int>("ProductID").ToString();
+                newsp.Type = dr.Field<string>("CategoryName").ToString();
+                newsp.Count = dr.Field<int>("Quantity");
                 if (newsp.Count <= 0)
                     newsp.Enabled = false;
 
-                string relative_picture_path = dr.Field<string>("PICTUREPATH");
+                string relative_picture_path = dr.Field<string>("ImageURL");
                 picture_url = Path.Combine(projectFolder, relative_picture_path);
                 try
                 {
@@ -145,11 +145,11 @@ namespace Qlyrapchieuphim
             conn = Helper.getdbConnection();
             LoadData();
         }
-        private bool CheckInventory(string msp, int selected)
+        private bool CheckInventory(int msp, int selected)
         {
-            string SqlQuery = "SELECT SOLUONG FROM SANPHAM WHERE MASP = @msp";
+            string SqlQuery = "SELECT Quantity FROM Products WHERE ProductID = @ProductID";
             SqlCommand cmd = new SqlCommand(SqlQuery, conn);
-            cmd.Parameters.Add("@msp", SqlDbType.Char).Value = msp;
+            cmd.Parameters.Add("@ProductID", SqlDbType.Int).Value = msp;
             conn.Open();
             int inv = (int)cmd.ExecuteScalar();
             conn.Close();
@@ -163,10 +163,10 @@ namespace Qlyrapchieuphim
             foreach (DataGridViewRow r in dataGridView1.Rows)
             {
                 int index = r.Index;
-                if (sp_list.Rows[index]["id"].ToString() == sp.ID.Text)
+                if ((int)sp_list.Rows[index]["id"] == int.Parse(sp.ID.Text))
                 {
                     int num_select = int.Parse(sp_list.Rows[index]["num"].ToString()) + 1;
-                    bool still_left = CheckInventory(sp_list.Rows[index]["id"].ToString(), num_select);
+                    bool still_left = CheckInventory((int)sp_list.Rows[index]["id"], num_select);
                     if (!still_left)
                     {
                         MessageBox.Show(

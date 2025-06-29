@@ -111,13 +111,13 @@ namespace Qlyrapchieuphim.FormEdit
             cb_FormSuaNV_ChucVu.SelectedIndex = -1;
             lbl_FormSuaNV_Username.Clear();
             lbl_FormSuaNV_Password.Clear();
-
+            this.Refresh();
         }
 
         private void them_Click(object sender, EventArgs e)
         {
 
-           
+
             if (
                    string.IsNullOrWhiteSpace(lbl_FormSuaNV_HoTen.Text) ||
                    string.IsNullOrWhiteSpace(lbl_FormSuaNV_SDT.Text) ||

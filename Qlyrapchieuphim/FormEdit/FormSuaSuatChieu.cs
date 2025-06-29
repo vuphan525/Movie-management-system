@@ -190,6 +190,7 @@ namespace Qlyrapchieuphim.FormEdit
             cb_FormSuaSuatChieu_TenPhim.SelectedIndex = -1;
             date_FormSuaSuatChieu_NgayChieu.Value = DateTime.Now;
             date_FormSuaSuatChieu_GioChieu.Value = DateTime.Now;
+            this.Refresh();
         }
 
         private void LoadThongTinSuatChieu()

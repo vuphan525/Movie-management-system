@@ -269,7 +269,7 @@ namespace Qlyrapchieuphim
             lbl_FormThemPhim_NhaPhatHanh.Clear();
             lbl_FormThemPhim_MoTa.Clear();
             pictureBox_FormThemPhim_Poster.Image = null; // Assuming guna2PictureBox1 is the picture box for the poster
-
+            this.Refresh();
         }
     }
 }

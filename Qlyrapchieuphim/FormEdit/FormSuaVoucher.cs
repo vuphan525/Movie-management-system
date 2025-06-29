@@ -61,6 +61,7 @@ namespace Qlyrapchieuphim.FormEdit
             lbl_FormSuaVoucher_HoaDonToiThieu.Clear();
             cb_FormSuaVoucher_TrangThai.SelectedIndex = -1;
             lbl_FormSuaVoucher_MoTa.Clear();
+            this.Refresh();
         }
 
         private void them_Click(object sender, EventArgs e)

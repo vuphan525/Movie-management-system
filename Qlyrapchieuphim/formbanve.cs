@@ -1,19 +1,20 @@
-﻿using System;
+﻿using Guna.UI2.WinForms;
+using Microsoft.Data.SqlClient;
+using Microsoft.Identity.Client;
+using Microsoft.IdentityModel.Tokens;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
-using Guna.UI2.WinForms;
-using Microsoft.Identity.Client;
-using System.Configuration;
-using Microsoft.Data.SqlClient;
 using System.Web.Compilation;
-using System.IO;
-using Microsoft.IdentityModel.Tokens;
+using System.Windows.Forms;
+using static Guna.UI2.Native.WinApi;
 namespace Qlyrapchieuphim
 {
     public partial class formbanve : Form
@@ -22,13 +23,14 @@ namespace Qlyrapchieuphim
         public List<Guna2Button> selected = new List<Guna2Button>();
         public List<Guna2Button> vip = new List<Guna2Button>();
         public List<Guna2Button> vipcount = new List<Guna2Button>();
+        public List<Guna2Button> soldThisSession = new List<Guna2Button>();
         public int ShowtimeID;
         SqlConnection conn = null;
         string picture_url = string.Empty;
         public int total = 0;
         public int need_to_pay = 0;
-        public float discountPercent  = 0;
-        private int CustomerID = -1;
+        public float discountPercent = 0;
+        private int CustomerID = 1;
         private int UserID = -1;
         private int BookingID = -1;
         int cus_point = 0;
@@ -37,7 +39,7 @@ namespace Qlyrapchieuphim
         int cus_discount = 0;
         DataTable sp_list = new DataTable();
         Bansanpham spForm = new Bansanpham();
-        string projectFolder = AppDomain.CurrentDomain.BaseDirectory; // Thư mục dự án
+        readonly string projectFolder = AppDomain.CurrentDomain.BaseDirectory; // Thư mục dự án
         //public formbanve()
         //{
         //    InitializeComponent();
@@ -74,27 +76,31 @@ namespace Qlyrapchieuphim
         private bool isStaff()
         {
             string role = getUserRole();
-            if ( role == "customer" || role.IsNullOrEmpty())
+            if (role == "customer" || role.IsNullOrEmpty())
                 return false;
             else
                 return true;
         }
-        private List<int> getSelectedSeats()
+        private List<int> getSoldSeatsThisSession()
         {
             string SqlQuery = "SELECT DISTINCT SeatID FROM Seats WHERE ";
             int count = 0;
-            SqlCommand cmd = new SqlCommand();
-            foreach ( Guna2Button button in selected)
+            SqlCommand cmd = conn.CreateCommand();
+            foreach (Guna2Button button in soldThisSession)
             {
                 if (count != 0)
                     SqlQuery += " OR ";
-                SqlQuery += " (SeatName = @SeatName" + count.ToString() + ") ";
-                cmd.Parameters.Add("@SeatName" + count.ToString(), SqlDbType.NVarChar).Value = button.Text;
+                SqlQuery += " (SeatNumber = @SeatNumber" + count.ToString() + ") ";
+                cmd.Parameters.Add("@SeatNumber" + count.ToString(), SqlDbType.NVarChar).Value = button.Text;
                 count++;
             }
+            List<int> SeatIds = new List<int>();
+            if (sold.Count == 0)
+                return SeatIds;
             cmd.CommandText = SqlQuery;
             cmd.CommandType = CommandType.Text;
-            List<int> SeatIds = new List<int>();
+            if (conn.State == ConnectionState.Closed)
+                conn.Open();
             using (SqlDataReader reader = cmd.ExecuteReader())
             {
                 while (reader.Read())
@@ -102,14 +108,15 @@ namespace Qlyrapchieuphim
                     SeatIds.Add(reader.GetInt32(0));
                 }
             }
+            conn.Close();
             return SeatIds;
         }
-        private Nullable<int> getVoucherId()
+        private int getVoucherId()
         {
-            Nullable<int> voucherId = null;
-            if ((string)voucher.SelectedItem != "NONE")
+            int voucherId = -1;
+            if (voucher.SelectedItem.ToString() != "NONE")
             {
-                voucherId = int.Parse(Helper.SubStringBetween((string)voucher.SelectedItem, " (ID: ", ")"));
+                voucherId = int.Parse(Helper.SubStringBetween(voucher.SelectedItem.ToString(), " (ID: ", ")"));
             }
             return voucherId;
         }
@@ -170,7 +177,7 @@ namespace Qlyrapchieuphim
             int count;
             if (conn.State == ConnectionState.Closed)
                 conn.Open();
-            string SqlQuery = "SELECT COUNT(*) FROM Vouchers WHERE IsActive = 1";
+            string SqlQuery = "SELECT COUNT(*) FROM Vouchers WHERE (IsActive = 1) AND (Quantity > 0)";
             SqlCommand countCmd = new SqlCommand(SqlQuery, conn);
             count = (int)countCmd.ExecuteScalar() + 1;
 
@@ -237,7 +244,7 @@ namespace Qlyrapchieuphim
                 adapter.Fill(dt);
                 conn.Close();
             }
-            foreach (Guna2Button button in flowLayoutPanel1.Controls) 
+            foreach (Guna2Button button in flowLayoutPanel1.Controls)
             {
                 bool isBought = dt.AsEnumerable().Any(row => button.Text == row.Field<String>("SeatNumber"));
                 if (isBought)
@@ -257,7 +264,7 @@ namespace Qlyrapchieuphim
 
 
             SqlQuery = "SELECT mv.PosterURL " +
-                "FROM Showtimes sht JOIN Movies mv ON (sht.MovieID = Movies.MovieID) " +
+                "FROM Showtimes sht JOIN Movies mv ON (sht.MovieID = mv.MovieID) " +
                 "WHERE (ShowtimeID = @masc)";
             cmd = new SqlCommand(SqlQuery, conn);
             cmd.Parameters.Add("@masc", SqlDbType.Int).Value = ShowtimeID;
@@ -368,22 +375,24 @@ namespace Qlyrapchieuphim
                     MessageBox.Show("Vui lòng nhập số hợp lệ!", "Lỗi nhập liệu", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
+            else
+                total = 0;
             if (!chkAccumulate.Checked)
                 cus_discount = cus_point * 2000;
             else
                 cus_discount = 0;
-            need_to_pay = total + food_total + drinks_total - cus_discount;
-            int discountTotal = Convert.ToInt32(need_to_pay * discountPercent);
+            need_to_pay = total + food_total + drinks_total;
+            int discountTotal = (int)(need_to_pay * discountPercent);
             need_to_pay -= discountTotal;
+            need_to_pay -= cus_discount;
 
             if (need_to_pay < 0)
                 need_to_pay = 0;
             tongtien.Text = total.ToString() + " VND";
             cantra.Text = need_to_pay.ToString() + " VND";
-            int to_print = discountTotal  + cus_discount;
+            int to_print = discountTotal + cus_discount;
             lblDiscount.Text = to_print.ToString() + " VND";
         }
-
         private void formbanve_Load(object sender, EventArgs e)
         {
             conn = Helper.getdbConnection();
@@ -427,22 +436,23 @@ namespace Qlyrapchieuphim
                     if (selected.Contains(seatButton))
                     {
                         sold.Add(seatButton);
+                        soldThisSession.Add(seatButton);
                         seatButton.FillColor = Color.DimGray;
                         seatButton.Enabled = false;
                         selected.Remove(seatButton);
                         vipcount.Remove(seatButton);
-                        SqlQuery = "UPDATE S_" + ShowtimeID + " SET CellValue = @bought  WHERE SeatName = @seatname";
-                        cmd = new SqlCommand(SqlQuery, conn);
-                        cmd.Parameters.Add("@seatname", SqlDbType.VarChar).Value = seatButton.Text;
-                        cmd.Parameters.Add("@bought", SqlDbType.Bit).Value = true;
-                        if (conn.State == ConnectionState.Closed)
-                            conn.Open();
-                        cmd.ExecuteNonQuery();
-                        conn.Close();
+                        //SqlQuery = "UPDATE S_" + ShowtimeID + " SET CellValue = @bought  WHERE SeatName = @seatname";
+                        //cmd = new SqlCommand(SqlQuery, conn);
+                        //cmd.Parameters.Add("@seatname", SqlDbType.VarChar).Value = seatButton.Text;
+                        //cmd.Parameters.Add("@bought", SqlDbType.Bit).Value = true;
+                        //if (conn.State == ConnectionState.Closed)
+                        //    conn.Open();
+                        //cmd.ExecuteNonQuery();
+                        //conn.Close();
                     }
                 }
             }
-            
+
             //tongtien.Text = "0 VND";
             //cantra.Text = "0 VND";
 
@@ -459,26 +469,43 @@ namespace Qlyrapchieuphim
             if (cusID == -1)
                 cusID = 1; //khách hàng mặc định - không đăng ký
             cmd.Parameters.Add("@CustomerID", SqlDbType.Int).Value = cusID;
-            cmd.Parameters.Add("@StaffID", SqlDbType.Int).Value = getStaffID();
+            Nullable<int> staffId = getStaffID();
+            cmd.Parameters.Add("@StaffID", SqlDbType.Int).Value = (staffId == null) ? (object)DBNull.Value : staffId;
+
             int plcdID = UserID;
             if (plcdID == -1)
                 plcdID = 1;
             cmd.Parameters.Add("@PlacedByUserID", SqlDbType.Int).Value = plcdID;
             cmd.Parameters.Add("@TotalPrice", SqlDbType.Int).Value = total;
             cmd.Parameters.Add("@CreatedAt", SqlDbType.DateTime).Value = DateTime.Now;
-            cmd.Parameters.Add("@VoucherID", SqlDbType.Int).Value = getVoucherId();
+            Nullable<int> voucherId = getVoucherId();
+            cmd.Parameters.Add("@VoucherID", SqlDbType.Int).Value = (voucherId == null) ? (object)DBNull.Value : voucherId;
             if (conn.State == ConnectionState.Closed)
                 conn.Open();
             BookingID = (int)cmd.ExecuteScalar();
             conn.Close();
 
-            //BookingDetails
-            SqlQuery = "INSERT INTO BookinDetails (BookingID, SeatID) VALUES ";
-            int count = 0;
-            cmd = new SqlCommand();
-            foreach (int seatId in getSelectedSeats())
+            //Deduct voucher quantity if used
+            if (voucherId != null)
             {
-                if (count !=0)
+                SqlQuery = "UPDATE Vouchers SET " +
+                    "Quantity = Quantity - 1 " +
+                    "WHERE VoucherID = @VoucherID ";
+                cmd = new SqlCommand(SqlQuery, conn);
+                cmd.Parameters.Add("@VoucherID", SqlDbType.Int).Value = voucherId;
+                if (conn.State == ConnectionState.Closed)
+                    conn.Open();
+                cmd.ExecuteNonQuery();
+                conn.Close();
+            }
+
+            //BookingDetails
+            SqlQuery = "INSERT INTO BookingDetails (BookingID, SeatID) VALUES ";
+            int count = 0;
+            cmd = conn.CreateCommand();
+            foreach (int seatId in getSoldSeatsThisSession())
+            {
+                if (count != 0)
                     SqlQuery += ", ";
                 SqlQuery += " (@BookingID" + count.ToString() + ", @SeatID" + count.ToString() + ") ";
                 cmd.Parameters.Add("@BookingID" + count.ToString(), SqlDbType.Int).Value = BookingID;
@@ -489,24 +516,96 @@ namespace Qlyrapchieuphim
             cmd.CommandType = CommandType.Text;
             if (conn.State == ConnectionState.Closed)
                 conn.Open();
-            cmd.ExecuteNonQuery();
+            if (count > 0)
+                cmd.ExecuteNonQuery();
             conn.Close();
 
-
-            cmd.Parameters.Add("@food", SqlDbType.Int).Value = food_total;
-            cmd.Parameters.Add("@drinks", SqlDbType.Int).Value = drinks_total;
-            cmd.Parameters.Add("@discountPercent ", SqlDbType.Int).Value = discountPercent  + cus_discount;
+            //BookingProducts
+            SqlQuery = "INSERT INTO BookingProducts (BookingID, ProductID, Quantity) VALUES ";
+            count = 0;
+            cmd = conn.CreateCommand();
+            foreach (DataRow row in sp_list.Rows)
+            {
+                if (count != 0)
+                    SqlQuery += ", ";
+                SqlQuery += " (@BookingID" + count.ToString() + ", @ProductID" + count.ToString() + ", @Quantity" + count.ToString() + ") ";
+                cmd.Parameters.Add("@BookingID" + count.ToString(), SqlDbType.Int).Value = BookingID;
+                cmd.Parameters.Add("@ProductID" + count.ToString(), SqlDbType.Int).Value = (int)row["id"];
+                cmd.Parameters.Add("@Quantity" + count.ToString(), SqlDbType.Int).Value = (int)row["num"];
+                count++;
+            }
+            cmd.CommandText = SqlQuery;
+            cmd.CommandType = CommandType.Text;
             if (conn.State == ConnectionState.Closed)
                 conn.Open();
-            cmd.ExecuteNonQuery();
+            if (sp_list.Rows.Count > 0)
+                cmd.ExecuteNonQuery();
             conn.Close();
+
+            //Deduct sold products from inventory
+
+            cmd = conn.CreateCommand();
+            if (conn.State == ConnectionState.Closed)
+                conn.Open();
+            foreach (DataRow row in sp_list.Rows)
+            {
+                SqlQuery = "UPDATE Products SET " +
+               "Quantity = Quantity - @Ordered " +
+               "WHERE ProductID = @ProductID";
+                cmd.Parameters.Add("@ProductID", SqlDbType.Int).Value = (int)row["id"];
+                cmd.Parameters.Add("@Ordered", SqlDbType.Int).Value = (int)row["num"];
+                cmd.CommandText = SqlQuery;
+                cmd.CommandType = CommandType.Text;
+                cmd.ExecuteNonQuery();
+            }
+            conn.Close();
+
+
+
+            int pointsBefore = getLoyaltyPoints(CustomerID);
+            UpdateLoyaltyPoints(); //Deduct loyalty points
+
+
             Hoadon hd = new Hoadon();
-            hd.BillCode = existing_bills.ToString("D16");
+            hd.BillCode = BookingID;
+            hd.LoyaltyPointsBefore = pointsBefore;
             hd.UsedPoints = !chkAccumulate.Checked;
             this.Close();
             hd.Show();
         }
-
+        private int getLoyaltyPoints(int customerID)//Getting loyalty points before checkout to pass to bill
+        {
+            if (customerID == -1) return -1;
+            SqlCommand cmd = conn.CreateCommand();
+            string SqlQuery = "SELECT LoyaltyPoints FROM Customers WHERE CustomerID = @CustomerID";
+            cmd.Parameters.Add("@CustomerID", SqlDbType.Int).Value = customerID;
+            cmd.CommandText = SqlQuery;
+            cmd.CommandType = CommandType.Text;
+            if (conn.State == ConnectionState.Closed)
+                conn.Open();
+            int pointsBefore = (int)cmd.ExecuteScalar();
+            conn.Close();
+            return pointsBefore;
+        }
+        private void UpdateLoyaltyPoints() //Deduct loyalty points
+        {
+            int pointsBefore = getLoyaltyPoints(CustomerID);
+            string SqlQuery = "UPDATE Customers SET " +
+                    "LoyaltyPoints = @LoyaltyPoints " +
+                    "WHERE CustomerID = @CustomerID";
+            SqlCommand cmd = new SqlCommand(SqlQuery, conn);
+            cmd.Parameters.Add("@CustomerID", SqlDbType.Int).Value = CustomerID;
+            if (!chkAccumulate.Checked)
+                cmd.Parameters.Add("@LoyaltyPoints", SqlDbType.Int).Value = 0;
+            else
+            {
+                cmd.Parameters.Add("@LoyaltyPoints", SqlDbType.Int).Value = pointsBefore + 1;
+            }
+            if (conn.State == ConnectionState.Closed)
+                conn.Open();
+            cmd.ExecuteNonQuery();
+            conn.Close();
+        }
         private void panel6_Paint(object sender, PaintEventArgs e)
         {
 
@@ -547,9 +646,9 @@ namespace Qlyrapchieuphim
                     return;
                 }
                 //SQL
-                string SqlQuery = "SELECT DIEMTICHLUY FROM KHACHHANG WHERE MAKHACHHANG = @mkh";
+                string SqlQuery = "SELECT LoyaltyPoints FROM Customers WHERE CustomerID = @CustomerID";
                 SqlCommand cmd = new SqlCommand(SqlQuery, conn);
-                cmd.Parameters.Add("@mkh", SqlDbType.Char).Value = CustomerID;
+                cmd.Parameters.Add("@CustomerID", SqlDbType.Int).Value = CustomerID;
                 if (conn.State == ConnectionState.Closed)
                     conn.Open();
                 cus_point = (int)cmd.ExecuteScalar();
@@ -558,7 +657,7 @@ namespace Qlyrapchieuphim
             }
             else
             {
-                CustomerID = -1;
+                CustomerID = 1;
                 chkCustomer.Checked = false;
                 cus_point = 0;
                 ToggleCusPointButton(false);
@@ -629,9 +728,9 @@ namespace Qlyrapchieuphim
 
         private void voucher_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if ((string)voucher.SelectedItem == "NONE")
+            if (voucher.SelectedItem.ToString() == "NONE")
             {
-                discountPercent  = 0;
+                discountPercent = 0;
                 update();
                 return;
             }
@@ -642,12 +741,12 @@ namespace Qlyrapchieuphim
                 conn.Open();
             try
             {
-                discountPercent  = (int)cmd.ExecuteScalar();
+                discountPercent = float.Parse(cmd.ExecuteScalar().ToString());
             }
             catch (Exception ex)
             {
                 if (ex is System.NullReferenceException)
-                    discountPercent  = 0;
+                    discountPercent = 0;
             }
             conn.Close();
             update();
@@ -674,22 +773,24 @@ namespace Qlyrapchieuphim
             foreach (DataRow row in sp_list.Rows)
             {
                 DataSet ds = new DataSet();
-                SqlQuery = "SELECT LOAI, GIA FROM SANPHAM WHERE MASP = @masp";
+                SqlQuery = "SELECT CategoryName, Price " +
+                    "FROM Products prd JOIN ProductCategories prc ON (prd.CategoryID = prc.CategoryID) " +
+                    "WHERE ProductID = @ProductID";
                 adapter = new SqlDataAdapter(SqlQuery, conn);
-                adapter.SelectCommand.Parameters.Add("@masp", SqlDbType.Char).Value = row["id"].ToString();
+                adapter.SelectCommand.Parameters.Add("@ProductID", SqlDbType.Int).Value = (int)row["id"];
                 adapter.Fill(ds, "sp");
                 DataTable temp_table = ds.Tables["sp"];
-                if (temp_table.Rows[0]["LOAI"].ToString() == "Đồ ăn")
+                if (temp_table.Rows[0]["CategoryName"].ToString() == "Đồ ăn")
                 {
-                    food_total += int.Parse(temp_table.Rows[0]["GIA"].ToString()) * int.Parse(row["num"].ToString());
+                    food_total += Convert.ToInt32((decimal)(temp_table.Rows[0]["Price"]) * (int)(row["num"]));
                 }
                 else
                 {
-                    drinks_total += int.Parse(temp_table.Rows[0]["GIA"].ToString()) * int.Parse(row["num"].ToString());
+                    drinks_total += Convert.ToInt32((decimal)(temp_table.Rows[0]["Price"]) * (int)(row["num"]));
                 }
             }
             update();
-            
+
         }
     }
 }
