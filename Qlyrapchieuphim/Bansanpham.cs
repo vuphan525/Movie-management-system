@@ -23,7 +23,7 @@ namespace Qlyrapchieuphim
             dataGridView1.AutoGenerateColumns = false;
             dataGridView1.DataSource = sp_list;
         }
-        string ConnString = Helper.getConnString();
+        SqlConnection conn = null;
         string picture_url = string.Empty;
         string projectFolder = AppDomain.CurrentDomain.BaseDirectory; // Thư mục dự án
         DataTable dt;
@@ -51,7 +51,7 @@ namespace Qlyrapchieuphim
             column.ColumnName = "price";
             sp_list.Columns.Add(column);
         }
-        
+
 
         int total_price = 0;
         public int Total
@@ -65,14 +65,15 @@ namespace Qlyrapchieuphim
         private void LoadData()
         {
             flowLayoutPanel1.Controls.Clear();
-            SqlConnection conn = new SqlConnection(ConnString);
-            conn.Open();
-            string SqlQuery = "SELECT MASP, TENSP, LOAI, GIA, SOLUONG, PICTUREPATH FROM SANPHAM";
+            if (conn.State != ConnectionState.Open)
+                conn.Open();
+            string SqlQuery = "SELECT ProductID, ProductName, Description, Price, ImageURL, prcCategoryName" +
+                "FROM Products prs JOIN ProductCategories prc ON (prs.CategoryID = prc.CategoryID)";
             SqlDataAdapter adapter = new SqlDataAdapter(SqlQuery, conn);
             DataSet ds = new DataSet();
-            adapter.Fill(ds, "SANPHAM");
-            dt = ds.Tables["SANPHAM"];
-            foreach(DataRow dr in dt.Rows)
+            adapter.Fill(ds, "Products");
+            dt = ds.Tables["Products"];
+            foreach (DataRow dr in dt.Rows)
             {
                 Sanpham newsp = new Sanpham();
                 newsp.Ten.Text = dr.Field<string>("TENSP");
@@ -82,7 +83,7 @@ namespace Qlyrapchieuphim
                 newsp.Count = dr.Field<int>("SOLUONG");
                 if (newsp.Count <= 0)
                     newsp.Enabled = false;
-                
+
                 string relative_picture_path = dr.Field<string>("PICTUREPATH");
                 picture_url = Path.Combine(projectFolder, relative_picture_path);
                 try
@@ -135,16 +136,17 @@ namespace Qlyrapchieuphim
 
         private void Bansanpham_Enter(object sender, EventArgs e)
         {
+            conn = Helper.getdbConnection();
             LoadData();
         }
 
         private void Bansanpham_Load(object sender, EventArgs e)
         {
+            conn = Helper.getdbConnection();
             LoadData();
         }
-        private bool CheckInventory (string msp, int selected)
+        private bool CheckInventory(string msp, int selected)
         {
-            SqlConnection conn = new SqlConnection(ConnString);
             string SqlQuery = "SELECT SOLUONG FROM SANPHAM WHERE MASP = @msp";
             SqlCommand cmd = new SqlCommand(SqlQuery, conn);
             cmd.Parameters.Add("@msp", SqlDbType.Char).Value = msp;
@@ -155,7 +157,7 @@ namespace Qlyrapchieuphim
                 return false;
             return true;
         }
-        private void Sp_Click (object sender, EventArgs e)
+        private void Sp_Click(object sender, EventArgs e)
         {
             Sanpham sp = sender as Sanpham;
             foreach (DataGridViewRow r in dataGridView1.Rows)
@@ -181,7 +183,7 @@ namespace Qlyrapchieuphim
                 }
             }
             DataRow row = sp_list.NewRow();
-            
+
             row["id"] = sp.ID.Text;
             row["name"] = sp.Ten.Text;
             row["price"] = double.Parse(sp.Gia.Text);
@@ -227,7 +229,7 @@ namespace Qlyrapchieuphim
         }
         private void Bansanpham_FormClosing(object sender, FormClosingEventArgs e)
         {
-            
+
         }
 
         private void cancelButton_Click(object sender, EventArgs e)
