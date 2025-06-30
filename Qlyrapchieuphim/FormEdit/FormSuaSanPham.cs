@@ -230,7 +230,11 @@ namespace Qlyrapchieuphim.FormEdit
                         throw;
                 }
             }
-
+            finally
+            {
+                if (conn.State != ConnectionState.Closed)
+                    conn.Close();
+            }
         }
         private void SaveImage(int identity)
         {

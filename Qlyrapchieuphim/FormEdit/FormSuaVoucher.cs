@@ -133,6 +133,11 @@ namespace Qlyrapchieuphim.FormEdit
                         throw;
                 }
             }
+            finally
+            {
+                if (conn.State != ConnectionState.Closed)
+                    conn.Close();
+            }
         }
         private void LoadData()
         {
@@ -156,7 +161,8 @@ namespace Qlyrapchieuphim.FormEdit
                 cb_FormSuaVoucher_TrangThai.SelectedIndex = Convert.ToInt32(tempState);
             }
             reader.Close();
-            conn.Close();
+            if (conn.State != ConnectionState.Closed)
+                conn.Close();
         }
         private bool percentError = false;
         private void lbl_FormSuaVoucher_DiscountAmount_TextChanged(object sender, EventArgs e)

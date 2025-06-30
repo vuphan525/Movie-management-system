@@ -1,11 +1,12 @@
-﻿using System;
+﻿using Microsoft.Data.SqlClient;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Microsoft.Data.SqlClient;
 
 namespace Qlyrapchieuphim
 {
@@ -40,13 +41,54 @@ namespace Qlyrapchieuphim
         }
         public static SqlConnection getdbConnection()
         {
-            return new SqlConnection(getConnString());
+            return CheckDbConnection(new SqlConnection(getConnString()));
+        }
+        public static bool IsInWinFormsDesignMode()
+        {
+            bool returnValue = false;
+            if (System.ComponentModel.LicenseManager.UsageMode ==
+                 System.ComponentModel.LicenseUsageMode.Designtime)
+            {
+                returnValue = true;
+            }
+            return returnValue;
+        }
+        private static void CopyFilesRecursively(string sourcePath, string targetPath)
+        {
+            if (!Directory.Exists(sourcePath))
+            { Directory.CreateDirectory(targetPath); }
+            //Now Create all of the directories
+            int count = 0;
+            foreach (string dirPath in Directory.GetDirectories(sourcePath, "*", SearchOption.AllDirectories))
+            {
+                Directory.CreateDirectory(dirPath.Replace(sourcePath, targetPath));
+                count++;
+                if (count > 10)
+                    break;
+            }
+            if (!Directory.Exists(targetPath))
+            { Directory.CreateDirectory(targetPath); }
+            //Copy all the files & Replaces any files with the same name
+            count = 0;
+            foreach (string newPath in Directory.GetFiles(sourcePath, "*.*", SearchOption.AllDirectories))
+            {
+                File.Copy(newPath, newPath.Replace(sourcePath, targetPath), true);
+                count++;
+                if (count > 10)
+                    break;
+            }
+        }
+        public static void CopyDatabaseForDesign()
+        {
+            string databasePath = Environment.CurrentDirectory + "\\Qlyrapchieuphim\\database\\";
+            string backupPath = Environment.CurrentDirectory + "\\Qlyrapchieuphim\\database_backup\\";
+            CopyFilesRecursively(databasePath, backupPath);
         }
         public static SqlConnection SqlConnectionSwitcher()
         {
             string projectDirectory = Environment.CurrentDirectory;
-            string newConnstring = Properties.Settings.Default.ConnString2 + projectDirectory + "\\Qlyrapchieuphim\\database\\QuanLyRapPhim.mdf";
-            return CheckDbConnection(new SqlConnection(newConnstring));
+            string newConnstring = Properties.Settings.Default.ConnString2 + projectDirectory + "\\Qlyrapchieuphim\\database_backup\\QuanLyRapPhim.mdf";
+            return new SqlConnection(newConnstring);
         }
         public static SqlConnection CheckDbConnection(SqlConnection conn)
         {
@@ -60,7 +102,10 @@ namespace Qlyrapchieuphim
                     conn = SqlConnectionSwitcher();
                 conn.Open();
             }
-            conn.Close();
+            finally
+            {
+                conn.Close();
+            }
             return conn;
         }
     }

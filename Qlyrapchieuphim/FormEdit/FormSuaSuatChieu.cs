@@ -40,8 +40,10 @@ namespace Qlyrapchieuphim.FormEdit
             date_FormSuaSuatChieu_NgayChieu.Format = DateTimePickerFormat.Custom;
             date_FormSuaSuatChieu_NgayChieu.CustomFormat = "dd/MM/yyyy";
 
-            if (CheckRoom()) ;
-            if (CheckMovie()) ;
+            if (CheckRoom()) 
+                cb_FormSuaSuatChieu_PhongChieu.SelectedIndex = 0;
+            if (CheckMovie()) 
+                cb_FormSuaSuatChieu_TenPhim.SelectedIndex = 0;
 
 
 
@@ -345,6 +347,11 @@ namespace Qlyrapchieuphim.FormEdit
                     default:
                         throw;
                 }
+            }
+            finally
+            {
+                if (conn.State != ConnectionState.Closed)
+                    conn.Close();
             }
         }
     }

@@ -141,7 +141,8 @@ namespace Qlyrapchieuphim.FormEdit
                 }
             }
             reader.Close();
-            conn.Close();
+            if (conn.State != ConnectionState.Closed)
+                conn.Close();
         }
 
 
@@ -202,7 +203,11 @@ namespace Qlyrapchieuphim.FormEdit
                         throw;
                 }
             }
-            conn.Close();
+            finally
+            {
+                if (conn.State != ConnectionState.Closed)
+                    conn.Close();
+            }
 
         }
     }

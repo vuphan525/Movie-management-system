@@ -110,7 +110,7 @@ namespace Qlyrapchieuphim
                 {
                     case 2627:
                         MessageBox.Show(
-                            "Mã suất chiếu không được trùng nhau!",
+                            "Mã phát hành không được trùng nhau!",
                             "Lỗi nhập liệu",
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Warning);
@@ -118,6 +118,11 @@ namespace Qlyrapchieuphim
                     default:
                         throw;
                 }
+            }
+            finally
+            {
+                if (conn.State != ConnectionState.Closed)
+                    conn.Close();
             }
         }
         private bool percentError = false;

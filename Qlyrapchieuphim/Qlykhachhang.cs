@@ -44,13 +44,15 @@ namespace Qlyrapchieuphim
         }
         private void LoadData()
         {
-            if (conn.State != ConnectionState.Open)
-                conn.Open();
+            
             string SqlQuery = "SELECT CustomerID, FullName, Phone, LoyaltyPoints, cs.UserID, Email  " +
                 "FROM Customers cs JOIN Users usr ON (cs.UserID = usr.UserID)";
             SqlDataAdapter adapter = new SqlDataAdapter(SqlQuery, conn);
             DataSet ds = new DataSet();
+            if (conn.State != ConnectionState.Open)
+                conn.Open();
             adapter.Fill(ds, "Customers");
+            conn.Close();
             DataTable dt = ds.Tables["Customers"];
             dataGridView1.DataSource = dt;
             if (!dataGridView1.Columns.Contains("Actions"))
@@ -63,7 +65,7 @@ namespace Qlyrapchieuphim
             }
 
             dataGridView1.Columns["Actions"].DisplayIndex = dataGridView1.Columns.Count - 1;
-            conn.Close();
+            
             this.Refresh();
         }
         private void them_Click(object sender, EventArgs e)
@@ -144,10 +146,15 @@ namespace Qlyrapchieuphim
                             "Lỗi nhập liệu",
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Warning);
+                        if (conn.State != ConnectionState.Closed)
+                            conn.Close();
                         return;
                     default:
+                        if (conn.State != ConnectionState.Closed)
+                            conn.Close();
                         throw;
                 }
+                
             }
             
 
@@ -178,8 +185,12 @@ namespace Qlyrapchieuphim
                             "Lỗi nhập liệu",
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Warning);
+                        if (conn.State != ConnectionState.Closed)
+                            conn.Close();
                         break;
                     default:
+                        if (conn.State != ConnectionState.Closed)
+                            conn.Close();
                         throw;
                 }
             }
@@ -263,9 +274,13 @@ namespace Qlyrapchieuphim
                                     MessageBox.Show("Không tìm thấy khách hàng để xóa.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                 }
                             }
+                            if (conn.State != ConnectionState.Closed)
+                                conn.Close();
                         }
                         catch (Exception ex)
                         {
+                            if (conn.State != ConnectionState.Closed)
+                                conn.Close();
                             MessageBox.Show("Lỗi khi xóa khách hàng: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
@@ -364,8 +379,12 @@ namespace Qlyrapchieuphim
                             "Lỗi nhập liệu",
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Warning);
+                        if (conn.State != ConnectionState.Closed)
+                            conn.Close();
                         return;
                     default:
+                        if (conn.State != ConnectionState.Closed)
+                            conn.Close();
                         throw;
                 }
             }
@@ -402,8 +421,12 @@ namespace Qlyrapchieuphim
                             "Lỗi nhập liệu",
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Warning);
+                        if (conn.State != ConnectionState.Closed)
+                            conn.Close();
                         return;
                     default:
+                        if (conn.State != ConnectionState.Closed)
+                            conn.Close();
                         throw;
                 }
             }

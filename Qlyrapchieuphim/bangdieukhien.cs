@@ -18,39 +18,49 @@ namespace Qlyrapchieuphim
         public bangdieukhien()
         {
             InitializeComponent();
+            if (Helper.IsInWinFormsDesignMode())
+            {
+                Helper.CopyDatabaseForDesign();
+            }
         }
         private SqlConnection conn;
         
         private void LoadMOV()
         {
-            conn.Open();
             string SqlQuery = "select Title, Genre, Duration from Movies " +
                 "WHERE Status = @state";
             SqlDataAdapter adapter = new SqlDataAdapter(SqlQuery, conn);
             adapter.SelectCommand.Parameters.Add("@state", SqlDbType.NVarChar).Value = "Đang chiếu";
             DataSet ds = new DataSet();
+            if (conn.State != ConnectionState.Open)
+                conn.Open();
             adapter.Fill(ds, "Movies");
+            if (conn.State != ConnectionState.Closed)
+                conn.Close();
             DataTable dt = ds.Tables["Movies"];
             dataGridView1.DataSource = dt;
-            conn.Close();
         }
         private void LoadNV()
         {
             string SqlQuery = "SELECT COUNT(*) FROM Staffs ";
-            conn.Open();
+            if (conn.State != ConnectionState.Open)
+                conn.Open();
             SqlCommand cmd = new SqlCommand(SqlQuery, conn);
             int sonv = (int)cmd.ExecuteScalar();
-            conn.Close();
+            if (conn.State != ConnectionState.Closed)
+                conn.Close();
             label3.Text= sonv.ToString();
             
         }
         private void LoadMovCount()
         {
             string SqlQuery = "SELECT COUNT(*) FROM Movies ";
-            conn.Open();
+            if (conn.State != ConnectionState.Open)
+                conn.Open();
             SqlCommand cmd = new SqlCommand(SqlQuery, conn);
             int sophim = (int)cmd.ExecuteScalar();
-            conn.Close();
+            if (conn.State != ConnectionState.Closed)
+                conn.Close();
             label2.Text = sophim.ToString();
            
         }

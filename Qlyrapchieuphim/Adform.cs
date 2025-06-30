@@ -15,12 +15,12 @@ namespace Qlyrapchieuphim
 {
     public partial class Adform : Form
     {
-        
+
         public Adform()
         {
             InitializeComponent();
         }
-        
+
         private void voucher1_Load(object sender, EventArgs e)
         {
 
@@ -46,7 +46,7 @@ namespace Qlyrapchieuphim
                 this.Hide();
             }
         }
-     
+
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {

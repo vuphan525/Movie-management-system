@@ -194,6 +194,8 @@ namespace Qlyrapchieuphim
                 i++;
             }
             reader.Close();
+            if (conn.State != ConnectionState.Closed)
+                conn.Close();
             voucher.DataSource = vouchers;
             voucher.SelectedIndex = 0;
             if (count > 0)
@@ -478,15 +480,15 @@ namespace Qlyrapchieuphim
             cmd.Parameters.Add("@PlacedByUserID", SqlDbType.Int).Value = plcdID;
             cmd.Parameters.Add("@TotalPrice", SqlDbType.Int).Value = total;
             cmd.Parameters.Add("@CreatedAt", SqlDbType.DateTime).Value = DateTime.Now;
-            Nullable<int> voucherId = getVoucherId();
-            cmd.Parameters.Add("@VoucherID", SqlDbType.Int).Value = (voucherId == null) ? (object)DBNull.Value : voucherId;
+            int voucherId = getVoucherId();
+            cmd.Parameters.Add("@VoucherID", SqlDbType.Int).Value = (voucherId == -1) ? (object)DBNull.Value : voucherId;
             if (conn.State == ConnectionState.Closed)
                 conn.Open();
             BookingID = (int)cmd.ExecuteScalar();
             conn.Close();
 
             //Deduct voucher quantity if used
-            if (voucherId != null)
+            if (voucherId != -1)
             {
                 SqlQuery = "UPDATE Vouchers SET " +
                     "Quantity = Quantity - 1 " +

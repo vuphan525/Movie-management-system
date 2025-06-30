@@ -34,11 +34,13 @@ namespace Qlyrapchieuphim
             int count;
             try
             {
-                if (conn.State != ConnectionState.Open)
-                    conn.Open();
+                
                 string SqlQuery = "SELECT COUNT(*) FROM Movies WHERE Status = N'Đang chiếu'";
                 SqlCommand countCmd = new SqlCommand(SqlQuery, conn);
+                if (conn.State != ConnectionState.Open)
+                    conn.Open();
                 count = (int)countCmd.ExecuteScalar();
+                conn.Close();
 
                 if (count > 0)
                 {
@@ -47,6 +49,8 @@ namespace Qlyrapchieuphim
                     SqlQuery = "SELECT MovieID, Title FROM Movies WHERE Status = N'Đang chiếu'";
                     string[] movies = new string[count];
                     SqlCommand cmd = new SqlCommand(SqlQuery, conn);
+                    if (conn.State != ConnectionState.Open)
+                        conn.Open();
                     SqlDataReader reader = cmd.ExecuteReader();
                     int i = 0;
                     while (reader.Read())
@@ -54,6 +58,7 @@ namespace Qlyrapchieuphim
                         movies[i] = reader.GetString(1) + " (ID: " + reader.GetInt32(0) + ")";
                         i++;
                     }
+                    conn.Close();
                     tenphim.DataSource = movies;
                 }
                 else
@@ -61,23 +66,27 @@ namespace Qlyrapchieuphim
                     tenphim.Enabled = false;
                     errorProvider1.SetError(tenphim, "Không có phim trong hệ thống!");
                 }
-                conn.Close();
+                
                 return count > 0;
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Lỗi khi kiểm tra phim đang chiếu: " + ex.Message);
+                if (conn.State != ConnectionState.Closed)
+                    conn.Close();
                 return false;
             }
         }
         private void LoadData()
         {
-            conn.Open();
             string SqlQuery = "SELECT ShowtimeID, StartTime, RoomID, st.MovieID, Title " +
                 "FROM Showtimes st JOIN Movies mv ON (st.MovieID = mv.MovieID)";
             SqlDataAdapter adapter = new SqlDataAdapter(SqlQuery, conn);
             DataSet ds = new DataSet();
+            if (conn.State != ConnectionState.Open)
+                conn.Open();
             adapter.Fill(ds, "Showtimes");
+            conn.Close() ;
             DataTable dt = ds.Tables["Showtimes"];
             //foreach (DataGridViewRow row in dataGridView1.Rows)
             //{
@@ -114,7 +123,6 @@ namespace Qlyrapchieuphim
             //    }
             //}
             dataGridView1.DataSource = dt;
-            conn.Close();
 
         }
         private void lvLichChieu_SelectedIndexChanged(object sender, EventArgs e)

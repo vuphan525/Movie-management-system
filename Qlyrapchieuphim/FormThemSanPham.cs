@@ -65,7 +65,6 @@ namespace Qlyrapchieuphim
             pictureBox_ThemSanPham_Poster.Image = null;
             this.Refresh();
         }
-        string id;
         private void them_Click(object sender, EventArgs e)
         {
             if (//string.IsNullOrWhiteSpace(masp.Text) ||
@@ -127,6 +126,11 @@ namespace Qlyrapchieuphim
                     default:
                         throw;
                 }
+            }
+            finally
+            {
+                if (conn.State != ConnectionState.Closed)
+                    conn.Close();
             }
             SqlQuery = "UPDATE Products SET " +
                 "ImageURL = @ImageURL " +

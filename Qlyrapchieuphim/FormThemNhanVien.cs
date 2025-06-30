@@ -132,6 +132,11 @@ namespace Qlyrapchieuphim
                         throw;
                 }
             }
+            finally
+            {
+                if (conn.State != ConnectionState.Closed)
+                    conn.Close();
+            }
 
             //SQL section - Staffs
             SqlQuery = "INSERT INTO Staffs VALUES (@FullName, @Phone, @UserID, @DateOfBirth)";
@@ -165,6 +170,11 @@ namespace Qlyrapchieuphim
                     default:
                         throw;
                 }
+            }
+            finally
+            {
+                if (conn.State != ConnectionState.Closed)
+                    conn.Close();
             }
         }
 

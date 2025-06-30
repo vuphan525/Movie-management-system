@@ -225,9 +225,11 @@ namespace Qlyrapchieuphim
                         throw;
                 }
             }
-            //add table for logging seats -- XOÁ PHẦN NÀY KHI ĐÃ CÓ QUẢN LÝ PHÒNG CHIẾU
-
-
+            finally
+            {
+                if (conn.State != ConnectionState.Closed)
+                    conn.Close();
+            }
         }
     }
 }

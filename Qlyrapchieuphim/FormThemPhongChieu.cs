@@ -122,7 +122,8 @@ namespace Qlyrapchieuphim
                 cmd.CommandText = SqlQuery;
                 conn.Open();
                 cmd.ExecuteNonQuery();
-                conn.Close();
+                if (conn.State != ConnectionState.Closed)
+                    conn.Close();
             }
             
 

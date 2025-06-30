@@ -18,7 +18,7 @@ using Qlyrapchieuphim.FormEdit;
 
 namespace Qlyrapchieuphim
 {
-    
+
     public partial class Qlysanpham : UserControl
     {
         SqlConnection conn = null;
@@ -113,7 +113,7 @@ namespace Qlyrapchieuphim
                 errorProvider1.SetError(soluong, "Phải là số nguyên.");
             }
         }
-        
+
         private void them_Click(object sender, EventArgs e)
         {
             if (//string.IsNullOrWhiteSpace(masp.Text) ||
@@ -126,7 +126,7 @@ namespace Qlyrapchieuphim
             }
             int so;
             double gia;
-            if ((!int.TryParse(soluong.Text, out so)) || (!double.TryParse(giatien.Text, out  gia)))
+            if ((!int.TryParse(soluong.Text, out so)) || (!double.TryParse(giatien.Text, out gia)))
             {
                 MessageBox.Show("Giá tiền và số lượng phải được nhập dươi dạng một số!",
                     "Lỗi nhập liệu",
@@ -134,10 +134,10 @@ namespace Qlyrapchieuphim
                     MessageBoxIcon.Warning);
                 return;
             }
-            
+
             string SqlQuery = "INSERT INTO Products OUTPUT INSERTED.ProductID VALUES (@ProductName, @Description, @Price, @ImageURL, @CategoryID, @Quantity, @ImportDate, @Manufacturer)";
             int typeID = int.Parse(Helper.SubStringBetween(loai.SelectedItem.ToString(), " (ID: ", ")"));
-            
+
             SqlCommand comm = new SqlCommand(SqlQuery, conn);
             comm.Parameters.Add("@Description", SqlDbType.NVarChar).Value = "placeholder"; //GIÁ TRỊ TẠM DO CHƯA CÓ TEXTBOX, THAY THẾ GIÁ TRỊ NGAY KHI CÓ TEXTBOX
             comm.Parameters.Add("@ProductName", SqlDbType.NVarChar).Value = ten.Text;
@@ -232,7 +232,7 @@ namespace Qlyrapchieuphim
                             "Lỗi dữ liệu!",
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Error);
-                            break ;
+                            break;
                     }
                 }
                 else
@@ -246,7 +246,7 @@ namespace Qlyrapchieuphim
             if (e.RowIndex >= 0)
             {
                 PrintToTextBoxes(e.RowIndex);
-                
+
             }
 
             if (e.ColumnIndex >= 0 && dataGridView1.Columns[e.ColumnIndex].Name == "Actions" && e.RowIndex >= 0)
@@ -267,12 +267,12 @@ namespace Qlyrapchieuphim
                     // Gán giá trị cho các TextBox
 
                     String id = dt.Rows[e.RowIndex]["ProductID"].ToString();
-                   
+
                     // 👉 Click icon Edit
                     using (FormSuaSanPham popup = new FormSuaSanPham(id))
                     {
                         popup.StartPosition = FormStartPosition.CenterParent;
-                        
+
                         if (popup.ShowDialog(FindForm()) == DialogResult.OK)
                         {
                             LoadData(); // Chỉ gọi nếu form kia trả về OK
@@ -339,7 +339,7 @@ namespace Qlyrapchieuphim
         private void capnhat_Click(object sender, EventArgs e)
         {
 
-          
+
             if (string.IsNullOrWhiteSpace(masp.Text) ||
                string.IsNullOrWhiteSpace(ten.Text) ||
                string.IsNullOrWhiteSpace(giatien.Text) ||
@@ -365,10 +365,10 @@ namespace Qlyrapchieuphim
                 MessageBox.Show("Vui lòng chọn một dòng để cập nhật.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-            
 
 
-               
+
+
             int selectedRowIndex = dataGridView1.SelectedRows[0].Index;
 
             // Update values in selected row
@@ -383,7 +383,7 @@ namespace Qlyrapchieuphim
                 "Manufacturer = @Manufacturer " +
                 "WHERE ProductID = @ProductID";
             int typeID = int.Parse(Helper.SubStringBetween(loai.SelectedItem.ToString(), " (ID: ", ")"));
-            
+
             SqlCommand comm = new SqlCommand(SqlQuery, conn);
             comm.Parameters.Add("@ProductID", SqlDbType.Int).Value = int.Parse(masp.Text);
             comm.Parameters.Add("@Description", SqlDbType.NVarChar).Value = "placeholder"; //GIÁ TRỊ TẠM DO CHƯA CÓ TEXTBOX, THAY THẾ GIÁ TRỊ NGAY KHI CÓ TEXTBOX
@@ -419,7 +419,12 @@ namespace Qlyrapchieuphim
                         throw;
                 }
             }
-            
+            finally
+            {
+                if (conn.State != ConnectionState.Closed)
+                    conn.Close();
+            }
+
 
 
 
@@ -461,8 +466,8 @@ namespace Qlyrapchieuphim
             {
                 MessageBox.Show("Vui lòng chọn dòng cần xóa.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            
-            
+
+
         }
         void Updatea()
         {
@@ -615,7 +620,7 @@ namespace Qlyrapchieuphim
             {
                 MessageBox.Show($"Có lỗi xảy ra: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
+
         }
 
         private void dataGridView1_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
@@ -639,7 +644,7 @@ namespace Qlyrapchieuphim
             using (FormThemSanPham popup = new FormThemSanPham())
             {
                 popup.StartPosition = FormStartPosition.CenterParent;
-                
+
                 if (popup.ShowDialog(FindForm()) == DialogResult.OK)
                 {
                     LoadData(); // Chỉ gọi nếu form kia trả về OK

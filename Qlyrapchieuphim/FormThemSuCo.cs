@@ -150,6 +150,11 @@ namespace Qlyrapchieuphim
                         throw;
                 }
             }
+            finally
+            {
+                if (conn.State != ConnectionState.Closed)
+                    conn.Close();
+            }
         }
     }
 }

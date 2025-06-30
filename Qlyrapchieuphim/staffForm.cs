@@ -19,8 +19,6 @@ namespace Qlyrapchieuphim
     {
         int manv = -1;
         string tennv = string.Empty;
-        private bool isStaff = true;
-        SqlConnection conn = null;
         public staffForm()
         {
             InitializeComponent();
@@ -62,7 +60,6 @@ namespace Qlyrapchieuphim
 
         private void staffForm_Load(object sender, EventArgs e)
         {
-            conn = Helper.getdbConnection();
             getUserFullName();
             if (manv != -1)
                 banve1.UserID = manv;
@@ -73,13 +70,16 @@ namespace Qlyrapchieuphim
             if (manv != -1)
             {
                 string SqlQuery = "SELECT Role FROM Users WHERE UserID = @UserID";
-                using (SqlCommand cmd = new SqlCommand(SqlQuery, conn))
+                using (SqlConnection conn = Helper.getdbConnection())
                 {
-                    cmd.Parameters.Add("@UserID", SqlDbType.Int).Value = manv;
-                    if (conn.State != ConnectionState.Open)
-                        conn.Open();
-                    role = cmd.ExecuteScalar().ToString();
-                    conn.Close();
+                    using (SqlCommand cmd = new SqlCommand(SqlQuery, conn))
+                    {
+                        cmd.Parameters.Add("@UserID", SqlDbType.Int).Value = manv;
+                        if (conn.State != ConnectionState.Open)
+                            conn.Open();
+                        role = cmd.ExecuteScalar().ToString();
+                        conn.Close();
+                    }
                 }
 
             }
@@ -104,22 +104,23 @@ namespace Qlyrapchieuphim
 
             SqlQuery = "SELECT FullName FROM " + tableToSearch +
                 " WHERE UserID = @UserID";
-            SqlCommand cmd = new SqlCommand(SqlQuery, conn);
-            cmd.Parameters.Add("@UserID", SqlDbType.Char).Value = manv;
-            conn.Open();
-            try
+            using (SqlConnection conn = Helper.getdbConnection())
             {
-                tennv = cmd.ExecuteScalar()?.ToString();
+                SqlCommand cmd = new SqlCommand(SqlQuery, conn);
+                cmd.Parameters.Add("@UserID", SqlDbType.Char).Value = manv;
+                conn.Open();
+                try
+                {
+                    tennv = cmd.ExecuteScalar()?.ToString();
+                }
+                catch (NullReferenceException)
+                {
+                    return;
+                }
+                if (tennv.IsNullOrEmpty())
+                    return;
+                conn.Close();
             }
-            catch (NullReferenceException)
-            {
-                if (conn.State != ConnectionState.Closed)
-                    conn.Close();
-                return;
-            }
-            if (tennv.IsNullOrEmpty())
-                return;
-            conn.Close();
             label3.Text = "Xin chào, " + tennv + " (" + manv + ")";
         }
         private void guna2Button1_Click(object sender, EventArgs e)

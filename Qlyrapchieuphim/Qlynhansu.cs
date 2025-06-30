@@ -154,6 +154,11 @@ namespace Qlyrapchieuphim
                         throw;
                 }
             }
+            finally
+            {
+                if (conn.State != ConnectionState.Closed)
+                    conn.Close();
+            }
 
             //SQL section - Staffs
             SqlQuery = "INSERT INTO Staffs VALUES (@FullName, @Phone, @UserID, @DateOfBirth)";
@@ -187,7 +192,11 @@ namespace Qlyrapchieuphim
                         throw;
                 }
             }
-            
+            finally
+            {
+                if (conn.State != ConnectionState.Closed)
+                    conn.Close();
+            }
 
         }
 
@@ -298,6 +307,11 @@ namespace Qlyrapchieuphim
                         throw;
                 }
             }
+            finally
+            {
+                if (conn.State != ConnectionState.Closed)
+                    conn.Close();
+            }
             
             //SQL Section - Users
             SqlQuery = "UPDATE Users SET " +
@@ -337,7 +351,11 @@ namespace Qlyrapchieuphim
                         throw;
                 }
             }
-            
+            finally
+            {
+                if (conn.State != ConnectionState.Closed)
+                    conn.Close();
+            }
         }
         private void Reset()
         {
@@ -509,6 +527,11 @@ namespace Qlyrapchieuphim
                         catch (Exception ex)
                         {
                             MessageBox.Show("Lỗi khi xoá: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        finally
+                        {
+                            if (conn.State != ConnectionState.Closed)
+                                conn.Close();
                         }
                     }
                 }

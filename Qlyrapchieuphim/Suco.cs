@@ -23,7 +23,7 @@ namespace Qlyrapchieuphim
             dataGridView1.ReadOnly = true;
             dataGridView1.ClearSelection();
             tinhtrang.SelectedIndex = 2;
-            ngaytiepnhan.Value=DateTime.Today;
+            ngaytiepnhan.Value = DateTime.Today;
             //masuco.MaxLength = 16;
             masuco.Enabled = false;
         }
@@ -31,10 +31,13 @@ namespace Qlyrapchieuphim
         private bool CheckUsr()
         {
             int count;
-            conn.Open();
+            if (conn.State != ConnectionState.Open)
+                conn.Open();
             string SqlQuery = "SELECT COUNT(*) FROM Users";
             SqlCommand countCmd = new SqlCommand(SqlQuery, conn);
             count = (int)countCmd.ExecuteScalar();
+            if (conn.State != ConnectionState.Closed)
+                conn.Close();
 
             if (count > 0)
             {
@@ -43,6 +46,8 @@ namespace Qlyrapchieuphim
                 SqlQuery = "SELECT UserID, Username FROM Users";
                 string[] employees = new string[count];
                 SqlCommand cmd = new SqlCommand(SqlQuery, conn);
+                if (conn.State != ConnectionState.Open)
+                    conn.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
                 int i = 0;
                 while (reader.Read())
@@ -50,6 +55,8 @@ namespace Qlyrapchieuphim
                     employees[i] = reader.GetString(1) + " (ID: " + reader.GetInt32(0).ToString() + ")";
                     i++;
                 }
+                if (conn.State != ConnectionState.Closed)
+                    conn.Close();
                 manv.DataSource = employees;
             }
             else
@@ -57,7 +64,6 @@ namespace Qlyrapchieuphim
                 manv.Enabled = false;
                 errorProvider1.SetError(manv, "Không có tài khoản trong hệ thống!");
             }
-            conn.Close();
             if (count > 0)
                 return true;
             else
@@ -65,7 +71,8 @@ namespace Qlyrapchieuphim
         }
         private void LoadData()
         {
-            conn.Open();
+            if (conn.State != ConnectionState.Open)
+                conn.Open();
             string SqlQuery = "SELECT IncidentID, IncidentName, ReportedByUserID, Status, Resolution, ReportedAt, Description, Username " +
                 "FROM IncidentReports ir , Users usr " +
                 "WHERE (ir.ReportedByUserID = usr.UserID)";
@@ -114,7 +121,8 @@ namespace Qlyrapchieuphim
             cmd.Parameters.Add("@Resolution", SqlDbType.NVarChar).Value = "placeholder";//GIÁ TRỊ TẠM DO CHƯA CÓ TEXTBOX, THAY THẾ GIÁ TRỊ NGAY KHI CÓ TEXTBOX
             try
             {
-                conn.Open();
+                if (conn.State != ConnectionState.Open)
+                    conn.Open();
                 cmd.ExecuteNonQuery();
                 conn.Close();
                 LoadData();
@@ -130,8 +138,12 @@ namespace Qlyrapchieuphim
                             "Lỗi nhập liệu",
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Warning);
+                        if (conn.State != ConnectionState.Closed)
+                            conn.Close();
                         break;
                     default:
+                        if (conn.State != ConnectionState.Closed)
+                            conn.Close();
                         throw;
                 }
             }
@@ -141,7 +153,7 @@ namespace Qlyrapchieuphim
         void Updatea()
         {
             masuco.Clear();
-            masuco.Enabled =false;
+            masuco.Enabled = false;
             tinhtrang.SelectedIndex = 2;
             tensuco.Clear();
             if (CheckUsr())
@@ -212,8 +224,12 @@ namespace Qlyrapchieuphim
                             "Lỗi nhập liệu",
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Warning);
+                        if (conn.State != ConnectionState.Closed)
+                            conn.Close();
                         break;
                     default:
+                        if (conn.State != ConnectionState.Closed)
+                            conn.Close();
                         throw;
                 }
             }
@@ -233,7 +249,8 @@ namespace Qlyrapchieuphim
                 if (result == DialogResult.Yes)
                 {
                     DataTable dt = dataGridView1.DataSource as DataTable;
-                    conn.Open();
+                    if (conn.State != ConnectionState.Open)
+                        conn.Open();
                     foreach (DataGridViewRow dr in dataGridView1.SelectedRows)
                     {
                         int selected = dr.Index;
@@ -331,7 +348,7 @@ namespace Qlyrapchieuphim
                             conn.Close(); // đảm bảo đóng kết nối nếu có lỗi
                             MessageBox.Show("Xảy ra lỗi khi xóa: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
-                    } 
+                    }
                 }
             }
         }

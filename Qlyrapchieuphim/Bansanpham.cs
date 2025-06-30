@@ -65,13 +65,14 @@ namespace Qlyrapchieuphim
         private void LoadData()
         {
             flowLayoutPanel1.Controls.Clear();
-            if (conn.State != ConnectionState.Open)
-                conn.Open();
             string SqlQuery = "SELECT ProductID, ProductName, Description, Price, ImageURL, prc.CategoryName, Quantity " +
                 "FROM Products prs JOIN ProductCategories prc ON (prs.CategoryID = prc.CategoryID)";
             SqlDataAdapter adapter = new SqlDataAdapter(SqlQuery, conn);
             DataSet ds = new DataSet();
+            if (conn.State != ConnectionState.Open)
+                conn.Open();
             adapter.Fill(ds, "Products");
+            conn.Close();
             dt = ds.Tables["Products"];
             foreach (DataRow dr in dt.Rows)
             {
@@ -126,7 +127,6 @@ namespace Qlyrapchieuphim
                 }
                 flowLayoutPanel1.Controls.Add(newsp);
             }
-            conn.Close();
         }
 
         private void thanhtoan_Click(object sender, EventArgs e)

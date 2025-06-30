@@ -25,11 +25,8 @@ namespace Qlyrapchieuphim
         int otp;
         int usrID;
         Random Random = new Random();
-        SqlConnection conn;
         private void Quenmk_Load(object sender, EventArgs e)
         {
-            conn = Helper.getdbConnection();
-            conn = Helper.CheckDbConnection(conn);
         }
 
         private void guna2Button3_Click(object sender, EventArgs e)
@@ -77,12 +74,19 @@ namespace Qlyrapchieuphim
                 }
                 guna2TextBox4.Text = guna2TextBox4.Text.Trim();
                 string SqlQuery = "SELECT UserID, Email FROM Staffs";
-                SqlDataAdapter adapter = new SqlDataAdapter(SqlQuery, conn);
-                DataSet ds = new DataSet();
-                adapter.Fill(ds,"Staffs");
-                DataTable dt = ds.Tables["Staffs"];
+                DataSet ds;
+                DataTable dt;
+                using (SqlConnection conn = Helper.getdbConnection())
+                {
+                    conn.Open();
+                    SqlDataAdapter adapter = new SqlDataAdapter(SqlQuery, conn);
+                    ds = new DataSet();
+                    adapter.Fill(ds, "Staffs");
+                    dt = ds.Tables["Staffs"];
+                    conn.Close();
+                }
                 bool exists = false;
-                
+
                 otp = Random.Next(10000, 100000
                  );
                 var fromAddress = new MailAddress("movielandcinema123@gmail.com");
@@ -136,11 +140,11 @@ namespace Qlyrapchieuphim
             catch (Exception ex)
             {
                 if (ex is System.FormatException)
-                MessageBox.Show(
-                    "Địa chỉ mail không đúng định dạng!",
-                    "Thông báo",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Information);
+                    MessageBox.Show(
+                        "Địa chỉ mail không đúng định dạng!",
+                        "Thông báo",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
             }
         }
 

@@ -150,6 +150,11 @@ namespace Qlyrapchieuphim
                 }
                 else throw;
             }
+            finally
+            {
+                if (conn.State != ConnectionState.Closed)
+                    conn.Close();
+            }
         }
 
         private void btn_Refresh_Click(object sender, EventArgs e)

@@ -129,6 +129,8 @@ namespace Qlyrapchieuphim.FormEdit
                     }
                 }
             }
+            if (conn.State != ConnectionState.Closed)
+                conn.Close();
         }
 
     }

@@ -11,7 +11,7 @@ namespace Qlyrapchieuphim
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
-
+        
         [System.Runtime.InteropServices.DllImport("user32.dll")]
         private static extern bool SetProcessDPIAware();
         [STAThread]

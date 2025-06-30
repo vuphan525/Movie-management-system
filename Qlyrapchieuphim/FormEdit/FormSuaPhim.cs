@@ -129,6 +129,8 @@ namespace Qlyrapchieuphim.FormEdit
             }
             catch (SqlException ex)
             {
+                if (conn.State != ConnectionState.Closed)
+                    conn.Close();
                 if (ex.Number == 2627)
                 {
                     MessageBox.Show("ID phim không được trùng nhau!", "Lỗi nhập liệu", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -225,6 +227,8 @@ namespace Qlyrapchieuphim.FormEdit
                         }
                     }
                 }
+                if (conn.State != ConnectionState.Closed)
+                    conn.Close();
             }
         }
 

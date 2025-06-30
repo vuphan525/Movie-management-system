@@ -223,6 +223,11 @@ namespace Qlyrapchieuphim
                         throw;
                 }
             }
+            finally
+            {
+                if (conn.State != ConnectionState.Closed)
+                    conn.Close();
+            }
         }
 
         private void them_Click(object sender, EventArgs e)
@@ -283,6 +288,11 @@ namespace Qlyrapchieuphim
                     default:
                         throw;
                 }
+            }
+            finally
+            {
+                if (conn.State != ConnectionState.Closed)
+                    conn.Close();
             }
             //add table for logging seats 
 

@@ -18,6 +18,10 @@ namespace Qlyrapchieuphim
         public Form1()
         {
             InitializeComponent();
+            if (Helper.IsInWinFormsDesignMode())
+            {
+                Helper.CopyDatabaseForDesign();
+            }
             guna2TextBox1.UseSystemPasswordChar = true;
         }
         private void guna2VSeparator1_Click(object sender, EventArgs e)
@@ -45,7 +49,6 @@ namespace Qlyrapchieuphim
         private void guna2Button1_Click(object sender, EventArgs e) //login button
         {
             int login = 0; //0 - failed; 1 - staff; 2 - admin
-            SqlConnection conn = Helper.getdbConnection();
             int userID = -1;
             if (string.IsNullOrEmpty(guna2TextBox4.Text) || string.IsNullOrEmpty(guna2TextBox1.Text)) 
             {
@@ -57,12 +60,17 @@ namespace Qlyrapchieuphim
                 return;
             }
             string SqlQuery = "SELECT UserID, Username, Password, Role FROM Users";
-            SqlDataAdapter adapter = new SqlDataAdapter(SqlQuery, conn);
-            DataSet ds = new DataSet();
-            conn.Open();
-            adapter.Fill(ds, "Users");
-            DataTable dt = ds.Tables["Users"];
-            conn.Close();
+            DataSet ds;
+            DataTable dt;
+            using (SqlConnection conn = Helper.getdbConnection())
+            {
+                SqlDataAdapter adapter = new SqlDataAdapter(SqlQuery, conn);
+                ds = new DataSet();
+                conn.Open();
+                adapter.Fill(ds, "Users");
+                dt = ds.Tables["Users"];
+                conn.Close();
+            }
             bool exists = false;
             foreach (DataRow dr in dt.Rows)
             {

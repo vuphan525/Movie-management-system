@@ -123,8 +123,12 @@ namespace Qlyrapchieuphim
                             "Lỗi nhập liệu",
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Warning);
+                        if (conn.State != ConnectionState.Closed)
+                            conn.Close();
                         break;
                     default:
+                        if (conn.State != ConnectionState.Closed)
+                            conn.Close();
                         throw;
                 }
             }

@@ -89,6 +89,8 @@ namespace Qlyrapchieuphim.FormEdit
             }
             catch (Exception ex)
             {
+                if (conn.State != ConnectionState.Closed)
+                    conn.Close();
                 MessageBox.Show($"Lỗi khi tải dữ liệu khách hàng: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -193,8 +195,12 @@ namespace Qlyrapchieuphim.FormEdit
                             "Lỗi nhập liệu",
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Warning);
+                        if (conn.State != ConnectionState.Closed)
+                            conn.Close();
                         return;
                     default:
+                        if (conn.State != ConnectionState.Closed)
+                            conn.Close();
                         throw;
                 }
             }
@@ -231,8 +237,12 @@ namespace Qlyrapchieuphim.FormEdit
                             "Lỗi nhập liệu",
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Warning);
+                        if (conn.State != ConnectionState.Closed)
+                            conn.Close();
                         return;
                     default:
+                        if (conn.State != ConnectionState.Closed)
+                            conn.Close();
                         throw;
                 }
             }

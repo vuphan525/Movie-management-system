@@ -117,6 +117,11 @@ namespace Qlyrapchieuphim
                         throw;
                 }
             }
+            finally
+            {
+                if (conn.State != ConnectionState.Closed)
+                    conn.Close();
+            }
             SqlQuery = "UPDATE MOVIES SET " +
                 "PosterURL = @PosterURL " +
                 "WHERE MovieID = @MovieID ";
@@ -125,7 +130,8 @@ namespace Qlyrapchieuphim
             comm.Parameters.Add("@MovieID", SqlDbType.Int).Value = mvID;
             conn.Open();
             comm.ExecuteNonQuery();
-            conn.Close();
+            if (conn.State != ConnectionState.Closed)
+                conn.Close();
             this.DialogResult = DialogResult.OK;
             this.Close();
 
