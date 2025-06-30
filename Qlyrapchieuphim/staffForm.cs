@@ -54,6 +54,8 @@ namespace Qlyrapchieuphim
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
+            qlykhachhang1.Hide();
+            suco1.Hide();
             banve1.Hide();
             bangdieukhien1.Show();
         }
@@ -122,8 +124,46 @@ namespace Qlyrapchieuphim
         }
         private void guna2Button1_Click(object sender, EventArgs e)
         {
+            HideAllUserControls();  
             banve1.Show();
+           
+        }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            HideAllUserControls();
+            qlykhachhang1.Show();
+            
+        }
+
+        private void guna2Button3_Click(object sender, EventArgs e)
+        {
+
+            HideAllUserControls();
+            suco1.Show();
+           
+        }
+        private void HideAllUserControls()
+        {
+            banve1.Hide();
             bangdieukhien1.Hide();
+            qlykhachhang1.Hide();
+            suco1.Hide();
+        }
+
+        private void suco1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void qlykhachhang1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void banve1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
