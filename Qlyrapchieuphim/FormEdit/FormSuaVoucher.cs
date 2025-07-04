@@ -153,7 +153,7 @@ namespace Qlyrapchieuphim.FormEdit
                 // Gán thông tin vào các controls
                 lbl_FormSuaVoucher_MaPhatHanh.Text = reader["Code"].ToString();
                 lbl_FormSuaVoucher_MoTa.Text = reader["Description"].ToString();
-                lbl_FormSuaVoucher_DiscountPercent.Text = reader["DiscountPercent"].ToString();
+                lbl_FormSuaVoucher_DiscountPercent.Text = (double.Parse(reader["DiscountPercent"].ToString()) * 100).ToString();
                 date_FormSuaVoucher_NgayHetHan.Value = (DateTime)reader["ExpiryDate"];
                 lbl_FormSuaVoucher_SoLuong.Text = reader["Quantity"].ToString();
                 lbl_FormSuaVoucher_HoaDonToiThieu.Text = reader["Quantity"].ToString();

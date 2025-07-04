@@ -1,0 +1,52 @@
+﻿<#@ template language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Data" #>
+<#@ import namespace="System.Collections.Generic" #>
+<body>
+    <h2 style="text-align: center;">RẠP PHIM</h2>
+    <h1 style="text-align: center;">MOVIE-LAND</h1>
+    <hr />
+    <div style="display: flex; justify-content: space-between;">
+        <p> Hoá đơn số: <#= billCode#></p>
+        <p>Ngày: <#= createdAt.ToString("dd/MM/yyyy")#> / <#= createdAt.ToString("HH:mm:ss")#></p>
+    </div><br />
+    <hr/>
+    <table width = "100%" runat="server" id="Table1">
+        <thead>
+            <tr style="text-align: left;">
+                <th width = "10%">STT</th>
+                <th width = "45%">Sản phẩm</th>
+                <th width = "15%">Giá</th>
+                <th width = "15%">Số lượng </th>
+                <th width = "15%">Đơn Giá</th>
+            </tr>
+        </thead>
+        <tbody>
+            <#int i = 1;#>
+            <#foreach (DataRow row in billData.Rows)
+            {#>
+                <tr>
+                    <td> <#= i#> </td>
+                    <td> <#= row["ProductName"].ToString()#> </td>
+                    <td> <#= Convert.ToDouble(row["Price"]).ToString("N2") + " VNĐ"#> </td>
+                    <td> <#= row["Quantity"].ToString()#> </td>
+                    <td> <#= Convert.ToDouble(row["TotalPrice"]).ToString("N2") + " VNĐ"#> </td>
+                <tr/>
+            <#i++; 
+            } //end of foreach#>
+        </tbody>
+    </table>
+    <hr/>
+        <div style="justify-content: space-between; display:flex">
+            <b>Tổng đơn giá: </b> <#= (totalTickets + totalProducts).ToString("N2") + " VNĐ"#><br/>
+        </div>
+
+        <div style="justify-content: space-between; display:flex">
+            <b>Được giảm: </b> <#= totalDiscount.ToString("N2") + " VNĐ"#><br/>
+        </div>
+        <div style="justify-content: space-between; display:flex">
+            <b>Tổng: </b> <#= ((totalTickets + totalProducts) - totalDiscount).ToString("N2") + " VNĐ"#> <br/>
+        </div>
+</body>
