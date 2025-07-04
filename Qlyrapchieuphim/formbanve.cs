@@ -366,7 +366,7 @@ namespace Qlyrapchieuphim
                     }
 
                     int d = selected.Count - b - c;
-                    total = d * 55000 + vipcount.Count * 5000 + b * 40000 + c * 40000;
+                    total = d * 55000 + vipcount.Count * 20000 + b * 40000 + c * 40000;
                     //need_to_pay = total - discountPercent  + food_total + drinks_total;
 
                     //tongtien.Text = total.ToString() + " VND";

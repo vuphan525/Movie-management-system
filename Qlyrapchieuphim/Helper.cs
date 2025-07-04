@@ -12,6 +12,13 @@ namespace Qlyrapchieuphim
 {
     static class Helper
     {
+        public static void Populate<T>(this T[] arr, T value)
+        {
+            if (arr == null)
+                return;
+            for (int i = 0; i < arr.Length; i++)
+                arr[i] = value;
+        }
         public static string getConnString()
         {
             string str = Properties.Settings.Default.ConnString;

@@ -28,18 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
-            this.ngaysinh = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            this.guna2DateTimePicker1 = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.dtp_Time_Start = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.dtp_Time_End = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.cartesianChart1 = new LiveCharts.WinForms.CartesianChart();
             this.label2 = new System.Windows.Forms.Label();
-            this.guna2DateTimePicker2 = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.dtp_Pie_Chart_Date = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.tenphim = new Guna.UI2.WinForms.Guna2ComboBox();
             this.pieChart1 = new LiveCharts.WinForms.PieChart();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -53,35 +58,37 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Chọn khoảng thời gian thống kê";
             // 
-            // ngaysinh
+            // dtp_Time_Start
             // 
-            this.ngaysinh.BorderRadius = 15;
-            this.ngaysinh.Checked = true;
-            this.ngaysinh.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(248)))));
-            this.ngaysinh.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.ngaysinh.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.ngaysinh.Location = new System.Drawing.Point(17, 56);
-            this.ngaysinh.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.ngaysinh.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.ngaysinh.Name = "ngaysinh";
-            this.ngaysinh.Size = new System.Drawing.Size(203, 32);
-            this.ngaysinh.TabIndex = 85;
-            this.ngaysinh.Value = new System.DateTime(2024, 11, 29, 16, 51, 14, 647);
+            this.dtp_Time_Start.BorderRadius = 15;
+            this.dtp_Time_Start.Checked = true;
+            this.dtp_Time_Start.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(248)))));
+            this.dtp_Time_Start.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.dtp_Time_Start.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtp_Time_Start.Location = new System.Drawing.Point(17, 56);
+            this.dtp_Time_Start.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dtp_Time_Start.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dtp_Time_Start.Name = "dtp_Time_Start";
+            this.dtp_Time_Start.Size = new System.Drawing.Size(203, 32);
+            this.dtp_Time_Start.TabIndex = 85;
+            this.dtp_Time_Start.Value = new System.DateTime(2024, 11, 29, 16, 51, 14, 647);
+            this.dtp_Time_Start.ValueChanged += new System.EventHandler(this.dtp_Time_Start_ValueChanged);
             // 
-            // guna2DateTimePicker1
+            // dtp_Time_End
             // 
-            this.guna2DateTimePicker1.BorderRadius = 15;
-            this.guna2DateTimePicker1.Checked = true;
-            this.guna2DateTimePicker1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(248)))));
-            this.guna2DateTimePicker1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.guna2DateTimePicker1.Location = new System.Drawing.Point(266, 56);
-            this.guna2DateTimePicker1.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.guna2DateTimePicker1.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.guna2DateTimePicker1.Name = "guna2DateTimePicker1";
-            this.guna2DateTimePicker1.Size = new System.Drawing.Size(203, 32);
-            this.guna2DateTimePicker1.TabIndex = 86;
-            this.guna2DateTimePicker1.Value = new System.DateTime(2024, 11, 29, 16, 51, 14, 647);
+            this.dtp_Time_End.BorderRadius = 15;
+            this.dtp_Time_End.Checked = true;
+            this.dtp_Time_End.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(248)))));
+            this.dtp_Time_End.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.dtp_Time_End.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtp_Time_End.Location = new System.Drawing.Point(266, 56);
+            this.dtp_Time_End.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dtp_Time_End.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dtp_Time_End.Name = "dtp_Time_End";
+            this.dtp_Time_End.Size = new System.Drawing.Size(203, 32);
+            this.dtp_Time_End.TabIndex = 86;
+            this.dtp_Time_End.Value = new System.DateTime(2024, 11, 29, 16, 51, 14, 647);
+            this.dtp_Time_End.ValueChanged += new System.EventHandler(this.dtp_Time_End_ValueChanged);
             // 
             // cartesianChart1
             // 
@@ -103,20 +110,21 @@
             this.label2.TabIndex = 88;
             this.label2.Text = "Ngày thống kê";
             // 
-            // guna2DateTimePicker2
+            // dtp_Pie_Chart_Date
             // 
-            this.guna2DateTimePicker2.BorderRadius = 15;
-            this.guna2DateTimePicker2.Checked = true;
-            this.guna2DateTimePicker2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(248)))));
-            this.guna2DateTimePicker2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2DateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.guna2DateTimePicker2.Location = new System.Drawing.Point(832, 20);
-            this.guna2DateTimePicker2.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.guna2DateTimePicker2.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.guna2DateTimePicker2.Name = "guna2DateTimePicker2";
-            this.guna2DateTimePicker2.Size = new System.Drawing.Size(262, 32);
-            this.guna2DateTimePicker2.TabIndex = 89;
-            this.guna2DateTimePicker2.Value = new System.DateTime(2024, 11, 29, 16, 51, 14, 647);
+            this.dtp_Pie_Chart_Date.BorderRadius = 15;
+            this.dtp_Pie_Chart_Date.Checked = true;
+            this.dtp_Pie_Chart_Date.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(248)))));
+            this.dtp_Pie_Chart_Date.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.dtp_Pie_Chart_Date.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtp_Pie_Chart_Date.Location = new System.Drawing.Point(832, 20);
+            this.dtp_Pie_Chart_Date.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dtp_Pie_Chart_Date.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dtp_Pie_Chart_Date.Name = "dtp_Pie_Chart_Date";
+            this.dtp_Pie_Chart_Date.Size = new System.Drawing.Size(262, 32);
+            this.dtp_Pie_Chart_Date.TabIndex = 89;
+            this.dtp_Pie_Chart_Date.Value = new System.DateTime(2024, 11, 29, 16, 51, 14, 647);
+            this.dtp_Pie_Chart_Date.ValueChanged += new System.EventHandler(this.dtp_Pie_Chart_Date_ValueChanged);
             // 
             // tenphim
             // 
@@ -136,6 +144,7 @@
             this.tenphim.Name = "tenphim";
             this.tenphim.Size = new System.Drawing.Size(418, 36);
             this.tenphim.TabIndex = 90;
+            this.tenphim.SelectedIndexChanged += new System.EventHandler(this.tenphim_SelectedIndexChanged);
             // 
             // pieChart1
             // 
@@ -165,6 +174,14 @@
             this.guna2Panel2.Size = new System.Drawing.Size(649, 566);
             this.guna2Panel2.TabIndex = 93;
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // errorProvider2
+            // 
+            this.errorProvider2.ContainerControl = this;
+            // 
             // QlyDoanhThu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -173,16 +190,19 @@
             this.Controls.Add(this.guna2Panel2);
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.tenphim);
-            this.Controls.Add(this.guna2DateTimePicker2);
+            this.Controls.Add(this.dtp_Pie_Chart_Date);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.guna2DateTimePicker1);
-            this.Controls.Add(this.ngaysinh);
+            this.Controls.Add(this.dtp_Time_End);
+            this.Controls.Add(this.dtp_Time_Start);
             this.Controls.Add(this.label1);
             this.Name = "QlyDoanhThu";
             this.Size = new System.Drawing.Size(1108, 676);
             this.Load += new System.EventHandler(this.QlyDoanhThu_Load);
+            this.Enter += new System.EventHandler(this.QlyDoanhThu_Enter);
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -191,14 +211,16 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private Guna.UI2.WinForms.Guna2DateTimePicker ngaysinh;
-        private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker1;
+        private Guna.UI2.WinForms.Guna2DateTimePicker dtp_Time_Start;
+        private Guna.UI2.WinForms.Guna2DateTimePicker dtp_Time_End;
         private LiveCharts.WinForms.CartesianChart cartesianChart1;
         private System.Windows.Forms.Label label2;
-        private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker2;
+        private Guna.UI2.WinForms.Guna2DateTimePicker dtp_Pie_Chart_Date;
         private Guna.UI2.WinForms.Guna2ComboBox tenphim;
         private LiveCharts.WinForms.PieChart pieChart1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.ErrorProvider errorProvider2;
     }
 }
