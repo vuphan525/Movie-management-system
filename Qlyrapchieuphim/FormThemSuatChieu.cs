@@ -291,7 +291,9 @@ namespace Qlyrapchieuphim
                             using (SqlCommand cmd = new SqlCommand(SqlQuery, conn))
                             {
                                 DateTime time = DateTime.Parse(rowTime.Cells[1].Value.ToString());
-                                cmd.Parameters.Add("@StartTime", SqlDbType.DateTime).Value = DateTime.Parse(rowDate.Cells[1].Value.ToString()) + time.TimeOfDay.StripSeconds();
+                                DateTime date = DateTime.TryParse(rowDate.Cells[1].Value?.ToString(), out var d) ? d : throw new Exception("Ngày chiếu không hợp lệ");
+                                cmd.Parameters.Add("@StartTime", SqlDbType.DateTime).Value = date.Date + time.TimeOfDay;
+
                                 cmd.Parameters.Add("@Price", SqlDbType.Decimal).Value = 55000; //GIÁ TRỊ TẠM DO CHƯA CÓ TEXTBOX, THAY THẾ GIÁ TRỊ NGAY KHI CÓ TEXTBOX
                                 int pc = int.Parse(Helper.SubStringBetween(rowRoom.Cells[1].Value.ToString(), " (ID: ", ")"));
                                 cmd.Parameters.Add("@RoomID", SqlDbType.Int).Value = pc;
