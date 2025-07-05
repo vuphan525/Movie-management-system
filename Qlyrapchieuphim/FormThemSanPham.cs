@@ -54,7 +54,6 @@ namespace Qlyrapchieuphim
 
         private void btn_Refresh_Click(object sender, EventArgs e)
         {
-            lbl_ThemSanPham_MaSP.Clear();
             lbl_ThemSanPham_TenSP.Clear();
             cb_ThemSanPham_LoaiSP.SelectedIndex = -1;
             lbl_ThemSanPham_GiaTien.Clear();

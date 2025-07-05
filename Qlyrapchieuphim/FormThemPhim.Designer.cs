@@ -34,14 +34,12 @@
             this.lbl_FormThemPhim_TenPhim = new Guna.UI2.WinForms.Guna2TextBox();
             this.cb_FormThemPhim_TinhTrang = new Guna.UI2.WinForms.Guna2ComboBox();
             this.cb_FormThemPhim_TheLoai = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.lbl_FormThemPhim_MovieID = new Guna.UI2.WinForms.Guna2TextBox();
             this.btn_FormThemPhim_ThemPoster = new Guna.UI2.WinForms.Guna2Button();
             this.AddButton = new Guna.UI2.WinForms.Guna2Button();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.pictureBox_FormThemPhim_Poster = new System.Windows.Forms.PictureBox();
@@ -79,6 +77,7 @@
             this.lbl_FormThemPhim_MoTa.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.lbl_FormThemPhim_MoTa.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.lbl_FormThemPhim_MoTa.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.lbl_FormThemPhim_MoTa.ForeColor = System.Drawing.Color.Black;
             this.lbl_FormThemPhim_MoTa.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.lbl_FormThemPhim_MoTa.Location = new System.Drawing.Point(364, 162);
             this.lbl_FormThemPhim_MoTa.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -105,7 +104,7 @@
             this.lbl_FormThemPhim_ThoiLuong.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.lbl_FormThemPhim_ThoiLuong.ForeColor = System.Drawing.Color.Black;
             this.lbl_FormThemPhim_ThoiLuong.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.lbl_FormThemPhim_ThoiLuong.Location = new System.Drawing.Point(21, 332);
+            this.lbl_FormThemPhim_ThoiLuong.Location = new System.Drawing.Point(22, 249);
             this.lbl_FormThemPhim_ThoiLuong.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.lbl_FormThemPhim_ThoiLuong.Name = "lbl_FormThemPhim_ThoiLuong";
             this.lbl_FormThemPhim_ThoiLuong.PasswordChar = '\0';
@@ -128,7 +127,7 @@
             this.lbl_FormThemPhim_TenPhim.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.lbl_FormThemPhim_TenPhim.ForeColor = System.Drawing.Color.Black;
             this.lbl_FormThemPhim_TenPhim.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.lbl_FormThemPhim_TenPhim.Location = new System.Drawing.Point(21, 162);
+            this.lbl_FormThemPhim_TenPhim.Location = new System.Drawing.Point(22, 79);
             this.lbl_FormThemPhim_TenPhim.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.lbl_FormThemPhim_TenPhim.Name = "lbl_FormThemPhim_TenPhim";
             this.lbl_FormThemPhim_TenPhim.PasswordChar = '\0';
@@ -153,7 +152,7 @@
             "Đang chiếu",
             "Sắp chiếu",
             "Đã kết thúc"});
-            this.cb_FormThemPhim_TinhTrang.Location = new System.Drawing.Point(21, 423);
+            this.cb_FormThemPhim_TinhTrang.Location = new System.Drawing.Point(22, 340);
             this.cb_FormThemPhim_TinhTrang.Margin = new System.Windows.Forms.Padding(4);
             this.cb_FormThemPhim_TinhTrang.Name = "cb_FormThemPhim_TinhTrang";
             this.cb_FormThemPhim_TinhTrang.Size = new System.Drawing.Size(312, 36);
@@ -179,38 +178,12 @@
             "Phim giật gân",
             "Phim lãng mạn",
             "Phim chính kịch"});
-            this.cb_FormThemPhim_TheLoai.Location = new System.Drawing.Point(21, 245);
+            this.cb_FormThemPhim_TheLoai.Location = new System.Drawing.Point(22, 162);
             this.cb_FormThemPhim_TheLoai.Margin = new System.Windows.Forms.Padding(4);
             this.cb_FormThemPhim_TheLoai.Name = "cb_FormThemPhim_TheLoai";
             this.cb_FormThemPhim_TheLoai.Size = new System.Drawing.Size(312, 36);
             this.cb_FormThemPhim_TheLoai.TabIndex = 76;
             this.cb_FormThemPhim_TheLoai.SelectedIndexChanged += new System.EventHandler(this.cb_FormThemPhim_TheLoai_SelectedIndexChanged);
-            // 
-            // lbl_FormThemPhim_MovieID
-            // 
-            this.lbl_FormThemPhim_MovieID.BorderColor = System.Drawing.Color.Gray;
-            this.lbl_FormThemPhim_MovieID.BorderRadius = 10;
-            this.lbl_FormThemPhim_MovieID.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.lbl_FormThemPhim_MovieID.DefaultText = "";
-            this.lbl_FormThemPhim_MovieID.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.lbl_FormThemPhim_MovieID.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.lbl_FormThemPhim_MovieID.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.lbl_FormThemPhim_MovieID.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.lbl_FormThemPhim_MovieID.Enabled = false;
-            this.lbl_FormThemPhim_MovieID.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.lbl_FormThemPhim_MovieID.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lbl_FormThemPhim_MovieID.ForeColor = System.Drawing.Color.Black;
-            this.lbl_FormThemPhim_MovieID.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.lbl_FormThemPhim_MovieID.Location = new System.Drawing.Point(21, 79);
-            this.lbl_FormThemPhim_MovieID.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.lbl_FormThemPhim_MovieID.Name = "lbl_FormThemPhim_MovieID";
-            this.lbl_FormThemPhim_MovieID.PasswordChar = '\0';
-            this.lbl_FormThemPhim_MovieID.PlaceholderText = "";
-            this.lbl_FormThemPhim_MovieID.ReadOnly = true;
-            this.lbl_FormThemPhim_MovieID.SelectedText = "";
-            this.lbl_FormThemPhim_MovieID.Size = new System.Drawing.Size(313, 43);
-            this.lbl_FormThemPhim_MovieID.TabIndex = 75;
-            this.lbl_FormThemPhim_MovieID.TextChanged += new System.EventHandler(this.lbl_FormThemPhim_MovieID_TextChanged);
             // 
             // btn_FormThemPhim_ThemPoster
             // 
@@ -240,7 +213,7 @@
             this.AddButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(61)))), ((int)(((byte)(204)))));
             this.AddButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AddButton.ForeColor = System.Drawing.Color.White;
-            this.AddButton.Location = new System.Drawing.Point(514, 782);
+            this.AddButton.Location = new System.Drawing.Point(514, 722);
             this.AddButton.Margin = new System.Windows.Forms.Padding(4);
             this.AddButton.Name = "AddButton";
             this.AddButton.Size = new System.Drawing.Size(183, 44);
@@ -252,7 +225,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(19, 401);
+            this.label7.Location = new System.Drawing.Point(20, 318);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(77, 18);
@@ -263,7 +236,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(17, 309);
+            this.label6.Location = new System.Drawing.Point(18, 226);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(127, 18);
@@ -274,7 +247,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(17, 223);
+            this.label4.Location = new System.Drawing.Point(18, 140);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(64, 18);
@@ -285,32 +258,21 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(16, 139);
+            this.label3.Location = new System.Drawing.Point(17, 56);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(73, 18);
             this.label3.TabIndex = 67;
             this.label3.Text = "Tên phim:";
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(19, 55);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(62, 18);
-            this.label2.TabIndex = 65;
-            this.label2.Text = "ID phim:";
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(31, 11);
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(16, 14);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(101, 20);
+            this.label8.Size = new System.Drawing.Size(136, 31);
             this.label8.TabIndex = 84;
             this.label8.Text = "Thêm phim";
             // 
@@ -347,7 +309,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(19, 497);
+            this.label1.Location = new System.Drawing.Point(20, 414);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(86, 18);
@@ -358,7 +320,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(19, 629);
+            this.label5.Location = new System.Drawing.Point(20, 546);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(118, 18);
@@ -408,7 +370,7 @@
             this.date_FormThemPhim_NgayPhatHanh.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(248)))));
             this.date_FormThemPhim_NgayPhatHanh.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.date_FormThemPhim_NgayPhatHanh.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.date_FormThemPhim_NgayPhatHanh.Location = new System.Drawing.Point(22, 651);
+            this.date_FormThemPhim_NgayPhatHanh.Location = new System.Drawing.Point(23, 568);
             this.date_FormThemPhim_NgayPhatHanh.Margin = new System.Windows.Forms.Padding(4);
             this.date_FormThemPhim_NgayPhatHanh.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.date_FormThemPhim_NgayPhatHanh.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
@@ -435,7 +397,7 @@
             this.date_FormThemPhim_NgayNhap.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(248)))));
             this.date_FormThemPhim_NgayNhap.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.date_FormThemPhim_NgayNhap.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.date_FormThemPhim_NgayNhap.Location = new System.Drawing.Point(22, 519);
+            this.date_FormThemPhim_NgayNhap.Location = new System.Drawing.Point(23, 436);
             this.date_FormThemPhim_NgayNhap.Margin = new System.Windows.Forms.Padding(4);
             this.date_FormThemPhim_NgayNhap.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.date_FormThemPhim_NgayNhap.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
@@ -455,7 +417,7 @@
             this.btn_Refresh.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(61)))), ((int)(((byte)(204)))));
             this.btn_Refresh.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Refresh.ForeColor = System.Drawing.Color.White;
-            this.btn_Refresh.Location = new System.Drawing.Point(288, 782);
+            this.btn_Refresh.Location = new System.Drawing.Point(288, 722);
             this.btn_Refresh.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Refresh.Name = "btn_Refresh";
             this.btn_Refresh.Size = new System.Drawing.Size(183, 44);
@@ -468,7 +430,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(713, 845);
+            this.ClientSize = new System.Drawing.Size(713, 778);
             this.Controls.Add(this.btn_Refresh);
             this.Controls.Add(this.date_FormThemPhim_NgayNhap);
             this.Controls.Add(this.label11);
@@ -486,14 +448,12 @@
             this.Controls.Add(this.lbl_FormThemPhim_TenPhim);
             this.Controls.Add(this.cb_FormThemPhim_TinhTrang);
             this.Controls.Add(this.cb_FormThemPhim_TheLoai);
-            this.Controls.Add(this.lbl_FormThemPhim_MovieID);
             this.Controls.Add(this.btn_FormThemPhim_ThemPoster);
             this.Controls.Add(this.AddButton);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
@@ -517,14 +477,12 @@
         private Guna.UI2.WinForms.Guna2TextBox lbl_FormThemPhim_TenPhim;
         private Guna.UI2.WinForms.Guna2ComboBox cb_FormThemPhim_TinhTrang;
         private Guna.UI2.WinForms.Guna2ComboBox cb_FormThemPhim_TheLoai;
-        private Guna.UI2.WinForms.Guna2TextBox lbl_FormThemPhim_MovieID;
         private Guna.UI2.WinForms.Guna2Button btn_FormThemPhim_ThemPoster;
         private Guna.UI2.WinForms.Guna2Button AddButton;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
         private Guna.UI2.WinForms.Guna2Button guna2Button2;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label1;

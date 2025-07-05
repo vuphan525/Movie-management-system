@@ -37,8 +37,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.lbl_FormThemKH_HoTen = new Guna.UI2.WinForms.Guna2TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.lbl_FormThemKH_MaKH = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.btn_Refresh = new Guna.UI2.WinForms.Guna2Button();
@@ -58,7 +56,7 @@
             this.lbl_FormThemKH_Email.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.lbl_FormThemKH_Email.ForeColor = System.Drawing.Color.Black;
             this.lbl_FormThemKH_Email.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.lbl_FormThemKH_Email.Location = new System.Drawing.Point(16, 329);
+            this.lbl_FormThemKH_Email.Location = new System.Drawing.Point(16, 237);
             this.lbl_FormThemKH_Email.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.lbl_FormThemKH_Email.Name = "lbl_FormThemKH_Email";
             this.lbl_FormThemKH_Email.PasswordChar = '\0';
@@ -81,7 +79,7 @@
             this.lbl_FormThemKH_DiemTichLuy.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.lbl_FormThemKH_DiemTichLuy.ForeColor = System.Drawing.Color.Black;
             this.lbl_FormThemKH_DiemTichLuy.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.lbl_FormThemKH_DiemTichLuy.Location = new System.Drawing.Point(16, 414);
+            this.lbl_FormThemKH_DiemTichLuy.Location = new System.Drawing.Point(16, 322);
             this.lbl_FormThemKH_DiemTichLuy.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.lbl_FormThemKH_DiemTichLuy.Name = "lbl_FormThemKH_DiemTichLuy";
             this.lbl_FormThemKH_DiemTichLuy.PasswordChar = '\0';
@@ -94,7 +92,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(16, 390);
+            this.label7.Location = new System.Drawing.Point(16, 298);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(96, 18);
@@ -115,7 +113,7 @@
             this.lbl_FormThemKH_SDT.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.lbl_FormThemKH_SDT.ForeColor = System.Drawing.Color.Black;
             this.lbl_FormThemKH_SDT.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.lbl_FormThemKH_SDT.Location = new System.Drawing.Point(16, 246);
+            this.lbl_FormThemKH_SDT.Location = new System.Drawing.Point(16, 154);
             this.lbl_FormThemKH_SDT.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.lbl_FormThemKH_SDT.Name = "lbl_FormThemKH_SDT";
             this.lbl_FormThemKH_SDT.PasswordChar = '\0';
@@ -128,7 +126,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(16, 223);
+            this.label6.Location = new System.Drawing.Point(16, 131);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(98, 18);
@@ -145,7 +143,7 @@
             this.them.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(61)))), ((int)(((byte)(204)))));
             this.them.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.them.ForeColor = System.Drawing.Color.White;
-            this.them.Location = new System.Drawing.Point(264, 495);
+            this.them.Location = new System.Drawing.Point(264, 403);
             this.them.Margin = new System.Windows.Forms.Padding(4);
             this.them.Name = "them";
             this.them.Size = new System.Drawing.Size(175, 44);
@@ -157,7 +155,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(16, 305);
+            this.label5.Location = new System.Drawing.Point(16, 213);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(49, 18);
@@ -178,7 +176,7 @@
             this.lbl_FormThemKH_HoTen.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.lbl_FormThemKH_HoTen.ForeColor = System.Drawing.Color.Black;
             this.lbl_FormThemKH_HoTen.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.lbl_FormThemKH_HoTen.Location = new System.Drawing.Point(16, 163);
+            this.lbl_FormThemKH_HoTen.Location = new System.Drawing.Point(16, 71);
             this.lbl_FormThemKH_HoTen.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.lbl_FormThemKH_HoTen.Name = "lbl_FormThemKH_HoTen";
             this.lbl_FormThemKH_HoTen.PasswordChar = '\0';
@@ -191,57 +189,21 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(16, 139);
+            this.label4.Location = new System.Drawing.Point(16, 47);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(56, 18);
             this.label4.TabIndex = 88;
             this.label4.Text = "Họ tên:";
             // 
-            // lbl_FormThemKH_MaKH
-            // 
-            this.lbl_FormThemKH_MaKH.BorderColor = System.Drawing.Color.Gray;
-            this.lbl_FormThemKH_MaKH.BorderRadius = 10;
-            this.lbl_FormThemKH_MaKH.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.lbl_FormThemKH_MaKH.DefaultText = "";
-            this.lbl_FormThemKH_MaKH.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.lbl_FormThemKH_MaKH.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.lbl_FormThemKH_MaKH.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.lbl_FormThemKH_MaKH.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.lbl_FormThemKH_MaKH.Enabled = false;
-            this.lbl_FormThemKH_MaKH.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.lbl_FormThemKH_MaKH.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lbl_FormThemKH_MaKH.ForeColor = System.Drawing.Color.Black;
-            this.lbl_FormThemKH_MaKH.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.lbl_FormThemKH_MaKH.Location = new System.Drawing.Point(16, 78);
-            this.lbl_FormThemKH_MaKH.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.lbl_FormThemKH_MaKH.Name = "lbl_FormThemKH_MaKH";
-            this.lbl_FormThemKH_MaKH.PasswordChar = '\0';
-            this.lbl_FormThemKH_MaKH.PlaceholderText = "";
-            this.lbl_FormThemKH_MaKH.ReadOnly = true;
-            this.lbl_FormThemKH_MaKH.SelectedText = "";
-            this.lbl_FormThemKH_MaKH.Size = new System.Drawing.Size(423, 38);
-            this.lbl_FormThemKH_MaKH.TabIndex = 87;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(16, 54);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(58, 18);
-            this.label3.TabIndex = 86;
-            this.label3.Text = "Mã KH:";
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(31, 14);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(13, 14);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(227, 20);
+            this.label1.Size = new System.Drawing.Size(301, 31);
             this.label1.TabIndex = 85;
             this.label1.Text = "Điền thông tin khách hàng";
             // 
@@ -273,7 +235,7 @@
             this.btn_Refresh.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(61)))), ((int)(((byte)(204)))));
             this.btn_Refresh.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Refresh.ForeColor = System.Drawing.Color.White;
-            this.btn_Refresh.Location = new System.Drawing.Point(19, 497);
+            this.btn_Refresh.Location = new System.Drawing.Point(19, 405);
             this.btn_Refresh.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Refresh.Name = "btn_Refresh";
             this.btn_Refresh.Size = new System.Drawing.Size(175, 44);
@@ -286,7 +248,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(457, 554);
+            this.ClientSize = new System.Drawing.Size(457, 464);
             this.Controls.Add(this.btn_Refresh);
             this.Controls.Add(this.lbl_FormThemKH_Email);
             this.Controls.Add(this.lbl_FormThemKH_DiemTichLuy);
@@ -297,8 +259,6 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.lbl_FormThemKH_HoTen);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.lbl_FormThemKH_MaKH);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.guna2Button2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -324,8 +284,6 @@
         private System.Windows.Forms.Label label5;
         private Guna.UI2.WinForms.Guna2TextBox lbl_FormThemKH_HoTen;
         private System.Windows.Forms.Label label4;
-        private Guna.UI2.WinForms.Guna2TextBox lbl_FormThemKH_MaKH;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2Button btn_Refresh;
     }

@@ -54,13 +54,13 @@
             this.pass_repeatBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.pass_repeatBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.pass_repeatBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.pass_repeatBox.Location = new System.Drawing.Point(457, 247);
-            this.pass_repeatBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pass_repeatBox.Location = new System.Drawing.Point(609, 304);
+            this.pass_repeatBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pass_repeatBox.Name = "pass_repeatBox";
             this.pass_repeatBox.PasswordChar = '\0';
             this.pass_repeatBox.PlaceholderText = "";
             this.pass_repeatBox.SelectedText = "";
-            this.pass_repeatBox.Size = new System.Drawing.Size(217, 38);
+            this.pass_repeatBox.Size = new System.Drawing.Size(289, 47);
             this.pass_repeatBox.TabIndex = 77;
             // 
             // label1
@@ -68,9 +68,10 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.label1.Location = new System.Drawing.Point(483, 54);
+            this.label1.Location = new System.Drawing.Point(644, 66);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(167, 25);
+            this.label1.Size = new System.Drawing.Size(213, 29);
             this.label1.TabIndex = 76;
             this.label1.Text = "Đặt lại mật khẩu";
             // 
@@ -81,9 +82,10 @@
             this.guna2CheckBox1.CheckedState.BorderRadius = 0;
             this.guna2CheckBox1.CheckedState.BorderThickness = 0;
             this.guna2CheckBox1.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2CheckBox1.Location = new System.Drawing.Point(457, 300);
+            this.guna2CheckBox1.Location = new System.Drawing.Point(609, 369);
+            this.guna2CheckBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.guna2CheckBox1.Name = "guna2CheckBox1";
-            this.guna2CheckBox1.Size = new System.Drawing.Size(95, 17);
+            this.guna2CheckBox1.Size = new System.Drawing.Size(114, 20);
             this.guna2CheckBox1.TabIndex = 75;
             this.guna2CheckBox1.Text = "Hiện mật khẩu";
             this.guna2CheckBox1.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
@@ -102,9 +104,10 @@
             this.confirmButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(61)))), ((int)(((byte)(204)))));
             this.confirmButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.confirmButton.ForeColor = System.Drawing.Color.White;
-            this.confirmButton.Location = new System.Drawing.Point(457, 334);
+            this.confirmButton.Location = new System.Drawing.Point(609, 411);
+            this.confirmButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.confirmButton.Name = "confirmButton";
-            this.confirmButton.Size = new System.Drawing.Size(217, 48);
+            this.confirmButton.Size = new System.Drawing.Size(289, 59);
             this.confirmButton.TabIndex = 74;
             this.confirmButton.Text = "Đồng ý";
             this.confirmButton.Click += new System.EventHandler(this.confirmButton_Click);
@@ -114,9 +117,10 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.label3.Location = new System.Drawing.Point(466, 227);
+            this.label3.Location = new System.Drawing.Point(611, 279);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(134, 17);
+            this.label3.Size = new System.Drawing.Size(157, 20);
             this.label3.TabIndex = 73;
             this.label3.Text = "Xác nhận mật khẩu:";
             // 
@@ -125,9 +129,10 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.label2.Location = new System.Drawing.Point(464, 143);
+            this.label2.Location = new System.Drawing.Point(609, 176);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(70, 17);
+            this.label2.Size = new System.Drawing.Size(82, 20);
             this.label2.TabIndex = 72;
             this.label2.Text = "Mật khẩu:";
             // 
@@ -144,30 +149,32 @@
             this.passBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.passBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.passBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.passBox.Location = new System.Drawing.Point(457, 175);
-            this.passBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.passBox.Location = new System.Drawing.Point(609, 215);
+            this.passBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.passBox.Name = "passBox";
             this.passBox.PasswordChar = '\0';
             this.passBox.PlaceholderText = "";
             this.passBox.SelectedText = "";
-            this.passBox.Size = new System.Drawing.Size(217, 38);
+            this.passBox.Size = new System.Drawing.Size(289, 47);
             this.passBox.TabIndex = 71;
             // 
             // guna2VSeparator1
             // 
             this.guna2VSeparator1.FillColor = System.Drawing.Color.Black;
-            this.guna2VSeparator1.Location = new System.Drawing.Point(369, 82);
+            this.guna2VSeparator1.Location = new System.Drawing.Point(492, 101);
+            this.guna2VSeparator1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.guna2VSeparator1.Name = "guna2VSeparator1";
-            this.guna2VSeparator1.Size = new System.Drawing.Size(12, 269);
+            this.guna2VSeparator1.Size = new System.Drawing.Size(16, 331);
             this.guna2VSeparator1.TabIndex = 69;
             // 
             // guna2PictureBox1
             // 
             this.guna2PictureBox1.Image = global::Qlyrapchieuphim.Properties.Resources.watch_movie;
             this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(32, 112);
+            this.guna2PictureBox1.Location = new System.Drawing.Point(43, 138);
+            this.guna2PictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(302, 227);
+            this.guna2PictureBox1.Size = new System.Drawing.Size(403, 279);
             this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.guna2PictureBox1.TabIndex = 70;
             this.guna2PictureBox1.TabStop = false;
@@ -183,19 +190,19 @@
             this.guna2Button3.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button3.ForeColor = System.Drawing.Color.Black;
             this.guna2Button3.Image = global::Qlyrapchieuphim.Properties.Resources.icons8_exit_35;
-            this.guna2Button3.Location = new System.Drawing.Point(705, 10);
-            this.guna2Button3.Margin = new System.Windows.Forms.Padding(2);
+            this.guna2Button3.Location = new System.Drawing.Point(940, 12);
+            this.guna2Button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2Button3.Name = "guna2Button3";
-            this.guna2Button3.Size = new System.Drawing.Size(26, 28);
+            this.guna2Button3.Size = new System.Drawing.Size(35, 34);
             this.guna2Button3.TabIndex = 78;
             this.guna2Button3.Click += new System.EventHandler(this.guna2Button3_Click);
             // 
             // Datlaimk
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(248)))));
-            this.ClientSize = new System.Drawing.Size(740, 468);
+            this.ClientSize = new System.Drawing.Size(987, 576);
             this.Controls.Add(this.guna2Button3);
             this.Controls.Add(this.pass_repeatBox);
             this.Controls.Add(this.label1);
@@ -207,7 +214,7 @@
             this.Controls.Add(this.guna2PictureBox1);
             this.Controls.Add(this.guna2VSeparator1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Datlaimk";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Datlaimk";

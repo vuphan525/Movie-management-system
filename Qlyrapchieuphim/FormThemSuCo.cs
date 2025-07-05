@@ -89,7 +89,6 @@ namespace Qlyrapchieuphim
 
         private void btn_Refresh_Click(object sender, EventArgs e)
         {
-            lbl_FormThemSuCo_MaSuCo.Clear();
             lbl_FormThemSuCo_TenSuCo.Clear();
             cb_FormThemSuCo_TinhTrang.SelectedIndex = -1;
             lbl_FormThemSuCo_HuongGiaiQuyet.Clear();

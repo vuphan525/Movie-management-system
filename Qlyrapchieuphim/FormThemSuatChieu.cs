@@ -10,11 +10,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.Data.SqlClient;
 using System.Globalization;
+using System.Text.RegularExpressions;
 
 namespace Qlyrapchieuphim
 {
     public partial class FormThemSuatChieu : Form
     {
+        private int duration = 0; // Biến này có thể dùng để lưu trữ thời gian chiếu phim, nếu cần thiết
         public FormThemSuatChieu()
         {
             InitializeComponent();
@@ -484,7 +486,7 @@ namespace Qlyrapchieuphim
                         }
 
                         // Gửi vào form sửa
-                        form_SuaGioChieu f = new form_SuaGioChieu(thoigian, danhSachGioKhac);
+                        form_SuaGioChieu f = new form_SuaGioChieu(thoigian, danhSachGioKhac, duration);
                         if (f.ShowDialog() == DialogResult.OK)
                         {
                             DateTime thoiGianMoi = f.KetQuaThoiGian;
@@ -543,15 +545,14 @@ namespace Qlyrapchieuphim
             DateTime selectedTime = date_FormThemSuatChieu_GioChieu.Value;
             selectedTime = new DateTime(selectedTime.Year, selectedTime.Month, selectedTime.Day, selectedTime.Hour, selectedTime.Minute, 0);
 
-            // Giới hạn từ 9:00 AM đến 11:00 PM
-            DateTime startTime = selectedTime.Date.AddHours(9);    // 9:00 AM
-            DateTime endTime = selectedTime.Date.AddHours(23);     // 11:00 PM
+            DateTime startTime = selectedTime.Date.AddHours(9);
+            DateTime endTime = selectedTime.Date.AddHours(23);
 
-            if (selectedTime < DateTime.Now.AddMinutes(30))
-            {
-                MessageBox.Show("Giờ chiếu chỉ được thêm sau 30 phút kể từ hiện tại.", "Thời gian không hợp lệ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
+            //if (selectedTime < DateTime.Now.AddMinutes(30))
+            //{
+            //    MessageBox.Show("Giờ chiếu chỉ được thêm sau 30 phút kể từ hiện tại.", "Thời gian không hợp lệ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //    return;
+            //}
 
             if (selectedTime < startTime || selectedTime > endTime)
             {
@@ -564,18 +565,27 @@ namespace Qlyrapchieuphim
                 if (row.Cells[1].Value != null)
                 {
                     DateTime existingTime;
-                    if (DateTime.TryParse(row.Cells[1].Value.ToString(), out existingTime))
+                    if (DateTime.TryParse(row.Cells[1].Value.ToString().Trim(), out existingTime))
                     {
                         existingTime = new DateTime(existingTime.Year, existingTime.Month, existingTime.Day, existingTime.Hour, existingTime.Minute, 0);
+
+                        // ❌ Trùng giờ
                         if (existingTime.TimeOfDay == selectedTime.TimeOfDay)
                         {
                             MessageBox.Show("Giờ chiếu đã tồn tại!", "Trùng giờ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             return;
                         }
+
+                        // ❌ Quá gần giờ đã có (dưới 30 phút + duration)
+                        double minutesDiff = Math.Abs((selectedTime - existingTime).TotalMinutes);
+                        if (minutesDiff < (30 + duration))
+                        {
+                            MessageBox.Show($"Giờ chiếu phải cách suất chiếu khác ít nhất {30 + duration} phút!", "Giờ chiếu quá gần", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            return;
+                        }
                     }
                 }
             }
-
 
             string id = (dataGridView_FormThemSuatChieu_BangGioChieu.Rows.Count + 1).ToString();
             string gio = selectedTime.ToString("hh:mm tt");
@@ -668,5 +678,39 @@ namespace Qlyrapchieuphim
             }
         }
 
+        private void cb_FormThemSuatChieu_TenPhim_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Lấy chuỗi từ ComboBox (ví dụ: "Avengers (ID: 12)")
+            string selected = cb_FormThemSuatChieu_TenPhim.SelectedItem?.ToString();
+
+            if (!string.IsNullOrEmpty(selected))
+            {
+                // Tách MovieID từ cuối chuỗi bằng Regex
+                var match = Regex.Match(selected, @"\(ID:\s*(\d+)\)");
+                if (match.Success && int.TryParse(match.Groups[1].Value, out int movieId))
+                {
+                    duration = GetMovieDuration(movieId);
+
+                    // ✅ Dùng duration tại đây
+                    // Ví dụ: lbl_Duration.Text = $"{duration} phút";
+                }
+            }
+        }
+
+        private int GetMovieDuration(int movieId)
+        {
+            if (movieId < 1) return 0;
+            using (SqlConnection conn = Helper.getdbConnection())
+            {
+                string SqlQuery = "SELECT Duration FROM Movies " +
+                    "WHERE MovieID = @movieId";
+                using (SqlCommand cmd = new SqlCommand(SqlQuery, conn))
+                {
+                    cmd.Parameters.Add("@movieId", SqlDbType.Int).Value = movieId;
+                    conn.Open();
+                    return (int)cmd.ExecuteScalar();
+                }
+            }
+        }
     }
 }

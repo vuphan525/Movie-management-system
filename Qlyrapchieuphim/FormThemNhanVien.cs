@@ -184,7 +184,6 @@ namespace Qlyrapchieuphim
             lbl_FormThemNV_HoTen.Clear();
             lbl_FormThemNV_SDT.Clear();
             date_FormThemNV_NgaySinh.Value = DateTime.Today.AddYears(-19);
-            lbl_FormThemNV_MaNV.Clear();
             cb_FormThemNV_ChucVu.SelectedIndex = 0;
             lbl_FormThemNV_Username.Clear();
             lbl_FormThemNV_Password.Clear();

@@ -133,5 +133,9 @@ namespace Qlyrapchieuphim.FormEdit
                 conn.Close();
         }
 
+        private void lbl_FormSuaPhongChieu_SoGhe_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
