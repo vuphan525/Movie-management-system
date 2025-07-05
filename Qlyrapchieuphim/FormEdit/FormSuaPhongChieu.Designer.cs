@@ -52,6 +52,7 @@
             this.lbl_FormSuaPhongChieu_SoGhe.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.lbl_FormSuaPhongChieu_SoGhe.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.lbl_FormSuaPhongChieu_SoGhe.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.lbl_FormSuaPhongChieu_SoGhe.Enabled = false;
             this.lbl_FormSuaPhongChieu_SoGhe.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.lbl_FormSuaPhongChieu_SoGhe.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.lbl_FormSuaPhongChieu_SoGhe.ForeColor = System.Drawing.Color.Black;
@@ -61,9 +62,11 @@
             this.lbl_FormSuaPhongChieu_SoGhe.Name = "lbl_FormSuaPhongChieu_SoGhe";
             this.lbl_FormSuaPhongChieu_SoGhe.PasswordChar = '\0';
             this.lbl_FormSuaPhongChieu_SoGhe.PlaceholderText = "";
+            this.lbl_FormSuaPhongChieu_SoGhe.ReadOnly = true;
             this.lbl_FormSuaPhongChieu_SoGhe.SelectedText = "";
             this.lbl_FormSuaPhongChieu_SoGhe.Size = new System.Drawing.Size(437, 41);
             this.lbl_FormSuaPhongChieu_SoGhe.TabIndex = 120;
+            this.lbl_FormSuaPhongChieu_SoGhe.TextChanged += new System.EventHandler(this.lbl_FormSuaPhongChieu_SoGhe_TextChanged);
             // 
             // label6
             // 
@@ -87,7 +90,7 @@
             this.CapNhat.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CapNhat.ForeColor = System.Drawing.Color.White;
             this.CapNhat.Location = new System.Drawing.Point(279, 420);
-            this.CapNhat.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CapNhat.Margin = new System.Windows.Forms.Padding(4);
             this.CapNhat.Name = "CapNhat";
             this.CapNhat.Size = new System.Drawing.Size(175, 44);
             this.CapNhat.TabIndex = 117;
@@ -222,7 +225,7 @@
             "VIP",
             "IMAX"});
             this.cb_FormSuaPhongChieu_DinhDang.Location = new System.Drawing.Point(20, 256);
-            this.cb_FormSuaPhongChieu_DinhDang.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cb_FormSuaPhongChieu_DinhDang.Margin = new System.Windows.Forms.Padding(4);
             this.cb_FormSuaPhongChieu_DinhDang.Name = "cb_FormSuaPhongChieu_DinhDang";
             this.cb_FormSuaPhongChieu_DinhDang.Size = new System.Drawing.Size(433, 36);
             this.cb_FormSuaPhongChieu_DinhDang.TabIndex = 121;
@@ -238,7 +241,7 @@
             this.btn_Refresh.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Refresh.ForeColor = System.Drawing.Color.White;
             this.btn_Refresh.Location = new System.Drawing.Point(61, 420);
-            this.btn_Refresh.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_Refresh.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Refresh.Name = "btn_Refresh";
             this.btn_Refresh.Size = new System.Drawing.Size(175, 44);
             this.btn_Refresh.TabIndex = 122;
@@ -264,7 +267,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.guna2Button2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormSuaPhongChieu";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;

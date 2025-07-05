@@ -77,6 +77,7 @@
             this.lbl_FormThemPhim_MoTa.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.lbl_FormThemPhim_MoTa.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.lbl_FormThemPhim_MoTa.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.lbl_FormThemPhim_MoTa.ForeColor = System.Drawing.Color.Black;
             this.lbl_FormThemPhim_MoTa.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.lbl_FormThemPhim_MoTa.Location = new System.Drawing.Point(364, 162);
             this.lbl_FormThemPhim_MoTa.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);

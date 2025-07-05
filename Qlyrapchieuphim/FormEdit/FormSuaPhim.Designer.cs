@@ -78,7 +78,7 @@
             this.AddButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AddButton.ForeColor = System.Drawing.Color.White;
             this.AddButton.Location = new System.Drawing.Point(511, 778);
-            this.AddButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AddButton.Margin = new System.Windows.Forms.Padding(4);
             this.AddButton.Name = "AddButton";
             this.AddButton.Size = new System.Drawing.Size(183, 44);
             this.AddButton.TabIndex = 108;
@@ -122,7 +122,7 @@
             this.date_FormSuaPhim_NgayPhatHanh.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.date_FormSuaPhim_NgayPhatHanh.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.date_FormSuaPhim_NgayPhatHanh.Location = new System.Drawing.Point(19, 651);
-            this.date_FormSuaPhim_NgayPhatHanh.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.date_FormSuaPhim_NgayPhatHanh.Margin = new System.Windows.Forms.Padding(4);
             this.date_FormSuaPhim_NgayPhatHanh.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.date_FormSuaPhim_NgayPhatHanh.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.date_FormSuaPhim_NgayPhatHanh.Name = "date_FormSuaPhim_NgayPhatHanh";
@@ -201,7 +201,7 @@
             // 
             this.pictureBox_FormSuaPhim_Poster.BackColor = System.Drawing.SystemColors.Control;
             this.pictureBox_FormSuaPhim_Poster.Location = new System.Drawing.Point(361, 423);
-            this.pictureBox_FormSuaPhim_Poster.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox_FormSuaPhim_Poster.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox_FormSuaPhim_Poster.Name = "pictureBox_FormSuaPhim_Poster";
             this.pictureBox_FormSuaPhim_Poster.Size = new System.Drawing.Size(333, 215);
             this.pictureBox_FormSuaPhim_Poster.TabIndex = 110;
@@ -219,6 +219,7 @@
             this.lbl_FormSuaPhim_MoTa.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.lbl_FormSuaPhim_MoTa.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.lbl_FormSuaPhim_MoTa.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.lbl_FormSuaPhim_MoTa.ForeColor = System.Drawing.Color.Black;
             this.lbl_FormSuaPhim_MoTa.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.lbl_FormSuaPhim_MoTa.Location = new System.Drawing.Point(361, 162);
             this.lbl_FormSuaPhim_MoTa.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -293,7 +294,7 @@
             "Sắp chiếu",
             "Đã kết thúc"});
             this.cb_FormSuaPhim_TinhTrang.Location = new System.Drawing.Point(19, 423);
-            this.cb_FormSuaPhim_TinhTrang.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cb_FormSuaPhim_TinhTrang.Margin = new System.Windows.Forms.Padding(4);
             this.cb_FormSuaPhim_TinhTrang.Name = "cb_FormSuaPhim_TinhTrang";
             this.cb_FormSuaPhim_TinhTrang.Size = new System.Drawing.Size(312, 36);
             this.cb_FormSuaPhim_TinhTrang.TabIndex = 118;
@@ -319,7 +320,7 @@
             "Phim lãng mạn",
             "Phim chính kịch"});
             this.cb_FormSuaPhim_TheLoai.Location = new System.Drawing.Point(19, 245);
-            this.cb_FormSuaPhim_TheLoai.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cb_FormSuaPhim_TheLoai.Margin = new System.Windows.Forms.Padding(4);
             this.cb_FormSuaPhim_TheLoai.Name = "cb_FormSuaPhim_TheLoai";
             this.cb_FormSuaPhim_TheLoai.Size = new System.Drawing.Size(312, 36);
             this.cb_FormSuaPhim_TheLoai.TabIndex = 117;
@@ -360,7 +361,7 @@
             this.btn_FormSuaPhim_ThemPoster.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_FormSuaPhim_ThemPoster.ForeColor = System.Drawing.Color.White;
             this.btn_FormSuaPhim_ThemPoster.Location = new System.Drawing.Point(449, 646);
-            this.btn_FormSuaPhim_ThemPoster.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_FormSuaPhim_ThemPoster.Margin = new System.Windows.Forms.Padding(4);
             this.btn_FormSuaPhim_ThemPoster.Name = "btn_FormSuaPhim_ThemPoster";
             this.btn_FormSuaPhim_ThemPoster.Size = new System.Drawing.Size(144, 44);
             this.btn_FormSuaPhim_ThemPoster.TabIndex = 115;
@@ -430,7 +431,7 @@
             this.date_FormSuaPhim_NgayNhap.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.date_FormSuaPhim_NgayNhap.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.date_FormSuaPhim_NgayNhap.Location = new System.Drawing.Point(19, 519);
-            this.date_FormSuaPhim_NgayNhap.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.date_FormSuaPhim_NgayNhap.Margin = new System.Windows.Forms.Padding(4);
             this.date_FormSuaPhim_NgayNhap.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.date_FormSuaPhim_NgayNhap.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.date_FormSuaPhim_NgayNhap.Name = "date_FormSuaPhim_NgayNhap";
@@ -449,7 +450,7 @@
             this.btn_Refresh.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Refresh.ForeColor = System.Drawing.Color.White;
             this.btn_Refresh.Location = new System.Drawing.Point(285, 778);
-            this.btn_Refresh.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_Refresh.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Refresh.Name = "btn_Refresh";
             this.btn_Refresh.Size = new System.Drawing.Size(183, 44);
             this.btn_Refresh.TabIndex = 131;
@@ -488,7 +489,7 @@
             this.Controls.Add(this.label8);
             this.Controls.Add(this.guna2Button2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormSuaPhim";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;

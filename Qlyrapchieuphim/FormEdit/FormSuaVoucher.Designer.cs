@@ -85,6 +85,7 @@
             this.lbl_FormSuaVoucher_MoTa.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.lbl_FormSuaVoucher_MoTa.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.lbl_FormSuaVoucher_MoTa.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.lbl_FormSuaVoucher_MoTa.ForeColor = System.Drawing.Color.Black;
             this.lbl_FormSuaVoucher_MoTa.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.lbl_FormSuaVoucher_MoTa.Location = new System.Drawing.Point(385, 249);
             this.lbl_FormSuaVoucher_MoTa.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -208,7 +209,7 @@
             this.date_FormSuaVoucher_NgayHetHan.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.date_FormSuaVoucher_NgayHetHan.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.date_FormSuaVoucher_NgayHetHan.Location = new System.Drawing.Point(19, 248);
-            this.date_FormSuaVoucher_NgayHetHan.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.date_FormSuaVoucher_NgayHetHan.Margin = new System.Windows.Forms.Padding(4);
             this.date_FormSuaVoucher_NgayHetHan.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.date_FormSuaVoucher_NgayHetHan.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.date_FormSuaVoucher_NgayHetHan.Name = "date_FormSuaVoucher_NgayHetHan";
@@ -228,7 +229,7 @@
             this.them.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.them.ForeColor = System.Drawing.Color.White;
             this.them.Location = new System.Drawing.Point(540, 528);
-            this.them.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.them.Margin = new System.Windows.Forms.Padding(4);
             this.them.Name = "them";
             this.them.Size = new System.Drawing.Size(168, 44);
             this.them.TabIndex = 109;
@@ -262,7 +263,7 @@
             "NOT ACTIVE",
             "ACTIVE"});
             this.cb_FormSuaVoucher_TrangThai.Location = new System.Drawing.Point(385, 168);
-            this.cb_FormSuaVoucher_TrangThai.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cb_FormSuaVoucher_TrangThai.Margin = new System.Windows.Forms.Padding(4);
             this.cb_FormSuaVoucher_TrangThai.Name = "cb_FormSuaVoucher_TrangThai";
             this.cb_FormSuaVoucher_TrangThai.Size = new System.Drawing.Size(323, 36);
             this.cb_FormSuaVoucher_TrangThai.TabIndex = 105;
@@ -341,7 +342,7 @@
             this.btn_Refresh.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Refresh.ForeColor = System.Drawing.Color.White;
             this.btn_Refresh.Location = new System.Drawing.Point(341, 528);
-            this.btn_Refresh.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_Refresh.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Refresh.Name = "btn_Refresh";
             this.btn_Refresh.Size = new System.Drawing.Size(168, 44);
             this.btn_Refresh.TabIndex = 122;
@@ -377,7 +378,7 @@
             this.Controls.Add(this.guna2Button2);
             this.Controls.Add(this.label2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormSuaVoucher";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;

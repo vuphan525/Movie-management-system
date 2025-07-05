@@ -50,6 +50,7 @@
             this.lbl_FormThemPhongChieu_SoGhe.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.lbl_FormThemPhongChieu_SoGhe.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.lbl_FormThemPhongChieu_SoGhe.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.lbl_FormThemPhongChieu_SoGhe.Enabled = false;
             this.lbl_FormThemPhongChieu_SoGhe.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.lbl_FormThemPhongChieu_SoGhe.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.lbl_FormThemPhongChieu_SoGhe.ForeColor = System.Drawing.Color.Black;
@@ -59,6 +60,7 @@
             this.lbl_FormThemPhongChieu_SoGhe.Name = "lbl_FormThemPhongChieu_SoGhe";
             this.lbl_FormThemPhongChieu_SoGhe.PasswordChar = '\0';
             this.lbl_FormThemPhongChieu_SoGhe.PlaceholderText = "";
+            this.lbl_FormThemPhongChieu_SoGhe.ReadOnly = true;
             this.lbl_FormThemPhongChieu_SoGhe.SelectedText = "";
             this.lbl_FormThemPhongChieu_SoGhe.Size = new System.Drawing.Size(440, 41);
             this.lbl_FormThemPhongChieu_SoGhe.TabIndex = 109;

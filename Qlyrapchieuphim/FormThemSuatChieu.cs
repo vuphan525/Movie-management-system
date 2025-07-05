@@ -548,11 +548,11 @@ namespace Qlyrapchieuphim
             DateTime startTime = selectedTime.Date.AddHours(9);
             DateTime endTime = selectedTime.Date.AddHours(23);
 
-            if (selectedTime < DateTime.Now.AddMinutes(30))
-            {
-                MessageBox.Show("Giờ chiếu chỉ được thêm sau 30 phút kể từ hiện tại.", "Thời gian không hợp lệ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
+            //if (selectedTime < DateTime.Now.AddMinutes(30))
+            //{
+            //    MessageBox.Show("Giờ chiếu chỉ được thêm sau 30 phút kể từ hiện tại.", "Thời gian không hợp lệ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //    return;
+            //}
 
             if (selectedTime < startTime || selectedTime > endTime)
             {
