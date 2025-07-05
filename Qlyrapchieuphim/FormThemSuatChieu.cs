@@ -118,8 +118,8 @@ namespace Qlyrapchieuphim
                 cb_FormThemSuatChieu_TenPhim.SelectedIndex = 0;
             if (CheckRoom())
                 cb_FormThemSuatChieu_PhongChieu.SelectedIndex = 0;
-            date_FormThemSuatChieu_NgayChieu.Value = DateTime.Today.AddDays(1);
-            date_FormThemSuatChieu_GioChieu.Value = DateTime.Now.AddHours(1);
+            date_FormThemSuatChieu_NgayChieu.Value = DateTime.Today;
+            date_FormThemSuatChieu_GioChieu.Value = DateTime.Now;
 
             loadDataGridView();
         }
