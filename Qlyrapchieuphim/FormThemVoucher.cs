@@ -155,6 +155,8 @@ namespace Qlyrapchieuphim
             else if (mgia > 100)
                 lbl_FormThemVoucher_DiscountPercent.Text = "100";
         }
+      
+
 
         private void date_FormThemVoucher_NgayHetHan_ValueChanged(object sender, EventArgs e)
         {
@@ -163,5 +165,21 @@ namespace Qlyrapchieuphim
             else
                 cb_FormThemVoucher_TrangThai.SelectedIndex = 1; //ACTIVE
         }
+
+        private void lbl_FormThemVoucher_DiscountPercent_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Cho phép: số, dấu chấm, và phím điều khiển (backspace, delete,...)
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.')
+            {
+                e.Handled = true; // chặn ký tự
+            }
+
+            // Chỉ cho phép một dấu chấm duy nhất
+            if (e.KeyChar == '.' && (sender as TextBox).Text.Contains("."))
+            {
+                e.Handled = true;
+            }
+        }
+
     }
 }
