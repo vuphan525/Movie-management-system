@@ -268,6 +268,24 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form2.Designer.cs">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form3.Designer.cs">
+      <DependentUpon>Form3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form_SuaGioChieu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form_SuaGioChieu.Designer.cs">
+      <DependentUpon>form_SuaGioChieu.cs</DependentUpon>
+    </Compile>
     <Compile Include="formbanve.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -369,6 +387,12 @@
     </Compile>
     <Compile Include="FormThemVoucher.Designer.cs">
       <DependentUpon>FormThemVoucher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form_SuaNgayChieu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form_SuaNgayChieu.Designer.cs">
+      <DependentUpon>form_SuaNgayChieu.cs</DependentUpon>
     </Compile>
     <Compile Include="Helper.cs" />
     <Compile Include="Hoadon.cs">
@@ -499,6 +523,15 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form2.resx">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form3.resx">
+      <DependentUpon>Form3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form_SuaGioChieu.resx">
+      <DependentUpon>form_SuaGioChieu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="formbanve.resx">
       <DependentUpon>formbanve.cs</DependentUpon>
     </EmbeddedResource>
@@ -549,6 +582,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormThemVoucher.resx">
       <DependentUpon>FormThemVoucher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form_SuaNgayChieu.resx">
+      <DependentUpon>form_SuaNgayChieu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Hoadon.resx">
       <DependentUpon>Hoadon.cs</DependentUpon>

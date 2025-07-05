@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.Data.SqlClient;
+using System.Globalization;
 
 namespace Qlyrapchieuphim
 {
@@ -25,6 +26,76 @@ namespace Qlyrapchieuphim
 
         }
 
+        private void loadDataGridView()
+        {
+            // ====== NGÀY CHIẾU ======
+            var dgvNgay = dataGridView_FormThemSuatChieu_BangNgayChieu;
+
+            dgvNgay.AllowUserToAddRows = false;
+            dgvNgay.RowTemplate.Height = 40;
+            dgvNgay.ColumnHeadersHeight = 40;
+            dgvNgay.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvNgay.MultiSelect = false;
+            dgvNgay.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+            if (dgvNgay.Columns.Count == 0)
+            {
+                dgvNgay.Columns.Add("STT", "STT");
+                dgvNgay.Columns.Add("Time", "Ngày chiếu");
+
+                var actionColumn = new DataGridViewTextBoxColumn();
+                actionColumn.Name = "Actions";
+                actionColumn.HeaderText = "Actions";
+                dgvNgay.Columns.Add(actionColumn);
+            }
+
+            // ====== GIỜ CHIẾU ======
+            var dgvGio = dataGridView_FormThemSuatChieu_BangGioChieu;
+
+            dgvGio.AllowUserToAddRows = false;
+            dgvGio.RowTemplate.Height = 40;
+            dgvGio.ColumnHeadersHeight = 40;
+            dgvGio.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvGio.MultiSelect = false;
+            dgvGio.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+            if (dgvGio.Columns.Count == 0)
+            {
+                dgvGio.Columns.Add("STT", "STT");
+                dgvGio.Columns.Add("Time", "Giờ chiếu");
+
+                var actionColumn2 = new DataGridViewTextBoxColumn();
+                actionColumn2.Name = "Actions";
+                actionColumn2.HeaderText = "Actions";
+                dgvGio.Columns.Add(actionColumn2);
+            }
+
+            date_FormThemSuatChieu_GioChieu.ShowUpDown = true;
+            date_FormThemSuatChieu_GioChieu.Format = DateTimePickerFormat.Time;
+
+            // ====== PHÒNG CHIẾU ======
+            var dgvRap = dataGridView_FormThemSuatChieu_BangPhongChieu;
+
+            dgvRap.AllowUserToAddRows = false;
+            dgvRap.RowTemplate.Height = 40;
+            dgvRap.ColumnHeadersHeight = 40;
+            dgvRap.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvRap.MultiSelect = false;
+            dgvRap.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+            if (dgvRap.Columns.Count == 0)
+            {
+                dgvRap.Columns.Add("STT", "STT");
+                dgvRap.Columns.Add("Room", "Phòng chiếu");
+
+                var actionColumn2 = new DataGridViewTextBoxColumn();
+                actionColumn2.Name = "Actions";
+                actionColumn2.HeaderText = "Actions";
+                dgvRap.Columns.Add(actionColumn2);
+            }
+        }
+
+
         private void guna2Button2_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -35,12 +106,19 @@ namespace Qlyrapchieuphim
             conn = Helper.getdbConnection();
             date_FormThemSuatChieu_NgayChieu.Format = DateTimePickerFormat.Custom;
             date_FormThemSuatChieu_NgayChieu.CustomFormat = "dd/MM/yyyy";
+
+            date_FormThemSuatChieu_GioChieu.ShowUpDown = true;
+            date_FormThemSuatChieu_GioChieu.Format = DateTimePickerFormat.Custom;
+            date_FormThemSuatChieu_GioChieu.CustomFormat = "hh:mm";
+
             if (CheckMovie())
                 cb_FormThemSuatChieu_TenPhim.SelectedIndex = 0;
             if (CheckRoom())
                 cb_FormThemSuatChieu_PhongChieu.SelectedIndex = 0;
-            date_FormThemSuatChieu_NgayChieu.Value = DateTime.Now + TimeSpan.FromDays(1); ;
-            date_FormThemSuatChieu_GioChieu.Value = DateTime.Now + TimeSpan.FromHours(1);
+            date_FormThemSuatChieu_NgayChieu.Value = DateTime.Now;
+            date_FormThemSuatChieu_GioChieu.Value = DateTime.Now;
+
+            loadDataGridView();
         }
 
         private bool CheckRoom()
@@ -159,6 +237,9 @@ namespace Qlyrapchieuphim
         private void btn_Refresh_Click(object sender, EventArgs e)
         {
             this.Refresh();
+            dataGridView_FormThemSuatChieu_BangNgayChieu.Rows.Clear();
+            dataGridView_FormThemSuatChieu_BangGioChieu.Rows.Clear();
+            dataGridView_FormThemSuatChieu_BangPhongChieu.Rows.Clear();
         }
          
         private void them_Click(object sender, EventArgs e)
@@ -231,5 +312,339 @@ namespace Qlyrapchieuphim
                     conn.Close();
             }
         }
+
+        private void date_FormThemSuatChieu_BangNgayChieu_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            if (e.ColumnIndex >= 0 && dataGridView_FormThemSuatChieu_BangNgayChieu.Columns[e.ColumnIndex].Name == "Actions" && e.RowIndex >= 0)
+            {
+                e.PaintBackground(e.ClipBounds, true);
+                e.Handled = true;
+
+                int iconSize = 24;
+                int padding = 8;
+                int iconY = e.CellBounds.Y + (e.CellBounds.Height - iconSize) / 2;
+                int editX = e.CellBounds.X + padding;
+                int deleteX = editX + iconSize + padding;
+
+                // Vẽ icon sửa
+                e.Graphics.DrawImage(Properties.Resources.icons8_edit_32, new Rectangle(editX, iconY, iconSize, iconSize));
+
+                // Vẽ icon xóa
+                e.Graphics.DrawImage(Properties.Resources.icons8_delete_32, new Rectangle(deleteX, iconY, iconSize, iconSize));
+            }
+        }
+
+        private void date_FormThemSuatChieu_BangGioChieu_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            if (e.ColumnIndex >= 0 && dataGridView_FormThemSuatChieu_BangGioChieu.Columns[e.ColumnIndex].Name == "Actions" && e.RowIndex >= 0)
+            {
+                e.PaintBackground(e.ClipBounds, true);
+                e.Handled = true;
+
+                int iconSize = 24;
+                int padding = 8;
+                int iconY = e.CellBounds.Y + (e.CellBounds.Height - iconSize) / 2;
+                int editX = e.CellBounds.X + padding;
+                int deleteX = editX + iconSize + padding;
+
+                // Vẽ icon sửa
+                e.Graphics.DrawImage(Properties.Resources.icons8_edit_32, new Rectangle(editX, iconY, iconSize, iconSize));
+
+                // Vẽ icon xóa
+                e.Graphics.DrawImage(Properties.Resources.icons8_delete_32, new Rectangle(deleteX, iconY, iconSize, iconSize));
+            }
+        }
+
+        private void date_FormThemSuatChieu_BangNgayChieu_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && dataGridView_FormThemSuatChieu_BangNgayChieu.Columns[e.ColumnIndex].Name == "Actions")
+            {
+                int iconSize = 24;
+                int padding = 8;
+
+                var mousePos = dataGridView_FormThemSuatChieu_BangNgayChieu.PointToClient(Cursor.Position);
+                var cellRect = dataGridView_FormThemSuatChieu_BangNgayChieu.GetCellDisplayRectangle(e.ColumnIndex, e.RowIndex, false);
+
+                int clickX = mousePos.X - cellRect.X;
+
+                int editX = padding;
+                int deleteX = editX + iconSize + padding;
+
+                if (clickX >= editX && clickX <= editX + iconSize)
+                {
+                    // Sửa
+                    string thoigianStr = dataGridView_FormThemSuatChieu_BangNgayChieu.Rows[e.RowIndex].Cells["Time"].Value.ToString();
+
+                    try
+                    {
+                        DateTime thoigian = DateTime.ParseExact(thoigianStr, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+
+                        // Trong CellClick ở form cha:
+                        List<DateTime> danhSachNgayKhac = new List<DateTime>();
+                        for (int i = 0; i < dataGridView_FormThemSuatChieu_BangNgayChieu.Rows.Count; i++)
+                        {
+                            if (i == e.RowIndex) continue; // bỏ qua dòng đang sửa
+                            var val = dataGridView_FormThemSuatChieu_BangNgayChieu.Rows[i].Cells["Time"].Value;
+                            if (val != null && DateTime.TryParseExact(val.ToString(), "dd/MM/yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime dt))
+                            {
+                                danhSachNgayKhac.Add(dt.Date);
+                            }
+                        }
+
+                        form_SuaNgayChieu f = new form_SuaNgayChieu(thoigian, danhSachNgayKhac);
+                        if (f.ShowDialog() == DialogResult.OK)
+                        {
+                            DateTime thoiGianMoi = f.KetQuaThoiGian;
+                            dataGridView_FormThemSuatChieu_BangNgayChieu.Rows[e.RowIndex].Cells["Time"].Value = thoiGianMoi.ToString("dd/MM/yyyy");
+                        }
+                    }
+                    catch (FormatException)
+                    {
+                        MessageBox.Show("Định dạng ngày không hợp lệ.");
+                    }
+                }
+                else if (clickX >= deleteX && clickX <= deleteX + iconSize)
+                {
+                    // Xóa
+                    DialogResult result = MessageBox.Show("Bạn có chắc muốn xóa dòng này?", "Xác nhận", MessageBoxButtons.YesNo);
+                    if (result == DialogResult.Yes)
+                    {
+                        dataGridView_FormThemSuatChieu_BangNgayChieu.Rows.RemoveAt(e.RowIndex);
+                        CapNhatSTT(dataGridView_FormThemSuatChieu_BangNgayChieu);
+                    }
+                }
+            }
+        }
+
+
+        private void date_FormThemSuatChieu_BangGioChieu_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && dataGridView_FormThemSuatChieu_BangGioChieu.Columns[e.ColumnIndex].Name == "Actions")
+            {
+                int iconSize = 24;
+                int padding = 8;
+
+                var mousePos = dataGridView_FormThemSuatChieu_BangGioChieu.PointToClient(Cursor.Position);
+                var cellRect = dataGridView_FormThemSuatChieu_BangGioChieu.GetCellDisplayRectangle(e.ColumnIndex, e.RowIndex, false);
+
+                int clickX = mousePos.X - cellRect.X;
+                int editX = padding;
+                int deleteX = editX + iconSize + padding;
+
+                if (clickX >= editX && clickX <= editX + iconSize)
+                {
+                    // Sửa
+                    string thoigianStr = dataGridView_FormThemSuatChieu_BangGioChieu.Rows[e.RowIndex].Cells["Time"].Value.ToString();
+
+                    try
+                    {
+                        DateTime thoigian = DateTime.ParseExact(thoigianStr, "hh:mm tt", CultureInfo.InvariantCulture);
+
+                        // Trong CellClick ở form cha:
+                        List<DateTime> danhSachGioKhac = new List<DateTime>();
+
+                        for (int i = 0; i < dataGridView_FormThemSuatChieu_BangGioChieu.Rows.Count; i++)
+                        {
+                            if (i == e.RowIndex) continue; // bỏ qua dòng đang sửa
+
+                            var val = dataGridView_FormThemSuatChieu_BangGioChieu.Rows[i].Cells["Time"].Value;
+                            if (val != null && DateTime.TryParseExact(val.ToString(), "hh:mm tt", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime dt))
+                            {
+                                danhSachGioKhac.Add(dt);
+                            }
+                        }
+
+                        // Gửi vào form sửa
+                        form_SuaGioChieu f = new form_SuaGioChieu(thoigian, danhSachGioKhac);
+                        if (f.ShowDialog() == DialogResult.OK)
+                        {
+                            DateTime thoiGianMoi = f.KetQuaThoiGian;
+                            dataGridView_FormThemSuatChieu_BangGioChieu.Rows[e.RowIndex].Cells["Time"].Value = thoiGianMoi.ToString("hh:mm tt");
+                        }
+                    }
+                    catch (FormatException)
+                    {
+                        MessageBox.Show("Định dạng ngày không hợp lệ.");
+                    }
+                }
+                else if (clickX >= deleteX && clickX <= deleteX + iconSize)
+                {
+                    // Xóa
+                    DialogResult result = MessageBox.Show("Bạn có chắc muốn xóa dòng này?", "Xác nhận", MessageBoxButtons.YesNo);
+                    if (result == DialogResult.Yes)
+                    {
+                        dataGridView_FormThemSuatChieu_BangGioChieu.Rows.RemoveAt(e.RowIndex);
+                        CapNhatSTT(dataGridView_FormThemSuatChieu_BangGioChieu);
+                    }
+                }
+            }
+        }
+
+
+        private void date_FormThemSuatChieu_ThemNgayChieu_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void date_FormThemSuatChieu_ThemGioChieu_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void btn_FormThemSuatChieu_ThemNgayChieu_Click(object sender, EventArgs e)
+        {
+            DateTime ngayChon = date_FormThemSuatChieu_NgayChieu.Value.Date;
+
+            // Chỉ cho phép chọn ngày từ hôm nay trở đi
+            if (ngayChon < DateTime.Today)
+            {
+                MessageBox.Show("Chỉ được chọn ngày chiếu từ hôm nay trở đi.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            string ngay = ngayChon.ToString("dd/MM/yyyy");
+
+            // Kiểm tra xem ngày đã tồn tại trong DataGridView chưa
+            foreach (DataGridViewRow row in dataGridView_FormThemSuatChieu_BangNgayChieu.Rows)
+            {
+                if (row.Cells["Time"].Value != null && row.Cells["Time"].Value.ToString() == ngay)
+                {
+                    MessageBox.Show("Ngày chiếu này đã được thêm rồi.", "Trùng ngày", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+            }
+
+            string id = (dataGridView_FormThemSuatChieu_BangNgayChieu.Rows.Count + 1).ToString();
+            dataGridView_FormThemSuatChieu_BangNgayChieu.Rows.Add(id, ngay, "");
+        }
+
+        private void btn_FormThemSuatChieu_ThemGioChieu_Click(object sender, EventArgs e)
+        {
+            DateTime selectedTime = date_FormThemSuatChieu_GioChieu.Value;
+            selectedTime = new DateTime(selectedTime.Year, selectedTime.Month, selectedTime.Day, selectedTime.Hour, selectedTime.Minute, 0);
+
+            // Giới hạn từ 9:00 AM đến 11:00 PM
+            DateTime startTime = selectedTime.Date.AddHours(9);    // 9:00 AM
+            DateTime endTime = selectedTime.Date.AddHours(23);     // 11:00 PM
+
+            if (selectedTime < DateTime.Now.AddMinutes(30))
+            {
+                MessageBox.Show("Giờ chiếu chỉ được thêm sau 30 phút kể từ hiện tại.", "Thời gian không hợp lệ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (selectedTime < startTime || selectedTime > endTime)
+            {
+                MessageBox.Show("Giờ chiếu chỉ được phép trong khoảng từ 9:00 sáng đến 11:00 tối.", "Thời gian không hợp lệ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            foreach (DataGridViewRow row in dataGridView_FormThemSuatChieu_BangGioChieu.Rows)
+            {
+                if (row.Cells[1].Value != null)
+                {
+                    DateTime existingTime;
+                    if (DateTime.TryParse(row.Cells[1].Value.ToString(), out existingTime))
+                    {
+                        existingTime = new DateTime(existingTime.Year, existingTime.Month, existingTime.Day, existingTime.Hour, existingTime.Minute, 0);
+                        if (existingTime.TimeOfDay == selectedTime.TimeOfDay)
+                        {
+                            MessageBox.Show("Giờ chiếu đã tồn tại!", "Trùng giờ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            return;
+                        }
+                    }
+                }
+            }
+
+
+            string id = (dataGridView_FormThemSuatChieu_BangGioChieu.Rows.Count + 1).ToString();
+            string gio = selectedTime.ToString("hh:mm tt");
+
+            dataGridView_FormThemSuatChieu_BangGioChieu.Rows.Add(id, gio, "");
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            if (cb_FormThemSuatChieu_PhongChieu.SelectedItem == null)
+            {
+                MessageBox.Show("Vui lòng chọn phòng chiếu.", "Thiếu thông tin", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            string roomName = cb_FormThemSuatChieu_PhongChieu.SelectedItem.ToString();
+            var dgv = dataGridView_FormThemSuatChieu_BangPhongChieu;
+
+            // Kiểm tra phòng đã tồn tại trong DataGridView chưa
+            bool exists = false;
+            foreach (DataGridViewRow row in dgv.Rows)
+            {
+                if (row.Cells["Room"].Value != null && row.Cells["Room"].Value.ToString() == roomName)
+                {
+                    exists = true;
+                    break;
+                }
+            }
+
+            if (exists)
+            {
+                MessageBox.Show("Phòng chiếu này đã được thêm.", "Trùng dữ liệu", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                int stt = dgv.Rows.Count + 1;
+                dgv.Rows.Add(stt.ToString(), roomName, "");
+            }
+        }
+
+        private void dataGridView_FormThemSuatChieu_BangPhongChieu_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            if (e.ColumnIndex >= 0 && dataGridView_FormThemSuatChieu_BangPhongChieu.Columns[e.ColumnIndex].Name == "Actions" && e.RowIndex >= 0)
+            {
+                e.PaintBackground(e.ClipBounds, true);
+                e.Handled = true;
+
+                int iconSize = 24;
+                int padding = 8;
+                int iconY = e.CellBounds.Y + (e.CellBounds.Height - iconSize) / 2;
+                int deleteX = e.CellBounds.X + padding;
+
+                // Chỉ vẽ icon XÓA
+                e.Graphics.DrawImage(Properties.Resources.icons8_delete_32, new Rectangle(deleteX, iconY, iconSize, iconSize));
+            }
+        }
+
+        private void dataGridView_FormThemSuatChieu_BangPhongChieu_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && dataGridView_FormThemSuatChieu_BangPhongChieu.Columns[e.ColumnIndex].Name == "Actions")
+            {
+                int iconSize = 24;
+                int padding = 8;
+
+                var mousePos = dataGridView_FormThemSuatChieu_BangPhongChieu.PointToClient(Cursor.Position);
+                var cellRect = dataGridView_FormThemSuatChieu_BangPhongChieu.GetCellDisplayRectangle(e.ColumnIndex, e.RowIndex, false);
+
+                int clickX = mousePos.X - cellRect.X;
+
+                // Chỉ xử lý XÓA
+                int deleteX = padding;
+
+                if (clickX >= deleteX && clickX <= deleteX + iconSize)
+                {
+                    DialogResult result = MessageBox.Show("Bạn có chắc muốn xóa dòng này?", "Xác nhận", MessageBoxButtons.YesNo);
+                    if (result == DialogResult.Yes)
+                    {
+                        dataGridView_FormThemSuatChieu_BangPhongChieu.Rows.RemoveAt(e.RowIndex);
+                        CapNhatSTT(dataGridView_FormThemSuatChieu_BangPhongChieu);
+                    }
+                }
+            }
+        }
+
+        private void CapNhatSTT(DataGridView dgv)
+        {
+            for (int i = 0; i < dgv.Rows.Count; i++)
+            {
+                dgv.Rows[i].Cells["STT"].Value = (i + 1).ToString();
+            }
+        }
+
     }
 }

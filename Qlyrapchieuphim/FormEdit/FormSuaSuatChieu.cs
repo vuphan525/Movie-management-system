@@ -40,6 +40,10 @@ namespace Qlyrapchieuphim.FormEdit
             date_FormSuaSuatChieu_NgayChieu.Format = DateTimePickerFormat.Custom;
             date_FormSuaSuatChieu_NgayChieu.CustomFormat = "dd/MM/yyyy";
 
+            date_FormSuaSuatChieu_GioChieu.ShowUpDown = true;
+            date_FormSuaSuatChieu_GioChieu.Format = DateTimePickerFormat.Custom;
+            date_FormSuaSuatChieu_GioChieu.CustomFormat = "hh:mm";
+
             if (CheckRoom()) 
                 cb_FormSuaSuatChieu_PhongChieu.SelectedIndex = 0;
             if (CheckMovie()) 
