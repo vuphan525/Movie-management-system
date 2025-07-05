@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.lbl_NormalSeatNum = new System.Windows.Forms.Label();
@@ -52,7 +52,7 @@
             this.btn_Print_Bill = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Separator2 = new Guna.UI2.WinForms.Guna2Separator();
             this.label15 = new System.Windows.Forms.Label();
-            this.tongtien = new System.Windows.Forms.Label();
+            this.tongtienve = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.cantra = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -64,7 +64,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.lbl_VIPSeatNum = new System.Windows.Forms.Label();
-            this.movCine = new System.Windows.Forms.Label();
+            this.movRoom = new System.Windows.Forms.Label();
             this.movTime = new System.Windows.Forms.Label();
             this.movDate = new System.Windows.Forms.Label();
             this.movName = new System.Windows.Forms.Label();
@@ -115,7 +115,7 @@
             this.guna2Panel1.Controls.Add(this.btn_Print_Bill);
             this.guna2Panel1.Controls.Add(this.guna2Separator2);
             this.guna2Panel1.Controls.Add(this.label15);
-            this.guna2Panel1.Controls.Add(this.tongtien);
+            this.guna2Panel1.Controls.Add(this.tongtienve);
             this.guna2Panel1.Controls.Add(this.label12);
             this.guna2Panel1.Controls.Add(this.cantra);
             this.guna2Panel1.Controls.Add(this.label13);
@@ -127,7 +127,7 @@
             this.guna2Panel1.Controls.Add(this.label9);
             this.guna2Panel1.Controls.Add(this.label8);
             this.guna2Panel1.Controls.Add(this.lbl_VIPSeatNum);
-            this.guna2Panel1.Controls.Add(this.movCine);
+            this.guna2Panel1.Controls.Add(this.movRoom);
             this.guna2Panel1.Controls.Add(this.movTime);
             this.guna2Panel1.Controls.Add(this.movDate);
             this.guna2Panel1.Controls.Add(this.movName);
@@ -167,28 +167,28 @@
             // 
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(61)))), ((int)(((byte)(204)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(61)))), ((int)(((byte)(204)))));
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(61)))), ((int)(((byte)(204)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(61)))), ((int)(((byte)(204)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colID,
             this.colTen,
             this.colGia,
             this.colQuantity});
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.Location = new System.Drawing.Point(357, 146);
             this.dataGridView1.Name = "dataGridView1";
@@ -384,18 +384,18 @@
             this.label15.TabIndex = 19;
             this.label15.Text = "Thanh toán";
             // 
-            // tongtien
+            // tongtienve
             // 
-            this.tongtien.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.tongtien.BackColor = System.Drawing.Color.White;
-            this.tongtien.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.tongtien.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tongtien.ForeColor = System.Drawing.Color.Red;
-            this.tongtien.Location = new System.Drawing.Point(479, 374);
-            this.tongtien.Name = "tongtien";
-            this.tongtien.Size = new System.Drawing.Size(173, 30);
-            this.tongtien.TabIndex = 16;
-            this.tongtien.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.tongtienve.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.tongtienve.BackColor = System.Drawing.Color.White;
+            this.tongtienve.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.tongtienve.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tongtienve.ForeColor = System.Drawing.Color.Red;
+            this.tongtienve.Location = new System.Drawing.Point(479, 374);
+            this.tongtienve.Name = "tongtienve";
+            this.tongtienve.Size = new System.Drawing.Size(173, 30);
+            this.tongtienve.TabIndex = 16;
+            this.tongtienve.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label12
             // 
@@ -480,7 +480,7 @@
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(111, 29);
             this.label10.TabIndex = 10;
-            this.label10.Text = "Rạp";
+            this.label10.Text = "Phòng chiếu";
             // 
             // label9
             // 
@@ -515,19 +515,18 @@
             this.lbl_VIPSeatNum.TabIndex = 7;
             this.lbl_VIPSeatNum.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // movCine
+            // movRoom
             // 
-            this.movCine.BackColor = System.Drawing.Color.White;
-            this.movCine.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.movCine.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.movCine.ForeColor = System.Drawing.Color.Black;
-            this.movCine.Location = new System.Drawing.Point(125, 239);
-            this.movCine.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.movCine.Name = "movCine";
-            this.movCine.Size = new System.Drawing.Size(206, 30);
-            this.movCine.TabIndex = 6;
-            this.movCine.Text = "Movie Land 01";
-            this.movCine.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.movRoom.BackColor = System.Drawing.Color.White;
+            this.movRoom.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.movRoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.movRoom.ForeColor = System.Drawing.Color.Black;
+            this.movRoom.Location = new System.Drawing.Point(125, 239);
+            this.movRoom.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.movRoom.Name = "movRoom";
+            this.movRoom.Size = new System.Drawing.Size(206, 30);
+            this.movRoom.TabIndex = 6;
+            this.movRoom.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // movTime
             // 
@@ -804,10 +803,10 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label lbl_VIPSeatNum;
-        private System.Windows.Forms.Label movCine;
+        private System.Windows.Forms.Label movRoom;
         private System.Windows.Forms.Label movTime;
         private System.Windows.Forms.Label movDate;
-        private System.Windows.Forms.Label tongtien;
+        private System.Windows.Forms.Label tongtienve;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label cantra;
         private System.Windows.Forms.Label label13;

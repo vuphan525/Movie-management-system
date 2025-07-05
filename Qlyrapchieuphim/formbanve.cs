@@ -28,6 +28,7 @@ namespace Qlyrapchieuphim
         SqlConnection conn = null;
         string picture_url = string.Empty;
         public int total = 0;
+        public int need_to_pay_no_discount = 0;
         public int need_to_pay = 0;
         public float discountPercent = 0;
         private int CustomerID = 1;
@@ -37,6 +38,8 @@ namespace Qlyrapchieuphim
         int food_total = 0;
         int drinks_total = 0;
         int cus_discount = 0;
+        int student_count = 0;
+        int children_count = 0;
         DataTable sp_list = new DataTable();
         Bansanpham spForm = new Bansanpham();
         readonly string projectFolder = AppDomain.CurrentDomain.BaseDirectory; // Thư mục dự án
@@ -116,10 +119,11 @@ namespace Qlyrapchieuphim
             int voucherId = -1;
             if (voucher.SelectedItem.ToString() != "NONE")
             {
-                voucherId = int.Parse(Helper.SubStringBetween(voucher.SelectedItem.ToString(), " (ID: ", ")"));
+                voucherId = int.Parse(Helper.SubStringBetween(voucher.SelectedItem.ToString(), " (ID: ", ") (Tối thiểu"));
             }
             return voucherId;
         }
+
         private string getUserRole()
         {
             string role = null;
@@ -182,7 +186,7 @@ namespace Qlyrapchieuphim
             count = (int)countCmd.ExecuteScalar() + 1;
 
 
-            SqlQuery = "SELECT VoucherID, Code FROM Vouchers";
+            SqlQuery = "SELECT VoucherID, Code, MinOrderValue FROM Vouchers";
             string[] vouchers = new string[count];
             SqlCommand cmd = new SqlCommand(SqlQuery, conn);
             SqlDataReader reader = cmd.ExecuteReader();
@@ -190,7 +194,10 @@ namespace Qlyrapchieuphim
             int i = 1;
             while (reader.Read())
             {
-                vouchers[i] = reader.GetString(1) + " (ID: " + reader.GetInt32(0).ToString() + ")";
+                string code = reader.GetString(1);
+                string id = reader.GetInt32(0).ToString();
+                string minOrder = reader.GetDecimal(2).ToString("N2");
+                vouchers[i] = $"{code} (ID: {id}) (Tối thiểu {minOrder})";
                 i++;
             }
             reader.Close();
@@ -198,10 +205,7 @@ namespace Qlyrapchieuphim
                 conn.Close();
             voucher.DataSource = vouchers;
             voucher.SelectedIndex = 0;
-            if (count > 0)
-                return true;
-            else
-                return false;
+            return count > 0;
         }
         private void InitializeSeats()
         {
@@ -356,21 +360,9 @@ namespace Qlyrapchieuphim
             {
                 try
                 {
-                    int b = string.IsNullOrWhiteSpace(sinhvien.Text) ? 0 : int.Parse(sinhvien.Text);
-                    int c = string.IsNullOrWhiteSpace(treem.Text) ? 0 : int.Parse(treem.Text);
-
-                    if (b + c > selected.Count)
-                    {
-                        c = selected.Count - b;
-                        treem.Text = c.ToString();
-                    }
-
-                    int d = selected.Count - b - c;
-                    total = d * 55000 + vipcount.Count * 20000 + b * 40000 + c * 40000;
-                    //need_to_pay = total - discountPercent  + food_total + drinks_total;
-
-                    //tongtien.Text = total.ToString() + " VND";
-                    //cantra.Text = need_to_pay.ToString() + " VND";
+                    student_count = string.IsNullOrWhiteSpace(sinhvien.Text) ? 0 : int.Parse(sinhvien.Text);
+                    children_count = string.IsNullOrWhiteSpace(treem.Text) ? 0 : int.Parse(treem.Text);
+                    total = selected.Count * 55000 + vipcount.Count * 20000; 
                 }
                 catch (FormatException)
                 {
@@ -384,16 +376,20 @@ namespace Qlyrapchieuphim
             else
                 cus_discount = 0;
             need_to_pay = total + food_total + drinks_total;
-            int discountTotal = (int)(need_to_pay * discountPercent);
+            need_to_pay_no_discount = need_to_pay;
+            int discountTotal = (int)(need_to_pay * discountPercent) + student_count * -15000 + children_count * -15000;
             need_to_pay -= discountTotal;
             need_to_pay -= cus_discount;
 
             if (need_to_pay < 0)
                 need_to_pay = 0;
-            tongtien.Text = total.ToString() + " VND";
+            tongtien.Text = need_to_pay_no_discount.ToString() + " VND";
             cantra.Text = need_to_pay.ToString() + " VND";
             int to_print = discountTotal + cus_discount;
             lblDiscount.Text = to_print.ToString() + " VND";
+            if (need_to_pay_no_discount <= 0)
+                thanhtoan.Enabled = false;
+            else thanhtoan.Enabled = true;
         }
         private void formbanve_Load(object sender, EventArgs e)
         {
@@ -464,7 +460,7 @@ namespace Qlyrapchieuphim
             //cus_point = 0;
 
             //Bookings
-            SqlQuery = "INSERT INTO Bookings OUTPUT INSERTED.BookingID VALUES (@ShowtimeID, @CustomerID, @StaffID, @PlacedByUserID, @TotalPrice, @CreatedAt, @VoucherID)";
+            SqlQuery = "INSERT INTO Bookings OUTPUT INSERTED.BookingID VALUES (@ShowtimeID, @CustomerID, @StaffID, @PlacedByUserID, @TotalPrice, @CreatedAt, @VoucherID, @StudentCount, @ChildrenCount)";
             cmd = new SqlCommand(SqlQuery, conn);
             cmd.Parameters.Add("@ShowtimeID", SqlDbType.Int).Value = ShowtimeID;
             int cusID = CustomerID;
@@ -473,12 +469,13 @@ namespace Qlyrapchieuphim
             cmd.Parameters.Add("@CustomerID", SqlDbType.Int).Value = cusID;
             Nullable<int> staffId = getStaffID();
             cmd.Parameters.Add("@StaffID", SqlDbType.Int).Value = (staffId == null) ? (object)DBNull.Value : staffId;
-
+            cmd.Parameters.Add("@StudentCount", SqlDbType.Int).Value = student_count;
+            cmd.Parameters.Add("@ChildrenCount", SqlDbType.Int).Value = children_count;
             int plcdID = UserID;
             if (plcdID == -1)
                 plcdID = 1;
             cmd.Parameters.Add("@PlacedByUserID", SqlDbType.Int).Value = plcdID;
-            cmd.Parameters.Add("@TotalPrice", SqlDbType.Int).Value = total;
+            cmd.Parameters.Add("@TotalPrice", SqlDbType.Decimal).Value = total;
             cmd.Parameters.Add("@CreatedAt", SqlDbType.DateTime).Value = DateTime.Now;
             int voucherId = getVoucherId();
             cmd.Parameters.Add("@VoucherID", SqlDbType.Int).Value = (voucherId == -1) ? (object)DBNull.Value : voucherId;
@@ -486,6 +483,7 @@ namespace Qlyrapchieuphim
                 conn.Open();
             BookingID = (int)cmd.ExecuteScalar();
             conn.Close();
+            
 
             //Deduct voucher quantity if used
             if (voucherId != -1)
@@ -736,21 +734,42 @@ namespace Qlyrapchieuphim
                 update();
                 return;
             }
-            string SqlQuery = "SELECT DiscountPercent FROM Vouchers WHERE VoucherID = @VoucherID";
-            SqlCommand cmd = new SqlCommand(SqlQuery, conn);
-            cmd.Parameters.Add("@VoucherID", SqlDbType.Int).Value = getVoucherId();
-            if (conn.State == ConnectionState.Closed)
-                conn.Open();
-            try
+            float _discountPercent = 0;
+            decimal minOrderValue = 0;
+            string SqlQuery = "SELECT DiscountPercent, MinOrderValue FROM Vouchers WHERE VoucherID = @VoucherID";
+            using (SqlConnection conn1 = Helper.getdbConnection())
             {
-                discountPercent = float.Parse(cmd.ExecuteScalar().ToString());
+                using (SqlCommand cmd = new SqlCommand(SqlQuery, conn1))
+                {
+                    conn1.Open();
+                    cmd.Parameters.Add("@VoucherID", SqlDbType.Int).Value = getVoucherId();
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        try
+                        {
+                            _discountPercent = float.Parse(reader.GetDouble(0).ToString());
+                            minOrderValue = reader.GetDecimal(1);
+                        }
+                        catch (Exception ex)
+                        {
+                            if (ex is System.NullReferenceException)
+                                discountPercent = 0;
+                        }
+                    }
+                }
             }
-            catch (Exception ex)
+            if (minOrderValue > (decimal)need_to_pay_no_discount)
             {
-                if (ex is System.NullReferenceException)
-                    discountPercent = 0;
+                MessageBox.Show(
+                    "Hoá đơn không đủ giá tiền tối thiểu để sử dụng voucher này.",
+                    "Thông báo!",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+                voucher.SelectedIndex = 0;
+                return;
             }
-            conn.Close();
+            discountPercent = _discountPercent;
             update();
         }
 
@@ -793,6 +812,22 @@ namespace Qlyrapchieuphim
             }
             update();
 
+        }
+
+        private void sinhvien_Leave(object sender, EventArgs e)
+        {
+            if (sinhvien.Text == "")
+            {
+                sinhvien.Text = "0";
+            }
+        }
+
+        private void treem_Leave(object sender, EventArgs e)
+        {
+            if (treem.Text == "")
+            {
+                treem.Text = "0";
+            }
         }
     }
 }

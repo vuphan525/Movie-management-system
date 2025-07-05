@@ -52,9 +52,30 @@ namespace Qlyrapchieuphim
             
             #line default
             #line hidden
+            this.Write("</p>\r\n    </div>\r\n\r\n    <div style=\"display: flex; justify-content: space-between" +
+                    ";\">\r\n        <p> Phim: <b>");
+            
+            #line 17 "D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\ReceiptTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(title));
+            
+            #line default
+            #line hidden
+            this.Write("</b></p>\r\n        <p>Giờ chiếu: ");
+            
+            #line 18 "D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\ReceiptTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(startTime.ToString("dd/MM/yyyy")));
+            
+            #line default
+            #line hidden
+            this.Write(" / ");
+            
+            #line 18 "D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\ReceiptTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(startTime.ToString("HH:mm:ss")));
+            
+            #line default
+            #line hidden
             this.Write(@"</p>
-    </div><br />
-    <hr/>
+    </div>
     <table width = ""100%"" runat=""server"" id=""Table1"">
         <thead>
             <tr style=""text-align: left;"">
@@ -68,14 +89,14 @@ namespace Qlyrapchieuphim
         <tbody>
             ");
             
-            #line 27 "D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\ReceiptTemplate.tt"
+            #line 31 "D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\ReceiptTemplate.tt"
 int i = 1;
             
             #line default
             #line hidden
             this.Write("            ");
             
-            #line 28 "D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\ReceiptTemplate.tt"
+            #line 32 "D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\ReceiptTemplate.tt"
 foreach (DataRow row in billData.Rows)
             {
             
@@ -83,42 +104,42 @@ foreach (DataRow row in billData.Rows)
             #line hidden
             this.Write("                <tr>\r\n                    <td> ");
             
-            #line 31 "D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\ReceiptTemplate.tt"
+            #line 35 "D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\ReceiptTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(i));
             
             #line default
             #line hidden
             this.Write(" </td>\r\n                    <td> ");
             
-            #line 32 "D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\ReceiptTemplate.tt"
+            #line 36 "D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\ReceiptTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(row["ProductName"].ToString()));
             
             #line default
             #line hidden
             this.Write(" </td>\r\n                    <td> ");
             
-            #line 33 "D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\ReceiptTemplate.tt"
+            #line 37 "D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\ReceiptTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Convert.ToDouble(row["Price"]).ToString("N2") + " VNĐ"));
             
             #line default
             #line hidden
             this.Write(" </td>\r\n                    <td> ");
             
-            #line 34 "D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\ReceiptTemplate.tt"
+            #line 38 "D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\ReceiptTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(row["Quantity"].ToString()));
             
             #line default
             #line hidden
             this.Write(" </td>\r\n                    <td> ");
             
-            #line 35 "D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\ReceiptTemplate.tt"
+            #line 39 "D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\ReceiptTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Convert.ToDouble(row["TotalPrice"]).ToString("N2") + " VNĐ"));
             
             #line default
             #line hidden
             this.Write(" </td>\r\n                <tr/>\r\n            ");
             
-            #line 37 "D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\ReceiptTemplate.tt"
+            #line 41 "D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\ReceiptTemplate.tt"
 i++; 
             } //end of foreach
             
@@ -127,7 +148,7 @@ i++;
             this.Write("        </tbody>\r\n    </table>\r\n    <hr/>\r\n        <div style=\"justify-content: s" +
                     "pace-between; display:flex\">\r\n            <b>Tổng đơn giá: </b> ");
             
-            #line 43 "D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\ReceiptTemplate.tt"
+            #line 47 "D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\ReceiptTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture((totalTickets + totalProducts).ToString("N2") + " VNĐ"));
             
             #line default
@@ -135,16 +156,76 @@ i++;
             this.Write("<br/>\r\n        </div>\r\n\r\n        <div style=\"justify-content: space-between; disp" +
                     "lay:flex\">\r\n            <b>Được giảm: </b> ");
             
-            #line 47 "D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\ReceiptTemplate.tt"
+            #line 51 "D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\ReceiptTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(totalDiscount.ToString("N2") + " VNĐ"));
             
             #line default
             #line hidden
-            this.Write("<br/>\r\n        </div>\r\n        <div style=\"justify-content: space-between; displa" +
-                    "y:flex\">\r\n            <b>Tổng: </b> ");
+            this.Write("<br/>\r\n        </div>\r\n        \r\n\r\n        ");
             
-            #line 50 "D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\ReceiptTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(((totalTickets + totalProducts) - totalDiscount).ToString("N2") + " VNĐ"));
+            #line 55 "D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\ReceiptTemplate.tt"
+if (studentDiscount != 0) 
+        {
+            
+            #line default
+            #line hidden
+            this.Write("            <div style=\"justify-content: space-between; display:flex\">\r\n         " +
+                    "       <b>Giảm giá sinh viên: </b>\r\n                \r\n                ");
+            
+            #line 60 "D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\ReceiptTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture((studentDiscount / 15000)));
+            
+            #line default
+            #line hidden
+            this.Write(" sinh viên: ");
+            
+            #line 60 "D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\ReceiptTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture((-1 * studentDiscount).ToString("N2") + " VNĐ"));
+            
+            #line default
+            #line hidden
+            this.Write("\r\n                \r\n            </div>\r\n        ");
+            
+            #line 63 "D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\ReceiptTemplate.tt"
+}
+            
+            #line default
+            #line hidden
+            this.Write("\r\n        ");
+            
+            #line 65 "D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\ReceiptTemplate.tt"
+if (childrenDiscount != 0) 
+        {
+            
+            #line default
+            #line hidden
+            this.Write("            <div style=\"justify-content: space-between; display:flex\">\r\n         " +
+                    "       <b>Giảm giá trẻ em:</b>\r\n                ");
+            
+            #line 69 "D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\ReceiptTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture((childrenDiscount / 15000)));
+            
+            #line default
+            #line hidden
+            this.Write(" trẻ em: ");
+            
+            #line 69 "D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\ReceiptTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture((-1 * childrenDiscount).ToString("N2") + " VNĐ"));
+            
+            #line default
+            #line hidden
+            this.Write("\r\n            </div>\r\n        ");
+            
+            #line 71 "D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\ReceiptTemplate.tt"
+}
+            
+            #line default
+            #line hidden
+            this.Write("\r\n        <div style=\"justify-content: space-between; display:flex\">\r\n           " +
+                    " <b>Tổng: </b> ");
+            
+            #line 74 "D:\Github_Projects\IT008-LTTQ\Movie-management-system\Qlyrapchieuphim\ReceiptTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(((totalTickets + totalProducts) - totalDiscount - childrenDiscount - studentDiscount).ToString("N2") + " VNĐ"));
             
             #line default
             #line hidden
