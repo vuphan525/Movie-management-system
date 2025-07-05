@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Configuration;
 using Microsoft.Data.SqlClient;
 using System.Windows.Navigation;
+using System.IO;
 
 namespace Qlyrapchieuphim
 {
@@ -29,6 +30,9 @@ namespace Qlyrapchieuphim
         int discount;
         private int loyalty_points_before;
         private int billCode = -1;
+        private DataTable MainDataTable;
+        private DataTable bookingDetails;
+        private DataTable bookingProducts;
         public int BillCode
         {
             get { return billCode; }
@@ -51,7 +55,7 @@ namespace Qlyrapchieuphim
                 this.Close();
             }
             //Main Booking
-            string SqlQuery = "SELECT ShowtimeID, CustomerID, TotalPrice, VoucherID FROM  Bookings " +
+            string SqlQuery = "SELECT ShowtimeID, CustomerID, TotalPrice, VoucherID, CreatedAt FROM  Bookings " +
                 "WHERE BookingID = @BookingID";
             SqlDataAdapter adapter = new SqlDataAdapter(SqlQuery, conn);
             adapter.SelectCommand.Parameters.Add("@BookingID", SqlDbType.Int).Value = billCode;
@@ -60,7 +64,7 @@ namespace Qlyrapchieuphim
                 conn.Open();
             adapter.Fill(mainDataSet, "Bookings");
             conn.Close();
-            DataTable MainDataTable = mainDataSet.Tables["Bookings"];
+            MainDataTable = mainDataSet.Tables["Bookings"];
             masc = (int)MainDataTable.Rows[0]["ShowtimeID"];
             makh = (int)MainDataTable.Rows[0]["CustomerID"];
             total = Convert.ToInt32((decimal)MainDataTable.Rows[0]["TotalPrice"]);
@@ -74,7 +78,7 @@ namespace Qlyrapchieuphim
                 "GROUP BY SeatType";
             adapter = new SqlDataAdapter(SqlQuery, conn);
             adapter.SelectCommand.Parameters.Add("@BookingID", SqlDbType.Int).Value = billCode;
-            DataTable bookingDetails = new DataTable();
+            bookingDetails = new DataTable();
             if (conn.State != ConnectionState.Open)
                 conn.Open();
             adapter.Fill(bookingDetails);
@@ -94,7 +98,7 @@ namespace Qlyrapchieuphim
                 "WHERE BookingID = @BookingID";
             adapter = new SqlDataAdapter(SqlQuery, conn);
             adapter.SelectCommand.Parameters.Add("@BookingID", SqlDbType.Int).Value = billCode;
-            DataTable bookingProducts = new DataTable();
+            bookingProducts = new DataTable();
             if (conn.State != ConnectionState.Open)
                 conn.Open();
             adapter.Fill(bookingProducts);
@@ -146,41 +150,13 @@ namespace Qlyrapchieuphim
             }
             return result;
         }
-        //public string CusCode
-        //{
-        //    get { return makh; }
-        //    set { makh = value; }
-        //}
+
         public bool UsedPoints
         {
             get { return used_points; }
             set { used_points = value; }
         }
-        //public string SlotCode
-        //{
-        //    get { return masc; }
-        //    set { masc = value; }
-        //}
-        //public int FoodTotal
-        //{
-        //    get { return food_total; }
-        //    set { food_total = value; }
-        //}
-        //public int DrinksTotal
-        //{
-        //    get { return drinks_total; }
-        //    set { drinks_total = value; }
-        //}
-        //public int Total
-        //{
-        //    get { return total; }
-        //    set { total = value; }
-        //}
-        //public int Discount
-        //{
-        //    get { return discount; }
-        //    set { discount = value; }
-        //}
+
         private void LoadMovie()
         {
             if (masc == -1)
@@ -213,7 +189,7 @@ namespace Qlyrapchieuphim
                 cusDeducted.Text = "N/A";
                 return;
             }
-            
+
             string SqlQuery = "SELECT FullName, Phone, Email, LoyaltyPoints " +
                 "FROM Customers cs JOIN Users usr ON (usr.UserID = cs.UserID) " +
                 "WHERE CustomerID = @CustomerID";
@@ -239,12 +215,91 @@ namespace Qlyrapchieuphim
             cusEmail.Text = dt.Rows[0]["Email"].ToString();
             cusPoints.Text = loyalty_points_before.ToString();
             cusDeducted.Text = dt.Rows[0]["LoyaltyPoints"].ToString();
-            
+
         }
         private void Hoadon_Load(object sender, EventArgs e)
         {
             conn = Helper.getdbConnection();
             LoadBill();
+        }
+        private DataTable BuildDataTable()
+        {
+            DataTable dt = new DataTable();
+            dt.Columns.Add("ProductName", typeof(string));
+            dt.Columns.Add("Price", typeof(string));
+            dt.Columns.Add("Quantity", typeof(string));
+            dt.Columns.Add("TotalPrice", typeof(string));
+
+            if (lbl_NormalSeatNum.Text != "0")
+            {
+                DataRow stdSeats = dt.NewRow();
+                stdSeats["ProductName"] = "Ghế thường";
+                stdSeats["Price"] = 55000.ToString();
+                stdSeats["Quantity"] = lbl_NormalSeatNum.Text;
+                stdSeats["TotalPrice"] = (55000 * int.Parse(lbl_NormalSeatNum.Text)).ToString();
+                dt.Rows.Add(stdSeats);
+            }
+
+            if (lbl_VIPSeatNum.Text != "0")
+            {
+                DataRow vipSeats = dt.NewRow();
+                vipSeats["ProductName"] = "Ghế VIP";
+                vipSeats["Price"] = 75000.ToString();
+                vipSeats["Quantity"] = lbl_VIPSeatNum.Text;
+                vipSeats["TotalPrice"] = (75000 * int.Parse(lbl_VIPSeatNum.Text)).ToString();
+                dt.Rows.Add(vipSeats);
+            }
+
+            foreach (DataRow dr in bookingProducts.Rows)
+            {
+                DataRow product = dt.NewRow();
+                product["ProductName"] = dr["ProductName"].ToString();
+                product["Price"] = dr["Price"].ToString();
+                product["Quantity"] = dr["Quantity"].ToString();
+                product["TotalPrice"] = (Convert.ToDecimal(dr["Price"]) * Convert.ToInt32(dr["Quantity"])).ToString();
+                dt.Rows.Add(product);
+            }
+
+            return dt;
+        }
+        private void btn_Print_Bill_Click(object sender, EventArgs e)
+        {
+            string folder_path = Environment.CurrentDirectory + @"\receipts";
+            string receipt_path = folder_path + "\\receipt_" + billCode.ToString() + ".html";
+
+            //Tạo thư mục nếu chưa có
+            if (!Directory.Exists(folder_path))
+                Directory.CreateDirectory(folder_path);
+
+            //Tạo file nếu chưa có , xoá và tạo lại nếu đã có
+            if (File.Exists(receipt_path))
+                File.Delete(receipt_path);
+            else
+                File.Create(receipt_path).Dispose();
+            ReceiptTemplate receipt = new ReceiptTemplate();
+
+            receipt.BillCode = billCode;
+            receipt.CreatedAt = (DateTime)MainDataTable.Rows[0]["CreatedAt"];
+            receipt.BillData = BuildDataTable();
+            receipt.TotalDiscount = discount;
+            receipt.TotalTickets = total;
+            receipt.TotalProducts = food_total + drinks_total;
+
+            string receipt_content = receipt.TransformText();
+            File.WriteAllText(receipt_path, receipt_content);
+            try
+            {
+                System.Diagnostics.Process.Start(receipt_path);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    "Đã xảy ra lỗi trong quá trình xuất hoá đơn",
+                    "Lỗi mở file",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                    );
+            }
         }
     }
 }

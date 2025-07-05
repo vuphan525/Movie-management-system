@@ -28,12 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.lbl_NormalSeatNum = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.colID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label3 = new System.Windows.Forms.Label();
             this.sp_total_lbl = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
@@ -45,7 +49,7 @@
             this.label26 = new System.Windows.Forms.Label();
             this.guna2Separator5 = new Guna.UI2.WinForms.Guna2Separator();
             this.guna2Separator4 = new Guna.UI2.WinForms.Guna2Separator();
-            this.thanhtoan = new Guna.UI2.WinForms.Guna2Button();
+            this.btn_Print_Bill = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Separator2 = new Guna.UI2.WinForms.Guna2Separator();
             this.label15 = new System.Windows.Forms.Label();
             this.tongtien = new System.Windows.Forms.Label();
@@ -84,10 +88,6 @@
             this.label24 = new System.Windows.Forms.Label();
             this.guna2Separator3 = new Guna.UI2.WinForms.Guna2Separator();
             this.label25 = new System.Windows.Forms.Label();
-            this.colID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.guna2Panel2.SuspendLayout();
@@ -112,7 +112,7 @@
             this.guna2Panel1.Controls.Add(this.label26);
             this.guna2Panel1.Controls.Add(this.guna2Separator5);
             this.guna2Panel1.Controls.Add(this.guna2Separator4);
-            this.guna2Panel1.Controls.Add(this.thanhtoan);
+            this.guna2Panel1.Controls.Add(this.btn_Print_Bill);
             this.guna2Panel1.Controls.Add(this.guna2Separator2);
             this.guna2Panel1.Controls.Add(this.label15);
             this.guna2Panel1.Controls.Add(this.tongtien);
@@ -135,7 +135,7 @@
             this.guna2Panel1.Controls.Add(this.guna2Separator1);
             this.guna2Panel1.Controls.Add(this.label1);
             this.guna2Panel1.Location = new System.Drawing.Point(350, 66);
-            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(2);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(660, 684);
             this.guna2Panel1.TabIndex = 2;
@@ -167,28 +167,28 @@
             // 
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(61)))), ((int)(((byte)(204)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(61)))), ((int)(((byte)(204)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(61)))), ((int)(((byte)(204)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(61)))), ((int)(((byte)(204)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colID,
             this.colTen,
             this.colGia,
             this.colQuantity});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.Location = new System.Drawing.Point(357, 146);
             this.dataGridView1.Name = "dataGridView1";
@@ -197,6 +197,37 @@
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.Size = new System.Drawing.Size(296, 181);
             this.dataGridView1.TabIndex = 62;
+            // 
+            // colID
+            // 
+            this.colID.DataPropertyName = "ProductID";
+            this.colID.HeaderText = "ID";
+            this.colID.MinimumWidth = 6;
+            this.colID.Name = "colID";
+            this.colID.ReadOnly = true;
+            // 
+            // colTen
+            // 
+            this.colTen.DataPropertyName = "ProductName";
+            this.colTen.HeaderText = "Tên sản phẩm";
+            this.colTen.MinimumWidth = 6;
+            this.colTen.Name = "colTen";
+            this.colTen.ReadOnly = true;
+            // 
+            // colGia
+            // 
+            this.colGia.DataPropertyName = "Price";
+            this.colGia.HeaderText = "Giá tiền";
+            this.colGia.MinimumWidth = 6;
+            this.colGia.Name = "colGia";
+            this.colGia.ReadOnly = true;
+            // 
+            // colQuantity
+            // 
+            this.colQuantity.DataPropertyName = "Quantity";
+            this.colQuantity.HeaderText = "Số lượng";
+            this.colQuantity.Name = "colQuantity";
+            this.colQuantity.ReadOnly = true;
             // 
             // label3
             // 
@@ -282,7 +313,7 @@
             // 
             this.guna2Separator6.FillColor = System.Drawing.Color.Black;
             this.guna2Separator6.Location = new System.Drawing.Point(352, 28);
-            this.guna2Separator6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2Separator6.Margin = new System.Windows.Forms.Padding(2);
             this.guna2Separator6.Name = "guna2Separator6";
             this.guna2Separator6.Size = new System.Drawing.Size(300, 8);
             this.guna2Separator6.TabIndex = 53;
@@ -302,7 +333,7 @@
             // 
             this.guna2Separator5.FillColor = System.Drawing.Color.Black;
             this.guna2Separator5.Location = new System.Drawing.Point(352, 331);
-            this.guna2Separator5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2Separator5.Margin = new System.Windows.Forms.Padding(2);
             this.guna2Separator5.Name = "guna2Separator5";
             this.guna2Separator5.Size = new System.Drawing.Size(300, 8);
             this.guna2Separator5.TabIndex = 51;
@@ -311,32 +342,33 @@
             // 
             this.guna2Separator4.FillColor = System.Drawing.Color.Black;
             this.guna2Separator4.Location = new System.Drawing.Point(4, 526);
-            this.guna2Separator4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2Separator4.Margin = new System.Windows.Forms.Padding(2);
             this.guna2Separator4.Name = "guna2Separator4";
             this.guna2Separator4.Size = new System.Drawing.Size(326, 8);
             this.guna2Separator4.TabIndex = 50;
             // 
-            // thanhtoan
+            // btn_Print_Bill
             // 
-            this.thanhtoan.BorderRadius = 10;
-            this.thanhtoan.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.thanhtoan.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.thanhtoan.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.thanhtoan.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.thanhtoan.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(61)))), ((int)(((byte)(204)))));
-            this.thanhtoan.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.thanhtoan.ForeColor = System.Drawing.Color.White;
-            this.thanhtoan.Location = new System.Drawing.Point(511, 626);
-            this.thanhtoan.Name = "thanhtoan";
-            this.thanhtoan.Size = new System.Drawing.Size(142, 36);
-            this.thanhtoan.TabIndex = 49;
-            this.thanhtoan.Text = "Xuất hóa đơn";
+            this.btn_Print_Bill.BorderRadius = 10;
+            this.btn_Print_Bill.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_Print_Bill.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_Print_Bill.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_Print_Bill.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_Print_Bill.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(61)))), ((int)(((byte)(204)))));
+            this.btn_Print_Bill.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Print_Bill.ForeColor = System.Drawing.Color.White;
+            this.btn_Print_Bill.Location = new System.Drawing.Point(511, 626);
+            this.btn_Print_Bill.Name = "btn_Print_Bill";
+            this.btn_Print_Bill.Size = new System.Drawing.Size(142, 36);
+            this.btn_Print_Bill.TabIndex = 49;
+            this.btn_Print_Bill.Text = "Xuất hóa đơn";
+            this.btn_Print_Bill.Click += new System.EventHandler(this.btn_Print_Bill_Click);
             // 
             // guna2Separator2
             // 
             this.guna2Separator2.FillColor = System.Drawing.Color.Black;
             this.guna2Separator2.Location = new System.Drawing.Point(352, 360);
-            this.guna2Separator2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2Separator2.Margin = new System.Windows.Forms.Padding(2);
             this.guna2Separator2.Name = "guna2Separator2";
             this.guna2Separator2.Size = new System.Drawing.Size(300, 8);
             this.guna2Separator2.TabIndex = 20;
@@ -425,7 +457,7 @@
             // 
             this.guna2VSeparator1.FillColor = System.Drawing.Color.Black;
             this.guna2VSeparator1.Location = new System.Drawing.Point(343, 10);
-            this.guna2VSeparator1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2VSeparator1.Margin = new System.Windows.Forms.Padding(2);
             this.guna2VSeparator1.Name = "guna2VSeparator1";
             this.guna2VSeparator1.Size = new System.Drawing.Size(8, 663);
             this.guna2VSeparator1.TabIndex = 12;
@@ -446,7 +478,7 @@
             this.label10.Location = new System.Drawing.Point(10, 240);
             this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(75, 29);
+            this.label10.Size = new System.Drawing.Size(111, 29);
             this.label10.TabIndex = 10;
             this.label10.Text = "Rạp";
             // 
@@ -456,7 +488,7 @@
             this.label9.Location = new System.Drawing.Point(10, 176);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(75, 30);
+            this.label9.Size = new System.Drawing.Size(111, 30);
             this.label9.TabIndex = 9;
             this.label9.Text = "Giờ chiếu";
             // 
@@ -466,7 +498,7 @@
             this.label8.Location = new System.Drawing.Point(10, 112);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(75, 29);
+            this.label8.Size = new System.Drawing.Size(111, 29);
             this.label8.TabIndex = 8;
             this.label8.Text = "Ngày chiếu";
             // 
@@ -550,7 +582,7 @@
             // 
             this.guna2Separator1.FillColor = System.Drawing.Color.Black;
             this.guna2Separator1.Location = new System.Drawing.Point(12, 28);
-            this.guna2Separator1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2Separator1.Margin = new System.Windows.Forms.Padding(2);
             this.guna2Separator1.Name = "guna2Separator1";
             this.guna2Separator1.Size = new System.Drawing.Size(326, 8);
             this.guna2Separator1.TabIndex = 1;
@@ -594,7 +626,7 @@
             this.guna2Panel2.Controls.Add(this.guna2Separator3);
             this.guna2Panel2.Controls.Add(this.label25);
             this.guna2Panel2.Location = new System.Drawing.Point(9, 66);
-            this.guna2Panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2Panel2.Margin = new System.Windows.Forms.Padding(2);
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.Size = new System.Drawing.Size(337, 438);
             this.guna2Panel2.TabIndex = 51;
@@ -648,7 +680,7 @@
             this.label19.Location = new System.Drawing.Point(3, 112);
             this.label19.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(82, 29);
+            this.label19.Size = new System.Drawing.Size(89, 29);
             this.label19.TabIndex = 18;
             this.label19.Text = "Điện thoại:";
             // 
@@ -718,7 +750,7 @@
             // 
             this.guna2Separator3.FillColor = System.Drawing.Color.Black;
             this.guna2Separator3.Location = new System.Drawing.Point(5, 28);
-            this.guna2Separator3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2Separator3.Margin = new System.Windows.Forms.Padding(2);
             this.guna2Separator3.Name = "guna2Separator3";
             this.guna2Separator3.Size = new System.Drawing.Size(326, 8);
             this.guna2Separator3.TabIndex = 12;
@@ -734,37 +766,6 @@
             this.label25.TabIndex = 11;
             this.label25.Text = "Thông tin khách hàng";
             // 
-            // colID
-            // 
-            this.colID.DataPropertyName = "ProductID";
-            this.colID.HeaderText = "ID";
-            this.colID.MinimumWidth = 6;
-            this.colID.Name = "colID";
-            this.colID.ReadOnly = true;
-            // 
-            // colTen
-            // 
-            this.colTen.DataPropertyName = "ProductName";
-            this.colTen.HeaderText = "Tên sản phẩm";
-            this.colTen.MinimumWidth = 6;
-            this.colTen.Name = "colTen";
-            this.colTen.ReadOnly = true;
-            // 
-            // colGia
-            // 
-            this.colGia.DataPropertyName = "Price";
-            this.colGia.HeaderText = "Giá tiền";
-            this.colGia.MinimumWidth = 6;
-            this.colGia.Name = "colGia";
-            this.colGia.ReadOnly = true;
-            // 
-            // colQuantity
-            // 
-            this.colQuantity.DataPropertyName = "Quantity";
-            this.colQuantity.HeaderText = "Số lượng";
-            this.colQuantity.Name = "colQuantity";
-            this.colQuantity.ReadOnly = true;
-            // 
             // Hoadon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -774,7 +775,7 @@
             this.Controls.Add(this.guna2Panel2);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.guna2Panel1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Hoadon";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Hoadon";
@@ -814,7 +815,7 @@
         private System.Windows.Forms.Label lblDiscount;
         private Guna.UI2.WinForms.Guna2Separator guna2Separator2;
         private System.Windows.Forms.Label label15;
-        private Guna.UI2.WinForms.Guna2Button thanhtoan;
+        private Guna.UI2.WinForms.Guna2Button btn_Print_Bill;
         private System.Windows.Forms.Label label16;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
         private System.Windows.Forms.Label label17;
