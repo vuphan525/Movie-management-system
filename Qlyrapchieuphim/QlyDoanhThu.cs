@@ -291,12 +291,14 @@ namespace Qlyrapchieuphim
             //Make Cartesian look slightly better without data
             if (!_dataAvailableCartesian)
             {
+                cartesianChart1.AxisX.Clear();
                 cartesianChart1.AxisX.Add(new Axis
                 {
                     Title = "Ngày",
                     Labels = new string[] { dtp_Time_End.Value.Date.ToString("dd/MM") },
                 });
 
+                cartesianChart1.AxisY.Clear();
                 cartesianChart1.AxisY.Add(new Axis
                 {
                     Title = "Doanh thu",
