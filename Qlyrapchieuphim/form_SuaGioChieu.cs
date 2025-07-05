@@ -15,12 +15,14 @@ namespace Qlyrapchieuphim
         private DateTime selectedTime;
         public DateTime KetQuaThoiGian { get; private set; }
         private List<DateTime> danhSachGioDaCo;
+        private int duration = 0;
 
-        public form_SuaGioChieu(DateTime d, List<DateTime> danhSachGioKhac)
+        public form_SuaGioChieu(DateTime d, List<DateTime> danhSachGioKhac, int duration)
         {
             InitializeComponent();
             this.selectedTime = d;
             this.danhSachGioDaCo = danhSachGioKhac;
+            this.duration = duration;
         }
 
         private void sua_Click(object sender, EventArgs e)
@@ -42,11 +44,15 @@ namespace Qlyrapchieuphim
                 return;
             }
 
-            // ❌ Cách giờ đã có dưới 30 phút
-            if (danhSachGioDaCo.Any(gio => Math.Abs((selectedTime - gio).TotalMinutes) < 30))
+            // ❌ Quá gần các giờ chiếu khác (ít hơn 30 phút + duration)
+            foreach (DateTime gio in danhSachGioDaCo)
             {
-                MessageBox.Show("Giờ chiếu phải cách nhau ít nhất 30 phút!", "Thời gian không hợp lệ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
+                double khoangCach = Math.Abs((selectedTime - gio).TotalMinutes);
+                if (khoangCach < (30 + duration))
+                {
+                    MessageBox.Show($"Giờ chiếu phải cách các suất khác ít nhất {30 + duration} phút!", "Thời gian không hợp lệ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
             }
 
             // ✅ Thời gian hợp lệ
@@ -61,6 +67,8 @@ namespace Qlyrapchieuphim
                 MessageBox.Show("Vui lòng chọn giờ chiếu từ 9:00 sáng đến 11:00 tối.", "Thời gian không hợp lệ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+
+
 
         private void btn_Refresh_Click(object sender, EventArgs e)
         {
