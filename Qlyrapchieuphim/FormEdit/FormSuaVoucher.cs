@@ -106,7 +106,7 @@ namespace Qlyrapchieuphim.FormEdit
             cmd.Parameters.Add("@DiscountPercent", SqlDbType.Float).Value = mgiam;
             cmd.Parameters.Add("@ExpiryDate", SqlDbType.Date).Value = date_FormSuaVoucher_NgayHetHan.Value.Date;
             cmd.Parameters.Add("@Quantity", SqlDbType.Int).Value = lbl_FormSuaVoucher_SoLuong.Text;
-            cmd.Parameters.Add("@MinOrderValue", SqlDbType.Decimal).Value = int.Parse(lbl_FormSuaVoucher_HoaDonToiThieu.Text);
+            cmd.Parameters.Add("@MinOrderValue", SqlDbType.Decimal).Value = decimal.Parse(lbl_FormSuaVoucher_HoaDonToiThieu.Text);
             cmd.Parameters.Add("@IsActive", SqlDbType.Bit).Value = Convert.ToBoolean(cb_FormSuaVoucher_TrangThai.SelectedIndex);
             cmd.Parameters.Add("@VoucherID", SqlDbType.Int).Value = voucherID;
             try
@@ -156,7 +156,7 @@ namespace Qlyrapchieuphim.FormEdit
                 lbl_FormSuaVoucher_DiscountPercent.Text = (double.Parse(reader["DiscountPercent"].ToString()) * 100).ToString();
                 date_FormSuaVoucher_NgayHetHan.Value = (DateTime)reader["ExpiryDate"];
                 lbl_FormSuaVoucher_SoLuong.Text = reader["Quantity"].ToString();
-                lbl_FormSuaVoucher_HoaDonToiThieu.Text = reader["Quantity"].ToString();
+                lbl_FormSuaVoucher_HoaDonToiThieu.Text = reader["MinOrderValue"].ToString();
                 bool tempState = (bool)reader["IsActive"];
                 cb_FormSuaVoucher_TrangThai.SelectedIndex = Convert.ToInt32(tempState);
             }

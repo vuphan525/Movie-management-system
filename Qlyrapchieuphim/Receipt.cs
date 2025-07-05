@@ -13,7 +13,10 @@ namespace Qlyrapchieuphim
         private decimal totalTickets = 0;
         private decimal totalProducts = 0;
         private decimal totalDiscount = 0;
+        private decimal studentDiscount = 0;
+        private decimal childrenDiscount = 0;
         private DateTime createdAt = DateTime.MinValue;
+        private DateTime startTime = DateTime.MinValue;
         private string title = string.Empty;
         private DataTable billData = new DataTable();
         public ReceiptTemplate()
@@ -53,6 +56,26 @@ namespace Qlyrapchieuphim
         {
             get { return createdAt; }
             set { createdAt = value; }
+        }
+        public decimal StudentDiscount
+        {
+            get { return studentDiscount; }
+            set { studentDiscount = value; }
+        }
+        public string Title
+        { 
+            get { return title; }
+            set { title = value; }
+        }
+        public decimal ChildrenDiscount
+        {
+            get { return childrenDiscount; }
+            set { childrenDiscount = value; }
+        }
+        public DateTime StartTime
+        {
+            get { return startTime; }
+            set { startTime = value; }
         }
     }
 }

@@ -11,8 +11,12 @@
     <div style="display: flex; justify-content: space-between;">
         <p> Hoá đơn số: <#= billCode#></p>
         <p>Ngày: <#= createdAt.ToString("dd/MM/yyyy")#> / <#= createdAt.ToString("HH:mm:ss")#></p>
-    </div><br />
-    <hr/>
+    </div>
+
+    <div style="display: flex; justify-content: space-between;">
+        <p> Phim: <b><#= title#></b></p>
+        <p>Giờ chiếu: <#= startTime.ToString("dd/MM/yyyy")#> / <#= startTime.ToString("HH:mm:ss")#></p>
+    </div>
     <table width = "100%" runat="server" id="Table1">
         <thead>
             <tr style="text-align: left;">
@@ -46,7 +50,27 @@
         <div style="justify-content: space-between; display:flex">
             <b>Được giảm: </b> <#= totalDiscount.ToString("N2") + " VNĐ"#><br/>
         </div>
+        
+
+        <#if (studentDiscount != 0) 
+        {#>
+            <div style="justify-content: space-between; display:flex">
+                <b>Giảm giá sinh viên: </b>
+                
+                <#= (studentDiscount / 15000)#> sinh viên: <#= (-1 * studentDiscount).ToString("N2") + " VNĐ"#>
+                
+            </div>
+        <#}#>
+
+        <#if (childrenDiscount != 0) 
+        {#>
+            <div style="justify-content: space-between; display:flex">
+                <b>Giảm giá trẻ em:</b>
+                <#= (childrenDiscount / 15000)#> trẻ em: <#= (-1 * childrenDiscount).ToString("N2") + " VNĐ"#>
+            </div>
+        <#}#>
+
         <div style="justify-content: space-between; display:flex">
-            <b>Tổng: </b> <#= ((totalTickets + totalProducts) - totalDiscount).ToString("N2") + " VNĐ"#> <br/>
+            <b>Tổng: </b> <#= ((totalTickets + totalProducts) - totalDiscount - childrenDiscount - studentDiscount).ToString("N2") + " VNĐ"#> <br/>
         </div>
 </body>

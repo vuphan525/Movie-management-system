@@ -29,6 +29,8 @@ namespace Qlyrapchieuphim
         int drinks_total = 0;
         int total;
         int discount;
+        int student_discount;
+        int child_discount;
         private int loyalty_points_before;
         private int billCode = -1;
         private DataTable MainDataTable;
@@ -56,7 +58,7 @@ namespace Qlyrapchieuphim
                 this.Close();
             }
             //Main Booking
-            string SqlQuery = "SELECT ShowtimeID, CustomerID, TotalPrice, VoucherID, CreatedAt FROM  Bookings " +
+            string SqlQuery = "SELECT ShowtimeID, CustomerID, TotalPrice, VoucherID, CreatedAt, StudentCount, ChildrenCount FROM  Bookings " +
                 "WHERE BookingID = @BookingID";
             SqlDataAdapter adapter = new SqlDataAdapter(SqlQuery, conn);
             adapter.SelectCommand.Parameters.Add("@BookingID", SqlDbType.Int).Value = billCode;
@@ -69,7 +71,9 @@ namespace Qlyrapchieuphim
             masc = (int)MainDataTable.Rows[0]["ShowtimeID"];
             makh = (int)MainDataTable.Rows[0]["CustomerID"];
             total = Convert.ToInt32((decimal)MainDataTable.Rows[0]["TotalPrice"]);
-            tongtien.Text = total.ToString() + " VND";
+            tongtienve.Text = total.ToString() + " VND";
+            student_discount = (int)MainDataTable.Rows[0]["StudentCount"] * 15000;
+            child_discount = (int)MainDataTable.Rows[0]["ChildrenCount"] * 15000;
 
 
             //BookingDetails
@@ -125,8 +129,8 @@ namespace Qlyrapchieuphim
             if (UsedPoints)
                 discount += loyalty_points_before * 2000;
 
-            lblDiscount.Text = discount.ToString() + " VND";
-            need_to_pay -= discount;
+            lblDiscount.Text = (discount + student_discount + child_discount).ToString() + " VND";
+            need_to_pay -= discount + student_discount + child_discount;
 
             cantra.Text = need_to_pay.ToString() + " VND";
             LoadMovie();
@@ -162,8 +166,9 @@ namespace Qlyrapchieuphim
         {
             if (masc == -1)
                 return;
-            string SqlQuery = "SELECT Title, StartTime " +
-                "FROM Movies mv JOIN Showtimes st ON (mv.MovieID = st.MovieID)" +
+            string SqlQuery = "SELECT Title, StartTime, RoomName " +
+                "FROM Movies mv JOIN Showtimes st ON (mv.MovieID = st.MovieID) " +
+                "JOIN Rooms rms ON (rms.RoomID = st.RoomID)" +
                 "WHERE (st.ShowtimeID = @masc) ";
             SqlDataAdapter adapter = new SqlDataAdapter(SqlQuery, conn);
             adapter.SelectCommand.Parameters.Add("@masc", SqlDbType.Int).Value = masc;
@@ -176,8 +181,9 @@ namespace Qlyrapchieuphim
             movName.Text = dt.Rows[0]["Title"].ToString();
             DateTime date = (DateTime)dt.Rows[0]["StartTime"];
             movDate.Text = date.Date.ToString("dd/MM/yyyy");
-            TimeSpan time = date.TimeOfDay;
-            movTime.Text = new DateTime(time.Ticks + date.Ticks).ToString("HH:mm:ss");
+            TimeSpan time = date.TimeOfDay.StripSeconds();
+            movTime.Text = time.ToString();
+            movRoom.Text = dt.Rows[0]["RoomName"].ToString();
         }
         private void LoadCus()
         {
@@ -287,6 +293,28 @@ namespace Qlyrapchieuphim
                 receipt.TotalDiscount = discount;
                 receipt.TotalTickets = total;
                 receipt.TotalProducts = food_total + drinks_total;
+                using (SqlConnection conn = Helper.getdbConnection())
+                {
+                    string SqlQuery = "SELECT mv.Title, StartTime " +
+                    "FROM Showtimes sht JOIN Movies mv ON (sht.MovieID = mv.MovieID) " +
+                    "WHERE (ShowtimeID = @masc)";
+                    using (SqlCommand cmd = new SqlCommand(SqlQuery, conn))
+                    {
+                        cmd.Parameters.Add("@masc", SqlDbType.Int).Value = masc;
+                        conn.Open();
+                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                receipt.Title = reader.GetString(0);
+                                receipt.StartTime = reader.GetDateTime(1);
+                            }
+                        }
+                    }
+                }
+                receipt.StudentDiscount = student_discount;
+                receipt.ChildrenDiscount = child_discount;
+
 
                 string receipt_content = receipt.TransformText();
                 File.WriteAllText(receipt_path, receipt_content);

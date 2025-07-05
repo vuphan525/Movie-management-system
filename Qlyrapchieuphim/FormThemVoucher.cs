@@ -94,7 +94,7 @@ namespace Qlyrapchieuphim
             cmd.Parameters.Add("@DiscountPercent", SqlDbType.Float).Value = mgia;
             cmd.Parameters.Add("@ExpiryDate", SqlDbType.Date).Value = date_FormThemVoucher_NgayHetHan.Value.Date;
             cmd.Parameters.Add("@Quantity", SqlDbType.Int).Value = lbl_FormThemVoucher_SoLuong.Text;
-            cmd.Parameters.Add("@MinOrderValue", SqlDbType.Decimal).Value = int.Parse(lbl_FormThemVoucher_HoaDonToiThieu.Text);
+            cmd.Parameters.Add("@MinOrderValue", SqlDbType.Decimal).Value = decimal.Parse(lbl_FormThemVoucher_HoaDonToiThieu.Text);
             cmd.Parameters.Add("@IsActive", SqlDbType.Bit).Value = Convert.ToBoolean(cb_FormThemVoucher_TrangThai.SelectedIndex);
             try
             {

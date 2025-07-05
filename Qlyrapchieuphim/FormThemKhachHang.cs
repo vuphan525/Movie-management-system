@@ -94,7 +94,7 @@ namespace Qlyrapchieuphim
             conn = Helper.CheckDbConnection(conn);
 
             // Tạo username giả lập từ tên và số điện thoại
-            string username = lbl_FormThemKH_HoTen.Text.Trim().Replace(" ", "") + lbl_FormThemKH_SDT.Text.Substring(0, 4);
+            string username = lbl_FormThemKH_HoTen.Text.Trim().Replace(" ", "") + lbl_FormThemKH_SDT.Text.Substring(0, 4); //username là tên khách hàng bỏ khoảng trắng, và thêm 4 số đầu của sđt
 
             string sqlUser = "INSERT INTO Users OUTPUT INSERTED.UserID VALUES (@Username, @Password, @Role, @Email)";
             SqlCommand cmd = new SqlCommand(sqlUser, conn);

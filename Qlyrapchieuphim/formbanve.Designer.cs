@@ -232,7 +232,7 @@
             this.label12.AutoSize = true;
             this.label12.Location = new System.Drawing.Point(6, 46);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(93, 25);
+            this.label12.Size = new System.Drawing.Size(73, 20);
             this.label12.TabIndex = 10;
             this.label12.Text = "Sinh viên";
             // 
@@ -275,7 +275,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(6, 44);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(121, 25);
+            this.label4.Size = new System.Drawing.Size(95, 20);
             this.label4.TabIndex = 10;
             this.label4.Text = "Mã voucher:";
             // 
@@ -299,9 +299,9 @@
             // 
             this.chkAccumulate.AutoSize = true;
             this.chkAccumulate.Location = new System.Drawing.Point(244, 102);
-            this.chkAccumulate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chkAccumulate.Margin = new System.Windows.Forms.Padding(2);
             this.chkAccumulate.Name = "chkAccumulate";
-            this.chkAccumulate.Size = new System.Drawing.Size(119, 29);
+            this.chkAccumulate.Size = new System.Drawing.Size(95, 24);
             this.chkAccumulate.TabIndex = 55;
             this.chkAccumulate.Text = "Tích điểm";
             this.chkAccumulate.UseVisualStyleBackColor = true;
@@ -312,9 +312,9 @@
             this.chkCustomer.AutoCheck = false;
             this.chkCustomer.AutoSize = true;
             this.chkCustomer.Location = new System.Drawing.Point(10, 101);
-            this.chkCustomer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chkCustomer.Margin = new System.Windows.Forms.Padding(2);
             this.chkCustomer.Name = "chkCustomer";
-            this.chkCustomer.Size = new System.Drawing.Size(250, 29);
+            this.chkCustomer.Size = new System.Drawing.Size(201, 24);
             this.chkCustomer.TabIndex = 54;
             this.chkCustomer.Text = "Khách Hàng Thành Viên";
             this.chkCustomer.UseVisualStyleBackColor = true;
@@ -326,7 +326,7 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(69, 20);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(107, 25);
+            this.label3.Size = new System.Drawing.Size(87, 20);
             this.label3.TabIndex = 5;
             this.label3.Text = "Đang chọn";
             // 
@@ -365,6 +365,7 @@
             this.treem.TabIndex = 14;
             this.treem.TextChanged += new System.EventHandler(this.treem_TextChanged);
             this.treem.Enter += new System.EventHandler(this.treem_Enter);
+            this.treem.Leave += new System.EventHandler(this.treem_Leave);
             // 
             // sinhvien
             // 
@@ -387,13 +388,14 @@
             this.sinhvien.TabIndex = 13;
             this.sinhvien.TextChanged += new System.EventHandler(this.sinhvien_TextChanged);
             this.sinhvien.Enter += new System.EventHandler(this.sinhvien_Enter);
+            this.sinhvien.Leave += new System.EventHandler(this.sinhvien_Leave);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(6, 103);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(199, 25);
+            this.label6.Size = new System.Drawing.Size(158, 20);
             this.label6.TabIndex = 12;
             this.label6.Text = "Trẻ em (dưới 12 tuổi):";
             // 
@@ -413,7 +415,7 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(69, 55);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(81, 25);
+            this.label2.Size = new System.Drawing.Size(65, 20);
             this.label2.TabIndex = 6;
             this.label2.Text = "Đã Mua";
             // 
@@ -453,7 +455,7 @@
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(5, 54);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(126, 25);
+            this.label5.Size = new System.Drawing.Size(101, 20);
             this.label5.TabIndex = 8;
             this.label5.Text = "Số tiền giảm:";
             // 
@@ -476,9 +478,9 @@
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(5, 12);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(108, 25);
+            this.label8.Size = new System.Drawing.Size(107, 20);
             this.label8.TabIndex = 7;
-            this.label8.Text = "Tổng Tiền:";
+            this.label8.Text = "Tổng Tiền Vé:";
             // 
             // lblDiscount
             // 
@@ -509,7 +511,7 @@
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(5, 96);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(143, 25);
+            this.label9.Size = new System.Drawing.Size(116, 20);
             this.label9.TabIndex = 8;
             this.label9.Text = "Số tiền cần trả:";
             // 
@@ -587,7 +589,7 @@
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(69, 91);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(79, 25);
+            this.label7.Size = new System.Drawing.Size(63, 20);
             this.label7.TabIndex = 9;
             this.label7.Text = "Ghế vip";
             // 
@@ -770,7 +772,7 @@
             this.guna2Button28.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button28.ForeColor = System.Drawing.Color.White;
             this.guna2Button28.Location = new System.Drawing.Point(4, 4);
-            this.guna2Button28.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Button28.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button28.Name = "guna2Button28";
             this.guna2Button28.Size = new System.Drawing.Size(53, 37);
             this.guna2Button28.TabIndex = 324;
@@ -792,7 +794,7 @@
             this.guna2Button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button3.ForeColor = System.Drawing.Color.White;
             this.guna2Button3.Location = new System.Drawing.Point(65, 4);
-            this.guna2Button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Button3.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button3.Name = "guna2Button3";
             this.guna2Button3.Size = new System.Drawing.Size(53, 37);
             this.guna2Button3.TabIndex = 325;
@@ -814,7 +816,7 @@
             this.guna2Button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button5.ForeColor = System.Drawing.Color.White;
             this.guna2Button5.Location = new System.Drawing.Point(126, 4);
-            this.guna2Button5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Button5.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button5.Name = "guna2Button5";
             this.guna2Button5.Size = new System.Drawing.Size(53, 37);
             this.guna2Button5.TabIndex = 326;
@@ -836,7 +838,7 @@
             this.guna2Button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button6.ForeColor = System.Drawing.Color.White;
             this.guna2Button6.Location = new System.Drawing.Point(187, 4);
-            this.guna2Button6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Button6.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button6.Name = "guna2Button6";
             this.guna2Button6.Size = new System.Drawing.Size(53, 37);
             this.guna2Button6.TabIndex = 327;
@@ -858,7 +860,7 @@
             this.guna2Button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button7.ForeColor = System.Drawing.Color.White;
             this.guna2Button7.Location = new System.Drawing.Point(248, 4);
-            this.guna2Button7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Button7.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button7.Name = "guna2Button7";
             this.guna2Button7.Size = new System.Drawing.Size(53, 37);
             this.guna2Button7.TabIndex = 328;
@@ -880,7 +882,7 @@
             this.guna2Button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button8.ForeColor = System.Drawing.Color.White;
             this.guna2Button8.Location = new System.Drawing.Point(309, 4);
-            this.guna2Button8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Button8.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button8.Name = "guna2Button8";
             this.guna2Button8.Size = new System.Drawing.Size(53, 37);
             this.guna2Button8.TabIndex = 329;
@@ -902,7 +904,7 @@
             this.guna2Button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button9.ForeColor = System.Drawing.Color.White;
             this.guna2Button9.Location = new System.Drawing.Point(370, 4);
-            this.guna2Button9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Button9.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button9.Name = "guna2Button9";
             this.guna2Button9.Size = new System.Drawing.Size(53, 37);
             this.guna2Button9.TabIndex = 330;
@@ -924,7 +926,7 @@
             this.guna2Button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button10.ForeColor = System.Drawing.Color.White;
             this.guna2Button10.Location = new System.Drawing.Point(431, 4);
-            this.guna2Button10.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Button10.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button10.Name = "guna2Button10";
             this.guna2Button10.Size = new System.Drawing.Size(53, 37);
             this.guna2Button10.TabIndex = 331;
@@ -946,7 +948,7 @@
             this.guna2Button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button11.ForeColor = System.Drawing.Color.White;
             this.guna2Button11.Location = new System.Drawing.Point(492, 4);
-            this.guna2Button11.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Button11.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button11.Name = "guna2Button11";
             this.guna2Button11.Size = new System.Drawing.Size(53, 37);
             this.guna2Button11.TabIndex = 332;
@@ -968,7 +970,7 @@
             this.guna2Button12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button12.ForeColor = System.Drawing.Color.White;
             this.guna2Button12.Location = new System.Drawing.Point(553, 4);
-            this.guna2Button12.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Button12.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button12.Name = "guna2Button12";
             this.guna2Button12.Size = new System.Drawing.Size(53, 37);
             this.guna2Button12.TabIndex = 333;
@@ -990,7 +992,7 @@
             this.guna2Button13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button13.ForeColor = System.Drawing.Color.White;
             this.guna2Button13.Location = new System.Drawing.Point(614, 4);
-            this.guna2Button13.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Button13.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button13.Name = "guna2Button13";
             this.guna2Button13.Size = new System.Drawing.Size(53, 37);
             this.guna2Button13.TabIndex = 334;
@@ -1012,7 +1014,7 @@
             this.guna2Button15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button15.ForeColor = System.Drawing.Color.White;
             this.guna2Button15.Location = new System.Drawing.Point(675, 4);
-            this.guna2Button15.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Button15.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button15.Name = "guna2Button15";
             this.guna2Button15.Size = new System.Drawing.Size(53, 37);
             this.guna2Button15.TabIndex = 336;
@@ -1034,7 +1036,7 @@
             this.guna2Button14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button14.ForeColor = System.Drawing.Color.White;
             this.guna2Button14.Location = new System.Drawing.Point(736, 4);
-            this.guna2Button14.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Button14.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button14.Name = "guna2Button14";
             this.guna2Button14.Size = new System.Drawing.Size(53, 37);
             this.guna2Button14.TabIndex = 335;
@@ -1056,7 +1058,7 @@
             this.guna2Button16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button16.ForeColor = System.Drawing.Color.White;
             this.guna2Button16.Location = new System.Drawing.Point(797, 4);
-            this.guna2Button16.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Button16.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button16.Name = "guna2Button16";
             this.guna2Button16.Size = new System.Drawing.Size(53, 37);
             this.guna2Button16.TabIndex = 337;
@@ -1078,7 +1080,7 @@
             this.guna2Button17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button17.ForeColor = System.Drawing.Color.White;
             this.guna2Button17.Location = new System.Drawing.Point(4, 49);
-            this.guna2Button17.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Button17.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button17.Name = "guna2Button17";
             this.guna2Button17.Size = new System.Drawing.Size(53, 37);
             this.guna2Button17.TabIndex = 338;
@@ -1100,7 +1102,7 @@
             this.guna2Button18.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button18.ForeColor = System.Drawing.Color.White;
             this.guna2Button18.Location = new System.Drawing.Point(65, 49);
-            this.guna2Button18.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Button18.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button18.Name = "guna2Button18";
             this.guna2Button18.Size = new System.Drawing.Size(53, 37);
             this.guna2Button18.TabIndex = 339;
@@ -1122,7 +1124,7 @@
             this.guna2Button19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button19.ForeColor = System.Drawing.Color.White;
             this.guna2Button19.Location = new System.Drawing.Point(126, 49);
-            this.guna2Button19.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Button19.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button19.Name = "guna2Button19";
             this.guna2Button19.Size = new System.Drawing.Size(53, 37);
             this.guna2Button19.TabIndex = 340;
@@ -1144,7 +1146,7 @@
             this.guna2Button20.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button20.ForeColor = System.Drawing.Color.White;
             this.guna2Button20.Location = new System.Drawing.Point(187, 49);
-            this.guna2Button20.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Button20.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button20.Name = "guna2Button20";
             this.guna2Button20.Size = new System.Drawing.Size(53, 37);
             this.guna2Button20.TabIndex = 341;
@@ -1166,7 +1168,7 @@
             this.guna2Button21.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button21.ForeColor = System.Drawing.Color.White;
             this.guna2Button21.Location = new System.Drawing.Point(248, 49);
-            this.guna2Button21.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Button21.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button21.Name = "guna2Button21";
             this.guna2Button21.Size = new System.Drawing.Size(53, 37);
             this.guna2Button21.TabIndex = 342;
@@ -1188,7 +1190,7 @@
             this.guna2Button22.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button22.ForeColor = System.Drawing.Color.White;
             this.guna2Button22.Location = new System.Drawing.Point(309, 49);
-            this.guna2Button22.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Button22.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button22.Name = "guna2Button22";
             this.guna2Button22.Size = new System.Drawing.Size(53, 37);
             this.guna2Button22.TabIndex = 343;
@@ -1210,7 +1212,7 @@
             this.guna2Button23.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button23.ForeColor = System.Drawing.Color.White;
             this.guna2Button23.Location = new System.Drawing.Point(370, 49);
-            this.guna2Button23.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Button23.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button23.Name = "guna2Button23";
             this.guna2Button23.Size = new System.Drawing.Size(53, 37);
             this.guna2Button23.TabIndex = 344;
@@ -1232,7 +1234,7 @@
             this.guna2Button24.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button24.ForeColor = System.Drawing.Color.White;
             this.guna2Button24.Location = new System.Drawing.Point(431, 49);
-            this.guna2Button24.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Button24.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button24.Name = "guna2Button24";
             this.guna2Button24.Size = new System.Drawing.Size(53, 37);
             this.guna2Button24.TabIndex = 345;
@@ -1254,7 +1256,7 @@
             this.guna2Button25.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button25.ForeColor = System.Drawing.Color.White;
             this.guna2Button25.Location = new System.Drawing.Point(492, 49);
-            this.guna2Button25.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Button25.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button25.Name = "guna2Button25";
             this.guna2Button25.Size = new System.Drawing.Size(53, 37);
             this.guna2Button25.TabIndex = 346;
@@ -1276,7 +1278,7 @@
             this.guna2Button26.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button26.ForeColor = System.Drawing.Color.White;
             this.guna2Button26.Location = new System.Drawing.Point(553, 49);
-            this.guna2Button26.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Button26.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button26.Name = "guna2Button26";
             this.guna2Button26.Size = new System.Drawing.Size(53, 37);
             this.guna2Button26.TabIndex = 347;
@@ -1298,7 +1300,7 @@
             this.guna2Button27.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button27.ForeColor = System.Drawing.Color.White;
             this.guna2Button27.Location = new System.Drawing.Point(614, 49);
-            this.guna2Button27.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Button27.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button27.Name = "guna2Button27";
             this.guna2Button27.Size = new System.Drawing.Size(53, 37);
             this.guna2Button27.TabIndex = 348;
@@ -1320,7 +1322,7 @@
             this.guna2Button29.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button29.ForeColor = System.Drawing.Color.White;
             this.guna2Button29.Location = new System.Drawing.Point(675, 49);
-            this.guna2Button29.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Button29.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button29.Name = "guna2Button29";
             this.guna2Button29.Size = new System.Drawing.Size(53, 37);
             this.guna2Button29.TabIndex = 350;
@@ -1342,7 +1344,7 @@
             this.guna2Button30.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button30.ForeColor = System.Drawing.Color.White;
             this.guna2Button30.Location = new System.Drawing.Point(736, 49);
-            this.guna2Button30.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Button30.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button30.Name = "guna2Button30";
             this.guna2Button30.Size = new System.Drawing.Size(53, 37);
             this.guna2Button30.TabIndex = 349;
@@ -1364,7 +1366,7 @@
             this.guna2Button31.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button31.ForeColor = System.Drawing.Color.White;
             this.guna2Button31.Location = new System.Drawing.Point(797, 49);
-            this.guna2Button31.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Button31.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button31.Name = "guna2Button31";
             this.guna2Button31.Size = new System.Drawing.Size(53, 37);
             this.guna2Button31.TabIndex = 351;
@@ -1386,7 +1388,7 @@
             this.guna2Button32.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button32.ForeColor = System.Drawing.Color.White;
             this.guna2Button32.Location = new System.Drawing.Point(4, 94);
-            this.guna2Button32.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Button32.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button32.Name = "guna2Button32";
             this.guna2Button32.Size = new System.Drawing.Size(53, 37);
             this.guna2Button32.TabIndex = 352;
@@ -1408,7 +1410,7 @@
             this.guna2Button33.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button33.ForeColor = System.Drawing.Color.White;
             this.guna2Button33.Location = new System.Drawing.Point(65, 94);
-            this.guna2Button33.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Button33.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button33.Name = "guna2Button33";
             this.guna2Button33.Size = new System.Drawing.Size(53, 37);
             this.guna2Button33.TabIndex = 353;
@@ -1430,7 +1432,7 @@
             this.guna2Button34.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button34.ForeColor = System.Drawing.Color.White;
             this.guna2Button34.Location = new System.Drawing.Point(126, 94);
-            this.guna2Button34.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Button34.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button34.Name = "guna2Button34";
             this.guna2Button34.Size = new System.Drawing.Size(53, 37);
             this.guna2Button34.TabIndex = 354;
@@ -1452,7 +1454,7 @@
             this.guna2Button35.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button35.ForeColor = System.Drawing.Color.White;
             this.guna2Button35.Location = new System.Drawing.Point(187, 94);
-            this.guna2Button35.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Button35.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button35.Name = "guna2Button35";
             this.guna2Button35.Size = new System.Drawing.Size(53, 37);
             this.guna2Button35.TabIndex = 355;
@@ -1474,7 +1476,7 @@
             this.guna2Button36.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button36.ForeColor = System.Drawing.Color.White;
             this.guna2Button36.Location = new System.Drawing.Point(248, 94);
-            this.guna2Button36.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Button36.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button36.Name = "guna2Button36";
             this.guna2Button36.Size = new System.Drawing.Size(53, 37);
             this.guna2Button36.TabIndex = 356;
@@ -1496,7 +1498,7 @@
             this.guna2Button37.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button37.ForeColor = System.Drawing.Color.White;
             this.guna2Button37.Location = new System.Drawing.Point(309, 94);
-            this.guna2Button37.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Button37.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button37.Name = "guna2Button37";
             this.guna2Button37.Size = new System.Drawing.Size(53, 37);
             this.guna2Button37.TabIndex = 357;
@@ -1518,7 +1520,7 @@
             this.guna2Button38.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button38.ForeColor = System.Drawing.Color.White;
             this.guna2Button38.Location = new System.Drawing.Point(370, 94);
-            this.guna2Button38.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Button38.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button38.Name = "guna2Button38";
             this.guna2Button38.Size = new System.Drawing.Size(53, 37);
             this.guna2Button38.TabIndex = 358;
@@ -1540,7 +1542,7 @@
             this.guna2Button39.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button39.ForeColor = System.Drawing.Color.White;
             this.guna2Button39.Location = new System.Drawing.Point(431, 94);
-            this.guna2Button39.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Button39.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button39.Name = "guna2Button39";
             this.guna2Button39.Size = new System.Drawing.Size(53, 37);
             this.guna2Button39.TabIndex = 359;
@@ -1562,7 +1564,7 @@
             this.guna2Button40.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button40.ForeColor = System.Drawing.Color.White;
             this.guna2Button40.Location = new System.Drawing.Point(492, 94);
-            this.guna2Button40.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Button40.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button40.Name = "guna2Button40";
             this.guna2Button40.Size = new System.Drawing.Size(53, 37);
             this.guna2Button40.TabIndex = 360;
@@ -1584,7 +1586,7 @@
             this.guna2Button41.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button41.ForeColor = System.Drawing.Color.White;
             this.guna2Button41.Location = new System.Drawing.Point(553, 94);
-            this.guna2Button41.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Button41.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button41.Name = "guna2Button41";
             this.guna2Button41.Size = new System.Drawing.Size(53, 37);
             this.guna2Button41.TabIndex = 361;
@@ -1606,7 +1608,7 @@
             this.guna2Button42.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button42.ForeColor = System.Drawing.Color.White;
             this.guna2Button42.Location = new System.Drawing.Point(614, 94);
-            this.guna2Button42.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Button42.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button42.Name = "guna2Button42";
             this.guna2Button42.Size = new System.Drawing.Size(53, 37);
             this.guna2Button42.TabIndex = 362;
@@ -1628,7 +1630,7 @@
             this.guna2Button43.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button43.ForeColor = System.Drawing.Color.White;
             this.guna2Button43.Location = new System.Drawing.Point(675, 94);
-            this.guna2Button43.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Button43.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button43.Name = "guna2Button43";
             this.guna2Button43.Size = new System.Drawing.Size(53, 37);
             this.guna2Button43.TabIndex = 364;
@@ -1650,7 +1652,7 @@
             this.guna2Button44.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button44.ForeColor = System.Drawing.Color.White;
             this.guna2Button44.Location = new System.Drawing.Point(736, 94);
-            this.guna2Button44.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Button44.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button44.Name = "guna2Button44";
             this.guna2Button44.Size = new System.Drawing.Size(53, 37);
             this.guna2Button44.TabIndex = 363;
@@ -1672,7 +1674,7 @@
             this.guna2Button45.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button45.ForeColor = System.Drawing.Color.White;
             this.guna2Button45.Location = new System.Drawing.Point(797, 94);
-            this.guna2Button45.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Button45.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button45.Name = "guna2Button45";
             this.guna2Button45.Size = new System.Drawing.Size(53, 37);
             this.guna2Button45.TabIndex = 365;
@@ -1694,7 +1696,7 @@
             this.guna2Button46.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button46.ForeColor = System.Drawing.Color.White;
             this.guna2Button46.Location = new System.Drawing.Point(4, 139);
-            this.guna2Button46.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Button46.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button46.Name = "guna2Button46";
             this.guna2Button46.Size = new System.Drawing.Size(53, 37);
             this.guna2Button46.TabIndex = 366;
@@ -1716,7 +1718,7 @@
             this.guna2Button47.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button47.ForeColor = System.Drawing.Color.White;
             this.guna2Button47.Location = new System.Drawing.Point(65, 139);
-            this.guna2Button47.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Button47.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button47.Name = "guna2Button47";
             this.guna2Button47.Size = new System.Drawing.Size(53, 37);
             this.guna2Button47.TabIndex = 367;
@@ -1738,7 +1740,7 @@
             this.guna2Button48.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button48.ForeColor = System.Drawing.Color.White;
             this.guna2Button48.Location = new System.Drawing.Point(126, 139);
-            this.guna2Button48.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Button48.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button48.Name = "guna2Button48";
             this.guna2Button48.Size = new System.Drawing.Size(53, 37);
             this.guna2Button48.TabIndex = 368;
@@ -1760,7 +1762,7 @@
             this.guna2Button49.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button49.ForeColor = System.Drawing.Color.White;
             this.guna2Button49.Location = new System.Drawing.Point(187, 139);
-            this.guna2Button49.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Button49.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button49.Name = "guna2Button49";
             this.guna2Button49.Size = new System.Drawing.Size(53, 37);
             this.guna2Button49.TabIndex = 369;
@@ -1782,7 +1784,7 @@
             this.guna2Button50.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button50.ForeColor = System.Drawing.Color.White;
             this.guna2Button50.Location = new System.Drawing.Point(248, 139);
-            this.guna2Button50.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Button50.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button50.Name = "guna2Button50";
             this.guna2Button50.Size = new System.Drawing.Size(53, 37);
             this.guna2Button50.TabIndex = 370;
@@ -1804,7 +1806,7 @@
             this.guna2Button51.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button51.ForeColor = System.Drawing.Color.White;
             this.guna2Button51.Location = new System.Drawing.Point(309, 139);
-            this.guna2Button51.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Button51.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button51.Name = "guna2Button51";
             this.guna2Button51.Size = new System.Drawing.Size(53, 37);
             this.guna2Button51.TabIndex = 371;
@@ -1826,7 +1828,7 @@
             this.guna2Button52.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button52.ForeColor = System.Drawing.Color.White;
             this.guna2Button52.Location = new System.Drawing.Point(370, 139);
-            this.guna2Button52.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Button52.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button52.Name = "guna2Button52";
             this.guna2Button52.Size = new System.Drawing.Size(53, 37);
             this.guna2Button52.TabIndex = 372;
@@ -1848,7 +1850,7 @@
             this.guna2Button53.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button53.ForeColor = System.Drawing.Color.White;
             this.guna2Button53.Location = new System.Drawing.Point(431, 139);
-            this.guna2Button53.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Button53.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button53.Name = "guna2Button53";
             this.guna2Button53.Size = new System.Drawing.Size(53, 37);
             this.guna2Button53.TabIndex = 373;
@@ -1870,7 +1872,7 @@
             this.guna2Button54.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button54.ForeColor = System.Drawing.Color.White;
             this.guna2Button54.Location = new System.Drawing.Point(492, 139);
-            this.guna2Button54.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Button54.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button54.Name = "guna2Button54";
             this.guna2Button54.Size = new System.Drawing.Size(53, 37);
             this.guna2Button54.TabIndex = 374;
@@ -1892,7 +1894,7 @@
             this.guna2Button55.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button55.ForeColor = System.Drawing.Color.White;
             this.guna2Button55.Location = new System.Drawing.Point(553, 139);
-            this.guna2Button55.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Button55.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button55.Name = "guna2Button55";
             this.guna2Button55.Size = new System.Drawing.Size(53, 37);
             this.guna2Button55.TabIndex = 375;
@@ -1914,7 +1916,7 @@
             this.guna2Button56.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button56.ForeColor = System.Drawing.Color.White;
             this.guna2Button56.Location = new System.Drawing.Point(614, 139);
-            this.guna2Button56.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Button56.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button56.Name = "guna2Button56";
             this.guna2Button56.Size = new System.Drawing.Size(53, 37);
             this.guna2Button56.TabIndex = 376;
@@ -1936,7 +1938,7 @@
             this.guna2Button57.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button57.ForeColor = System.Drawing.Color.White;
             this.guna2Button57.Location = new System.Drawing.Point(675, 139);
-            this.guna2Button57.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Button57.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button57.Name = "guna2Button57";
             this.guna2Button57.Size = new System.Drawing.Size(53, 37);
             this.guna2Button57.TabIndex = 378;
@@ -1958,7 +1960,7 @@
             this.guna2Button58.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button58.ForeColor = System.Drawing.Color.White;
             this.guna2Button58.Location = new System.Drawing.Point(736, 139);
-            this.guna2Button58.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Button58.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button58.Name = "guna2Button58";
             this.guna2Button58.Size = new System.Drawing.Size(53, 37);
             this.guna2Button58.TabIndex = 377;
@@ -1980,7 +1982,7 @@
             this.guna2Button59.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button59.ForeColor = System.Drawing.Color.White;
             this.guna2Button59.Location = new System.Drawing.Point(797, 139);
-            this.guna2Button59.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Button59.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button59.Name = "guna2Button59";
             this.guna2Button59.Size = new System.Drawing.Size(53, 37);
             this.guna2Button59.TabIndex = 379;
@@ -2002,7 +2004,7 @@
             this.guna2Button60.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button60.ForeColor = System.Drawing.Color.White;
             this.guna2Button60.Location = new System.Drawing.Point(4, 184);
-            this.guna2Button60.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Button60.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button60.Name = "guna2Button60";
             this.guna2Button60.Size = new System.Drawing.Size(53, 37);
             this.guna2Button60.TabIndex = 380;
@@ -2024,7 +2026,7 @@
             this.guna2Button61.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button61.ForeColor = System.Drawing.Color.White;
             this.guna2Button61.Location = new System.Drawing.Point(65, 184);
-            this.guna2Button61.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Button61.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button61.Name = "guna2Button61";
             this.guna2Button61.Size = new System.Drawing.Size(53, 37);
             this.guna2Button61.TabIndex = 381;
@@ -2046,7 +2048,7 @@
             this.vipguna2Button62.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.vipguna2Button62.ForeColor = System.Drawing.Color.White;
             this.vipguna2Button62.Location = new System.Drawing.Point(126, 184);
-            this.vipguna2Button62.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.vipguna2Button62.Margin = new System.Windows.Forms.Padding(4);
             this.vipguna2Button62.Name = "vipguna2Button62";
             this.vipguna2Button62.Size = new System.Drawing.Size(53, 37);
             this.vipguna2Button62.TabIndex = 382;
@@ -2068,7 +2070,7 @@
             this.vipguna2Button63.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.vipguna2Button63.ForeColor = System.Drawing.Color.White;
             this.vipguna2Button63.Location = new System.Drawing.Point(187, 184);
-            this.vipguna2Button63.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.vipguna2Button63.Margin = new System.Windows.Forms.Padding(4);
             this.vipguna2Button63.Name = "vipguna2Button63";
             this.vipguna2Button63.Size = new System.Drawing.Size(53, 37);
             this.vipguna2Button63.TabIndex = 383;
@@ -2090,7 +2092,7 @@
             this.vipguna2Button64.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.vipguna2Button64.ForeColor = System.Drawing.Color.White;
             this.vipguna2Button64.Location = new System.Drawing.Point(248, 184);
-            this.vipguna2Button64.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.vipguna2Button64.Margin = new System.Windows.Forms.Padding(4);
             this.vipguna2Button64.Name = "vipguna2Button64";
             this.vipguna2Button64.Size = new System.Drawing.Size(53, 37);
             this.vipguna2Button64.TabIndex = 384;
@@ -2112,7 +2114,7 @@
             this.vipguna2Button65.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.vipguna2Button65.ForeColor = System.Drawing.Color.White;
             this.vipguna2Button65.Location = new System.Drawing.Point(309, 184);
-            this.vipguna2Button65.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.vipguna2Button65.Margin = new System.Windows.Forms.Padding(4);
             this.vipguna2Button65.Name = "vipguna2Button65";
             this.vipguna2Button65.Size = new System.Drawing.Size(53, 37);
             this.vipguna2Button65.TabIndex = 385;
@@ -2134,7 +2136,7 @@
             this.vipguna2Button66.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.vipguna2Button66.ForeColor = System.Drawing.Color.White;
             this.vipguna2Button66.Location = new System.Drawing.Point(370, 184);
-            this.vipguna2Button66.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.vipguna2Button66.Margin = new System.Windows.Forms.Padding(4);
             this.vipguna2Button66.Name = "vipguna2Button66";
             this.vipguna2Button66.Size = new System.Drawing.Size(53, 37);
             this.vipguna2Button66.TabIndex = 386;
@@ -2156,7 +2158,7 @@
             this.vipguna2Button67.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.vipguna2Button67.ForeColor = System.Drawing.Color.White;
             this.vipguna2Button67.Location = new System.Drawing.Point(431, 184);
-            this.vipguna2Button67.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.vipguna2Button67.Margin = new System.Windows.Forms.Padding(4);
             this.vipguna2Button67.Name = "vipguna2Button67";
             this.vipguna2Button67.ShadowDecoration.Depth = 10;
             this.vipguna2Button67.ShadowDecoration.Enabled = true;
@@ -2180,7 +2182,7 @@
             this.vipguna2Button68.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.vipguna2Button68.ForeColor = System.Drawing.Color.White;
             this.vipguna2Button68.Location = new System.Drawing.Point(492, 184);
-            this.vipguna2Button68.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.vipguna2Button68.Margin = new System.Windows.Forms.Padding(4);
             this.vipguna2Button68.Name = "vipguna2Button68";
             this.vipguna2Button68.Size = new System.Drawing.Size(53, 37);
             this.vipguna2Button68.TabIndex = 388;
@@ -2203,7 +2205,7 @@
             this.vipguna2Button69.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.vipguna2Button69.ForeColor = System.Drawing.Color.White;
             this.vipguna2Button69.Location = new System.Drawing.Point(553, 184);
-            this.vipguna2Button69.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.vipguna2Button69.Margin = new System.Windows.Forms.Padding(4);
             this.vipguna2Button69.Name = "vipguna2Button69";
             this.vipguna2Button69.Size = new System.Drawing.Size(53, 37);
             this.vipguna2Button69.TabIndex = 389;
@@ -2225,7 +2227,7 @@
             this.vipguna2Button70.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.vipguna2Button70.ForeColor = System.Drawing.Color.White;
             this.vipguna2Button70.Location = new System.Drawing.Point(614, 184);
-            this.vipguna2Button70.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.vipguna2Button70.Margin = new System.Windows.Forms.Padding(4);
             this.vipguna2Button70.Name = "vipguna2Button70";
             this.vipguna2Button70.Size = new System.Drawing.Size(53, 37);
             this.vipguna2Button70.TabIndex = 390;
@@ -2247,7 +2249,7 @@
             this.vipguna2Button71.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.vipguna2Button71.ForeColor = System.Drawing.Color.White;
             this.vipguna2Button71.Location = new System.Drawing.Point(675, 184);
-            this.vipguna2Button71.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.vipguna2Button71.Margin = new System.Windows.Forms.Padding(4);
             this.vipguna2Button71.Name = "vipguna2Button71";
             this.vipguna2Button71.Size = new System.Drawing.Size(53, 37);
             this.vipguna2Button71.TabIndex = 392;
@@ -2269,7 +2271,7 @@
             this.guna2Button72.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button72.ForeColor = System.Drawing.Color.White;
             this.guna2Button72.Location = new System.Drawing.Point(736, 184);
-            this.guna2Button72.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Button72.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button72.Name = "guna2Button72";
             this.guna2Button72.Size = new System.Drawing.Size(53, 37);
             this.guna2Button72.TabIndex = 391;
@@ -2291,7 +2293,7 @@
             this.guna2Button73.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button73.ForeColor = System.Drawing.Color.White;
             this.guna2Button73.Location = new System.Drawing.Point(797, 184);
-            this.guna2Button73.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Button73.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button73.Name = "guna2Button73";
             this.guna2Button73.Size = new System.Drawing.Size(53, 37);
             this.guna2Button73.TabIndex = 393;
@@ -2313,7 +2315,7 @@
             this.guna2Button74.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button74.ForeColor = System.Drawing.Color.White;
             this.guna2Button74.Location = new System.Drawing.Point(4, 229);
-            this.guna2Button74.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Button74.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button74.Name = "guna2Button74";
             this.guna2Button74.Size = new System.Drawing.Size(53, 37);
             this.guna2Button74.TabIndex = 394;
@@ -2335,7 +2337,7 @@
             this.guna2Button75.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button75.ForeColor = System.Drawing.Color.White;
             this.guna2Button75.Location = new System.Drawing.Point(65, 229);
-            this.guna2Button75.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Button75.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button75.Name = "guna2Button75";
             this.guna2Button75.Size = new System.Drawing.Size(53, 37);
             this.guna2Button75.TabIndex = 395;
@@ -2357,7 +2359,7 @@
             this.vipguna2Button76.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.vipguna2Button76.ForeColor = System.Drawing.Color.White;
             this.vipguna2Button76.Location = new System.Drawing.Point(126, 229);
-            this.vipguna2Button76.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.vipguna2Button76.Margin = new System.Windows.Forms.Padding(4);
             this.vipguna2Button76.Name = "vipguna2Button76";
             this.vipguna2Button76.Size = new System.Drawing.Size(53, 37);
             this.vipguna2Button76.TabIndex = 396;
@@ -2379,7 +2381,7 @@
             this.vipguna2Button77.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.vipguna2Button77.ForeColor = System.Drawing.Color.White;
             this.vipguna2Button77.Location = new System.Drawing.Point(187, 229);
-            this.vipguna2Button77.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.vipguna2Button77.Margin = new System.Windows.Forms.Padding(4);
             this.vipguna2Button77.Name = "vipguna2Button77";
             this.vipguna2Button77.Size = new System.Drawing.Size(53, 37);
             this.vipguna2Button77.TabIndex = 397;
@@ -2401,7 +2403,7 @@
             this.vipguna2Button78.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.vipguna2Button78.ForeColor = System.Drawing.Color.White;
             this.vipguna2Button78.Location = new System.Drawing.Point(248, 229);
-            this.vipguna2Button78.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.vipguna2Button78.Margin = new System.Windows.Forms.Padding(4);
             this.vipguna2Button78.Name = "vipguna2Button78";
             this.vipguna2Button78.Size = new System.Drawing.Size(53, 37);
             this.vipguna2Button78.TabIndex = 398;
@@ -2423,7 +2425,7 @@
             this.vipguna2Button79.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.vipguna2Button79.ForeColor = System.Drawing.Color.White;
             this.vipguna2Button79.Location = new System.Drawing.Point(309, 229);
-            this.vipguna2Button79.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.vipguna2Button79.Margin = new System.Windows.Forms.Padding(4);
             this.vipguna2Button79.Name = "vipguna2Button79";
             this.vipguna2Button79.Size = new System.Drawing.Size(53, 37);
             this.vipguna2Button79.TabIndex = 399;
@@ -2445,7 +2447,7 @@
             this.vipguna2Button80.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.vipguna2Button80.ForeColor = System.Drawing.Color.White;
             this.vipguna2Button80.Location = new System.Drawing.Point(370, 229);
-            this.vipguna2Button80.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.vipguna2Button80.Margin = new System.Windows.Forms.Padding(4);
             this.vipguna2Button80.Name = "vipguna2Button80";
             this.vipguna2Button80.Size = new System.Drawing.Size(53, 37);
             this.vipguna2Button80.TabIndex = 400;
@@ -2467,7 +2469,7 @@
             this.vipguna2Button81.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.vipguna2Button81.ForeColor = System.Drawing.Color.White;
             this.vipguna2Button81.Location = new System.Drawing.Point(431, 229);
-            this.vipguna2Button81.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.vipguna2Button81.Margin = new System.Windows.Forms.Padding(4);
             this.vipguna2Button81.Name = "vipguna2Button81";
             this.vipguna2Button81.Size = new System.Drawing.Size(53, 37);
             this.vipguna2Button81.TabIndex = 401;
@@ -2489,7 +2491,7 @@
             this.vipguna2Button82.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.vipguna2Button82.ForeColor = System.Drawing.Color.White;
             this.vipguna2Button82.Location = new System.Drawing.Point(492, 229);
-            this.vipguna2Button82.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.vipguna2Button82.Margin = new System.Windows.Forms.Padding(4);
             this.vipguna2Button82.Name = "vipguna2Button82";
             this.vipguna2Button82.Size = new System.Drawing.Size(53, 37);
             this.vipguna2Button82.TabIndex = 402;
@@ -2511,7 +2513,7 @@
             this.vipguna2Button83.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.vipguna2Button83.ForeColor = System.Drawing.Color.White;
             this.vipguna2Button83.Location = new System.Drawing.Point(553, 229);
-            this.vipguna2Button83.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.vipguna2Button83.Margin = new System.Windows.Forms.Padding(4);
             this.vipguna2Button83.Name = "vipguna2Button83";
             this.vipguna2Button83.Size = new System.Drawing.Size(53, 37);
             this.vipguna2Button83.TabIndex = 403;
@@ -2533,7 +2535,7 @@
             this.vipguna2Button84.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.vipguna2Button84.ForeColor = System.Drawing.Color.White;
             this.vipguna2Button84.Location = new System.Drawing.Point(614, 229);
-            this.vipguna2Button84.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.vipguna2Button84.Margin = new System.Windows.Forms.Padding(4);
             this.vipguna2Button84.Name = "vipguna2Button84";
             this.vipguna2Button84.Size = new System.Drawing.Size(53, 37);
             this.vipguna2Button84.TabIndex = 404;
@@ -2555,7 +2557,7 @@
             this.vipguna2Button85.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.vipguna2Button85.ForeColor = System.Drawing.Color.White;
             this.vipguna2Button85.Location = new System.Drawing.Point(675, 229);
-            this.vipguna2Button85.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.vipguna2Button85.Margin = new System.Windows.Forms.Padding(4);
             this.vipguna2Button85.Name = "vipguna2Button85";
             this.vipguna2Button85.Size = new System.Drawing.Size(53, 37);
             this.vipguna2Button85.TabIndex = 406;
@@ -2577,7 +2579,7 @@
             this.guna2Button86.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button86.ForeColor = System.Drawing.Color.White;
             this.guna2Button86.Location = new System.Drawing.Point(736, 229);
-            this.guna2Button86.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Button86.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button86.Name = "guna2Button86";
             this.guna2Button86.Size = new System.Drawing.Size(53, 37);
             this.guna2Button86.TabIndex = 405;
@@ -2599,7 +2601,7 @@
             this.guna2Button87.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button87.ForeColor = System.Drawing.Color.White;
             this.guna2Button87.Location = new System.Drawing.Point(797, 229);
-            this.guna2Button87.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Button87.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button87.Name = "guna2Button87";
             this.guna2Button87.Size = new System.Drawing.Size(53, 37);
             this.guna2Button87.TabIndex = 407;
@@ -2621,7 +2623,7 @@
             this.guna2Button88.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button88.ForeColor = System.Drawing.Color.White;
             this.guna2Button88.Location = new System.Drawing.Point(4, 274);
-            this.guna2Button88.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Button88.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button88.Name = "guna2Button88";
             this.guna2Button88.Size = new System.Drawing.Size(53, 37);
             this.guna2Button88.TabIndex = 408;
@@ -2643,7 +2645,7 @@
             this.guna2Button89.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button89.ForeColor = System.Drawing.Color.White;
             this.guna2Button89.Location = new System.Drawing.Point(65, 274);
-            this.guna2Button89.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Button89.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button89.Name = "guna2Button89";
             this.guna2Button89.Size = new System.Drawing.Size(53, 37);
             this.guna2Button89.TabIndex = 409;
@@ -2665,7 +2667,7 @@
             this.vipguna2Button90.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.vipguna2Button90.ForeColor = System.Drawing.Color.White;
             this.vipguna2Button90.Location = new System.Drawing.Point(126, 274);
-            this.vipguna2Button90.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.vipguna2Button90.Margin = new System.Windows.Forms.Padding(4);
             this.vipguna2Button90.Name = "vipguna2Button90";
             this.vipguna2Button90.Size = new System.Drawing.Size(53, 37);
             this.vipguna2Button90.TabIndex = 410;
@@ -2687,7 +2689,7 @@
             this.vipguna2Button91.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.vipguna2Button91.ForeColor = System.Drawing.Color.White;
             this.vipguna2Button91.Location = new System.Drawing.Point(187, 274);
-            this.vipguna2Button91.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.vipguna2Button91.Margin = new System.Windows.Forms.Padding(4);
             this.vipguna2Button91.Name = "vipguna2Button91";
             this.vipguna2Button91.Size = new System.Drawing.Size(53, 37);
             this.vipguna2Button91.TabIndex = 411;
@@ -2709,7 +2711,7 @@
             this.vipguna2Button92.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.vipguna2Button92.ForeColor = System.Drawing.Color.White;
             this.vipguna2Button92.Location = new System.Drawing.Point(248, 274);
-            this.vipguna2Button92.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.vipguna2Button92.Margin = new System.Windows.Forms.Padding(4);
             this.vipguna2Button92.Name = "vipguna2Button92";
             this.vipguna2Button92.Size = new System.Drawing.Size(53, 37);
             this.vipguna2Button92.TabIndex = 412;
@@ -2731,7 +2733,7 @@
             this.vipguna2Button93.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.vipguna2Button93.ForeColor = System.Drawing.Color.White;
             this.vipguna2Button93.Location = new System.Drawing.Point(309, 274);
-            this.vipguna2Button93.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.vipguna2Button93.Margin = new System.Windows.Forms.Padding(4);
             this.vipguna2Button93.Name = "vipguna2Button93";
             this.vipguna2Button93.Size = new System.Drawing.Size(53, 37);
             this.vipguna2Button93.TabIndex = 413;
@@ -2753,7 +2755,7 @@
             this.vipguna2Button94.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.vipguna2Button94.ForeColor = System.Drawing.Color.White;
             this.vipguna2Button94.Location = new System.Drawing.Point(370, 274);
-            this.vipguna2Button94.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.vipguna2Button94.Margin = new System.Windows.Forms.Padding(4);
             this.vipguna2Button94.Name = "vipguna2Button94";
             this.vipguna2Button94.Size = new System.Drawing.Size(53, 37);
             this.vipguna2Button94.TabIndex = 414;
@@ -2775,7 +2777,7 @@
             this.vipguna2Button95.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.vipguna2Button95.ForeColor = System.Drawing.Color.White;
             this.vipguna2Button95.Location = new System.Drawing.Point(431, 274);
-            this.vipguna2Button95.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.vipguna2Button95.Margin = new System.Windows.Forms.Padding(4);
             this.vipguna2Button95.Name = "vipguna2Button95";
             this.vipguna2Button95.Size = new System.Drawing.Size(53, 37);
             this.vipguna2Button95.TabIndex = 415;
@@ -2797,7 +2799,7 @@
             this.vipguna2Button96.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.vipguna2Button96.ForeColor = System.Drawing.Color.White;
             this.vipguna2Button96.Location = new System.Drawing.Point(492, 274);
-            this.vipguna2Button96.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.vipguna2Button96.Margin = new System.Windows.Forms.Padding(4);
             this.vipguna2Button96.Name = "vipguna2Button96";
             this.vipguna2Button96.Size = new System.Drawing.Size(53, 37);
             this.vipguna2Button96.TabIndex = 416;
@@ -2819,7 +2821,7 @@
             this.vipguna2Button97.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.vipguna2Button97.ForeColor = System.Drawing.Color.White;
             this.vipguna2Button97.Location = new System.Drawing.Point(553, 274);
-            this.vipguna2Button97.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.vipguna2Button97.Margin = new System.Windows.Forms.Padding(4);
             this.vipguna2Button97.Name = "vipguna2Button97";
             this.vipguna2Button97.Size = new System.Drawing.Size(53, 37);
             this.vipguna2Button97.TabIndex = 417;
@@ -2841,7 +2843,7 @@
             this.vipguna2Button98.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.vipguna2Button98.ForeColor = System.Drawing.Color.White;
             this.vipguna2Button98.Location = new System.Drawing.Point(614, 274);
-            this.vipguna2Button98.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.vipguna2Button98.Margin = new System.Windows.Forms.Padding(4);
             this.vipguna2Button98.Name = "vipguna2Button98";
             this.vipguna2Button98.Size = new System.Drawing.Size(53, 37);
             this.vipguna2Button98.TabIndex = 418;
@@ -2863,7 +2865,7 @@
             this.vipguna2Button99.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.vipguna2Button99.ForeColor = System.Drawing.Color.White;
             this.vipguna2Button99.Location = new System.Drawing.Point(675, 274);
-            this.vipguna2Button99.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.vipguna2Button99.Margin = new System.Windows.Forms.Padding(4);
             this.vipguna2Button99.Name = "vipguna2Button99";
             this.vipguna2Button99.Size = new System.Drawing.Size(53, 37);
             this.vipguna2Button99.TabIndex = 420;
@@ -2885,7 +2887,7 @@
             this.guna2Button100.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button100.ForeColor = System.Drawing.Color.White;
             this.guna2Button100.Location = new System.Drawing.Point(736, 274);
-            this.guna2Button100.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Button100.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button100.Name = "guna2Button100";
             this.guna2Button100.Size = new System.Drawing.Size(53, 37);
             this.guna2Button100.TabIndex = 419;
@@ -2908,7 +2910,7 @@
             this.guna2Button101.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button101.ForeColor = System.Drawing.Color.White;
             this.guna2Button101.Location = new System.Drawing.Point(797, 274);
-            this.guna2Button101.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Button101.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button101.Name = "guna2Button101";
             this.guna2Button101.Size = new System.Drawing.Size(53, 37);
             this.guna2Button101.TabIndex = 421;
@@ -2930,7 +2932,7 @@
             this.guna2Button102.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button102.ForeColor = System.Drawing.Color.White;
             this.guna2Button102.Location = new System.Drawing.Point(4, 319);
-            this.guna2Button102.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Button102.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button102.Name = "guna2Button102";
             this.guna2Button102.Size = new System.Drawing.Size(53, 37);
             this.guna2Button102.TabIndex = 422;
@@ -2952,7 +2954,7 @@
             this.guna2Button103.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button103.ForeColor = System.Drawing.Color.White;
             this.guna2Button103.Location = new System.Drawing.Point(65, 319);
-            this.guna2Button103.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Button103.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button103.Name = "guna2Button103";
             this.guna2Button103.Size = new System.Drawing.Size(53, 37);
             this.guna2Button103.TabIndex = 423;
@@ -2974,7 +2976,7 @@
             this.vipguna2Button104.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.vipguna2Button104.ForeColor = System.Drawing.Color.White;
             this.vipguna2Button104.Location = new System.Drawing.Point(126, 319);
-            this.vipguna2Button104.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.vipguna2Button104.Margin = new System.Windows.Forms.Padding(4);
             this.vipguna2Button104.Name = "vipguna2Button104";
             this.vipguna2Button104.Size = new System.Drawing.Size(53, 37);
             this.vipguna2Button104.TabIndex = 424;
@@ -2996,7 +2998,7 @@
             this.vipguna2Button105.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.vipguna2Button105.ForeColor = System.Drawing.Color.White;
             this.vipguna2Button105.Location = new System.Drawing.Point(187, 319);
-            this.vipguna2Button105.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.vipguna2Button105.Margin = new System.Windows.Forms.Padding(4);
             this.vipguna2Button105.Name = "vipguna2Button105";
             this.vipguna2Button105.Size = new System.Drawing.Size(53, 37);
             this.vipguna2Button105.TabIndex = 425;
@@ -3018,7 +3020,7 @@
             this.vipguna2Button106.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.vipguna2Button106.ForeColor = System.Drawing.Color.White;
             this.vipguna2Button106.Location = new System.Drawing.Point(248, 319);
-            this.vipguna2Button106.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.vipguna2Button106.Margin = new System.Windows.Forms.Padding(4);
             this.vipguna2Button106.Name = "vipguna2Button106";
             this.vipguna2Button106.Size = new System.Drawing.Size(53, 37);
             this.vipguna2Button106.TabIndex = 426;
@@ -3040,7 +3042,7 @@
             this.vipguna2Button107.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.vipguna2Button107.ForeColor = System.Drawing.Color.White;
             this.vipguna2Button107.Location = new System.Drawing.Point(309, 319);
-            this.vipguna2Button107.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.vipguna2Button107.Margin = new System.Windows.Forms.Padding(4);
             this.vipguna2Button107.Name = "vipguna2Button107";
             this.vipguna2Button107.Size = new System.Drawing.Size(53, 37);
             this.vipguna2Button107.TabIndex = 427;
@@ -3062,7 +3064,7 @@
             this.vipguna2Button108.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.vipguna2Button108.ForeColor = System.Drawing.Color.White;
             this.vipguna2Button108.Location = new System.Drawing.Point(370, 319);
-            this.vipguna2Button108.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.vipguna2Button108.Margin = new System.Windows.Forms.Padding(4);
             this.vipguna2Button108.Name = "vipguna2Button108";
             this.vipguna2Button108.Size = new System.Drawing.Size(53, 37);
             this.vipguna2Button108.TabIndex = 428;
@@ -3084,7 +3086,7 @@
             this.vipguna2Button109.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.vipguna2Button109.ForeColor = System.Drawing.Color.White;
             this.vipguna2Button109.Location = new System.Drawing.Point(431, 319);
-            this.vipguna2Button109.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.vipguna2Button109.Margin = new System.Windows.Forms.Padding(4);
             this.vipguna2Button109.Name = "vipguna2Button109";
             this.vipguna2Button109.Size = new System.Drawing.Size(53, 37);
             this.vipguna2Button109.TabIndex = 429;
@@ -3106,7 +3108,7 @@
             this.vipguna2Button110.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.vipguna2Button110.ForeColor = System.Drawing.Color.White;
             this.vipguna2Button110.Location = new System.Drawing.Point(492, 319);
-            this.vipguna2Button110.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.vipguna2Button110.Margin = new System.Windows.Forms.Padding(4);
             this.vipguna2Button110.Name = "vipguna2Button110";
             this.vipguna2Button110.Size = new System.Drawing.Size(53, 37);
             this.vipguna2Button110.TabIndex = 430;
@@ -3128,7 +3130,7 @@
             this.vipguna2Button111.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.vipguna2Button111.ForeColor = System.Drawing.Color.White;
             this.vipguna2Button111.Location = new System.Drawing.Point(553, 319);
-            this.vipguna2Button111.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.vipguna2Button111.Margin = new System.Windows.Forms.Padding(4);
             this.vipguna2Button111.Name = "vipguna2Button111";
             this.vipguna2Button111.Size = new System.Drawing.Size(53, 37);
             this.vipguna2Button111.TabIndex = 431;
@@ -3150,7 +3152,7 @@
             this.vipguna2Button112.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.vipguna2Button112.ForeColor = System.Drawing.Color.White;
             this.vipguna2Button112.Location = new System.Drawing.Point(614, 319);
-            this.vipguna2Button112.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.vipguna2Button112.Margin = new System.Windows.Forms.Padding(4);
             this.vipguna2Button112.Name = "vipguna2Button112";
             this.vipguna2Button112.Size = new System.Drawing.Size(53, 37);
             this.vipguna2Button112.TabIndex = 432;
@@ -3172,7 +3174,7 @@
             this.vipguna2Button113.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.vipguna2Button113.ForeColor = System.Drawing.Color.White;
             this.vipguna2Button113.Location = new System.Drawing.Point(675, 319);
-            this.vipguna2Button113.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.vipguna2Button113.Margin = new System.Windows.Forms.Padding(4);
             this.vipguna2Button113.Name = "vipguna2Button113";
             this.vipguna2Button113.Size = new System.Drawing.Size(53, 37);
             this.vipguna2Button113.TabIndex = 434;
@@ -3194,7 +3196,7 @@
             this.guna2Button114.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button114.ForeColor = System.Drawing.Color.White;
             this.guna2Button114.Location = new System.Drawing.Point(736, 319);
-            this.guna2Button114.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Button114.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button114.Name = "guna2Button114";
             this.guna2Button114.Size = new System.Drawing.Size(53, 37);
             this.guna2Button114.TabIndex = 433;
@@ -3216,7 +3218,7 @@
             this.guna2Button115.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button115.ForeColor = System.Drawing.Color.White;
             this.guna2Button115.Location = new System.Drawing.Point(797, 319);
-            this.guna2Button115.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Button115.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button115.Name = "guna2Button115";
             this.guna2Button115.Size = new System.Drawing.Size(53, 37);
             this.guna2Button115.TabIndex = 435;
@@ -3238,7 +3240,7 @@
             this.guna2Button116.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button116.ForeColor = System.Drawing.Color.White;
             this.guna2Button116.Location = new System.Drawing.Point(4, 364);
-            this.guna2Button116.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Button116.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button116.Name = "guna2Button116";
             this.guna2Button116.Size = new System.Drawing.Size(53, 37);
             this.guna2Button116.TabIndex = 436;
@@ -3260,7 +3262,7 @@
             this.guna2Button117.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button117.ForeColor = System.Drawing.Color.White;
             this.guna2Button117.Location = new System.Drawing.Point(65, 364);
-            this.guna2Button117.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Button117.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button117.Name = "guna2Button117";
             this.guna2Button117.Size = new System.Drawing.Size(53, 37);
             this.guna2Button117.TabIndex = 437;
@@ -3282,7 +3284,7 @@
             this.vipguna2Button118.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.vipguna2Button118.ForeColor = System.Drawing.Color.White;
             this.vipguna2Button118.Location = new System.Drawing.Point(126, 364);
-            this.vipguna2Button118.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.vipguna2Button118.Margin = new System.Windows.Forms.Padding(4);
             this.vipguna2Button118.Name = "vipguna2Button118";
             this.vipguna2Button118.Size = new System.Drawing.Size(53, 37);
             this.vipguna2Button118.TabIndex = 438;
@@ -3304,7 +3306,7 @@
             this.vipguna2Button119.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.vipguna2Button119.ForeColor = System.Drawing.Color.White;
             this.vipguna2Button119.Location = new System.Drawing.Point(187, 364);
-            this.vipguna2Button119.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.vipguna2Button119.Margin = new System.Windows.Forms.Padding(4);
             this.vipguna2Button119.Name = "vipguna2Button119";
             this.vipguna2Button119.Size = new System.Drawing.Size(53, 37);
             this.vipguna2Button119.TabIndex = 439;
@@ -3326,7 +3328,7 @@
             this.vipguna2Button120.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.vipguna2Button120.ForeColor = System.Drawing.Color.White;
             this.vipguna2Button120.Location = new System.Drawing.Point(248, 364);
-            this.vipguna2Button120.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.vipguna2Button120.Margin = new System.Windows.Forms.Padding(4);
             this.vipguna2Button120.Name = "vipguna2Button120";
             this.vipguna2Button120.Size = new System.Drawing.Size(53, 37);
             this.vipguna2Button120.TabIndex = 440;
@@ -3348,7 +3350,7 @@
             this.vipguna2Button121.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.vipguna2Button121.ForeColor = System.Drawing.Color.White;
             this.vipguna2Button121.Location = new System.Drawing.Point(309, 364);
-            this.vipguna2Button121.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.vipguna2Button121.Margin = new System.Windows.Forms.Padding(4);
             this.vipguna2Button121.Name = "vipguna2Button121";
             this.vipguna2Button121.Size = new System.Drawing.Size(53, 37);
             this.vipguna2Button121.TabIndex = 441;
@@ -3370,7 +3372,7 @@
             this.vipguna2Button122.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.vipguna2Button122.ForeColor = System.Drawing.Color.White;
             this.vipguna2Button122.Location = new System.Drawing.Point(370, 364);
-            this.vipguna2Button122.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.vipguna2Button122.Margin = new System.Windows.Forms.Padding(4);
             this.vipguna2Button122.Name = "vipguna2Button122";
             this.vipguna2Button122.Size = new System.Drawing.Size(53, 37);
             this.vipguna2Button122.TabIndex = 442;
@@ -3392,7 +3394,7 @@
             this.vipguna2Button123.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.vipguna2Button123.ForeColor = System.Drawing.Color.White;
             this.vipguna2Button123.Location = new System.Drawing.Point(431, 364);
-            this.vipguna2Button123.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.vipguna2Button123.Margin = new System.Windows.Forms.Padding(4);
             this.vipguna2Button123.Name = "vipguna2Button123";
             this.vipguna2Button123.Size = new System.Drawing.Size(53, 37);
             this.vipguna2Button123.TabIndex = 443;
@@ -3414,7 +3416,7 @@
             this.vipguna2Button124.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.vipguna2Button124.ForeColor = System.Drawing.Color.White;
             this.vipguna2Button124.Location = new System.Drawing.Point(492, 364);
-            this.vipguna2Button124.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.vipguna2Button124.Margin = new System.Windows.Forms.Padding(4);
             this.vipguna2Button124.Name = "vipguna2Button124";
             this.vipguna2Button124.Size = new System.Drawing.Size(53, 37);
             this.vipguna2Button124.TabIndex = 444;
@@ -3436,7 +3438,7 @@
             this.vipguna2Button125.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.vipguna2Button125.ForeColor = System.Drawing.Color.White;
             this.vipguna2Button125.Location = new System.Drawing.Point(553, 364);
-            this.vipguna2Button125.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.vipguna2Button125.Margin = new System.Windows.Forms.Padding(4);
             this.vipguna2Button125.Name = "vipguna2Button125";
             this.vipguna2Button125.Size = new System.Drawing.Size(53, 37);
             this.vipguna2Button125.TabIndex = 445;
@@ -3458,7 +3460,7 @@
             this.vipguna2Button126.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.vipguna2Button126.ForeColor = System.Drawing.Color.White;
             this.vipguna2Button126.Location = new System.Drawing.Point(614, 364);
-            this.vipguna2Button126.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.vipguna2Button126.Margin = new System.Windows.Forms.Padding(4);
             this.vipguna2Button126.Name = "vipguna2Button126";
             this.vipguna2Button126.Size = new System.Drawing.Size(53, 37);
             this.vipguna2Button126.TabIndex = 446;
@@ -3480,7 +3482,7 @@
             this.vipguna2Button127.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.vipguna2Button127.ForeColor = System.Drawing.Color.White;
             this.vipguna2Button127.Location = new System.Drawing.Point(675, 364);
-            this.vipguna2Button127.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.vipguna2Button127.Margin = new System.Windows.Forms.Padding(4);
             this.vipguna2Button127.Name = "vipguna2Button127";
             this.vipguna2Button127.Size = new System.Drawing.Size(53, 37);
             this.vipguna2Button127.TabIndex = 448;
@@ -3502,7 +3504,7 @@
             this.guna2Button128.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button128.ForeColor = System.Drawing.Color.White;
             this.guna2Button128.Location = new System.Drawing.Point(736, 364);
-            this.guna2Button128.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Button128.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button128.Name = "guna2Button128";
             this.guna2Button128.Size = new System.Drawing.Size(53, 37);
             this.guna2Button128.TabIndex = 447;
@@ -3524,7 +3526,7 @@
             this.guna2Button129.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button129.ForeColor = System.Drawing.Color.White;
             this.guna2Button129.Location = new System.Drawing.Point(797, 364);
-            this.guna2Button129.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Button129.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button129.Name = "guna2Button129";
             this.guna2Button129.Size = new System.Drawing.Size(53, 37);
             this.guna2Button129.TabIndex = 449;
@@ -3546,7 +3548,7 @@
             this.guna2Button130.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button130.ForeColor = System.Drawing.Color.White;
             this.guna2Button130.Location = new System.Drawing.Point(4, 409);
-            this.guna2Button130.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Button130.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button130.Name = "guna2Button130";
             this.guna2Button130.Size = new System.Drawing.Size(53, 37);
             this.guna2Button130.TabIndex = 450;
@@ -3568,7 +3570,7 @@
             this.guna2Button131.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button131.ForeColor = System.Drawing.Color.White;
             this.guna2Button131.Location = new System.Drawing.Point(65, 409);
-            this.guna2Button131.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Button131.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button131.Name = "guna2Button131";
             this.guna2Button131.Size = new System.Drawing.Size(53, 37);
             this.guna2Button131.TabIndex = 451;
@@ -3590,7 +3592,7 @@
             this.guna2Button132.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button132.ForeColor = System.Drawing.Color.White;
             this.guna2Button132.Location = new System.Drawing.Point(126, 409);
-            this.guna2Button132.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Button132.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button132.Name = "guna2Button132";
             this.guna2Button132.Size = new System.Drawing.Size(53, 37);
             this.guna2Button132.TabIndex = 452;
@@ -3612,7 +3614,7 @@
             this.guna2Button133.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button133.ForeColor = System.Drawing.Color.White;
             this.guna2Button133.Location = new System.Drawing.Point(187, 409);
-            this.guna2Button133.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Button133.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button133.Name = "guna2Button133";
             this.guna2Button133.Size = new System.Drawing.Size(53, 37);
             this.guna2Button133.TabIndex = 453;
@@ -3634,7 +3636,7 @@
             this.guna2Button134.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button134.ForeColor = System.Drawing.Color.White;
             this.guna2Button134.Location = new System.Drawing.Point(248, 409);
-            this.guna2Button134.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Button134.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button134.Name = "guna2Button134";
             this.guna2Button134.Size = new System.Drawing.Size(53, 37);
             this.guna2Button134.TabIndex = 454;
@@ -3656,7 +3658,7 @@
             this.guna2Button135.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button135.ForeColor = System.Drawing.Color.White;
             this.guna2Button135.Location = new System.Drawing.Point(309, 409);
-            this.guna2Button135.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Button135.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button135.Name = "guna2Button135";
             this.guna2Button135.Size = new System.Drawing.Size(53, 37);
             this.guna2Button135.TabIndex = 455;
@@ -3678,7 +3680,7 @@
             this.guna2Button136.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button136.ForeColor = System.Drawing.Color.White;
             this.guna2Button136.Location = new System.Drawing.Point(370, 409);
-            this.guna2Button136.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Button136.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button136.Name = "guna2Button136";
             this.guna2Button136.Size = new System.Drawing.Size(53, 37);
             this.guna2Button136.TabIndex = 456;
@@ -3700,7 +3702,7 @@
             this.guna2Button137.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button137.ForeColor = System.Drawing.Color.White;
             this.guna2Button137.Location = new System.Drawing.Point(431, 409);
-            this.guna2Button137.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Button137.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button137.Name = "guna2Button137";
             this.guna2Button137.Size = new System.Drawing.Size(53, 37);
             this.guna2Button137.TabIndex = 457;
@@ -3722,7 +3724,7 @@
             this.guna2Button138.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button138.ForeColor = System.Drawing.Color.White;
             this.guna2Button138.Location = new System.Drawing.Point(492, 409);
-            this.guna2Button138.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Button138.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button138.Name = "guna2Button138";
             this.guna2Button138.Size = new System.Drawing.Size(53, 37);
             this.guna2Button138.TabIndex = 458;
@@ -3744,7 +3746,7 @@
             this.guna2Button139.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button139.ForeColor = System.Drawing.Color.White;
             this.guna2Button139.Location = new System.Drawing.Point(553, 409);
-            this.guna2Button139.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Button139.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button139.Name = "guna2Button139";
             this.guna2Button139.Size = new System.Drawing.Size(53, 37);
             this.guna2Button139.TabIndex = 459;
@@ -3766,7 +3768,7 @@
             this.guna2Button140.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button140.ForeColor = System.Drawing.Color.White;
             this.guna2Button140.Location = new System.Drawing.Point(614, 409);
-            this.guna2Button140.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Button140.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button140.Name = "guna2Button140";
             this.guna2Button140.Size = new System.Drawing.Size(53, 37);
             this.guna2Button140.TabIndex = 460;
@@ -3788,7 +3790,7 @@
             this.guna2Button141.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button141.ForeColor = System.Drawing.Color.White;
             this.guna2Button141.Location = new System.Drawing.Point(675, 409);
-            this.guna2Button141.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Button141.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button141.Name = "guna2Button141";
             this.guna2Button141.Size = new System.Drawing.Size(53, 37);
             this.guna2Button141.TabIndex = 462;
@@ -3810,7 +3812,7 @@
             this.guna2Button142.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button142.ForeColor = System.Drawing.Color.White;
             this.guna2Button142.Location = new System.Drawing.Point(736, 409);
-            this.guna2Button142.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Button142.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button142.Name = "guna2Button142";
             this.guna2Button142.Size = new System.Drawing.Size(53, 37);
             this.guna2Button142.TabIndex = 461;
@@ -3832,7 +3834,7 @@
             this.guna2Button143.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button143.ForeColor = System.Drawing.Color.White;
             this.guna2Button143.Location = new System.Drawing.Point(797, 409);
-            this.guna2Button143.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Button143.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button143.Name = "guna2Button143";
             this.guna2Button143.Size = new System.Drawing.Size(53, 37);
             this.guna2Button143.TabIndex = 463;
