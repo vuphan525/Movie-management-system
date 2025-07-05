@@ -163,7 +163,6 @@ namespace Qlyrapchieuphim
             lbl_FormThemKH_Email.Clear();
             lbl_FormThemKH_HoTen.Clear();
             lbl_FormThemKH_SDT.Clear();
-            lbl_FormThemKH_MaKH.Clear();
             this.Refresh();
         }
 

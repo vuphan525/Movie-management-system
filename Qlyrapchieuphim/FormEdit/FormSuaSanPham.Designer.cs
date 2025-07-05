@@ -57,11 +57,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(33, 16);
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(6, 9);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(171, 20);
+            this.label2.Size = new System.Drawing.Size(218, 31);
             this.label2.TabIndex = 87;
             this.label2.Text = "Cập nhật sản phẩm";
             // 
@@ -79,7 +79,7 @@
             this.lbl_FormSuaSanPham_MoTa.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.lbl_FormSuaSanPham_MoTa.ForeColor = System.Drawing.Color.Black;
             this.lbl_FormSuaSanPham_MoTa.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.lbl_FormSuaSanPham_MoTa.Location = new System.Drawing.Point(328, 144);
+            this.lbl_FormSuaSanPham_MoTa.Location = new System.Drawing.Point(328, 155);
             this.lbl_FormSuaSanPham_MoTa.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.lbl_FormSuaSanPham_MoTa.Multiline = true;
             this.lbl_FormSuaSanPham_MoTa.Name = "lbl_FormSuaSanPham_MoTa";
@@ -93,7 +93,7 @@
             // 
             this.mota.AutoSize = true;
             this.mota.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mota.Location = new System.Drawing.Point(328, 121);
+            this.mota.Location = new System.Drawing.Point(328, 132);
             this.mota.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.mota.Name = "mota";
             this.mota.Size = new System.Drawing.Size(50, 18);
@@ -114,7 +114,7 @@
             this.lbl_FormSuaSanPham_NhaCungCap.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.lbl_FormSuaSanPham_NhaCungCap.ForeColor = System.Drawing.Color.Black;
             this.lbl_FormSuaSanPham_NhaCungCap.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.lbl_FormSuaSanPham_NhaCungCap.Location = new System.Drawing.Point(9, 487);
+            this.lbl_FormSuaSanPham_NhaCungCap.Location = new System.Drawing.Point(9, 498);
             this.lbl_FormSuaSanPham_NhaCungCap.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.lbl_FormSuaSanPham_NhaCungCap.Name = "lbl_FormSuaSanPham_NhaCungCap";
             this.lbl_FormSuaSanPham_NhaCungCap.PasswordChar = '\0';
@@ -127,7 +127,7 @@
             // 
             this.ncc.AutoSize = true;
             this.ncc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ncc.Location = new System.Drawing.Point(9, 464);
+            this.ncc.Location = new System.Drawing.Point(9, 475);
             this.ncc.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ncc.Name = "ncc";
             this.ncc.Size = new System.Drawing.Size(103, 18);
@@ -148,7 +148,7 @@
             this.lbl_FormSuaSanPham_SoLuong.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.lbl_FormSuaSanPham_SoLuong.ForeColor = System.Drawing.Color.Black;
             this.lbl_FormSuaSanPham_SoLuong.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.lbl_FormSuaSanPham_SoLuong.Location = new System.Drawing.Point(9, 404);
+            this.lbl_FormSuaSanPham_SoLuong.Location = new System.Drawing.Point(9, 415);
             this.lbl_FormSuaSanPham_SoLuong.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.lbl_FormSuaSanPham_SoLuong.Name = "lbl_FormSuaSanPham_SoLuong";
             this.lbl_FormSuaSanPham_SoLuong.PasswordChar = '\0';
@@ -161,7 +161,7 @@
             // 
             this.sl.AutoSize = true;
             this.sl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sl.Location = new System.Drawing.Point(9, 381);
+            this.sl.Location = new System.Drawing.Point(9, 392);
             this.sl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.sl.Name = "sl";
             this.sl.Size = new System.Drawing.Size(71, 18);
@@ -183,7 +183,7 @@
             this.lbl_FormSuaSanPham_MaSP.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.lbl_FormSuaSanPham_MaSP.ForeColor = System.Drawing.Color.Black;
             this.lbl_FormSuaSanPham_MaSP.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.lbl_FormSuaSanPham_MaSP.Location = new System.Drawing.Point(9, 68);
+            this.lbl_FormSuaSanPham_MaSP.Location = new System.Drawing.Point(9, 79);
             this.lbl_FormSuaSanPham_MaSP.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.lbl_FormSuaSanPham_MaSP.Name = "lbl_FormSuaSanPham_MaSP";
             this.lbl_FormSuaSanPham_MaSP.PasswordChar = '\0';
@@ -203,7 +203,7 @@
             this.btn_FormSuaSanPham_ThemPoster.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(61)))), ((int)(((byte)(204)))));
             this.btn_FormSuaSanPham_ThemPoster.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_FormSuaSanPham_ThemPoster.ForeColor = System.Drawing.Color.White;
-            this.btn_FormSuaSanPham_ThemPoster.Location = new System.Drawing.Point(392, 487);
+            this.btn_FormSuaSanPham_ThemPoster.Location = new System.Drawing.Point(392, 498);
             this.btn_FormSuaSanPham_ThemPoster.Margin = new System.Windows.Forms.Padding(4);
             this.btn_FormSuaSanPham_ThemPoster.Name = "btn_FormSuaSanPham_ThemPoster";
             this.btn_FormSuaSanPham_ThemPoster.Size = new System.Drawing.Size(150, 42);
@@ -215,7 +215,7 @@
             // 
             this.masp.AutoSize = true;
             this.masp.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.masp.Location = new System.Drawing.Point(9, 44);
+            this.masp.Location = new System.Drawing.Point(9, 55);
             this.masp.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.masp.Name = "masp";
             this.masp.Size = new System.Drawing.Size(57, 18);
@@ -236,7 +236,7 @@
             this.lbl_FormSuaSanPham_GiaTien.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.lbl_FormSuaSanPham_GiaTien.ForeColor = System.Drawing.Color.Black;
             this.lbl_FormSuaSanPham_GiaTien.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.lbl_FormSuaSanPham_GiaTien.Location = new System.Drawing.Point(9, 318);
+            this.lbl_FormSuaSanPham_GiaTien.Location = new System.Drawing.Point(9, 329);
             this.lbl_FormSuaSanPham_GiaTien.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.lbl_FormSuaSanPham_GiaTien.Name = "lbl_FormSuaSanPham_GiaTien";
             this.lbl_FormSuaSanPham_GiaTien.PasswordChar = '\0';
@@ -249,7 +249,7 @@
             // 
             this.ten.AutoSize = true;
             this.ten.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ten.Location = new System.Drawing.Point(9, 121);
+            this.ten.Location = new System.Drawing.Point(9, 132);
             this.ten.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ten.Name = "ten";
             this.ten.Size = new System.Drawing.Size(37, 18);
@@ -260,7 +260,7 @@
             // 
             this.ngaynhap.AutoSize = true;
             this.ngaynhap.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ngaynhap.Location = new System.Drawing.Point(328, 45);
+            this.ngaynhap.Location = new System.Drawing.Point(328, 56);
             this.ngaynhap.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ngaynhap.Name = "ngaynhap";
             this.ngaynhap.Size = new System.Drawing.Size(82, 18);
@@ -271,7 +271,7 @@
             // 
             this.loai.AutoSize = true;
             this.loai.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.loai.Location = new System.Drawing.Point(9, 209);
+            this.loai.Location = new System.Drawing.Point(9, 220);
             this.loai.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.loai.Name = "loai";
             this.loai.Size = new System.Drawing.Size(40, 18);
@@ -300,7 +300,7 @@
             // 
             this.giatien.AutoSize = true;
             this.giatien.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.giatien.Location = new System.Drawing.Point(9, 295);
+            this.giatien.Location = new System.Drawing.Point(9, 306);
             this.giatien.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.giatien.Name = "giatien";
             this.giatien.Size = new System.Drawing.Size(62, 18);
@@ -322,7 +322,7 @@
             this.cb_FormSuaSanPham_LoaiSP.Items.AddRange(new object[] {
             "Đồ ăn",
             "Thức uống"});
-            this.cb_FormSuaSanPham_LoaiSP.Location = new System.Drawing.Point(9, 231);
+            this.cb_FormSuaSanPham_LoaiSP.Location = new System.Drawing.Point(9, 242);
             this.cb_FormSuaSanPham_LoaiSP.Margin = new System.Windows.Forms.Padding(4);
             this.cb_FormSuaSanPham_LoaiSP.Name = "cb_FormSuaSanPham_LoaiSP";
             this.cb_FormSuaSanPham_LoaiSP.Size = new System.Drawing.Size(268, 36);
@@ -342,7 +342,7 @@
             this.lbl_FormSuaSanPham_TenSP.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.lbl_FormSuaSanPham_TenSP.ForeColor = System.Drawing.Color.Black;
             this.lbl_FormSuaSanPham_TenSP.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.lbl_FormSuaSanPham_TenSP.Location = new System.Drawing.Point(9, 144);
+            this.lbl_FormSuaSanPham_TenSP.Location = new System.Drawing.Point(9, 155);
             this.lbl_FormSuaSanPham_TenSP.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.lbl_FormSuaSanPham_TenSP.Name = "lbl_FormSuaSanPham_TenSP";
             this.lbl_FormSuaSanPham_TenSP.PasswordChar = '\0';
@@ -354,7 +354,7 @@
             // pictureBox_FormSuaSanPham_Poster
             // 
             this.pictureBox_FormSuaSanPham_Poster.BackColor = System.Drawing.SystemColors.Control;
-            this.pictureBox_FormSuaSanPham_Poster.Location = new System.Drawing.Point(328, 318);
+            this.pictureBox_FormSuaSanPham_Poster.Location = new System.Drawing.Point(328, 329);
             this.pictureBox_FormSuaSanPham_Poster.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox_FormSuaSanPham_Poster.Name = "pictureBox_FormSuaSanPham_Poster";
             this.pictureBox_FormSuaSanPham_Poster.Size = new System.Drawing.Size(271, 164);
@@ -383,7 +383,7 @@
             // 
             this.poster.AutoSize = true;
             this.poster.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.poster.Location = new System.Drawing.Point(328, 294);
+            this.poster.Location = new System.Drawing.Point(328, 305);
             this.poster.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.poster.Name = "poster";
             this.poster.Size = new System.Drawing.Size(37, 18);
@@ -397,7 +397,7 @@
             this.date_FormSuaSanPham_NgayNhap.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(248)))));
             this.date_FormSuaSanPham_NgayNhap.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.date_FormSuaSanPham_NgayNhap.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.date_FormSuaSanPham_NgayNhap.Location = new System.Drawing.Point(331, 68);
+            this.date_FormSuaSanPham_NgayNhap.Location = new System.Drawing.Point(331, 79);
             this.date_FormSuaSanPham_NgayNhap.Margin = new System.Windows.Forms.Padding(4);
             this.date_FormSuaSanPham_NgayNhap.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.date_FormSuaSanPham_NgayNhap.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);

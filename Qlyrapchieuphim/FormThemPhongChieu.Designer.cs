@@ -34,8 +34,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.lbl_FormThemPhongChieu_TenPhong = new Guna.UI2.WinForms.Guna2TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.lbl_FormThemPhongChieu_MaPhong = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.cb_FormThemPhongChieu_DinhDang = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -56,22 +54,23 @@
             this.lbl_FormThemPhongChieu_SoGhe.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.lbl_FormThemPhongChieu_SoGhe.ForeColor = System.Drawing.Color.Black;
             this.lbl_FormThemPhongChieu_SoGhe.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.lbl_FormThemPhongChieu_SoGhe.Location = new System.Drawing.Point(12, 267);
-            this.lbl_FormThemPhongChieu_SoGhe.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.lbl_FormThemPhongChieu_SoGhe.Location = new System.Drawing.Point(16, 249);
+            this.lbl_FormThemPhongChieu_SoGhe.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.lbl_FormThemPhongChieu_SoGhe.Name = "lbl_FormThemPhongChieu_SoGhe";
             this.lbl_FormThemPhongChieu_SoGhe.PasswordChar = '\0';
             this.lbl_FormThemPhongChieu_SoGhe.PlaceholderText = "";
             this.lbl_FormThemPhongChieu_SoGhe.SelectedText = "";
-            this.lbl_FormThemPhongChieu_SoGhe.Size = new System.Drawing.Size(328, 33);
+            this.lbl_FormThemPhongChieu_SoGhe.Size = new System.Drawing.Size(440, 41);
             this.lbl_FormThemPhongChieu_SoGhe.TabIndex = 109;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(12, 181);
+            this.label6.Location = new System.Drawing.Point(16, 143);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(67, 15);
+            this.label6.Size = new System.Drawing.Size(78, 18);
             this.label6.TabIndex = 105;
             this.label6.Text = "Định dạng:";
             // 
@@ -85,9 +84,10 @@
             this.them.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(61)))), ((int)(((byte)(204)))));
             this.them.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.them.ForeColor = System.Drawing.Color.White;
-            this.them.Location = new System.Drawing.Point(209, 341);
+            this.them.Location = new System.Drawing.Point(278, 318);
+            this.them.Margin = new System.Windows.Forms.Padding(4);
             this.them.Name = "them";
-            this.them.Size = new System.Drawing.Size(131, 36);
+            this.them.Size = new System.Drawing.Size(175, 44);
             this.them.TabIndex = 104;
             this.them.Text = "Thêm";
             this.them.Click += new System.EventHandler(this.them_Click);
@@ -96,9 +96,10 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(12, 248);
+            this.label5.Location = new System.Drawing.Point(16, 225);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(49, 15);
+            this.label5.Size = new System.Drawing.Size(59, 18);
             this.label5.TabIndex = 103;
             this.label5.Text = "Số ghế:";
             // 
@@ -116,67 +117,34 @@
             this.lbl_FormThemPhongChieu_TenPhong.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.lbl_FormThemPhongChieu_TenPhong.ForeColor = System.Drawing.Color.Black;
             this.lbl_FormThemPhongChieu_TenPhong.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.lbl_FormThemPhongChieu_TenPhong.Location = new System.Drawing.Point(12, 132);
-            this.lbl_FormThemPhongChieu_TenPhong.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.lbl_FormThemPhongChieu_TenPhong.Location = new System.Drawing.Point(16, 82);
+            this.lbl_FormThemPhongChieu_TenPhong.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.lbl_FormThemPhongChieu_TenPhong.Name = "lbl_FormThemPhongChieu_TenPhong";
             this.lbl_FormThemPhongChieu_TenPhong.PasswordChar = '\0';
             this.lbl_FormThemPhongChieu_TenPhong.PlaceholderText = "";
             this.lbl_FormThemPhongChieu_TenPhong.SelectedText = "";
-            this.lbl_FormThemPhongChieu_TenPhong.Size = new System.Drawing.Size(328, 33);
+            this.lbl_FormThemPhongChieu_TenPhong.Size = new System.Drawing.Size(440, 41);
             this.lbl_FormThemPhongChieu_TenPhong.TabIndex = 102;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(12, 113);
+            this.label4.Location = new System.Drawing.Point(16, 59);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(69, 15);
+            this.label4.Size = new System.Drawing.Size(82, 18);
             this.label4.TabIndex = 101;
             this.label4.Text = "Tên phòng:";
-            // 
-            // lbl_FormThemPhongChieu_MaPhong
-            // 
-            this.lbl_FormThemPhongChieu_MaPhong.BorderColor = System.Drawing.Color.Gray;
-            this.lbl_FormThemPhongChieu_MaPhong.BorderRadius = 10;
-            this.lbl_FormThemPhongChieu_MaPhong.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.lbl_FormThemPhongChieu_MaPhong.DefaultText = "";
-            this.lbl_FormThemPhongChieu_MaPhong.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.lbl_FormThemPhongChieu_MaPhong.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.lbl_FormThemPhongChieu_MaPhong.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.lbl_FormThemPhongChieu_MaPhong.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.lbl_FormThemPhongChieu_MaPhong.Enabled = false;
-            this.lbl_FormThemPhongChieu_MaPhong.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.lbl_FormThemPhongChieu_MaPhong.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lbl_FormThemPhongChieu_MaPhong.ForeColor = System.Drawing.Color.Black;
-            this.lbl_FormThemPhongChieu_MaPhong.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.lbl_FormThemPhongChieu_MaPhong.Location = new System.Drawing.Point(12, 63);
-            this.lbl_FormThemPhongChieu_MaPhong.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.lbl_FormThemPhongChieu_MaPhong.Name = "lbl_FormThemPhongChieu_MaPhong";
-            this.lbl_FormThemPhongChieu_MaPhong.PasswordChar = '\0';
-            this.lbl_FormThemPhongChieu_MaPhong.PlaceholderText = "";
-            this.lbl_FormThemPhongChieu_MaPhong.ReadOnly = true;
-            this.lbl_FormThemPhongChieu_MaPhong.SelectedText = "";
-            this.lbl_FormThemPhongChieu_MaPhong.Size = new System.Drawing.Size(328, 31);
-            this.lbl_FormThemPhongChieu_MaPhong.TabIndex = 100;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(12, 44);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(66, 15);
-            this.label3.TabIndex = 99;
-            this.label3.Text = "Mã phòng:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(23, 10);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(10, 14);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(134, 16);
+            this.label1.Size = new System.Drawing.Size(214, 31);
             this.label1.TabIndex = 98;
             this.label1.Text = "Thêm phòng chiếu";
             // 
@@ -191,10 +159,10 @@
             this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button2.ForeColor = System.Drawing.Color.Black;
             this.guna2Button2.Image = global::Qlyrapchieuphim.Properties.Resources.icons8_exit_35;
-            this.guna2Button2.Location = new System.Drawing.Point(315, 11);
-            this.guna2Button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2Button2.Location = new System.Drawing.Point(420, 14);
+            this.guna2Button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.Size = new System.Drawing.Size(26, 28);
+            this.guna2Button2.Size = new System.Drawing.Size(35, 34);
             this.guna2Button2.TabIndex = 97;
             this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
             // 
@@ -215,9 +183,10 @@
             "3D",
             "VIP",
             "IMAX"});
-            this.cb_FormThemPhongChieu_DinhDang.Location = new System.Drawing.Point(12, 199);
+            this.cb_FormThemPhongChieu_DinhDang.Location = new System.Drawing.Point(16, 165);
+            this.cb_FormThemPhongChieu_DinhDang.Margin = new System.Windows.Forms.Padding(4);
             this.cb_FormThemPhongChieu_DinhDang.Name = "cb_FormThemPhongChieu_DinhDang";
-            this.cb_FormThemPhongChieu_DinhDang.Size = new System.Drawing.Size(330, 36);
+            this.cb_FormThemPhongChieu_DinhDang.Size = new System.Drawing.Size(439, 36);
             this.cb_FormThemPhongChieu_DinhDang.TabIndex = 122;
             // 
             // btn_Refresh
@@ -230,19 +199,20 @@
             this.btn_Refresh.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(61)))), ((int)(((byte)(204)))));
             this.btn_Refresh.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Refresh.ForeColor = System.Drawing.Color.White;
-            this.btn_Refresh.Location = new System.Drawing.Point(53, 341);
+            this.btn_Refresh.Location = new System.Drawing.Point(70, 318);
+            this.btn_Refresh.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Refresh.Name = "btn_Refresh";
-            this.btn_Refresh.Size = new System.Drawing.Size(131, 36);
+            this.btn_Refresh.Size = new System.Drawing.Size(175, 44);
             this.btn_Refresh.TabIndex = 123;
             this.btn_Refresh.Text = "Làm mới";
             this.btn_Refresh.Click += new System.EventHandler(this.btn_Refresh_Click);
             // 
             // FormThemPhongChieu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(352, 389);
+            this.ClientSize = new System.Drawing.Size(469, 374);
             this.Controls.Add(this.btn_Refresh);
             this.Controls.Add(this.cb_FormThemPhongChieu_DinhDang);
             this.Controls.Add(this.lbl_FormThemPhongChieu_SoGhe);
@@ -251,11 +221,10 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.lbl_FormThemPhongChieu_TenPhong);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.lbl_FormThemPhongChieu_MaPhong);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.guna2Button2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormThemPhongChieu";
             this.ShowInTaskbar = false;
             this.Text = "FormThemPhongChieu";
@@ -273,8 +242,6 @@
         private System.Windows.Forms.Label label5;
         private Guna.UI2.WinForms.Guna2TextBox lbl_FormThemPhongChieu_TenPhong;
         private System.Windows.Forms.Label label4;
-        private Guna.UI2.WinForms.Guna2TextBox lbl_FormThemPhongChieu_MaPhong;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2Button guna2Button2;
         private Guna.UI2.WinForms.Guna2ComboBox cb_FormThemPhongChieu_DinhDang;

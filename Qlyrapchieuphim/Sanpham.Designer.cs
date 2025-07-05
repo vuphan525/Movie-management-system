@@ -45,31 +45,29 @@
             this.guna2ShadowPanel1.Controls.Add(this.price);
             this.guna2ShadowPanel1.Controls.Add(this.name);
             this.guna2ShadowPanel1.FillColor = System.Drawing.Color.White;
-            this.guna2ShadowPanel1.Location = new System.Drawing.Point(10, 46);
-            this.guna2ShadowPanel1.Margin = new System.Windows.Forms.Padding(2);
+            this.guna2ShadowPanel1.Location = new System.Drawing.Point(13, 57);
+            this.guna2ShadowPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2ShadowPanel1.Name = "guna2ShadowPanel1";
             this.guna2ShadowPanel1.ShadowColor = System.Drawing.Color.Black;
-            this.guna2ShadowPanel1.Size = new System.Drawing.Size(132, 107);
+            this.guna2ShadowPanel1.Size = new System.Drawing.Size(176, 132);
             this.guna2ShadowPanel1.TabIndex = 0;
             // 
             // price
             // 
-            this.price.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.price.Location = new System.Drawing.Point(2, 75);
-            this.price.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.price.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.price.Location = new System.Drawing.Point(3, 92);
             this.price.Name = "price";
-            this.price.Size = new System.Drawing.Size(124, 25);
+            this.price.Size = new System.Drawing.Size(165, 31);
             this.price.TabIndex = 1;
             this.price.Text = "200";
             this.price.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // name
             // 
-            this.name.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.name.Location = new System.Drawing.Point(2, 32);
-            this.name.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.name.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.name.Location = new System.Drawing.Point(3, 39);
             this.name.Name = "name";
-            this.name.Size = new System.Drawing.Size(124, 35);
+            this.name.Size = new System.Drawing.Size(165, 43);
             this.name.TabIndex = 0;
             this.name.Text = "Tên SP";
             this.name.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -79,24 +77,24 @@
             this.image.BackColor = System.Drawing.Color.White;
             this.image.Image = global::Qlyrapchieuphim.Properties.Resources.bussiness_man;
             this.image.ImageRotate = 0F;
-            this.image.Location = new System.Drawing.Point(15, 10);
-            this.image.Margin = new System.Windows.Forms.Padding(2);
+            this.image.Location = new System.Drawing.Point(20, 12);
+            this.image.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.image.Name = "image";
-            this.image.Size = new System.Drawing.Size(121, 66);
+            this.image.Size = new System.Drawing.Size(161, 81);
             this.image.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.image.TabIndex = 1;
             this.image.TabStop = false;
             // 
             // Sanpham
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.image);
             this.Controls.Add(this.guna2ShadowPanel1);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Sanpham";
-            this.Size = new System.Drawing.Size(151, 159);
+            this.Size = new System.Drawing.Size(201, 196);
             this.Click += new System.EventHandler(this.Sanpham_Click);
             this.MouseLeave += new System.EventHandler(this.Sanpham_MouseLeave);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Sanpham_MouseMove);

@@ -28,9 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lbl_ThemSanPham_MaSP = new Guna.UI2.WinForms.Guna2TextBox();
             this.btn_ThemSanPham_Poster = new Guna.UI2.WinForms.Guna2Button();
-            this.masp = new System.Windows.Forms.Label();
             this.lbl_ThemSanPham_GiaTien = new Guna.UI2.WinForms.Guna2TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.ten = new System.Windows.Forms.Label();
@@ -54,31 +52,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_ThemSanPham_Poster)).BeginInit();
             this.SuspendLayout();
             // 
-            // lbl_ThemSanPham_MaSP
-            // 
-            this.lbl_ThemSanPham_MaSP.BorderColor = System.Drawing.Color.Gray;
-            this.lbl_ThemSanPham_MaSP.BorderRadius = 10;
-            this.lbl_ThemSanPham_MaSP.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.lbl_ThemSanPham_MaSP.DefaultText = "";
-            this.lbl_ThemSanPham_MaSP.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.lbl_ThemSanPham_MaSP.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.lbl_ThemSanPham_MaSP.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.lbl_ThemSanPham_MaSP.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.lbl_ThemSanPham_MaSP.Enabled = false;
-            this.lbl_ThemSanPham_MaSP.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.lbl_ThemSanPham_MaSP.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lbl_ThemSanPham_MaSP.ForeColor = System.Drawing.Color.Black;
-            this.lbl_ThemSanPham_MaSP.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.lbl_ThemSanPham_MaSP.Location = new System.Drawing.Point(16, 79);
-            this.lbl_ThemSanPham_MaSP.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.lbl_ThemSanPham_MaSP.Name = "lbl_ThemSanPham_MaSP";
-            this.lbl_ThemSanPham_MaSP.PasswordChar = '\0';
-            this.lbl_ThemSanPham_MaSP.PlaceholderText = "";
-            this.lbl_ThemSanPham_MaSP.ReadOnly = true;
-            this.lbl_ThemSanPham_MaSP.SelectedText = "";
-            this.lbl_ThemSanPham_MaSP.Size = new System.Drawing.Size(269, 42);
-            this.lbl_ThemSanPham_MaSP.TabIndex = 50;
-            // 
             // btn_ThemSanPham_Poster
             // 
             this.btn_ThemSanPham_Poster.BorderRadius = 10;
@@ -97,17 +70,6 @@
             this.btn_ThemSanPham_Poster.Text = "Thêm ảnh";
             this.btn_ThemSanPham_Poster.Click += new System.EventHandler(this.btn_ThemSanPham_Poster_Click);
             // 
-            // masp
-            // 
-            this.masp.AutoSize = true;
-            this.masp.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.masp.Location = new System.Drawing.Point(16, 55);
-            this.masp.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.masp.Name = "masp";
-            this.masp.Size = new System.Drawing.Size(57, 18);
-            this.masp.TabIndex = 48;
-            this.masp.Text = "Mã SP:";
-            // 
             // lbl_ThemSanPham_GiaTien
             // 
             this.lbl_ThemSanPham_GiaTien.BorderColor = System.Drawing.Color.Gray;
@@ -122,7 +84,7 @@
             this.lbl_ThemSanPham_GiaTien.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.lbl_ThemSanPham_GiaTien.ForeColor = System.Drawing.Color.Black;
             this.lbl_ThemSanPham_GiaTien.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.lbl_ThemSanPham_GiaTien.Location = new System.Drawing.Point(16, 329);
+            this.lbl_ThemSanPham_GiaTien.Location = new System.Drawing.Point(19, 255);
             this.lbl_ThemSanPham_GiaTien.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.lbl_ThemSanPham_GiaTien.Name = "lbl_ThemSanPham_GiaTien";
             this.lbl_ThemSanPham_GiaTien.PasswordChar = '\0';
@@ -134,11 +96,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(32, 18);
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(13, 17);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(142, 20);
+            this.label2.Size = new System.Drawing.Size(183, 31);
             this.label2.TabIndex = 38;
             this.label2.Text = "Thêm sản phẩm";
             // 
@@ -146,7 +108,7 @@
             // 
             this.ten.AutoSize = true;
             this.ten.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ten.Location = new System.Drawing.Point(12, 132);
+            this.ten.Location = new System.Drawing.Point(15, 58);
             this.ten.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ten.Name = "ten";
             this.ten.Size = new System.Drawing.Size(37, 18);
@@ -168,7 +130,7 @@
             // 
             this.loai.AutoSize = true;
             this.loai.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.loai.Location = new System.Drawing.Point(12, 220);
+            this.loai.Location = new System.Drawing.Point(15, 146);
             this.loai.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.loai.Name = "loai";
             this.loai.Size = new System.Drawing.Size(40, 18);
@@ -185,7 +147,7 @@
             this.them.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(61)))), ((int)(((byte)(204)))));
             this.them.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.them.ForeColor = System.Drawing.Color.White;
-            this.them.Location = new System.Drawing.Point(429, 620);
+            this.them.Location = new System.Drawing.Point(429, 570);
             this.them.Margin = new System.Windows.Forms.Padding(4);
             this.them.Name = "them";
             this.them.Size = new System.Drawing.Size(179, 44);
@@ -197,7 +159,7 @@
             // 
             this.giatien.AutoSize = true;
             this.giatien.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.giatien.Location = new System.Drawing.Point(16, 305);
+            this.giatien.Location = new System.Drawing.Point(19, 231);
             this.giatien.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.giatien.Name = "giatien";
             this.giatien.Size = new System.Drawing.Size(62, 18);
@@ -219,7 +181,7 @@
             this.cb_ThemSanPham_LoaiSP.Items.AddRange(new object[] {
             "Đồ ăn",
             "Thức uống"});
-            this.cb_ThemSanPham_LoaiSP.Location = new System.Drawing.Point(16, 242);
+            this.cb_ThemSanPham_LoaiSP.Location = new System.Drawing.Point(19, 168);
             this.cb_ThemSanPham_LoaiSP.Margin = new System.Windows.Forms.Padding(4);
             this.cb_ThemSanPham_LoaiSP.Name = "cb_ThemSanPham_LoaiSP";
             this.cb_ThemSanPham_LoaiSP.Size = new System.Drawing.Size(268, 36);
@@ -239,7 +201,7 @@
             this.lbl_ThemSanPham_TenSP.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.lbl_ThemSanPham_TenSP.ForeColor = System.Drawing.Color.Black;
             this.lbl_ThemSanPham_TenSP.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.lbl_ThemSanPham_TenSP.Location = new System.Drawing.Point(16, 155);
+            this.lbl_ThemSanPham_TenSP.Location = new System.Drawing.Point(19, 81);
             this.lbl_ThemSanPham_TenSP.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.lbl_ThemSanPham_TenSP.Name = "lbl_ThemSanPham_TenSP";
             this.lbl_ThemSanPham_TenSP.PasswordChar = '\0';
@@ -262,7 +224,7 @@
             this.lbl_ThemSanPham_SoLuong.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.lbl_ThemSanPham_SoLuong.ForeColor = System.Drawing.Color.Black;
             this.lbl_ThemSanPham_SoLuong.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.lbl_ThemSanPham_SoLuong.Location = new System.Drawing.Point(16, 415);
+            this.lbl_ThemSanPham_SoLuong.Location = new System.Drawing.Point(19, 341);
             this.lbl_ThemSanPham_SoLuong.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.lbl_ThemSanPham_SoLuong.Name = "lbl_ThemSanPham_SoLuong";
             this.lbl_ThemSanPham_SoLuong.PasswordChar = '\0';
@@ -275,7 +237,7 @@
             // 
             this.soluong.AutoSize = true;
             this.soluong.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.soluong.Location = new System.Drawing.Point(16, 391);
+            this.soluong.Location = new System.Drawing.Point(19, 317);
             this.soluong.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.soluong.Name = "soluong";
             this.soluong.Size = new System.Drawing.Size(71, 18);
@@ -296,7 +258,7 @@
             this.lbl_ThemSanPham_NhaCungCap.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.lbl_ThemSanPham_NhaCungCap.ForeColor = System.Drawing.Color.Black;
             this.lbl_ThemSanPham_NhaCungCap.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.lbl_ThemSanPham_NhaCungCap.Location = new System.Drawing.Point(16, 498);
+            this.lbl_ThemSanPham_NhaCungCap.Location = new System.Drawing.Point(19, 424);
             this.lbl_ThemSanPham_NhaCungCap.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.lbl_ThemSanPham_NhaCungCap.Name = "lbl_ThemSanPham_NhaCungCap";
             this.lbl_ThemSanPham_NhaCungCap.PasswordChar = '\0';
@@ -309,7 +271,7 @@
             // 
             this.ncc.AutoSize = true;
             this.ncc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ncc.Location = new System.Drawing.Point(16, 475);
+            this.ncc.Location = new System.Drawing.Point(19, 401);
             this.ncc.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ncc.Name = "ncc";
             this.ncc.Size = new System.Drawing.Size(103, 18);
@@ -416,7 +378,7 @@
             this.btn_Refresh.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(61)))), ((int)(((byte)(204)))));
             this.btn_Refresh.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Refresh.ForeColor = System.Drawing.Color.White;
-            this.btn_Refresh.Location = new System.Drawing.Point(207, 620);
+            this.btn_Refresh.Location = new System.Drawing.Point(207, 570);
             this.btn_Refresh.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Refresh.Name = "btn_Refresh";
             this.btn_Refresh.Size = new System.Drawing.Size(179, 44);
@@ -429,7 +391,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(621, 677);
+            this.ClientSize = new System.Drawing.Size(621, 626);
             this.Controls.Add(this.btn_Refresh);
             this.Controls.Add(this.date_ThemSanPham_NgayNhap);
             this.Controls.Add(this.label9);
@@ -440,10 +402,8 @@
             this.Controls.Add(this.lbl_ThemSanPham_SoLuong);
             this.Controls.Add(this.soluong);
             this.Controls.Add(this.guna2Button2);
-            this.Controls.Add(this.lbl_ThemSanPham_MaSP);
             this.Controls.Add(this.btn_ThemSanPham_Poster);
             this.Controls.Add(this.pictureBox_ThemSanPham_Poster);
-            this.Controls.Add(this.masp);
             this.Controls.Add(this.lbl_ThemSanPham_GiaTien);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.ten);
@@ -466,11 +426,8 @@
         }
 
         #endregion
-
-        private Guna.UI2.WinForms.Guna2TextBox lbl_ThemSanPham_MaSP;
         private Guna.UI2.WinForms.Guna2Button btn_ThemSanPham_Poster;
         private System.Windows.Forms.PictureBox pictureBox_ThemSanPham_Poster;
-        private System.Windows.Forms.Label masp;
         private Guna.UI2.WinForms.Guna2TextBox lbl_ThemSanPham_GiaTien;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label ten;

@@ -62,7 +62,7 @@
             this.them.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.them.ForeColor = System.Drawing.Color.White;
             this.them.Location = new System.Drawing.Point(539, 528);
-            this.them.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.them.Margin = new System.Windows.Forms.Padding(4);
             this.them.Name = "them";
             this.them.Size = new System.Drawing.Size(168, 44);
             this.them.TabIndex = 62;
@@ -72,11 +72,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(31, 11);
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(14, 17);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(127, 20);
+            this.label2.Size = new System.Drawing.Size(166, 31);
             this.label2.TabIndex = 52;
             this.label2.Text = "Thêm voucher";
             // 
@@ -102,7 +102,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(381, 210);
+            this.label11.Location = new System.Drawing.Point(381, 225);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(50, 18);
@@ -122,7 +122,7 @@
             this.lbl_FormThemVoucher_MoTa.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.lbl_FormThemVoucher_MoTa.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.lbl_FormThemVoucher_MoTa.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.lbl_FormThemVoucher_MoTa.Location = new System.Drawing.Point(383, 233);
+            this.lbl_FormThemVoucher_MoTa.Location = new System.Drawing.Point(383, 248);
             this.lbl_FormThemVoucher_MoTa.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.lbl_FormThemVoucher_MoTa.Multiline = true;
             this.lbl_FormThemVoucher_MoTa.Name = "lbl_FormThemVoucher_MoTa";
@@ -146,7 +146,7 @@
             this.lbl_FormThemVoucher_DiscountPercent.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.lbl_FormThemVoucher_DiscountPercent.ForeColor = System.Drawing.Color.Black;
             this.lbl_FormThemVoucher_DiscountPercent.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.lbl_FormThemVoucher_DiscountPercent.Location = new System.Drawing.Point(20, 171);
+            this.lbl_FormThemVoucher_DiscountPercent.Location = new System.Drawing.Point(20, 186);
             this.lbl_FormThemVoucher_DiscountPercent.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.lbl_FormThemVoucher_DiscountPercent.Name = "lbl_FormThemVoucher_DiscountPercent";
             this.lbl_FormThemVoucher_DiscountPercent.PasswordChar = '\0';
@@ -162,7 +162,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(17, 130);
+            this.label10.Location = new System.Drawing.Point(17, 145);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(100, 18);
@@ -183,7 +183,7 @@
             this.lbl_FormThemVoucher_HoaDonToiThieu.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.lbl_FormThemVoucher_HoaDonToiThieu.ForeColor = System.Drawing.Color.Black;
             this.lbl_FormThemVoucher_HoaDonToiThieu.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.lbl_FormThemVoucher_HoaDonToiThieu.Location = new System.Drawing.Point(383, 65);
+            this.lbl_FormThemVoucher_HoaDonToiThieu.Location = new System.Drawing.Point(383, 80);
             this.lbl_FormThemVoucher_HoaDonToiThieu.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.lbl_FormThemVoucher_HoaDonToiThieu.Name = "lbl_FormThemVoucher_HoaDonToiThieu";
             this.lbl_FormThemVoucher_HoaDonToiThieu.PasswordChar = '\0';
@@ -196,7 +196,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(383, 41);
+            this.label9.Location = new System.Drawing.Point(383, 56);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(124, 18);
@@ -217,7 +217,7 @@
             this.lbl_FormThemVoucher_SoLuong.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.lbl_FormThemVoucher_SoLuong.ForeColor = System.Drawing.Color.Black;
             this.lbl_FormThemVoucher_SoLuong.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.lbl_FormThemVoucher_SoLuong.Location = new System.Drawing.Point(17, 348);
+            this.lbl_FormThemVoucher_SoLuong.Location = new System.Drawing.Point(17, 363);
             this.lbl_FormThemVoucher_SoLuong.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.lbl_FormThemVoucher_SoLuong.Name = "lbl_FormThemVoucher_SoLuong";
             this.lbl_FormThemVoucher_SoLuong.PasswordChar = '\0';
@@ -230,7 +230,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(17, 320);
+            this.label8.Location = new System.Drawing.Point(17, 335);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(71, 18);
@@ -244,8 +244,8 @@
             this.date_FormThemVoucher_NgayHetHan.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(248)))));
             this.date_FormThemVoucher_NgayHetHan.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.date_FormThemVoucher_NgayHetHan.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.date_FormThemVoucher_NgayHetHan.Location = new System.Drawing.Point(17, 255);
-            this.date_FormThemVoucher_NgayHetHan.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.date_FormThemVoucher_NgayHetHan.Location = new System.Drawing.Point(17, 270);
+            this.date_FormThemVoucher_NgayHetHan.Margin = new System.Windows.Forms.Padding(4);
             this.date_FormThemVoucher_NgayHetHan.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.date_FormThemVoucher_NgayHetHan.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.date_FormThemVoucher_NgayHetHan.Name = "date_FormThemVoucher_NgayHetHan";
@@ -258,7 +258,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(17, 233);
+            this.label6.Location = new System.Drawing.Point(17, 248);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(98, 18);
@@ -281,8 +281,8 @@
             this.cb_FormThemVoucher_TrangThai.Items.AddRange(new object[] {
             "NOT ACTIVE",
             "ACTIVE"});
-            this.cb_FormThemVoucher_TrangThai.Location = new System.Drawing.Point(383, 153);
-            this.cb_FormThemVoucher_TrangThai.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cb_FormThemVoucher_TrangThai.Location = new System.Drawing.Point(383, 168);
+            this.cb_FormThemVoucher_TrangThai.Margin = new System.Windows.Forms.Padding(4);
             this.cb_FormThemVoucher_TrangThai.Name = "cb_FormThemVoucher_TrangThai";
             this.cb_FormThemVoucher_TrangThai.Size = new System.Drawing.Size(323, 36);
             this.cb_FormThemVoucher_TrangThai.TabIndex = 127;
@@ -301,7 +301,7 @@
             this.lbl_FormThemVoucher_MaPhatHanh.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.lbl_FormThemVoucher_MaPhatHanh.ForeColor = System.Drawing.Color.Black;
             this.lbl_FormThemVoucher_MaPhatHanh.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.lbl_FormThemVoucher_MaPhatHanh.Location = new System.Drawing.Point(17, 65);
+            this.lbl_FormThemVoucher_MaPhatHanh.Location = new System.Drawing.Point(17, 80);
             this.lbl_FormThemVoucher_MaPhatHanh.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.lbl_FormThemVoucher_MaPhatHanh.Name = "lbl_FormThemVoucher_MaPhatHanh";
             this.lbl_FormThemVoucher_MaPhatHanh.PasswordChar = '\0';
@@ -314,7 +314,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(383, 130);
+            this.label4.Location = new System.Drawing.Point(383, 145);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(77, 18);
@@ -325,7 +325,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(17, 42);
+            this.label7.Location = new System.Drawing.Point(17, 57);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(101, 18);
@@ -343,7 +343,7 @@
             this.btn_Refresh.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Refresh.ForeColor = System.Drawing.Color.White;
             this.btn_Refresh.Location = new System.Drawing.Point(339, 528);
-            this.btn_Refresh.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_Refresh.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Refresh.Name = "btn_Refresh";
             this.btn_Refresh.Size = new System.Drawing.Size(168, 44);
             this.btn_Refresh.TabIndex = 138;
@@ -379,7 +379,7 @@
             this.Controls.Add(this.them);
             this.Controls.Add(this.label2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormThemVoucher";
             this.ShowInTaskbar = false;
             this.Text = "FormThemVoucher";

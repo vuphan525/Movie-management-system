@@ -106,7 +106,7 @@
             this.date_FormThemSuatChieu_GioChieu.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.date_FormThemSuatChieu_GioChieu.Format = System.Windows.Forms.DateTimePickerFormat.Time;
             this.date_FormThemSuatChieu_GioChieu.Location = new System.Drawing.Point(547, 327);
-            this.date_FormThemSuatChieu_GioChieu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.date_FormThemSuatChieu_GioChieu.Margin = new System.Windows.Forms.Padding(4);
             this.date_FormThemSuatChieu_GioChieu.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.date_FormThemSuatChieu_GioChieu.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.date_FormThemSuatChieu_GioChieu.Name = "date_FormThemSuatChieu_GioChieu";
@@ -127,7 +127,7 @@
             this.cb_FormThemSuatChieu_PhongChieu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cb_FormThemSuatChieu_PhongChieu.ItemHeight = 30;
             this.cb_FormThemSuatChieu_PhongChieu.Location = new System.Drawing.Point(19, 254);
-            this.cb_FormThemSuatChieu_PhongChieu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cb_FormThemSuatChieu_PhongChieu.Margin = new System.Windows.Forms.Padding(4);
             this.cb_FormThemSuatChieu_PhongChieu.Name = "cb_FormThemSuatChieu_PhongChieu";
             this.cb_FormThemSuatChieu_PhongChieu.Size = new System.Drawing.Size(297, 36);
             this.cb_FormThemSuatChieu_PhongChieu.TabIndex = 71;
@@ -162,7 +162,7 @@
             this.date_FormThemSuatChieu_NgayChieu.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.date_FormThemSuatChieu_NgayChieu.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.date_FormThemSuatChieu_NgayChieu.Location = new System.Drawing.Point(551, 94);
-            this.date_FormThemSuatChieu_NgayChieu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.date_FormThemSuatChieu_NgayChieu.Margin = new System.Windows.Forms.Padding(4);
             this.date_FormThemSuatChieu_NgayChieu.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.date_FormThemSuatChieu_NgayChieu.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.date_FormThemSuatChieu_NgayChieu.Name = "date_FormThemSuatChieu_NgayChieu";
@@ -173,11 +173,11 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(28, 12);
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(16, 15);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(154, 20);
+            this.label3.Size = new System.Drawing.Size(195, 31);
             this.label3.TabIndex = 63;
             this.label3.Text = "Thêm suất chiếu:";
             // 
@@ -192,7 +192,7 @@
             this.them.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.them.ForeColor = System.Drawing.Color.White;
             this.them.Location = new System.Drawing.Point(853, 559);
-            this.them.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.them.Margin = new System.Windows.Forms.Padding(4);
             this.them.Name = "them";
             this.them.Size = new System.Drawing.Size(165, 44);
             this.them.TabIndex = 67;
@@ -223,7 +223,7 @@
             this.cb_FormThemSuatChieu_TenPhim.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cb_FormThemSuatChieu_TenPhim.ItemHeight = 30;
             this.cb_FormThemSuatChieu_TenPhim.Location = new System.Drawing.Point(17, 86);
-            this.cb_FormThemSuatChieu_TenPhim.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cb_FormThemSuatChieu_TenPhim.Margin = new System.Windows.Forms.Padding(4);
             this.cb_FormThemSuatChieu_TenPhim.Name = "cb_FormThemSuatChieu_TenPhim";
             this.cb_FormThemSuatChieu_TenPhim.Size = new System.Drawing.Size(485, 36);
             this.cb_FormThemSuatChieu_TenPhim.TabIndex = 65;
@@ -269,7 +269,7 @@
             this.btn_Refresh.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Refresh.ForeColor = System.Drawing.Color.White;
             this.btn_Refresh.Location = new System.Drawing.Point(657, 559);
-            this.btn_Refresh.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_Refresh.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Refresh.Name = "btn_Refresh";
             this.btn_Refresh.Size = new System.Drawing.Size(165, 44);
             this.btn_Refresh.TabIndex = 85;
@@ -531,7 +531,7 @@
             this.Controls.Add(this.cb_FormThemSuatChieu_TenPhim);
             this.Controls.Add(this.label7);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormThemSuatChieu";
             this.ShowInTaskbar = false;
             this.Text = "FormThemSuatChieu";

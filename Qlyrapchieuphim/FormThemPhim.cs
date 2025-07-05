@@ -265,7 +265,6 @@ namespace Qlyrapchieuphim
 
         private void btn_Refresh_Click(object sender, EventArgs e)
         {
-            lbl_FormThemPhim_MovieID.Clear();
             lbl_FormThemPhim_TenPhim.Clear();
             cb_FormThemPhim_TheLoai.SelectedIndex = -1;
             lbl_FormThemPhim_ThoiLuong.Clear();
