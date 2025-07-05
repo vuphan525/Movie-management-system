@@ -39,6 +39,14 @@
             this.label3 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.masucoColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ReportedByUserID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTinhTrang = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colHuongGiaiQuyet = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNgayTiepNhan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMoTa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -54,14 +62,6 @@
             this.ngaytiepnhan = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.masucoColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ReportedByUserID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTinhTrang = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colHuongGiaiQuyet = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNgayTiepNhan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMoTa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -158,11 +158,12 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.guna2Button2);
             this.panel2.Controls.Add(this.dataGridView1);
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Location = new System.Drawing.Point(16, 18);
+            this.panel2.Location = new System.Drawing.Point(16, 17);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1077, 312);
+            this.panel2.Size = new System.Drawing.Size(1077, 643);
             this.panel2.TabIndex = 5;
             // 
             // dataGridView1
@@ -197,25 +198,85 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.EnableHeadersVisualStyles = false;
-            this.dataGridView1.Location = new System.Drawing.Point(16, 33);
+            this.dataGridView1.Location = new System.Drawing.Point(16, 55);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1047, 264);
+            this.dataGridView1.Size = new System.Drawing.Size(1047, 574);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dataGridView1_CellPainting);
             this.dataGridView1.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dataGridView1_RowPostPaint);
             // 
+            // masucoColumn
+            // 
+            this.masucoColumn.DataPropertyName = "IncidentID";
+            this.masucoColumn.HeaderText = "Mã sự cố";
+            this.masucoColumn.MinimumWidth = 6;
+            this.masucoColumn.Name = "masucoColumn";
+            // 
+            // colTen
+            // 
+            this.colTen.DataPropertyName = "IncidentName";
+            this.colTen.HeaderText = "Tên sự cố";
+            this.colTen.MinimumWidth = 6;
+            this.colTen.Name = "colTen";
+            // 
+            // colMaNV
+            // 
+            this.colMaNV.DataPropertyName = "Username";
+            this.colMaNV.FillWeight = 120F;
+            this.colMaNV.HeaderText = "User báo cáo";
+            this.colMaNV.MinimumWidth = 6;
+            this.colMaNV.Name = "colMaNV";
+            // 
+            // ReportedByUserID
+            // 
+            this.ReportedByUserID.DataPropertyName = "ReportedByUserID";
+            this.ReportedByUserID.HeaderText = "ReportedByUserID";
+            this.ReportedByUserID.Name = "ReportedByUserID";
+            this.ReportedByUserID.Visible = false;
+            // 
+            // colTinhTrang
+            // 
+            this.colTinhTrang.DataPropertyName = "Status";
+            this.colTinhTrang.FillWeight = 80F;
+            this.colTinhTrang.HeaderText = "Tình trạng ";
+            this.colTinhTrang.MinimumWidth = 6;
+            this.colTinhTrang.Name = "colTinhTrang";
+            // 
+            // colHuongGiaiQuyet
+            // 
+            this.colHuongGiaiQuyet.DataPropertyName = "Resolution";
+            this.colHuongGiaiQuyet.HeaderText = "Hướng giải quyết";
+            this.colHuongGiaiQuyet.MinimumWidth = 6;
+            this.colHuongGiaiQuyet.Name = "colHuongGiaiQuyet";
+            // 
+            // colNgayTiepNhan
+            // 
+            this.colNgayTiepNhan.DataPropertyName = "ReportedAt";
+            this.colNgayTiepNhan.FillWeight = 80F;
+            this.colNgayTiepNhan.HeaderText = "Ngày tiếp nhận ";
+            this.colNgayTiepNhan.MinimumWidth = 6;
+            this.colNgayTiepNhan.Name = "colNgayTiepNhan";
+            // 
+            // colMoTa
+            // 
+            this.colMoTa.DataPropertyName = "Description";
+            this.colMoTa.FillWeight = 180F;
+            this.colMoTa.HeaderText = "Mô tả";
+            this.colMoTa.MinimumWidth = 6;
+            this.colMoTa.Name = "colMoTa";
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(27, 14);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(27, 25);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(50, 16);
+            this.label1.Size = new System.Drawing.Size(46, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Sự cố:";
             // 
@@ -303,7 +364,6 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.guna2Button2);
             this.panel1.Controls.Add(this.manv);
             this.panel1.Controls.Add(this.cancelButton);
             this.panel1.Controls.Add(this.masuco);
@@ -325,6 +385,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1077, 306);
             this.panel1.TabIndex = 4;
+            this.panel1.Visible = false;
             // 
             // guna2Button2
             // 
@@ -336,7 +397,7 @@
             this.guna2Button2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(61)))), ((int)(((byte)(204)))));
             this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button2.ForeColor = System.Drawing.Color.White;
-            this.guna2Button2.Location = new System.Drawing.Point(951, 11);
+            this.guna2Button2.Location = new System.Drawing.Point(951, 13);
             this.guna2Button2.Name = "guna2Button2";
             this.guna2Button2.Size = new System.Drawing.Size(112, 36);
             this.guna2Button2.TabIndex = 72;
@@ -442,66 +503,6 @@
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
-            // 
-            // masucoColumn
-            // 
-            this.masucoColumn.DataPropertyName = "IncidentID";
-            this.masucoColumn.HeaderText = "Mã sự cố";
-            this.masucoColumn.MinimumWidth = 6;
-            this.masucoColumn.Name = "masucoColumn";
-            // 
-            // colTen
-            // 
-            this.colTen.DataPropertyName = "IncidentName";
-            this.colTen.HeaderText = "Tên sự cố";
-            this.colTen.MinimumWidth = 6;
-            this.colTen.Name = "colTen";
-            // 
-            // colMaNV
-            // 
-            this.colMaNV.DataPropertyName = "Username";
-            this.colMaNV.FillWeight = 120F;
-            this.colMaNV.HeaderText = "User báo cáo";
-            this.colMaNV.MinimumWidth = 6;
-            this.colMaNV.Name = "colMaNV";
-            // 
-            // ReportedByUserID
-            // 
-            this.ReportedByUserID.DataPropertyName = "ReportedByUserID";
-            this.ReportedByUserID.HeaderText = "ReportedByUserID";
-            this.ReportedByUserID.Name = "ReportedByUserID";
-            this.ReportedByUserID.Visible = false;
-            // 
-            // colTinhTrang
-            // 
-            this.colTinhTrang.DataPropertyName = "Status";
-            this.colTinhTrang.FillWeight = 80F;
-            this.colTinhTrang.HeaderText = "Tình trạng ";
-            this.colTinhTrang.MinimumWidth = 6;
-            this.colTinhTrang.Name = "colTinhTrang";
-            // 
-            // colHuongGiaiQuyet
-            // 
-            this.colHuongGiaiQuyet.DataPropertyName = "Resolution";
-            this.colHuongGiaiQuyet.HeaderText = "Hướng giải quyết";
-            this.colHuongGiaiQuyet.MinimumWidth = 6;
-            this.colHuongGiaiQuyet.Name = "colHuongGiaiQuyet";
-            // 
-            // colNgayTiepNhan
-            // 
-            this.colNgayTiepNhan.DataPropertyName = "ReportedAt";
-            this.colNgayTiepNhan.FillWeight = 80F;
-            this.colNgayTiepNhan.HeaderText = "Ngày tiếp nhận ";
-            this.colNgayTiepNhan.MinimumWidth = 6;
-            this.colNgayTiepNhan.Name = "colNgayTiepNhan";
-            // 
-            // colMoTa
-            // 
-            this.colMoTa.DataPropertyName = "Description";
-            this.colMoTa.FillWeight = 180F;
-            this.colMoTa.HeaderText = "Mô tả";
-            this.colMoTa.MinimumWidth = 6;
-            this.colMoTa.Name = "colMoTa";
             // 
             // Suco
             // 

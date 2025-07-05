@@ -26,6 +26,8 @@ namespace Qlyrapchieuphim
             ngaytiepnhan.Value = DateTime.Today;
             //masuco.MaxLength = 16;
             masuco.Enabled = false;
+            dataGridView1.AutoGenerateColumns = false;
+            dataGridView1.Font = new Font("Segoe UI", 8);
         }
 
         private bool CheckUsr()

@@ -35,6 +35,15 @@
             this.guna2TextBox6 = new Guna.UI2.WinForms.Guna2TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.VoucherID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valueColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDiscountPercent = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNgayHetHan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSL = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colHoaDonToiThieu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTrangThai = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.colMoTa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.cancelButton = new Guna.UI2.WinForms.Guna2Button();
@@ -53,15 +62,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.VoucherID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.codeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.valueColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDiscountPercent = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNgayHetHan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSL = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colHoaDonToiThieu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTrangThai = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.colMoTa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -70,13 +70,14 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.guna2Button2);
             this.panel1.Controls.Add(this.guna2Button5);
             this.panel1.Controls.Add(this.guna2TextBox6);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.dataGridView1);
-            this.panel1.Location = new System.Drawing.Point(17, 16);
+            this.panel1.Location = new System.Drawing.Point(17, 18);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1074, 312);
+            this.panel1.Size = new System.Drawing.Size(1074, 641);
             this.panel1.TabIndex = 0;
             // 
             // guna2Button5
@@ -90,7 +91,7 @@
             this.guna2Button5.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button5.ForeColor = System.Drawing.Color.White;
             this.guna2Button5.Image = global::Qlyrapchieuphim.Properties.Resources.icons8_find_30;
-            this.guna2Button5.Location = new System.Drawing.Point(1029, 12);
+            this.guna2Button5.Location = new System.Drawing.Point(1029, 19);
             this.guna2Button5.Name = "guna2Button5";
             this.guna2Button5.Size = new System.Drawing.Size(30, 30);
             this.guna2Button5.TabIndex = 58;
@@ -109,7 +110,7 @@
             this.guna2TextBox6.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2TextBox6.ForeColor = System.Drawing.Color.Black;
             this.guna2TextBox6.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox6.Location = new System.Drawing.Point(792, 12);
+            this.guna2TextBox6.Location = new System.Drawing.Point(792, 19);
             this.guna2TextBox6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.guna2TextBox6.Name = "guna2TextBox6";
             this.guna2TextBox6.PasswordChar = '\0';
@@ -124,10 +125,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(21, 12);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(21, 19);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(139, 16);
+            this.label1.Size = new System.Drawing.Size(125, 17);
             this.label1.TabIndex = 3;
             this.label1.Text = "Danh sách voucher";
             // 
@@ -164,22 +165,87 @@
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView1.EnableHeadersVisualStyles = false;
-            this.dataGridView1.Location = new System.Drawing.Point(15, 48);
+            this.dataGridView1.Location = new System.Drawing.Point(15, 55);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1044, 247);
+            this.dataGridView1.Size = new System.Drawing.Size(1044, 569);
             this.dataGridView1.TabIndex = 2;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dataGridView1_CellPainting);
             this.dataGridView1.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dataGridView1_RowPostPaint);
             // 
+            // VoucherID
+            // 
+            this.VoucherID.DataPropertyName = "VoucherID";
+            this.VoucherID.HeaderText = "VoucherID";
+            this.VoucherID.Name = "VoucherID";
+            // 
+            // codeColumn
+            // 
+            this.codeColumn.DataPropertyName = "Code";
+            this.codeColumn.FillWeight = 120F;
+            this.codeColumn.HeaderText = "Mã phát hành ";
+            this.codeColumn.MinimumWidth = 6;
+            this.codeColumn.Name = "codeColumn";
+            // 
+            // valueColumn
+            // 
+            this.valueColumn.DataPropertyName = "DiscountAmount";
+            this.valueColumn.HeaderText = "Mệnh giá (VND)";
+            this.valueColumn.MinimumWidth = 6;
+            this.valueColumn.Name = "valueColumn";
+            // 
+            // colDiscountPercent
+            // 
+            this.colDiscountPercent.DataPropertyName = "DiscountPercent";
+            this.colDiscountPercent.HeaderText = "Mức giảm (%)";
+            this.colDiscountPercent.MinimumWidth = 6;
+            this.colDiscountPercent.Name = "colDiscountPercent";
+            // 
+            // colNgayHetHan
+            // 
+            this.colNgayHetHan.DataPropertyName = "ExpiryDate";
+            this.colNgayHetHan.HeaderText = "Ngày hết hạn";
+            this.colNgayHetHan.MinimumWidth = 6;
+            this.colNgayHetHan.Name = "colNgayHetHan";
+            // 
+            // colSL
+            // 
+            this.colSL.DataPropertyName = "Quantity";
+            this.colSL.HeaderText = "Số lượng";
+            this.colSL.MinimumWidth = 6;
+            this.colSL.Name = "colSL";
+            // 
+            // colHoaDonToiThieu
+            // 
+            this.colHoaDonToiThieu.DataPropertyName = "MinOrderValue";
+            this.colHoaDonToiThieu.FillWeight = 80F;
+            this.colHoaDonToiThieu.HeaderText = "Hóa đơn tối thiểu";
+            this.colHoaDonToiThieu.MinimumWidth = 6;
+            this.colHoaDonToiThieu.Name = "colHoaDonToiThieu";
+            // 
+            // colTrangThai
+            // 
+            this.colTrangThai.DataPropertyName = "IsActive";
+            this.colTrangThai.HeaderText = "Trạng thái";
+            this.colTrangThai.MinimumWidth = 6;
+            this.colTrangThai.Name = "colTrangThai";
+            this.colTrangThai.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colTrangThai.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // colMoTa
+            // 
+            this.colMoTa.DataPropertyName = "Description";
+            this.colMoTa.HeaderText = "Mô tả";
+            this.colMoTa.MinimumWidth = 6;
+            this.colMoTa.Name = "colMoTa";
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.guna2Button2);
             this.panel2.Controls.Add(this.cancelButton);
             this.panel2.Controls.Add(this.denngay);
             this.panel2.Controls.Add(this.hieuluctu);
@@ -200,6 +266,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1074, 309);
             this.panel2.TabIndex = 1;
+            this.panel2.Visible = false;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
             // 
@@ -213,7 +280,7 @@
             this.guna2Button2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(61)))), ((int)(((byte)(204)))));
             this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button2.ForeColor = System.Drawing.Color.White;
-            this.guna2Button2.Location = new System.Drawing.Point(947, 15);
+            this.guna2Button2.Location = new System.Drawing.Point(647, 13);
             this.guna2Button2.Name = "guna2Button2";
             this.guna2Button2.Size = new System.Drawing.Size(112, 36);
             this.guna2Button2.TabIndex = 72;
@@ -459,79 +526,13 @@
             this.label7.TabIndex = 34;
             this.label7.Text = "Mã phát hành:";
             // 
-            // VoucherID
-            // 
-            this.VoucherID.DataPropertyName = "VoucherID";
-            this.VoucherID.HeaderText = "VoucherID";
-            this.VoucherID.Name = "VoucherID";
-            // 
-            // codeColumn
-            // 
-            this.codeColumn.DataPropertyName = "Code";
-            this.codeColumn.FillWeight = 120F;
-            this.codeColumn.HeaderText = "Mã phát hành ";
-            this.codeColumn.MinimumWidth = 6;
-            this.codeColumn.Name = "codeColumn";
-            // 
-            // valueColumn
-            // 
-            this.valueColumn.DataPropertyName = "DiscountAmount";
-            this.valueColumn.HeaderText = "Mệnh giá (VND)";
-            this.valueColumn.MinimumWidth = 6;
-            this.valueColumn.Name = "valueColumn";
-            // 
-            // colDiscountPercent
-            // 
-            this.colDiscountPercent.DataPropertyName = "DiscountPercent";
-            this.colDiscountPercent.HeaderText = "Mức giảm (%)";
-            this.colDiscountPercent.MinimumWidth = 6;
-            this.colDiscountPercent.Name = "colDiscountPercent";
-            // 
-            // colNgayHetHan
-            // 
-            this.colNgayHetHan.DataPropertyName = "ExpiryDate";
-            this.colNgayHetHan.HeaderText = "Ngày hết hạn";
-            this.colNgayHetHan.MinimumWidth = 6;
-            this.colNgayHetHan.Name = "colNgayHetHan";
-            // 
-            // colSL
-            // 
-            this.colSL.DataPropertyName = "Quantity";
-            this.colSL.HeaderText = "Số lượng";
-            this.colSL.MinimumWidth = 6;
-            this.colSL.Name = "colSL";
-            // 
-            // colHoaDonToiThieu
-            // 
-            this.colHoaDonToiThieu.DataPropertyName = "MinOrderValue";
-            this.colHoaDonToiThieu.FillWeight = 80F;
-            this.colHoaDonToiThieu.HeaderText = "Hóa đơn tối thiểu";
-            this.colHoaDonToiThieu.MinimumWidth = 6;
-            this.colHoaDonToiThieu.Name = "colHoaDonToiThieu";
-            // 
-            // colTrangThai
-            // 
-            this.colTrangThai.DataPropertyName = "IsActive";
-            this.colTrangThai.HeaderText = "Trạng thái";
-            this.colTrangThai.MinimumWidth = 6;
-            this.colTrangThai.Name = "colTrangThai";
-            this.colTrangThai.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colTrangThai.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // colMoTa
-            // 
-            this.colMoTa.DataPropertyName = "Description";
-            this.colMoTa.HeaderText = "Mô tả";
-            this.colMoTa.MinimumWidth = 6;
-            this.colMoTa.Name = "colMoTa";
-            // 
             // Voucher
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(248)))));
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel2);
             this.Name = "Voucher";
             this.Size = new System.Drawing.Size(1108, 676);
             this.Load += new System.EventHandler(this.Voucher_Load);

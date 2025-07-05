@@ -19,6 +19,8 @@ namespace Qlyrapchieuphim
         public QlyPhongChieu()
         {
             InitializeComponent();
+            dataGridView1.AutoGenerateColumns = false;
+            dataGridView1.Font = new Font("Segoe UI", 8);
         }
         private SqlConnection conn = null;
         private void LoadData()

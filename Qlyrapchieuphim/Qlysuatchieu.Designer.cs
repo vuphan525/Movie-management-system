@@ -32,6 +32,11 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.colMaSuatChieu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTenPhim = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNgayChieu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colGioChieu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.timkiem = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
@@ -55,11 +60,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.colMaSuatChieu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTenPhim = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNgayChieu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colGioChieu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -103,22 +103,66 @@
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1044, 258);
+            this.dataGridView1.Size = new System.Drawing.Size(1044, 574);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dataGridView1_CellPainting);
             this.dataGridView1.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dataGridView1_RowPostPaint);
             // 
+            // colMaSuatChieu
+            // 
+            this.colMaSuatChieu.DataPropertyName = "ShowtimeID";
+            this.colMaSuatChieu.HeaderText = "Mã suất chiếu";
+            this.colMaSuatChieu.MinimumWidth = 6;
+            this.colMaSuatChieu.Name = "colMaSuatChieu";
+            this.colMaSuatChieu.ReadOnly = true;
+            // 
+            // colTenPhim
+            // 
+            this.colTenPhim.DataPropertyName = "Title";
+            this.colTenPhim.FillWeight = 130F;
+            this.colTenPhim.HeaderText = "Tên phim";
+            this.colTenPhim.MinimumWidth = 6;
+            this.colTenPhim.Name = "colTenPhim";
+            this.colTenPhim.ReadOnly = true;
+            // 
+            // colPhong
+            // 
+            this.colPhong.DataPropertyName = "RoomID";
+            this.colPhong.FillWeight = 70F;
+            this.colPhong.HeaderText = "Phòng chiếu";
+            this.colPhong.MinimumWidth = 6;
+            this.colPhong.Name = "colPhong";
+            this.colPhong.ReadOnly = true;
+            // 
+            // colNgayChieu
+            // 
+            this.colNgayChieu.DataPropertyName = "StartTime";
+            this.colNgayChieu.HeaderText = "Thời gian chiếu";
+            this.colNgayChieu.MinimumWidth = 6;
+            this.colNgayChieu.Name = "colNgayChieu";
+            this.colNgayChieu.ReadOnly = true;
+            // 
+            // colGioChieu
+            // 
+            this.colGioChieu.DataPropertyName = "THOIGIANBATDAU";
+            this.colGioChieu.HeaderText = "Giờ chiếu ";
+            this.colGioChieu.MinimumWidth = 6;
+            this.colGioChieu.Name = "colGioChieu";
+            this.colGioChieu.ReadOnly = true;
+            this.colGioChieu.Visible = false;
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.guna2Button2);
             this.panel2.Controls.Add(this.timkiem);
             this.panel2.Controls.Add(this.guna2Button1);
             this.panel2.Controls.Add(this.dataGridView1);
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Location = new System.Drawing.Point(16, 18);
+            this.panel2.Location = new System.Drawing.Point(16, 16);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1077, 332);
+            this.panel2.Size = new System.Drawing.Size(1077, 646);
             this.panel2.TabIndex = 9;
             // 
             // timkiem
@@ -158,17 +202,16 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(27, 29);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(83, 16);
+            this.label1.Size = new System.Drawing.Size(76, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Suất chiếu:";
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.guna2Button2);
             this.panel1.Controls.Add(this.cancelButton);
             this.panel1.Controls.Add(this.idTextBox);
             this.panel1.Controls.Add(this.label6);
@@ -188,6 +231,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1077, 295);
             this.panel1.TabIndex = 11;
+            this.panel1.Visible = false;
             // 
             // guna2Button2
             // 
@@ -199,7 +243,7 @@
             this.guna2Button2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(61)))), ((int)(((byte)(204)))));
             this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button2.ForeColor = System.Drawing.Color.White;
-            this.guna2Button2.Location = new System.Drawing.Point(948, 18);
+            this.guna2Button2.Location = new System.Drawing.Point(608, 14);
             this.guna2Button2.Name = "guna2Button2";
             this.guna2Button2.Size = new System.Drawing.Size(112, 36);
             this.guna2Button2.TabIndex = 64;
@@ -437,56 +481,13 @@
             // 
             this.errorProvider2.ContainerControl = this;
             // 
-            // colMaSuatChieu
-            // 
-            this.colMaSuatChieu.DataPropertyName = "ShowtimeID";
-            this.colMaSuatChieu.HeaderText = "Mã suất chiếu";
-            this.colMaSuatChieu.MinimumWidth = 6;
-            this.colMaSuatChieu.Name = "colMaSuatChieu";
-            this.colMaSuatChieu.ReadOnly = true;
-            // 
-            // colTenPhim
-            // 
-            this.colTenPhim.DataPropertyName = "Title";
-            this.colTenPhim.FillWeight = 130F;
-            this.colTenPhim.HeaderText = "Tên phim";
-            this.colTenPhim.MinimumWidth = 6;
-            this.colTenPhim.Name = "colTenPhim";
-            this.colTenPhim.ReadOnly = true;
-            // 
-            // colPhong
-            // 
-            this.colPhong.DataPropertyName = "RoomID";
-            this.colPhong.FillWeight = 70F;
-            this.colPhong.HeaderText = "Phòng chiếu";
-            this.colPhong.MinimumWidth = 6;
-            this.colPhong.Name = "colPhong";
-            this.colPhong.ReadOnly = true;
-            // 
-            // colNgayChieu
-            // 
-            this.colNgayChieu.DataPropertyName = "StartTime";
-            this.colNgayChieu.HeaderText = "Thời gian chiếu";
-            this.colNgayChieu.MinimumWidth = 6;
-            this.colNgayChieu.Name = "colNgayChieu";
-            this.colNgayChieu.ReadOnly = true;
-            // 
-            // colGioChieu
-            // 
-            this.colGioChieu.DataPropertyName = "THOIGIANBATDAU";
-            this.colGioChieu.HeaderText = "Giờ chiếu ";
-            this.colGioChieu.MinimumWidth = 6;
-            this.colGioChieu.Name = "colGioChieu";
-            this.colGioChieu.ReadOnly = true;
-            this.colGioChieu.Visible = false;
-            // 
             // Qlysuatchieu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(248)))));
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
             this.Name = "Qlysuatchieu";
             this.Size = new System.Drawing.Size(1108, 676);
             this.Load += new System.EventHandler(this.Qlysuatchieu_Load);

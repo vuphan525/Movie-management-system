@@ -37,6 +37,8 @@ namespace Qlyrapchieuphim
             guna2TextBox6.Text = "Tìm kiếm theo mã voucher";
             guna2TextBox6.ForeColor = Color.Gray;
             dataGridView1.ReadOnly = true;
+            dataGridView1.AutoGenerateColumns = false;
+            dataGridView1.Font = new Font("Segoe UI", 8);
         }
         private void LoadData()
         {
@@ -474,6 +476,7 @@ namespace Qlyrapchieuphim
         {
             conn = Helper.getdbConnection();
             LoadData();
+            dataGridView1.RowTemplate.Height = 45;
         }
 
         private void dataGridView1_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)

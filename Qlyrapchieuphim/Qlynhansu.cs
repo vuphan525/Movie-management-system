@@ -35,6 +35,8 @@ namespace Qlyrapchieuphim
             //string[] trt = new string[] { "Nghỉ việc", "Đang làm việc", "Tạm thời" };
             //trangthai.Items.AddRange(trt);
             manv.Enabled = false;
+            dataGridView1.AutoGenerateColumns = false;
+            dataGridView1.Font = new Font("Segoe UI", 8);
         }
         private void LoadData()
         {
