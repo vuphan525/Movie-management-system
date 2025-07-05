@@ -278,6 +278,14 @@ namespace Qlyrapchieuphim
                 MessageBox.Show("Vui lòng chọn cả phim và phòng chiếu.", "Thiếu thông tin", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+
+            if (dataGridView_FormThemSuatChieu_BangNgayChieu.Rows.Count == 0 ||
+                dataGridView_FormThemSuatChieu_BangGioChieu.Rows.Count == 0 ||
+                dataGridView_FormThemSuatChieu_BangPhongChieu.Rows.Count == 0)
+            {
+                MessageBox.Show("Vui lòng thêm ít nhất một ngày chiếu, giờ chiếu và phòng chiếu.", "Thiếu thông tin", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             //string id = lbl_FormThemSuatChieu_MaSuatChieu.Text;
             foreach (DataGridViewRow rowDate in dataGridView_FormThemSuatChieu_BangNgayChieu.Rows)
             {
