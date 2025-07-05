@@ -11,6 +11,7 @@ using System.Configuration;
 using Microsoft.Data.SqlClient;
 using System.Windows.Navigation;
 using System.IO;
+using Microsoft.IdentityModel.Tokens;
 
 namespace Qlyrapchieuphim
 {
@@ -230,7 +231,7 @@ namespace Qlyrapchieuphim
             dt.Columns.Add("Quantity", typeof(string));
             dt.Columns.Add("TotalPrice", typeof(string));
 
-            if (lbl_NormalSeatNum.Text != "0")
+            if (!lbl_NormalSeatNum.Text.IsNullOrEmpty())
             {
                 DataRow stdSeats = dt.NewRow();
                 stdSeats["ProductName"] = "Ghế thường";
@@ -240,7 +241,7 @@ namespace Qlyrapchieuphim
                 dt.Rows.Add(stdSeats);
             }
 
-            if (lbl_VIPSeatNum.Text != "0")
+            if (!lbl_VIPSeatNum.Text.IsNullOrEmpty())
             {
                 DataRow vipSeats = dt.NewRow();
                 vipSeats["ProductName"] = "Ghế VIP";
@@ -264,37 +265,38 @@ namespace Qlyrapchieuphim
         }
         private void btn_Print_Bill_Click(object sender, EventArgs e)
         {
-            string folder_path = Environment.CurrentDirectory + @"\receipts";
-            string receipt_path = folder_path + "\\receipt_" + billCode.ToString() + ".html";
-
-            //Tạo thư mục nếu chưa có
-            if (!Directory.Exists(folder_path))
-                Directory.CreateDirectory(folder_path);
-
-            //Tạo file nếu chưa có , xoá và tạo lại nếu đã có
-            if (File.Exists(receipt_path))
-                File.Delete(receipt_path);
-            else
-                File.Create(receipt_path).Dispose();
-            ReceiptTemplate receipt = new ReceiptTemplate();
-
-            receipt.BillCode = billCode;
-            receipt.CreatedAt = (DateTime)MainDataTable.Rows[0]["CreatedAt"];
-            receipt.BillData = BuildDataTable();
-            receipt.TotalDiscount = discount;
-            receipt.TotalTickets = total;
-            receipt.TotalProducts = food_total + drinks_total;
-
-            string receipt_content = receipt.TransformText();
-            File.WriteAllText(receipt_path, receipt_content);
             try
             {
+                string folder_path = Environment.CurrentDirectory + @"\receipts";
+                string receipt_path = folder_path + "\\receipt_" + billCode.ToString() + ".html";
+
+                //Tạo thư mục nếu chưa có
+                if (!Directory.Exists(folder_path))
+                    Directory.CreateDirectory(folder_path);
+
+                //Tạo file nếu chưa có , xoá và tạo lại nếu đã có
+                if (File.Exists(receipt_path))
+                    File.Delete(receipt_path);
+                else
+                    File.Create(receipt_path).Dispose();
+                ReceiptTemplate receipt = new ReceiptTemplate();
+
+                receipt.BillCode = billCode;
+                receipt.CreatedAt = (DateTime)MainDataTable.Rows[0]["CreatedAt"];
+                receipt.BillData = BuildDataTable();
+                receipt.TotalDiscount = discount;
+                receipt.TotalTickets = total;
+                receipt.TotalProducts = food_total + drinks_total;
+
+                string receipt_content = receipt.TransformText();
+                File.WriteAllText(receipt_path, receipt_content);
+
                 System.Diagnostics.Process.Start(receipt_path);
             }
             catch (Exception ex)
             {
                 MessageBox.Show(
-                    "Đã xảy ra lỗi trong quá trình xuất hoá đơn",
+                    "Đã xảy ra lỗi trong quá trình xuất hoá đơn \n Details: " + ex.Message,
                     "Lỗi mở file",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error
