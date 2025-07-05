@@ -22,8 +22,8 @@ namespace Qlyrapchieuphim
             shadow.TargetForm = this;
             this.Paint += FormThemPhim_Paint;
             this.Load += FormThemSuatChieu_Load;
-
-
+            label6.Hide();
+            lbl_FormThemSuatChieu_MaSuatChieu.Hide();
         }
 
         private void loadDataGridView()
@@ -103,20 +103,21 @@ namespace Qlyrapchieuphim
 
         private void FormThemSuatChieu_Load(object sender, EventArgs e)
         {
-            conn = Helper.getdbConnection();
             date_FormThemSuatChieu_NgayChieu.Format = DateTimePickerFormat.Custom;
             date_FormThemSuatChieu_NgayChieu.CustomFormat = "dd/MM/yyyy";
+
 
             date_FormThemSuatChieu_GioChieu.ShowUpDown = true;
             date_FormThemSuatChieu_GioChieu.Format = DateTimePickerFormat.Custom;
             date_FormThemSuatChieu_GioChieu.CustomFormat = "hh:mm";
 
+
             if (CheckMovie())
                 cb_FormThemSuatChieu_TenPhim.SelectedIndex = 0;
             if (CheckRoom())
                 cb_FormThemSuatChieu_PhongChieu.SelectedIndex = 0;
-            date_FormThemSuatChieu_NgayChieu.Value = DateTime.Now;
-            date_FormThemSuatChieu_GioChieu.Value = DateTime.Now;
+            date_FormThemSuatChieu_NgayChieu.Value = DateTime.Today.AddDays(1);
+            date_FormThemSuatChieu_GioChieu.Value = DateTime.Now.AddHours(1);
 
             loadDataGridView();
         }
@@ -124,55 +125,67 @@ namespace Qlyrapchieuphim
         private bool CheckRoom()
         {
             int count;
-            if (conn.State != ConnectionState.Open)
-                conn.Open();
-            string SqlQuery = "SELECT COUNT(*) FROM Rooms";
-            SqlCommand countCmd = new SqlCommand(SqlQuery, conn);
-            count = (int)countCmd.ExecuteScalar();
-
-            if (count > 0)
+            try
             {
-                cb_FormThemSuatChieu_PhongChieu.Enabled = true;
-                
-                SqlQuery = "SELECT RoomID, RoomName FROM Rooms";
-                string[] rooms = new string[count];
-                SqlCommand cmd = new SqlCommand(SqlQuery, conn);
-                SqlDataReader reader = cmd.ExecuteReader();
-                int i = 0;
-                while (reader.Read())
+                using (SqlConnection conn = Helper.getdbConnection())
                 {
-                    rooms[i] = reader.GetString(1) + " (ID: " + reader.GetInt32(0).ToString() + ")";
-                    i++;
+                    string SqlQuery = "SELECT COUNT(*) FROM Rooms";
+                    conn.Open();
+                    using (SqlCommand countCmd = new SqlCommand(SqlQuery, conn))
+                        count = (int)countCmd.ExecuteScalar();
                 }
-                cb_FormThemSuatChieu_PhongChieu.DataSource = rooms;
+
+                if (count > 0)
+                {
+                    cb_FormThemSuatChieu_PhongChieu.Enabled = true;
+                    string[] rooms = new string[count];
+
+                    using (SqlConnection conn = Helper.getdbConnection())
+                    {
+                        string SqlQuery = "SELECT RoomID, RoomName FROM Rooms";
+                        using (SqlCommand cmd = new SqlCommand(SqlQuery, conn))
+                        {
+                            conn.Open();
+                            using (SqlDataReader reader = cmd.ExecuteReader())
+                            {
+                                int i = 0;
+                                while (reader.Read())
+                                {
+                                    rooms[i] = reader.GetString(1) + " (ID: " + reader.GetInt32(0).ToString() + ")";
+                                    i++;
+                                }
+                            }
+                        }
+                    }
+                    cb_FormThemSuatChieu_PhongChieu.DataSource = rooms;
+                }
+                else
+                {
+                    cb_FormThemSuatChieu_PhongChieu.Enabled = false;
+
+                }
+                return count > 0;
             }
-            else
+            catch (Exception ex)
             {
-                cb_FormThemSuatChieu_PhongChieu.Enabled = false;
-                
-            }
-            conn.Close();
-            if (count > 0)
-                return true;
-            else
+                MessageBox.Show("Lỗi khi kiểm tra phòng chiếu: " + ex.Message);
                 return false;
+            }
         }
 
         private bool CheckMovie()
         {
             int count = 0;
-
             try
             {
-
-                if (conn.State != ConnectionState.Open)
-                    conn.Open();
-
-                string countQuery = "SELECT COUNT(*) FROM Movies WHERE Status = N'Đang chiếu'";
-                using (SqlCommand countCmd = new SqlCommand(countQuery, conn))
+                using (SqlConnection conn = Helper.getdbConnection())
                 {
-                    count = (int)countCmd.ExecuteScalar();
+                    string countQuery = "SELECT COUNT(*) FROM Movies WHERE Status = N'Đang chiếu'";
+                    conn.Open();
+                    using (SqlCommand countCmd = new SqlCommand(countQuery, conn))
+                        count = (int)countCmd.ExecuteScalar();
                 }
+
 
                 if (cb_FormThemSuatChieu_TenPhim == null)
                 {
@@ -185,19 +198,22 @@ namespace Qlyrapchieuphim
                     cb_FormThemSuatChieu_TenPhim.Enabled = true;
 
                     string movieQuery = "SELECT MovieID, Title FROM Movies WHERE Status = N'Đang chiếu'";
+                    using (SqlConnection conn = Helper.getdbConnection())
                     using (SqlCommand cmd = new SqlCommand(movieQuery, conn))
-                    using (SqlDataReader reader = cmd.ExecuteReader())
                     {
-                        List<string> movies = new List<string>();
-
-                        while (reader.Read())
+                        conn.Open();
+                        using (SqlDataReader reader = cmd.ExecuteReader())
                         {
-                            string title = reader.IsDBNull(1) ? "Không rõ tiêu đề" : reader.GetString(1);
-                            int id = reader.IsDBNull(0) ? -1 : reader.GetInt32(0);
-                            movies.Add($"{title} (ID: {id})");
-                        }
+                            List<string> movies = new List<string>();
+                            while (reader.Read())
+                            {
+                                string title = reader.IsDBNull(1) ? "Không rõ tiêu đề" : reader.GetString(1);
+                                int id = reader.IsDBNull(0) ? -1 : reader.GetInt32(0);
+                                movies.Add($"{title} (ID: {id})");
+                            }
 
-                        cb_FormThemSuatChieu_TenPhim.DataSource = movies;
+                            cb_FormThemSuatChieu_TenPhim.DataSource = movies;
+                        }
                     }
                 }
                 else
@@ -213,11 +229,6 @@ namespace Qlyrapchieuphim
                 MessageBox.Show("Lỗi khi kiểm tra phim đang chiếu: " + ex.Message);
                 return false;
             }
-            finally
-            {
-                if (conn.State == ConnectionState.Open)
-                    conn.Close();
-            }
         }
 
         private void FormThemPhim_Paint(object sender, PaintEventArgs e)
@@ -231,9 +242,7 @@ namespace Qlyrapchieuphim
                 borderColor, borderWidth, ButtonBorderStyle.Solid,
                 borderColor, borderWidth, ButtonBorderStyle.Solid);
         }
-        SqlConnection conn = null;
-        string poster_url = string.Empty;
-        string projectFolder = AppDomain.CurrentDomain.BaseDirectory;
+
         private void btn_Refresh_Click(object sender, EventArgs e)
         {
             this.Refresh();
@@ -241,76 +250,86 @@ namespace Qlyrapchieuphim
             dataGridView_FormThemSuatChieu_BangGioChieu.Rows.Clear();
             dataGridView_FormThemSuatChieu_BangPhongChieu.Rows.Clear();
         }
-         
+
         private void them_Click(object sender, EventArgs e)
         {
-            if (date_FormThemSuatChieu_NgayChieu.Value.Date < DateTime.Today)
-            {
-                MessageBox.Show("Ngày chiếu và giờ chiếu phải lớn hơn ngày giờ hiện tại!",
-                "Lỗi nhập liệu",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Warning);
-                return;
+            //if (date_FormThemSuatChieu_NgayChieu.Value.Date < DateTime.Today)
+            //{
+            //    MessageBox.Show("Ngày chiếu và giờ chiếu phải lớn hơn ngày giờ hiện tại!",
+            //    "Lỗi nhập liệu",
+            //    MessageBoxButtons.OK,
+            //    MessageBoxIcon.Warning);
+            //    return;
 
-            }
-            else if (date_FormThemSuatChieu_NgayChieu.Value.Date == DateTime.Today)
-            {
-                if (date_FormThemSuatChieu_GioChieu.Value.TimeOfDay.StripMilliseconds() <= DateTime.Now.TimeOfDay.StripMilliseconds())
-                {
-                    MessageBox.Show("Giờ chiếu phải lớn hơn ngày giờ hiện tại!",
-                    "Lỗi nhập liệu",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Warning);
-                    return;
-                }
-            }
+            //}
+            //else if (date_FormThemSuatChieu_NgayChieu.Value.Date == DateTime.Today)
+            //{
+            //    if (date_FormThemSuatChieu_GioChieu.Value.TimeOfDay.StripMilliseconds() <= DateTime.Now.TimeOfDay.StripMilliseconds())
+            //    {
+            //        MessageBox.Show("Giờ chiếu phải lớn hơn ngày giờ hiện tại!",
+            //        "Lỗi nhập liệu",
+            //        MessageBoxButtons.OK,
+            //        MessageBoxIcon.Warning);
+            //        return;
+            //    }
+            //}
             if (cb_FormThemSuatChieu_TenPhim.SelectedItem == null || cb_FormThemSuatChieu_PhongChieu.SelectedItem == null)
             {
                 MessageBox.Show("Vui lòng chọn cả phim và phòng chiếu.", "Thiếu thông tin", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-
-            conn = Helper.getdbConnection();
-            conn = Helper.CheckDbConnection(conn);
-            string id = lbl_FormThemSuatChieu_MaSuatChieu.Text;
-
-            string SqlQuery = "INSERT INTO Showtimes VALUES (@MovieID, @RoomID, @StartTime, @Price )";
-            SqlCommand cmd = new SqlCommand(SqlQuery, conn);
-            //cmd.Parameters.Add("@ShowtimeID", SqlDbType.Char).Value = idTextBox.Text;
-            cmd.Parameters.Add("@StartTime", SqlDbType.DateTime).Value = date_FormThemSuatChieu_NgayChieu.Value +date_FormThemSuatChieu_GioChieu.Value.TimeOfDay.StripMilliseconds();
-            cmd.Parameters.Add("@Price", SqlDbType.Decimal).Value = 65000; //GIÁ TRỊ TẠM DO CHƯA CÓ TEXTBOX, THAY THẾ GIÁ TRỊ NGAY KHI CÓ TEXTBOX
-            int pc = int.Parse(Helper.SubStringBetween(cb_FormThemSuatChieu_PhongChieu.SelectedItem.ToString(), " (ID: ", ")"));
-            cmd.Parameters.Add("@RoomID", SqlDbType.Int).Value = pc; //VẪN ĐANG SỬ DỤNG CÁC SỐ CÓ SẴN, ĐIỀU CHỈNH KHI CÓ QUẢN LÝ PHÒNG CHIẾU
-            int mp = int.Parse(Helper.SubStringBetween(cb_FormThemSuatChieu_TenPhim.SelectedItem.ToString(), " (ID: ", ")"));
-            cmd.Parameters.Add("@MovieID", SqlDbType.Int).Value = mp;
-            try
+            //string id = lbl_FormThemSuatChieu_MaSuatChieu.Text;
+            foreach (DataGridViewRow rowDate in dataGridView_FormThemSuatChieu_BangNgayChieu.Rows)
             {
-                conn.Open();
-                cmd.ExecuteNonQuery();
-                conn.Close();
-                this.Close();
-                this.DialogResult = DialogResult.OK;
-            }
-            catch (SqlException ex)
-            {
-                switch (ex.Number)
+                foreach (DataGridViewRow rowTime in dataGridView_FormThemSuatChieu_BangGioChieu.Rows)
                 {
-                    case 2627:
-                        MessageBox.Show(
-                            "Mã suất chiếu, ngày chiếu, giờ chiếu và phòng chiếu không được trùng nhau!",
-                            "Lỗi nhập liệu",
-                            MessageBoxButtons.OK,
-                            MessageBoxIcon.Warning);
-                        break;
-                    default:
-                        throw;
+                    foreach (DataGridViewRow rowRoom in dataGridView_FormThemSuatChieu_BangPhongChieu.Rows)
+                    {
+                        using (SqlConnection conn = Helper.getdbConnection())
+                        {
+                            string SqlQuery = "INSERT INTO Showtimes VALUES (@MovieID, @RoomID, @StartTime, @Price )";
+                            using (SqlCommand cmd = new SqlCommand(SqlQuery, conn))
+                            {
+                                DateTime time = DateTime.Parse(rowTime.Cells[1].Value.ToString());
+                                cmd.Parameters.Add("@StartTime", SqlDbType.DateTime).Value = DateTime.Parse(rowDate.Cells[1].Value.ToString()) + time.TimeOfDay.StripSeconds();
+                                cmd.Parameters.Add("@Price", SqlDbType.Decimal).Value = 55000; //GIÁ TRỊ TẠM DO CHƯA CÓ TEXTBOX, THAY THẾ GIÁ TRỊ NGAY KHI CÓ TEXTBOX
+                                int pc = int.Parse(Helper.SubStringBetween(rowRoom.Cells[1].Value.ToString(), " (ID: ", ")"));
+                                cmd.Parameters.Add("@RoomID", SqlDbType.Int).Value = pc;
+                                int mp = int.Parse(Helper.SubStringBetween(cb_FormThemSuatChieu_TenPhim.SelectedItem.ToString(), " (ID: ", ")"));
+                                cmd.Parameters.Add("@MovieID", SqlDbType.Int).Value = mp;
+                                try
+                                {
+                                    conn.Open();
+                                    cmd.ExecuteNonQuery();
+                                    conn.Close();
+                                }
+                                catch (SqlException ex)
+                                {
+                                    switch (ex.Number)
+                                    {
+                                        case 2627:
+                                            MessageBox.Show(
+                                                "Mã suất chiếu, ngày chiếu, giờ chiếu và phòng chiếu không được trùng nhau!",
+                                                "Lỗi nhập liệu",
+                                                MessageBoxButtons.OK,
+                                                MessageBoxIcon.Warning);
+                                            break;
+                                        default:
+                                            throw;
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
             }
-            finally
-            {
-                if (conn.State != ConnectionState.Closed)
-                    conn.Close();
-            }
+            MessageBox.Show(
+                "Thêm các suất chiếu thành công",
+                "Thông báo",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information);
+            this.Close();
+            this.DialogResult = DialogResult.OK;
         }
 
         private void date_FormThemSuatChieu_BangNgayChieu_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
@@ -481,13 +500,6 @@ namespace Qlyrapchieuphim
         }
 
 
-        private void date_FormThemSuatChieu_ThemNgayChieu_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void date_FormThemSuatChieu_ThemGioChieu_Click(object sender, EventArgs e)
-        {
-        }
 
         private void btn_FormThemSuatChieu_ThemNgayChieu_Click(object sender, EventArgs e)
         {

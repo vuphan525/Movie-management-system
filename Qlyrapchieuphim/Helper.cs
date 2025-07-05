@@ -10,6 +10,17 @@ using System.Windows.Forms;
 
 namespace Qlyrapchieuphim
 {
+    public static class TimeExtensions
+    {
+        public static TimeSpan StripMilliseconds(this TimeSpan time)
+        {
+            return new TimeSpan(time.Hours, time.Minutes, time.Seconds);
+        }
+        public static TimeSpan StripSeconds(this TimeSpan time)
+        {
+            return new TimeSpan(time.Hours, time.Minutes, 0);
+        }
+    }
     static class Helper
     {
         public static void Populate<T>(this T[] arr, T value)

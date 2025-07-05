@@ -658,13 +658,4 @@ namespace Qlyrapchieuphim
             }
         }
     }
-    public static class TimeExtensions
-    {
-        public static TimeSpan StripMilliseconds(this TimeSpan time)
-        {
-            return new TimeSpan(time.Hours, time.Minutes, time.Seconds);
-        }
-
-        
-    }
 }
