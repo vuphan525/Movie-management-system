@@ -362,7 +362,7 @@ namespace Qlyrapchieuphim
                 {
                     student_count = string.IsNullOrWhiteSpace(sinhvien.Text) ? 0 : int.Parse(sinhvien.Text);
                     children_count = string.IsNullOrWhiteSpace(treem.Text) ? 0 : int.Parse(treem.Text);
-                    total = selected.Count * 55000 + vipcount.Count * 20000; 
+                    total = selected.Count * 55000 + vipcount.Count * 20000;
                 }
                 catch (FormatException)
                 {
@@ -483,7 +483,7 @@ namespace Qlyrapchieuphim
                 conn.Open();
             BookingID = (int)cmd.ExecuteScalar();
             conn.Close();
-            
+
 
             //Deduct voucher quantity if used
             if (voucherId != -1)
@@ -544,21 +544,23 @@ namespace Qlyrapchieuphim
 
             //Deduct sold products from inventory
 
-            cmd = conn.CreateCommand();
-            if (conn.State == ConnectionState.Closed)
-                conn.Open();
+
             foreach (DataRow row in sp_list.Rows)
             {
-                SqlQuery = "UPDATE Products SET " +
-               "Quantity = Quantity - @Ordered " +
-               "WHERE ProductID = @ProductID";
-                cmd.Parameters.Add("@ProductID", SqlDbType.Int).Value = (int)row["id"];
-                cmd.Parameters.Add("@Ordered", SqlDbType.Int).Value = (int)row["num"];
-                cmd.CommandText = SqlQuery;
-                cmd.CommandType = CommandType.Text;
-                cmd.ExecuteNonQuery();
+                using (SqlConnection conn1 = Helper.getdbConnection())
+                using (SqlCommand cmd1 = conn1.CreateCommand())
+                {
+                    SqlQuery = "UPDATE Products SET " +
+                        "Quantity = Quantity - @Ordered " +
+                        "WHERE ProductID = @ProductID";
+                    cmd1.Parameters.Add("@ProductID", SqlDbType.Int).Value = (int)row["id"];
+                    cmd1.Parameters.Add("@Ordered", SqlDbType.Int).Value = (int)row["num"];
+                    cmd1.CommandText = SqlQuery;
+                    cmd1.CommandType = CommandType.Text;
+                    conn1.Open();
+                    cmd1.ExecuteNonQuery();
+                }
             }
-            conn.Close();
 
 
 
@@ -746,16 +748,16 @@ namespace Qlyrapchieuphim
                     using (SqlDataReader reader = cmd.ExecuteReader())
                     {
                         while (reader.Read())
-                        try
-                        {
-                            _discountPercent = float.Parse(reader.GetDouble(0).ToString());
-                            minOrderValue = reader.GetDecimal(1);
-                        }
-                        catch (Exception ex)
-                        {
-                            if (ex is System.NullReferenceException)
-                                discountPercent = 0;
-                        }
+                            try
+                            {
+                                _discountPercent = float.Parse(reader.GetDouble(0).ToString());
+                                minOrderValue = reader.GetDecimal(1);
+                            }
+                            catch (Exception ex)
+                            {
+                                if (ex is System.NullReferenceException)
+                                    discountPercent = 0;
+                            }
                     }
                 }
             }

@@ -92,7 +92,7 @@ namespace Qlyrapchieuphim
             _endTimeUpdating = true;
             _pieTimeUpdating = true;
             dtp_Time_End.Value = DateTime.Today;
-            dtp_Time_Start.Value = DateTime.Today;
+            dtp_Time_Start.Value = DateTime.Today.AddDays(-1);
             dtp_Pie_Chart_Date.Value = DateTime.Today;
             _pieTimeUpdating = false;
             _startTimeUpdating = false;
@@ -111,7 +111,7 @@ namespace Qlyrapchieuphim
             DataTable seatsRevenueTable = new DataTable();
             using (SqlConnection conn = Helper.getdbConnection())
             {
-                string SqlQuery = "SELECT bks.TotalPrice, bks.BookingID, vcs.DiscountPercent, CONVERT(DATE, bks.CreatedAt) AS CreatedAt " +
+                string SqlQuery = "SELECT bks.TotalPrice, bks.BookingID, vcs.DiscountPercent, bks.StudentCount, bks.ChildrenCount, CONVERT(DATE, bks.CreatedAt) AS CreatedAt " +
                     "FROM Bookings bks " +
                     "LEFT JOIN Vouchers vcs ON (vcs.VoucherID = bks.VoucherID) " +
                     "WHERE (CONVERT(DATE, bks.CreatedAt) = @date) " +
@@ -127,8 +127,10 @@ namespace Qlyrapchieuphim
             foreach (DataRow row in seatsRevenueTable.Rows)
             {
                 _dataAvailablePie = true;
+                int studentDiscount = (int)row["StudentCount"] * 15000;
+                int childrenDiscount = (int)row["ChildrenCount"] * 15000;
                 double discountPercent = (row["DiscountPercent"] == DBNull.Value) ? 0 : (double)row["DiscountPercent"];
-                seatRevenue += Convert.ToInt32(((decimal)row["TotalPrice"]) * Convert.ToDecimal(1 - discountPercent));
+                seatRevenue += Convert.ToInt32(((decimal)row["TotalPrice"]) * Convert.ToDecimal(1 - discountPercent) - studentDiscount - childrenDiscount);
             }
             pieChart1.Series.Add(new PieSeries
             {
@@ -186,7 +188,7 @@ namespace Qlyrapchieuphim
             DataTable seatsRevenueTable = new DataTable();
             using (SqlConnection conn = Helper.getdbConnection())
             {
-                string SqlQuery = "SELECT bks.TotalPrice, bks.BookingID, vcs.DiscountPercent, CONVERT(DATE, bks.CreatedAt) AS CreatedAt " +
+                string SqlQuery = "SELECT bks.TotalPrice, bks.BookingID, vcs.DiscountPercent, bks.StudentCount, bks.ChildrenCount, CONVERT(DATE, bks.CreatedAt) AS CreatedAt " +
                     "FROM Bookings bks " +
                     "LEFT JOIN Vouchers vcs ON (vcs.VoucherID = bks.VoucherID) " +
                     "WHERE (CONVERT(DATE, bks.CreatedAt) BETWEEN @start AND @end) " +
@@ -212,8 +214,10 @@ namespace Qlyrapchieuphim
                 }
                 if (dateIndex == dateTimes.Length)
                     continue;
+                int studentDiscount = (int)row["StudentCount"] * 15000;
+                int childrenDiscount = (int)row["ChildrenCount"] * 15000;
                 double discountPercent = (row["DiscountPercent"] == DBNull.Value) ? 0 : (double)row["DiscountPercent"];
-                seatRevenues[dateIndex] += Convert.ToInt32(((decimal)row["TotalPrice"]) * Convert.ToDecimal(1 - discountPercent));
+                seatRevenues[dateIndex] += Convert.ToInt32(((decimal)row["TotalPrice"]) * Convert.ToDecimal(1 - discountPercent) - studentDiscount - childrenDiscount);
                 _dataAvailableCartesian = true;
             }
 
