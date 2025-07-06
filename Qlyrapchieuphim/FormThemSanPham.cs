@@ -15,6 +15,7 @@ namespace Qlyrapchieuphim
 {
     public partial class FormThemSanPham : Form
     {
+        int prID;
         public FormThemSanPham()
         {
             InitializeComponent();
@@ -94,10 +95,10 @@ namespace Qlyrapchieuphim
             comm.Parameters.Add("@CategoryID", SqlDbType.Int).Value = typeID;
             comm.Parameters.Add("@Price", SqlDbType.Decimal).Value = gia;
             comm.Parameters.Add("@Quantity", SqlDbType.Int).Value = so;
-            comm.Parameters.Add("@ImportDate", SqlDbType.Date).Value = DateTime.Today - TimeSpan.FromDays(180); //GIÁ TRỊ TẠM DO CHƯA CÓ TEXTBOX, THAY THẾ GIÁ TRỊ NGAY KHI CÓ TEXTBOX
+            comm.Parameters.Add("@ImportDate", SqlDbType.Date).Value = date_ThemSanPham_NgayNhap.Value; //GIÁ TRỊ TẠM DO CHƯA CÓ TEXTBOX, THAY THẾ GIÁ TRỊ NGAY KHI CÓ TEXTBOX
             comm.Parameters.Add("@Manufacturer", SqlDbType.NVarChar).Value =lbl_ThemSanPham_NhaCungCap.Text;//GIÁ TRỊ TẠM DO CHƯA CÓ TEXTBOX, THAY THẾ GIÁ TRỊ NGAY KHI CÓ TEXTBOX
             comm.Parameters.Add("@ImageURL", SqlDbType.VarChar).Value = picture_url;
-            int prID;
+            
             try
             {
                 conn.Open();
@@ -232,7 +233,7 @@ namespace Qlyrapchieuphim
 
                 // 3. Tạo tên file hình ảnh (ví dụ: image.png)
                 ImageFormat imageFormat = pictureBox_ThemSanPham_Poster.Image.RawFormat;
-                string fileName = lbl_ThemSanPham_TenSP.Text + "." + new ImageFormatConverter().ConvertToString(imageFormat).ToLower(); // Tên file hình ảnh (bạn có thể thay đổi tên này)
+                string fileName = $"product_{prID}"  + "." + new ImageFormatConverter().ConvertToString(imageFormat).ToLower(); // Tên file hình ảnh (bạn có thể thay đổi tên này)
                 string fullPath = Path.Combine(newFolderPath, fileName);
                 //delete if existing
                 if (File.Exists(fullPath))

@@ -247,7 +247,7 @@ namespace Qlyrapchieuphim
         {
             if (e.RowIndex >= 0)
             {
-                PrintToTextBoxes(e.RowIndex);
+                //PrintToTextBoxes(e.RowIndex);
 
             }
 
@@ -268,7 +268,7 @@ namespace Qlyrapchieuphim
 
                     // Gán giá trị cho các TextBox
 
-                    String id = dt.Rows[e.RowIndex]["ProductID"].ToString();
+                    string id = dt.Rows[e.RowIndex]["ProductID"].ToString();
 
                     // 👉 Click icon Edit
                     using (FormSuaSanPham popup = new FormSuaSanPham(id))

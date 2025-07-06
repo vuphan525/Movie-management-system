@@ -10,6 +10,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 using System.Windows.Forms;
 namespace Qlyrapchieuphim.FormEdit
 {
@@ -199,11 +200,11 @@ namespace Qlyrapchieuphim.FormEdit
             SqlCommand comm = new SqlCommand(SqlQuery, conn);
             comm.Parameters.Add("@ProductID", SqlDbType.Int).Value = int.Parse(id);
             comm.Parameters.Add("@Description", SqlDbType.NVarChar).Value = lbl_FormSuaSanPham_MoTa.Text; //GIÁ TRỊ TẠM DO CHƯA CÓ TEXTBOX, THAY THẾ GIÁ TRỊ NGAY KHI CÓ TEXTBOX
-            comm.Parameters.Add("@ProductName", SqlDbType.NVarChar).Value = ten.Text;
+            comm.Parameters.Add("@ProductName", SqlDbType.NVarChar).Value = lbl_FormSuaSanPham_TenSP.Text;
             comm.Parameters.Add("@CategoryID", SqlDbType.Int).Value = typeID;
             comm.Parameters.Add("@Price", SqlDbType.Decimal).Value = gia;
             comm.Parameters.Add("@Quantity", SqlDbType.Int).Value = so;
-            comm.Parameters.Add("@ImportDate", SqlDbType.Date).Value = DateTime.Today - TimeSpan.FromDays(180); //GIÁ TRỊ TẠM DO CHƯA CÓ TEXTBOX, THAY THẾ GIÁ TRỊ NGAY KHI CÓ TEXTBOX
+            comm.Parameters.Add("@ImportDate", SqlDbType.Date).Value = date_FormSuaSanPham_NgayNhap.Value; //GIÁ TRỊ TẠM DO CHƯA CÓ TEXTBOX, THAY THẾ GIÁ TRỊ NGAY KHI CÓ TEXTBOX
             comm.Parameters.Add("@Manufacturer", SqlDbType.NVarChar).Value = lbl_FormSuaSanPham_NhaCungCap.Text;//GIÁ TRỊ TẠM DO CHƯA CÓ TEXTBOX, THAY THẾ GIÁ TRỊ NGAY KHI CÓ TEXTBOX
             SaveImage(int.Parse(id));
             comm.Parameters.Add("@ImageURL", SqlDbType.VarChar).Value = picture_url;
@@ -253,7 +254,8 @@ namespace Qlyrapchieuphim.FormEdit
                 }
 
                 // Fix tên file
-                string fileName = $"{SanitizeFileName(lbl_FormSuaSanPham_TenSP.Text)}.png";
+                ImageFormat imageFormat = pictureBox_FormSuaSanPham_Poster.Image.RawFormat;
+                string fileName = $"product_{int.Parse(id)}" + "." + new ImageFormatConverter().ConvertToString(imageFormat).ToLower(); // Tên file hình ảnh (bạn có thể thay đổi tên này)
                 string fullPath = Path.Combine(newFolderPath, fileName);
 
                 // So sánh nếu ảnh đã tồn tại
@@ -331,7 +333,7 @@ namespace Qlyrapchieuphim.FormEdit
                         // Hiển thị hình ảnh trong PictureBox
                         using (FileStream stream = new FileStream(filePath, FileMode.Open))
                         {
-                            pictureBox_FormSuaSanPham_Poster.Image = Image.FromStream(stream);
+                            pictureBox_FormSuaSanPham_Poster.Image = System.Drawing.Image.FromStream(stream);
                         }
                     }
                 }
