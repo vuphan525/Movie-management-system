@@ -36,8 +36,8 @@ namespace Qlyrapchieuphim
             string SqlQuery = "SELECT COUNT(*) FROM Movies WHERE Status = N'Đang chiếu'";
             SqlCommand countCmd = new SqlCommand(SqlQuery, conn);
             count = (int)countCmd.ExecuteScalar();
-            
-            if (count >0)
+
+            if (count > 0)
             {
                 tenphim.Enabled = true;
                 errorProvider1.Clear();
@@ -193,7 +193,7 @@ namespace Qlyrapchieuphim
             //string tp = tenphim.SelectedItem.ToString();
             //int startAt = tp.IndexOf(" (ID: ") + " (ID: ".Length;
             //int stopAt = tp.LastIndexOf(')');
-            
+
             int mp = int.Parse(Helper.SubStringBetween(tenphim.SelectedItem.ToString(), " (ID: ", ")"));
             cmd.Parameters.Add("@MovieID", SqlDbType.Int).Value = mp;
             int roomID = int.Parse(Helper.SubStringBetween(phongchieu.SelectedItem.ToString(), " (ID: ", ")"));
@@ -255,9 +255,9 @@ namespace Qlyrapchieuphim
                     return;
                 }
             }
-            
+
             string id = idTextBox.Text;
-            
+
             string SqlQuery = "INSERT INTO Showtimes VALUES (@MovieID, @RoomID, @StartTime, @Price )";
             SqlCommand cmd = new SqlCommand(SqlQuery, conn);
             //cmd.Parameters.Add("@ShowtimeID", SqlDbType.Char).Value = idTextBox.Text;
@@ -327,7 +327,7 @@ namespace Qlyrapchieuphim
             //        cmd.ExecuteNonQuery();
             //    }
             //}
-            
+
             conn.Close();
         }
         void Updatea()
@@ -400,7 +400,7 @@ namespace Qlyrapchieuphim
             conn = Helper.CheckDbConnection(conn);
             dataGridView1.RowTemplate.Height = 45;
             dataGridView1.AutoSize = false;
-            
+
             giochieu.Value = DateTime.Now + TimeSpan.FromHours(1);
             ngaychieu.Value = DateTime.Now;
             if (CheckMovie())
@@ -477,9 +477,18 @@ namespace Qlyrapchieuphim
 
                             MessageBox.Show("Đã xóa suất chiếu và dữ liệu ghế!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
-                        catch (Exception ex)
+                        catch (SqlException sqlex)
                         {
-                            MessageBox.Show("Lỗi khi xóa: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            if (sqlex.Number == 547)
+                            {
+                                MessageBox.Show(
+                                    "Không thể xóa suất chiếu, đã có khách hàng đặt vé suất chiếu này.",
+                                    "Không thể xóa",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Warning);
+                            }
+                            else
+                                MessageBox.Show("Lỗi khi xóa: " + sqlex.Message + "\nSQL Exception number: " + sqlex.Number, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                         finally
                         {
@@ -543,7 +552,7 @@ namespace Qlyrapchieuphim
 
         private void timkiem_TextChanged(object sender, EventArgs e)
         {
-                
+
         }
 
         private void timkiem_ValueChanged(object sender, EventArgs e)

@@ -118,8 +118,8 @@ namespace Qlyrapchieuphim
                 cb_FormThemSuatChieu_TenPhim.SelectedIndex = 0;
             if (CheckRoom())
                 cb_FormThemSuatChieu_PhongChieu.SelectedIndex = 0;
-            date_FormThemSuatChieu_NgayChieu.Value = DateTime.Today;
-            date_FormThemSuatChieu_GioChieu.Value = DateTime.Now;
+            date_FormThemSuatChieu_NgayChieu.Value = DateTime.Today.AddDays(1);
+            date_FormThemSuatChieu_GioChieu.Value = DateTime.Now.AddHours(1);
 
             loadDataGridView();
         }
@@ -308,9 +308,7 @@ namespace Qlyrapchieuphim
                                     return; // Dừng thao tác thêm suất chiếu
                                 }
 
-                                cmd.Parameters.Add("@StartTime", SqlDbType.DateTime).Value = date.Date + time.TimeOfDay;
-
-
+                                cmd.Parameters.Add("@StartTime", SqlDbType.DateTime).Value = date.Date + time.TimeOfDay.StripSeconds();
                                 cmd.Parameters.Add("@Price", SqlDbType.Decimal).Value = 55000; //GIÁ TRỊ TẠM DO CHƯA CÓ TEXTBOX, THAY THẾ GIÁ TRỊ NGAY KHI CÓ TEXTBOX
                                 int pc = int.Parse(Helper.SubStringBetween(rowRoom.Cells[1].Value.ToString(), " (ID: ", ")"));
                                 cmd.Parameters.Add("@RoomID", SqlDbType.Int).Value = pc;
