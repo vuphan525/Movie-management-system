@@ -73,7 +73,7 @@ namespace Qlyrapchieuphim
                     return;
                 }
                 guna2TextBox4.Text = guna2TextBox4.Text.Trim();
-                string SqlQuery = "SELECT UserID, Email FROM Staffs";
+                string SqlQuery = "SELECT UserID, Email FROM Users";
                 DataSet ds;
                 DataTable dt;
                 using (SqlConnection conn = Helper.getdbConnection())
@@ -81,8 +81,8 @@ namespace Qlyrapchieuphim
                     conn.Open();
                     SqlDataAdapter adapter = new SqlDataAdapter(SqlQuery, conn);
                     ds = new DataSet();
-                    adapter.Fill(ds, "Staffs");
-                    dt = ds.Tables["Staffs"];
+                    adapter.Fill(ds, "Users");
+                    dt = ds.Tables["Users"];
                     conn.Close();
                 }
                 bool exists = false;
@@ -113,7 +113,7 @@ namespace Qlyrapchieuphim
                 const string frompass = "kxml dvvp jaiq libr";
                 const string subject = "OTP code";
                 string body = "Your OTP code is: " + otp.ToString();
-                body += "\nThis is for a movielandcinema employee account, if you do not have an account, please ignore this email.";
+                body += "\nThis is for a movielandcinema account, if you do not have an account, please ignore this email.";
                 var smtp = new SmtpClient
                 {
                     Host = "smtp.gmail.com",
