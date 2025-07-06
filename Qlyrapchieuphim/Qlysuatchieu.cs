@@ -26,7 +26,7 @@ namespace Qlyrapchieuphim
             //idTextBox.MaxLength = 6;
             idTextBox.Enabled = false;
             dataGridView1.AutoGenerateColumns = false;
-            dataGridView1.Font = new Font("Segoe UI", 8);
+            dataGridView1.Font = new Font("Segoe UI", 12);
         }
         private bool CheckMovie()
         {

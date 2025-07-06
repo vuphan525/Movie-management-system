@@ -32,7 +32,7 @@ namespace Qlyrapchieuphim
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             masp.Enabled = false;
             dataGridView1.AutoGenerateColumns = false;
-            dataGridView1.Font = new Font("Segoe UI", 8);
+            dataGridView1.Font = new Font("Segoe UI", 12);
         }
         private void LoadData()
         {

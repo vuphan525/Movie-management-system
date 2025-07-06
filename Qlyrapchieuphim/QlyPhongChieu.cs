@@ -20,7 +20,7 @@ namespace Qlyrapchieuphim
         {
             InitializeComponent();
             dataGridView1.AutoGenerateColumns = false;
-            dataGridView1.Font = new Font("Segoe UI", 8);
+            dataGridView1.Font = new Font("Segoe UI", 12);
         }
         private SqlConnection conn = null;
         private void LoadData()

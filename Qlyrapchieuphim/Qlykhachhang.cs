@@ -30,7 +30,7 @@ namespace Qlyrapchieuphim
             sdt.MaxLength = 15;
             makh.Enabled = false;
             dataGridView1.AutoGenerateColumns = false;
-            dataGridView1.Font = new Font("Segoe UI", 8);
+            dataGridView1.Font = new Font("Segoe UI", 12);
         }
 
         private void Reset()

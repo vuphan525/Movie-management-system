@@ -36,7 +36,7 @@ namespace Qlyrapchieuphim
             //trangthai.Items.AddRange(trt);
             manv.Enabled = false;
             dataGridView1.AutoGenerateColumns = false;
-            dataGridView1.Font = new Font("Segoe UI", 8);
+            dataGridView1.Font = new Font("Segoe UI", 12);
         }
         private void LoadData()
         {

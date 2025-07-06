@@ -38,7 +38,7 @@ namespace Qlyrapchieuphim
             guna2TextBox6.ForeColor = Color.Gray;
             dataGridView1.ReadOnly = true;
             dataGridView1.AutoGenerateColumns = false;
-            dataGridView1.Font = new Font("Segoe UI", 8);
+            dataGridView1.Font = new Font("Segoe UI", 12);
         }
         private void LoadData()
         {

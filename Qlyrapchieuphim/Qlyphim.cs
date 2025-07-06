@@ -34,7 +34,7 @@ namespace Qlyrapchieuphim
             label2.Visible = false;
             idphim.Enabled = false;
             dataGridView1.AutoGenerateColumns = false;
-            dataGridView1.Font = new Font("Segoe UI", 8);
+            dataGridView1.Font = new Font("Segoe UI", 12);
         }
         SqlConnection conn = null;
         string poster_url = string.Empty;

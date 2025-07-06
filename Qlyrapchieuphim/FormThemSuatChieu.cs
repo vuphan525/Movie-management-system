@@ -24,8 +24,8 @@ namespace Qlyrapchieuphim
             shadow.TargetForm = this;
             this.Paint += FormThemPhim_Paint;
             this.Load += FormThemSuatChieu_Load;
-            label6.Hide();
-            lbl_FormThemSuatChieu_MaSuatChieu.Hide();
+            //label6.Hide();
+            //lbl_FormThemSuatChieu_MaSuatChieu.Hide();
         }
 
         private void loadDataGridView()
