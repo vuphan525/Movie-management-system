@@ -186,7 +186,7 @@ namespace Qlyrapchieuphim
             count = (int)countCmd.ExecuteScalar() + 1;
 
 
-            SqlQuery = "SELECT VoucherID, Code, MinOrderValue FROM Vouchers";
+            SqlQuery = "SELECT VoucherID, Code, MinOrderValue FROM Vouchers WHERE (IsActive = 1) AND (Quantity > 0)";
             string[] vouchers = new string[count];
             SqlCommand cmd = new SqlCommand(SqlQuery, conn);
             SqlDataReader reader = cmd.ExecuteReader();
