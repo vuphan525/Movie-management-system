@@ -164,7 +164,7 @@ namespace Qlyrapchieuphim
             }
             pieChart1.Series.Add(new PieSeries
             {
-                Title = "Khác",
+                Title = "Đồ ăn & Nước uống",
                 Values = new ChartValues<int> { productRevenue },
                 Fill = new SolidColorBrush(System.Windows.Media.Color.FromArgb(255, 155, 198, 255)) //Pastel blue
             });
