@@ -353,7 +353,6 @@ namespace Qlyrapchieuphim
             }
         }
 
-
         private void update()
         {
             if (selected.Count > 0)
@@ -362,35 +361,64 @@ namespace Qlyrapchieuphim
                 {
                     student_count = string.IsNullOrWhiteSpace(sinhvien.Text) ? 0 : int.Parse(sinhvien.Text);
                     children_count = string.IsNullOrWhiteSpace(treem.Text) ? 0 : int.Parse(treem.Text);
-                    total = selected.Count * 55000 + vipcount.Count * 20000;
                 }
                 catch (FormatException)
                 {
                     MessageBox.Show("Vui lòng nhập số hợp lệ!", "Lỗi nhập liệu", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
                 }
+
+                int normalCount = selected.Count - vipcount.Count;
+
+                // 1. Tổng tiền vé gốc (chưa giảm)
+                total = normalCount * 55000 + vipcount.Count * 70000;
             }
             else
+            {
                 total = 0;
-            if (!chkAccumulate.Checked)
-                cus_discount = cus_point * 2000;
-            else
-                cus_discount = 0;
-            need_to_pay = total + food_total + drinks_total;
-            need_to_pay_no_discount = need_to_pay;
-            int discountTotal = (int)(need_to_pay * discountPercent) + student_count * -15000 + children_count * -15000;
-            need_to_pay -= discountTotal;
-            need_to_pay -= cus_discount;
+            }
 
-            if (need_to_pay < 0)
-                need_to_pay = 0;
-            tongtien.Text = need_to_pay_no_discount.ToString() + " VND";
-            cantra.Text = need_to_pay.ToString() + " VND";
-            int to_print = discountTotal + cus_discount;
-            lblDiscount.Text = to_print.ToString() + " VND";
-            if (need_to_pay_no_discount <= 0)
-                thanhtoan.Enabled = false;
-            else thanhtoan.Enabled = true;
+            // 2. ÁP DỤNG VOUCHER & TÍCH ĐIỂM (CHỈ TRÊN TIỀN VÉ)
+            int voucherDiscount = (int)(total * discountPercent);
+            int pointDiscount = chkAccumulate.Checked ? 0 : cus_point * 2000;
+            int afterVoucher = total - voucherDiscount - pointDiscount;
+
+            // 3. GIẢM GIÁ CHO HSSV & TRẺ EM
+            int hssvDiscount = 0;
+            int studentLeft = student_count;
+            int childrenLeft = children_count;
+
+            for (int i = 0; i < selected.Count - vipcount.Count; i++)
+            {
+                if (studentLeft > 0) { hssvDiscount += 15000; studentLeft--; }
+                else if (childrenLeft > 0) { hssvDiscount += 15000; childrenLeft--; }
+                else break;
+            }
+
+            for (int i = 0; i < vipcount.Count; i++)
+            {
+                if (studentLeft > 0) { hssvDiscount += 15000; studentLeft--; }
+                else if (childrenLeft > 0) { hssvDiscount += 15000; childrenLeft--; }
+                else break;
+            }
+
+            // 4. TỔNG SỐ TIỀN PHẢI TRẢ = sau khi giảm vé + tiền sản phẩm
+            need_to_pay_no_discount = total + food_total + drinks_total;
+            int totalDiscount = voucherDiscount + pointDiscount + hssvDiscount;
+            need_to_pay = afterVoucher - hssvDiscount + food_total + drinks_total;
+
+            if (need_to_pay < 0) need_to_pay = 0;
+
+            // 5. CẬP NHẬT GIAO DIỆN
+            tongtien.Text = need_to_pay_no_discount.ToString("N0") + " VND";
+            lblDiscount.Text = totalDiscount.ToString("N0") + " VND";
+            cantra.Text = need_to_pay.ToString("N0") + " VND";
+            thanhtoan.Enabled = need_to_pay > 0;
         }
+
+
+
+
         private void formbanve_Load(object sender, EventArgs e)
         {
             conn = Helper.getdbConnection();

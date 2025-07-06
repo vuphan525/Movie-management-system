@@ -52,7 +52,7 @@ namespace Qlyrapchieuphim
         private void btn_Refresh_Click(object sender, EventArgs e)
         {
             lbl_FormThemPhongChieu_TenPhong.Clear();
-            lbl_FormThemPhongChieu_SoGhe.Clear();
+           
             cb_FormThemPhongChieu_DinhDang.SelectedIndex = -1;
             this.Refresh();
         }

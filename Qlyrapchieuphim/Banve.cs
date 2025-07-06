@@ -1,14 +1,16 @@
-﻿using System;
+﻿using Microsoft.Data.SqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Configuration;
-using Microsoft.Data.SqlClient;
+
 
 namespace Qlyrapchieuphim
 {
@@ -158,6 +160,9 @@ namespace Qlyrapchieuphim
             LoadData();
             if (CheckMovie())
                 tenphim.SelectedIndex = 0;
+            
+            date.Format = DateTimePickerFormat.Custom;
+            date.CustomFormat = "dd/MM/yyyy";
             date.Value = DateTime.Today;
         }
         public bool issearch = false;
@@ -169,35 +174,42 @@ namespace Qlyrapchieuphim
                 label4.Visible = true;
                 Search.Text = "Hủy tìm kiếm";
                 issearch = true;
-                DateTime a = date.Value.Date;
+
+                DateTime selectedDate = date.Value.Date;
                 DataTable dt = dataGridView1.DataSource as DataTable;
+                if (dt == null) return;
+
+                CurrencyManager currencyManager = (CurrencyManager)BindingContext[dataGridView1.DataSource];
+                currencyManager.SuspendBinding();
 
                 foreach (DataGridViewRow row in dataGridView1.Rows)
                 {
                     if (!row.IsNewRow)
                     {
                         int index = row.Index;
-                        if (!DateTime.TryParse(dt.Rows[index]["StartTime"].ToString(), out DateTime dateFromRow))
+                        string rawDate = dt.Rows[index]["StartTime"].ToString();
+
+                        // Định dạng hỗ trợ cả kiểu 1 chữ số hoặc 2 chữ số
+                        string[] formats = {
+                    "d/M/yyyy h:mm tt", "d/M/yyyy h:mm:ss tt",
+                    "dd/MM/yyyy hh:mm tt", "dd/MM/yyyy hh:mm:ss tt",
+                    "M/d/yyyy h:mm tt", "M/d/yyyy h:mm:ss tt",
+                    "MM/dd/yyyy hh:mm tt", "MM/dd/yyyy hh:mm:ss tt"
+                };
+
+                        if (!DateTime.TryParseExact(rawDate, formats, CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime dateFromRow))
                         {
-                            MessageBox.Show(
-                                "Không thể đọc ngày chiếu",
-                                "Lỗi dữ liệu",
-                                MessageBoxButtons.OK,
-                                MessageBoxIcon.Error);
-                        }
-                        CurrencyManager currencyManager = (CurrencyManager)BindingContext[dataGridView1.DataSource];
-                        currencyManager.SuspendBinding();
-                        if (dateFromRow.Date == a)
-                        {
-                            row.Visible = true;
-                        }
-                        else
-                        {
+                            MessageBox.Show("Không thể đọc ngày chiếu: " + rawDate, "Lỗi dữ liệu", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             row.Visible = false;
+                            continue;
                         }
-                        currencyManager.ResumeBinding();
+
+                        // So sánh phần ngày
+                        row.Visible = (dateFromRow.Date == selectedDate);
                     }
                 }
+
+                currencyManager.ResumeBinding();
                 dataGridView1.ClearSelection();
             }
             else
@@ -207,45 +219,57 @@ namespace Qlyrapchieuphim
                 label4.Visible = false;
                 issearch = false;
                 date.Value = DateTime.Today;
+
                 foreach (DataGridViewRow row in dataGridView1.Rows)
                 {
                     row.Visible = true;
                 }
             }
         }
+
         private void date_ValueChanged(object sender, EventArgs e)
         {
-
             if (issearch)
             {
-                DateTime a = date.Value.Date;
+                DateTime selectedDate = date.Value.Date;
                 DataTable dt = dataGridView1.DataSource as DataTable;
+                if (dt == null) return;
+
+                CurrencyManager currencyManager = (CurrencyManager)BindingContext[dataGridView1.DataSource];
+                currencyManager.SuspendBinding();
+
                 foreach (DataGridViewRow row in dataGridView1.Rows)
                 {
                     if (!row.IsNewRow)
                     {
                         int index = row.Index;
-                        if (!DateTime.TryParse(dt.Rows[index]["StartTime"].ToString(), out DateTime dateFromRow))
+                        string dateStr = dt.Rows[index]["StartTime"].ToString();
+
+                        // Danh sách các định dạng có thể xảy ra (rất linh hoạt)
+                        string[] formats = {
+                    "d/M/yyyy h:mm tt",
+                    "dd/MM/yyyy hh:mm tt",
+                    "d/M/yyyy h:mm:ss tt",
+                    "dd/MM/yyyy hh:mm:ss tt",
+                    "M/d/yyyy h:mm tt",
+                    "MM/dd/yyyy hh:mm tt",
+                    "M/d/yyyy h:mm:ss tt",
+                    "MM/dd/yyyy hh:mm:ss tt"
+                };
+
+                        if (!DateTime.TryParseExact(dateStr, formats, CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime dateFromRow))
                         {
-                            MessageBox.Show(
-                                "Không thể đọc ngày chiếu",
-                                "Lỗi dữ liệu",
-                                MessageBoxButtons.OK,
-                                MessageBoxIcon.Error);
+                            MessageBox.Show("Không thể đọc ngày chiếu: " + dateStr, "Lỗi dữ liệu", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            row.Visible = false; // Ẩn dòng lỗi
+                            continue;
                         }
-                        CurrencyManager currencyManager = (CurrencyManager)BindingContext[dataGridView1.DataSource];
-                        currencyManager.SuspendBinding();
-                        if (dateFromRow.Date == a)
-                        {
-                            row.Visible = true;
-                        }
-                        else
-                        {
-                            row.Visible = false;
-                        }
-                        currencyManager.ResumeBinding();
+
+                        // So sánh phần ngày
+                        row.Visible = (dateFromRow.Date == selectedDate);
                     }
                 }
+
+                currencyManager.ResumeBinding();
                 dataGridView1.ClearSelection();
             }
             else
@@ -256,6 +280,7 @@ namespace Qlyrapchieuphim
                 }
             }
         }
+
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -266,6 +291,11 @@ namespace Qlyrapchieuphim
                 bv.UserId = userID;
                 bv.Show();
             }
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

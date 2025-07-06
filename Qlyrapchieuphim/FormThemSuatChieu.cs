@@ -301,8 +301,15 @@ namespace Qlyrapchieuphim
                             using (SqlCommand cmd = new SqlCommand(SqlQuery, conn))
                             {
                                 DateTime time = DateTime.Parse(rowTime.Cells[1].Value.ToString());
-                                DateTime date = DateTime.TryParse(rowDate.Cells[1].Value?.ToString(), out var d) ? d : throw new Exception("Ngày chiếu không hợp lệ");
+                                var cellValue = rowDate.Cells[1].Value?.ToString();
+                                if (string.IsNullOrWhiteSpace(cellValue) || !DateTime.TryParse(cellValue, out var date))
+                                {
+                                    MessageBox.Show("Ngày chiếu không hợp lệ!", "Lỗi dữ liệu", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                    return; // Dừng thao tác thêm suất chiếu
+                                }
+
                                 cmd.Parameters.Add("@StartTime", SqlDbType.DateTime).Value = date.Date + time.TimeOfDay;
+
 
                                 cmd.Parameters.Add("@Price", SqlDbType.Decimal).Value = 55000; //GIÁ TRỊ TẠM DO CHƯA CÓ TEXTBOX, THAY THẾ GIÁ TRỊ NGAY KHI CÓ TEXTBOX
                                 int pc = int.Parse(Helper.SubStringBetween(rowRoom.Cells[1].Value.ToString(), " (ID: ", ")"));

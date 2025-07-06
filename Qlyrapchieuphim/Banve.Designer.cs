@@ -75,13 +75,14 @@
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(0, 96);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(436, 736);
             this.groupBox1.TabIndex = 11;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Chi tiết";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // Search
             // 
@@ -117,7 +118,7 @@
             "conan ",
             "aquaman"});
             this.tenphim.Location = new System.Drawing.Point(24, 192);
-            this.tenphim.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tenphim.Margin = new System.Windows.Forms.Padding(4);
             this.tenphim.Name = "tenphim";
             this.tenphim.Size = new System.Drawing.Size(384, 36);
             this.tenphim.TabIndex = 51;
@@ -130,7 +131,7 @@
             this.date.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.date.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.date.Location = new System.Drawing.Point(24, 90);
-            this.date.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.date.Margin = new System.Windows.Forms.Padding(4);
             this.date.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.date.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.date.Name = "date";
@@ -192,7 +193,7 @@
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.Location = new System.Drawing.Point(444, 96);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
@@ -270,7 +271,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Banve";
             this.Size = new System.Drawing.Size(1477, 832);
             this.Load += new System.EventHandler(this.Banve_Load);
