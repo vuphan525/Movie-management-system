@@ -36,15 +36,6 @@
             this.guna2TextBox6 = new Guna.UI2.WinForms.Guna2TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.VoucherID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.codeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.valueColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDiscountPercent = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNgayHetHan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSL = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colHoaDonToiThieu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTrangThai = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.colMoTa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.cancelButton = new Guna.UI2.WinForms.Guna2Button();
             this.denngay = new Guna.UI2.WinForms.Guna2DateTimePicker();
@@ -62,6 +53,15 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.VoucherID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valueColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDiscountPercent = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNgayHetHan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSL = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colHoaDonToiThieu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTrangThai = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.colMoTa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -199,73 +199,6 @@
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dataGridView1_CellPainting);
             this.dataGridView1.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dataGridView1_RowPostPaint);
-            // 
-            // VoucherID
-            // 
-            this.VoucherID.DataPropertyName = "VoucherID";
-            this.VoucherID.HeaderText = "VoucherID";
-            this.VoucherID.MinimumWidth = 6;
-            this.VoucherID.Name = "VoucherID";
-            // 
-            // codeColumn
-            // 
-            this.codeColumn.DataPropertyName = "Code";
-            this.codeColumn.FillWeight = 120F;
-            this.codeColumn.HeaderText = "Mã phát hành ";
-            this.codeColumn.MinimumWidth = 6;
-            this.codeColumn.Name = "codeColumn";
-            // 
-            // valueColumn
-            // 
-            this.valueColumn.DataPropertyName = "DiscountAmount";
-            this.valueColumn.HeaderText = "Mệnh giá (VND)";
-            this.valueColumn.MinimumWidth = 6;
-            this.valueColumn.Name = "valueColumn";
-            // 
-            // colDiscountPercent
-            // 
-            this.colDiscountPercent.DataPropertyName = "DiscountPercent";
-            this.colDiscountPercent.HeaderText = "Mức giảm (%)";
-            this.colDiscountPercent.MinimumWidth = 6;
-            this.colDiscountPercent.Name = "colDiscountPercent";
-            // 
-            // colNgayHetHan
-            // 
-            this.colNgayHetHan.DataPropertyName = "ExpiryDate";
-            this.colNgayHetHan.HeaderText = "Ngày hết hạn";
-            this.colNgayHetHan.MinimumWidth = 6;
-            this.colNgayHetHan.Name = "colNgayHetHan";
-            // 
-            // colSL
-            // 
-            this.colSL.DataPropertyName = "Quantity";
-            this.colSL.HeaderText = "Số lượng";
-            this.colSL.MinimumWidth = 6;
-            this.colSL.Name = "colSL";
-            // 
-            // colHoaDonToiThieu
-            // 
-            this.colHoaDonToiThieu.DataPropertyName = "MinOrderValue";
-            this.colHoaDonToiThieu.FillWeight = 80F;
-            this.colHoaDonToiThieu.HeaderText = "Hóa đơn tối thiểu";
-            this.colHoaDonToiThieu.MinimumWidth = 6;
-            this.colHoaDonToiThieu.Name = "colHoaDonToiThieu";
-            // 
-            // colTrangThai
-            // 
-            this.colTrangThai.DataPropertyName = "IsActive";
-            this.colTrangThai.HeaderText = "Trạng thái";
-            this.colTrangThai.MinimumWidth = 6;
-            this.colTrangThai.Name = "colTrangThai";
-            this.colTrangThai.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colTrangThai.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // colMoTa
-            // 
-            this.colMoTa.DataPropertyName = "Description";
-            this.colMoTa.HeaderText = "Mô tả";
-            this.colMoTa.MinimumWidth = 6;
-            this.colMoTa.Name = "colMoTa";
             // 
             // panel2
             // 
@@ -547,6 +480,73 @@
             this.label7.Size = new System.Drawing.Size(101, 18);
             this.label7.TabIndex = 34;
             this.label7.Text = "Mã phát hành:";
+            // 
+            // VoucherID
+            // 
+            this.VoucherID.DataPropertyName = "VoucherID";
+            this.VoucherID.HeaderText = "VoucherID";
+            this.VoucherID.MinimumWidth = 6;
+            this.VoucherID.Name = "VoucherID";
+            // 
+            // codeColumn
+            // 
+            this.codeColumn.DataPropertyName = "Code";
+            this.codeColumn.FillWeight = 120F;
+            this.codeColumn.HeaderText = "Mã phát hành ";
+            this.codeColumn.MinimumWidth = 6;
+            this.codeColumn.Name = "codeColumn";
+            // 
+            // valueColumn
+            // 
+            this.valueColumn.DataPropertyName = "DiscountAmount";
+            this.valueColumn.HeaderText = "Mệnh giá (VND)";
+            this.valueColumn.MinimumWidth = 6;
+            this.valueColumn.Name = "valueColumn";
+            // 
+            // colDiscountPercent
+            // 
+            this.colDiscountPercent.DataPropertyName = "DiscountPercent";
+            this.colDiscountPercent.HeaderText = "Mức giảm ";
+            this.colDiscountPercent.MinimumWidth = 6;
+            this.colDiscountPercent.Name = "colDiscountPercent";
+            // 
+            // colNgayHetHan
+            // 
+            this.colNgayHetHan.DataPropertyName = "ExpiryDate";
+            this.colNgayHetHan.HeaderText = "Ngày hết hạn";
+            this.colNgayHetHan.MinimumWidth = 6;
+            this.colNgayHetHan.Name = "colNgayHetHan";
+            // 
+            // colSL
+            // 
+            this.colSL.DataPropertyName = "Quantity";
+            this.colSL.HeaderText = "Số lượng";
+            this.colSL.MinimumWidth = 6;
+            this.colSL.Name = "colSL";
+            // 
+            // colHoaDonToiThieu
+            // 
+            this.colHoaDonToiThieu.DataPropertyName = "MinOrderValue";
+            this.colHoaDonToiThieu.FillWeight = 80F;
+            this.colHoaDonToiThieu.HeaderText = "Hóa đơn tối thiểu";
+            this.colHoaDonToiThieu.MinimumWidth = 6;
+            this.colHoaDonToiThieu.Name = "colHoaDonToiThieu";
+            // 
+            // colTrangThai
+            // 
+            this.colTrangThai.DataPropertyName = "IsActive";
+            this.colTrangThai.HeaderText = "Trạng thái";
+            this.colTrangThai.MinimumWidth = 6;
+            this.colTrangThai.Name = "colTrangThai";
+            this.colTrangThai.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colTrangThai.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // colMoTa
+            // 
+            this.colMoTa.DataPropertyName = "Description";
+            this.colMoTa.HeaderText = "Mô tả";
+            this.colMoTa.MinimumWidth = 6;
+            this.colMoTa.Name = "colMoTa";
             // 
             // Voucher
             // 
