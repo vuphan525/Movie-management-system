@@ -32,7 +32,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
-            this.bangdieukhien1 = new Qlyrapchieuphim.bangdieukhien();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
@@ -45,6 +44,8 @@
             this.sqlCommandBuilder1 = new Microsoft.Data.SqlClient.SqlCommandBuilder();
             this.suco1 = new Qlyrapchieuphim.Suco();
             this.qlykhachhang1 = new Qlyrapchieuphim.Qlykhachhang();
+            this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
+            this.qlyhoadon1 = new Qlyrapchieuphim.Qlyhoadon();
             this.guna2Panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.guna2Panel1.SuspendLayout();
@@ -59,7 +60,7 @@
             this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button10.Location = new System.Drawing.Point(1076, 8);
-            this.button10.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button10.Margin = new System.Windows.Forms.Padding(2);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(21, 24);
             this.button10.TabIndex = 44;
@@ -94,21 +95,11 @@
             this.guna2Panel3.Controls.Add(this.pictureBox2);
             this.guna2Panel3.Controls.Add(this.label3);
             this.guna2Panel3.Controls.Add(this.label2);
-            this.guna2Panel3.Controls.Add(this.bangdieukhien1);
             this.guna2Panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2Panel3.Location = new System.Drawing.Point(200, 0);
             this.guna2Panel3.Name = "guna2Panel3";
             this.guna2Panel3.Size = new System.Drawing.Size(1108, 44);
             this.guna2Panel3.TabIndex = 5;
-            // 
-            // bangdieukhien1
-            // 
-            this.bangdieukhien1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(248)))));
-            this.bangdieukhien1.Location = new System.Drawing.Point(-4, 0);
-            this.bangdieukhien1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.bangdieukhien1.Name = "bangdieukhien1";
-            this.bangdieukhien1.Size = new System.Drawing.Size(1108, 676);
-            this.bangdieukhien1.TabIndex = 7;
             // 
             // pictureBox2
             // 
@@ -131,6 +122,7 @@
             // 
             this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(248)))));
             this.guna2Panel1.BorderRadius = 50;
+            this.guna2Panel1.Controls.Add(this.guna2Button4);
             this.guna2Panel1.Controls.Add(this.guna2Button3);
             this.guna2Panel1.Controls.Add(this.guna2Button2);
             this.guna2Panel1.Controls.Add(this.guna2Button1);
@@ -243,7 +235,7 @@
             // 
             this.banve1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.banve1.Location = new System.Drawing.Point(200, 44);
-            this.banve1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.banve1.Margin = new System.Windows.Forms.Padding(4);
             this.banve1.Name = "banve1";
             this.banve1.Size = new System.Drawing.Size(1108, 676);
             this.banve1.TabIndex = 6;
@@ -271,6 +263,34 @@
             this.qlykhachhang1.Visible = false;
             this.qlykhachhang1.Load += new System.EventHandler(this.qlykhachhang1_Load);
             // 
+            // guna2Button4
+            // 
+            this.guna2Button4.AutoRoundedCorners = true;
+            this.guna2Button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(61)))), ((int)(((byte)(204)))));
+            this.guna2Button4.BorderRadius = 17;
+            this.guna2Button4.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.guna2Button4.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(92)))), ((int)(((byte)(214)))));
+            this.guna2Button4.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button4.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button4.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button4.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(61)))), ((int)(((byte)(204)))));
+            this.guna2Button4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button4.ForeColor = System.Drawing.Color.White;
+            this.guna2Button4.Location = new System.Drawing.Point(3, 290);
+            this.guna2Button4.Name = "guna2Button4";
+            this.guna2Button4.Size = new System.Drawing.Size(194, 36);
+            this.guna2Button4.TabIndex = 22;
+            this.guna2Button4.Text = "HÓA ĐƠN";
+            this.guna2Button4.Click += new System.EventHandler(this.guna2Button4_Click);
+            // 
+            // qlyhoadon1
+            // 
+            this.qlyhoadon1.Location = new System.Drawing.Point(200, 44);
+            this.qlyhoadon1.Name = "qlyhoadon1";
+            this.qlyhoadon1.Size = new System.Drawing.Size(1108, 676);
+            this.qlyhoadon1.TabIndex = 24;
+            // 
             // staffForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -282,6 +302,7 @@
             this.Controls.Add(this.banve1);
             this.Controls.Add(this.guna2Panel3);
             this.Controls.Add(this.guna2Panel1);
+            this.Controls.Add(this.qlyhoadon1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "staffForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -316,5 +337,7 @@
         private Guna.UI2.WinForms.Guna2Button guna2Button2;
         private Suco suco1;
         private Qlykhachhang qlykhachhang1;
+        private Guna.UI2.WinForms.Guna2Button guna2Button4;
+        private Qlyhoadon qlyhoadon1;
     }
 }

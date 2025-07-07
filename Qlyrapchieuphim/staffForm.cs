@@ -150,6 +150,7 @@ namespace Qlyrapchieuphim
             bangdieukhien1.Hide();
             qlykhachhang1.Hide();
             suco1.Hide();
+            qlyhoadon1.Hide();
         }
 
         private void suco1_Load(object sender, EventArgs e)
@@ -165,6 +166,12 @@ namespace Qlyrapchieuphim
         private void banve1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void guna2Button4_Click(object sender, EventArgs e)
+        {
+            HideAllUserControls();
+            qlyhoadon1.Show();
         }
     }
 }

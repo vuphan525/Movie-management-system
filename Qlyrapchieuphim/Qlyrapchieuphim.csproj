@@ -441,6 +441,12 @@
     <Compile Include="QlyDoanhThu.Designer.cs">
       <DependentUpon>QlyDoanhThu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Qlyhoadon.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Qlyhoadon.Designer.cs">
+      <DependentUpon>Qlyhoadon.cs</DependentUpon>
+    </Compile>
     <Compile Include="Qlykhachhang.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -625,6 +631,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="QlyDoanhThu.resx">
       <DependentUpon>QlyDoanhThu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Qlyhoadon.resx">
+      <DependentUpon>Qlyhoadon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Qlykhachhang.resx">
       <DependentUpon>Qlykhachhang.cs</DependentUpon>
@@ -823,6 +832,7 @@
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>ReceiptTemplate.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\icons8-bill-24.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

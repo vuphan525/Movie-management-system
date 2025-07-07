@@ -276,5 +276,10 @@ namespace Qlyrapchieuphim
             pictureBox_FormThemPhim_Poster.Image = null; // Assuming guna2PictureBox1 is the picture box for the poster
             this.Refresh();
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -30,22 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Adform));
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2Button10 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button9 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button6 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button8 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2Button7 = new Guna.UI2.WinForms.Guna2Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.guna2Button5 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             this.button10 = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.suco1 = new Qlyrapchieuphim.Suco();
@@ -59,16 +46,32 @@
             this.qlyPhongChieu1 = new Qlyrapchieuphim.QlyPhongChieu();
             this.bangdieukhien1 = new Qlyrapchieuphim.bangdieukhien();
             this.qlyDoanhThu1 = new Qlyrapchieuphim.QlyDoanhThu();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.guna2Button11 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button10 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button9 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button6 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button8 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button7 = new Guna.UI2.WinForms.Guna2Button();
+            this.button9 = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.guna2Button5 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
+            this.qlyhoadon1 = new Qlyrapchieuphim.Qlyhoadon();
             this.guna2Panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.guna2Panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2Panel1
             // 
             this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(248)))));
             this.guna2Panel1.BorderRadius = 50;
+            this.guna2Panel1.Controls.Add(this.guna2Button11);
             this.guna2Panel1.Controls.Add(this.guna2Button10);
             this.guna2Panel1.Controls.Add(this.guna2Button9);
             this.guna2Panel1.Controls.Add(this.guna2Button6);
@@ -91,6 +94,186 @@
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(200, 720);
             this.guna2Panel1.TabIndex = 0;
+            // 
+            // guna2Panel2
+            // 
+            this.guna2Panel2.Location = new System.Drawing.Point(200, 44);
+            this.guna2Panel2.Name = "guna2Panel2";
+            this.guna2Panel2.Size = new System.Drawing.Size(1108, 644);
+            this.guna2Panel2.TabIndex = 1;
+            // 
+            // guna2Panel3
+            // 
+            this.guna2Panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(248)))));
+            this.guna2Panel3.Controls.Add(this.button10);
+            this.guna2Panel3.Controls.Add(this.pictureBox2);
+            this.guna2Panel3.Controls.Add(this.label3);
+            this.guna2Panel3.Controls.Add(this.label2);
+            this.guna2Panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.guna2Panel3.Location = new System.Drawing.Point(200, 0);
+            this.guna2Panel3.Name = "guna2Panel3";
+            this.guna2Panel3.Size = new System.Drawing.Size(1108, 44);
+            this.guna2Panel3.TabIndex = 1;
+            // 
+            // button10
+            // 
+            this.button10.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
+            this.button10.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.button10.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button10.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button10.Location = new System.Drawing.Point(1076, 8);
+            this.button10.Margin = new System.Windows.Forms.Padding(2);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(21, 24);
+            this.button10.TabIndex = 44;
+            this.button10.Text = "X";
+            this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(61)))), ((int)(((byte)(204)))));
+            this.label3.Location = new System.Drawing.Point(904, 13);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(146, 20);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Xin chào, quản lý";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(61)))), ((int)(((byte)(204)))));
+            this.label2.Location = new System.Drawing.Point(9, 13);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(229, 20);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Phần mềm quản lý rạp phim";
+            // 
+            // suco1
+            // 
+            this.suco1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(248)))));
+            this.suco1.Location = new System.Drawing.Point(200, 44);
+            this.suco1.Name = "suco1";
+            this.suco1.Size = new System.Drawing.Size(1108, 676);
+            this.suco1.TabIndex = 9;
+            // 
+            // voucher1
+            // 
+            this.voucher1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(248)))));
+            this.voucher1.Location = new System.Drawing.Point(200, 44);
+            this.voucher1.Name = "voucher1";
+            this.voucher1.Size = new System.Drawing.Size(1108, 676);
+            this.voucher1.TabIndex = 8;
+            // 
+            // doanhthu1
+            // 
+            this.doanhthu1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(248)))));
+            this.doanhthu1.Location = new System.Drawing.Point(200, 44);
+            this.doanhthu1.Name = "doanhthu1";
+            this.doanhthu1.Size = new System.Drawing.Size(1108, 676);
+            this.doanhthu1.TabIndex = 7;
+            // 
+            // qlykhachhang1
+            // 
+            this.qlykhachhang1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(248)))));
+            this.qlykhachhang1.Location = new System.Drawing.Point(200, 44);
+            this.qlykhachhang1.Name = "qlykhachhang1";
+            this.qlykhachhang1.Size = new System.Drawing.Size(1108, 676);
+            this.qlykhachhang1.TabIndex = 6;
+            // 
+            // qlynhansu1
+            // 
+            this.qlynhansu1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(248)))));
+            this.qlynhansu1.Location = new System.Drawing.Point(200, 44);
+            this.qlynhansu1.Name = "qlynhansu1";
+            this.qlynhansu1.Size = new System.Drawing.Size(1108, 676);
+            this.qlynhansu1.TabIndex = 5;
+            // 
+            // qlysanpham1
+            // 
+            this.qlysanpham1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(248)))));
+            this.qlysanpham1.Location = new System.Drawing.Point(200, 44);
+            this.qlysanpham1.Name = "qlysanpham1";
+            this.qlysanpham1.Size = new System.Drawing.Size(1108, 676);
+            this.qlysanpham1.TabIndex = 4;
+            // 
+            // qlysuatchieu1
+            // 
+            this.qlysuatchieu1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(248)))));
+            this.qlysuatchieu1.Location = new System.Drawing.Point(200, 44);
+            this.qlysuatchieu1.Name = "qlysuatchieu1";
+            this.qlysuatchieu1.Size = new System.Drawing.Size(1108, 676);
+            this.qlysuatchieu1.TabIndex = 3;
+            // 
+            // qlyphim1
+            // 
+            this.qlyphim1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(248)))));
+            this.qlyphim1.Location = new System.Drawing.Point(200, 44);
+            this.qlyphim1.Name = "qlyphim1";
+            this.qlyphim1.Size = new System.Drawing.Size(1108, 676);
+            this.qlyphim1.TabIndex = 2;
+            // 
+            // qlyPhongChieu1
+            // 
+            this.qlyPhongChieu1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(248)))));
+            this.qlyPhongChieu1.Location = new System.Drawing.Point(200, 44);
+            this.qlyPhongChieu1.Name = "qlyPhongChieu1";
+            this.qlyPhongChieu1.Size = new System.Drawing.Size(1108, 676);
+            this.qlyPhongChieu1.TabIndex = 11;
+            // 
+            // bangdieukhien1
+            // 
+            this.bangdieukhien1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(248)))));
+            this.bangdieukhien1.Location = new System.Drawing.Point(200, 44);
+            this.bangdieukhien1.Name = "bangdieukhien1";
+            this.bangdieukhien1.Size = new System.Drawing.Size(1108, 676);
+            this.bangdieukhien1.TabIndex = 10;
+            // 
+            // qlyDoanhThu1
+            // 
+            this.qlyDoanhThu1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(248)))));
+            this.qlyDoanhThu1.Location = new System.Drawing.Point(200, 44);
+            this.qlyDoanhThu1.Name = "qlyDoanhThu1";
+            this.qlyDoanhThu1.Size = new System.Drawing.Size(1108, 676);
+            this.qlyDoanhThu1.TabIndex = 12;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(867, 8);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(31, 25);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 7;
+            this.pictureBox2.TabStop = false;
+            // 
+            // guna2Button11
+            // 
+            this.guna2Button11.AutoRoundedCorners = true;
+            this.guna2Button11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(61)))), ((int)(((byte)(204)))));
+            this.guna2Button11.BorderRadius = 17;
+            this.guna2Button11.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.guna2Button11.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(92)))), ((int)(((byte)(214)))));
+            this.guna2Button11.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button11.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button11.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button11.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button11.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(61)))), ((int)(((byte)(204)))));
+            this.guna2Button11.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button11.ForeColor = System.Drawing.Color.White;
+            this.guna2Button11.Image = global::Qlyrapchieuphim.Properties.Resources.icons8_bill_24;
+            this.guna2Button11.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.guna2Button11.Location = new System.Drawing.Point(3, 572);
+            this.guna2Button11.Name = "guna2Button11";
+            this.guna2Button11.Size = new System.Drawing.Size(194, 36);
+            this.guna2Button11.TabIndex = 30;
+            this.guna2Button11.Text = "HÓA ĐƠN";
+            this.guna2Button11.Click += new System.EventHandler(this.guna2Button11_Click);
             // 
             // guna2Button10
             // 
@@ -183,13 +366,6 @@
             this.guna2Button8.TabIndex = 27;
             this.guna2Button8.Text = "SỰ CỐ";
             this.guna2Button8.Click += new System.EventHandler(this.guna2Button8_Click);
-            // 
-            // guna2Panel2
-            // 
-            this.guna2Panel2.Location = new System.Drawing.Point(200, 44);
-            this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(1108, 644);
-            this.guna2Panel2.TabIndex = 1;
             // 
             // guna2Button7
             // 
@@ -358,155 +534,12 @@
             this.guna2Button3.Text = "    QUẢN LÝ SẢN PHẨM";
             this.guna2Button3.Click += new System.EventHandler(this.guna2Button3_Click);
             // 
-            // guna2Panel3
+            // qlyhoadon1
             // 
-            this.guna2Panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(248)))));
-            this.guna2Panel3.Controls.Add(this.button10);
-            this.guna2Panel3.Controls.Add(this.pictureBox2);
-            this.guna2Panel3.Controls.Add(this.label3);
-            this.guna2Panel3.Controls.Add(this.label2);
-            this.guna2Panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.guna2Panel3.Location = new System.Drawing.Point(200, 0);
-            this.guna2Panel3.Name = "guna2Panel3";
-            this.guna2Panel3.Size = new System.Drawing.Size(1108, 44);
-            this.guna2Panel3.TabIndex = 1;
-            // 
-            // button10
-            // 
-            this.button10.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
-            this.button10.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.button10.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button10.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button10.Location = new System.Drawing.Point(1076, 8);
-            this.button10.Margin = new System.Windows.Forms.Padding(2);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(21, 24);
-            this.button10.TabIndex = 44;
-            this.button10.Text = "X";
-            this.button10.UseVisualStyleBackColor = true;
-            this.button10.Click += new System.EventHandler(this.button10_Click);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(867, 8);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(31, 25);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 7;
-            this.pictureBox2.TabStop = false;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(61)))), ((int)(((byte)(204)))));
-            this.label3.Location = new System.Drawing.Point(904, 13);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(146, 20);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Xin chào, quản lý";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(61)))), ((int)(((byte)(204)))));
-            this.label2.Location = new System.Drawing.Point(9, 13);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(229, 20);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Phần mềm quản lý rạp phim";
-            // 
-            // suco1
-            // 
-            this.suco1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(248)))));
-            this.suco1.Location = new System.Drawing.Point(200, 44);
-            this.suco1.Name = "suco1";
-            this.suco1.Size = new System.Drawing.Size(1108, 676);
-            this.suco1.TabIndex = 9;
-            // 
-            // voucher1
-            // 
-            this.voucher1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(248)))));
-            this.voucher1.Location = new System.Drawing.Point(200, 44);
-            this.voucher1.Name = "voucher1";
-            this.voucher1.Size = new System.Drawing.Size(1108, 676);
-            this.voucher1.TabIndex = 8;
-            // 
-            // doanhthu1
-            // 
-            this.doanhthu1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(248)))));
-            this.doanhthu1.Location = new System.Drawing.Point(200, 44);
-            this.doanhthu1.Name = "doanhthu1";
-            this.doanhthu1.Size = new System.Drawing.Size(1108, 676);
-            this.doanhthu1.TabIndex = 7;
-            // 
-            // qlykhachhang1
-            // 
-            this.qlykhachhang1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(248)))));
-            this.qlykhachhang1.Location = new System.Drawing.Point(200, 44);
-            this.qlykhachhang1.Name = "qlykhachhang1";
-            this.qlykhachhang1.Size = new System.Drawing.Size(1108, 676);
-            this.qlykhachhang1.TabIndex = 6;
-            // 
-            // qlynhansu1
-            // 
-            this.qlynhansu1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(248)))));
-            this.qlynhansu1.Location = new System.Drawing.Point(200, 44);
-            this.qlynhansu1.Name = "qlynhansu1";
-            this.qlynhansu1.Size = new System.Drawing.Size(1108, 676);
-            this.qlynhansu1.TabIndex = 5;
-            // 
-            // qlysanpham1
-            // 
-            this.qlysanpham1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(248)))));
-            this.qlysanpham1.Location = new System.Drawing.Point(200, 44);
-            this.qlysanpham1.Name = "qlysanpham1";
-            this.qlysanpham1.Size = new System.Drawing.Size(1108, 676);
-            this.qlysanpham1.TabIndex = 4;
-            // 
-            // qlysuatchieu1
-            // 
-            this.qlysuatchieu1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(248)))));
-            this.qlysuatchieu1.Location = new System.Drawing.Point(200, 44);
-            this.qlysuatchieu1.Name = "qlysuatchieu1";
-            this.qlysuatchieu1.Size = new System.Drawing.Size(1108, 676);
-            this.qlysuatchieu1.TabIndex = 3;
-            // 
-            // qlyphim1
-            // 
-            this.qlyphim1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(248)))));
-            this.qlyphim1.Location = new System.Drawing.Point(200, 44);
-            this.qlyphim1.Name = "qlyphim1";
-            this.qlyphim1.Size = new System.Drawing.Size(1108, 676);
-            this.qlyphim1.TabIndex = 2;
-            // 
-            // qlyPhongChieu1
-            // 
-            this.qlyPhongChieu1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(248)))));
-            this.qlyPhongChieu1.Location = new System.Drawing.Point(200, 44);
-            this.qlyPhongChieu1.Name = "qlyPhongChieu1";
-            this.qlyPhongChieu1.Size = new System.Drawing.Size(1108, 676);
-            this.qlyPhongChieu1.TabIndex = 11;
-            // 
-            // bangdieukhien1
-            // 
-            this.bangdieukhien1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(248)))));
-            this.bangdieukhien1.Location = new System.Drawing.Point(200, 44);
-            this.bangdieukhien1.Name = "bangdieukhien1";
-            this.bangdieukhien1.Size = new System.Drawing.Size(1108, 676);
-            this.bangdieukhien1.TabIndex = 10;
-            // 
-            // qlyDoanhThu1
-            // 
-            this.qlyDoanhThu1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(248)))));
-            this.qlyDoanhThu1.Location = new System.Drawing.Point(200, 44);
-            this.qlyDoanhThu1.Name = "qlyDoanhThu1";
-            this.qlyDoanhThu1.Size = new System.Drawing.Size(1108, 676);
-            this.qlyDoanhThu1.TabIndex = 12;
+            this.qlyhoadon1.Location = new System.Drawing.Point(200, 44);
+            this.qlyhoadon1.Name = "qlyhoadon1";
+            this.qlyhoadon1.Size = new System.Drawing.Size(1108, 676);
+            this.qlyhoadon1.TabIndex = 13;
             // 
             // Adform
             // 
@@ -526,15 +559,16 @@
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.qlyPhongChieu1);
             this.Controls.Add(this.qlyDoanhThu1);
+            this.Controls.Add(this.qlyhoadon1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Adform";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Adform";
             this.guna2Panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.guna2Panel3.ResumeLayout(false);
             this.guna2Panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -571,5 +605,7 @@
         private bangdieukhien bangdieukhien1;
         private Guna.UI2.WinForms.Guna2Button guna2Button10;
         private QlyDoanhThu qlyDoanhThu1;
+        private Guna.UI2.WinForms.Guna2Button guna2Button11;
+        private Qlyhoadon qlyhoadon1;
     }
 }
