@@ -381,6 +381,7 @@ namespace Qlyrapchieuphim
             // 2. ÁP DỤNG VOUCHER & TÍCH ĐIỂM (CHỈ TRÊN TIỀN VÉ)
             int voucherDiscount = (int)(total * discountPercent);
             int pointDiscount = chkAccumulate.Checked ? 0 : cus_point * 2000;
+
             int afterVoucher = total - voucherDiscount - pointDiscount;
 
             // 3. GIẢM GIÁ CHO HSSV & TRẺ EM

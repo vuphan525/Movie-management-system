@@ -122,16 +122,17 @@ namespace Qlyrapchieuphim
             sp_total_lbl.Text = (food_total + drinks_total).ToString() + " VND";
 
 
-            int need_to_pay = total + food_total + drinks_total;
+            int need_to_pay_without_food = total;
             //Hadling Discounts
             float voucherDiscountPercent = getVoucherDiscountPercent((MainDataTable.Rows[0]["VoucherID"] == DBNull.Value) ? -1 : (int)MainDataTable.Rows[0]["VoucherID"]);
-            discount = (int)(need_to_pay * voucherDiscountPercent);
+            discount = (int)(need_to_pay_without_food * voucherDiscountPercent);
             if (UsedPoints)
                 discount += loyalty_points_before * 2000;
 
             lblDiscount.Text = (discount + student_discount + child_discount).ToString() + " VND";
-            need_to_pay -= discount + student_discount + child_discount;
-
+            int need_to_pay = need_to_pay_without_food + food_total + drinks_total;
+            need_to_pay -= (discount + student_discount + child_discount);
+           
             cantra.Text = need_to_pay.ToString() + " VND";
             LoadMovie();
             LoadCus();
@@ -335,6 +336,11 @@ namespace Qlyrapchieuphim
         private void guna2Button1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void guna2Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
