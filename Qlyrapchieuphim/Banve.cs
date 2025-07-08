@@ -16,7 +16,6 @@ namespace Qlyrapchieuphim
 {
     public partial class Banve : UserControl
     {
-        SqlConnection conn = null;
         private int userID = -1;
         public int UserID
         {
@@ -34,62 +33,74 @@ namespace Qlyrapchieuphim
         private bool CheckMovie()
         {
             int count;
-            try
+            using (SqlConnection conn = Helper.getdbConnection())
             {
-
-                string SqlQuery = "SELECT COUNT(*) FROM Movies WHERE Status = N'Đang chiếu'";
-                SqlCommand countCmd = new SqlCommand(SqlQuery, conn);
-                if (conn.State != ConnectionState.Open)
-                    conn.Open();
-                count = (int)countCmd.ExecuteScalar();
-                conn.Close();
-
-                if (count > 0)
+                try
                 {
-                    tenphim.Enabled = true;
-                    errorProvider1.Clear();
-                    SqlQuery = "SELECT MovieID, Title FROM Movies WHERE Status = N'Đang chiếu'";
-                    string[] movies = new string[count];
-                    SqlCommand cmd = new SqlCommand(SqlQuery, conn);
-                    if (conn.State != ConnectionState.Open)
-                        conn.Open();
-                    SqlDataReader reader = cmd.ExecuteReader();
-                    int i = 0;
-                    while (reader.Read())
+                    string SqlQuery = "SELECT COUNT(*) FROM Movies WHERE Status = N'Đang chiếu'";
+
+                    using (SqlCommand countCmd = new SqlCommand(SqlQuery, conn))
                     {
-                        movies[i] = reader.GetString(1) + " (ID: " + reader.GetInt32(0) + ")";
-                        i++;
+                        conn.Open();
+                        count = (int)countCmd.ExecuteScalar();
+                        conn.Close();
                     }
-                    conn.Close();
-                    tenphim.DataSource = movies;
-                }
-                else
-                {
-                    tenphim.Enabled = false;
-                    errorProvider1.SetError(tenphim, "Không có phim trong hệ thống!");
-                }
 
-                return count > 0;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi khi kiểm tra phim đang chiếu: " + ex.Message);
-                if (conn.State != ConnectionState.Closed)
-                    conn.Close();
-                return false;
+                    if (count > 0)
+                    {
+                        tenphim.Enabled = true;
+                        errorProvider1.Clear();
+                        SqlQuery = "SELECT MovieID, Title FROM Movies WHERE Status = N'Đang chiếu'";
+                        string[] movies = new string[count];
+                        using (SqlCommand cmd = new SqlCommand(SqlQuery, conn))
+                        {
+                            if (conn.State != ConnectionState.Open)
+                                conn.Open();
+                            using (SqlDataReader reader = cmd.ExecuteReader())
+                            {
+                                int i = 0;
+                                while (reader.Read())
+                                {
+                                    movies[i] = reader.GetString(1) + " (ID: " + reader.GetInt32(0) + ")";
+                                    i++;
+                                }
+                                conn.Close();
+                            }
+                        }
+                        tenphim.DataSource = movies;
+                    }
+                    else
+                    {
+                        tenphim.Enabled = false;
+                        errorProvider1.SetError(tenphim, "Không có phim trong hệ thống!");
+                    }
+
+                    return count > 0;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi khi kiểm tra phim đang chiếu: " + ex.Message);
+                    if (conn.State != ConnectionState.Closed)
+                        conn.Close();
+                    return false;
+                }
             }
         }
         private void LoadData()
         {
+            DataTable dt = new DataTable();
             string SqlQuery = "SELECT ShowtimeID, StartTime, RoomID, st.MovieID, Title " +
                 "FROM Showtimes st JOIN Movies mv ON (st.MovieID = mv.MovieID)";
-            SqlDataAdapter adapter = new SqlDataAdapter(SqlQuery, conn);
-            DataSet ds = new DataSet();
-            if (conn.State != ConnectionState.Open)
-                conn.Open();
-            adapter.Fill(ds, "Showtimes");
-            conn.Close();
-            DataTable dt = ds.Tables["Showtimes"];
+            using (SqlConnection conn = Helper.getdbConnection())
+            using (SqlDataAdapter adapter = new SqlDataAdapter(SqlQuery, conn))
+            {
+                DataSet ds = new DataSet();
+                if (conn.State != ConnectionState.Open)
+                    conn.Open();
+                adapter.Fill(ds, "Showtimes");
+                conn.Close();
+                dt = ds.Tables["Showtimes"];
+            }
             //foreach (DataGridViewRow row in dataGridView1.Rows)
             //{
             //    if (!row.IsNewRow)
@@ -139,24 +150,11 @@ namespace Qlyrapchieuphim
 
         private void dataGridView1_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
         {
-            var grid = sender as DataGridView;
-            var rowIdx = (e.RowIndex + 1).ToString();
-
-            var centerFormat = new StringFormat()
-            {
-                // right alignment might actually make more sense for numbers
-                Alignment = StringAlignment.Center,
-                LineAlignment = StringAlignment.Center
-            };
-
-            var headerBounds = new Rectangle(e.RowBounds.Left, e.RowBounds.Top, grid.RowHeadersWidth, e.RowBounds.Height);
-            e.Graphics.DrawString(rowIdx, this.Font, SystemBrushes.ControlText, headerBounds, centerFormat);
+            //Helper.DrawNumbering(sender, e, this);
         }
 
         private void Banve_Load(object sender, EventArgs e)
         {
-            conn = Helper.getdbConnection();
-            conn = Helper.CheckDbConnection(conn);
             LoadData();
             if (CheckMovie())
                 tenphim.SelectedIndex = 0;

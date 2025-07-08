@@ -599,20 +599,20 @@ namespace Qlyrapchieuphim
 
         private void Qlysuatchieu_Paint(object sender, PaintEventArgs e)
         {
-            CheckMovie();
-            CheckRoom();
-            if (!tenphim.Enabled || !phongchieu.Enabled)
-            {
-                them.Enabled = false;
-                xoa.Enabled = false;
-                chinhsua.Enabled = false;
-            }
-            else
-            {
-                them.Enabled = true;
-                xoa.Enabled = true;
-                chinhsua.Enabled = true;
-            }
+            //CheckMovie();
+            //CheckRoom();
+            //if (!tenphim.Enabled || !phongchieu.Enabled)
+            //{
+            //    them.Enabled = false;
+            //    xoa.Enabled = false;
+            //    chinhsua.Enabled = false;
+            //}
+            //else
+            //{
+            //    them.Enabled = true;
+            //    xoa.Enabled = true;
+            //    chinhsua.Enabled = true;
+            //}
         }
 
         private void dataGridView1_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)

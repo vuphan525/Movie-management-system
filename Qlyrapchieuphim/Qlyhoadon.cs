@@ -19,7 +19,6 @@ namespace Qlyrapchieuphim
         }
         private void LoadDataGridView()
         {
-            this.dataGridView1.Rows.Clear();
             DataTable dt = new DataTable();
             using (SqlConnection conn = Helper.getdbConnection())
             {
@@ -31,11 +30,17 @@ namespace Qlyrapchieuphim
                     adapter.Fill(dt);
                 }
             }
+            dataGridView1.DataSource = dt;
         }
 
         private void Qlyhoadon_Load(object sender, EventArgs e)
         {
             LoadDataGridView();
+        }
+
+        private void Qlyhoadon_VisibleChanged(object sender, EventArgs e)
+        {
+            Qlyhoadon_Load(sender, e);
         }
     }
 }

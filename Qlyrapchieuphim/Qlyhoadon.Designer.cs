@@ -28,21 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
             this.date_FormThemSuatChieu_NgayChieu = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2TextBox6 = new Guna.UI2.WinForms.Guna2TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label2 = new System.Windows.Forms.Label();
             this.colID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colSDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDTL = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -123,14 +123,14 @@
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(61)))), ((int)(((byte)(204)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(61)))), ((int)(((byte)(204)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(61)))), ((int)(((byte)(204)))));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(61)))), ((int)(((byte)(204)))));
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colID,
@@ -148,6 +148,49 @@
             this.dataGridView1.Size = new System.Drawing.Size(1046, 561);
             this.dataGridView1.TabIndex = 30;
             // 
+            // colID
+            // 
+            this.colID.DataPropertyName = "BookingID";
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.colID.DefaultCellStyle = dataGridViewCellStyle12;
+            this.colID.FillWeight = 90F;
+            this.colID.HeaderText = "Mã hóa đơn";
+            this.colID.MinimumWidth = 6;
+            this.colID.Name = "colID";
+            this.colID.ReadOnly = true;
+            // 
+            // colName
+            // 
+            this.colName.DataPropertyName = "FullName";
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.colName.DefaultCellStyle = dataGridViewCellStyle13;
+            this.colName.FillWeight = 120F;
+            this.colName.HeaderText = "Họ tên khách hàng";
+            this.colName.MinimumWidth = 6;
+            this.colName.Name = "colName";
+            this.colName.ReadOnly = true;
+            // 
+            // colSDT
+            // 
+            this.colSDT.DataPropertyName = "Phone";
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.colSDT.DefaultCellStyle = dataGridViewCellStyle14;
+            this.colSDT.FillWeight = 111.6496F;
+            this.colSDT.HeaderText = "Số điện thoại";
+            this.colSDT.MinimumWidth = 6;
+            this.colSDT.Name = "colSDT";
+            this.colSDT.ReadOnly = true;
+            // 
+            // colDTL
+            // 
+            this.colDTL.DataPropertyName = "CreatedAt";
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.colDTL.DefaultCellStyle = dataGridViewCellStyle15;
+            this.colDTL.HeaderText = "Ngày hóa đơn ";
+            this.colDTL.MinimumWidth = 6;
+            this.colDTL.Name = "colDTL";
+            this.colDTL.ReadOnly = true;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -158,49 +201,6 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Các hóa đơn";
             // 
-            // colID
-            // 
-            this.colID.DataPropertyName = "BookingID";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.colID.DefaultCellStyle = dataGridViewCellStyle2;
-            this.colID.FillWeight = 90F;
-            this.colID.HeaderText = "Mã hóa đơn";
-            this.colID.MinimumWidth = 6;
-            this.colID.Name = "colID";
-            this.colID.ReadOnly = true;
-            // 
-            // colName
-            // 
-            this.colName.DataPropertyName = "FullName";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.colName.DefaultCellStyle = dataGridViewCellStyle3;
-            this.colName.FillWeight = 120F;
-            this.colName.HeaderText = "Họ tên khách hàng";
-            this.colName.MinimumWidth = 6;
-            this.colName.Name = "colName";
-            this.colName.ReadOnly = true;
-            // 
-            // colSDT
-            // 
-            this.colSDT.DataPropertyName = "Phone";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.colSDT.DefaultCellStyle = dataGridViewCellStyle4;
-            this.colSDT.FillWeight = 111.6496F;
-            this.colSDT.HeaderText = "Số điện thoại";
-            this.colSDT.MinimumWidth = 6;
-            this.colSDT.Name = "colSDT";
-            this.colSDT.ReadOnly = true;
-            // 
-            // colDTL
-            // 
-            this.colDTL.DataPropertyName = "CreatedAt";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.colDTL.DefaultCellStyle = dataGridViewCellStyle5;
-            this.colDTL.HeaderText = "Ngày hóa đơn ";
-            this.colDTL.MinimumWidth = 6;
-            this.colDTL.Name = "colDTL";
-            this.colDTL.ReadOnly = true;
-            // 
             // Qlyhoadon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -209,6 +209,7 @@
             this.Name = "Qlyhoadon";
             this.Size = new System.Drawing.Size(1108, 676);
             this.Load += new System.EventHandler(this.Qlyhoadon_Load);
+            this.VisibleChanged += new System.EventHandler(this.Qlyhoadon_VisibleChanged);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
