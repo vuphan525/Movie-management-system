@@ -36,10 +36,10 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
             this.date_FormThemSuatChieu_NgayChieu = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2TextBox6 = new Guna.UI2.WinForms.Guna2TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
-            this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
             this.colID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colSDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -76,6 +76,22 @@
             this.date_FormThemSuatChieu_NgayChieu.Size = new System.Drawing.Size(154, 32);
             this.date_FormThemSuatChieu_NgayChieu.TabIndex = 69;
             this.date_FormThemSuatChieu_NgayChieu.Value = new System.DateTime(2024, 11, 29, 16, 51, 14, 647);
+            // 
+            // guna2Button4
+            // 
+            this.guna2Button4.BorderRadius = 15;
+            this.guna2Button4.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button4.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button4.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button4.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(248)))));
+            this.guna2Button4.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button4.ForeColor = System.Drawing.Color.White;
+            this.guna2Button4.Image = global::Qlyrapchieuphim.Properties.Resources.icons8_find_30;
+            this.guna2Button4.Location = new System.Drawing.Point(1030, 21);
+            this.guna2Button4.Name = "guna2Button4";
+            this.guna2Button4.Size = new System.Drawing.Size(30, 30);
+            this.guna2Button4.TabIndex = 54;
             // 
             // guna2TextBox6
             // 
@@ -145,25 +161,9 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Các hóa đơn";
             // 
-            // guna2Button4
-            // 
-            this.guna2Button4.BorderRadius = 15;
-            this.guna2Button4.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button4.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button4.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button4.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(248)))));
-            this.guna2Button4.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button4.ForeColor = System.Drawing.Color.White;
-            this.guna2Button4.Image = global::Qlyrapchieuphim.Properties.Resources.icons8_find_30;
-            this.guna2Button4.Location = new System.Drawing.Point(1030, 21);
-            this.guna2Button4.Name = "guna2Button4";
-            this.guna2Button4.Size = new System.Drawing.Size(30, 30);
-            this.guna2Button4.TabIndex = 54;
-            // 
             // colID
             // 
-            this.colID.DataPropertyName = "CustomerID";
+            this.colID.DataPropertyName = "BookingID";
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.colID.DefaultCellStyle = dataGridViewCellStyle2;
             this.colID.FillWeight = 90F;
@@ -207,7 +207,7 @@
             // 
             // colDTL
             // 
-            this.colDTL.DataPropertyName = "LoyaltyPoints";
+            this.colDTL.DataPropertyName = "CreatedAt";
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.colDTL.DefaultCellStyle = dataGridViewCellStyle6;
             this.colDTL.HeaderText = "Ngày hóa đơn ";

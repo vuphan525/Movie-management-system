@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label9 = new System.Windows.Forms.Label();
             this.lbl_FormThemPhim_MoTa = new Guna.UI2.WinForms.Guna2TextBox();
             this.lbl_FormThemPhim_ThoiLuong = new Guna.UI2.WinForms.Guna2TextBox();
@@ -50,10 +51,14 @@
             this.btn_Refresh = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.pictureBox_FormThemPhim_Poster = new System.Windows.Forms.PictureBox();
-            this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.lbl_FormThemPhim_Gia = new Guna.UI2.WinForms.Guna2TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.cb_FormThemPhim_NhaPhatHanh = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.errorProvider_Gia = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider_ThoiLuong = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_FormThemPhim_Poster)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider_Gia)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider_ThoiLuong)).BeginInit();
             this.SuspendLayout();
             // 
             // label9
@@ -113,6 +118,7 @@
             this.lbl_FormThemPhim_ThoiLuong.SelectedText = "";
             this.lbl_FormThemPhim_ThoiLuong.Size = new System.Drawing.Size(235, 35);
             this.lbl_FormThemPhim_ThoiLuong.TabIndex = 79;
+            this.lbl_FormThemPhim_ThoiLuong.TextChanged += new System.EventHandler(this.lbl_FormThemPhim_ThoiLuong_TextChanged);
             // 
             // lbl_FormThemPhim_TenPhim
             // 
@@ -386,28 +392,29 @@
             this.pictureBox_FormThemPhim_Poster.TabStop = false;
             this.pictureBox_FormThemPhim_Poster.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // guna2TextBox1
+            // lbl_FormThemPhim_Gia
             // 
-            this.guna2TextBox1.BorderColor = System.Drawing.Color.Gray;
-            this.guna2TextBox1.BorderRadius = 10;
-            this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox1.DefaultText = "";
-            this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2TextBox1.ForeColor = System.Drawing.Color.Black;
-            this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.Location = new System.Drawing.Point(273, 132);
-            this.guna2TextBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.guna2TextBox1.Name = "guna2TextBox1";
-            this.guna2TextBox1.PasswordChar = '\0';
-            this.guna2TextBox1.PlaceholderText = "";
-            this.guna2TextBox1.SelectedText = "";
-            this.guna2TextBox1.Size = new System.Drawing.Size(249, 35);
-            this.guna2TextBox1.TabIndex = 115;
+            this.lbl_FormThemPhim_Gia.BorderColor = System.Drawing.Color.Gray;
+            this.lbl_FormThemPhim_Gia.BorderRadius = 10;
+            this.lbl_FormThemPhim_Gia.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.lbl_FormThemPhim_Gia.DefaultText = "";
+            this.lbl_FormThemPhim_Gia.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.lbl_FormThemPhim_Gia.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.lbl_FormThemPhim_Gia.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.lbl_FormThemPhim_Gia.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.lbl_FormThemPhim_Gia.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.lbl_FormThemPhim_Gia.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.lbl_FormThemPhim_Gia.ForeColor = System.Drawing.Color.Black;
+            this.lbl_FormThemPhim_Gia.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.lbl_FormThemPhim_Gia.Location = new System.Drawing.Point(273, 132);
+            this.lbl_FormThemPhim_Gia.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.lbl_FormThemPhim_Gia.Name = "lbl_FormThemPhim_Gia";
+            this.lbl_FormThemPhim_Gia.PasswordChar = '\0';
+            this.lbl_FormThemPhim_Gia.PlaceholderText = "";
+            this.lbl_FormThemPhim_Gia.SelectedText = "";
+            this.lbl_FormThemPhim_Gia.Size = new System.Drawing.Size(249, 35);
+            this.lbl_FormThemPhim_Gia.TabIndex = 115;
+            this.lbl_FormThemPhim_Gia.TextChanged += new System.EventHandler(this.lbl_FormThemPhim_Gia_TextChanged);
             // 
             // label2
             // 
@@ -447,6 +454,14 @@
             this.cb_FormThemPhim_NhaPhatHanh.Size = new System.Drawing.Size(249, 36);
             this.cb_FormThemPhim_NhaPhatHanh.TabIndex = 116;
             // 
+            // errorProvider_Gia
+            // 
+            this.errorProvider_Gia.ContainerControl = this;
+            // 
+            // errorProvider_ThoiLuong
+            // 
+            this.errorProvider_ThoiLuong.ContainerControl = this;
+            // 
             // FormThemPhim
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -454,7 +469,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(535, 632);
             this.Controls.Add(this.cb_FormThemPhim_NhaPhatHanh);
-            this.Controls.Add(this.guna2TextBox1);
+            this.Controls.Add(this.lbl_FormThemPhim_Gia);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btn_Refresh);
             this.Controls.Add(this.date_FormThemPhim_NgayNhap);
@@ -487,6 +502,8 @@
             this.Text = "FormThemPhim";
             this.Load += new System.EventHandler(this.FormThemPhim_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_FormThemPhim_Poster)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider_Gia)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider_ThoiLuong)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -515,8 +532,10 @@
         private System.Windows.Forms.Label label11;
         private Guna.UI2.WinForms.Guna2DateTimePicker date_FormThemPhim_NgayNhap;
         private Guna.UI2.WinForms.Guna2Button btn_Refresh;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
+        private Guna.UI2.WinForms.Guna2TextBox lbl_FormThemPhim_Gia;
         private System.Windows.Forms.Label label2;
         private Guna.UI2.WinForms.Guna2ComboBox cb_FormThemPhim_NhaPhatHanh;
+        private System.Windows.Forms.ErrorProvider errorProvider_Gia;
+        private System.Windows.Forms.ErrorProvider errorProvider_ThoiLuong;
     }
 }

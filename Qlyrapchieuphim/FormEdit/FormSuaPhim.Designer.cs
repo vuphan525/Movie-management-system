@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label8 = new System.Windows.Forms.Label();
             this.AddButton = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
@@ -55,7 +56,11 @@
             this.lbl_FormSuaPhim_Gia = new Guna.UI2.WinForms.Guna2TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.cb_FormSuaPhim_NhaPhatHanh = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.errorProvider_Gia = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider_ThoiLuong = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_FormSuaPhim_Poster)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider_Gia)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider_ThoiLuong)).BeginInit();
             this.SuspendLayout();
             // 
             // label8
@@ -97,7 +102,7 @@
             this.guna2Button2.ForeColor = System.Drawing.Color.Black;
             this.guna2Button2.Image = global::Qlyrapchieuphim.Properties.Resources.icons8_exit_35;
             this.guna2Button2.Location = new System.Drawing.Point(498, 11);
-            this.guna2Button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2Button2.Margin = new System.Windows.Forms.Padding(2);
             this.guna2Button2.Name = "guna2Button2";
             this.guna2Button2.Size = new System.Drawing.Size(26, 28);
             this.guna2Button2.TabIndex = 100;
@@ -223,6 +228,7 @@
             this.lbl_FormSuaPhim_ThoiLuong.SelectedText = "";
             this.lbl_FormSuaPhim_ThoiLuong.Size = new System.Drawing.Size(235, 35);
             this.lbl_FormSuaPhim_ThoiLuong.TabIndex = 120;
+            this.lbl_FormSuaPhim_ThoiLuong.TextChanged += new System.EventHandler(this.lbl_FormSuaPhim_ThoiLuong_TextChanged);
             // 
             // lbl_FormSuaPhim_TenPhim
             // 
@@ -439,6 +445,7 @@
             this.lbl_FormSuaPhim_Gia.SelectedText = "";
             this.lbl_FormSuaPhim_Gia.Size = new System.Drawing.Size(249, 35);
             this.lbl_FormSuaPhim_Gia.TabIndex = 133;
+            this.lbl_FormSuaPhim_Gia.TextChanged += new System.EventHandler(this.lbl_FormSuaPhim_Gia_TextChanged);
             // 
             // label12
             // 
@@ -477,6 +484,14 @@
             this.cb_FormSuaPhim_NhaPhatHanh.Name = "cb_FormSuaPhim_NhaPhatHanh";
             this.cb_FormSuaPhim_NhaPhatHanh.Size = new System.Drawing.Size(249, 36);
             this.cb_FormSuaPhim_NhaPhatHanh.TabIndex = 134;
+            // 
+            // errorProvider_Gia
+            // 
+            this.errorProvider_Gia.ContainerControl = this;
+            // 
+            // errorProvider_ThoiLuong
+            // 
+            this.errorProvider_ThoiLuong.ContainerControl = this;
             // 
             // FormSuaPhim
             // 
@@ -518,6 +533,8 @@
             this.Text = "FormSuaPhim";
             this.Load += new System.EventHandler(this.FormSuaPhim_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_FormSuaPhim_Poster)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider_Gia)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider_ThoiLuong)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -552,5 +569,7 @@
         private Guna.UI2.WinForms.Guna2TextBox lbl_FormSuaPhim_Gia;
         private System.Windows.Forms.Label label12;
         private Guna.UI2.WinForms.Guna2ComboBox cb_FormSuaPhim_NhaPhatHanh;
+        private System.Windows.Forms.ErrorProvider errorProvider_Gia;
+        private System.Windows.Forms.ErrorProvider errorProvider_ThoiLuong;
     }
 }

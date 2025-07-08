@@ -23,6 +23,7 @@ namespace Qlyrapchieuphim.FormEdit
             shadow.TargetForm = this;
             this.Paint += FormThemPhim_Paint;
             pictureBox_FormSuaPhim_Poster.SizeMode = PictureBoxSizeMode.Zoom;
+            lbl_FormSuaPhim_MoTa.MaxLength = 512;
         }
 
         private string movieId;
@@ -78,17 +79,6 @@ namespace Qlyrapchieuphim.FormEdit
                 return;
             }
 
-            if (!int.TryParse(lbl_FormSuaPhim_ThoiLuong.Text, out int he))
-            {
-                MessageBox.Show("Thời lượng phải được nhập dưới dạng số nguyên!", "Lỗi nhập liệu", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            if (lbl_FormSuaPhim_MoTa.Text.Length > 512)
-            {
-                MessageBox.Show("Mô tả không được quá 512 ký tự!", "Lỗi nhập liệu", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
 
             string SqlQuery = "UPDATE Movies SET " +
                 "Title = @Title, " +
@@ -99,7 +89,8 @@ namespace Qlyrapchieuphim.FormEdit
                 "Status = @Status, " +
                 "ReleaseDate = @ReleaseDate, " +
                 "ImportDate = @ImportDate, " +
-                "Manufacturer = @Manufacturer " +
+                "Manufacturer = @Manufacturer, " +
+                "Price = @Price " +
                 "WHERE MovieID = @MovieID";
 
             using (SqlConnection conn = Helper.getdbConnection())
@@ -107,12 +98,13 @@ namespace Qlyrapchieuphim.FormEdit
             {
                 comm.Parameters.Add("@Title", SqlDbType.NVarChar).Value = lbl_FormSuaPhim_TenPhim.Text;
                 comm.Parameters.Add("@Genre", SqlDbType.NVarChar).Value = cb_FormSuaPhim_TheLoai.Text;
-                comm.Parameters.Add("@Duration", SqlDbType.Int).Value = he;
+                comm.Parameters.Add("@Duration", SqlDbType.Int).Value = int.Parse(lbl_FormSuaPhim_ThoiLuong.Text);
                 comm.Parameters.Add("@Description", SqlDbType.NVarChar).Value = lbl_FormSuaPhim_MoTa.Text;
                 comm.Parameters.Add("@Status", SqlDbType.NVarChar).Value = cb_FormSuaPhim_TinhTrang.Text;
                 comm.Parameters.Add("@ReleaseDate", SqlDbType.Date).Value = date_FormSuaPhim_NgayPhatHanh.Value;
                 comm.Parameters.Add("@ImportDate", SqlDbType.Date).Value = date_FormSuaPhim_NgayNhap.Value;
                 comm.Parameters.Add("@Manufacturer", SqlDbType.NVarChar).Value = cb_FormSuaPhim_NhaPhatHanh.SelectedItem.ToString();
+                comm.Parameters.Add("@Price", SqlDbType.Decimal).Value = decimal.Parse(lbl_FormSuaPhim_Gia.Text);
 
                 SaveImage(int.Parse(movieId));
                 comm.Parameters.Add("@PosterURL", SqlDbType.VarChar).Value = poster_url;
@@ -205,6 +197,7 @@ namespace Qlyrapchieuphim.FormEdit
                         lbl_FormSuaPhim_ThoiLuong.Text = reader["Duration"].ToString();
                         lbl_FormSuaPhim_MoTa.Text = reader["Description"].ToString();
                         cb_FormSuaPhim_TinhTrang.Text = reader["Status"].ToString();
+                        lbl_FormSuaPhim_Gia.Text = reader["Price"].ToString() ;
 
                         if (reader["ReleaseDate"] != DBNull.Value)
                             date_FormSuaPhim_NgayPhatHanh.Value = Convert.ToDateTime(reader["ReleaseDate"]);
@@ -274,6 +267,34 @@ namespace Qlyrapchieuphim.FormEdit
             lbl_FormSuaPhim_MoTa.Clear();
             pictureBox_FormSuaPhim_Poster.Image = null;
             this.Refresh();
+        }
+
+        private void lbl_FormSuaPhim_Gia_TextChanged(object sender, EventArgs e)
+        {
+            if (!decimal.TryParse(lbl_FormSuaPhim_Gia.Text, out _))
+            {
+                errorProvider_Gia.SetError(lbl_FormSuaPhim_Gia, "Thời lượng phải được nhập dươi dạng một số thực!");
+                AddButton.Enabled = false;
+            }
+            else
+            {
+                errorProvider_Gia.Clear();
+                AddButton.Enabled = true;
+            }
+        }
+
+        private void lbl_FormSuaPhim_ThoiLuong_TextChanged(object sender, EventArgs e)
+        {
+            if (!int.TryParse(lbl_FormSuaPhim_ThoiLuong.Text, out _))
+            {
+                errorProvider_ThoiLuong.SetError(lbl_FormSuaPhim_ThoiLuong, "Thời lượng phải được nhập dươi dạng một số nguyên!");
+                AddButton.Enabled = false;
+            }
+            else
+            {
+                errorProvider_ThoiLuong.Clear();
+                AddButton.Enabled = true;
+            }
         }
     }
 }
