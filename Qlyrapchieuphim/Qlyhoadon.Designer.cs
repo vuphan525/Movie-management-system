@@ -33,7 +33,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
             this.date_FormThemSuatChieu_NgayChieu = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
@@ -43,7 +42,6 @@
             this.colID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colSDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDTL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -138,7 +136,6 @@
             this.colID,
             this.colName,
             this.colSDT,
-            this.colEmail,
             this.colDTL});
             this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.Location = new System.Drawing.Point(14, 58);
@@ -194,22 +191,11 @@
             this.colSDT.Name = "colSDT";
             this.colSDT.ReadOnly = true;
             // 
-            // colEmail
-            // 
-            this.colEmail.DataPropertyName = "Email";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.colEmail.DefaultCellStyle = dataGridViewCellStyle5;
-            this.colEmail.FillWeight = 200F;
-            this.colEmail.HeaderText = "Email";
-            this.colEmail.MinimumWidth = 6;
-            this.colEmail.Name = "colEmail";
-            this.colEmail.ReadOnly = true;
-            // 
             // colDTL
             // 
             this.colDTL.DataPropertyName = "CreatedAt";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.colDTL.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.colDTL.DefaultCellStyle = dataGridViewCellStyle5;
             this.colDTL.HeaderText = "Ngày hóa đơn ";
             this.colDTL.MinimumWidth = 6;
             this.colDTL.Name = "colDTL";
@@ -222,6 +208,7 @@
             this.Controls.Add(this.panel2);
             this.Name = "Qlyhoadon";
             this.Size = new System.Drawing.Size(1108, 676);
+            this.Load += new System.EventHandler(this.Qlyhoadon_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -240,7 +227,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colID;
         private System.Windows.Forms.DataGridViewTextBoxColumn colName;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSDT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colEmail;
         private System.Windows.Forms.DataGridViewTextBoxColumn colDTL;
     }
 }

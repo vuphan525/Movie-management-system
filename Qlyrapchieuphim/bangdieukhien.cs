@@ -18,57 +18,56 @@ namespace Qlyrapchieuphim
         public bangdieukhien()
         {
             InitializeComponent();
-            if (Helper.IsInWinFormsDesignMode())
-            {
-                Helper.CopyDatabaseForDesign();
-            }
+            
         }
-        private SqlConnection conn;
-        
+
         private void LoadMOV()
         {
             string SqlQuery = "select Title, Genre, Duration from Movies " +
                 "WHERE Status = @state";
-            SqlDataAdapter adapter = new SqlDataAdapter(SqlQuery, conn);
-            adapter.SelectCommand.Parameters.Add("@state", SqlDbType.NVarChar).Value = "Đang chiếu";
-            DataSet ds = new DataSet();
-            if (conn.State != ConnectionState.Open)
+            using (SqlConnection conn = Helper.getdbConnection())
+            using (SqlDataAdapter adapter = new SqlDataAdapter(SqlQuery, conn))
+            {
+                adapter.SelectCommand.Parameters.Add("@state", SqlDbType.NVarChar).Value = "Đang chiếu";
+                DataSet ds = new DataSet();
                 conn.Open();
-            adapter.Fill(ds, "Movies");
-            if (conn.State != ConnectionState.Closed)
+                adapter.Fill(ds, "Movies");
                 conn.Close();
-            DataTable dt = ds.Tables["Movies"];
-            dataGridView1.DataSource = dt;
+                DataTable dt = ds.Tables["Movies"];
+                dataGridView1.DataSource = dt;
+            }
         }
         private void LoadNV()
         {
             string SqlQuery = "SELECT COUNT(*) FROM Staffs ";
-            if (conn.State != ConnectionState.Open)
+            using (SqlConnection conn = Helper.getdbConnection())
+            {
+                int sonv;
                 conn.Open();
-            SqlCommand cmd = new SqlCommand(SqlQuery, conn);
-            int sonv = (int)cmd.ExecuteScalar();
-            if (conn.State != ConnectionState.Closed)
+                using (SqlCommand cmd = new SqlCommand(SqlQuery, conn))
+                    sonv = (int)cmd.ExecuteScalar();
                 conn.Close();
-            label3.Text= sonv.ToString();
-            
+                label3.Text = sonv.ToString();
+            }
+
         }
         private void LoadMovCount()
         {
             string SqlQuery = "SELECT COUNT(*) FROM Movies ";
-            if (conn.State != ConnectionState.Open)
+            using (SqlConnection conn = Helper.getdbConnection())
+            {
+                int sophim;
                 conn.Open();
-            SqlCommand cmd = new SqlCommand(SqlQuery, conn);
-            int sophim = (int)cmd.ExecuteScalar();
-            if (conn.State != ConnectionState.Closed)
+                using (SqlCommand cmd = new SqlCommand(SqlQuery, conn))
+                    sophim = (int)cmd.ExecuteScalar();
                 conn.Close();
-            label2.Text = sophim.ToString();
-           
+                label2.Text = sophim.ToString();
+            }
+
         }
 
         private void bangdieukhien_Load(object sender, EventArgs e)
         {
-            conn = Helper.getdbConnection();
-            conn = Helper.CheckDbConnection(conn);
             LoadMOV();
             LoadNV();
             LoadMovCount();

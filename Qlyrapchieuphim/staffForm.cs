@@ -22,10 +22,18 @@ namespace Qlyrapchieuphim
         public staffForm()
         {
             InitializeComponent();
+            if (Helper.IsInWinFormsDesignMode())
+            {
+                Helper.CopyDatabaseForDesign();
+            }
         }
         public staffForm(int usrid)
         {
             InitializeComponent();
+            if (Helper.IsInWinFormsDesignMode())
+            {
+                Helper.CopyDatabaseForDesign();
+            }
             manv = usrid;
         }
 
