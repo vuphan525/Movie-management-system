@@ -288,7 +288,20 @@ namespace Qlyrapchieuphim
                 MessageBox.Show("Vui lòng thêm ít nhất một ngày chiếu, giờ chiếu và phòng chiếu.", "Thiếu thông tin", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            //string id = lbl_FormThemSuatChieu_MaSuatChieu.Text;
+            int movieId = int.Parse(Helper.SubStringBetween(cb_FormThemSuatChieu_TenPhim.SelectedItem.ToString(), " (ID: ", ")"));
+            //Get Price from movieId
+            decimal price;
+            using (SqlConnection conn = Helper.getdbConnection())
+            using (SqlCommand cmd = conn.CreateCommand())
+            {
+                string SqlQuery = "SELECT Price FROM Movies WHERE MovieID = @MovieID";
+                cmd.CommandText = SqlQuery;
+                cmd.CommandType = CommandType.Text;
+                cmd.Parameters.Add("@MovieID",SqlDbType.Int).Value = movieId;
+                conn.Open();
+                price = (decimal)cmd.ExecuteScalar();
+            }
+
             foreach (DataGridViewRow rowDate in dataGridView_FormThemSuatChieu_BangNgayChieu.Rows)
             {
                 foreach (DataGridViewRow rowTime in dataGridView_FormThemSuatChieu_BangGioChieu.Rows)
@@ -309,11 +322,11 @@ namespace Qlyrapchieuphim
                                 }
 
                                 cmd.Parameters.Add("@StartTime", SqlDbType.DateTime).Value = date.Date + time.TimeOfDay.StripSeconds();
-                                cmd.Parameters.Add("@Price", SqlDbType.Decimal).Value = 55000; //GIÁ TRỊ TẠM DO CHƯA CÓ TEXTBOX, THAY THẾ GIÁ TRỊ NGAY KHI CÓ TEXTBOX
+                                cmd.Parameters.Add("@Price", SqlDbType.Decimal).Value = price; //Lấy giá suất chiếu theo giá phim
                                 int pc = int.Parse(Helper.SubStringBetween(rowRoom.Cells[1].Value.ToString(), " (ID: ", ")"));
                                 cmd.Parameters.Add("@RoomID", SqlDbType.Int).Value = pc;
-                                int mp = int.Parse(Helper.SubStringBetween(cb_FormThemSuatChieu_TenPhim.SelectedItem.ToString(), " (ID: ", ")"));
-                                cmd.Parameters.Add("@MovieID", SqlDbType.Int).Value = mp;
+
+                                cmd.Parameters.Add("@MovieID", SqlDbType.Int).Value = movieId;
                                 try
                                 {
                                     conn.Open();
