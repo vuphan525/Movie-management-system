@@ -24,10 +24,11 @@ namespace Qlyrapchieuphim.FormEdit
             this.Paint += FormThemPhim_Paint;
             pictureBox_FormSuaPhim_Poster.SizeMode = PictureBoxSizeMode.Zoom;
             lbl_FormSuaPhim_MoTa.MaxLength = 512;
+            cb_FormSuaPhim_TinhTrang.Enabled = false;
         }
 
         private string movieId;
-
+        bool isTimeChanging = false;
         public FormSuaPhim(string id)
         {
             InitializeComponent();
@@ -49,9 +50,11 @@ namespace Qlyrapchieuphim.FormEdit
             date_FormSuaPhim_NgayNhap.CustomFormat = "dd/MM/yyyy";
             date_FormSuaPhim_NgayPhatHanh.Format = DateTimePickerFormat.Custom;
             date_FormSuaPhim_NgayPhatHanh.CustomFormat = "dd/MM/yyyy";
+            isTimeChanging = true;
             date_FormSuaPhim_NgayNhap.Value = DateTime.Today;
             date_FormSuaPhim_NgayPhatHanh.Value = DateTime.Today;
-
+            isTimeChanging = false;
+            UpdateReleaseState();
             LoadMovieData(movieId);
         }
 
@@ -198,12 +201,15 @@ namespace Qlyrapchieuphim.FormEdit
                         lbl_FormSuaPhim_MoTa.Text = reader["Description"].ToString();
                         cb_FormSuaPhim_TinhTrang.Text = reader["Status"].ToString();
                         lbl_FormSuaPhim_Gia.Text = reader["Price"].ToString() ;
-
+                        
+                        isTimeChanging = true;
                         if (reader["ReleaseDate"] != DBNull.Value)
                             date_FormSuaPhim_NgayPhatHanh.Value = Convert.ToDateTime(reader["ReleaseDate"]);
 
                         if (reader["ImportDate"] != DBNull.Value)
                             date_FormSuaPhim_NgayNhap.Value = Convert.ToDateTime(reader["ImportDate"]);
+                        isTimeChanging = false;
+                        UpdateReleaseState();
 
                         cb_FormSuaPhim_NhaPhatHanh.SelectedItem = reader["Manufacturer"].ToString();
 
@@ -295,6 +301,50 @@ namespace Qlyrapchieuphim.FormEdit
                 errorProvider_ThoiLuong.Clear();
                 AddButton.Enabled = true;
             }
+        }
+        private void UpdateReleaseState()
+        {
+            if (date_FormSuaPhim_NgayPhatHanh.Value.Date <= DateTime.Today)
+                cb_FormSuaPhim_TinhTrang.SelectedIndex = 0;
+            else
+                cb_FormSuaPhim_TinhTrang.SelectedIndex = 1;
+        }
+        private bool IsReleaseImportTimeValid()
+        {
+            return (date_FormSuaPhim_NgayPhatHanh.Value.Date >= date_FormSuaPhim_NgayNhap.Value.Date);
+        }
+
+        private void date_FormSuaPhim_NgayNhap_ValueChanged(object sender, EventArgs e)
+        {
+            if (isTimeChanging)
+                return;
+            if (!IsReleaseImportTimeValid())
+            {
+                MessageBox.Show(new Form() { TopMost = true },
+                    "Ngày nhập phải từ ngày phát hành trở về trước!",
+                    "Lỗi dữ liệu.",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+                date_FormSuaPhim_NgayNhap.Value = date_FormSuaPhim_NgayPhatHanh.Value.Date;
+            }
+            UpdateReleaseState();
+        }
+
+        private void date_FormSuaPhim_NgayPhatHanh_ValueChanged(object sender, EventArgs e)
+        {
+            if (isTimeChanging)
+                return;
+            if (!IsReleaseImportTimeValid())
+            {
+                MessageBox.Show(new Form() { TopMost = true },
+                    "Ngày phát hành phải từ ngày nhập trở đi!",
+                    "Lỗi dữ liệu.",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning
+                    );
+                date_FormSuaPhim_NgayPhatHanh.Value = date_FormSuaPhim_NgayNhap.Value.Date;
+            }
+            UpdateReleaseState();
         }
     }
 }

@@ -132,6 +132,7 @@
             this.date_FormSuaPhim_NgayPhatHanh.Size = new System.Drawing.Size(233, 32);
             this.date_FormSuaPhim_NgayPhatHanh.TabIndex = 128;
             this.date_FormSuaPhim_NgayPhatHanh.Value = new System.DateTime(2024, 11, 29, 16, 51, 14, 647);
+            this.date_FormSuaPhim_NgayPhatHanh.ValueChanged += new System.EventHandler(this.date_FormSuaPhim_NgayPhatHanh_ValueChanged);
             // 
             // label10
             // 
@@ -267,8 +268,7 @@
             this.cb_FormSuaPhim_TinhTrang.ItemHeight = 30;
             this.cb_FormSuaPhim_TinhTrang.Items.AddRange(new object[] {
             "Đang chiếu",
-            "Sắp chiếu",
-            "Đã kết thúc"});
+            "Sắp chiếu"});
             this.cb_FormSuaPhim_TinhTrang.Location = new System.Drawing.Point(14, 344);
             this.cb_FormSuaPhim_TinhTrang.Name = "cb_FormSuaPhim_TinhTrang";
             this.cb_FormSuaPhim_TinhTrang.Size = new System.Drawing.Size(235, 36);
@@ -405,6 +405,7 @@
             this.date_FormSuaPhim_NgayNhap.Size = new System.Drawing.Size(234, 32);
             this.date_FormSuaPhim_NgayNhap.TabIndex = 130;
             this.date_FormSuaPhim_NgayNhap.Value = new System.DateTime(2024, 11, 29, 16, 51, 14, 647);
+            this.date_FormSuaPhim_NgayNhap.ValueChanged += new System.EventHandler(this.date_FormSuaPhim_NgayNhap_ValueChanged);
             // 
             // btn_Refresh
             // 

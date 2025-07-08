@@ -26,8 +26,9 @@ namespace Qlyrapchieuphim
             this.Paint += FormThemPhim_Paint;
             pictureBox_FormThemPhim_Poster.SizeMode = PictureBoxSizeMode.Zoom;
             lbl_FormThemPhim_MoTa.MaxLength = 512;
+            cb_FormThemPhim_TinhTrang.Enabled = false;
         }
-
+        bool isTimeChanging = false;
         string poster_url = string.Empty;
         string projectFolder = AppDomain.CurrentDomain.BaseDirectory;
         private void FormThemPhim_Load(object sender, EventArgs e)
@@ -36,8 +37,11 @@ namespace Qlyrapchieuphim
             date_FormThemPhim_NgayNhap.CustomFormat = "dd/MM/yyyy";
             date_FormThemPhim_NgayPhatHanh.Format = DateTimePickerFormat.Custom;
             date_FormThemPhim_NgayPhatHanh.CustomFormat = "dd/MM/yyyy";
+            isTimeChanging = true;
             date_FormThemPhim_NgayNhap.Value = DateTime.Today;
             date_FormThemPhim_NgayPhatHanh.Value = DateTime.Today;
+            isTimeChanging = false;
+            UpdateReleaseState();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -60,7 +64,7 @@ namespace Qlyrapchieuphim
                     MessageBoxIcon.Warning);
                 return;
             }
-            
+
 
             int mvID;
             string SqlQuery = "INSERT INTO Movies OUTPUT INSERTED.MovieID VALUES (@Title, @Description, @Duration, @PosterURL, @Genre, @Status, @ReleaseDate, @ImportDate, @Manufacturer, @Price)";
@@ -108,7 +112,7 @@ namespace Qlyrapchieuphim
             using (SqlConnection conn = Helper.getdbConnection())
             using (SqlCommand comm = new SqlCommand(SqlQuery, conn))
             {
-                
+
                 comm.Parameters.Add("@PosterURL", SqlDbType.VarChar).Value = poster_url;
                 comm.Parameters.Add("@MovieID", SqlDbType.Int).Value = mvID;
                 conn.Open();
@@ -241,6 +245,18 @@ namespace Qlyrapchieuphim
 
         private void date_FormThemPhim_NgayNhap_ValueChanged(object sender, EventArgs e)
         {
+            if (isTimeChanging)
+                return;
+            if (!IsReleaseImportTimeValid())
+            {
+                MessageBox.Show(new Form() { TopMost = true },
+                    "Ngày nhập phải từ ngày phát hành trở về trước!",
+                    "Lỗi dữ liệu.",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+                date_FormThemPhim_NgayNhap.Value = date_FormThemPhim_NgayPhatHanh.Value.Date;
+            }
+            UpdateReleaseState();
         }
 
 
@@ -289,6 +305,33 @@ namespace Qlyrapchieuphim
                 errorProvider_Gia.Clear();
                 AddButton.Enabled = true;
             }
+        }
+        private void UpdateReleaseState()
+        {
+            if (date_FormThemPhim_NgayPhatHanh.Value.Date <= DateTime.Today)
+                cb_FormThemPhim_TinhTrang.SelectedIndex = 0;
+            else
+                cb_FormThemPhim_TinhTrang.SelectedIndex = 1;
+        }
+        private bool IsReleaseImportTimeValid()
+        {
+            return (date_FormThemPhim_NgayPhatHanh.Value.Date >= date_FormThemPhim_NgayNhap.Value.Date);
+        }
+        private void date_FormThemPhim_NgayPhatHanh_ValueChanged(object sender, EventArgs e)
+        {
+            if (isTimeChanging)
+                return;
+            if (!IsReleaseImportTimeValid())
+            {
+                MessageBox.Show(new Form() { TopMost = true },
+                    "Ngày phát hành phải từ ngày nhập trở đi!",
+                    "Lỗi dữ liệu.",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning
+                    );
+                date_FormThemPhim_NgayPhatHanh.Value = date_FormThemPhim_NgayNhap.Value.Date;
+            }
+            UpdateReleaseState();
         }
     }
 }
