@@ -38,6 +38,7 @@ namespace Qlyrapchieuphim
         {
             date_ThemSanPham_NgayNhap.Format = DateTimePickerFormat.Custom;
             date_ThemSanPham_NgayNhap.CustomFormat = "dd/MM/yyyy";
+            date_ThemSanPham_NgayNhap.Value = DateTime.Today;
             CheckCategories();
         }
 
@@ -60,7 +61,7 @@ namespace Qlyrapchieuphim
             lbl_ThemSanPham_GiaTien.Clear();
             lbl_ThemSanPham_SoLuong.Clear();
             lbl_ThemSanPham_NhaCungCap.Clear();
-            date_ThemSanPham_NgayNhap.Value = DateTime.Now;
+            date_ThemSanPham_NgayNhap.Value = DateTime.Today;
             lbl_ThemSanPham_MoTa.Clear();
             pictureBox_ThemSanPham_Poster.Image = null;
             this.Refresh();

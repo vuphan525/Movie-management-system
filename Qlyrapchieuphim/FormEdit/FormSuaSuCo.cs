@@ -36,6 +36,7 @@ namespace Qlyrapchieuphim.FormEdit
         {
             date_FormSuaSuCo_NgayTiepNhan.Format = DateTimePickerFormat.Custom;
             date_FormSuaSuCo_NgayTiepNhan.CustomFormat = "dd/MM/yyyy";
+            date_FormSuaSuCo_NgayTiepNhan.Value = DateTime.Today;
             LoadThongTinSuCo();
             if (CheckUsr()) 
                 manv.SelectedIndex = 0;
@@ -62,7 +63,7 @@ namespace Qlyrapchieuphim.FormEdit
             lbl_FormSuaSuCo_TenSuCo.Clear();
             cb_FormSuaSuCo_TinhTrang.SelectedIndex = -1;
             lbl_FormSuaSuCo_HuongGiaiQuyet.Clear();
-            date_FormSuaSuCo_NgayTiepNhan.Value = DateTime.Now;
+            date_FormSuaSuCo_NgayTiepNhan.Value = DateTime.Today;
             lbl_FormSuaSuCo_MoTa.Clear();
 
             //if (CheckUsr()) // <- GỌI Ở ĐÂY

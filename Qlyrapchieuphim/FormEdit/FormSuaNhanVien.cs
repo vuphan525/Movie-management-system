@@ -39,6 +39,7 @@ namespace Qlyrapchieuphim.FormEdit
         {
             date_FormSuaNV_NgaySinh.Format = DateTimePickerFormat.Custom;
             date_FormSuaNV_NgaySinh.CustomFormat = "dd/MM/yyyy";
+            date_FormSuaNV_NgaySinh.Value = DateTime.Today.AddYears(-19);
             LoadDataById();
         }
 
@@ -108,7 +109,7 @@ namespace Qlyrapchieuphim.FormEdit
             lbl_FormSuaNV_Email.Clear();
             lbl_FormSuaNV_HoTen.Clear();
             lbl_FormSuaNV_SDT.Clear();
-            date_FormSuaNV_NgaySinh.Value = DateTime.Now;
+            date_FormSuaNV_NgaySinh.Value = DateTime.Today.AddYears(-19);
             lbl_FormSuaNV_MaNV.Clear();
             cb_FormSuaNV_ChucVu.SelectedIndex = -1;
             lbl_FormSuaNV_Username.Clear();

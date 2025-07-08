@@ -33,7 +33,7 @@ namespace Qlyrapchieuphim
             conn = Helper.getdbConnection();
             date_FormThemVoucher_NgayHetHan.Format = DateTimePickerFormat.Custom;
             date_FormThemVoucher_NgayHetHan.CustomFormat = "dd/MM/yyyy";
-            date_FormThemVoucher_NgayHetHan.Value = DateTime.Today;
+            date_FormThemVoucher_NgayHetHan.Value = DateTime.Today.AddDays(1);
         }
 
         private void FormThemPhim_Paint(object sender, PaintEventArgs e)
@@ -53,7 +53,7 @@ namespace Qlyrapchieuphim
             lbl_FormThemVoucher_MaPhatHanh.Clear();
 
             lbl_FormThemVoucher_DiscountPercent.Clear();
-            date_FormThemVoucher_NgayHetHan.Value = DateTime.Today;
+            date_FormThemVoucher_NgayHetHan.Value = DateTime.Today.AddDays(1);
             lbl_FormThemVoucher_SoLuong.Clear();
             lbl_FormThemVoucher_HoaDonToiThieu.Clear();
             cb_FormThemVoucher_TrangThai.SelectedIndex = -1;

@@ -240,7 +240,11 @@ namespace Qlyrapchieuphim.FormEdit
 
         private void them_Click(object sender, EventArgs e)
         {
+            DateTime selectedTime = date_FormSuaSuatChieu_GioChieu.Value;
+            selectedTime = new DateTime(selectedTime.Year, selectedTime.Month, selectedTime.Day, selectedTime.Hour, selectedTime.Minute, 0);
 
+            DateTime startTime = selectedTime.Date.AddHours(9);
+            DateTime endTime = selectedTime.Date.AddHours(23);
 
 
             if (date_FormSuaSuatChieu_NgayChieu.Value.Date < DateTime.Today)
@@ -256,12 +260,17 @@ namespace Qlyrapchieuphim.FormEdit
             {
                 if (date_FormSuaSuatChieu_GioChieu.Value.TimeOfDay.StripMilliseconds() <= DateTime.Now.TimeOfDay.StripMilliseconds())
                 {
-                    MessageBox.Show("Giờ chiếu phải lớn hơn ngày giờ hiện tại!",
+                    MessageBox.Show("Giờ chiếu phải lớn hơn ngày giờ hiện tại cách 30!",
                     "Lỗi nhập liệu",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Warning);
                     return;
                 }
+            }
+            if (selectedTime < startTime || selectedTime > endTime)
+            {
+                MessageBox.Show("Giờ chiếu chỉ được phép trong khoảng từ 9:00 sáng đến 11:00 tối.", "Thời gian không hợp lệ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
             }
             //if (giochieu.Value < DateTime.Now && ngaychieu.Value < DateTime.Now.Date)
             //{

@@ -70,6 +70,7 @@ namespace Qlyrapchieuphim
         {
             date_FormThemSuCo_NgayTiepNhan.Format = DateTimePickerFormat.Custom;
             date_FormThemSuCo_NgayTiepNhan.CustomFormat = "dd/MM/yyyy";
+            date_FormThemSuCo_NgayTiepNhan.Value = DateTime.Today;
             if (CheckUsr()) // <- GỌI Ở ĐÂY
                 manv.SelectedIndex = 0;
 
@@ -92,7 +93,7 @@ namespace Qlyrapchieuphim
             lbl_FormThemSuCo_TenSuCo.Clear();
             cb_FormThemSuCo_TinhTrang.SelectedIndex = -1;
             lbl_FormThemSuCo_HuongGiaiQuyet.Clear();
-            date_FormThemSuCo_NgayTiepNhan.Value = DateTime.Now;
+            date_FormThemSuCo_NgayTiepNhan.Value = DateTime.Today;
             lbl_FormThemSuCo_MoTa.Clear();
             this.Refresh();
         }

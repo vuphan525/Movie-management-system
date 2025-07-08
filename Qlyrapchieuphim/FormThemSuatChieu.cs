@@ -1,16 +1,17 @@
 ﻿using Guna.UI2.WinForms;
+using Microsoft.Data.SqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using Microsoft.Data.SqlClient;
-using System.Globalization;
 using System.Text.RegularExpressions;
+using System.Threading.Tasks;
+using System.Windows.Documents;
+using System.Windows.Forms;
 
 namespace Qlyrapchieuphim
 {
@@ -297,11 +298,11 @@ namespace Qlyrapchieuphim
                 string SqlQuery = "SELECT Price FROM Movies WHERE MovieID = @MovieID";
                 cmd.CommandText = SqlQuery;
                 cmd.CommandType = CommandType.Text;
-                cmd.Parameters.Add("@MovieID",SqlDbType.Int).Value = movieId;
+                cmd.Parameters.Add("@MovieID", SqlDbType.Int).Value = movieId;
                 conn.Open();
                 price = (decimal)cmd.ExecuteScalar();
             }
-
+            List<DateTime> skippedTime = new List<DateTime>();
             foreach (DataGridViewRow rowDate in dataGridView_FormThemSuatChieu_BangNgayChieu.Rows)
             {
                 foreach (DataGridViewRow rowTime in dataGridView_FormThemSuatChieu_BangGioChieu.Rows)
@@ -313,15 +314,28 @@ namespace Qlyrapchieuphim
                             string SqlQuery = "INSERT INTO Showtimes VALUES (@MovieID, @RoomID, @StartTime, @Price )";
                             using (SqlCommand cmd = new SqlCommand(SqlQuery, conn))
                             {
-                                DateTime time = DateTime.Parse(rowTime.Cells[1].Value.ToString());
-                                var cellValue = rowDate.Cells[1].Value?.ToString();
-                                if (string.IsNullOrWhiteSpace(cellValue) || !DateTime.TryParse(cellValue, out var date))
+                                string timeString = rowTime.Cells[1].Value?.ToString();
+                                if (string.IsNullOrWhiteSpace(timeString) || !DateTime.TryParse(timeString, out DateTime time))
+                                {
+                                    MessageBox.Show("Giờ chiếu không hợp lệ!", "Lỗi dữ liệu", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                    return; // Dừng thao tác thêm suất chiếu
+                                }
+
+                                string dateString = rowDate.Cells[1].Value?.ToString();
+                                if (string.IsNullOrWhiteSpace(dateString) || !DateTime.TryParse(dateString, out DateTime date))
                                 {
                                     MessageBox.Show("Ngày chiếu không hợp lệ!", "Lỗi dữ liệu", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                     return; // Dừng thao tác thêm suất chiếu
                                 }
 
-                                cmd.Parameters.Add("@StartTime", SqlDbType.DateTime).Value = date.Date + time.TimeOfDay.StripSeconds();
+                                DateTime fullTime = date.Date + time.TimeOfDay.StripSeconds();
+                                if (fullTime < DateTime.Now.AddMinutes(30))
+                                {
+                                    skippedTime.Add(fullTime);
+                                    continue;
+                                }
+
+                                cmd.Parameters.Add("@StartTime", SqlDbType.DateTime).Value = fullTime;
                                 cmd.Parameters.Add("@Price", SqlDbType.Decimal).Value = price; //Lấy giá suất chiếu theo giá phim
                                 int pc = int.Parse(Helper.SubStringBetween(rowRoom.Cells[1].Value.ToString(), " (ID: ", ")"));
                                 cmd.Parameters.Add("@RoomID", SqlDbType.Int).Value = pc;
@@ -353,8 +367,19 @@ namespace Qlyrapchieuphim
                     }
                 }
             }
-            MessageBox.Show(
-                "Thêm các suất chiếu thành công",
+            if (skippedTime.Count > 0)
+            {
+                string skippedTimeMessage = "Các giờ chiếu sau đã bị bỏ qua, do thời gian chiếu phải cách thời gian hiện tại 30 phút!";
+                foreach (DateTime dateTime in skippedTime)
+                    skippedTimeMessage += "\n" + dateTime.ToString("dd/MM/yyyy HH:mm");
+                MessageBox.Show(new Form() { TopMost = true },
+                skippedTimeMessage,
+                "Thông báo",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information);
+            }
+            MessageBox.Show(new Form() { TopMost = true },
+                "Các suất chiếu hợp lệ đã được thêm thành công",
                 "Thông báo",
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Information);

@@ -42,6 +42,7 @@ namespace Qlyrapchieuphim.FormEdit
         {
             date_FormSuaSanPham_NgayNhap.Format = DateTimePickerFormat.Custom;
             date_FormSuaSanPham_NgayNhap.CustomFormat = "dd/MM/yyyy";
+            date_FormSuaSanPham_NgayNhap.Value = DateTime.Today;
             CheckCategories();
             LoadSanPhamByID(id);
         }
@@ -306,7 +307,7 @@ namespace Qlyrapchieuphim.FormEdit
             lbl_FormSuaSanPham_GiaTien.Clear();
             lbl_FormSuaSanPham_SoLuong.Clear();
             lbl_FormSuaSanPham_NhaCungCap.Clear();
-            date_FormSuaSanPham_NgayNhap.Value = DateTime.Now;
+            date_FormSuaSanPham_NgayNhap.Value = DateTime.Today;
             lbl_FormSuaSanPham_MoTa.Clear();
             pictureBox_FormSuaSanPham_Poster.Image = null;
             this.Refresh();
