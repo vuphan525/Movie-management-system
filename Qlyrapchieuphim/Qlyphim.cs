@@ -36,33 +36,34 @@ namespace Qlyrapchieuphim
             dataGridView1.AutoGenerateColumns = false;
             dataGridView1.Font = new Font("Segoe UI", 12);
         }
-        SqlConnection conn = null;
         string poster_url = string.Empty;
         string projectFolder = AppDomain.CurrentDomain.BaseDirectory; // Thư mục dự án
         private void LoadData()
         {
-            if (conn.State != ConnectionState.Open)
-                conn.Open();
             string SqlQuery = "select MovieID, Title, Description, Duration, PosterURL, Genre, Status, ReleaseDate, ImportDate, Manufacturer from Movies";
-            SqlDataAdapter adapter = new SqlDataAdapter(SqlQuery, conn);
-            DataSet ds = new DataSet();
-            adapter.Fill(ds, "Movies");
-            DataTable dt = ds.Tables["Movies"];
-            dataGridView1.DataSource = dt;
-            if (!dataGridView1.Columns.Contains("Actions"))
+            using (SqlConnection conn = Helper.getdbConnection())
+            using (SqlDataAdapter adapter = new SqlDataAdapter(SqlQuery, conn))
             {
-                DataGridViewTextBoxColumn actionCol = new DataGridViewTextBoxColumn();
-                actionCol.Name = "Actions";
-                actionCol.HeaderText = "Actions";
-                actionCol.Width = 60;
-                dataGridView1.Columns.Add(actionCol);
+                DataSet ds = new DataSet();
+                conn.Open();
+                adapter.Fill(ds, "Movies");
+                DataTable dt = ds.Tables["Movies"];
+                dataGridView1.DataSource = dt;
+                if (!dataGridView1.Columns.Contains("Actions"))
+                {
+                    DataGridViewTextBoxColumn actionCol = new DataGridViewTextBoxColumn();
+                    actionCol.Name = "Actions";
+                    actionCol.HeaderText = "Actions";
+                    actionCol.Width = 60;
+                    dataGridView1.Columns.Add(actionCol);
+                }
+
+                dataGridView1.Columns["Actions"].DisplayIndex = dataGridView1.Columns.Count - 1;
+
+                conn.Close();
+                this.Refresh();
+                dataGridView1.ClearSelection();
             }
-
-            dataGridView1.Columns["Actions"].DisplayIndex = dataGridView1.Columns.Count - 1;
-
-            conn.Close();
-            this.Refresh();
-            dataGridView1.ClearSelection();
         }
 
 
@@ -88,8 +89,6 @@ namespace Qlyrapchieuphim
 
         private void Qlyphim_Load(object sender, EventArgs e)
         {
-            conn = Helper.getdbConnection();
-            conn = Helper.CheckDbConnection(conn);
             theloai.SelectedIndex = 0;
             trangthai.SelectedIndex = 1;
             dataGridView1.AutoSize = false;
@@ -258,42 +257,42 @@ namespace Qlyrapchieuphim
         private void DeleteButton_Click(object sender, EventArgs e)
         {
 
-            if (dataGridView1.SelectedRows.Count > 0)
-            {
+            //if (dataGridView1.SelectedRows.Count > 0)
+            //{
 
-                DialogResult result = MessageBox.Show(
-                    "Bạn có chắc chắn muốn xóa dòng này?",
-                    "Xác nhận",
-                    MessageBoxButtons.YesNo,
-                    MessageBoxIcon.Question);
+            //    DialogResult result = MessageBox.Show(
+            //        "Bạn có chắc chắn muốn xóa dòng này?",
+            //        "Xác nhận",
+            //        MessageBoxButtons.YesNo,
+            //        MessageBoxIcon.Question);
 
-                if (result == DialogResult.Yes)
-                {
-                    DataTable dt = dataGridView1.DataSource as DataTable;
-                    if (conn.State != ConnectionState.Open)
-                        conn.Open();
-                    foreach (DataGridViewRow dr in dataGridView1.SelectedRows)
-                    {
-                        int selected = dr.Index;
-                        string temp_id = dt.Rows[selected]["MovieID"].ToString();
-                        string SqlQuery = "DELETE FROM Movies WHERE MovieID = @tempid";
-                        SqlCommand cmd = new SqlCommand(SqlQuery, conn);
-                        cmd.Parameters.Add("@tempid", SqlDbType.Char).Value = temp_id;
-                        cmd.ExecuteNonQuery();
+            //    if (result == DialogResult.Yes)
+            //    {
+            //        DataTable dt = dataGridView1.DataSource as DataTable;
+            //        if (conn.State != ConnectionState.Open)
+            //            conn.Open();
+            //        foreach (DataGridViewRow dr in dataGridView1.SelectedRows)
+            //        {
+            //            int selected = dr.Index;
+            //            string temp_id = dt.Rows[selected]["MovieID"].ToString();
+            //            string SqlQuery = "DELETE FROM Movies WHERE MovieID = @tempid";
+            //            SqlCommand cmd = new SqlCommand(SqlQuery, conn);
+            //            cmd.Parameters.Add("@tempid", SqlDbType.Char).Value = temp_id;
+            //            cmd.ExecuteNonQuery();
 
-                        string fullPath = Path.Combine(projectFolder, "posters", temp_id + ".png");
-                        if (File.Exists(fullPath))
-                            File.Delete(fullPath);
-                    }
-                    conn.Close();
-                    LoadData();
-                    Reset();
-                }
-            }
-            else
-            {
-                MessageBox.Show("Vui lòng chọn dòng cần xóa.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
+            //            string fullPath = Path.Combine(projectFolder, "posters", temp_id + ".png");
+            //            if (File.Exists(fullPath))
+            //                File.Delete(fullPath);
+            //        }
+            //        conn.Close();
+            //        LoadData();
+            //        Reset();
+            //    }
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Vui lòng chọn dòng cần xóa.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //}
         }
 
         private void SearchTextBox_Enter(object sender, EventArgs e)
@@ -424,7 +423,10 @@ namespace Qlyrapchieuphim
             }
 
         }
+        private void UpdateReleaseStates()
+        {
 
+        }
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
