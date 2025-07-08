@@ -21,6 +21,11 @@ namespace Qlyrapchieuphim
         {
             InitializeComponent();
         }
+        public Hoadon(int billCode)
+        {
+            InitializeComponent();
+            this.billCode = billCode;
+        }
         private int customerId = -1;
         int masc = -1;
         int food_total = 0;
@@ -35,6 +40,7 @@ namespace Qlyrapchieuphim
         private DataTable MainDataTable;
         private DataTable bookingDetails;
         private DataTable bookingProducts;
+        private bool showCurrentPoints = true;
         public int BillCode
         {
             get { return billCode; }
@@ -55,6 +61,11 @@ namespace Qlyrapchieuphim
             get { return priceAtCheckOut; }
             set { priceAtCheckOut = value; }
         }
+        public bool ShowCurrentPoints
+        {
+            get { return showCurrentPoints; }
+            set { showCurrentPoints = value; }
+        }
         private void LoadBill()
         {
             if (billCode == -1)
@@ -67,7 +78,7 @@ namespace Qlyrapchieuphim
                 this.Close();
             }
             //Main Booking
-            string SqlQuery = "SELECT ShowtimeID, CustomerID, TotalPrice, VoucherID, CreatedAt, StudentCount, ChildrenCount, LoyaltyPointsUsed FROM  Bookings " +
+            string SqlQuery = "SELECT ShowtimeID, CustomerID, TotalPrice, VoucherID, CreatedAt, StudentCount, ChildrenCount, LoyaltyPointsUsed, PriceAtCheckOut FROM  Bookings " +
                 "WHERE BookingID = @BookingID";
             using (SqlConnection conn = Helper.getdbConnection())
             using (SqlDataAdapter adapter = new SqlDataAdapter(SqlQuery, conn))
@@ -85,6 +96,8 @@ namespace Qlyrapchieuphim
             tongtienve.Text = total.ToString() + " VND";
             student_discount = (int)MainDataTable.Rows[0]["StudentCount"] * 15000;
             child_discount = (int)MainDataTable.Rows[0]["ChildrenCount"] * 15000;
+            priceAtCheckOut = Convert.ToInt32((decimal)MainDataTable.Rows[0]["PriceAtCheckOut"]);
+            customerId = (int)MainDataTable.Rows[0]["CustomerID"];
 
 
             //BookingDetails
@@ -244,6 +257,8 @@ namespace Qlyrapchieuphim
         private void Hoadon_Load(object sender, EventArgs e)
         {
             btn_Print_Bill.Enabled = allowExport;
+            label31.Visible = showCurrentPoints;
+            cusDeducted.Visible = showCurrentPoints;
             LoadBill();
         }
         private DataTable BuildDataTable()

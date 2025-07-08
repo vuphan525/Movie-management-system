@@ -46,15 +46,13 @@ namespace Qlyrapchieuphim
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            //DataTable dt = dataGridView1.DataSource as DataTable;
-            //if (e.RowIndex >= 0)
-            //{
-            //    formbanve bv = new formbanve((int)dt.Rows[e.RowIndex]["ShowtimeID"]);
-            //    Hoadon hoadon = new Hoadon();
-
-            //    bv.UserId = userID;
-            //    bv.Show();
-            //}
+            DataTable dt = dataGridView1.DataSource as DataTable;
+            if (e.RowIndex >= 0)
+            {
+                Hoadon hoadon = new Hoadon((int)dt.Rows[e.RowIndex]["BookingID"]);
+                hoadon.ShowCurrentPoints = false;
+                hoadon.Show();
+            }
         }
     }
 }

@@ -290,7 +290,7 @@ namespace Qlyrapchieuphim
             {
                 cmd.Parameters.Add("@masc", SqlDbType.Int).Value = ShowtimeID;
                 conn.Open();
-                lblRoom.Text = "Phòng chiếu: " + cmd.ExecuteScalar().ToString();
+                lblRoom.Text = "Phòng chiếu:\n" + cmd.ExecuteScalar().ToString();
             }
 
 
@@ -646,10 +646,7 @@ namespace Qlyrapchieuphim
             UpdateLoyaltyPoints(); //Deduct loyalty points
 
 
-            Hoadon hd = new Hoadon();
-            hd.BillCode = BookingID;
-            hd.CustomerID = CustomerID;
-            hd.PriceAtCheckOut = price_at_checkout_time;
+            Hoadon hd = new Hoadon(BookingID);
             this.Close();
             hd.Show();
         }
