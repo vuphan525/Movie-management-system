@@ -22,7 +22,6 @@ namespace Qlyrapchieuphim
             InitializeComponent();
         }
         private int customerId = -1;
-        bool used_points = false;
         int masc = -1;
         int food_total = 0;
         int drinks_total = 0;
@@ -30,7 +29,6 @@ namespace Qlyrapchieuphim
         int discount;
         int student_discount;
         int child_discount;
-        private int loyalty_points_before;
         private int billCode = -1;
         private int priceAtCheckOut;
         private bool allowExport = true;
@@ -41,11 +39,6 @@ namespace Qlyrapchieuphim
         {
             get { return billCode; }
             set { billCode = value; }
-        }
-        public int LoyaltyPointsBefore
-        {
-            get { return loyalty_points_before; }
-            set { loyalty_points_before = value; }
         }
         public int CustomerID
         {
@@ -74,7 +67,7 @@ namespace Qlyrapchieuphim
                 this.Close();
             }
             //Main Booking
-            string SqlQuery = "SELECT ShowtimeID, CustomerID, TotalPrice, VoucherID, CreatedAt, StudentCount, ChildrenCount FROM  Bookings " +
+            string SqlQuery = "SELECT ShowtimeID, CustomerID, TotalPrice, VoucherID, CreatedAt, StudentCount, ChildrenCount, LoyaltyPointsUsed FROM  Bookings " +
                 "WHERE BookingID = @BookingID";
             using (SqlConnection conn = Helper.getdbConnection())
             using (SqlDataAdapter adapter = new SqlDataAdapter(SqlQuery, conn))
@@ -148,8 +141,7 @@ namespace Qlyrapchieuphim
             //Hadling Discounts
             float voucherDiscountPercent = getVoucherDiscountPercent((MainDataTable.Rows[0]["VoucherID"] == DBNull.Value) ? -1 : (int)MainDataTable.Rows[0]["VoucherID"]);
             discount = (int)(need_to_pay_without_food * voucherDiscountPercent);
-            if (UsedPoints)
-                discount += loyalty_points_before * 2000;
+            discount += (int)MainDataTable.Rows[0]["LoyaltyPointsUsed"] * 2000;
 
             lblDiscount.Text = (discount + student_discount + child_discount).ToString() + " VND";
             int need_to_pay = need_to_pay_without_food + food_total + drinks_total;
@@ -179,11 +171,6 @@ namespace Qlyrapchieuphim
             return result;
         }
 
-        public bool UsedPoints
-        {
-            get { return used_points; }
-            set { used_points = value; }
-        }
 
         private void LoadMovie()
         {
@@ -250,7 +237,7 @@ namespace Qlyrapchieuphim
             cusName.Text = dt.Rows[0]["FullName"].ToString();
             cusPhone.Text = dt.Rows[0]["Phone"].ToString();
             cusEmail.Text = dt.Rows[0]["Email"].ToString();
-            cusPoints.Text = loyalty_points_before.ToString();
+            cusPoints.Text = MainDataTable.Rows[0]["LoyaltyPointsUsed"].ToString();
             cusDeducted.Text = dt.Rows[0]["LoyaltyPoints"].ToString();
 
         }

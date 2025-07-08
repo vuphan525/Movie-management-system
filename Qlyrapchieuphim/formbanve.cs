@@ -526,8 +526,9 @@ namespace Qlyrapchieuphim
             //need_to_pay = 0;
             //cus_point = 0;
             int voucherId = getVoucherId();
+            int pointsBefore = getLoyaltyPoints(CustomerID);
             //Bookings
-            SqlQuery = "INSERT INTO Bookings OUTPUT INSERTED.BookingID VALUES (@ShowtimeID, @CustomerID, @StaffID, @PlacedByUserID, @PriceAtCheckout, @TotalPrice, @CreatedAt, @VoucherID, @StudentCount, @ChildrenCount)";
+            SqlQuery = "INSERT INTO Bookings OUTPUT INSERTED.BookingID VALUES (@ShowtimeID, @CustomerID, @StaffID, @PlacedByUserID, @PriceAtCheckout, @TotalPrice, @CreatedAt, @VoucherID, @StudentCount, @ChildrenCount, @LoyaltyPointsUsed)";
             using (SqlConnection conn = Helper.getdbConnection())
             using (SqlCommand cmd = new SqlCommand(SqlQuery, conn))
             {
@@ -548,6 +549,7 @@ namespace Qlyrapchieuphim
                 cmd.Parameters.Add("@PriceAtCheckout", SqlDbType.Decimal).Value = price_at_checkout_time;
                 cmd.Parameters.Add("@CreatedAt", SqlDbType.DateTime).Value = DateTime.Now;
                 cmd.Parameters.Add("@VoucherID", SqlDbType.Int).Value = (voucherId == -1) ? (object)DBNull.Value : voucherId;
+                cmd.Parameters.Add("@LoyaltyPointsUsed", SqlDbType.Int).Value = (chkAccumulate.Checked) ? 0 : pointsBefore;
                 conn.Open();
                 BookingID = (int)cmd.ExecuteScalar();
                 conn.Close();
@@ -640,14 +642,12 @@ namespace Qlyrapchieuphim
 
 
 
-            int pointsBefore = getLoyaltyPoints(CustomerID);
+            
             UpdateLoyaltyPoints(); //Deduct loyalty points
 
 
             Hoadon hd = new Hoadon();
             hd.BillCode = BookingID;
-            hd.LoyaltyPointsBefore = pointsBefore;
-            hd.UsedPoints = !chkAccumulate.Checked;
             hd.CustomerID = CustomerID;
             hd.PriceAtCheckOut = price_at_checkout_time;
             this.Close();

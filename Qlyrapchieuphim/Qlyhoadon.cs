@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.Data.SqlClient;
+using Microsoft.ReportingServices.ReportProcessing.ReportObjectModel;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,7 +9,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Microsoft.Data.SqlClient;
 
 namespace Qlyrapchieuphim
 {
@@ -41,6 +42,19 @@ namespace Qlyrapchieuphim
         private void Qlyhoadon_VisibleChanged(object sender, EventArgs e)
         {
             Qlyhoadon_Load(sender, e);
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //DataTable dt = dataGridView1.DataSource as DataTable;
+            //if (e.RowIndex >= 0)
+            //{
+            //    formbanve bv = new formbanve((int)dt.Rows[e.RowIndex]["ShowtimeID"]);
+            //    Hoadon hoadon = new Hoadon();
+
+            //    bv.UserId = userID;
+            //    bv.Show();
+            //}
         }
     }
 }
