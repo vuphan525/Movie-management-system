@@ -21,8 +21,7 @@ namespace Qlyrapchieuphim
         {
             InitializeComponent();
         }
-        SqlConnection conn = null;
-        int makh = -1;
+        private int customerId = -1;
         bool used_points = false;
         int masc = -1;
         int food_total = 0;
@@ -33,6 +32,8 @@ namespace Qlyrapchieuphim
         int child_discount;
         private int loyalty_points_before;
         private int billCode = -1;
+        private int priceAtCheckOut;
+        private bool allowExport = true;
         private DataTable MainDataTable;
         private DataTable bookingDetails;
         private DataTable bookingProducts;
@@ -45,6 +46,21 @@ namespace Qlyrapchieuphim
         {
             get { return loyalty_points_before; }
             set { loyalty_points_before = value; }
+        }
+        public int CustomerID
+        {
+            get { return customerId; }
+            set { customerId = value; }
+        }
+        public bool AllowExport
+        {
+            get { return allowExport; }
+            set { allowExport = value; }
+        }
+        public int PriceAtCheckOut
+        {
+            get { return priceAtCheckOut; }
+            set { priceAtCheckOut = value; }
         }
         private void LoadBill()
         {
@@ -60,16 +76,18 @@ namespace Qlyrapchieuphim
             //Main Booking
             string SqlQuery = "SELECT ShowtimeID, CustomerID, TotalPrice, VoucherID, CreatedAt, StudentCount, ChildrenCount FROM  Bookings " +
                 "WHERE BookingID = @BookingID";
-            SqlDataAdapter adapter = new SqlDataAdapter(SqlQuery, conn);
-            adapter.SelectCommand.Parameters.Add("@BookingID", SqlDbType.Int).Value = billCode;
-            DataSet mainDataSet = new DataSet();
-            if (conn.State != ConnectionState.Open)
+            using (SqlConnection conn = Helper.getdbConnection())
+            using (SqlDataAdapter adapter = new SqlDataAdapter(SqlQuery, conn))
+            {
+                adapter.SelectCommand.Parameters.Add("@BookingID", SqlDbType.Int).Value = billCode;
+                DataSet mainDataSet = new DataSet();
                 conn.Open();
-            adapter.Fill(mainDataSet, "Bookings");
-            conn.Close();
-            MainDataTable = mainDataSet.Tables["Bookings"];
+                adapter.Fill(mainDataSet, "Bookings");
+                conn.Close();
+                MainDataTable = mainDataSet.Tables["Bookings"];
+            }
             masc = (int)MainDataTable.Rows[0]["ShowtimeID"];
-            makh = (int)MainDataTable.Rows[0]["CustomerID"];
+            customerId = (int)MainDataTable.Rows[0]["CustomerID"];
             total = Convert.ToInt32((decimal)MainDataTable.Rows[0]["TotalPrice"]);
             tongtienve.Text = total.ToString() + " VND";
             student_discount = (int)MainDataTable.Rows[0]["StudentCount"] * 15000;
@@ -81,13 +99,15 @@ namespace Qlyrapchieuphim
                 "FROM Seats sts JOIN BookingDetails bds ON (sts.SeatID = bds.SeatID) " +
                 "WHERE bds.BookingID = @BookingID " +
                 "GROUP BY SeatType";
-            adapter = new SqlDataAdapter(SqlQuery, conn);
-            adapter.SelectCommand.Parameters.Add("@BookingID", SqlDbType.Int).Value = billCode;
-            bookingDetails = new DataTable();
-            if (conn.State != ConnectionState.Open)
+            using (SqlConnection conn = Helper.getdbConnection())
+            using (SqlDataAdapter adapter = new SqlDataAdapter(SqlQuery, conn))
+            {
+                adapter.SelectCommand.Parameters.Add("@BookingID", SqlDbType.Int).Value = billCode;
+                bookingDetails = new DataTable();
                 conn.Open();
-            adapter.Fill(bookingDetails);
-            conn.Close();
+                adapter.Fill(bookingDetails);
+                conn.Close();
+            }
             foreach (DataRow row in bookingDetails.Rows)
             {
                 if (row["SeatType"].ToString() == "Standard")
@@ -101,25 +121,27 @@ namespace Qlyrapchieuphim
             SqlQuery = "SELECT bprd.ProductID, prd.ProductName, prd.Price, bprd.Quantity, prd.CategoryID " +
                 "FROM Products prd JOIN BookingProducts bprd ON (prd.ProductID = bprd.ProductID) " +
                 "WHERE BookingID = @BookingID";
-            adapter = new SqlDataAdapter(SqlQuery, conn);
-            adapter.SelectCommand.Parameters.Add("@BookingID", SqlDbType.Int).Value = billCode;
-            bookingProducts = new DataTable();
-            if (conn.State != ConnectionState.Open)
-                conn.Open();
-            adapter.Fill(bookingProducts);
-            conn.Close();
-            dataGridView1.DataSource = bookingProducts;
-            foreach (DataRow row in bookingProducts.Rows)
+            using (SqlConnection conn = Helper.getdbConnection())
+            using (SqlDataAdapter adapter = new SqlDataAdapter(SqlQuery, conn))
             {
-                if ((int)row["CategoryID"] == 1) //Đồ ăn
-                    food_total += Convert.ToInt32((decimal)row["Price"] * (int)row["Quantity"]);
+                adapter.SelectCommand.Parameters.Add("@BookingID", SqlDbType.Int).Value = billCode;
+                bookingProducts = new DataTable();
+                conn.Open();
+                adapter.Fill(bookingProducts);
+                conn.Close();
+                dataGridView1.DataSource = bookingProducts;
+                foreach (DataRow row in bookingProducts.Rows)
+                {
+                    if ((int)row["CategoryID"] == 1) //Đồ ăn
+                        food_total += Convert.ToInt32((decimal)row["Price"] * (int)row["Quantity"]);
 
-                if ((int)row["CategoryID"] == 2) //Thức uống
-                    drinks_total = Convert.ToInt32((decimal)row["Price"] * (int)row["Quantity"]);
+                    if ((int)row["CategoryID"] == 2) //Thức uống
+                        drinks_total = Convert.ToInt32((decimal)row["Price"] * (int)row["Quantity"]);
+                }
             }
-            spFood.Text = food_total.ToString() + " VND";
-            spDrinks.Text = drinks_total.ToString() + " VND";
-            sp_total_lbl.Text = (food_total + drinks_total).ToString() + " VND";
+            spFood.Text = food_total.ToString("N0") + " VND";
+            spDrinks.Text = drinks_total.ToString("N0") + " VND";
+            sp_total_lbl.Text = (food_total + drinks_total).ToString("N0") + " VND";
 
 
             int need_to_pay_without_food = total;
@@ -132,7 +154,7 @@ namespace Qlyrapchieuphim
             lblDiscount.Text = (discount + student_discount + child_discount).ToString() + " VND";
             int need_to_pay = need_to_pay_without_food + food_total + drinks_total;
             need_to_pay -= (discount + student_discount + child_discount);
-           
+
             cantra.Text = need_to_pay.ToString() + " VND";
             LoadMovie();
             LoadCus();
@@ -142,7 +164,7 @@ namespace Qlyrapchieuphim
             float result = 0;
             if (voucherId == -1)
                 return result;
-
+            using (SqlConnection conn = Helper.getdbConnection())
             using (SqlCommand cmd = conn.CreateCommand())
             {
                 string Sqlquery = "SELECT DiscountPercent FROM Vouchers WHERE VoucherID = @VoucherID";
@@ -167,18 +189,22 @@ namespace Qlyrapchieuphim
         {
             if (masc == -1)
                 return;
+            DataTable dt;
             string SqlQuery = "SELECT Title, StartTime, RoomName " +
                 "FROM Movies mv JOIN Showtimes st ON (mv.MovieID = st.MovieID) " +
                 "JOIN Rooms rms ON (rms.RoomID = st.RoomID)" +
                 "WHERE (st.ShowtimeID = @masc) ";
-            SqlDataAdapter adapter = new SqlDataAdapter(SqlQuery, conn);
-            adapter.SelectCommand.Parameters.Add("@masc", SqlDbType.Int).Value = masc;
-            DataSet ds = new DataSet();
-            if (conn.State != ConnectionState.Open)
-                conn.Open();
-            adapter.Fill(ds, "Movies");
-            conn.Close();
-            DataTable dt = ds.Tables["Movies"];
+            using (SqlConnection conn = Helper.getdbConnection())
+            using (SqlDataAdapter adapter = new SqlDataAdapter(SqlQuery, conn))
+            {
+                adapter.SelectCommand.Parameters.Add("@masc", SqlDbType.Int).Value = masc;
+                DataSet ds = new DataSet();
+                if (conn.State != ConnectionState.Open)
+                    conn.Open();
+                adapter.Fill(ds, "Movies");
+                conn.Close();
+                dt = ds.Tables["Movies"];
+            }
             movName.Text = dt.Rows[0]["Title"].ToString();
             DateTime date = (DateTime)dt.Rows[0]["StartTime"];
             movDate.Text = date.Date.ToString("dd/MM/yyyy");
@@ -188,7 +214,7 @@ namespace Qlyrapchieuphim
         }
         private void LoadCus()
         {
-            if (makh == -1 || makh == 1)
+            if (customerId == -1 || customerId == 1)
             {
                 cusName.Text = "N/A";
                 cusPhone.Text = "N/A";
@@ -197,18 +223,21 @@ namespace Qlyrapchieuphim
                 cusDeducted.Text = "N/A";
                 return;
             }
-
+            DataTable dt;
             string SqlQuery = "SELECT FullName, Phone, Email, LoyaltyPoints " +
                 "FROM Customers cs JOIN Users usr ON (usr.UserID = cs.UserID) " +
                 "WHERE CustomerID = @CustomerID";
-            SqlDataAdapter adapter = new SqlDataAdapter(SqlQuery, conn);
-            adapter.SelectCommand.Parameters.Add("@CustomerID", SqlDbType.Int).Value = makh;
-            DataSet ds = new DataSet();
-            if (conn.State != ConnectionState.Open)
-                conn.Open();
-            adapter.Fill(ds, "Customers");
-            conn.Close();
-            DataTable dt = ds.Tables["Customers"];
+            using (SqlConnection conn = Helper.getdbConnection())
+            using (SqlDataAdapter adapter = new SqlDataAdapter(SqlQuery, conn))
+            {
+                adapter.SelectCommand.Parameters.Add("@CustomerID", SqlDbType.Int).Value = customerId;
+                DataSet ds = new DataSet();
+                if (conn.State != ConnectionState.Open)
+                    conn.Open();
+                adapter.Fill(ds, "Customers");
+                conn.Close();
+                dt = ds.Tables["Customers"];
+            }
             if (dt.Rows.Count <= 0)
             {
                 cusName.Text = "N/A";
@@ -227,7 +256,7 @@ namespace Qlyrapchieuphim
         }
         private void Hoadon_Load(object sender, EventArgs e)
         {
-            conn = Helper.getdbConnection();
+            btn_Print_Bill.Enabled = allowExport;
             LoadBill();
         }
         private DataTable BuildDataTable()
@@ -242,9 +271,9 @@ namespace Qlyrapchieuphim
             {
                 DataRow stdSeats = dt.NewRow();
                 stdSeats["ProductName"] = "Ghế thường";
-                stdSeats["Price"] = 55000.ToString();
+                stdSeats["Price"] = priceAtCheckOut.ToString();
                 stdSeats["Quantity"] = lbl_NormalSeatNum.Text;
-                stdSeats["TotalPrice"] = (55000 * int.Parse(lbl_NormalSeatNum.Text)).ToString();
+                stdSeats["TotalPrice"] = (priceAtCheckOut * int.Parse(lbl_NormalSeatNum.Text)).ToString();
                 dt.Rows.Add(stdSeats);
             }
 
@@ -252,9 +281,9 @@ namespace Qlyrapchieuphim
             {
                 DataRow vipSeats = dt.NewRow();
                 vipSeats["ProductName"] = "Ghế VIP";
-                vipSeats["Price"] = 75000.ToString();
+                vipSeats["Price"] = (priceAtCheckOut + 15000).ToString();
                 vipSeats["Quantity"] = lbl_VIPSeatNum.Text;
-                vipSeats["TotalPrice"] = (75000 * int.Parse(lbl_VIPSeatNum.Text)).ToString();
+                vipSeats["TotalPrice"] = ((priceAtCheckOut + 15000) * int.Parse(lbl_VIPSeatNum.Text)).ToString();
                 dt.Rows.Add(vipSeats);
             }
 
@@ -294,6 +323,7 @@ namespace Qlyrapchieuphim
                 receipt.TotalDiscount = discount;
                 receipt.TotalTickets = total;
                 receipt.TotalProducts = food_total + drinks_total;
+                receipt.PriceAtCheckout = priceAtCheckOut;
                 using (SqlConnection conn = Helper.getdbConnection())
                 {
                     string SqlQuery = "SELECT mv.Title, StartTime " +

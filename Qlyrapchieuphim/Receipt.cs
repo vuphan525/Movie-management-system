@@ -15,6 +15,7 @@ namespace Qlyrapchieuphim
         private decimal totalDiscount = 0;
         private decimal studentDiscount = 0;
         private decimal childrenDiscount = 0;
+        private decimal priceAtCheckout = 0;
         private DateTime createdAt = DateTime.MinValue;
         private DateTime startTime = DateTime.MinValue;
         private string title = string.Empty;
@@ -76,6 +77,11 @@ namespace Qlyrapchieuphim
         {
             get { return startTime; }
             set { startTime = value; }
+        }
+        public decimal PriceAtCheckout
+        {
+            get { return priceAtCheckout; }
+            set { priceAtCheckout = value; }
         }
     }
 }
