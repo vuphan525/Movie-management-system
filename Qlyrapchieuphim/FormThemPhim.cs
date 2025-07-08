@@ -26,7 +26,6 @@ namespace Qlyrapchieuphim
             this.Paint += FormThemPhim_Paint;
             pictureBox_FormThemPhim_Poster.SizeMode = PictureBoxSizeMode.Zoom;
         }
-        SqlConnection conn = null;
 
         string poster_url = string.Empty;
         string projectFolder = AppDomain.CurrentDomain.BaseDirectory;
@@ -36,6 +35,8 @@ namespace Qlyrapchieuphim
             date_FormThemPhim_NgayNhap.CustomFormat = "dd/MM/yyyy";
             date_FormThemPhim_NgayPhatHanh.Format = DateTimePickerFormat.Custom;
             date_FormThemPhim_NgayPhatHanh.CustomFormat = "dd/MM/yyyy";
+            date_FormThemPhim_NgayNhap.Value = DateTime.Today;
+            date_FormThemPhim_NgayPhatHanh.Value = DateTime.Today;
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -48,7 +49,7 @@ namespace Qlyrapchieuphim
 
             if (/*string.IsNullOrWhiteSpace(idphim.Text) ||*/
                string.IsNullOrWhiteSpace(lbl_FormThemPhim_TenPhim.Text) ||
-               string.IsNullOrWhiteSpace(lbl_FormThemPhim_NhaPhatHanh.Text) ||
+               //string.IsNullOrWhiteSpace(lbl_FormThemPhim_NhaPhatHanh.Text) ||
                string.IsNullOrWhiteSpace(lbl_FormThemPhim_ThoiLuong.Text) ||
                string.IsNullOrWhiteSpace(lbl_FormThemPhim_MoTa.Text))
             {
@@ -78,65 +79,61 @@ namespace Qlyrapchieuphim
                     MessageBoxIcon.Warning
                     );
             }
-            //poster
-            conn = Helper.getdbConnection();
-            conn = Helper.CheckDbConnection(conn);
 
-            string SqlQuery = "INSERT INTO Movies OUTPUT INSERTED.MovieID VALUES (@Title, @Description, @Duration, @PosterURL, @Genre, @Status, @ReleaseDate, @ImportDate, @Manufacturer)";
-            SqlCommand comm = new SqlCommand(SqlQuery, conn);
-            //comm.Parameters.Add("@MovieID", SqlDbType.Int).Value = idphim.Text;
-            comm.Parameters.Add("@Title", SqlDbType.NVarChar).Value = lbl_FormThemPhim_TenPhim.Text;
-            comm.Parameters.Add("@Genre", SqlDbType.NVarChar).Value = cb_FormThemPhim_TheLoai.Text;
-            comm.Parameters.Add("@Duration", SqlDbType.Int).Value = int.Parse(lbl_FormThemPhim_ThoiLuong.Text);
-            comm.Parameters.Add("@Description", SqlDbType.NVarChar).Value = lbl_FormThemPhim_MoTa.Text;
-            comm.Parameters.Add("@Status", SqlDbType.NVarChar).Value =cb_FormThemPhim_TinhTrang.Text;
-            comm.Parameters.Add("@ReleaseDate", SqlDbType.Date).Value = date_FormThemPhim_NgayPhatHanh.Value.ToString(); //GIÁ TRỊ TẠM DO CHƯA CÓ TEXTBOX, THAY THẾ GIÁ TRỊ NGAY KHI CÓ TEXTBOX
-            comm.Parameters.Add("@ImportDate", SqlDbType.Date).Value = date_FormThemPhim_NgayNhap.Value.ToString(); //GIÁ TRỊ TẠM DO CHƯA CÓ TEXTBOX, THAY THẾ GIÁ TRỊ NGAY KHI CÓ TEXTBOX
-            comm.Parameters.Add("@Manufacturer", SqlDbType.NVarChar).Value = lbl_FormThemPhim_NhaPhatHanh.Text; //GIÁ TRỊ TẠM DO CHƯA CÓ TEXTBOX, THAY THẾ GIÁ TRỊ NGAY KHI CÓ TEXTBOX
-            comm.Parameters.Add("@PosterURL", SqlDbType.VarChar).Value = poster_url;
             int mvID;
-            try
-            { 
-                conn.Open();
-                mvID = int.Parse(comm.ExecuteScalar().ToString());
-                conn.Close();
-                SaveImage(mvID);
-            }
-            catch (SqlException ex)
+            string SqlQuery = "INSERT INTO Movies OUTPUT INSERTED.MovieID VALUES (@Title, @Description, @Duration, @PosterURL, @Genre, @Status, @ReleaseDate, @ImportDate, @Manufacturer)";
+            using (SqlConnection conn = Helper.getdbConnection())
+            using (SqlCommand comm = new SqlCommand(SqlQuery, conn))
             {
-                switch (ex.Number)
+                comm.Parameters.Add("@Title", SqlDbType.NVarChar).Value = lbl_FormThemPhim_TenPhim.Text;
+                comm.Parameters.Add("@Genre", SqlDbType.NVarChar).Value = cb_FormThemPhim_TheLoai.Text;
+                comm.Parameters.Add("@Duration", SqlDbType.Int).Value = int.Parse(lbl_FormThemPhim_ThoiLuong.Text);
+                comm.Parameters.Add("@Description", SqlDbType.NVarChar).Value = lbl_FormThemPhim_MoTa.Text;
+                comm.Parameters.Add("@Status", SqlDbType.NVarChar).Value = cb_FormThemPhim_TinhTrang.Text;
+                comm.Parameters.Add("@ReleaseDate", SqlDbType.Date).Value = date_FormThemPhim_NgayPhatHanh.Value.ToString();
+                comm.Parameters.Add("@ImportDate", SqlDbType.Date).Value = date_FormThemPhim_NgayNhap.Value.ToString();
+                comm.Parameters.Add("@Manufacturer", SqlDbType.NVarChar).Value = cb_FormThemPhim_NhaPhatHanh.SelectedItem.ToString();
+                comm.Parameters.Add("@PosterURL", SqlDbType.VarChar).Value = poster_url;
+                
+                try
                 {
-                    case 2627:
-                        MessageBox.Show(
-                            "ID phim không được trùng nhau!",
-                            "Lỗi nhập liệu",
-                            MessageBoxButtons.OK,
-                            MessageBoxIcon.Warning);
-                        return;
-                    default:
-                        throw;
+                    conn.Open();
+                    mvID = int.Parse(comm.ExecuteScalar().ToString());
+                    conn.Close();
+                    SaveImage(mvID);
+                }
+                catch (SqlException ex)
+                {
+                    switch (ex.Number)
+                    {
+                        case 2627:
+                            MessageBox.Show(
+                                "ID phim không được trùng nhau!",
+                                "Lỗi nhập liệu",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Warning);
+                            return;
+                        default:
+                            throw;
+                    }
                 }
             }
-            finally
+
+            using (SqlConnection conn = Helper.getdbConnection())
+            using (SqlCommand comm = new SqlCommand(SqlQuery, conn))
             {
+                SqlQuery = "UPDATE MOVIES SET " +
+                    "PosterURL = @PosterURL " +
+                    "WHERE MovieID = @MovieID ";
+                comm.Parameters.Add("@PosterURL", SqlDbType.VarChar).Value = poster_url;
+                comm.Parameters.Add("@MovieID", SqlDbType.Int).Value = mvID;
+                conn.Open();
+                comm.ExecuteNonQuery();
                 if (conn.State != ConnectionState.Closed)
                     conn.Close();
             }
-            SqlQuery = "UPDATE MOVIES SET " +
-                "PosterURL = @PosterURL " +
-                "WHERE MovieID = @MovieID ";
-            comm = new SqlCommand(SqlQuery, conn);
-            comm.Parameters.Add("@PosterURL", SqlDbType.VarChar).Value = poster_url;
-            comm.Parameters.Add("@MovieID", SqlDbType.Int).Value = mvID;
-            conn.Open();
-            comm.ExecuteNonQuery();
-            if (conn.State != ConnectionState.Closed)
-                conn.Close();
             this.DialogResult = DialogResult.OK;
             this.Close();
-
-            //ToDo: Xử lý thêm phim 
-
         }
 
         private void AddPosterButton_Click(object sender, EventArgs e)
@@ -223,7 +220,7 @@ namespace Qlyrapchieuphim
         private void FormThemPhim_Paint(object sender, PaintEventArgs e)
         {
             int borderWidth = 2;
-            Color borderColor = Color.MediumSlateBlue; 
+            Color borderColor = Color.MediumSlateBlue;
 
             ControlPaint.DrawBorder(e.Graphics, this.ClientRectangle,
                 borderColor, borderWidth, ButtonBorderStyle.Solid,
@@ -269,11 +266,11 @@ namespace Qlyrapchieuphim
             cb_FormThemPhim_TheLoai.SelectedIndex = -1;
             lbl_FormThemPhim_ThoiLuong.Clear();
             cb_FormThemPhim_TinhTrang.SelectedIndex = -1;
-            date_FormThemPhim_NgayNhap.Value = DateTime.Now;
-            date_FormThemPhim_NgayPhatHanh.Value = DateTime.Now;
-            lbl_FormThemPhim_NhaPhatHanh.Clear();
+            date_FormThemPhim_NgayNhap.Value = DateTime.Today;
+            date_FormThemPhim_NgayPhatHanh.Value = DateTime.Today;
+            cb_FormThemPhim_NhaPhatHanh.SelectedItem.ToString();
             lbl_FormThemPhim_MoTa.Clear();
-            pictureBox_FormThemPhim_Poster.Image = null; // Assuming guna2PictureBox1 is the picture box for the poster
+            pictureBox_FormThemPhim_Poster.Image = null;
             this.Refresh();
         }
 

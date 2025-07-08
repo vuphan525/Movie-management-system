@@ -36,7 +36,7 @@ namespace Qlyrapchieuphim
             int count;
             try
             {
-                
+
                 string SqlQuery = "SELECT COUNT(*) FROM Movies WHERE Status = N'Đang chiếu'";
                 SqlCommand countCmd = new SqlCommand(SqlQuery, conn);
                 if (conn.State != ConnectionState.Open)
@@ -68,7 +68,7 @@ namespace Qlyrapchieuphim
                     tenphim.Enabled = false;
                     errorProvider1.SetError(tenphim, "Không có phim trong hệ thống!");
                 }
-                
+
                 return count > 0;
             }
             catch (Exception ex)
@@ -88,7 +88,7 @@ namespace Qlyrapchieuphim
             if (conn.State != ConnectionState.Open)
                 conn.Open();
             adapter.Fill(ds, "Showtimes");
-            conn.Close() ;
+            conn.Close();
             DataTable dt = ds.Tables["Showtimes"];
             //foreach (DataGridViewRow row in dataGridView1.Rows)
             //{
@@ -160,56 +160,31 @@ namespace Qlyrapchieuphim
             LoadData();
             if (CheckMovie())
                 tenphim.SelectedIndex = 0;
-            
+
             date.Format = DateTimePickerFormat.Custom;
             date.CustomFormat = "dd/MM/yyyy";
             date.Value = DateTime.Today;
+            SearchOnOff(false);
         }
         public bool issearch = false;
         private void Search_Click(object sender, EventArgs e)
         {
-            if (!issearch)
+            SearchOnOff(!issearch);
+        }
+        private void SearchOnOff(bool on)
+        {
+            if (on)
             {
                 date.Visible = true;
                 label4.Visible = true;
+                tenphim.Visible = true;
+                label6.Visible = true;
                 Search.Text = "Hủy tìm kiếm";
                 issearch = true;
 
-                DateTime selectedDate = date.Value.Date;
-                DataTable dt = dataGridView1.DataSource as DataTable;
-                if (dt == null) return;
+                date_ValueChanged(this, EventArgs.Empty);
+                tenphim_SelectedIndexChanged(this, EventArgs.Empty);
 
-                CurrencyManager currencyManager = (CurrencyManager)BindingContext[dataGridView1.DataSource];
-                currencyManager.SuspendBinding();
-
-                foreach (DataGridViewRow row in dataGridView1.Rows)
-                {
-                    if (!row.IsNewRow)
-                    {
-                        int index = row.Index;
-                        string rawDate = dt.Rows[index]["StartTime"].ToString();
-
-                        // Định dạng hỗ trợ cả kiểu 1 chữ số hoặc 2 chữ số
-                        string[] formats = {
-                    "d/M/yyyy h:mm tt", "d/M/yyyy h:mm:ss tt",
-                    "dd/MM/yyyy hh:mm tt", "dd/MM/yyyy hh:mm:ss tt",
-                    "M/d/yyyy h:mm tt", "M/d/yyyy h:mm:ss tt",
-                    "MM/dd/yyyy hh:mm tt", "MM/dd/yyyy hh:mm:ss tt", "dd/MM/yyyy HH:mm:ss", "dd/MM/yyyy HH:mm:ss tt"
-                };
-
-                        if (!DateTime.TryParseExact(rawDate, formats, CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime dateFromRow))
-                        {
-                            MessageBox.Show("Không thể đọc ngày chiếu: " + rawDate, "Lỗi dữ liệu", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            row.Visible = false;
-                            continue;
-                        }
-
-                        // So sánh phần ngày
-                        row.Visible = (dateFromRow.Date == selectedDate);
-                    }
-                }
-
-                currencyManager.ResumeBinding();
                 dataGridView1.ClearSelection();
             }
             else
@@ -217,6 +192,8 @@ namespace Qlyrapchieuphim
                 Search.Text = "Tìm kiếm suất chiếu";
                 date.Visible = false;
                 label4.Visible = false;
+                tenphim.Visible = false;
+                label6.Visible = false;
                 issearch = false;
                 date.Value = DateTime.Today;
 
@@ -243,8 +220,7 @@ namespace Qlyrapchieuphim
                     if (!row.IsNewRow)
                     {
                         int index = row.Index;
-                        //string dateStr = dt.Rows[index]["StartTime"].ToString();
-                        DateTime dateFromRow = (DateTime)dt.Rows[index]["StartTime"];
+                        string dateStr = dt.Rows[index]["StartTime"].ToString();
 
                         // Danh sách các định dạng có thể xảy ra (rất linh hoạt)
                         string[] formats = {
@@ -256,15 +232,14 @@ namespace Qlyrapchieuphim
                     "MM/dd/yyyy hh:mm tt",
                     "M/d/yyyy h:mm:ss tt",
                     "MM/dd/yyyy hh:mm:ss tt",
-                    "dd/MM/yyyy HH:mm:ss", "dd/MM/yyyy HH:mm:ss tt"
-                };
+                    "dd/MM/yyyy HH:mm:ss", "dd/MM/yyyy HH:mm:ss tt"};
 
-                        //if (!DateTime.TryParseExact(dateStr, formats, CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime dateFromRow))
-                        //{
-                        //    MessageBox.Show("Không thể đọc ngày chiếu: " + dateStr, "Lỗi dữ liệu", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        //    row.Visible = false; // Ẩn dòng lỗi
-                        //    continue;
-                        //}
+                        if (!DateTime.TryParseExact(dateStr, formats, CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime dateFromRow))
+                        {
+                            MessageBox.Show("Không thể đọc ngày chiếu: " + dateStr, "Lỗi dữ liệu", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            row.Visible = false; // Ẩn dòng lỗi
+                            continue;
+                        }
 
                         // So sánh phần ngày
                         row.Visible = (dateFromRow.Date == selectedDate);
@@ -298,6 +273,45 @@ namespace Qlyrapchieuphim
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void tenphim_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (issearch)
+            {
+                int selectedMovieId = int.Parse(Helper.SubStringBetween(tenphim.SelectedItem.ToString(), " (ID: ", ")"));
+                DataTable dt = dataGridView1.DataSource as DataTable;
+
+                CurrencyManager currencyManager = (CurrencyManager)BindingContext[dataGridView1.DataSource];
+                currencyManager.SuspendBinding();
+
+                foreach (DataGridViewRow row in dataGridView1.Rows)
+                {
+                    if (!row.IsNewRow)
+                    {
+                        int index = row.Index;
+                        string rawMovieId = dt.Rows[index]["MovieID"].ToString();
+                        if (!int.TryParse(rawMovieId, out int movieId))
+                        {
+                            MessageBox.Show("Không thể đọc ID phim: " + rawMovieId, "Lỗi dữ liệu", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            row.Visible = false; // Ẩn dòng lỗi
+                            continue;
+                        }
+
+                        // So sánh phần ngày
+                        row.Visible = (movieId == selectedMovieId);
+                    }
+                }
+                currencyManager.ResumeBinding();
+                dataGridView1.ClearSelection();
+            }
+            else
+            {
+                foreach (DataGridViewRow row in dataGridView1.Rows)
+                {
+                    row.Visible = true;
+                }
+            }
         }
     }
 }

@@ -23,14 +23,14 @@ namespace Qlyrapchieuphim
 {
     public partial class Qlyphim : UserControl
     {
-        
+
         public Qlyphim()
         {
-            InitializeComponent();  
+            InitializeComponent();
             //idphim.MaxLength = 4;
             tenphim.MaxLength = 100;
             dataGridView1.ReadOnly = true;
-            
+
             label2.Visible = false;
             idphim.Enabled = false;
             dataGridView1.AutoGenerateColumns = false;
@@ -65,11 +65,11 @@ namespace Qlyrapchieuphim
             dataGridView1.ClearSelection();
         }
 
-        
+
         private void AddButton_Click(object sender, EventArgs e)
         {
 
-           
+
         }
         void Reset()
         {
@@ -81,7 +81,7 @@ namespace Qlyrapchieuphim
             trangthai.SelectedIndex = 1;
             mota.Clear();
             dataGridView1.ClearSelection();
-           
+
             poster_url = string.Empty;
             this.Refresh();
         }
@@ -99,11 +99,11 @@ namespace Qlyrapchieuphim
             dataGridView1.ClearSelection();
             dataGridView1.RowTemplate.Height = 45;
         }
-        
+
 
         private void UpdateButton_Click(object sender, EventArgs e)
         {
-            
+
 
         }
         private void PrintToTextBoxes(int row)
@@ -125,7 +125,7 @@ namespace Qlyrapchieuphim
             {
                 using (FileStream stream = new FileStream(poster_url, FileMode.Open))
                 {
-                  
+
                 }
             }
             catch (Exception ex)
@@ -159,7 +159,7 @@ namespace Qlyrapchieuphim
                 }
                 else
                 {
-                   
+
                 }
             }
             check = true;
@@ -190,7 +190,7 @@ namespace Qlyrapchieuphim
                     {
                         //Todo: Lấy dữ liệu từ hàng này trong datagridview để truyền qua formSửa
                         popup.StartPosition = FormStartPosition.CenterParent;
-                    ;
+                        ;
                         if (popup.ShowDialog(FindForm()) == DialogResult.OK)
                         {
                             LoadData(); // Chỉ gọi nếu form kia trả về OK
@@ -210,20 +210,43 @@ namespace Qlyrapchieuphim
 
                     if (result == DialogResult.Yes)
                     {
-                        if (conn.State != ConnectionState.Open)
-                            conn.Open();
+                        using (SqlConnection conn = Helper.getdbConnection())
+                        {
+                            string SqlQuery = "DELETE FROM Movies WHERE MovieID = @tempid";
+                            using (SqlCommand cmd = new SqlCommand(SqlQuery, conn))
+                            {
+                                cmd.Parameters.Add("@tempid", SqlDbType.Char).Value = movieId;
+                                conn.Open();
+                                try
+                                { cmd.ExecuteNonQuery(); }
+                                catch (Exception ex)
+                                {
+                                    if (ex is SqlException)
+                                    {
+                                        SqlException sqlex = (SqlException)ex;
+                                        if (sqlex.Number == 547)
+                                        {
+                                            MessageBox.Show(
+                                                "Không thể xóa phim, đã có khách hàng đặt vé phim này.",
+                                                "Không thể xóa",
+                                                MessageBoxButtons.OK,
+                                                MessageBoxIcon.Warning);
+                                        }
+                                        else
+                                            MessageBox.Show("Lỗi khi xóa: " + sqlex.Message + "\nSQL Exception number: " + sqlex.Number, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    }
+                                    else
+                                        MessageBox.Show("Lỗi khi xóa phim: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                }
+                            }
 
-                        string SqlQuery = "DELETE FROM Movies WHERE MovieID = @tempid";
-                        SqlCommand cmd = new SqlCommand(SqlQuery, conn);
-                        cmd.Parameters.Add("@tempid", SqlDbType.Char).Value = movieId;
-                        cmd.ExecuteNonQuery();
+                            // Xóa file ảnh nếu có
+                            string fullPath = Path.Combine(projectFolder, "posters", movieId + ".png");
+                            if (File.Exists(fullPath))
+                                File.Delete(fullPath);
 
-                        // Xóa file ảnh nếu có
-                        string fullPath = Path.Combine(projectFolder, "posters", movieId + ".png");
-                        if (File.Exists(fullPath))
-                            File.Delete(fullPath);
-
-                        conn.Close();
+                            conn.Close();
+                        }
                         LoadData();
                         Reset();
                     }
@@ -243,7 +266,7 @@ namespace Qlyrapchieuphim
                     "Xác nhận",
                     MessageBoxButtons.YesNo,
                     MessageBoxIcon.Question);
-                
+
                 if (result == DialogResult.Yes)
                 {
                     DataTable dt = dataGridView1.DataSource as DataTable;
@@ -321,8 +344,8 @@ namespace Qlyrapchieuphim
                 }
             }
         }
-       
-        public bool check=false;
+
+        public bool check = false;
         private void Qlyphim_MouseDown(object sender, MouseEventArgs e)
         {
             if (check)
@@ -348,7 +371,7 @@ namespace Qlyrapchieuphim
             }
             check = false;
         }
-        
+
         private void panel2_MouseDown(object sender, MouseEventArgs e)
         {
             if (check)
@@ -376,11 +399,11 @@ namespace Qlyrapchieuphim
             //var headerBounds = new Rectangle(e.RowBounds.Left, e.RowBounds.Top, grid.RowHeadersWidth, e.RowBounds.Height);
             //e.Graphics.DrawString(rowIdx, this.Font, SystemBrushes.ControlText, headerBounds, centerFormat);
         }
-        
+
 
         private void AddPosterButton_Click(object sender, EventArgs e)
         {
-           
+
         }
 
         private void cancelButton_Click(object sender, EventArgs e)
@@ -393,13 +416,13 @@ namespace Qlyrapchieuphim
             using (FormThemPhim popup = new FormThemPhim())
             {
                 popup.StartPosition = FormStartPosition.CenterParent;
-                
+
                 if (popup.ShowDialog(FindForm()) == DialogResult.OK)
                 {
                     LoadData(); // Chỉ gọi nếu form kia trả về OK
                 }
             }
-           
+
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

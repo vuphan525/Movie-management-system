@@ -39,7 +39,6 @@ namespace Qlyrapchieuphim.FormEdit
             this.Close();
         }
 
-        SqlConnection conn = null;
         string poster_url = string.Empty;
         string projectFolder = AppDomain.CurrentDomain.BaseDirectory;
 
@@ -49,6 +48,8 @@ namespace Qlyrapchieuphim.FormEdit
             date_FormSuaPhim_NgayNhap.CustomFormat = "dd/MM/yyyy";
             date_FormSuaPhim_NgayPhatHanh.Format = DateTimePickerFormat.Custom;
             date_FormSuaPhim_NgayPhatHanh.CustomFormat = "dd/MM/yyyy";
+            date_FormSuaPhim_NgayNhap.Value = DateTime.Today;
+            date_FormSuaPhim_NgayPhatHanh.Value = DateTime.Today;
 
             LoadMovieData(movieId);
         }
@@ -101,43 +102,40 @@ namespace Qlyrapchieuphim.FormEdit
                 "Manufacturer = @Manufacturer " +
                 "WHERE MovieID = @MovieID";
 
-            conn = Helper.getdbConnection();
-            conn = Helper.CheckDbConnection(conn);
-
-            SqlCommand comm = new SqlCommand(SqlQuery, conn);
-
-            comm.Parameters.Add("@Title", SqlDbType.NVarChar).Value = lbl_FormSuaPhim_TenPhim.Text;
-            comm.Parameters.Add("@Genre", SqlDbType.NVarChar).Value = cb_FormSuaPhim_TheLoai.Text;
-            comm.Parameters.Add("@Duration", SqlDbType.Int).Value = he;
-            comm.Parameters.Add("@Description", SqlDbType.NVarChar).Value = lbl_FormSuaPhim_MoTa.Text;
-            comm.Parameters.Add("@Status", SqlDbType.NVarChar).Value = cb_FormSuaPhim_TinhTrang.Text;
-            comm.Parameters.Add("@ReleaseDate", SqlDbType.Date).Value = date_FormSuaPhim_NgayPhatHanh.Value;
-            comm.Parameters.Add("@ImportDate", SqlDbType.Date).Value = date_FormSuaPhim_NgayNhap.Value;
-            comm.Parameters.Add("@Manufacturer", SqlDbType.NVarChar).Value = lbl_FormSuaPhim_NhaPhatHanh.Text;
-
-            SaveImage(int.Parse(movieId));
-            comm.Parameters.Add("@PosterURL", SqlDbType.VarChar).Value = poster_url;
-            comm.Parameters.Add("@MovieID", SqlDbType.Int).Value = int.Parse(movieId);
-
-            try
+            using (SqlConnection conn = Helper.getdbConnection())
+            using (SqlCommand comm = new SqlCommand(SqlQuery, conn))
             {
-                conn.Open();
-                comm.ExecuteNonQuery();
-                conn.Close();
-                this.DialogResult = DialogResult.OK;
-                this.Close();
-            }
-            catch (SqlException ex)
-            {
-                if (conn.State != ConnectionState.Closed)
+                comm.Parameters.Add("@Title", SqlDbType.NVarChar).Value = lbl_FormSuaPhim_TenPhim.Text;
+                comm.Parameters.Add("@Genre", SqlDbType.NVarChar).Value = cb_FormSuaPhim_TheLoai.Text;
+                comm.Parameters.Add("@Duration", SqlDbType.Int).Value = he;
+                comm.Parameters.Add("@Description", SqlDbType.NVarChar).Value = lbl_FormSuaPhim_MoTa.Text;
+                comm.Parameters.Add("@Status", SqlDbType.NVarChar).Value = cb_FormSuaPhim_TinhTrang.Text;
+                comm.Parameters.Add("@ReleaseDate", SqlDbType.Date).Value = date_FormSuaPhim_NgayPhatHanh.Value;
+                comm.Parameters.Add("@ImportDate", SqlDbType.Date).Value = date_FormSuaPhim_NgayNhap.Value;
+                comm.Parameters.Add("@Manufacturer", SqlDbType.NVarChar).Value = cb_FormSuaPhim_NhaPhatHanh.SelectedItem.ToString();
+
+                SaveImage(int.Parse(movieId));
+                comm.Parameters.Add("@PosterURL", SqlDbType.VarChar).Value = poster_url;
+                comm.Parameters.Add("@MovieID", SqlDbType.Int).Value = int.Parse(movieId);
+
+                try
+                {
+                    conn.Open();
+                    comm.ExecuteNonQuery();
                     conn.Close();
-                if (ex.Number == 2627)
-                {
-                    MessageBox.Show("ID phim không được trùng nhau!", "Lỗi nhập liệu", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
                 }
-                else
+                catch (SqlException ex)
                 {
-                    MessageBox.Show("Lỗi SQL: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    if (ex.Number == 2627)
+                    {
+                        MessageBox.Show("ID phim không được trùng nhau!", "Lỗi nhập liệu", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Lỗi SQL: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
         }
@@ -214,7 +212,7 @@ namespace Qlyrapchieuphim.FormEdit
                         if (reader["ImportDate"] != DBNull.Value)
                             date_FormSuaPhim_NgayNhap.Value = Convert.ToDateTime(reader["ImportDate"]);
 
-                        lbl_FormSuaPhim_NhaPhatHanh.Text = reader["Manufacturer"].ToString();
+                        cb_FormSuaPhim_NhaPhatHanh.SelectedItem = reader["Manufacturer"].ToString();
 
                         poster_url = reader["PosterURL"].ToString();
                         string imagePath = Path.Combine(projectFolder, "posters", movieId + ".png");
@@ -270,9 +268,9 @@ namespace Qlyrapchieuphim.FormEdit
             cb_FormSuaPhim_TheLoai.SelectedIndex = -1;
             lbl_FormSuaPhim_ThoiLuong.Clear();
             cb_FormSuaPhim_TinhTrang.SelectedIndex = -1;
-            date_FormSuaPhim_NgayNhap.Value = DateTime.Now;
-            date_FormSuaPhim_NgayPhatHanh.Value = DateTime.Now;
-            lbl_FormSuaPhim_NhaPhatHanh.Clear();
+            date_FormSuaPhim_NgayNhap.Value = DateTime.Today;
+            date_FormSuaPhim_NgayPhatHanh.Value = DateTime.Today;
+            cb_FormSuaPhim_NhaPhatHanh.SelectedIndex = 0;
             lbl_FormSuaPhim_MoTa.Clear();
             pictureBox_FormSuaPhim_Poster.Image = null;
             this.Refresh();

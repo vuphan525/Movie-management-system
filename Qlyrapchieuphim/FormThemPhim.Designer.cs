@@ -52,7 +52,7 @@
             this.pictureBox_FormThemPhim_Poster = new System.Windows.Forms.PictureBox();
             this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.guna2ComboBox1 = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.cb_FormThemPhim_NhaPhatHanh = new Guna.UI2.WinForms.Guna2ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_FormThemPhim_Poster)).BeginInit();
             this.SuspendLayout();
             // 
@@ -419,19 +419,19 @@
             this.label2.TabIndex = 114;
             this.label2.Text = "Giá phim:";
             // 
-            // guna2ComboBox1
+            // cb_FormThemPhim_NhaPhatHanh
             // 
-            this.guna2ComboBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ComboBox1.BorderColor = System.Drawing.Color.Gray;
-            this.guna2ComboBox1.BorderRadius = 10;
-            this.guna2ComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.guna2ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.guna2ComboBox1.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2ComboBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2ComboBox1.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.guna2ComboBox1.ForeColor = System.Drawing.Color.Black;
-            this.guna2ComboBox1.ItemHeight = 30;
-            this.guna2ComboBox1.Items.AddRange(new object[] {
+            this.cb_FormThemPhim_NhaPhatHanh.BackColor = System.Drawing.Color.Transparent;
+            this.cb_FormThemPhim_NhaPhatHanh.BorderColor = System.Drawing.Color.Gray;
+            this.cb_FormThemPhim_NhaPhatHanh.BorderRadius = 10;
+            this.cb_FormThemPhim_NhaPhatHanh.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cb_FormThemPhim_NhaPhatHanh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_FormThemPhim_NhaPhatHanh.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cb_FormThemPhim_NhaPhatHanh.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cb_FormThemPhim_NhaPhatHanh.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cb_FormThemPhim_NhaPhatHanh.ForeColor = System.Drawing.Color.Black;
+            this.cb_FormThemPhim_NhaPhatHanh.ItemHeight = 30;
+            this.cb_FormThemPhim_NhaPhatHanh.Items.AddRange(new object[] {
             "Marvel",
             "DC",
             "Warner Bros",
@@ -442,10 +442,10 @@
             "Paramount Pictures",
             "20th Century Studios",
             "Lionsgate Films"});
-            this.guna2ComboBox1.Location = new System.Drawing.Point(275, 64);
-            this.guna2ComboBox1.Name = "guna2ComboBox1";
-            this.guna2ComboBox1.Size = new System.Drawing.Size(249, 36);
-            this.guna2ComboBox1.TabIndex = 116;
+            this.cb_FormThemPhim_NhaPhatHanh.Location = new System.Drawing.Point(275, 64);
+            this.cb_FormThemPhim_NhaPhatHanh.Name = "cb_FormThemPhim_NhaPhatHanh";
+            this.cb_FormThemPhim_NhaPhatHanh.Size = new System.Drawing.Size(249, 36);
+            this.cb_FormThemPhim_NhaPhatHanh.TabIndex = 116;
             // 
             // FormThemPhim
             // 
@@ -453,7 +453,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(535, 632);
-            this.Controls.Add(this.guna2ComboBox1);
+            this.Controls.Add(this.cb_FormThemPhim_NhaPhatHanh);
             this.Controls.Add(this.guna2TextBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btn_Refresh);
@@ -517,6 +517,6 @@
         private Guna.UI2.WinForms.Guna2Button btn_Refresh;
         private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
         private System.Windows.Forms.Label label2;
-        private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox1;
+        private Guna.UI2.WinForms.Guna2ComboBox cb_FormThemPhim_NhaPhatHanh;
     }
 }

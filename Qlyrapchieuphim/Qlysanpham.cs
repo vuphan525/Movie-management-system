@@ -36,63 +36,68 @@ namespace Qlyrapchieuphim
         }
         private void LoadData()
         {
-            if (conn.State != ConnectionState.Open)
-                conn.Open();
-            string SqlQuery = "SELECT ProductID, ProductName, Description, Price, ImageURL, pr.CategoryID, Quantity, ImportDate, Manufacturer, CategoryName " +
-                "FROM Products pr JOIN ProductCategories pc ON (pr.CategoryID = pc.CategoryID)";
-            SqlDataAdapter adapter = new SqlDataAdapter(SqlQuery, conn);
-            DataSet ds = new DataSet();
-            adapter.Fill(ds, "Products");
-            DataTable dt = ds.Tables["Products"];
-            dataGridView1.DataSource = dt;
-            if (!dataGridView1.Columns.Contains("Actions"))
+            using (SqlConnection conn = Helper.getdbConnection())
             {
-                DataGridViewTextBoxColumn actionCol = new DataGridViewTextBoxColumn();
-                actionCol.Name = "Actions";
-                actionCol.HeaderText = "Actions";
-                actionCol.Width = 60;
-                dataGridView1.Columns.Add(actionCol);
+                string SqlQuery = "SELECT ProductID, ProductName, Description, Price, ImageURL, pr.CategoryID, Quantity, ImportDate, Manufacturer, CategoryName " +
+                    "FROM Products pr JOIN ProductCategories pc ON (pr.CategoryID = pc.CategoryID)";
+                using (SqlDataAdapter adapter = new SqlDataAdapter(SqlQuery, conn))
+                {
+                    conn.Open();
+                    DataSet ds = new DataSet();
+                    adapter.Fill(ds, "Products");
+                    DataTable dt = ds.Tables["Products"];
+                    dataGridView1.DataSource = dt;
+                    if (!dataGridView1.Columns.Contains("Actions"))
+                    {
+                        DataGridViewTextBoxColumn actionCol = new DataGridViewTextBoxColumn();
+                        actionCol.Name = "Actions";
+                        actionCol.HeaderText = "Actions";
+                        actionCol.Width = 60;
+                        dataGridView1.Columns.Add(actionCol);
+                    }
+                }
             }
 
             dataGridView1.Columns["Actions"].DisplayIndex = dataGridView1.Columns.Count - 1;
-            conn.Close();
             this.Refresh();
+
         }
         private bool CheckCategories()
         {
             int count;
-            if (conn.State != ConnectionState.Open)
+            using (SqlConnection conn = Helper.getdbConnection())
+            {
                 conn.Open();
-            string SqlQuery = "SELECT COUNT(*) FROM ProductCategories";
-            SqlCommand countCmd = new SqlCommand(SqlQuery, conn);
-            count = (int)countCmd.ExecuteScalar();
+                string SqlQuery = "SELECT COUNT(*) FROM ProductCategories";
+                using (SqlCommand countCmd = new SqlCommand(SqlQuery, conn))
+                    count = (int)countCmd.ExecuteScalar();
 
-            if (count > 0)
-            {
-                loai.Enabled = true;
-                errorProvider3.Clear();
-                SqlQuery = "SELECT CategoryID, CategoryName FROM ProductCategories";
-                string[] categories = new string[count];
-                SqlCommand cmd = new SqlCommand(SqlQuery, conn);
-                SqlDataReader reader = cmd.ExecuteReader();
-                int i = 0;
-                while (reader.Read())
+                if (count > 0)
                 {
-                    categories[i] = reader.GetString(1) + " (ID: " + reader.GetInt32(0).ToString() + ")";
-                    i++;
+                    loai.Enabled = true;
+                    errorProvider3.Clear();
+                    SqlQuery = "SELECT CategoryID, CategoryName FROM ProductCategories";
+                    string[] categories = new string[count];
+                    using (SqlCommand cmd = new SqlCommand(SqlQuery, conn))
+                    {
+                        SqlDataReader reader = cmd.ExecuteReader();
+                        int i = 0;
+                        while (reader.Read())
+                        {
+                            categories[i] = reader.GetString(1) + " (ID: " + reader.GetInt32(0).ToString() + ")";
+                            i++;
+                        }
+                        loai.DataSource = categories;
+                    }
                 }
-                loai.DataSource = categories;
+                else
+                {
+                    loai.Enabled = false;
+                    errorProvider3.SetError(loai, "Không có loại sản phẩm nào trong hệ thống!");
+                }
+                conn.Close();
             }
-            else
-            {
-                loai.Enabled = false;
-                errorProvider3.SetError(loai, "Không có loại sản phẩm nào trong hệ thống!");
-            }
-            conn.Close();
-            if (count > 0)
-                return true;
-            else
-                return false;
+            return count > 0;
         }
         private void Qlysanpham_Load(object sender, EventArgs e)
         {
@@ -141,38 +146,38 @@ namespace Qlyrapchieuphim
             int typeID = int.Parse(Helper.SubStringBetween(loai.SelectedItem.ToString(), " (ID: ", ")"));
 
             SqlCommand comm = new SqlCommand(SqlQuery, conn);
-            comm.Parameters.Add("@Description", SqlDbType.NVarChar).Value = "placeholder"; //GIÁ TRỊ TẠM DO CHƯA CÓ TEXTBOX, THAY THẾ GIÁ TRỊ NGAY KHI CÓ TEXTBOX
-            comm.Parameters.Add("@ProductName", SqlDbType.NVarChar).Value = ten.Text;
-            comm.Parameters.Add("@CategoryID", SqlDbType.Int).Value = typeID;
-            comm.Parameters.Add("@Price", SqlDbType.Decimal).Value = gia;
-            comm.Parameters.Add("@Quantity", SqlDbType.Int).Value = so;
-            comm.Parameters.Add("@ImportDate", SqlDbType.Date).Value = DateTime.Today - TimeSpan.FromDays(180); //GIÁ TRỊ TẠM DO CHƯA CÓ TEXTBOX, THAY THẾ GIÁ TRỊ NGAY KHI CÓ TEXTBOX
-            comm.Parameters.Add("@Manufacturer", SqlDbType.NVarChar).Value = "placeholder";//GIÁ TRỊ TẠM DO CHƯA CÓ TEXTBOX, THAY THẾ GIÁ TRỊ NGAY KHI CÓ TEXTBOX
-            comm.Parameters.Add("@ImageURL", SqlDbType.VarChar).Value = picture_url;
-            int prID;
-            try
-            {
-                if (conn.State != ConnectionState.Open)
-                    conn.Open();
-                prID = int.Parse(comm.ExecuteScalar().ToString());
-                conn.Close();
-                SaveImage(prID);
-            }
-            catch (SqlException ex)
-            {
-                switch (ex.Number)
-                {
-                    case 2627:
-                        MessageBox.Show(
-                            "ID sản phẩm không được trùng nhau!",
-                            "Lỗi nhập liệu",
-                            MessageBoxButtons.OK,
-                            MessageBoxIcon.Warning);
-                        return;
-                    default:
-                        throw;
-                }
-            }
+                    comm.Parameters.Add("@Description", SqlDbType.NVarChar).Value = "placeholder"; //GIÁ TRỊ TẠM DO CHƯA CÓ TEXTBOX, THAY THẾ GIÁ TRỊ NGAY KHI CÓ TEXTBOX
+                    comm.Parameters.Add("@ProductName", SqlDbType.NVarChar).Value = ten.Text;
+                    comm.Parameters.Add("@CategoryID", SqlDbType.Int).Value = typeID;
+                    comm.Parameters.Add("@Price", SqlDbType.Decimal).Value = gia;
+                    comm.Parameters.Add("@Quantity", SqlDbType.Int).Value = so;
+                    comm.Parameters.Add("@ImportDate", SqlDbType.Date).Value = DateTime.Today - TimeSpan.FromDays(180); //GIÁ TRỊ TẠM DO CHƯA CÓ TEXTBOX, THAY THẾ GIÁ TRỊ NGAY KHI CÓ TEXTBOX
+                    comm.Parameters.Add("@Manufacturer", SqlDbType.NVarChar).Value = "placeholder";//GIÁ TRỊ TẠM DO CHƯA CÓ TEXTBOX, THAY THẾ GIÁ TRỊ NGAY KHI CÓ TEXTBOX
+                    comm.Parameters.Add("@ImageURL", SqlDbType.VarChar).Value = picture_url;
+                    int prID;
+                    try
+                    {
+                        if (conn.State != ConnectionState.Open)
+                            conn.Open();
+                        prID = int.Parse(comm.ExecuteScalar().ToString());
+                        conn.Close();
+                        SaveImage(prID);
+                    }
+                    catch (SqlException ex)
+                    {
+                        switch (ex.Number)
+                        {
+                            case 2627:
+                                MessageBox.Show(
+                                    "ID sản phẩm không được trùng nhau!",
+                                    "Lỗi nhập liệu",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Warning);
+                                return;
+                            default:
+                                throw;
+                        }
+                    }
             SqlQuery = "UPDATE Products SET " +
                 "ImageURL = @ImageURL " +
                 "WHERE ProductID = @ProductID ";
@@ -296,17 +301,15 @@ namespace Qlyrapchieuphim
                     if (result == DialogResult.Yes)
                     {
                         string deleteQuery = "DELETE FROM Products WHERE ProductID = @ProductID";
-
-                        using (SqlCommand cmd = new SqlCommand(deleteQuery, conn))
+                        using (SqlConnection conn1 = Helper.getdbConnection())
+                        using (SqlCommand cmd = new SqlCommand(deleteQuery, conn1))
                         {
                             cmd.Parameters.AddWithValue("@ProductID", productId);
-
                             try
                             {
-                                if (conn.State != ConnectionState.Open)
-                                    conn.Open();
+                                conn1.Open();
                                 int rowsAffected = cmd.ExecuteNonQuery();
-                                conn.Close();
+                                conn1.Close();
 
                                 if (rowsAffected > 0)
                                 {
@@ -328,8 +331,22 @@ namespace Qlyrapchieuphim
                             }
                             catch (Exception ex)
                             {
-                                conn.Close();
-                                MessageBox.Show("Lỗi khi xóa sản phẩm: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                if (ex is SqlException)
+                                {
+                                    SqlException sqlex = (SqlException)ex;
+                                    if (sqlex.Number == 547)
+                                    {
+                                        MessageBox.Show(
+                                            "Không thể xóa sản phẩm, đã có khách hàng đặt sản phẩm này.",
+                                            "Không thể xóa",
+                                            MessageBoxButtons.OK,
+                                            MessageBoxIcon.Warning);
+                                    }
+                                    else
+                                        MessageBox.Show("Lỗi khi xóa: " + sqlex.Message + "\nSQL Exception number: " + sqlex.Number, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                }
+                                else
+                                    MessageBox.Show("Lỗi khi xóa sản phẩm: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                         }
                     }
