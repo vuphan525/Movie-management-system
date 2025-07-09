@@ -115,6 +115,7 @@
             this.SearchTextBox.SelectedText = "";
             this.SearchTextBox.Size = new System.Drawing.Size(308, 34);
             this.SearchTextBox.TabIndex = 55;
+            this.SearchTextBox.TextChanged += new System.EventHandler(this.SearchTextBox_TextChanged);
             // 
             // dataGridView1
             // 

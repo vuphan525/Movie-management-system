@@ -167,5 +167,10 @@ namespace Qlyrapchieuphim
                 }
             }
         }
+
+        private void SearchTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
