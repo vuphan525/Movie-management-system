@@ -290,25 +290,60 @@ namespace Qlyrapchieuphim
                 return;
             }
             int movieId = int.Parse(Helper.SubStringBetween(cb_FormThemSuatChieu_TenPhim.SelectedItem.ToString(), " (ID: ", ")"));
-            //Get Price from movieId
-            decimal price;
+            //Get Price and Duration from movieId
+            decimal price = 0;
+            int movieDuration = 0;
+            bool found = false;
             using (SqlConnection conn = Helper.getdbConnection())
             using (SqlCommand cmd = conn.CreateCommand())
             {
-                string SqlQuery = "SELECT Price FROM Movies WHERE MovieID = @MovieID";
+                string SqlQuery = "SELECT Price, Duration FROM Movies WHERE MovieID = @MovieID";
                 cmd.CommandText = SqlQuery;
                 cmd.CommandType = CommandType.Text;
                 cmd.Parameters.Add("@MovieID", SqlDbType.Int).Value = movieId;
                 conn.Open();
-                price = (decimal)cmd.ExecuteScalar();
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        price = reader.GetDecimal(0);
+                        movieDuration = reader.GetInt32(1);
+                        found = true;
+                    }
+                }
             }
+            if (!found)
+            {
+                MessageBox.Show(
+                    "Lỗi khi thêm suất chiếu: Không tìm thấy phim đã chọn",
+                    "Lỗi dữ liệu",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                return;
+            }
+
+            //Get existing showtimes to compare
+            DataTable existingShowtimes = new DataTable();
+            using (SqlConnection conn = Helper.getdbConnection())
+            using (SqlDataAdapter adapter = new SqlDataAdapter())
+            {
+                string SqlQuery = "SELECT ShowtimeID, RoomID, Duration, StartTime " +
+                    "FROM Showtimes sts JOIN Movies mvs ON (sts.MovieID = mvs.MovieID) ";
+                using (SqlCommand cmd = new SqlCommand(SqlQuery, conn))
+                    adapter.SelectCommand = cmd;
+                conn.Open();
+                adapter.Fill(existingShowtimes);
+            }
+            bool haveAdded = false;
             List<DateTime> skippedTime = new List<DateTime>();
+            List<Tuple<DateTime, int>> conflictedShowTime = new List<Tuple<DateTime, int>>();
             foreach (DataGridViewRow rowDate in dataGridView_FormThemSuatChieu_BangNgayChieu.Rows)
             {
                 foreach (DataGridViewRow rowTime in dataGridView_FormThemSuatChieu_BangGioChieu.Rows)
                 {
                     foreach (DataGridViewRow rowRoom in dataGridView_FormThemSuatChieu_BangPhongChieu.Rows)
                     {
+                        int roomId = int.Parse(Helper.SubStringBetween(rowRoom.Cells[1].Value.ToString(), " (ID: ", ")"));
                         using (SqlConnection conn = Helper.getdbConnection())
                         {
                             string SqlQuery = "INSERT INTO Showtimes VALUES (@MovieID, @RoomID, @StartTime, @Price )";
@@ -335,16 +370,34 @@ namespace Qlyrapchieuphim
                                     continue;
                                 }
 
+                                bool isConflict = false;
+                                foreach (DataRow row in existingShowtimes.Rows)
+                                {
+                                    int checkingDuration = (int)row["Duration"];
+                                    DateTime checkingStartTime = (DateTime)row["StartTime"];
+                                    int checkingRoomId = (int)row["RoomID"];
+                                    DateTime checkingEndTime = checkingStartTime.AddMinutes(checkingDuration);
+                                    DateTime movieEndTimePlusBuffer = fullTime.AddMinutes(movieDuration + 30);
+
+                                    if (roomId == checkingRoomId
+                                        && checkingStartTime < movieEndTimePlusBuffer && fullTime < checkingEndTime.AddMinutes(30))
+                                    {
+                                        conflictedShowTime.Add(new Tuple<DateTime, int>(fullTime, roomId));
+                                        isConflict = true;
+                                    }
+                                }
+                                if (isConflict)
+                                    continue;
+
                                 cmd.Parameters.Add("@StartTime", SqlDbType.DateTime).Value = fullTime;
                                 cmd.Parameters.Add("@Price", SqlDbType.Decimal).Value = price; //Lấy giá suất chiếu theo giá phim
-                                int pc = int.Parse(Helper.SubStringBetween(rowRoom.Cells[1].Value.ToString(), " (ID: ", ")"));
-                                cmd.Parameters.Add("@RoomID", SqlDbType.Int).Value = pc;
-
+                                cmd.Parameters.Add("@RoomID", SqlDbType.Int).Value = roomId;
                                 cmd.Parameters.Add("@MovieID", SqlDbType.Int).Value = movieId;
                                 try
                                 {
                                     conn.Open();
                                     cmd.ExecuteNonQuery();
+                                    haveAdded = true;
                                     conn.Close();
                                 }
                                 catch (SqlException ex)
@@ -378,11 +431,23 @@ namespace Qlyrapchieuphim
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Information);
             }
-            MessageBox.Show(new Form() { TopMost = true },
-                "Các suất chiếu hợp lệ đã được thêm thành công",
+            if (conflictedShowTime.Count > 0)
+            {
+                string conflictMessage = "Các giờ chiếu sau đã bị bỏ qua, do thời gian chiếu (+30 phút sau khi kết thúc) bị trùng với lịch chiếu khác.";
+                foreach (Tuple<DateTime, int> conflict in conflictedShowTime)
+                    conflictMessage += "\n" + conflict.Item1.ToString("dd/MM/yyyy HH:mm") + $" ID phòng chiếu: {conflict.Item2}.";
+                MessageBox.Show(new Form() { TopMost = true },
+                conflictMessage,
                 "Thông báo",
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Information);
+            }
+            if (haveAdded)
+                MessageBox.Show(new Form() { TopMost = true },
+                    "Các suất chiếu hợp lệ đã được thêm thành công",
+                    "Thông báo",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
             this.Close();
             this.DialogResult = DialogResult.OK;
         }
@@ -451,7 +516,7 @@ namespace Qlyrapchieuphim
 
                     try
                     {
-                        DateTime thoigian = DateTime.ParseExact(thoigianStr, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                        DateTime thoigian = DateTime.Parse(thoigianStr);//, "dd/MM/yyyy", CultureInfo.InvariantCulture);
 
                         // Trong CellClick ở form cha:
                         List<DateTime> danhSachNgayKhac = new List<DateTime>();
@@ -459,7 +524,7 @@ namespace Qlyrapchieuphim
                         {
                             if (i == e.RowIndex) continue; // bỏ qua dòng đang sửa
                             var val = dataGridView_FormThemSuatChieu_BangNgayChieu.Rows[i].Cells["Time"].Value;
-                            if (val != null && DateTime.TryParseExact(val.ToString(), "dd/MM/yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime dt))
+                            if (val != null && DateTime.TryParse(val.ToString(), out DateTime dt))//, "dd/MM/yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime dt))
                             {
                                 danhSachNgayKhac.Add(dt.Date);
                             }
@@ -512,7 +577,7 @@ namespace Qlyrapchieuphim
 
                     try
                     {
-                        DateTime thoigian = DateTime.ParseExact(thoigianStr, "hh:mm tt", CultureInfo.InvariantCulture);
+                        DateTime thoigian = DateTime.Parse(thoigianStr);//, "hh:mm tt", CultureInfo.InvariantCulture);
 
                         // Trong CellClick ở form cha:
                         List<DateTime> danhSachGioKhac = new List<DateTime>();
@@ -522,7 +587,7 @@ namespace Qlyrapchieuphim
                             if (i == e.RowIndex) continue; // bỏ qua dòng đang sửa
 
                             var val = dataGridView_FormThemSuatChieu_BangGioChieu.Rows[i].Cells["Time"].Value;
-                            if (val != null && DateTime.TryParseExact(val.ToString(), "hh:mm tt", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime dt))
+                            if (val != null && DateTime.TryParse(val.ToString(), out DateTime dt))//, "hh:mm tt", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime dt))
                             {
                                 danhSachGioKhac.Add(dt);
                             }

@@ -226,7 +226,7 @@ namespace Qlyrapchieuphim
                                         if (sqlex.Number == 547)
                                         {
                                             MessageBox.Show(
-                                                "Không thể xóa phim, đã có khách hàng đặt vé phim này.",
+                                                "Không thể xóa phim, đã có suất chiếu phim này.",
                                                 "Không thể xóa",
                                                 MessageBoxButtons.OK,
                                                 MessageBoxIcon.Warning);

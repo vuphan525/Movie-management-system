@@ -642,7 +642,7 @@ namespace Qlyrapchieuphim
 
 
 
-            
+
             UpdateLoyaltyPoints(); //Deduct loyalty points
 
 
@@ -707,6 +707,7 @@ namespace Qlyrapchieuphim
             chkAccumulate.Enabled = state;
             chkAccumulate.Visible = state;
             chkAccumulate.Checked = true;
+            lbl_Customer.Visible = state;
         }
         private void chkCustomer_Click(object sender, EventArgs e)
         {
@@ -728,15 +729,20 @@ namespace Qlyrapchieuphim
                     return;
                 }
                 //SQL
-                string SqlQuery = "SELECT LoyaltyPoints FROM Customers WHERE CustomerID = @CustomerID";
+                string SqlQuery = "SELECT LoyaltyPoints, FullName FROM Customers WHERE CustomerID = @CustomerID";
                 using (SqlConnection conn = Helper.getdbConnection())
                 using (SqlCommand cmd = new SqlCommand(SqlQuery, conn))
                 {
                     cmd.Parameters.Add("@CustomerID", SqlDbType.Int).Value = CustomerID;
                     conn.Open();
-                    cus_point = (int)cmd.ExecuteScalar();
-                    conn.Close();
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                        while (reader.Read())
+                        {
+                            cus_point = reader.GetInt32(0);
+                            lbl_Customer.Text = reader.GetString(1);
+                        }
                 }
+                    
                 ToggleCusPointButton(true);
             }
             else
