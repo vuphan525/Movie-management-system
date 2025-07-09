@@ -296,21 +296,74 @@ namespace Qlyrapchieuphim.FormEdit
             //    }
             //}
 
+            
+
             // Update values in selected row
             //Get Price from movieId
-            decimal price;
+            decimal price = 0;
             int movieId = int.Parse(Helper.SubStringBetween(cb_FormSuaSuatChieu_TenPhim.SelectedItem.ToString(), " (ID: ", ")"));
+            int movieDuration = 0;
+            bool found = false;
             using (SqlConnection conn = Helper.getdbConnection())
             using (SqlCommand cmd = conn.CreateCommand())
             {
-                string SqlQuery = "SELECT Price FROM Movies WHERE MovieID = @MovieID";
+                string SqlQuery = "SELECT Price, Duration FROM Movies WHERE MovieID = @MovieID";
                 cmd.CommandText = SqlQuery;
                 cmd.CommandType = CommandType.Text;
                 cmd.Parameters.Add("@MovieID", SqlDbType.Int).Value = movieId;
                 conn.Open();
-                price = (decimal)cmd.ExecuteScalar();
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        price = reader.GetDecimal(0);
+                        movieDuration = reader.GetInt32(1);
+                        found = true;
+                    }
+                }
             }
+            if (!found)
+            {
+                MessageBox.Show(
+                    "Lỗi khi thêm suất chiếu: Không tìm thấy phim đã chọn",
+                    "Lỗi dữ liệu",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                return;
+            }
+            //Get existing showtimes to compare
+            DataTable existingShowtimes = new DataTable();
+            using (SqlConnection conn = Helper.getdbConnection())
+            using (SqlDataAdapter adapter = new SqlDataAdapter())
+            {
+                string SqlQuery = "SELECT ShowtimeID, RoomID, Duration, StartTime " +
+                    "FROM Showtimes sts JOIN Movies mvs ON (sts.MovieID = mvs.MovieID) ";
+                using (SqlCommand cmd = new SqlCommand(SqlQuery, conn))
+                    adapter.SelectCommand = cmd;
+                conn.Open();
+                adapter.Fill(existingShowtimes);
+            }
+            DateTime fullTime = date_FormSuaSuatChieu_NgayChieu.Value + date_FormSuaSuatChieu_GioChieu.Value.TimeOfDay.StripMilliseconds();
+            int roomId = int.Parse(Helper.SubStringBetween(cb_FormSuaSuatChieu_PhongChieu.SelectedItem.ToString(), " (ID: ", ")"));
+            foreach (DataRow row in existingShowtimes.Rows)
+            {
+                int checkingDuration = (int)row["Duration"];
+                DateTime checkingStartTime = (DateTime)row["StartTime"];
+                int checkingRoomId = (int)row["RoomID"];
+                DateTime checkingEndTime = checkingStartTime.AddMinutes(checkingDuration);
+                DateTime movieEndTimePlusBuffer = fullTime.AddMinutes(movieDuration + 30);
 
+                if (roomId == checkingRoomId
+                    && checkingStartTime < movieEndTimePlusBuffer && fullTime < checkingEndTime.AddMinutes(30))
+                {
+                    MessageBox.Show(
+                        "Thời gian chiếu (+30 phút sau kết thúc) bị trùng với lịch chiếu khác.",
+                        "Thông báo",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+                    return;
+                }
+            }
 
             using (SqlConnection conn = Helper.getdbConnection())
             {
@@ -323,9 +376,8 @@ namespace Qlyrapchieuphim.FormEdit
                 using (SqlCommand cmd = new SqlCommand(SqlQuery, conn))
                 {
                     cmd.Parameters.Add("@MovieID", SqlDbType.Int).Value = movieId;
-                    int roomID = int.Parse(Helper.SubStringBetween(cb_FormSuaSuatChieu_PhongChieu.SelectedItem.ToString(), " (ID: ", ")"));
-                    cmd.Parameters.Add("@RoomID", SqlDbType.Int).Value = roomID;
-                    cmd.Parameters.Add("@StartTime", SqlDbType.DateTime).Value = date_FormSuaSuatChieu_NgayChieu.Value + date_FormSuaSuatChieu_GioChieu.Value.TimeOfDay.StripMilliseconds();
+                    cmd.Parameters.Add("@RoomID", SqlDbType.Int).Value = roomId;
+                    cmd.Parameters.Add("@StartTime", SqlDbType.DateTime).Value = fullTime;
                     cmd.Parameters.Add("@Price", SqlDbType.Decimal).Value = price;
                     cmd.Parameters.Add("@ShowtimeID", SqlDbType.Int).Value = id;
                     try
