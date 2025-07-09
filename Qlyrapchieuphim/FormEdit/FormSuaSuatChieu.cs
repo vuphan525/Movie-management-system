@@ -38,7 +38,7 @@ namespace Qlyrapchieuphim.FormEdit
 
             date_FormSuaSuatChieu_GioChieu.ShowUpDown = true;
             date_FormSuaSuatChieu_GioChieu.Format = DateTimePickerFormat.Custom;
-            date_FormSuaSuatChieu_GioChieu.CustomFormat = "hh:mm";
+            date_FormSuaSuatChieu_GioChieu.CustomFormat = "hh:mm tt";
 
             if (CheckRoom())
                 cb_FormSuaSuatChieu_PhongChieu.SelectedIndex = 0;
