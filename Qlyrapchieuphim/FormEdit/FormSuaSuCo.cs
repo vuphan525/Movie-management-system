@@ -30,6 +30,7 @@ namespace Qlyrapchieuphim.FormEdit
         {
             InitializeComponent ();
             this.id = id;
+            this.Paint += FormThemPhim_Paint;
         }
 
         private void FormSuaSuCo_Load(object sender, EventArgs e)

@@ -708,6 +708,7 @@ namespace Qlyrapchieuphim
             chkAccumulate.Visible = state;
             chkAccumulate.Checked = true;
             lbl_Customer.Visible = state;
+            lbl_Phone.Visible = state;
         }
         private void chkCustomer_Click(object sender, EventArgs e)
         {
@@ -729,7 +730,7 @@ namespace Qlyrapchieuphim
                     return;
                 }
                 //SQL
-                string SqlQuery = "SELECT LoyaltyPoints, FullName FROM Customers WHERE CustomerID = @CustomerID";
+                string SqlQuery = "SELECT LoyaltyPoints, FullName, Phone FROM Customers WHERE CustomerID = @CustomerID";
                 using (SqlConnection conn = Helper.getdbConnection())
                 using (SqlCommand cmd = new SqlCommand(SqlQuery, conn))
                 {
@@ -739,7 +740,8 @@ namespace Qlyrapchieuphim
                         while (reader.Read())
                         {
                             cus_point = reader.GetInt32(0);
-                            lbl_Customer.Text = reader.GetString(1);
+                            lbl_Customer.Text = "Khách hàng: " + reader.GetString(1);
+                            lbl_Phone.Text = "Số điện thoại khách hàng: " + reader.GetString(2);
                         }
                 }
                     

@@ -28,6 +28,7 @@ namespace Qlyrapchieuphim.FormEdit
         {
             InitializeComponent();
             Id = id;
+            this.Paint += FormThemPhim_Paint;
         }
         SqlConnection conn = null;
         private void guna2Button2_Click(object sender, EventArgs e)
