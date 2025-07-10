@@ -739,7 +739,7 @@ namespace Qlyrapchieuphim
                         while (reader.Read())
                         {
                             cus_point = reader.GetInt32(0);
-                            lbl_Customer.Text = reader.GetString(1);
+                            lbl_Customer.Text = "Khách hàng: " + reader.GetString(1);
                         }
                 }
                     

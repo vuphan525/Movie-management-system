@@ -29,6 +29,7 @@ namespace Qlyrapchieuphim.FormEdit
         {
             InitializeComponent();
             this.id = id;
+            this.Paint += FormThemPhim_Paint;
         }
 
         private void guna2Button2_Click(object sender, EventArgs e)

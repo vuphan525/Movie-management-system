@@ -112,7 +112,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(268, 326);
+            this.label11.Location = new System.Drawing.Point(272, 326);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(45, 15);
             this.label11.TabIndex = 129;
@@ -138,7 +138,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(268, 45);
+            this.label10.Location = new System.Drawing.Point(272, 45);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(94, 15);
             this.label10.TabIndex = 125;
@@ -168,7 +168,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(271, 183);
+            this.label9.Location = new System.Drawing.Point(270, 181);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(41, 15);
             this.label9.TabIndex = 122;
@@ -197,14 +197,14 @@
             this.lbl_FormSuaPhim_MoTa.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.lbl_FormSuaPhim_MoTa.ForeColor = System.Drawing.Color.Black;
             this.lbl_FormSuaPhim_MoTa.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.lbl_FormSuaPhim_MoTa.Location = new System.Drawing.Point(273, 202);
+            this.lbl_FormSuaPhim_MoTa.Location = new System.Drawing.Point(273, 199);
             this.lbl_FormSuaPhim_MoTa.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.lbl_FormSuaPhim_MoTa.Multiline = true;
             this.lbl_FormSuaPhim_MoTa.Name = "lbl_FormSuaPhim_MoTa";
             this.lbl_FormSuaPhim_MoTa.PasswordChar = '\0';
             this.lbl_FormSuaPhim_MoTa.PlaceholderText = "";
             this.lbl_FormSuaPhim_MoTa.SelectedText = "";
-            this.lbl_FormSuaPhim_MoTa.Size = new System.Drawing.Size(250, 134);
+            this.lbl_FormSuaPhim_MoTa.Size = new System.Drawing.Size(250, 106);
             this.lbl_FormSuaPhim_MoTa.TabIndex = 121;
             // 
             // lbl_FormSuaPhim_ThoiLuong
@@ -334,7 +334,7 @@
             this.btn_FormSuaPhim_ThemPoster.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(61)))), ((int)(((byte)(204)))));
             this.btn_FormSuaPhim_ThemPoster.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_FormSuaPhim_ThemPoster.ForeColor = System.Drawing.Color.White;
-            this.btn_FormSuaPhim_ThemPoster.Location = new System.Drawing.Point(337, 525);
+            this.btn_FormSuaPhim_ThemPoster.Location = new System.Drawing.Point(345, 525);
             this.btn_FormSuaPhim_ThemPoster.Name = "btn_FormSuaPhim_ThemPoster";
             this.btn_FormSuaPhim_ThemPoster.Size = new System.Drawing.Size(108, 36);
             this.btn_FormSuaPhim_ThemPoster.TabIndex = 115;
