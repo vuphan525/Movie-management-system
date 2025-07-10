@@ -34,9 +34,9 @@
             this.apdung = new Guna.UI2.WinForms.Guna2Button();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.lbl_Customer = new System.Windows.Forms.Label();
             this.chkAccumulate = new System.Windows.Forms.CheckBox();
             this.chkCustomer = new System.Windows.Forms.CheckBox();
+            this.lbl_Customer = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.grpLoaiVe = new System.Windows.Forms.GroupBox();
             this.treem = new Guna.UI2.WinForms.Guna2TextBox();
@@ -55,6 +55,8 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.spButton = new Guna.UI2.WinForms.Guna2Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.lbl_Phone = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
@@ -202,16 +204,14 @@
             this.guna2Button143 = new Guna.UI2.WinForms.Guna2Button();
             this.picFilm = new System.Windows.Forms.PictureBox();
             this.lblRoom = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
             this.grpLoaiVe.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.panel2.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picFilm)).BeginInit();
-            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2Button2
@@ -299,17 +299,6 @@
             this.groupBox1.Text = "Voucher:";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // lbl_Customer
-            // 
-            this.lbl_Customer.AutoSize = true;
-            this.lbl_Customer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Customer.Location = new System.Drawing.Point(6, 47);
-            this.lbl_Customer.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbl_Customer.Name = "lbl_Customer";
-            this.lbl_Customer.Size = new System.Drawing.Size(133, 20);
-            this.lbl_Customer.TabIndex = 15;
-            this.lbl_Customer.Text = "{Tên khách hàng}";
-            // 
             // chkAccumulate
             // 
             this.chkAccumulate.AutoSize = true;
@@ -334,6 +323,17 @@
             this.chkCustomer.Text = "Khách Hàng Thành Viên";
             this.chkCustomer.UseVisualStyleBackColor = true;
             this.chkCustomer.Click += new System.EventHandler(this.chkCustomer_Click);
+            // 
+            // lbl_Customer
+            // 
+            this.lbl_Customer.AutoSize = true;
+            this.lbl_Customer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Customer.Location = new System.Drawing.Point(6, 47);
+            this.lbl_Customer.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_Customer.Name = "lbl_Customer";
+            this.lbl_Customer.Size = new System.Drawing.Size(133, 20);
+            this.lbl_Customer.TabIndex = 15;
+            this.lbl_Customer.Text = "{Tên khách hàng}";
             // 
             // label3
             // 
@@ -575,6 +575,29 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(750, 281);
             this.panel1.TabIndex = 286;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.lbl_Phone);
+            this.groupBox2.Controls.Add(this.lbl_Customer);
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.Location = new System.Drawing.Point(0, 148);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(343, 127);
+            this.groupBox2.TabIndex = 20;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Thông tin khách hàng:";
+            // 
+            // lbl_Phone
+            // 
+            this.lbl_Phone.AutoSize = true;
+            this.lbl_Phone.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Phone.Location = new System.Drawing.Point(6, 91);
+            this.lbl_Phone.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_Phone.Name = "lbl_Phone";
+            this.lbl_Phone.Size = new System.Drawing.Size(131, 20);
+            this.lbl_Phone.TabIndex = 16;
+            this.lbl_Phone.Text = "{Sdt khách hàng}";
             // 
             // panel2
             // 
@@ -3878,29 +3901,6 @@
             this.lblRoom.TabIndex = 338;
             this.lblRoom.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(6, 91);
-            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(131, 20);
-            this.label10.TabIndex = 16;
-            this.label10.Text = "{Sdt khách hàng}";
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.label10);
-            this.groupBox2.Controls.Add(this.lbl_Customer);
-            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(0, 148);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(343, 127);
-            this.groupBox2.TabIndex = 20;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Thông tin khách hàng:";
-            // 
             // formbanve
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3929,12 +3929,12 @@
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             this.panel1.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picFilm)).EndInit();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -4114,7 +4114,7 @@
         private System.Windows.Forms.CheckBox chkAccumulate;
         private Guna.UI2.WinForms.Guna2Button spButton;
         private System.Windows.Forms.Label lbl_Customer;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label lbl_Phone;
         private System.Windows.Forms.GroupBox groupBox2;
     }
 }
