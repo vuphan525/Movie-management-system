@@ -44,7 +44,12 @@ namespace Qlyrapchieuphim
             if (dgvNgay.Columns.Count == 0)
             {
                 dgvNgay.Columns.Add("STT", "STT");
-                dgvNgay.Columns.Add("Time", "Ngày chiếu");
+
+                var timeColumn = new DataGridViewTextBoxColumn();
+                timeColumn.Name = "Time";
+                timeColumn.HeaderText = "Ngày chiếu";
+                timeColumn.ValueType = typeof(DateTime); // ✅ Thêm dòng này
+                dgvNgay.Columns.Add(timeColumn);
 
                 var actionColumn = new DataGridViewTextBoxColumn();
                 actionColumn.Name = "Actions";
@@ -512,11 +517,11 @@ namespace Qlyrapchieuphim
                 if (clickX >= editX && clickX <= editX + iconSize)
                 {
                     // Sửa
-                    string thoigianStr = dataGridView_FormThemSuatChieu_BangNgayChieu.Rows[e.RowIndex].Cells["Time"].Value.ToString();
-
+                    //string thoigianStr = dataGridView_FormThemSuatChieu_BangNgayChieu.Rows[e.RowIndex].Cells["Time"].Value.ToString();
                     try
                     {
-                        DateTime thoigian = DateTime.Parse(thoigianStr);//, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                        //DateTime thoigian = DateTime.Parse(thoigianStr);//, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                        DateTime thoigian = (DateTime)dataGridView_FormThemSuatChieu_BangNgayChieu.Rows[e.RowIndex].Cells["Time"].Value;
 
                         // Trong CellClick ở form cha:
                         List<DateTime> danhSachNgayKhac = new List<DateTime>();
@@ -524,7 +529,7 @@ namespace Qlyrapchieuphim
                         {
                             if (i == e.RowIndex) continue; // bỏ qua dòng đang sửa
                             var val = dataGridView_FormThemSuatChieu_BangNgayChieu.Rows[i].Cells["Time"].Value;
-                            if (val != null && DateTime.TryParse(val.ToString(), out DateTime dt))//, "dd/MM/yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime dt))
+                            if (val is DateTime dt)
                             {
                                 danhSachNgayKhac.Add(dt.Date);
                             }
@@ -534,12 +539,13 @@ namespace Qlyrapchieuphim
                         if (f.ShowDialog() == DialogResult.OK)
                         {
                             DateTime thoiGianMoi = f.KetQuaThoiGian;
-                            dataGridView_FormThemSuatChieu_BangNgayChieu.Rows[e.RowIndex].Cells["Time"].Value = thoiGianMoi.ToString("dd/MM/yyyy");
+                            //dataGridView_FormThemSuatChieu_BangNgayChieu.Rows[e.RowIndex].Cells["Time"].Value = thoiGianMoi.ToString("dd/MM/yyyy");
+                            dataGridView_FormThemSuatChieu_BangNgayChieu.Rows[e.RowIndex].Cells["Time"].Value = thoiGianMoi;
                         }
                     }
-                    catch (FormatException)
+                    catch (InvalidCastException)
                     {
-                        MessageBox.Show("Định dạng ngày không hợp lệ.");
+                        MessageBox.Show("Dữ liệu ngày không đúng kiểu DateTime.");
                     }
                 }
                 else if (clickX >= deleteX && clickX <= deleteX + iconSize)
@@ -632,12 +638,25 @@ namespace Qlyrapchieuphim
                 return;
             }
 
-            string ngay = ngayChon.ToString("dd/MM/yyyy");
+            //string ngay = ngayChon.ToString("dd/MM/yyyy");
+
+            //// Kiểm tra xem ngày đã tồn tại trong DataGridView chưa
+            //foreach (DataGridViewRow row in dataGridView_FormThemSuatChieu_BangNgayChieu.Rows)
+            //{
+            //    if (row.Cells["Time"].Value != null && row.Cells["Time"].Value.ToString() == ngay)
+            //    {
+            //        MessageBox.Show("Ngày chiếu này đã được thêm rồi.", "Trùng ngày", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //        return;
+            //    }
+            //}
+
+            //string id = (dataGridView_FormThemSuatChieu_BangNgayChieu.Rows.Count + 1).ToString();
+            //dataGridView_FormThemSuatChieu_BangNgayChieu.Rows.Add(id, ngay, "");
 
             // Kiểm tra xem ngày đã tồn tại trong DataGridView chưa
             foreach (DataGridViewRow row in dataGridView_FormThemSuatChieu_BangNgayChieu.Rows)
             {
-                if (row.Cells["Time"].Value != null && row.Cells["Time"].Value.ToString() == ngay)
+                if (row.Cells["Time"].Value is DateTime dt && dt.Date == ngayChon)
                 {
                     MessageBox.Show("Ngày chiếu này đã được thêm rồi.", "Trùng ngày", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;
@@ -645,7 +664,7 @@ namespace Qlyrapchieuphim
             }
 
             string id = (dataGridView_FormThemSuatChieu_BangNgayChieu.Rows.Count + 1).ToString();
-            dataGridView_FormThemSuatChieu_BangNgayChieu.Rows.Add(id, ngay, "");
+            dataGridView_FormThemSuatChieu_BangNgayChieu.Rows.Add(id, ngayChon, ""); // ✅ Gán DateTime gốc
         }
 
         private void btn_FormThemSuatChieu_ThemGioChieu_Click(object sender, EventArgs e)
@@ -817,6 +836,18 @@ namespace Qlyrapchieuphim
                     cmd.Parameters.Add("@movieId", SqlDbType.Int).Value = movieId;
                     conn.Open();
                     return (int)cmd.ExecuteScalar();
+                }
+            }
+        }
+
+        private void dataGridView_FormThemSuatChieu_BangNgayChieu_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (dataGridView_FormThemSuatChieu_BangNgayChieu.Columns[e.ColumnIndex].Name == "Time")
+            {
+                if (e.Value is DateTime dt)
+                {
+                    e.Value = dt.ToString("dd/MM/yyyy");
+                    e.FormattingApplied = true;
                 }
             }
         }

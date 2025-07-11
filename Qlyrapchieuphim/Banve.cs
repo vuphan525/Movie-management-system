@@ -218,29 +218,39 @@ namespace Qlyrapchieuphim
                     if (!row.IsNewRow)
                     {
                         int index = row.Index;
-                        string dateStr = dt.Rows[index]["StartTime"].ToString();
+                        //    string dateStr = dt.Rows[index]["StartTime"].ToString();
 
-                        // Danh sách các định dạng có thể xảy ra (rất linh hoạt)
-                        string[] formats = {
-                    "d/M/yyyy h:mm tt",
-                    "dd/MM/yyyy hh:mm tt",
-                    "d/M/yyyy h:mm:ss tt",
-                    "dd/MM/yyyy hh:mm:ss tt",
-                    "M/d/yyyy h:mm tt",
-                    "MM/dd/yyyy hh:mm tt",
-                    "M/d/yyyy h:mm:ss tt",
-                    "MM/dd/yyyy hh:mm:ss tt",
-                    "dd/MM/yyyy HH:mm:ss", "dd/MM/yyyy HH:mm:ss tt"};
+                        //    // Danh sách các định dạng có thể xảy ra (rất linh hoạt)
+                        //    string[] formats = {
+                        //"d/M/yyyy h:mm tt",
+                        //"dd/MM/yyyy hh:mm tt",
+                        //"d/M/yyyy h:mm:ss tt",
+                        //"dd/MM/yyyy hh:mm:ss tt",
+                        //"M/d/yyyy h:mm tt",
+                        //"MM/dd/yyyy hh:mm tt",
+                        //"M/d/yyyy h:mm:ss tt",
+                        //"MM/dd/yyyy hh:mm:ss tt",
+                        //"dd/MM/yyyy HH:mm:ss", "dd/MM/yyyy HH:mm:ss tt"};
 
-                        if (!DateTime.TryParseExact(dateStr, formats, CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime dateFromRow))
+                        //    if (!DateTime.TryParseExact(dateStr, formats, CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime dateFromRow))
+                        //    {
+                        //        MessageBox.Show("Không thể đọc ngày chiếu: " + dateStr, "Lỗi dữ liệu", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        //        row.Visible = false; // Ẩn dòng lỗi
+                        //        continue;
+                        //    }
+
+                        //    // So sánh phần ngày
+                        //    row.Visible = (dateFromRow.Date == selectedDate);
+
+                        if (dt.Rows[index]["StartTime"] is DateTime dateFromRow)
                         {
-                            MessageBox.Show("Không thể đọc ngày chiếu: " + dateStr, "Lỗi dữ liệu", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            row.Visible = false; // Ẩn dòng lỗi
-                            continue;
+                            row.Visible = (dateFromRow.Date == selectedDate);
                         }
-
-                        // So sánh phần ngày
-                        row.Visible = (dateFromRow.Date == selectedDate);
+                        else
+                        {
+                            MessageBox.Show("Không thể đọc ngày chiếu: " + dt.Rows[index]["StartTime"], "Lỗi dữ liệu", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            row.Visible = false;
+                        }
                     }
                 }
 

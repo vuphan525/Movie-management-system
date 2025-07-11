@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -19,6 +21,12 @@ namespace Qlyrapchieuphim
         public form_SuaNgayChieu(DateTime d, List<DateTime> danhSachNgayKhac)
         {
             InitializeComponent();
+
+            // Thiết lập culture cho đúng định dạng dd/MM/yyyy
+            CultureInfo culture = new CultureInfo("vi-VN");
+            Thread.CurrentThread.CurrentCulture = culture;
+            Thread.CurrentThread.CurrentUICulture = culture;
+
             this.selectedTime = d;
             this.danhSachNgayDaCo = danhSachNgayKhac;
         }

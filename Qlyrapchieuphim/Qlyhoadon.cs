@@ -20,6 +20,7 @@ namespace Qlyrapchieuphim
         {
             LoadDataGridView();
 
+            timkiem.Value = DateTime.Now;
             timkiem.Format = DateTimePickerFormat.Custom;
             timkiem.CustomFormat = "dd/MM/yyyy";
             timkiem.Visible = false;

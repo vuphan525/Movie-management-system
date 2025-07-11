@@ -332,6 +332,7 @@
             this.dataGridView_FormThemSuatChieu_BangNgayChieu.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dataGridView_FormThemSuatChieu_BangNgayChieu.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.dataGridView_FormThemSuatChieu_BangNgayChieu.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.date_FormThemSuatChieu_BangNgayChieu_CellClick);
+            this.dataGridView_FormThemSuatChieu_BangNgayChieu.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView_FormThemSuatChieu_BangNgayChieu_CellFormatting);
             this.dataGridView_FormThemSuatChieu_BangNgayChieu.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.date_FormThemSuatChieu_BangNgayChieu_CellPainting);
             // 
             // dataGridView_FormThemSuatChieu_BangGioChieu
