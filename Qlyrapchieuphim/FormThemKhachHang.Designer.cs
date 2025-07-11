@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lbl_FormThemKH_Email = new Guna.UI2.WinForms.Guna2TextBox();
             this.lbl_FormThemKH_DiemTichLuy = new Guna.UI2.WinForms.Guna2TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -40,6 +41,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.btn_Refresh = new Guna.UI2.WinForms.Guna2Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_FormThemKH_Email
@@ -64,6 +67,7 @@
             this.lbl_FormThemKH_Email.SelectedText = "";
             this.lbl_FormThemKH_Email.Size = new System.Drawing.Size(423, 41);
             this.lbl_FormThemKH_Email.TabIndex = 96;
+            this.lbl_FormThemKH_Email.TextChanged += new System.EventHandler(this.lbl_FormThemKH_Email_TextChanged);
             // 
             // lbl_FormThemKH_DiemTichLuy
             // 
@@ -243,6 +247,10 @@
             this.btn_Refresh.Text = "Làm mới";
             this.btn_Refresh.Click += new System.EventHandler(this.btn_Refresh_Click);
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // FormThemKhachHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -267,6 +275,7 @@
             this.ShowInTaskbar = false;
             this.Text = "FormThemKhachHang";
             this.Load += new System.EventHandler(this.FormThemKhachHang_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -286,5 +295,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2Button btn_Refresh;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

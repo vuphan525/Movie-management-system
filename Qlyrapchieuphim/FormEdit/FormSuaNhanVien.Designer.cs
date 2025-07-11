@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label11 = new System.Windows.Forms.Label();
             this.cb_FormSuaNV_ChucVu = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -48,6 +49,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.btn_Refresh = new Guna.UI2.WinForms.Guna2Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // label11
@@ -77,7 +80,7 @@
             "staff",
             "admin"});
             this.cb_FormSuaNV_ChucVu.Location = new System.Drawing.Point(316, 255);
-            this.cb_FormSuaNV_ChucVu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cb_FormSuaNV_ChucVu.Margin = new System.Windows.Forms.Padding(4);
             this.cb_FormSuaNV_ChucVu.Name = "cb_FormSuaNV_ChucVu";
             this.cb_FormSuaNV_ChucVu.Size = new System.Drawing.Size(241, 36);
             this.cb_FormSuaNV_ChucVu.TabIndex = 110;
@@ -158,7 +161,7 @@
             this.date_FormSuaNV_NgaySinh.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.date_FormSuaNV_NgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.date_FormSuaNV_NgaySinh.Location = new System.Drawing.Point(16, 252);
-            this.date_FormSuaNV_NgaySinh.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.date_FormSuaNV_NgaySinh.Margin = new System.Windows.Forms.Padding(4);
             this.date_FormSuaNV_NgaySinh.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.date_FormSuaNV_NgaySinh.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.date_FormSuaNV_NgaySinh.Name = "date_FormSuaNV_NgaySinh";
@@ -210,6 +213,7 @@
             this.lbl_FormSuaNV_Email.SelectedText = "";
             this.lbl_FormSuaNV_Email.Size = new System.Drawing.Size(240, 38);
             this.lbl_FormSuaNV_Email.TabIndex = 102;
+            this.lbl_FormSuaNV_Email.TextChanged += new System.EventHandler(this.lbl_FormSuaNV_Email_TextChanged);
             // 
             // label6
             // 
@@ -304,7 +308,7 @@
             this.them.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.them.ForeColor = System.Drawing.Color.White;
             this.them.Location = new System.Drawing.Point(377, 527);
-            this.them.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.them.Margin = new System.Windows.Forms.Padding(4);
             this.them.Name = "them";
             this.them.Size = new System.Drawing.Size(180, 44);
             this.them.TabIndex = 97;
@@ -373,12 +377,16 @@
             this.btn_Refresh.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Refresh.ForeColor = System.Drawing.Color.White;
             this.btn_Refresh.Location = new System.Drawing.Point(141, 527);
-            this.btn_Refresh.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_Refresh.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Refresh.Name = "btn_Refresh";
             this.btn_Refresh.Size = new System.Drawing.Size(180, 44);
             this.btn_Refresh.TabIndex = 113;
             this.btn_Refresh.Text = "Làm mới";
             this.btn_Refresh.Click += new System.EventHandler(this.btn_Refresh_Click);
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // FormSuaNhanVien
             // 
@@ -407,12 +415,13 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormSuaNhanVien";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FormSuaNhanVien";
             this.Load += new System.EventHandler(this.FormSuaNhanVien_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -440,5 +449,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2Button btn_Refresh;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

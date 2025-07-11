@@ -165,7 +165,28 @@ namespace Qlyrapchieuphim
             lbl_FormThemKH_SDT.Clear();
             this.Refresh();
         }
-
         
+
+        private void lbl_FormThemKH_Email_TextChanged(object sender, EventArgs e)
+        {
+            string email = lbl_FormThemKH_Email.Text;
+
+            if (string.IsNullOrWhiteSpace(email))
+            {
+                errorProvider1.SetError(lbl_FormThemKH_Email, "Vui lòng nhập email");
+                return;
+            }
+
+            try
+            {
+                var addr = new System.Net.Mail.MailAddress(email);
+                errorProvider1.SetError(lbl_FormThemKH_Email, ""); // Email hợp lệ, xóa lỗi
+            }
+            catch (FormatException)
+            {
+                errorProvider1.SetError(lbl_FormThemKH_Email, "Email không hợp lệ");
+            }
+        }
+
     }
 }

@@ -271,5 +271,28 @@ namespace Qlyrapchieuphim.FormEdit
         {
 
         }
+
+        private void lbl_FormSuaNV_Email_TextChanged(object sender, EventArgs e)
+        {
+            string email = lbl_FormSuaNV_Email.Text;
+
+            if (string.IsNullOrWhiteSpace(email))
+            {
+                errorProvider1.SetError(lbl_FormSuaNV_Email, "Vui lòng nhập email");
+            }
+            else
+            {
+                try
+                {
+                    var mail = new System.Net.Mail.MailAddress(email);
+                    errorProvider1.SetError(lbl_FormSuaNV_Email, ""); 
+                }
+                catch
+                {
+                    errorProvider1.SetError(lbl_FormSuaNV_Email, "Email không hợp lệ");
+                }
+            }
+        }
+
     }
 }
