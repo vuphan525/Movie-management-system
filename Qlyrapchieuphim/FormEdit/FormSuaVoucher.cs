@@ -71,9 +71,13 @@ namespace Qlyrapchieuphim.FormEdit
             if (string.IsNullOrWhiteSpace(lbl_FormSuaVoucher_MaPhatHanh.Text) ||
                 string.IsNullOrWhiteSpace(lbl_FormSuaVoucher_DiscountPercent.Text))
 
-
             {
                 MessageBox.Show("Vui lòng điền đầy đủ thông tin.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (!double.TryParse(lbl_FormSuaVoucher_SoLuong.Text, out double soLuong) || soLuong <= 0)
+            {
+                MessageBox.Show("Số lượng phải là một số nguyên dương.", "Lỗi nhập liệu", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             double mgiam;
@@ -87,7 +91,11 @@ namespace Qlyrapchieuphim.FormEdit
                     MessageBoxIcon.Warning);
                 return;
             }
-
+            if (!double.TryParse(lbl_FormSuaVoucher_HoaDonToiThieu.Text, out double minOrderValue) || minOrderValue < 0)
+            {
+                MessageBox.Show("Hóa đơn tối thiểu phải là một số không âm.", "Lỗi nhập liệu", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             //chuyển số được nhập từ dạng 0 - 100 sang 0 - 1
             mgiam /= 100;
             // Update values in selected row

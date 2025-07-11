@@ -71,6 +71,11 @@ namespace Qlyrapchieuphim
                 MessageBox.Show("Vui lòng điền đầy đủ thông tin.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+            if (!double.TryParse(lbl_FormThemVoucher_SoLuong.Text, out double soLuong) || soLuong <= 0)
+            {
+                MessageBox.Show("Số lượng phải là một số nguyên dương.", "Lỗi nhập liệu", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             double mgia;
             if (!double.TryParse(lbl_FormThemVoucher_DiscountPercent.Text, out mgia))
             {
@@ -84,6 +89,11 @@ namespace Qlyrapchieuphim
             }
             //chuyển số được nhập từ dạng 0 - 100 sang 0 - 1
             mgia /= 100;
+            if (!double.TryParse(lbl_FormThemVoucher_HoaDonToiThieu.Text, out double minOrderValue) || minOrderValue < 0)
+            {
+                MessageBox.Show("Hóa đơn tối thiểu phải là một số không âm.", "Lỗi nhập liệu", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             //SQL section
 
             string SqlQuery = "INSERT INTO Vouchers VALUES (@Code, @Description, @DiscountAmount, @DiscountPercent, @ExpiryDate, @Quantity, @MinOrderValue, @IsActive)";
