@@ -107,15 +107,16 @@ namespace Qlyrapchieuphim.FormEdit
 
         private void btn_Refresh_Click(object sender, EventArgs e)
         {
-            lbl_FormSuaNV_Email.Clear();
-            lbl_FormSuaNV_HoTen.Clear();
-            lbl_FormSuaNV_SDT.Clear();
-            date_FormSuaNV_NgaySinh.Value = DateTime.Today.AddYears(-19);
-            lbl_FormSuaNV_MaNV.Clear();
-            cb_FormSuaNV_ChucVu.SelectedIndex = -1;
-            lbl_FormSuaNV_Username.Clear();
-            lbl_FormSuaNV_Password.Clear();
-            this.Refresh();
+            //lbl_FormSuaNV_Email.Clear();
+            //lbl_FormSuaNV_HoTen.Clear();
+            //lbl_FormSuaNV_SDT.Clear();
+            //date_FormSuaNV_NgaySinh.Value = DateTime.Today.AddYears(-19);
+            //lbl_FormSuaNV_MaNV.Clear();
+            //cb_FormSuaNV_ChucVu.SelectedIndex = -1;
+            //lbl_FormSuaNV_Username.Clear();
+            //lbl_FormSuaNV_Password.Clear();
+            //this.Refresh();
+            LoadDataById();
         }
 
         private void them_Click(object sender, EventArgs e)

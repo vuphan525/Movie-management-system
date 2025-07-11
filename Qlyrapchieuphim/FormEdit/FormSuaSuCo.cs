@@ -60,16 +60,18 @@ namespace Qlyrapchieuphim.FormEdit
 
         private void btn_Refresh_Click(object sender, EventArgs e)
         {
-            lbl_FormSuaSuCo_MaSuCo.Clear();
-            lbl_FormSuaSuCo_TenSuCo.Clear();
-            cb_FormSuaSuCo_TinhTrang.SelectedIndex = -1;
-            lbl_FormSuaSuCo_HuongGiaiQuyet.Clear();
-            date_FormSuaSuCo_NgayTiepNhan.Value = DateTime.Today;
-            lbl_FormSuaSuCo_MoTa.Clear();
+            //lbl_FormSuaSuCo_MaSuCo.Clear();
+            //lbl_FormSuaSuCo_TenSuCo.Clear();
+            //cb_FormSuaSuCo_TinhTrang.SelectedIndex = -1;
+            //lbl_FormSuaSuCo_HuongGiaiQuyet.Clear();
+            //date_FormSuaSuCo_NgayTiepNhan.Value = DateTime.Today;
+            //lbl_FormSuaSuCo_MoTa.Clear();
 
-            //if (CheckUsr()) // <- GỌI Ở ĐÂY
-            //    manv.SelectedIndex = 0;
-            this.Refresh();
+            ////if (CheckUsr()) // <- GỌI Ở ĐÂY
+            ////    manv.SelectedIndex = 0;
+            //this.Refresh();
+
+            LoadThongTinSuCo();
         }
         private bool CheckUsr()
         {

@@ -58,11 +58,13 @@ namespace Qlyrapchieuphim.FormEdit
 
         private void btn_Refresh_Click(object sender, EventArgs e)
         {
-            lbl_FormSuaPhongChieu_MaPhong.Clear();
-            lbl_FormSuaPhongChieu_TenPhong.Clear();
-            lbl_FormSuaPhongChieu_SoGhe.Clear();
-            cb_FormSuaPhongChieu_DinhDang.SelectedIndex = -1;
-            this.Refresh();
+            //lbl_FormSuaPhongChieu_MaPhong.Clear();
+            //lbl_FormSuaPhongChieu_TenPhong.Clear();
+            //lbl_FormSuaPhongChieu_SoGhe.Clear();
+            //cb_FormSuaPhongChieu_DinhDang.SelectedIndex = -1;
+            //this.Refresh();
+
+            LoadRoomData(id);
         }
 
         private void CapNhat_Click(object sender, EventArgs e)

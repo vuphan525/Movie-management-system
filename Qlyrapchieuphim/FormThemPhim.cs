@@ -265,10 +265,10 @@ namespace Qlyrapchieuphim
             lbl_FormThemPhim_TenPhim.Clear();
             cb_FormThemPhim_TheLoai.SelectedIndex = -1;
             lbl_FormThemPhim_ThoiLuong.Clear();
-            cb_FormThemPhim_TinhTrang.SelectedIndex = -1;
+            //cb_FormThemPhim_TinhTrang.SelectedIndex = -1;
             date_FormThemPhim_NgayNhap.Value = DateTime.Today;
             date_FormThemPhim_NgayPhatHanh.Value = DateTime.Today;
-            cb_FormThemPhim_NhaPhatHanh.SelectedItem.ToString();
+            cb_FormThemPhim_NhaPhatHanh.SelectedIndex = 0;
             lbl_FormThemPhim_MoTa.Clear();
             pictureBox_FormThemPhim_Poster.Image = null;
             this.Refresh();

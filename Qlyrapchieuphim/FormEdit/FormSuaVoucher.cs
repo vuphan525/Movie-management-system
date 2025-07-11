@@ -53,15 +53,17 @@ namespace Qlyrapchieuphim.FormEdit
 
         private void btn_Refresh_Click(object sender, EventArgs e)
         {
-            lbl_FormSuaVoucher_MaPhatHanh.Clear();
+            //lbl_FormSuaVoucher_MaPhatHanh.Clear();
 
-            lbl_FormSuaVoucher_DiscountPercent.Clear();
-            date_FormSuaVoucher_NgayHetHan.Value = DateTime.Today.AddDays(1);
-            lbl_FormSuaVoucher_SoLuong.Clear();
-            lbl_FormSuaVoucher_HoaDonToiThieu.Clear();
-            cb_FormSuaVoucher_TrangThai.SelectedIndex = -1;
-            lbl_FormSuaVoucher_MoTa.Clear();
-            this.Refresh();
+            //lbl_FormSuaVoucher_DiscountPercent.Clear();
+            //date_FormSuaVoucher_NgayHetHan.Value = DateTime.Today.AddDays(1);
+            //lbl_FormSuaVoucher_SoLuong.Clear();
+            //lbl_FormSuaVoucher_HoaDonToiThieu.Clear();
+            //cb_FormSuaVoucher_TrangThai.SelectedIndex = -1;
+            //lbl_FormSuaVoucher_MoTa.Clear();
+            //this.Refresh();
+
+            LoadData();
         }
 
         private void them_Click(object sender, EventArgs e)

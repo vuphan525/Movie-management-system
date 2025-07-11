@@ -186,12 +186,14 @@ namespace Qlyrapchieuphim.FormEdit
         }
         private void btn_Refresh_Click(object sender, EventArgs e)
         {
-            lbl_FormSuaSuatChieu_MaSuatChieu.Clear();
-            cb_FormSuaSuatChieu_PhongChieu.SelectedIndex = -1;
-            cb_FormSuaSuatChieu_TenPhim.SelectedIndex = -1;
-            date_FormSuaSuatChieu_NgayChieu.Value = DateTime.Today.AddDays(1);
-            date_FormSuaSuatChieu_GioChieu.Value = DateTime.Now.AddHours(1);
-            this.Refresh();
+            //lbl_FormSuaSuatChieu_MaSuatChieu.Clear();
+            //cb_FormSuaSuatChieu_PhongChieu.SelectedIndex = -1;
+            //cb_FormSuaSuatChieu_TenPhim.SelectedIndex = -1;
+            //date_FormSuaSuatChieu_NgayChieu.Value = DateTime.Today.AddDays(1);
+            //date_FormSuaSuatChieu_GioChieu.Value = DateTime.Now.AddHours(1);
+            //this.Refresh();
+
+            LoadThongTinSuatChieu();
         }
 
         private void LoadThongTinSuatChieu()

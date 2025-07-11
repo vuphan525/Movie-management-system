@@ -301,16 +301,19 @@ namespace Qlyrapchieuphim.FormEdit
         private void btn_Refresh_Click(object sender, EventArgs e)
         {
 
-            lbl_FormSuaSanPham_MaSP.Clear();
-            lbl_FormSuaSanPham_TenSP.Clear();
-            cb_FormSuaSanPham_LoaiSP.SelectedIndex = -1;
-            lbl_FormSuaSanPham_GiaTien.Clear();
-            lbl_FormSuaSanPham_SoLuong.Clear();
-            lbl_FormSuaSanPham_NhaCungCap.Clear();
-            date_FormSuaSanPham_NgayNhap.Value = DateTime.Today;
-            lbl_FormSuaSanPham_MoTa.Clear();
-            pictureBox_FormSuaSanPham_Poster.Image = null;
-            this.Refresh();
+            //lbl_FormSuaSanPham_MaSP.Clear();
+            //lbl_FormSuaSanPham_TenSP.Clear();
+            //cb_FormSuaSanPham_LoaiSP.SelectedIndex = -1;
+            //lbl_FormSuaSanPham_GiaTien.Clear();
+            //lbl_FormSuaSanPham_SoLuong.Clear();
+            //lbl_FormSuaSanPham_NhaCungCap.Clear();
+            //date_FormSuaSanPham_NgayNhap.Value = DateTime.Today;
+            //lbl_FormSuaSanPham_MoTa.Clear();
+            //pictureBox_FormSuaSanPham_Poster.Image = null;
+            //this.Refresh();
+
+
+            LoadSanPhamByID(id);
         }
 
         private void btn_FormSuaSanPham_ThemPoster_Click(object sender, EventArgs e)

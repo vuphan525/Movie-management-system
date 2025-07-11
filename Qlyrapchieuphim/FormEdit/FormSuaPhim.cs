@@ -264,16 +264,16 @@ namespace Qlyrapchieuphim.FormEdit
 
         private void btn_Refresh_Click(object sender, EventArgs e)
         {
-            lbl_FormSuaPhim_TenPhim.Clear();
-            cb_FormSuaPhim_TheLoai.SelectedIndex = -1;
-            lbl_FormSuaPhim_ThoiLuong.Clear();
-            cb_FormSuaPhim_TinhTrang.SelectedIndex = -1;
-            date_FormSuaPhim_NgayNhap.Value = DateTime.Today;
-            date_FormSuaPhim_NgayPhatHanh.Value = DateTime.Today;
-            cb_FormSuaPhim_NhaPhatHanh.SelectedIndex = 0;
-            lbl_FormSuaPhim_MoTa.Clear();
-            pictureBox_FormSuaPhim_Poster.Image = null;
-            this.Refresh();
+            //lbl_FormSuaPhim_TenPhim.Clear();
+            //cb_FormSuaPhim_TheLoai.SelectedIndex = -1;
+            //lbl_FormSuaPhim_ThoiLuong.Clear();
+            ////cb_FormSuaPhim_TinhTrang.SelectedIndex = -1;
+            //date_FormSuaPhim_NgayNhap.Value = DateTime.Today;
+            //date_FormSuaPhim_NgayPhatHanh.Value = DateTime.Today;
+            //cb_FormSuaPhim_NhaPhatHanh.SelectedIndex = 0;
+            //lbl_FormSuaPhim_MoTa.Clear();
+            //pictureBox_FormSuaPhim_Poster.Image = null;
+            LoadMovieData(movieId);
         }
 
         private void lbl_FormSuaPhim_Gia_TextChanged(object sender, EventArgs e)

@@ -99,12 +99,7 @@ namespace Qlyrapchieuphim.FormEdit
 
         private void btn_Refresh_Click(object sender, EventArgs e)
         {
-            lbl_FormSuaKH_DiemTichLuy.Clear();
-            lbl_FormSuaKH_Email.Clear();
-            lbl_FormSuaKH_HoTen.Clear();
-            lbl_FormSuaKH_SDT.Clear();
-            lbl_FormSuaKH_MaKH.Clear();
-            this.Refresh();
+            LoadKhachHang();
         }
 
         private void them_Click(object sender, EventArgs e)
