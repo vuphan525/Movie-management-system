@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label11 = new System.Windows.Forms.Label();
             this.cb_FormThemNV_ChucVu = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -46,6 +47,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.btn_Refresh = new Guna.UI2.WinForms.Guna2Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // label11
@@ -208,6 +211,7 @@
             this.lbl_FormThemNV_Email.SelectedText = "";
             this.lbl_FormThemNV_Email.Size = new System.Drawing.Size(273, 38);
             this.lbl_FormThemNV_Email.TabIndex = 81;
+            this.lbl_FormThemNV_Email.TextChanged += new System.EventHandler(this.lbl_FormThemNV_Email_TextChanged);
             // 
             // label6
             // 
@@ -342,6 +346,10 @@
             this.btn_Refresh.Text = "Làm mới";
             this.btn_Refresh.Click += new System.EventHandler(this.btn_Refresh_Click);
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // FormThemNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -372,6 +380,7 @@
             this.ShowInTaskbar = false;
             this.Text = "FormThemNhanVien";
             this.Load += new System.EventHandler(this.FormThemNhanVien_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -397,5 +406,6 @@
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2Button guna2Button2;
         private Guna.UI2.WinForms.Guna2Button btn_Refresh;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

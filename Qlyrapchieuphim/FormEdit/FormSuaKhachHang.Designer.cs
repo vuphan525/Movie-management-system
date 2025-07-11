@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.them = new Guna.UI2.WinForms.Guna2Button();
             this.label1 = new System.Windows.Forms.Label();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
@@ -42,6 +43,10 @@
             this.lbl_FormSuaKH_MaKH = new Guna.UI2.WinForms.Guna2TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btn_Refresh = new Guna.UI2.WinForms.Guna2Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
             this.SuspendLayout();
             // 
             // them
@@ -55,7 +60,7 @@
             this.them.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.them.ForeColor = System.Drawing.Color.White;
             this.them.Location = new System.Drawing.Point(264, 506);
-            this.them.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.them.Margin = new System.Windows.Forms.Padding(4);
             this.them.Name = "them";
             this.them.Size = new System.Drawing.Size(175, 44);
             this.them.TabIndex = 104;
@@ -113,6 +118,7 @@
             this.lbl_FormSuaKH_Email.SelectedText = "";
             this.lbl_FormSuaKH_Email.Size = new System.Drawing.Size(423, 41);
             this.lbl_FormSuaKH_Email.TabIndex = 114;
+            this.lbl_FormSuaKH_Email.TextChanged += new System.EventHandler(this.lbl_FormSuaKH_Email_TextChanged);
             // 
             // lbl_FormSuaKH_DiemTichLuy
             // 
@@ -274,12 +280,20 @@
             this.btn_Refresh.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Refresh.ForeColor = System.Drawing.Color.White;
             this.btn_Refresh.Location = new System.Drawing.Point(16, 506);
-            this.btn_Refresh.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_Refresh.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Refresh.Name = "btn_Refresh";
             this.btn_Refresh.Size = new System.Drawing.Size(175, 44);
             this.btn_Refresh.TabIndex = 115;
             this.btn_Refresh.Text = "Làm mới";
             this.btn_Refresh.Click += new System.EventHandler(this.btn_Refresh_Click);
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // errorProvider2
+            // 
+            this.errorProvider2.ContainerControl = this;
             // 
             // FormSuaKhachHang
             // 
@@ -302,12 +316,14 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.guna2Button2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormSuaKhachHang";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FormSuaKhachHang";
             this.Load += new System.EventHandler(this.FormSuaKhachHang_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -328,5 +344,7 @@
         private Guna.UI2.WinForms.Guna2TextBox lbl_FormSuaKH_MaKH;
         private System.Windows.Forms.Label label3;
         private Guna.UI2.WinForms.Guna2Button btn_Refresh;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.ErrorProvider errorProvider2;
     }
 }

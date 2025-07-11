@@ -250,5 +250,33 @@ namespace Qlyrapchieuphim.FormEdit
 
 
         }
+
+        private void lbl_FormSuaKH_Email_TextChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(lbl_FormSuaKH_Email.Text))
+            {
+                KiemTraEmailHopLe(lbl_FormSuaKH_Email, "Email không hợp lệ");
+            }
+            else
+            {
+                errorProvider1.SetError(lbl_FormSuaKH_Email, "Vui lòng nhập email");
+            }
+
+        }
+        private bool KiemTraEmailHopLe(Control control, string errorMessage)
+        {
+            try
+            {
+                var mail = new System.Net.Mail.MailAddress(control.Text);
+                errorProvider1.SetError(control, ""); // Xóa lỗi nếu hợp lệ
+                return true;
+            }
+            catch (FormatException)
+            {
+                errorProvider1.SetError(control, errorMessage);
+                return false;
+            }
+        }
+
     }
 }
