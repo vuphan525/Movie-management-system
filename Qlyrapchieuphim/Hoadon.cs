@@ -374,5 +374,17 @@ namespace Qlyrapchieuphim
         {
 
         }
+
+        public int GetTienCanTra()
+        {
+            int need_to_pay_without_food = total;
+            int totalFoodAndDrink = food_total + drinks_total;
+            int totalDiscount = discount + student_discount + child_discount;
+
+            int need_to_pay = need_to_pay_without_food + totalFoodAndDrink - totalDiscount;
+
+            return need_to_pay;
+        }
+
     }
 }
