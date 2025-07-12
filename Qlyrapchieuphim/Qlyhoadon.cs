@@ -46,9 +46,6 @@ namespace Qlyrapchieuphim
                     adapter.Fill(dt);
                 }
             }
-
-            dataGridView1.Columns.Clear();
-            dataGridView1.AutoGenerateColumns = true;
             dataGridView1.DataSource = dt;
         }
 

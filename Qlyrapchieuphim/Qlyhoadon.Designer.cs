@@ -40,11 +40,11 @@
             this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2TextBox6 = new Guna.UI2.WinForms.Guna2TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.label2 = new System.Windows.Forms.Label();
             this.colID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DATE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label2 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -58,10 +58,9 @@
             this.panel2.Controls.Add(this.guna2TextBox6);
             this.panel2.Controls.Add(this.dataGridView1);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Location = new System.Drawing.Point(21, 25);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Location = new System.Drawing.Point(16, 20);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1436, 784);
+            this.panel2.Size = new System.Drawing.Size(1077, 637);
             this.panel2.TabIndex = 6;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
@@ -75,10 +74,10 @@
             this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(61)))), ((int)(((byte)(204)))));
             this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.Location = new System.Drawing.Point(603, 18);
-            this.guna2Button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.guna2Button1.Location = new System.Drawing.Point(452, 15);
+            this.guna2Button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(180, 46);
+            this.guna2Button1.Size = new System.Drawing.Size(135, 37);
             this.guna2Button1.TabIndex = 70;
             this.guna2Button1.Text = "Tìm theo ngày";
             this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
@@ -90,12 +89,11 @@
             this.timkiem.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(248)))));
             this.timkiem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.timkiem.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.timkiem.Location = new System.Drawing.Point(813, 25);
-            this.timkiem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.timkiem.Location = new System.Drawing.Point(610, 20);
             this.timkiem.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.timkiem.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.timkiem.Name = "timkiem";
-            this.timkiem.Size = new System.Drawing.Size(205, 39);
+            this.timkiem.Size = new System.Drawing.Size(154, 32);
             this.timkiem.TabIndex = 69;
             this.timkiem.Value = new System.DateTime(2024, 11, 29, 16, 51, 14, 647);
             this.timkiem.ValueChanged += new System.EventHandler(this.date_FormThemSuatChieu_NgayChieu_ValueChanged);
@@ -111,10 +109,9 @@
             this.guna2Button4.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button4.ForeColor = System.Drawing.Color.White;
             this.guna2Button4.Image = global::Qlyrapchieuphim.Properties.Resources.icons8_find_30;
-            this.guna2Button4.Location = new System.Drawing.Point(1373, 26);
-            this.guna2Button4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Button4.Location = new System.Drawing.Point(1030, 21);
             this.guna2Button4.Name = "guna2Button4";
-            this.guna2Button4.Size = new System.Drawing.Size(40, 37);
+            this.guna2Button4.Size = new System.Drawing.Size(30, 30);
             this.guna2Button4.TabIndex = 54;
             // 
             // guna2TextBox6
@@ -131,13 +128,13 @@
             this.guna2TextBox6.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2TextBox6.ForeColor = System.Drawing.Color.Black;
             this.guna2TextBox6.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox6.Location = new System.Drawing.Point(1057, 28);
-            this.guna2TextBox6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.guna2TextBox6.Location = new System.Drawing.Point(793, 23);
+            this.guna2TextBox6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.guna2TextBox6.Name = "guna2TextBox6";
             this.guna2TextBox6.PasswordChar = '\0';
             this.guna2TextBox6.PlaceholderText = "";
             this.guna2TextBox6.SelectedText = "";
-            this.guna2TextBox6.Size = new System.Drawing.Size(308, 34);
+            this.guna2TextBox6.Size = new System.Drawing.Size(231, 28);
             this.guna2TextBox6.TabIndex = 53;
             this.guna2TextBox6.TextChanged += new System.EventHandler(this.guna2TextBox6_TextChanged);
             // 
@@ -174,17 +171,26 @@
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridView1.EnableHeadersVisualStyles = false;
-            this.dataGridView1.Location = new System.Drawing.Point(19, 71);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Location = new System.Drawing.Point(14, 58);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1395, 690);
+            this.dataGridView1.Size = new System.Drawing.Size(1046, 561);
             this.dataGridView1.TabIndex = 30;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(13, 21);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(122, 25);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Các hóa đơn";
             // 
             // colID
             // 
@@ -210,7 +216,7 @@
             // 
             // SDT
             // 
-            this.SDT.DataPropertyName = "SDT";
+            this.SDT.DataPropertyName = "Phone";
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.SDT.DefaultCellStyle = dataGridViewCellStyle4;
             this.SDT.FillWeight = 111.6496F;
@@ -221,7 +227,7 @@
             // 
             // DATE
             // 
-            this.DATE.DataPropertyName = "DATE";
+            this.DATE.DataPropertyName = "CreatedAt";
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.DATE.DefaultCellStyle = dataGridViewCellStyle5;
             this.DATE.HeaderText = "Ngày hóa đơn ";
@@ -229,25 +235,13 @@
             this.DATE.Name = "DATE";
             this.DATE.ReadOnly = true;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(17, 26);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(146, 31);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Các hóa đơn";
-            // 
             // Qlyhoadon
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panel2);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Qlyhoadon";
-            this.Size = new System.Drawing.Size(1477, 832);
+            this.Size = new System.Drawing.Size(1108, 676);
             this.Load += new System.EventHandler(this.Qlyhoadon_Load);
             this.VisibleChanged += new System.EventHandler(this.Qlyhoadon_VisibleChanged);
             this.panel2.ResumeLayout(false);
