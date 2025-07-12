@@ -506,7 +506,7 @@
             // colDiscountPercent
             // 
             this.colDiscountPercent.DataPropertyName = "DiscountPercent";
-            this.colDiscountPercent.HeaderText = "Mức giảm ";
+            this.colDiscountPercent.HeaderText = "Mức giảm (0–1)";
             this.colDiscountPercent.MinimumWidth = 6;
             this.colDiscountPercent.Name = "colDiscountPercent";
             // 

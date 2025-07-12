@@ -198,12 +198,29 @@ namespace Qlyrapchieuphim.FormEdit
         {
             if (percentError)
                 return;
-            double mgia = double.Parse(lbl_FormSuaVoucher_DiscountPercent.Text);
-            if (mgia < 0)
+
+            string input = lbl_FormSuaVoucher_DiscountPercent.Text.Trim();
+            double mgia;
+
+            // Dùng TryParse để tránh lỗi FormatException
+            if (double.TryParse(input, out mgia))
+            {
+                if (mgia < 0)
+                    lbl_FormSuaVoucher_DiscountPercent.Text = "0";
+                else if (mgia > 100)
+                    lbl_FormSuaVoucher_DiscountPercent.Text = "100";
+                else
+                    lbl_FormSuaVoucher_DiscountPercent.Text = mgia.ToString("0.#"); // Xoá số 0 thừa nếu có
+            }
+            else
+            {
+                // Nếu nhập không hợp lệ, cho về 0 hoặc thông báo
+                MessageBox.Show("Vui lòng nhập phần trăm giảm giá là số từ 0 đến 100.", "Lỗi định dạng", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 lbl_FormSuaVoucher_DiscountPercent.Text = "0";
-            else if (mgia > 100)
-                lbl_FormSuaVoucher_DiscountPercent.Text = "100";
+                lbl_FormSuaVoucher_DiscountPercent.Focus();
+            }
         }
+
 
         private void date_FormSuaVoucher_NgayHetHan_ValueChanged(object sender, EventArgs e)
         {
