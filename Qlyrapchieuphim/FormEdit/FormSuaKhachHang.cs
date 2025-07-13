@@ -187,7 +187,7 @@ namespace Qlyrapchieuphim.FormEdit
                 {
                     case 2627: // Unique key violation
                         MessageBox.Show(
-                            "Mã khách hàng không được trùng nhau!",
+                            "Số điện thoại và email không được trùng nhau!",
                             "Lỗi nhập liệu",
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Warning);
@@ -229,7 +229,7 @@ namespace Qlyrapchieuphim.FormEdit
                 {
                     case 2627: // Unique key violation
                         MessageBox.Show(
-                            "Username không được trùng nhau!",
+                            "Số điện thoại và email không được trùng nhau!",
                             "Lỗi nhập liệu",
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Warning);

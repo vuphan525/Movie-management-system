@@ -94,9 +94,13 @@ namespace Qlyrapchieuphim.FormEdit
             }
             catch (Exception ex)
             {
+                
+                    MessageBox.Show("Lỗi khi tải dữ liệu nhân viên: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
                 if (conn.State != ConnectionState.Closed)
                     conn.Close();
-                MessageBox.Show("Lỗi khi tải dữ liệu nhân viên: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         private bool IsPhoneNumberValid(string phone)
@@ -163,7 +167,22 @@ namespace Qlyrapchieuphim.FormEdit
             }
             catch (Exception ex)
             {
-                if (ex is FormatException)
+                if (ex is SqlException sqlex)
+                {
+                    switch (sqlex.Number)
+                    {
+                        case 2627: // Unique key violation
+                            MessageBox.Show(
+                                "Số điện thoại và email không được trùng nhau!",
+                                "Lỗi nhập liệu",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Warning);
+                            return;
+                        default:
+                            throw;
+                    }
+                }
+                else if (ex is FormatException)
                 {
                     MessageBox.Show(
                     "Địa chỉ mail không đúng định dạng!",
@@ -285,7 +304,7 @@ namespace Qlyrapchieuphim.FormEdit
                 try
                 {
                     var mail = new System.Net.Mail.MailAddress(email);
-                    errorProvider1.SetError(lbl_FormSuaNV_Email, ""); 
+                    errorProvider1.SetError(lbl_FormSuaNV_Email, "");
                 }
                 catch
                 {

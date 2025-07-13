@@ -114,7 +114,7 @@ namespace Qlyrapchieuphim
             {
                 if (ex.Number == 2627)
                 {
-                    MessageBox.Show("Tài khoản đã tồn tại!",
+                    MessageBox.Show("Số điện thoại và email không được trùng nhau!",
                         "Lỗi nhập liệu",
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Warning);
@@ -143,7 +143,7 @@ namespace Qlyrapchieuphim
             {
                 if (ex.Number == 2627)
                 {
-                    MessageBox.Show("Khách hàng đã tồn tại!",
+                    MessageBox.Show("Số điện thoại và email không được trùng nhau!",
                         "Lỗi nhập liệu",
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Warning);

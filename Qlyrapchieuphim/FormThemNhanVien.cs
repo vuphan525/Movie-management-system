@@ -123,7 +123,7 @@ namespace Qlyrapchieuphim
                 {
                     case 2627: // Unique key violation
                         MessageBox.Show(
-                            "Mã nhân viên không được trùng nhau!",
+                            "Số điện thoại và email không được trùng nhau!",
                             "Lỗi nhập liệu",
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Warning);
