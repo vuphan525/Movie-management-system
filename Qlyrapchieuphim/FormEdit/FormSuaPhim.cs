@@ -33,6 +33,7 @@ namespace Qlyrapchieuphim.FormEdit
         {
             InitializeComponent();
             movieId = id;
+            pictureBox_FormSuaPhim_Poster.SizeMode = PictureBoxSizeMode.Zoom;
             LoadMovieData(movieId);
             this.Paint += FormThemPhim_Paint;
         }
